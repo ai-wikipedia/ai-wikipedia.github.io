@@ -7,22 +7,21 @@ description: AI Wiki 키워드 일일 자동 업데이트 (트렌드 수집 → 
 
 AI Wiki 키워드 일일 자동 업데이트. 수동 실행과 스케줄러 공용.
 
-## 검색 기간
-- 모든 검색은 **최근 48시간** 이내의 콘텐츠를 대상으로 한다.
-- WebSearch 쿼리에 오늘 날짜를 포함한다 (예: "AI agent 2026-04-04").
-- GeekNews MCP는 get_articles(type:'new')로 최신순 수집.
+## 데이터 수집 (스크립트가 담당, WebSearch 금지)
+- 트렌드: `node fetch-trends.js` — HN + Tavily(Reddit) + GeekNews
+- 발굴: `node fetch-discovery.js --days 7 --features` — OpenRouter 신규 모델 + GitHub 신규 생태계 레포 + Tavily 기능 요약
+- 소스: `node fetch-sources.js` — 키워드별 Tavily(웹) + YouTube
 
 ## 실행 모드
 
-- **대화형** (`/scheduling-add`): 스킬/서브에이전트 사용 가능
-- **스케줄러** (`--print` 모드): 스킬/서브에이전트 없이 인라인 처리. `.claude/prompts/scheduling-add.md` 참조.
+- **자동 (스케줄러)**: launchd → `scripts/run-daily.sh` (6-stage). 프롬프트는 `.claude/prompts/keyword-select.md`(선정) + `content-generate.md`(생성). 매일 08:00 KST.
+- **대화형** (`/scheduling-add`): 아래 순서를 직접 수행. 수집은 위 스크립트를 동일하게 사용.
 
 ## 실행 순서
 
-1. 아래 소스에서 최근 48시간 내 AI 핫 토픽을 수집한다:
-   - GeekNews MCP: get_articles(type:'new', limit:30) + get_weekly_news()
-   - WebSearch: "AI news today site:news.ycombinator.com" (최근 48시간)
-   - WebSearch: "AI machine learning new site:reddit.com" (최근 48시간)
+1. 트렌드·발굴 데이터를 스크립트로 수집한다:
+   - `node fetch-trends.js`  (커뮤니티 화제)
+   - `node fetch-discovery.js --days 7 --features`  (신규 모델·플러그인·기능)
 
 2. data.js의 D 배열과 대조하여 아직 없는 키워드를 선정한다.
    - 선정 기준:

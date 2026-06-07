@@ -207,13 +207,15 @@ JS 배열 `D`의 각 항목:
 ### 파일 구조
 ```
 .claude/
-├── agents/                        # 서브에이전트 정의
+├── agents/                        # 서브에이전트 정의 (대화형 /add-keyword용)
 │   ├── researcher.md              # 제공된 검색 결과에서 콘텐츠 작성
-│   ├── reference-collector.md     # 제공된 검색 결과에서 refs/videos 채택
-│   └── importance-analyst.md      # (미사용)
+│   └── reference-collector.md     # 제공된 검색 결과에서 refs/videos 채택
 ├── hooks/
 │   ├── sync-claude-md.sh          # Edit/Write 후 CLAUDE.md 동기화 알림
 │   └── check-plan-update.sh       # Stop 시 PLAN-CURRENT.md 업데이트 알림
+├── prompts/                       # --print 모드 프롬프트 (스케줄러용)
+│   ├── keyword-select.md          # Stage 2 키워드 선정 (TRENDS_JSON + DISCOVERY_JSON)
+│   └── content-generate.md        # Stage 4 콘텐츠 생성 (키워드별 격리)
 ├── skills/                        # 스킬 (슬래시 커맨드)
 │   ├── add-keyword/SKILL.md       # /add-keyword — 키워드 1개 추가
 │   ├── scheduling-add/SKILL.md     # /scheduling-add — 일일 자동 키워드 업데이트
@@ -221,9 +223,11 @@ JS 배열 `D`의 각 항목:
 │   ├── start-phase/SKILL.md       # /start-phase — 플랜 항목 시작
 │   ├── complete-phase/SKILL.md    # /complete-phase — 플랜 항목 완료
 │   └── validate-plan/SKILL.md     # /validate-plan — 현재 플랜 검증
+scripts/run-daily.sh               # 스케줄러 6-stage 파이프라인 (launchd가 실행)
+fetch-trends.js                    # D3 트렌드 수집 (HN + Tavily Reddit + GeekNews)
+fetch-discovery.js                 # D1·D2·D4 발굴 (OpenRouter 모델 + GitHub 생태계 + Tavily 기능)
 fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + YouTube API)
-fetch-trends.js                    # 트렌드 수집 (HN API + Tavily Reddit + GeekNews)
-.env                               # API 키 (TAVILY_API_KEY, YOUTUBE_API_KEY)
+.env                               # API 키 (TAVILY_API_KEY, YOUTUBE_API_KEY, GITHUB_TOKEN 선택)
 ```
 
 ### 데이터 수집 파이프라인
@@ -235,7 +239,8 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily Reddit + 
 | Stage | 작업 | 실행 주체 | 비고 |
 |-------|------|----------|------|
 | 1 | 트렌드 수집 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews /new 10개 + GeekNews 주간뉴스 |
-| 2 | 키워드 선정 | `claude --print` | 트렌드 + 기존 키워드 대조 → 새 키워드 JSON 출력 |
+| 1b | 발굴 | `node fetch-discovery.js --days 7 --features` | OpenRouter 신규 모델 + GitHub 신규 생태계 레포(토픽+생성일) + Tavily 기능 요약 (비치명적) |
+| 2 | 키워드 선정 | `claude --print` | 트렌드 + 발굴 + 기존 키워드 대조 → 새 키워드 JSON 출력 |
 | 3 | 소스 수집 | `node fetch-sources.js` | 키워드별 Tavily (웹 EN/KO) + YouTube API (EN/KO) |
 | 4 | 콘텐츠 생성 | `claude --print` | sum/det 작성 + refs/videos 채택 + 번역(EN/ZH/JA) — 올인원 |
 | 5 | data.js 반영 | `node apply-entries.js` | 중복 확인, 항목 추가 |
@@ -278,11 +283,11 @@ fetch-trends.js                    # 트렌드 수집 (HN API + Tavily Reddit + 
 
 ### 로컬 스케줄러 (launchd + pmset)
 
-- **스케줄**: 매일 09:00 KST (plist `Hour`/`Minute`로 조정)
-- **자동 기상**: `pmset repeat wakeorpoweron MTWRFSU 08:59:00` — 잠자기 상태에서 스케줄 1분 전 자동 wake
-- **방식**: macOS launchd → `~/run-daily.sh` → 6-stage 파이프라인
-- **plist**: `~/Library/LaunchAgents/com.aiwiki.daily.plist`
-- **스크립트**: `~/run-daily.sh` (6-stage 파이프라인)
+- **스케줄**: 매일 08:00 KST (plist `Hour`/`Minute`로 조정)
+- **자동 기상**: `pmset repeat wakeorpoweron MTWRFSU 07:59:00` — 잠자기 상태에서 스케줄 1분 전 자동 wake
+- **방식**: macOS launchd → `scripts/run-daily.sh` → 6-stage 파이프라인
+- **plist**: `~/Library/LaunchAgents/com.aiwiki.daily.plist` (→ `scripts/run-daily.sh` 실행)
+- **스크립트**: `scripts/run-daily.sh` (레포 내, 버전관리)
 
 #### 파이프라인 구조 (run-daily.sh)
 
