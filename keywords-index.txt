@@ -249,3 +249,5 @@ gan	GAN	Generative Adversarial Network	model
 critic-pattern	크리틱 패턴	Critic Pattern	agent
 summarizer	서머라이저	Summarizer	agent
 world-model	월드 모델	World Model	model
+agentic-os	에이전틱 OS	Agentic Operating System	agent
+model-council	모델 카운슬	Multi-Model Council	agent

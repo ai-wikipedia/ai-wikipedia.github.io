@@ -1,3 +1,7 @@
+## 2026-06-08 08:35
+- 추가: agentic-os, model-council
+- HOT: (없음)
+
 ## 2026-06-07 23:11
 - 추가: world-model
 - HOT: (없음)
