@@ -84,16 +84,23 @@ function formatI18nEntry(id, translation) {
  * We find the `];` that follows `const D = [` (line 4 in the file).
  */
 function insertIntoD(src, text) {
-  // Find "const D = [" then the FIRST standalone "];" after it
   const dStart = src.indexOf('\nconst D = [');
   if (dStart === -1) throw new Error('Could not find "const D = [" in data.js');
 
-  // From dStart, find the closing "];\n" for the D array.
-  // We look for a line that is exactly "];"
-  const afterD = src.indexOf('\n];', dStart);
-  if (afterD === -1) throw new Error('Could not find closing ]; for const D array');
+  // The D array is closed by the last "];" before the next top-level
+  // declaration (const I18N_CONTENT) or EOF. Using lastIndexOf up to that
+  // boundary is robust whether the "];" sits on its own line ("},\n];") or
+  // is glued to the final entry ("},];").
+  let boundary = src.indexOf('\nconst I18N_CONTENT', dStart);
+  if (boundary === -1) boundary = src.length;
+  const close = src.lastIndexOf('];', boundary);
+  if (close === -1 || close < dStart) throw new Error('Could not find closing ]; for const D array');
 
-  return src.slice(0, afterD + 1) + '\n' + text + src.slice(afterD + 1);
+  // Insert the new entry on its own line(s) and always keep "];" on its own
+  // line afterwards, so subsequent inserts keep finding a clean close.
+  let before = src.slice(0, close);
+  if (!before.endsWith('\n')) before += '\n';
+  return before + text + '\n' + src.slice(close);
 }
 
 /**
@@ -101,27 +108,34 @@ function insertIntoD(src, text) {
  * lang is 'en', 'zh', or 'ja'.
  */
 function insertIntoI18n(src, lang, text) {
-  let closingMarker;
+  // The block markers anchor on each language block's CLOSING brace as it
+  // actually appears in data.js: "...},},zh:{", "...},},ja:{", "...},}};".
+  // `pos` ends up at that closing "}", and we insert the new entry just before
+  // it. New entries (formatI18nEntry) already end with "}," so the block stays
+  // well-formed and the markers keep matching on the next run.
+  let marker, pos;
   if (lang === 'en') {
-    closingMarker = '\n},zh:{';
+    marker = '},zh:{';
+    pos = src.indexOf(marker);
   } else if (lang === 'zh') {
-    closingMarker = '\n},ja:{';
+    marker = '},ja:{';
+    pos = src.indexOf(marker);
   } else if (lang === 'ja') {
-    closingMarker = '\n}};';
+    // I18N_CONTENT close is the LAST "}};" in the file (near EOF), so anchor
+    // with lastIndexOf to avoid any "}};" that might appear inside a det string.
+    marker = '}};';
+    pos = src.lastIndexOf(marker);
   } else {
     throw new Error('Unknown lang: ' + lang);
   }
 
-  const pos = src.indexOf(closingMarker);
-  if (pos === -1) throw new Error(`Could not find closing marker for I18N_CONTENT.${lang}: "${closingMarker}"`);
+  if (pos === -1) throw new Error(`Could not find I18N_CONTENT.${lang} block close marker: "${marker}"`);
 
-  // 마지막 기존 항목 뒤에 쉼표가 없으면 추가
-  const before = src.slice(0, pos + 1);
-  const trimmed = before.trimEnd();
-  const needsComma = trimmed.endsWith('}') && !trimmed.endsWith('},');
-  const prefix = needsComma ? before.slice(0, -1) + ',\n' : before;
+  // Ensure the preceding entry ends with a comma before we append.
+  let before = src.slice(0, pos).replace(/\s+$/, '');
+  if (before.endsWith('}') && !before.endsWith('},')) before += ',';
 
-  return prefix + '\n' + text + src.slice(pos + 1);
+  return before + '\n' + text + '\n' + src.slice(pos);
 }
 
 /**

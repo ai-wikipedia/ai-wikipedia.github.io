@@ -1847,7 +1847,8 @@ refs:[
    rel:['orchestration-pattern','critic-pattern','subagent','planning-pattern','context-window','context-compression','agent-memory'],
    refs:[{title:'Cutting Through the Noise: Smarter Context Management for LLM',url:'https://blog.jetbrains.com/research/2025/12/efficient-context-management/',type:'blog'},{title:'NexusSum: Hierarchical LLM Agents for Long-Form Narrative Summarization',url:'https://arxiv.org/html/2505.24575v1',type:'paper'},{title:'Streamlining Multi-Agent Context with Summaries',url:'https://medium.com/@atharvagupta2003/streamlining-multi-agent-context-with-summaries-5ddb186c5ced',type:'tutorial'}],
    videos:[],
-   added:'2026-04-12',updated:'2026-04-12'},];
+   added:'2026-04-12',updated:'2026-04-12'},
+];
 
 const I18N_CONTENT = {en:{
   'harness-engineering': {
