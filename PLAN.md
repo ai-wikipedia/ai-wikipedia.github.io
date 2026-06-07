@@ -7,6 +7,6 @@
 > `/start-phase` 시 가장 상단의 플랜부터 실행
 
 ## TODO
-(스케줄러 신뢰성 복구 진행 중 — PLAN-CURRENT.md 참조)
+- run-daily.sh·plist를 레포로 들여 버전관리할지 — 지금은 ~/에 있어 변경 이력·동기화가 안 됨
 - YouTube 영상 누락분 수집 (Day 2): KO 재수집 17개 + 나머지 36개 키워드 fetch + apply-gaps.js 적용
 - 크리틱·서머라이저 등 신규 키워드 YouTube 영상 3개씩 보충 (YouTube API 할당량 리셋 후)

@@ -2,6 +2,46 @@
 
 ---
 
+## 스케줄러 신뢰성 복구 (레포 이전 + Stage 4 견고화) (2026-06-07 완료)
+
+**배경:** 매일 정상 실행되던 스케줄러가 5일 연속(06-03~07) "신규 키워드 없음"으로만 커밋. 진단 결과 CLI·검색·키워드 선정은 정상이었고, 마지막 콘텐츠 생성 단계만 실패. 원인 다발: ① 레포 불일치(WORK_DIR이 옛 클론) ② Stage 4 단일 배치가 사이버 키워드 1건(WormGPT/AI Worm)에 통째로 AUP 차단 ③ 대형 프롬프트 타임아웃 ④ (라이브에서 발견) Stage 5 apply-entries.js 파서가 1회 삽입 후 자가 손상되는 잠복 버그.
+
+### A. 레포 이전
+- [x] `~/run-daily.sh` WORK_DIR → 새 레포(`~/Desktop/dev/ai-wikipedia.github.io`)
+- [x] keywords-index.txt·log.md 동기화 확인(내용 동일)
+- [x] 옛 레포 `~/dev/ai-wiki` 삭제 (origin 동기화 확인 후), logs/runs 63개 보존 이동
+- [x] launchd plist 확인 (WORK_DIR 런타임 로드, reload 불필요)
+- [x] `.env` 재생성 — 옛 레포 삭제 시 동반 삭제됐던 키 재입력, Tavily·YouTube 실호출 검증
+- [ ] (미완·PLAN 환원) run-daily.sh·plist 레포 버전관리 — 현재 ~/에 유지
+
+### B. Stage 4 키워드별 격리
+- [x] 단일 배치 → 키워드별 개별 `claude --print` 루프 재작성
+- [x] 1건 실패 시 해당 건만 건너뛰고 나머지 진행
+- [x] 키워드별 결과 병합 → content.json (Stage 5 호환)
+- [x] 전부 실패 시 "신규 키워드 없음" 커밋·종료 경로
+
+### C. 악성코드류 키워드 제외
+- [x] keyword-select.md에 공격용 악성 AI 도구(WormGPT/FraudGPT·자율 AI 웜·공격 자동화) 제외
+- [x] 방어·교육 보안 개념(프롬프트 인젝션·가드레일·jailbreak·레드팀) 보존 명시
+
+### D. 검증
+- [x] 06-07 ai-worm 차단 배치 결정적 재현 — 격리 PASS
+- [x] `bash -n` 문법 통과
+- [x] 라이브 1회(launchd) — B 격리 라이브 입증(world-model 성공/durable-execution 격리)
+- [x] 깨끗한 end-to-end 재실행 — Stage 1~6 전부 정상, world-model 추가, LAST_UPDATED 2026-06-07 갱신, commit d9257dd 푸시
+
+### E. (라이브에서 발견) Stage 5 apply-entries.js 파서 버그
+- [x] insertIntoD: 삽입 후 `];` 인라인 글루로 1회 후 깨지던 버그 → `];` 독립 줄 유지
+- [x] insertIntoI18n: 블록 마커가 실제 형식(`},},zh:{`)과 불일치 → 블록 닫는 `}` 앵커, ja는 lastIndexOf
+- [x] data.js D 배열 닫힘 정규화 + `*.bak` gitignore·추적 제거
+- [x] 임시 사본 2회 연속 삽입 + JS 파싱 + I18N 검증 PASS
+
+**커밋:** 6389fbc(B+C) · 42cfbe8(E 파서) · a621b12(bak 정리) · d9257dd(라이브 world-model 추가)
+
+**남긴 메모:** 스케줄러의 `git add -A`는 작업 트리의 미커밋 변경을 자동 커밋에 흡수함 — 평소 무인 운영엔 무해하나, 수동 작업 중 실행 시 주의.
+
+---
+
 ## 레퍼런스/영상 누락 키워드 일괄 보강 (2026-04-12 완료)
 
 - [x] 누락 키워드 목록 확정 (refs 31개 / videos 45+44개)
