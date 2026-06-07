@@ -40,7 +40,16 @@
 ### D. 검증
 - [x] 06-07 ai-worm 차단 배치 재현(결정적 테스트) — ai-worm 격리·continual-learning 생존·병합 1건 PASS
 - [x] 셸 문법 검증 `bash -n` 통과
-- [ ] (보류) 수동 라이브 end-to-end 1회 — 프로덕션 커밋·푸시 발생 + `claude --dangerously-skip-permissions` 권한 필요. 사용자 승인 후 진행
+- [x] 라이브 1회 실행(launchd) — B 격리 라이브 입증(world-model 성공·durable-execution 실패 격리, 나머지 생존). WORK_DIR 새 레포 동작 확인
+- [x] 라이브 실행에서 노출된 잠복 Stage 5 버그 2건 수정·검증 (아래 E)
+- [ ] 깨끗한 end-to-end 재실행 통과 확인 (진행 중)
+
+### E. (라이브에서 발견) Stage 5 apply-entries.js 파서 버그
+- [x] insertIntoD: 삽입 후 `];`가 인라인 글루돼 1회 후 깨지던 버그 — `];` 독립 줄 유지로 수정 (근본 원인: 04-12 이후 잠복)
+- [x] insertIntoI18n: en/zh/ja 블록 마커가 실제 형식(`},},zh:{`)과 불일치 — 블록 닫는 `}` 앵커로 수정, ja는 lastIndexOf
+- [x] data.js D 배열 닫힘 `];` 독립 줄 정규화
+- [x] `*.bak` gitignore + data.js.bak 추적 제거 (매 실행 커밋되던 노이즈)
+- [x] 임시 사본 2회 연속 삽입 + JS 파싱 + I18N 반영 검증 PASS
 
 ## 진행 로그
 | 시간 | 작업 내용 |

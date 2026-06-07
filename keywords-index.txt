@@ -248,3 +248,4 @@ scaling-law	스케일링 법칙	Scaling Law	model
 gan	GAN	Generative Adversarial Network	model
 critic-pattern	크리틱 패턴	Critic Pattern	agent
 summarizer	서머라이저	Summarizer	agent
+world-model	월드 모델	World Model	model
