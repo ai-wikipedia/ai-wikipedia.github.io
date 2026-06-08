@@ -57,22 +57,26 @@ async function discoverModels(cutoff, blob) {
   const j = await r.json();
   const recent = (j.data || []).filter(m => m.created && m.created > cutoff)
     .sort((a, b) => b.created - a.created);
-  const fams = new Map();
+  // 버전 단위로 개별 추출 (계열로 뭉치지 않음). 신규 모델 버전이 각각 후보가 되게.
+  const seen = new Set();
+  const out = [];
   for (const m of recent) {
-    const modelPart = (m.id || '').split('/')[1] || m.id || '';
+    const id = m.id || '';
+    if (!id || seen.has(id)) continue;
+    if (id.includes(':free')) continue; // 유료판과 중복되는 free 변형 제외
+    seen.add(id);
+    const modelPart = id.split('/')[1] || id;
     const fam = (modelPart.match(/^[a-z]+/i) || [modelPart])[0].toLowerCase();
-    if (!fam) continue;
-    if (!fams.has(fam)) {
-      fams.set(fam, {
-        family: fam,
-        id: m.id,
-        name: m.name || m.id,
-        date: new Date(m.created * 1000).toISOString().slice(0, 10),
-        knownFamily: blob.includes(fam), // 이미 위키에 계열이 있나(힌트)
-      });
-    }
+    out.push({
+      family: fam,
+      id,
+      name: m.name || id,
+      date: new Date(m.created * 1000).toISOString().slice(0, 10),
+      knownFamily: blob.includes(fam), // 계열이 이미 위키에 있나(힌트)
+    });
+    if (out.length >= 40) break;
   }
-  return [...fams.values()];
+  return out;
 }
 
 // ---------------------------------------------------------------------------
