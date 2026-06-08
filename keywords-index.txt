@@ -1,6 +1,6 @@
 harness-engineering	하네스 엔지니어링	Harness Engineering	prompting
 mcp	MCP	Model Context Protocol	tooling
-claude-code	Claude Code	Claude Code CLI	tooling
+claude-code	클로드 코드	Claude Code CLI	tooling
 ai-agent	AI 에이전트	AI Agent	agent
 multi-agent	멀티 에이전트	Multi-Agent System	agent
 ai-coding	AI 코딩 어시스턴트	AI Coding Assistant	application
@@ -110,22 +110,22 @@ agent-eval	에이전트 평가	Agent Evaluation	agent
 reflection-pattern	리플렉션 패턴	Reflection Pattern	agent
 swarm	스웜	Agent Swarm	agent
 langgraph	랭그래프	LangGraph	agent
-crewai	CrewAI	CrewAI	agent
+crewai	크루AI	CrewAI	agent
 sandboxing	샌드박싱	Code Sandboxing	agent
 planning-pattern	플래닝 패턴	Planning Pattern	agent
 code-interpreter	코드 인터프리터	Code Interpreter	agent
 ai-ide	AI IDE	AI-Powered IDE	tooling
-cursor	Cursor	Cursor	tooling
-windsurf	Windsurf	Windsurf	tooling
-copilot	GitHub Copilot	GitHub Copilot	tooling
-anthropic-sdk	Anthropic SDK	Anthropic SDK	tooling
-openai-sdk	OpenAI SDK	OpenAI SDK	tooling
+cursor	커서	Cursor	tooling
+windsurf	윈드서프	Windsurf	tooling
+copilot	깃허브 코파일럿	GitHub Copilot	tooling
+anthropic-sdk	앤트로픽 SDK	Anthropic SDK	tooling
+openai-sdk	오픈AI SDK	OpenAI SDK	tooling
 llm-gateway	LLM 게이트웨이	LLM Gateway	tooling
 litellm	LiteLLM	LiteLLM	tooling
 dspy	DSPy	DSPy	tooling
-llamaindex	LlamaIndex	LlamaIndex	tooling
-langfuse	Langfuse	Langfuse	tooling
-langsmith	LangSmith	LangSmith	tooling
+llamaindex	라마인덱스	LlamaIndex	tooling
+langfuse	랭퓨즈	Langfuse	tooling
+langsmith	랭스미스	LangSmith	tooling
 tracing	트레이싱	LLM Tracing	tooling
 playground	플레이그라운드	AI Playground	tooling
 routing-pattern	라우팅 패턴	Routing Pattern	tooling
@@ -204,40 +204,40 @@ on-device-ai	온디바이스 AI	On-Device AI	infra
 open-weights	오픈 웨이트	Open Weights	model
 model-collapse	모델 붕괴	Model Collapse	safety
 post-training	포스트 트레이닝	Post-Training	model
-codex	Codex	OpenAI Codex	tooling
-devin	Devin	Devin	tooling
-gemini	Gemini	Gemini	model
-llama	Llama	Llama	model
-gemma	Gemma	Gemma	model
-mistral	Mistral	Mistral	model
-qwen	Qwen	Qwen	model
-whisper	Whisper	Whisper	model
-ollama	Ollama	Ollama	tooling
-stable-diffusion	Stable Diffusion	Stable Diffusion	model
+codex	코덱스	OpenAI Codex	tooling
+devin	데빈	Devin	tooling
+gemini	제미나이	Gemini	model
+llama	라마	Llama	model
+gemma	젬마	Gemma	model
+mistral	미스트랄	Mistral	model
+qwen	큐원	Qwen	model
+whisper	위스퍼	Whisper	model
+ollama	올라마	Ollama	tooling
+stable-diffusion	스테이블 디퓨전	Stable Diffusion	model
 self-improving-agent	자기학습 에이전트	Self-Improving Agent	agent
 agent-handoff	에이전트 핸드오프	Agent Handoff	agent
 agent-simulation	에이전트 시뮬레이션	Agent Simulation	agent
-copilot-sdk	Copilot SDK	Copilot SDK	tooling
-claude-dispatch	Claude Dispatch	Claude Dispatch	tooling
+copilot-sdk	코파일럿 SDK	Copilot SDK	tooling
+claude-dispatch	클로드 디스패치	Claude Dispatch	tooling
 ai-supply-chain-attack	AI 공급망 공격	AI Supply Chain Attack	safety
 ontology	온톨로지	Ontology	data
 agentic-engineering	에이전틱 엔지니어링	Agentic Engineering	application
-deepseek	DeepSeek	DeepSeek	model
+deepseek	딥시크	DeepSeek	model
 n8n	n8n	n8n (nodemation)	tooling
 token-economics	토큰 경제학	Token Economics	infra
-12-factor-agents	12-Factor Agents	Twelve-Factor Agents	agent
-pydantic-ai	Pydantic AI	Pydantic AI	agent
+12-factor-agents	12-팩터 에이전트	Twelve-Factor Agents	agent
+pydantic-ai	파이단틱 AI	Pydantic AI	agent
 background-agent	백그라운드 에이전트	Background Agent	agent
 spec-driven-dev	스펙 기반 개발	Spec-Driven Development	application
 agent-friendly-cli	에이전트 CLI	Agent-Friendly CLI	tooling
-mastra	Mastra	Mastra	agent
-llamafile	llamafile	llamafile	infra
-hermes-agent	Hermes Agent	Hermes Agent	agent
+mastra	마스트라	Mastra	agent
+llamafile	라마파일	llamafile	infra
+hermes-agent	헤르메스 에이전트	Hermes Agent	agent
 protocol-wars	프로토콜 전쟁	AI Protocol Wars	infra
-kokoro-tts	Kokoro TTS	Kokoro Text-to-Speech	model
-open-webui	Open WebUI	Open WebUI	tooling
+kokoro-tts	코코로 TTS	Kokoro Text-to-Speech	model
+open-webui	오픈 웹UI	Open WebUI	tooling
 time-series-fm	시계열 파운데이션 모델	Time-Series Foundation Model	model
-goose	Goose	Goose (Block AI Agent)	tooling
+goose	구스	Goose (Block AI Agent)	tooling
 emotion-prompting	감정 프롬프팅	Emotion Prompting	prompting
 mechanistic-interpretability	메커니스틱 해석 가능성	Mechanistic Interpretability	safety
 ai-vulnerability-discovery	AI 취약점 발견	AI Vulnerability Discovery	safety
