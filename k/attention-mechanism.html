@@ -119,7 +119,7 @@
   <div class="en">Attention Mechanism</div>
   <div class="body"><p>입력 시퀀스에서 어느 부분에 집중할지를 동적으로 결정하는 메커니즘. Transformer의 핵심 원리로, LLM이 문맥을 이해하는 방식 자체를 바꿨다.</p><h4>개념 설명</h4><p>문장을 처리할 때 모든 단어를 동등하게 보는 게 아니라, 지금 이 단어와 가장 관련 있는 다른 단어들에 더 많은 "주의"를 기울이는 방식이다. "나는 사과를 먹었다. 그것은 달았다"에서 '그것'이 '사과'를 가리킨다는 걸 파악하는 것처럼, 어텐션은 단어 사이의 관계를 점수로 계산해 문맥을 포착한다.</p><p>Transformer 논문(2017)에서 제안된 <strong>Self-Attention</strong>은 시퀀스 내 모든 토큰 쌍의 관계를 동시에 계산한다. Query, Key, Value 세 행렬을 이용해 각 토큰이 다른 토큰들에 얼마나 주목해야 하는지를 소프트맥스 확률로 표현한다.</p><h4>사용 예시</h4><p>LLM이 긴 대화 내용을 처리할 때, 수백 턴 전에 언급된 사용자 이름이나 조건을 다시 참조할 수 있는 것도 어텐션 덕분이다. 멀티헤드 어텐션은 여러 관점(문법적 관계, 의미적 유사성 등)을 동시에 계산해 더 풍부한 표현을 만든다. 코드 생성 시 함수 선언과 호출부 사이의 관계를 포착하는 것도 같은 원리다.</p></div>
   <div class="tags"><span>#Transformer</span><span>#self-attention</span><span>#가중치</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/transformer.html">트랜스포머</a>, <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/kv-cache.html">KV 캐시</a>, <a href="https://ai-wikipedia.github.io/k/flash-attention.html">플래시 어텐션</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/transformer.html">트랜스포머</a>, <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/kv-cache.html">KV 캐시</a>, <a href="https://ai-wikipedia.github.io/k/flash-attention.html">플래시 어텐션</a>, <a href="https://ai-wikipedia.github.io/k/sparse-attention.html">희소 어텐션</a></div>
   <a class="back" href="https://ai-wikipedia.github.io/#attention-mechanism">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

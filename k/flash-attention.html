@@ -119,7 +119,7 @@
   <div class="en">Flash Attention</div>
   <div class="body"><p>어텐션 계산을 GPU 메모리 구조에 맞게 재설계해 속도와 메모리 효율을 동시에 높인 알고리즘. 긴 컨텍스트 처리를 실용적으로 만든 핵심 기술이다.</p><h4>개념 설명</h4><p>어텐션 연산은 시퀀스 길이의 제곱에 비례하는 메모리를 쓰기 때문에, 긴 문서를 처리하면 GPU 메모리가 금방 바닥난다. <strong>Flash Attention</strong>은 큰 행렬을 통째로 GPU 메모리에 올리는 대신, 작은 블록 단위로 쪼개서 캐시 효율을 극대화한다. 결과는 동일하지만 메모리 사용량은 최대 10배 줄고, 속도는 수 배 빨라진다.</p><h4>사용 예시</h4><p>Hugging Face Transformers나 vLLM 같은 추론 서버에서 <code>flash_attention_2</code>를 활성화하면 동일한 GPU에서 더 긴 컨텍스트를 처리하거나 더 높은 처리량을 낼 수 있다. 128K 이상의 롱 컨텍스트 모델이 실용적으로 운영되는 것도 Flash Attention 덕분이다.</p></div>
   <div class="tags"><span>#메모리효율</span><span>#GPU</span><span>#속도최적화</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://ai-wikipedia.github.io/k/kv-cache.html">KV 캐시</a>, <a href="https://ai-wikipedia.github.io/k/long-context.html">롱 컨텍스트</a>, <a href="https://ai-wikipedia.github.io/k/transformer.html">트랜스포머</a>, <a href="https://ai-wikipedia.github.io/k/vllm.html">vLLM</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://ai-wikipedia.github.io/k/kv-cache.html">KV 캐시</a>, <a href="https://ai-wikipedia.github.io/k/long-context.html">롱 컨텍스트</a>, <a href="https://ai-wikipedia.github.io/k/transformer.html">트랜스포머</a>, <a href="https://ai-wikipedia.github.io/k/vllm.html">vLLM</a>, <a href="https://ai-wikipedia.github.io/k/sparse-attention.html">희소 어텐션</a></div>
   <a class="back" href="https://ai-wikipedia.github.io/#flash-attention">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

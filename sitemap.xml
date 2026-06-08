@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ai-wikipedia.github.io/</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1521,6 +1521,90 @@
   <url>
     <loc>https://ai-wikipedia.github.io/k/model-council.html</loc>
     <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/grok.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/minimax.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/kimi.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/glm.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/nemotron.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/granite.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/reka.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/sparse-attention.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/dynamic-workflows.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/superpowers.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/caveman.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/graphify.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/codeburn.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ai-wikipedia.github.io/k/open-multi-agent.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

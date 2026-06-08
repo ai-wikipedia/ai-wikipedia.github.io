@@ -251,3 +251,17 @@ summarizer	서머라이저	Summarizer	agent
 world-model	월드 모델	World Model	model
 agentic-os	에이전틱 OS	Agentic Operating System	agent
 model-council	모델 카운슬	Multi-Model Council	agent
+grok	Grok	Grok (xAI)	model
+minimax	MiniMax	MiniMax	model
+kimi	Kimi	Kimi (Moonshot AI)	model
+glm	GLM	GLM (Zhipu AI)	model
+nemotron	Nemotron	NVIDIA Nemotron	model
+granite	Granite	IBM Granite	model
+reka	Reka	Reka	model
+sparse-attention	희소 어텐션	Sparse Attention	model
+dynamic-workflows	다이나믹 워크플로우	Dynamic Workflows	tooling
+superpowers	Superpowers	Superpowers	tooling
+caveman	Caveman	Caveman	tooling
+graphify	Graphify	Graphify	tooling
+codeburn	Codeburn	Codeburn	tooling
+open-multi-agent	오픈 멀티 에이전트	Open Multi-Agent	agent
