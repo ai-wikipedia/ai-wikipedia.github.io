@@ -296,3 +296,5 @@ suno	수노	Suno	application
 elevenlabs	일레븐랩스	ElevenLabs	application
 runway	런웨이	Runway (Gen)	application
 kling	클링	Kling (Kuaishou)	application
+mimo-v2-5	미모 v2.5	Xiaomi MiMo v2.5 Pro (UltraSpeed)	model
+apple-intelligence	애플 인텔리전스	Apple Intelligence	application

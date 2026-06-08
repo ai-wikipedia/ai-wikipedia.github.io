@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="앤트로픽 SDK란? (Anthropic SDK) — AI Wiki">
 <meta property="og:description" content="앤트로픽 SDK란? Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/anthropic-sdk.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/anthropic-sdk.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="앤트로픽 SDK란? (Anthropic SDK) — AI Wiki">
 <meta name="twitter:description" content="앤트로픽 SDK란? Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/anthropic-sdk.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/anthropic-sdk.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/anthropic-sdk.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/anthropic-sdk.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "앤트로픽 SDK",
   "alternateName": "Anthropic SDK",
   "description": "Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.",
-  "url": "https://ai-wikipedia.github.io/k/anthropic-sdk.html",
+  "url": "https://aiwiki.kro.kr/k/anthropic-sdk.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://ai-wikipedia.github.io/?cat=tooling"
+      "item": "https://aiwiki.kro.kr/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "앤트로픽 SDK",
-      "item": "https://ai-wikipedia.github.io/k/anthropic-sdk.html"
+      "item": "https://aiwiki.kro.kr/k/anthropic-sdk.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "앤트로픽 SDK (Anthropic SDK)",
   "description": "Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.",
-  "url": "https://ai-wikipedia.github.io/k/anthropic-sdk.html",
+  "url": "https://aiwiki.kro.kr/k/anthropic-sdk.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/anthropic-sdk.html"
+    "@id": "https://aiwiki.kro.kr/k/anthropic-sdk.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Anthropic SDK</div>
   <div class="body"><p>Claude API를 Python과 TypeScript에서 편리하게 쓸 수 있도록 Anthropic이 제공하는 공식 라이브러리.</p><h4>개념 설명</h4><p>Claude API를 raw HTTP로 호출할 수도 있지만, 인증, 재시도, 스트리밍 처리, 타입 안전성 같은 반복 작업을 직접 처리해야 한다. <strong>Anthropic SDK</strong>는 이런 부분을 모두 추상화해서 Claude 호출에 집중할 수 있게 한다. Python과 TypeScript/JavaScript 버전을 공식 제공하며, 메시지 API, 스트리밍, 툴 사용, 배치 처리를 모두 지원한다.</p><h4>사용 예시</h4><p><code>pip install anthropic</code> 후 <code>client = Anthropic()</code>로 클라이언트를 만들고 <code>client.messages.create(model="claude-opus-4-5", messages=[...])</code>로 바로 호출할 수 있다. 스트리밍은 <code>with client.messages.stream(...) as stream</code> 패턴으로, 툴 사용은 <code>tools</code> 파라미터에 정의를 넘기면 된다.</p></div>
   <div class="tags"><span>#Anthropic</span><span>#API</span><span>#Python</span><span>#TypeScript</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/tool-use.html">도구 사용</a>, <a href="https://ai-wikipedia.github.io/k/claude-code.html">클로드 코드</a>, <a href="https://ai-wikipedia.github.io/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://ai-wikipedia.github.io/k/claude-opus-4-8.html">클로드 오퍼스 4.8</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#anthropic-sdk">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.kro.kr/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.kro.kr/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.kro.kr/k/claude-opus-4-8.html">클로드 오퍼스 4.8</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#anthropic-sdk">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

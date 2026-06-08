@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="컨텍스트 캐싱란? (Context Caching) — AI Wiki">
 <meta property="og:description" content="컨텍스트 캐싱란? 긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/context-caching.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/context-caching.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="컨텍스트 캐싱란? (Context Caching) — AI Wiki">
 <meta name="twitter:description" content="컨텍스트 캐싱란? 긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/context-caching.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/context-caching.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/context-caching.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/context-caching.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "컨텍스트 캐싱",
   "alternateName": "Context Caching",
   "description": "긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/context-caching.html",
+  "url": "https://aiwiki.kro.kr/k/context-caching.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://ai-wikipedia.github.io/?cat=tooling"
+      "item": "https://aiwiki.kro.kr/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "컨텍스트 캐싱",
-      "item": "https://ai-wikipedia.github.io/k/context-caching.html"
+      "item": "https://aiwiki.kro.kr/k/context-caching.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "컨텍스트 캐싱 (Context Caching)",
   "description": "긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/context-caching.html",
+  "url": "https://aiwiki.kro.kr/k/context-caching.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/context-caching.html"
+    "@id": "https://aiwiki.kro.kr/k/context-caching.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Context Caching</div>
   <div class="body"><p>긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.</p><h4>개념 설명</h4><p>RAG나 긴 시스템 프롬프트를 쓸 때, 매 API 호출마다 같은 긴 텍스트를 처리하면 비용이 크게 늘어난다. <strong>컨텍스트 캐싱</strong>은 변하지 않는 부분(시스템 프롬프트, 참고 문서 등)을 서버 측에 캐시해두고, 이후 요청에서는 캐시된 내용을 재사용해 입력 토큰 비용을 절감하는 기능이다. Anthropic은 캐시된 토큰을 일반 입력보다 약 90% 저렴하게 제공한다.</p><h4>사용 예시</h4><p>법률 문서 분석 앱에서 1만 토큰짜리 참고 문서를 매 요청마다 넣는다면, Anthropic SDK의 <code>cache_control: {"type": "ephemeral"}</code> 파라미터로 해당 블록을 캐시 대상으로 지정하면 된다. 같은 문서를 참조하는 반복 요청이 많을수록 절감 효과가 크다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#비용절감</span><span>#성능</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://ai-wikipedia.github.io/k/rag.html">RAG</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#context-caching">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#context-caching">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

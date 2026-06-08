@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="모델 증류란? (Model Distillation) — AI Wiki">
 <meta property="og:description" content="모델 증류란? 큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/distillation.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/distillation.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="모델 증류란? (Model Distillation) — AI Wiki">
 <meta name="twitter:description" content="모델 증류란? 큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/distillation.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/distillation.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/distillation.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/distillation.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "모델 증류",
   "alternateName": "Model Distillation",
   "description": "큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/distillation.html",
+  "url": "https://aiwiki.kro.kr/k/distillation.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://ai-wikipedia.github.io/?cat=model"
+      "item": "https://aiwiki.kro.kr/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "모델 증류",
-      "item": "https://ai-wikipedia.github.io/k/distillation.html"
+      "item": "https://aiwiki.kro.kr/k/distillation.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "모델 증류 (Model Distillation)",
   "description": "큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/distillation.html",
+  "url": "https://aiwiki.kro.kr/k/distillation.html",
   "datePublished": "2026-03-30",
   "dateModified": "2025-12-01",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/distillation.html"
+    "@id": "https://aiwiki.kro.kr/k/distillation.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Model Distillation</div>
   <div class="body"><p>큰 모델(Teacher)의 지식을 작은 모델(Student)에게 전달해서, 훨씬 가볍고 저렴하면서도 비슷한 성능을 내는 모델을 만드는 기법.</p><h4>모델 증류란</h4><p>GPT-4급 모델은 성능은 좋지만 느리고 비싸다. 증류는 이 큰 모델이 문제를 푸는 방식 — 확률 분포, 추론 과정 — 을 작은 모델에게 가르치는 기법이다. 학생이 선생의 풀이 과정을 보고 배우는 것과 같다. Geoffrey Hinton이 2015년에 제안했고, LLM 시대에 와서 비용 최적화의 핵심 기법으로 부상했다.</p><h4>사용 예시</h4><p>Claude Opus로 고품질 응답 데이터를 먼저 생성하고, 이걸 학습 데이터로 써서 Haiku급 소형 모델을 파인튜닝하면 특정 도메인에서 Opus에 근접한 성능을 1/100 비용으로 얻을 수 있다. OpenAI는 GPT-4o의 지식을 GPT-4o-mini에 증류하는 공식 API를 제공하고, Amazon Bedrock도 대형 모델에서 소형 모델로 증류하는 기능을 정식 출시했다.</p><p>DeepSeek은 R1 모델의 추론 능력을 1.5B부터 70B까지 다양한 크기의 Student 모델에 증류해서, 수학·논리 벤치마크에서 원본에 근접하는 성능을 달성했다. Chain-of-Thought 같은 복잡한 추론 능력도 증류로 전달 가능하다는 것을 증명한 사례다.</p><h4>파인튜닝과의 차이</h4><p>파인튜닝은 도메인 데이터로 모델을 추가 학습시키는 것이고, 증류는 큰 모델의 행동을 작은 모델에 이식하는 것이다. 실무에서는 둘을 결합해, 큰 모델로 합성 데이터를 생성한 뒤 작은 모델을 파인튜닝하는 방식이 표준이 되고 있다.</p><h4>주의할 점</h4><p>2025년 DeepSeek이 OpenAI 모델의 출력을 증류에 활용했다는 논란이 불거지면서, <strong>증류 공격(Distillation Attack)</strong>이 새로운 보안 이슈로 떠올랐다. 대부분의 AI 회사들은 이용약관에 경쟁 모델 학습 목적의 출력 사용을 금지하고 있지만, 기술적으로 이를 막기는 어렵다.</p></div>
   <div class="tags"><span>#경량화</span><span>#Teacher-Student</span><span>#비용절감</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a>, <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/synthetic-data.html">합성 데이터</a>, <a href="https://ai-wikipedia.github.io/k/open-source-llm.html">오픈소스 LLM</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#distillation">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/synthetic-data.html">합성 데이터</a>, <a href="https://aiwiki.kro.kr/k/open-source-llm.html">오픈소스 LLM</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#distillation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>
 </body>

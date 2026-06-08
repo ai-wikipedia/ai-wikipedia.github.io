@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="출력 포맷팅란? (Output Formatting) — AI Wiki">
 <meta property="og:description" content="출력 포맷팅란? LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/output-formatting.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/output-formatting.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="출력 포맷팅란? (Output Formatting) — AI Wiki">
 <meta name="twitter:description" content="출력 포맷팅란? LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/output-formatting.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/output-formatting.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/output-formatting.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/output-formatting.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "출력 포맷팅",
   "alternateName": "Output Formatting",
   "description": "LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/output-formatting.html",
+  "url": "https://aiwiki.kro.kr/k/output-formatting.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "프롬프팅",
-      "item": "https://ai-wikipedia.github.io/?cat=prompting"
+      "item": "https://aiwiki.kro.kr/?cat=prompting"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "출력 포맷팅",
-      "item": "https://ai-wikipedia.github.io/k/output-formatting.html"
+      "item": "https://aiwiki.kro.kr/k/output-formatting.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "출력 포맷팅 (Output Formatting)",
   "description": "LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/output-formatting.html",
+  "url": "https://aiwiki.kro.kr/k/output-formatting.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/output-formatting.html"
+    "@id": "https://aiwiki.kro.kr/k/output-formatting.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Output Formatting</div>
   <div class="body"><p>LLM의 출력이 JSON, 마크다운, 특정 템플릿처럼 원하는 형식으로 나오도록 유도하는 기법.</p><h4>개념 설명</h4><p>LLM의 자유로운 텍스트 출력을 프로그램에서 사용하려면 파싱이 필요하다. <strong>출력 포맷팅</strong>은 프롬프트에 원하는 출력 형식을 명시하거나, 모델의 structured output 기능을 활용해 항상 파싱 가능한 형식으로 결과를 받는 기법이다. 불안정한 파싱 코드 없이 안정적으로 LLM 출력을 처리할 수 있게 한다.</p><h4>사용 예시</h4><p>상품 정보 추출 작업에서 <code>{"name": "", "price": 0, "category": ""}</code> JSON 스키마를 프롬프트에 포함하거나, Anthropic SDK의 <code>response_format={"type": "json_object"}</code>를 지정하면 항상 유효한 JSON이 반환된다. Pydantic 모델을 정의하고 instructor 라이브러리를 쓰면 타입 안전한 구조화 출력을 받을 수 있다.</p></div>
   <div class="tags"><span>#구조화</span><span>#JSON</span><span>#파싱</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/structured-output.html">구조화된 출력</a>, <a href="https://ai-wikipedia.github.io/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://ai-wikipedia.github.io/k/xml-prompting.html">XML 프롬프팅</a>, <a href="https://ai-wikipedia.github.io/k/tool-use.html">도구 사용</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#output-formatting">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.kro.kr/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/xml-prompting.html">XML 프롬프팅</a>, <a href="https://aiwiki.kro.kr/k/tool-use.html">도구 사용</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#output-formatting">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

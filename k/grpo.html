@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="GRPO란? (Group Relative Policy Optimization) — AI Wiki">
 <meta property="og:description" content="GRPO란? 같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/grpo.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/grpo.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GRPO란? (Group Relative Policy Optimization) — AI Wiki">
 <meta name="twitter:description" content="GRPO란? 같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/grpo.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/grpo.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/grpo.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/grpo.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "GRPO",
   "alternateName": "Group Relative Policy Optimization",
   "description": "같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.",
-  "url": "https://ai-wikipedia.github.io/k/grpo.html",
+  "url": "https://aiwiki.kro.kr/k/grpo.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://ai-wikipedia.github.io/?cat=model"
+      "item": "https://aiwiki.kro.kr/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "GRPO",
-      "item": "https://ai-wikipedia.github.io/k/grpo.html"
+      "item": "https://aiwiki.kro.kr/k/grpo.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "GRPO (Group Relative Policy Optimization)",
   "description": "같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.",
-  "url": "https://ai-wikipedia.github.io/k/grpo.html",
+  "url": "https://aiwiki.kro.kr/k/grpo.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/grpo.html"
+    "@id": "https://aiwiki.kro.kr/k/grpo.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Group Relative Policy Optimization</div>
   <div class="body"><p>같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.</p><h4>개념 설명</h4><p>기존 PPO는 강화학습 과정에서 별도의 가치 함수(critic)를 학습해야 해서 메모리와 계산 비용이 높았다. GRPO는 같은 질문에 여러 응답을 생성하고, 그 그룹 내에서 상대적으로 좋고 나쁨을 비교해 보상을 계산한다. 가치 함수 없이 그룹 내 비교만으로 학습 신호를 만드는 것이다.</p><p>DeepSeek이 DeepSeek-Math(2024)와 DeepSeek-R1에서 GRPO로 추론 능력을 획기적으로 향상시키면서 큰 주목을 받았다. 수학 문제의 정오답처럼 검증 가능한 보상이 있을 때 특히 효과적이다.</p><h4>사용 예시</h4><p>TRL 라이브러리에 <code>GRPOTrainer</code>가 구현되어 있다. 수학 풀이, 코드 생성, 형식 준수 같이 자동으로 정오답을 판별할 수 있는 태스크에 적합하다. 보상 함수를 정답 확인 함수로 정의하고, 같은 문제에 8~16개의 응답을 샘플링해 상대적 점수를 계산한다.</p></div>
   <div class="tags"><span>#강화학습</span><span>#DeepSeek</span><span>#추론모델</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/reinforcement-learning.html">강화학습</a>, <a href="https://ai-wikipedia.github.io/k/rlhf.html">RLHF</a>, <a href="https://ai-wikipedia.github.io/k/reward-model.html">보상 모델</a>, <a href="https://ai-wikipedia.github.io/k/reasoning-model.html">추론 모델</a>, <a href="https://ai-wikipedia.github.io/k/dpo.html">DPO</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#grpo">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/reinforcement-learning.html">강화학습</a>, <a href="https://aiwiki.kro.kr/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.kro.kr/k/reward-model.html">보상 모델</a>, <a href="https://aiwiki.kro.kr/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.kro.kr/k/dpo.html">DPO</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#grpo">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

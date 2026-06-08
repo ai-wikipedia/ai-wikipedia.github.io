@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="토큰 예산란? (Token Budget) — AI Wiki">
 <meta property="og:description" content="토큰 예산란? 추론 모델이 답을 생성하기 전에 얼마나 오래 &quot;생각&quot;할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/token-budget.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/token-budget.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="토큰 예산란? (Token Budget) — AI Wiki">
 <meta name="twitter:description" content="토큰 예산란? 추론 모델이 답을 생성하기 전에 얼마나 오래 &quot;생각&quot;할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/token-budget.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/token-budget.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/token-budget.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/token-budget.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "토큰 예산",
   "alternateName": "Token Budget",
   "description": "추론 모델이 답을 생성하기 전에 얼마나 오래 \"생각\"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.",
-  "url": "https://ai-wikipedia.github.io/k/token-budget.html",
+  "url": "https://aiwiki.kro.kr/k/token-budget.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://ai-wikipedia.github.io/?cat=infra"
+      "item": "https://aiwiki.kro.kr/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "토큰 예산",
-      "item": "https://ai-wikipedia.github.io/k/token-budget.html"
+      "item": "https://aiwiki.kro.kr/k/token-budget.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "토큰 예산 (Token Budget)",
   "description": "추론 모델이 답을 생성하기 전에 얼마나 오래 \"생각\"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.",
-  "url": "https://ai-wikipedia.github.io/k/token-budget.html",
+  "url": "https://aiwiki.kro.kr/k/token-budget.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/token-budget.html"
+    "@id": "https://aiwiki.kro.kr/k/token-budget.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Token Budget</div>
   <div class="body"><p>추론 모델이 답을 생성하기 전에 얼마나 오래 "생각"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.</p><h4>개념 설명</h4><p>Claude의 확장 사고나 OpenAI의 추론 모델(o-series)처럼 내부적으로 사고 과정을 생성하는 모델들은 얼마나 길게 생각할지 조절할 수 있다. 토큰 예산은 이 사고에 사용할 수 있는 최대 토큰 수를 설정하는 파라미터다. 예산이 높을수록 더 깊이 생각해 어려운 문제에서 정확도가 올라가지만, 비용과 지연도 함께 늘어난다.</p><p>간단한 질문에 불필요하게 큰 예산을 쓰는 것은 낭비이므로, 태스크 복잡도에 따라 예산을 동적으로 조절하는 전략이 필요하다.</p><h4>사용 예시</h4><p>Claude API에서 <code>thinking: {type: "enabled", budget_tokens: 10000}</code>으로 사고 예산을 설정한다. 수학 증명이나 복잡한 코드 디버깅에는 예산을 높게, 단순 요약이나 번역에는 낮게 또는 비활성화해 비용을 관리한다. 프로덕션에서는 요청의 복잡도를 분류해 예산을 자동으로 설정하는 라우터를 구성하는 것이 이상적이다.</p></div>
   <div class="tags"><span>#사고예산</span><span>#비용제어</span><span>#추론</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/reasoning-model.html">추론 모델</a>, <a href="https://ai-wikipedia.github.io/k/cost-optimization.html">비용 최적화</a>, <a href="https://ai-wikipedia.github.io/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://ai-wikipedia.github.io/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://ai-wikipedia.github.io/k/caveman.html">케이브맨</a>, <a href="https://ai-wikipedia.github.io/k/codeburn.html">코드번</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#token-budget">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.kro.kr/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.kro.kr/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.kro.kr/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.kro.kr/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.kro.kr/k/codeburn.html">코드번</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#token-budget">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

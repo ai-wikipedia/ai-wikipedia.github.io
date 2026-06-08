@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI API 게이트웨이란? (AI API Gateway) — AI Wiki">
 <meta property="og:description" content="AI API 게이트웨이란? 여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/api-gateway.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/api-gateway.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI API 게이트웨이란? (AI API Gateway) — AI Wiki">
 <meta name="twitter:description" content="AI API 게이트웨이란? 여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/api-gateway.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/api-gateway.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/api-gateway.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/api-gateway.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "AI API 게이트웨이",
   "alternateName": "AI API Gateway",
   "description": "여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.",
-  "url": "https://ai-wikipedia.github.io/k/api-gateway.html",
+  "url": "https://aiwiki.kro.kr/k/api-gateway.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://ai-wikipedia.github.io/?cat=infra"
+      "item": "https://aiwiki.kro.kr/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "AI API 게이트웨이",
-      "item": "https://ai-wikipedia.github.io/k/api-gateway.html"
+      "item": "https://aiwiki.kro.kr/k/api-gateway.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "AI API 게이트웨이 (AI API Gateway)",
   "description": "여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.",
-  "url": "https://ai-wikipedia.github.io/k/api-gateway.html",
+  "url": "https://aiwiki.kro.kr/k/api-gateway.html",
   "datePublished": "2026-03-30",
   "dateModified": "2025-12-01",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/api-gateway.html"
+    "@id": "https://aiwiki.kro.kr/k/api-gateway.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">AI API Gateway</div>
   <div class="body"><p>여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.</p><h4>필요한 이유</h4><p>LLM API는 응답 지연이 길고 비용이 토큰 단위로 누적되며 공급자마다 형식이 다르다. AI 게이트웨이는 모든 LLM 트래픽의 단일 진입점으로 라우팅, 폴백, 캐싱, 감사 로그를 중앙에서 집행한다.</p><h4>실제 활용 사례</h4><p>Kong은 2024년 최초의 전용 AI 게이트웨이를 출시, Portkey 대비 228% 높은 처리량을 기록했다. 폴백 라우팅으로 GPT-4o 실패 시 Claude로 자동 전환해 서비스를 유지한다. 시맨틱 캐싱은 동일한 질문에 이전 응답을 재사용해 비용을 30~60% 절감한다. 멀티모델 기업들은 간단한 작업은 소형 모델, 복잡한 추론은 대형 모델로 자동 분기하는 지능형 라우팅을 구현하고 있다.</p></div>
   <div class="tags"><span>#라우팅</span><span>#비용관리</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a>, <a href="https://ai-wikipedia.github.io/k/eval.html">AI 평가</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#api-gateway">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/eval.html">AI 평가</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#api-gateway">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>
 </body>

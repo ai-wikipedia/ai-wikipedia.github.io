@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="손실 함수란? (Loss Function) — AI Wiki">
 <meta property="og:description" content="손실 함수란? 모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/loss-function.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/loss-function.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="손실 함수란? (Loss Function) — AI Wiki">
 <meta name="twitter:description" content="손실 함수란? 모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/loss-function.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/loss-function.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/loss-function.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/loss-function.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "손실 함수",
   "alternateName": "Loss Function",
   "description": "모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.",
-  "url": "https://ai-wikipedia.github.io/k/loss-function.html",
+  "url": "https://aiwiki.kro.kr/k/loss-function.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://ai-wikipedia.github.io/?cat=model"
+      "item": "https://aiwiki.kro.kr/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "손실 함수",
-      "item": "https://ai-wikipedia.github.io/k/loss-function.html"
+      "item": "https://aiwiki.kro.kr/k/loss-function.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "손실 함수 (Loss Function)",
   "description": "모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.",
-  "url": "https://ai-wikipedia.github.io/k/loss-function.html",
+  "url": "https://aiwiki.kro.kr/k/loss-function.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/loss-function.html"
+    "@id": "https://aiwiki.kro.kr/k/loss-function.html"
   }
 }
 </script>
@@ -120,8 +120,8 @@
   <div class="body"><p>모델의 예측이 실제 정답과 얼마나 다른지를 수치로 표현하는 함수. 이 숫자를 최소화하는 방향으로 가중치를 조정하는 것이 학습의 핵심이다.</p><h4>개념 설명</h4><p>모델이 "고양이" 이미지를 "강아지"라고 잘못 예측했을 때, 이 실수가 얼마나 큰지를 숫자로 나타내야 수정 방향을 알 수 있다. 손실 함수가 이 역할을 한다. 손실이 클수록 예측이 틀렸다는 뜻이고, 학습은 이 손실을 줄이는 방향으로 가중치를 계속 조정하는 과정이다. 분류 문제에는 크로스 엔트로피, 회귀 문제에는 평균제곱오차(MSE)가 자주 쓰인다.</p>
 <h4>사용 예시</h4><p>파인튜닝할 때 어떤 손실 함수를 쓰는지가 모델의 목표를 정의한다. LLM을 파인튜닝할 때는 다음 토큰 예측의 크로스 엔트로피 손실이 기본이다. RLHF에서 보상 모델 학습에는 선호도 비교 손실이 쓰인다. 학습 중 손실 곡선(loss curve)을 모니터링하면 과적합, 학습률 문제, 수렴 여부를 진단할 수 있어서 MLflow나 Weights & Biases로 기록하는 게 표준 관행이다.</p></div>
   <div class="tags"><span>#학습</span><span>#오차측정</span><span>#최적화</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/gradient-descent.html">경사 하강법</a>, <a href="https://ai-wikipedia.github.io/k/backpropagation.html">역전파</a>, <a href="https://ai-wikipedia.github.io/k/overfitting.html">과적합</a>, <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#loss-function">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/gradient-descent.html">경사 하강법</a>, <a href="https://aiwiki.kro.kr/k/backpropagation.html">역전파</a>, <a href="https://aiwiki.kro.kr/k/overfitting.html">과적합</a>, <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#loss-function">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

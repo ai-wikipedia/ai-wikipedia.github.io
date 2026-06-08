@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="스트리밍란? (Token Streaming) — AI Wiki">
 <meta property="og:description" content="스트리밍란? LLM이 응답 전체를 완성하기 전에 생성되는 토큰을 실시간으로 전송하는 방식. 사용자가 첫 토큰이 나오는 시점부터 결과를 볼 수 있어 체감 응답속도가 크게 향상된다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/streaming.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/streaming.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="스트리밍란? (Token Streaming) — AI Wiki">
 <meta name="twitter:description" content="스트리밍란? LLM이 응답 전체를 완성하기 전에 생성되는 토큰을 실시간으로 전송하는 방식. 사용자가 첫 토큰이 나오는 시점부터 결과를 볼 수 있어 체감 응답속도가 크게 향상된다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/streaming.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/streaming.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/streaming.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/streaming.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "스트리밍",
   "alternateName": "Token Streaming",
   "description": "LLM이 응답 전체를 완성하기 전에 생성되는 토큰을 실시간으로 전송하는 방식. 사용자가 첫 토큰이 나오는 시점부터 결과를 볼 수 있어 체감 응답속도가 크게 향상된다.",
-  "url": "https://ai-wikipedia.github.io/k/streaming.html",
+  "url": "https://aiwiki.kro.kr/k/streaming.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://ai-wikipedia.github.io/?cat=infra"
+      "item": "https://aiwiki.kro.kr/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "스트리밍",
-      "item": "https://ai-wikipedia.github.io/k/streaming.html"
+      "item": "https://aiwiki.kro.kr/k/streaming.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "스트리밍 (Token Streaming)",
   "description": "LLM이 응답 전체를 완성하기 전에 생성되는 토큰을 실시간으로 전송하는 방식. 사용자가 첫 토큰이 나오는 시점부터 결과를 볼 수 있어 체감 응답속도가 크게 향상된다.",
-  "url": "https://ai-wikipedia.github.io/k/streaming.html",
+  "url": "https://aiwiki.kro.kr/k/streaming.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/streaming.html"
+    "@id": "https://aiwiki.kro.kr/k/streaming.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Token Streaming</div>
   <div class="body"><p>LLM이 응답 전체를 완성하기 전에 생성되는 토큰을 실시간으로 전송하는 방식. 사용자가 첫 토큰이 나오는 시점부터 결과를 볼 수 있어 체감 응답속도가 크게 향상된다.</p><h4>개념 설명</h4><p>수백 토큰을 생성하는 응답을 모두 만들고 나서야 전송하면 사용자는 수초~수십 초를 빈 화면을 보며 기다려야 한다. 스트리밍은 토큰이 생성되는 즉시 HTTP SSE(Server-Sent Events) 또는 WebSocket으로 클라이언트에 전송한다. ChatGPT의 글자가 타이핑되듯 나오는 효과가 바로 스트리밍이다.</p><p>스트리밍은 실제 생성 속도를 높이지는 않는다. 전체 완료 시간은 같지만, <strong>TTFT(Time to First Token)</strong>를 줄여 사용자 경험을 크게 개선한다.</p><h4>사용 예시</h4><p>Claude API에서 <code>stream=True</code>로 호출하면 비동기 이터레이터로 토큰을 받을 수 있다. Next.js에서 스트리밍 API 라우트를 구현하면 <code>ReadableStream</code>으로 응답을 프론트엔드에 실시간 전달한다. Vercel AI SDK가 스트리밍 UI 구현을 표준화해 챗봇 인터페이스 개발을 단순화한다.</p></div>
   <div class="tags"><span>#SSE</span><span>#스트림</span><span>#UX</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://ai-wikipedia.github.io/k/model-serving.html">모델 서빙</a>, <a href="https://ai-wikipedia.github.io/k/context-window.html">컨텍스트 윈도우</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#streaming">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://aiwiki.kro.kr/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.kro.kr/k/context-window.html">컨텍스트 윈도우</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#streaming">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

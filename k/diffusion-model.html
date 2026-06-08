@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="디퓨전 모델란? (Diffusion Model) — AI Wiki">
 <meta property="og:description" content="디퓨전 모델란? 노이즈를 점진적으로 제거하는 과정을 학습해 이미지·음성·영상을 생성하는 모델. Stable Diffusion, DALL-E 3, Sora 등 현재 생성 AI의 주류 아키텍처다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/diffusion-model.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/diffusion-model.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="디퓨전 모델란? (Diffusion Model) — AI Wiki">
 <meta name="twitter:description" content="디퓨전 모델란? 노이즈를 점진적으로 제거하는 과정을 학습해 이미지·음성·영상을 생성하는 모델. Stable Diffusion, DALL-E 3, Sora 등 현재 생성 AI의 주류 아키텍처다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/diffusion-model.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/diffusion-model.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/diffusion-model.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/diffusion-model.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "디퓨전 모델",
   "alternateName": "Diffusion Model",
   "description": "노이즈를 점진적으로 제거하는 과정을 학습해 이미지·음성·영상을 생성하는 모델. Stable Diffusion, DALL-E 3, Sora 등 현재 생성 AI의 주류 아키텍처다.",
-  "url": "https://ai-wikipedia.github.io/k/diffusion-model.html",
+  "url": "https://aiwiki.kro.kr/k/diffusion-model.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://ai-wikipedia.github.io/?cat=model"
+      "item": "https://aiwiki.kro.kr/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "디퓨전 모델",
-      "item": "https://ai-wikipedia.github.io/k/diffusion-model.html"
+      "item": "https://aiwiki.kro.kr/k/diffusion-model.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "디퓨전 모델 (Diffusion Model)",
   "description": "노이즈를 점진적으로 제거하는 과정을 학습해 이미지·음성·영상을 생성하는 모델. Stable Diffusion, DALL-E 3, Sora 등 현재 생성 AI의 주류 아키텍처다.",
-  "url": "https://ai-wikipedia.github.io/k/diffusion-model.html",
+  "url": "https://aiwiki.kro.kr/k/diffusion-model.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/diffusion-model.html"
+    "@id": "https://aiwiki.kro.kr/k/diffusion-model.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Diffusion Model</div>
   <div class="body"><p>노이즈를 점진적으로 제거하는 과정을 학습해 이미지·음성·영상을 생성하는 모델. Stable Diffusion, DALL-E 3, Sora 등 현재 생성 AI의 주류 아키텍처다.</p><h4>개념 설명</h4><p>사진에 조금씩 노이즈를 추가하면 결국 완전한 잡음이 된다. <strong>디퓨전 모델</strong>은 이 과정을 거꾸로 배운다. 완전한 잡음에서 시작해 조금씩 노이즈를 제거하며 원본을 복원하는 것이다. "고양이 사진"이라는 텍스트 조건을 추가하면 잡음을 고양이 방향으로 제거해 이미지를 생성한다.</p><h4>사용 예시</h4><p>Stable Diffusion을 API나 로컬로 호출할 때 <code>num_inference_steps</code>가 노이즈 제거 단계 수다. 단계가 많을수록 품질이 높지만 느려진다. LoRA 같은 파인튜닝 기법으로 특정 화풍이나 캐릭터를 학습시켜 커스텀 이미지 생성기를 만드는 것도 가능하다.</p></div>
   <div class="tags"><span>#이미지생성</span><span>#DALL-E</span><span>#Stable Diffusion</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/multimodal.html">멀티모달</a>, <a href="https://ai-wikipedia.github.io/k/lora.html">LoRA</a>, <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a>, <a href="https://ai-wikipedia.github.io/k/foundation-model.html">파운데이션 모델</a>, <a href="https://ai-wikipedia.github.io/k/mercury-llm.html">머큐리</a>, <a href="https://ai-wikipedia.github.io/k/sora.html">소라</a>, <a href="https://ai-wikipedia.github.io/k/veo.html">비오</a>, <a href="https://ai-wikipedia.github.io/k/flux.html">FLUX</a>, <a href="https://ai-wikipedia.github.io/k/midjourney.html">미드저니</a>, <a href="https://ai-wikipedia.github.io/k/ideogram.html">아이디오그램</a>, <a href="https://ai-wikipedia.github.io/k/suno.html">수노</a>, <a href="https://ai-wikipedia.github.io/k/runway.html">런웨이</a>, <a href="https://ai-wikipedia.github.io/k/kling.html">클링</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#diffusion-model">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.kro.kr/k/lora.html">LoRA</a>, <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.kro.kr/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.kro.kr/k/mercury-llm.html">머큐리</a>, <a href="https://aiwiki.kro.kr/k/sora.html">소라</a>, <a href="https://aiwiki.kro.kr/k/veo.html">비오</a>, <a href="https://aiwiki.kro.kr/k/flux.html">FLUX</a>, <a href="https://aiwiki.kro.kr/k/midjourney.html">미드저니</a>, <a href="https://aiwiki.kro.kr/k/ideogram.html">아이디오그램</a>, <a href="https://aiwiki.kro.kr/k/suno.html">수노</a>, <a href="https://aiwiki.kro.kr/k/runway.html">런웨이</a>, <a href="https://aiwiki.kro.kr/k/kling.html">클링</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#diffusion-model">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="셀프 컨시스턴시란? (Self-Consistency) — AI Wiki">
 <meta property="og:description" content="셀프 컨시스턴시란? 같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/self-consistency.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/self-consistency.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="셀프 컨시스턴시란? (Self-Consistency) — AI Wiki">
 <meta name="twitter:description" content="셀프 컨시스턴시란? 같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/self-consistency.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/self-consistency.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/self-consistency.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/self-consistency.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "셀프 컨시스턴시",
   "alternateName": "Self-Consistency",
   "description": "같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/self-consistency.html",
+  "url": "https://aiwiki.kro.kr/k/self-consistency.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "프롬프팅",
-      "item": "https://ai-wikipedia.github.io/?cat=prompting"
+      "item": "https://aiwiki.kro.kr/?cat=prompting"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "셀프 컨시스턴시",
-      "item": "https://ai-wikipedia.github.io/k/self-consistency.html"
+      "item": "https://aiwiki.kro.kr/k/self-consistency.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "셀프 컨시스턴시 (Self-Consistency)",
   "description": "같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.",
-  "url": "https://ai-wikipedia.github.io/k/self-consistency.html",
+  "url": "https://aiwiki.kro.kr/k/self-consistency.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/self-consistency.html"
+    "@id": "https://aiwiki.kro.kr/k/self-consistency.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Self-Consistency</div>
   <div class="body"><p>같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.</p><h4>개념 설명</h4><p>사람도 어려운 문제를 여러 방법으로 풀어보고 같은 답이 나오면 확신을 갖는다. <strong>셀프 컨시스턴시</strong>는 같은 프롬프트를 temperature를 높여 여러 번 실행하고, 각각 다른 추론 경로로 도달한 답 중 가장 빈번하게 나온 것을 최종 답으로 채택하는 방식이다. 단일 생성보다 비용이 들지만 수학, 논리 추론 문제에서 정확도가 크게 올라간다.</p><h4>사용 예시</h4><p>중요한 분류 작업이나 수학 계산을 할 때 같은 프롬프트를 5번 실행하고 다수결로 답을 정하면 오답률이 줄어든다. 코드로 구현할 때는 <code>temperature=0.7</code>로 설정하고 N번 호출한 뒤 답을 집계하면 된다. reasoning-model처럼 단일 호출이 이미 다양한 경로를 탐색한다면 셀프 컨시스턴시의 추가 효과는 줄어든다.</p></div>
   <div class="tags"><span>#앙상블</span><span>#정확도향상</span><span>#다수결</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://ai-wikipedia.github.io/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://ai-wikipedia.github.io/k/reasoning-model.html">추론 모델</a>, <a href="https://ai-wikipedia.github.io/k/few-shot.html">퓨샷</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#self-consistency">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.kro.kr/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.kro.kr/k/few-shot.html">퓨샷</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#self-consistency">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="에이전트 평가란? (Agent Evaluation) — AI Wiki">
 <meta property="og:description" content="에이전트 평가란? AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/agent-eval.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/agent-eval.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="에이전트 평가란? (Agent Evaluation) — AI Wiki">
 <meta name="twitter:description" content="에이전트 평가란? AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/agent-eval.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/agent-eval.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/agent-eval.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/agent-eval.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "에이전트 평가",
   "alternateName": "Agent Evaluation",
   "description": "AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.",
-  "url": "https://ai-wikipedia.github.io/k/agent-eval.html",
+  "url": "https://aiwiki.kro.kr/k/agent-eval.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://ai-wikipedia.github.io/?cat=agent"
+      "item": "https://aiwiki.kro.kr/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "에이전트 평가",
-      "item": "https://ai-wikipedia.github.io/k/agent-eval.html"
+      "item": "https://aiwiki.kro.kr/k/agent-eval.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "에이전트 평가 (Agent Evaluation)",
   "description": "AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.",
-  "url": "https://ai-wikipedia.github.io/k/agent-eval.html",
+  "url": "https://aiwiki.kro.kr/k/agent-eval.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/agent-eval.html"
+    "@id": "https://aiwiki.kro.kr/k/agent-eval.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Agent Evaluation</div>
   <div class="body"><p>AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.</p><h4>개념 설명</h4><p>에이전트 평가는 단순히 답변이 맞는지 보는 것보다 훨씬 복잡하다. 에이전트가 올바른 도구를 선택했는지, 불필요한 단계를 거치지 않았는지, 중간에 잘못된 방향으로 흘렀다가 수정했는지, 최종 목표를 실제로 달성했는지를 모두 평가해야 한다. 에이전트가 올바른 결과를 내더라도 비효율적인 경로로 갔다면 개선이 필요하다.</p><h4>사용 예시</h4><p>코드 작성 에이전트를 평가할 때 LangSmith나 Langfuse로 각 실행의 전체 트레이스를 기록하고, 도구 호출 횟수, 총 토큰 사용량, 태스크 성공률, 평균 완료 시간을 지표로 삼는다. 실패 케이스를 모아 <strong>실패 분석</strong>을 하면 에이전트 프롬프트나 도구 설계의 개선점을 찾을 수 있다.</p></div>
   <div class="tags"><span>#평가</span><span>#벤치마크</span><span>#품질</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/eval.html">AI 평가</a>, <a href="https://ai-wikipedia.github.io/k/ai-agent.html">AI 에이전트</a>, <a href="https://ai-wikipedia.github.io/k/tracing.html">트레이싱</a>, <a href="https://ai-wikipedia.github.io/k/langsmith.html">랭스미스</a>, <a href="https://ai-wikipedia.github.io/k/langfuse.html">랭퓨즈</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#agent-eval">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/eval.html">AI 평가</a>, <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/tracing.html">트레이싱</a>, <a href="https://aiwiki.kro.kr/k/langsmith.html">랭스미스</a>, <a href="https://aiwiki.kro.kr/k/langfuse.html">랭퓨즈</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#agent-eval">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

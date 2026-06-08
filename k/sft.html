@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="SFT란? (Supervised Fine-Tuning) — AI Wiki">
 <meta property="og:description" content="SFT란? 입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/sft.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/sft.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SFT란? (Supervised Fine-Tuning) — AI Wiki">
 <meta name="twitter:description" content="SFT란? 입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/sft.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/sft.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/sft.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/sft.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "SFT",
   "alternateName": "Supervised Fine-Tuning",
   "description": "입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.",
-  "url": "https://ai-wikipedia.github.io/k/sft.html",
+  "url": "https://aiwiki.kro.kr/k/sft.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://ai-wikipedia.github.io/?cat=model"
+      "item": "https://aiwiki.kro.kr/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "SFT",
-      "item": "https://ai-wikipedia.github.io/k/sft.html"
+      "item": "https://aiwiki.kro.kr/k/sft.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "SFT (Supervised Fine-Tuning)",
   "description": "입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.",
-  "url": "https://ai-wikipedia.github.io/k/sft.html",
+  "url": "https://aiwiki.kro.kr/k/sft.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/sft.html"
+    "@id": "https://aiwiki.kro.kr/k/sft.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Supervised Fine-Tuning</div>
   <div class="body"><p>입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.</p><h4>개념 설명</h4><p>사전학습 모델은 언어를 알지만 지시를 따르는 법은 모른다. SFT는 "질문 → 좋은 답변" 쌍 수천~수십만 개로 모델을 학습시켜 응답 형식, 언어 스타일, 특정 도메인 지식을 주입한다. 크로스 엔트로피 손실로 학습하는 가장 표준적인 파인튜닝 방식이다.</p><p>인스트럭션 튜닝이 SFT의 대표적 활용이다. RLHF 파이프라인에서는 SFT 모델이 기준점(reference model)이 되어 이후 강화학습 단계를 안정화한다. 고품질 데이터가 수량보다 중요하다는 것이 반복적으로 확인됐다.</p><h4>사용 예시</h4><p><code>trl</code>의 <code>SFTTrainer</code>를 쓰면 HuggingFace 데이터셋 형식의 대화 데이터로 빠르게 SFT를 시작할 수 있다. LoRA와 결합해 작은 리소스로 수행하는 것이 일반적이다. 회사 내부 스타일 가이드, Q&A 형식, 특수 출력 포맷을 모델에 가르치는 데 효과적이다.</p></div>
   <div class="tags"><span>#지도학습</span><span>#파인튜닝</span><span>#데이터</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a>, <a href="https://ai-wikipedia.github.io/k/instruction-tuning.html">인스트럭션 튜닝</a>, <a href="https://ai-wikipedia.github.io/k/lora.html">LoRA</a>, <a href="https://ai-wikipedia.github.io/k/qlora.html">QLoRA</a>, <a href="https://ai-wikipedia.github.io/k/dpo.html">DPO</a>, <a href="https://ai-wikipedia.github.io/k/rlhf.html">RLHF</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#sft">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.kro.kr/k/instruction-tuning.html">인스트럭션 튜닝</a>, <a href="https://aiwiki.kro.kr/k/lora.html">LoRA</a>, <a href="https://aiwiki.kro.kr/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.kro.kr/k/dpo.html">DPO</a>, <a href="https://aiwiki.kro.kr/k/rlhf.html">RLHF</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#sft">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

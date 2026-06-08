@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="LLM 게이트웨이란? (LLM Gateway) — AI Wiki">
 <meta property="og:description" content="LLM 게이트웨이란? 여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/llm-gateway.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/llm-gateway.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LLM 게이트웨이란? (LLM Gateway) — AI Wiki">
 <meta name="twitter:description" content="LLM 게이트웨이란? 여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/llm-gateway.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/llm-gateway.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/llm-gateway.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/llm-gateway.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "LLM 게이트웨이",
   "alternateName": "LLM Gateway",
   "description": "여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.",
-  "url": "https://ai-wikipedia.github.io/k/llm-gateway.html",
+  "url": "https://aiwiki.kro.kr/k/llm-gateway.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://ai-wikipedia.github.io/?cat=tooling"
+      "item": "https://aiwiki.kro.kr/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "LLM 게이트웨이",
-      "item": "https://ai-wikipedia.github.io/k/llm-gateway.html"
+      "item": "https://aiwiki.kro.kr/k/llm-gateway.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "LLM 게이트웨이 (LLM Gateway)",
   "description": "여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.",
-  "url": "https://ai-wikipedia.github.io/k/llm-gateway.html",
+  "url": "https://aiwiki.kro.kr/k/llm-gateway.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/llm-gateway.html"
+    "@id": "https://aiwiki.kro.kr/k/llm-gateway.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">LLM Gateway</div>
   <div class="body"><p>여러 LLM 제공자를 하나의 통합 API로 묶어주는 중간 레이어. 모델을 바꿔도 코드를 수정하지 않아도 된다.</p><h4>개념 설명</h4><p>Claude, GPT-4, Gemini를 상황에 따라 골라 쓰고 싶은데, 각각 API 형식이 다르면 코드를 계속 수정해야 한다. <strong>LLM 게이트웨이</strong>는 모든 모델 호출을 단일 엔드포인트로 받아서 적절한 모델에 중계하는 프록시다. 로드밸런싱, 폴백, 비용 추적, 속도 제한 같은 기능도 함께 제공한다.</p><h4>사용 예시</h4><p>LiteLLM을 게이트웨이로 구성하면 <code>model="claude-opus-4-5"</code>와 <code>model="gpt-4o"</code>를 같은 코드 구조로 호출할 수 있다. Portkey나 Helicone 같은 서비스형 게이트웨이를 쓰면 설정 없이 대시보드에서 비용과 지연 시간을 모니터링할 수 있다.</p></div>
   <div class="tags"><span>#프록시</span><span>#라우팅</span><span>#통합</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://ai-wikipedia.github.io/k/litellm.html">LiteLLM</a>, <a href="https://ai-wikipedia.github.io/k/routing-pattern.html">라우팅 패턴</a>, <a href="https://ai-wikipedia.github.io/k/llm.html">대규모 언어 모델</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#llm-gateway">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.kro.kr/k/litellm.html">LiteLLM</a>, <a href="https://aiwiki.kro.kr/k/routing-pattern.html">라우팅 패턴</a>, <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#llm-gateway">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

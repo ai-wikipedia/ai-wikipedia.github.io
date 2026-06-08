@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="랭그래프란? (LangGraph) — AI Wiki">
 <meta property="og:description" content="랭그래프란? 에이전트 워크플로우를 그래프(노드와 엣지)로 정의하는 프레임워크. 복잡한 조건 분기와 루프가 있는 에이전트를 만들 때 쓴다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/langgraph.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/langgraph.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="랭그래프란? (LangGraph) — AI Wiki">
 <meta name="twitter:description" content="랭그래프란? 에이전트 워크플로우를 그래프(노드와 엣지)로 정의하는 프레임워크. 복잡한 조건 분기와 루프가 있는 에이전트를 만들 때 쓴다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/langgraph.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/langgraph.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/langgraph.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/langgraph.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "랭그래프",
   "alternateName": "LangGraph",
   "description": "에이전트 워크플로우를 그래프(노드와 엣지)로 정의하는 프레임워크. 복잡한 조건 분기와 루프가 있는 에이전트를 만들 때 쓴다.",
-  "url": "https://ai-wikipedia.github.io/k/langgraph.html",
+  "url": "https://aiwiki.kro.kr/k/langgraph.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://ai-wikipedia.github.io/?cat=agent"
+      "item": "https://aiwiki.kro.kr/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "랭그래프",
-      "item": "https://ai-wikipedia.github.io/k/langgraph.html"
+      "item": "https://aiwiki.kro.kr/k/langgraph.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "랭그래프 (LangGraph)",
   "description": "에이전트 워크플로우를 그래프(노드와 엣지)로 정의하는 프레임워크. 복잡한 조건 분기와 루프가 있는 에이전트를 만들 때 쓴다.",
-  "url": "https://ai-wikipedia.github.io/k/langgraph.html",
+  "url": "https://aiwiki.kro.kr/k/langgraph.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/langgraph.html"
+    "@id": "https://aiwiki.kro.kr/k/langgraph.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">LangGraph</div>
   <div class="body"><p>에이전트 워크플로우를 그래프(노드와 엣지)로 정의하는 프레임워크. 복잡한 조건 분기와 루프가 있는 에이전트를 만들 때 쓴다.</p><h4>개념 설명</h4><p>에이전트의 실행 흐름이 복잡해지면 코드로 관리하기 어렵다. <strong>LangGraph</strong>는 LangChain 팀이 만든 프레임워크로, 에이전트의 상태(state)와 각 단계를 그래프의 노드로, 실행 순서와 조건 분기를 엣지로 표현한다. 이 덕분에 "검색 결과가 부족하면 다시 검색, 충분하면 답변 생성"처럼 복잡한 로직도 시각적으로 설계할 수 있다.</p><h4>사용 예시</h4><p>법률 문서 분석 에이전트를 LangGraph로 만들면, 문서 파싱 노드 → 핵심 조항 추출 노드 → 위험 조항 감지 노드 → (위험 감지 시) 상세 분석 노드 → 요약 노드 흐름을 그래프로 정의한다. <code>StateGraph</code>로 상태를 관리하고 <code>add_conditional_edges</code>로 분기를 추가하면 된다.</p></div>
   <div class="tags"><span>#LangChain</span><span>#그래프</span><span>#워크플로우</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/langchain.html">랭체인</a>, <a href="https://ai-wikipedia.github.io/k/ai-agent.html">AI 에이전트</a>, <a href="https://ai-wikipedia.github.io/k/multi-agent.html">멀티 에이전트</a>, <a href="https://ai-wikipedia.github.io/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://ai-wikipedia.github.io/k/open-multi-agent.html">오픈 멀티 에이전트</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#langgraph">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/langchain.html">랭체인</a>, <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.kro.kr/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.kro.kr/k/open-multi-agent.html">오픈 멀티 에이전트</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#langgraph">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

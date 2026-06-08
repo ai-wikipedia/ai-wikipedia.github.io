@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="크리틱 패턴란? (Critic Pattern) — AI Wiki">
 <meta property="og:description" content="크리틱 패턴란? LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/critic-pattern.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/critic-pattern.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="크리틱 패턴란? (Critic Pattern) — AI Wiki">
 <meta name="twitter:description" content="크리틱 패턴란? LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/critic-pattern.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/critic-pattern.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/critic-pattern.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/critic-pattern.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "크리틱 패턴",
   "alternateName": "Critic Pattern",
   "description": "LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.",
-  "url": "https://ai-wikipedia.github.io/k/critic-pattern.html",
+  "url": "https://aiwiki.kro.kr/k/critic-pattern.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://ai-wikipedia.github.io/?cat=agent"
+      "item": "https://aiwiki.kro.kr/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "크리틱 패턴",
-      "item": "https://ai-wikipedia.github.io/k/critic-pattern.html"
+      "item": "https://aiwiki.kro.kr/k/critic-pattern.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "크리틱 패턴 (Critic Pattern)",
   "description": "LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.",
-  "url": "https://ai-wikipedia.github.io/k/critic-pattern.html",
+  "url": "https://aiwiki.kro.kr/k/critic-pattern.html",
   "datePublished": "2026-04-12",
   "dateModified": "2026-04-12",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/critic-pattern.html"
+    "@id": "https://aiwiki.kro.kr/k/critic-pattern.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Critic Pattern</div>
   <div class="body"><p>LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.</p><h4>크리틱이란</h4><p>AI 에이전트 시스템에서 <strong>크리틱(Critic)</strong>은 다른 모델이 만든 출력물을 읽고, '이게 맞는 답인가? 도움이 되는가? 사실에 근거한가?'를 판단하는 역할을 맡은 LLM이다. 사람이 매번 검토하는 대신 LLM 자체를 심사위원으로 쓰는 방식이라서 <strong>LLM-as-a-Judge</strong>라고도 부른다. AI 출력량이 폭발적으로 늘어나면서, 사람이 일일이 평가하는 건 현실적으로 불가능해졌고 — 크리틱은 그 간극을 메우기 위해 등장했다.</p><h4>어떻게 동작하는가</h4><p>크리틱에게는 평가 기준을 명시적으로 제공한다. 예를 들어 '정확성', '도움 정도', '톤'처럼 측정할 차원을 정의하고, 출력물을 그 기준에 따라 점수로 환산하게 한다. 두 개의 응답을 나란히 놓고 어느 쪽이 더 나은지 고르게 하는 <strong>쌍 비교(pairwise comparison)</strong> 방식이 단일 점수 방식보다 사람의 판단과 더 잘 일치한다는 연구 결과도 있다. 강한 LLM 심사위원은 사람 평가자와 약 80% 수준의 일치율을 보인다.</p><p>더 정교한 방법으로는 여러 LLM을 심사위원단으로 구성해 토론하게 하는 <strong>위원회(committee) 방식</strong>도 있다. 단일 모델보다 편향이 줄고 일관성이 높아지지만, 비용과 지연이 늘어난다.</p><h4>개발자가 실제로 쓰는 방식</h4><p>RAG 파이프라인을 만들 때 검색된 문서가 실제로 답변에 활용됐는지 확인하고 싶다면, 크리틱 LLM에게 '이 답변이 제공된 컨텍스트에 충실한가?'를 판단하게 한다. 에이전트가 생성한 코드가 요구사항을 만족하는지 자동으로 체크하는 용도로도 쓸 수 있다. Langfuse나 Braintrust 같은 평가 툴은 이 크리틱 실행을 파이프라인에 삽입해서 매 요청마다 자동 채점이 돌도록 지원한다.</p><p>다만 평가 기준이 모호하면 크리틱도 흔들린다. '좋은 답변'이 무엇인지 팀 내에서 합의되지 않으면 사람 레이블러도 불일치하고, 그 데이터를 학습한 크리틱도 방향을 잃는다. 도메인 전문가가 직접 기준과 예시를 만들고, 크리틱이 틀렸을 때 사람이 교정해주는 <strong>human-in-the-loop 루프</strong>를 함께 운용하는 게 현실적인 접근이다.</p><h4>리플렉션 패턴과의 관계</h4><p>크리틱은 <strong>리플렉션 패턴</strong>의 핵심 구성 요소이기도 하다. 생성 에이전트가 초안을 만들면, 크리틱이 문제점을 짚고, 생성 에이전트가 다시 고치는 사이클이 반복된다. 이 구조를 멀티에이전트 시스템으로 확장하면 여러 크리틱이 병렬로 서로 다른 기준을 담당하면서 더 체계적인 품질 관리가 가능해진다.</p></div>
   <div class="tags"><span>#평가</span><span>#LLM-as-a-Judge</span><span>#에이전트 평가</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/reflection-pattern.html">리플렉션 패턴</a>, <a href="https://ai-wikipedia.github.io/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://ai-wikipedia.github.io/k/summarizer.html">서머라이저</a>, <a href="https://ai-wikipedia.github.io/k/subagent.html">서브에이전트</a>, <a href="https://ai-wikipedia.github.io/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://ai-wikipedia.github.io/k/eval.html">AI 평가</a>, <a href="https://ai-wikipedia.github.io/k/agent-eval.html">에이전트 평가</a>, <a href="https://ai-wikipedia.github.io/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://ai-wikipedia.github.io/k/model-council.html">모델 카운슬</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#critic-pattern">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/reflection-pattern.html">리플렉션 패턴</a>, <a href="https://aiwiki.kro.kr/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.kro.kr/k/summarizer.html">서머라이저</a>, <a href="https://aiwiki.kro.kr/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.kro.kr/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.kro.kr/k/eval.html">AI 평가</a>, <a href="https://aiwiki.kro.kr/k/agent-eval.html">에이전트 평가</a>, <a href="https://aiwiki.kro.kr/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://aiwiki.kro.kr/k/model-council.html">모델 카운슬</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#critic-pattern">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-12</div>
 </div>
 </body>

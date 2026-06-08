@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="레이턴시 최적화란? (Latency Optimization) — AI Wiki">
 <meta property="og:description" content="레이턴시 최적화란? LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/latency-optimization.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/latency-optimization.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="레이턴시 최적화란? (Latency Optimization) — AI Wiki">
 <meta name="twitter:description" content="레이턴시 최적화란? LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/latency-optimization.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/latency-optimization.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/latency-optimization.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/latency-optimization.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "레이턴시 최적화",
   "alternateName": "Latency Optimization",
   "description": "LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.",
-  "url": "https://ai-wikipedia.github.io/k/latency-optimization.html",
+  "url": "https://aiwiki.kro.kr/k/latency-optimization.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://ai-wikipedia.github.io/?cat=infra"
+      "item": "https://aiwiki.kro.kr/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "레이턴시 최적화",
-      "item": "https://ai-wikipedia.github.io/k/latency-optimization.html"
+      "item": "https://aiwiki.kro.kr/k/latency-optimization.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "레이턴시 최적화 (Latency Optimization)",
   "description": "LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.",
-  "url": "https://ai-wikipedia.github.io/k/latency-optimization.html",
+  "url": "https://aiwiki.kro.kr/k/latency-optimization.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/latency-optimization.html"
+    "@id": "https://aiwiki.kro.kr/k/latency-optimization.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Latency Optimization</div>
   <div class="body"><p>LLM 응답의 첫 토큰까지 걸리는 시간(TTFT)과 전체 생성 시간을 줄이는 기술 모음. 캐싱, 추측적 디코딩, 모델 최적화, 배포 지역 최적화 등이 포함된다.</p><h4>개념 설명</h4><p>레이턴시는 크게 두 지표로 나뉜다. <strong>TTFT(Time to First Token)</strong>는 요청 후 첫 토큰이 오기까지의 시간이고, <strong>TPOT(Time Per Output Token)</strong>는 이후 각 토큰 생성 간격이다. 사용자 체감에는 TTFT가 가장 중요하다. TTFT를 줄이려면 프롬프트 처리 속도를 높여야 하고(Flash Attention, KV Cache), TPOT는 토큰 생성 속도를 높이는 데 집중한다.</p><p>추측적 디코딩은 TPOT를 줄이고, 프롬프트 캐싱은 TTFT를 줄인다. 사용자에게 가까운 지역에 서빙 인프라를 배치하는 지역 최적화도 중요하다.</p><h4>사용 예시</h4><p>Claude API의 프롬프트 캐싱을 활성화해 반복되는 시스템 프롬프트의 TTFT를 줄이고, vLLM의 추측적 디코딩으로 생성 속도를 높이며, 사용자가 많은 지역의 데이터센터 엔드포인트를 우선 호출하는 세 가지를 조합하면 레이턴시를 크게 줄일 수 있다.</p></div>
   <div class="tags"><span>#TTFT</span><span>#지연시간</span><span>#응답속도</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/streaming.html">스트리밍</a>, <a href="https://ai-wikipedia.github.io/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://ai-wikipedia.github.io/k/speculative-decoding.html">추측적 디코딩</a>, <a href="https://ai-wikipedia.github.io/k/kv-cache.html">KV 캐시</a>, <a href="https://ai-wikipedia.github.io/k/model-serving.html">모델 서빙</a>, <a href="https://ai-wikipedia.github.io/k/mercury-llm.html">머큐리</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#latency-optimization">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/streaming.html">스트리밍</a>, <a href="https://aiwiki.kro.kr/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.kro.kr/k/speculative-decoding.html">추측적 디코딩</a>, <a href="https://aiwiki.kro.kr/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.kro.kr/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.kro.kr/k/mercury-llm.html">머큐리</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#latency-optimization">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

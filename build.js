@@ -11,7 +11,7 @@ const dataContent = fs.readFileSync(path.join(__dirname, 'data.js'), 'utf-8')
 eval(dataContent);
 
 const CATS = {prompting:'프롬프팅',model:'모델',tooling:'도구',data:'데이터',agent:'에이전트',infra:'인프라',safety:'안전',application:'응용'};
-const BASE = 'https://ai-wikipedia.github.io';
+const BASE = 'https://aiwiki.kro.kr';
 const OUT = path.join(__dirname, 'k');
 
 if (!fs.existsSync(OUT)) fs.mkdirSync(OUT);

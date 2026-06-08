@@ -1,3 +1,7 @@
+## 2026-06-09 08:57
+- 추가: mimo-v2-5, apple-intelligence
+- HOT: (없음)
+
 ## 2026-06-08 08:35
 - 추가: agentic-os, model-council
 - HOT: (없음)

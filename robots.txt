@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ai-wikipedia.github.io/sitemap.xml
+Sitemap: https://aiwiki.kro.kr/sitemap.xml

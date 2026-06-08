@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="12-팩터 에이전트란? (Twelve-Factor Agents) — AI Wiki">
 <meta property="og:description" content="12-팩터 에이전트란? 프로덕션에서 실제로 동작하는 LLM 에이전트를 만들기 위한 12가지 설계 원칙. Heroku의 Twelve-Factor App에서 영감을 받아, 에이전트도 결국 잘 만든 소프트웨어여야 한다는 관점에서 출발한다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/12-factor-agents.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/12-factor-agents.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="12-팩터 에이전트란? (Twelve-Factor Agents) — AI Wiki">
 <meta name="twitter:description" content="12-팩터 에이전트란? 프로덕션에서 실제로 동작하는 LLM 에이전트를 만들기 위한 12가지 설계 원칙. Heroku의 Twelve-Factor App에서 영감을 받아, 에이전트도 결국 잘 만든 소프트웨어여야 한다는 관점에서 출발한다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/12-factor-agents.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/12-factor-agents.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/12-factor-agents.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/12-factor-agents.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "12-팩터 에이전트",
   "alternateName": "Twelve-Factor Agents",
   "description": "프로덕션에서 실제로 동작하는 LLM 에이전트를 만들기 위한 12가지 설계 원칙. Heroku의 Twelve-Factor App에서 영감을 받아, 에이전트도 결국 잘 만든 소프트웨어여야 한다는 관점에서 출발한다.",
-  "url": "https://ai-wikipedia.github.io/k/12-factor-agents.html",
+  "url": "https://aiwiki.kro.kr/k/12-factor-agents.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://ai-wikipedia.github.io/?cat=agent"
+      "item": "https://aiwiki.kro.kr/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "12-팩터 에이전트",
-      "item": "https://ai-wikipedia.github.io/k/12-factor-agents.html"
+      "item": "https://aiwiki.kro.kr/k/12-factor-agents.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "12-팩터 에이전트 (Twelve-Factor Agents)",
   "description": "프로덕션에서 실제로 동작하는 LLM 에이전트를 만들기 위한 12가지 설계 원칙. Heroku의 Twelve-Factor App에서 영감을 받아, 에이전트도 결국 잘 만든 소프트웨어여야 한다는 관점에서 출발한다.",
-  "url": "https://ai-wikipedia.github.io/k/12-factor-agents.html",
+  "url": "https://aiwiki.kro.kr/k/12-factor-agents.html",
   "datePublished": "2026-03-30",
   "dateModified": "2026-04-05",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/12-factor-agents.html"
+    "@id": "https://aiwiki.kro.kr/k/12-factor-agents.html"
   }
 }
 </script>
@@ -123,8 +123,8 @@
 <h4>사용 예시</h4><p>Claude Code에서 에이전트를 구축할 때 이 원칙들은 자연스럽게 적용된다. <code>CLAUDE.md</code>에 프롬프트를 직접 작성하는 것이 "프롬프트를 직접 소유하라"는 원칙이고, 훅으로 파일 수정 후 린트를 강제하는 것이 "제어 흐름을 직접 소유하라"는 원칙이다. 서브에이전트를 작은 단위로 나눠서 각각 하나의 역할만 맡기는 것이 "작고 집중된 에이전트" 원칙이다.</p>
 <h4>주의할 점</h4><p>12-Factor Agents는 프레임워크나 SDK가 아니라 언어 무관한 설계 원칙이다. 이미 LangChain이나 CrewAI를 쓰고 있다면 프레임워크를 버리라는 뜻이 아니라, 프레임워크 위에서도 이 원칙들을 의식하며 설계하라는 의미다.</p></div>
   <div class="tags"><span>#설계원칙</span><span>#프로덕션</span><span>#HumanLayer</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/ai-agent.html">AI 에이전트</a>, <a href="https://ai-wikipedia.github.io/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://ai-wikipedia.github.io/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://ai-wikipedia.github.io/k/context-engineering.html">컨텍스트 엔지니어링</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#12-factor-agents">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.kro.kr/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/context-engineering.html">컨텍스트 엔지니어링</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#12-factor-agents">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-05</div>
 </div>
 </body>

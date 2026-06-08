@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="옵저버빌리티란? (LLM Observability) — AI Wiki">
 <meta property="og:description" content="옵저버빌리티란? LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/observability.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/observability.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="옵저버빌리티란? (LLM Observability) — AI Wiki">
 <meta name="twitter:description" content="옵저버빌리티란? LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/observability.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/observability.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/observability.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/observability.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "옵저버빌리티",
   "alternateName": "LLM Observability",
   "description": "LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.",
-  "url": "https://ai-wikipedia.github.io/k/observability.html",
+  "url": "https://aiwiki.kro.kr/k/observability.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://ai-wikipedia.github.io/?cat=infra"
+      "item": "https://aiwiki.kro.kr/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "옵저버빌리티",
-      "item": "https://ai-wikipedia.github.io/k/observability.html"
+      "item": "https://aiwiki.kro.kr/k/observability.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "옵저버빌리티 (LLM Observability)",
   "description": "LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.",
-  "url": "https://ai-wikipedia.github.io/k/observability.html",
+  "url": "https://aiwiki.kro.kr/k/observability.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/observability.html"
+    "@id": "https://aiwiki.kro.kr/k/observability.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">LLM Observability</div>
   <div class="body"><p>LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.</p><h4>개념 설명</h4><p>LLM 앱은 블랙박스다. 같은 입력에도 결과가 다르고, 복잡한 에이전트 체인에서 무엇이 잘못됐는지 알기 어렵다. LLM 옵저버빌리티는 모든 LLM 호출의 입출력, 지연, 비용, 에러를 로깅하고, 멀티스텝 에이전트 실행을 트리 구조로 시각화한다. 특정 응답이 왜 나왔는지 역추적할 수 있다.</p><p>OpenTelemetry를 LLM 트레이싱에 표준으로 확장한 <strong>OpenInference</strong>나 <strong>OTLP</strong> 기반 도구들이 나오고 있다. LangSmith, Langfuse, Arize Phoenix가 대표 도구다.</p><h4>사용 예시</h4><p>Langfuse를 LangChain 앱에 콜백으로 추가하면 에이전트의 전체 실행 과정이 트레이스로 기록된다. "이 사용자의 대화에서 어떤 프롬프트가 사용됐고, 각 LLM 호출이 몇 ms 걸렸으며, 토큰 비용은 얼마인가"를 한눈에 볼 수 있다.</p></div>
   <div class="tags"><span>#모니터링</span><span>#트레이싱</span><span>#로깅</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/llmops.html">LLMOps</a>, <a href="https://ai-wikipedia.github.io/k/mlops.html">MLOps</a>, <a href="https://ai-wikipedia.github.io/k/eval.html">AI 평가</a>, <a href="https://ai-wikipedia.github.io/k/cost-optimization.html">비용 최적화</a>, <a href="https://ai-wikipedia.github.io/k/codeburn.html">코드번</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#observability">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.kro.kr/k/mlops.html">MLOps</a>, <a href="https://aiwiki.kro.kr/k/eval.html">AI 평가</a>, <a href="https://aiwiki.kro.kr/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.kro.kr/k/codeburn.html">코드번</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#observability">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

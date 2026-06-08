@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="리랭킹란? (Reranking) — AI Wiki">
 <meta property="og:description" content="리랭킹란? 초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/reranking.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/reranking.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="리랭킹란? (Reranking) — AI Wiki">
 <meta name="twitter:description" content="리랭킹란? 초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/reranking.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/reranking.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/reranking.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/reranking.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "리랭킹",
   "alternateName": "Reranking",
   "description": "초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.",
-  "url": "https://ai-wikipedia.github.io/k/reranking.html",
+  "url": "https://aiwiki.kro.kr/k/reranking.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "데이터",
-      "item": "https://ai-wikipedia.github.io/?cat=data"
+      "item": "https://aiwiki.kro.kr/?cat=data"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "리랭킹",
-      "item": "https://ai-wikipedia.github.io/k/reranking.html"
+      "item": "https://aiwiki.kro.kr/k/reranking.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "리랭킹 (Reranking)",
   "description": "초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.",
-  "url": "https://ai-wikipedia.github.io/k/reranking.html",
+  "url": "https://aiwiki.kro.kr/k/reranking.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/reranking.html"
+    "@id": "https://aiwiki.kro.kr/k/reranking.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Reranking</div>
   <div class="body"><p>초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.</p><h4>개념 설명</h4><p>벡터 검색으로 100개 후보 문서를 빠르게 가져오는 건 쉽다. 하지만 이 중 어떤 10개를 LLM에 넘길지 선별이 중요하다. 리랭킹은 쿼리와 각 문서를 쌍으로 묶어 Cross-Encoder 모델로 더 정밀하게 관련성을 평가한다. 처음부터 100개를 정밀 모델로 평가하는 것보다 빠르면서, 초기 검색보다 훨씬 정확하다. 2단계 검색 파이프라인의 핵심이다.</p><p>Cohere Rerank, BGE-Reranker, Jina Reranker가 대표적인 리랭킹 모델이다. LLM을 직접 리랭커로 쓰는 <strong>LLM-based Reranking</strong>도 정확도가 높지만 비용이 크다.</p><h4>사용 예시</h4><p>LangChain에서 <code>CohereRerank</code>를 <code>ContextualCompressionRetriever</code>에 추가하면 검색-리랭킹 파이프라인이 완성된다. 벡터 검색으로 top-50을 가져오고 리랭킹으로 top-5를 선별하면, 순수 벡터 검색 top-5보다 훨씬 관련성 높은 컨텍스트를 LLM에 전달할 수 있다.</p></div>
   <div class="tags"><span>#검색품질</span><span>#Cross-Encoder</span><span>#RAG</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/rag.html">RAG</a>, <a href="https://ai-wikipedia.github.io/k/hybrid-search.html">하이브리드 검색</a>, <a href="https://ai-wikipedia.github.io/k/embedding.html">임베딩</a>, <a href="https://ai-wikipedia.github.io/k/vector-db.html">벡터 DB</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#reranking">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/hybrid-search.html">하이브리드 검색</a>, <a href="https://aiwiki.kro.kr/k/embedding.html">임베딩</a>, <a href="https://aiwiki.kro.kr/k/vector-db.html">벡터 DB</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#reranking">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

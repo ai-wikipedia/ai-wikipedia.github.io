@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="그래프 RAG란? (Graph RAG) — AI Wiki">
 <meta property="og:description" content="그래프 RAG란? 지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.">
-<meta property="og:url" content="https://ai-wikipedia.github.io/k/graph-rag.html">
-<meta property="og:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.kro.kr/k/graph-rag.html">
+<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="그래프 RAG란? (Graph RAG) — AI Wiki">
 <meta name="twitter:description" content="그래프 RAG란? 지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.">
-<meta name="twitter:image" content="https://ai-wikipedia.github.io/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://ai-wikipedia.github.io/k/graph-rag.html">
-<link rel="alternate" hreflang="ko" href="https://ai-wikipedia.github.io/k/graph-rag.html">
+<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.kro.kr/k/graph-rag.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/graph-rag.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "그래프 RAG",
   "alternateName": "Graph RAG",
   "description": "지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.",
-  "url": "https://ai-wikipedia.github.io/k/graph-rag.html",
+  "url": "https://aiwiki.kro.kr/k/graph-rag.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://ai-wikipedia.github.io/"
+      "item": "https://aiwiki.kro.kr/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "데이터",
-      "item": "https://ai-wikipedia.github.io/?cat=data"
+      "item": "https://aiwiki.kro.kr/?cat=data"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "그래프 RAG",
-      "item": "https://ai-wikipedia.github.io/k/graph-rag.html"
+      "item": "https://aiwiki.kro.kr/k/graph-rag.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "그래프 RAG (Graph RAG)",
   "description": "지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.",
-  "url": "https://ai-wikipedia.github.io/k/graph-rag.html",
+  "url": "https://aiwiki.kro.kr/k/graph-rag.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://ai-wikipedia.github.io/"
+    "url": "https://aiwiki.kro.kr/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai-wikipedia.github.io/k/graph-rag.html"
+    "@id": "https://aiwiki.kro.kr/k/graph-rag.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Graph RAG</div>
   <div class="body"><p>지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.</p><h4>개념 설명</h4><p>표준 RAG는 쿼리와 유사한 텍스트 청크를 찾는다. "A와 B의 공통점은?"처럼 여러 엔티티에 걸친 질문이나 전체 문서에 분산된 정보를 종합해야 하는 질문에는 약하다. Graph RAG는 문서에서 엔티티와 관계를 추출해 지식 그래프를 만들고, 커뮤니티 감지로 관련 노드들을 그룹화한다. 질문에 답할 때 그래프를 탐색해 연결된 정보들을 수집한다.</p><p>Microsoft의 GraphRAG(2024)는 Local 검색(특정 엔티티 주변)과 Global 검색(전체 그래프 요약)을 제공해 기존 RAG가 못하는 글로벌 질의("이 보고서의 주요 테마는?")에도 답한다.</p><h4>사용 예시</h4><p><code>graphrag</code> 패키지로 문서 컬렉션에 Graph RAG를 구성할 수 있다. 학술 논문 데이터베이스, 기업 문서, 의료 기록처럼 엔티티 간 관계가 중요한 도메인에서 표준 RAG 대비 답변 품질이 크게 향상된다.</p></div>
   <div class="tags"><span>#지식그래프</span><span>#RAG</span><span>#관계추론</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/rag.html">RAG</a>, <a href="https://ai-wikipedia.github.io/k/knowledge-graph.html">지식 그래프</a>, <a href="https://ai-wikipedia.github.io/k/embedding.html">임베딩</a>, <a href="https://ai-wikipedia.github.io/k/vector-db.html">벡터 DB</a>, <a href="https://ai-wikipedia.github.io/k/chunking.html">청킹</a>, <a href="https://ai-wikipedia.github.io/k/ontology.html">온톨로지</a>, <a href="https://ai-wikipedia.github.io/k/graphify.html">그래파이</a></div>
-  <a class="back" href="https://ai-wikipedia.github.io/#graph-rag">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/knowledge-graph.html">지식 그래프</a>, <a href="https://aiwiki.kro.kr/k/embedding.html">임베딩</a>, <a href="https://aiwiki.kro.kr/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.kro.kr/k/chunking.html">청킹</a>, <a href="https://aiwiki.kro.kr/k/ontology.html">온톨로지</a>, <a href="https://aiwiki.kro.kr/k/graphify.html">그래파이</a></div>
+  <a class="back" href="https://aiwiki.kro.kr/#graph-rag">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>
