@@ -119,7 +119,7 @@
   <div class="en">Low-Rank Adaptation</div>
   <div class="body"><p>모델 전체를 재학습하는 대신 적은 수의 파라미터만 학습해 특정 작업에 맞게 조정하는 파인튜닝 기법. 소비자급 GPU에서도 대형 모델을 파인튜닝할 수 있게 해줬다.</p><h4>개념 설명</h4><p>70억 파라미터 모델의 가중치를 모두 업데이트하려면 엄청난 GPU 메모리가 필요하다. <strong>LoRA</strong>는 각 가중치 행렬에 크기가 훨씬 작은 두 개의 행렬(A, B)을 붙여서 그 두 행렬만 학습한다. 전체 파라미터의 0.1~1%만 학습해도 전체 파인튜닝에 버금가는 성능이 나온다.</p><h4>사용 예시</h4><p>소비자급 GPU(RTX 4090)에서 Llama-3 70B를 LoRA로 파인튜닝하거나, Stable Diffusion에 특정 화풍을 학습시킬 때 쓴다. 학습된 LoRA 어댑터는 수십 MB에 불과해서 공유하고 교체하기도 쉽다. Hugging Face의 PEFT 라이브러리가 표준 구현이다.</p></div>
   <div class="tags"><span>#파인튜닝</span><span>#경량화</span><span>#어댑터</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a>, <a href="https://ai-wikipedia.github.io/k/qlora.html">QLoRA</a>, <a href="https://ai-wikipedia.github.io/k/sft.html">SFT</a>, <a href="https://ai-wikipedia.github.io/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://ai-wikipedia.github.io/k/quantization.html">양자화</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://ai-wikipedia.github.io/k/fine-tuning.html">파인튜닝</a>, <a href="https://ai-wikipedia.github.io/k/qlora.html">QLoRA</a>, <a href="https://ai-wikipedia.github.io/k/sft.html">SFT</a>, <a href="https://ai-wikipedia.github.io/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://ai-wikipedia.github.io/k/quantization.html">양자화</a>, <a href="https://ai-wikipedia.github.io/k/flux.html">FLUX</a></div>
   <a class="back" href="https://ai-wikipedia.github.io/#lora">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

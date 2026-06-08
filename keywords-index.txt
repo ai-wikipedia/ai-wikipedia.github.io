@@ -265,3 +265,34 @@ caveman	Caveman	Caveman	tooling
 graphify	Graphify	Graphify	tooling
 codeburn	Codeburn	Codeburn	tooling
 open-multi-agent	오픈 멀티 에이전트	Open Multi-Agent	agent
+claude-opus-4-8	Claude Opus 4.8	Claude Opus 4.8 (Anthropic)	model
+claude-sonnet-4-6	Claude Sonnet 4.6	Claude Sonnet 4.6 (Anthropic)	model
+claude-haiku-4-5	Claude Haiku 4.5	Claude Haiku 4.5 (Anthropic)	model
+gpt-5-5	GPT-5.5	GPT-5.5 (OpenAI)	model
+gemini-3-pro	Gemini 3 Pro	Gemini 3 Pro (Google)	model
+gemini-3-5-flash	Gemini 3.5 Flash	Gemini 3.5 Flash (Google)	model
+gemma-4	Gemma 4	Gemma 4 (Google)	model
+llama-4	Llama 4	Llama 4 (Meta)	model
+deepseek-v4	DeepSeek V4	DeepSeek V4	model
+qwen3-max	Qwen3 Max	Qwen3 Max (Alibaba)	model
+mistral-medium-3-5	Mistral Medium 3.5	Mistral Medium 3.5	model
+step-3-7	Step 3.7	Step 3.7 Flash (StepFun)	model
+seed-2	Seed 2.0	ByteDance Seed 2.0	model
+mimo	MiMo	Xiaomi MiMo	model
+olmo-3	OLMo 3	OLMo 3 (AllenAI)	model
+phi-4	Phi-4	Phi-4 (Microsoft)	model
+nova-2	Amazon Nova 2	Amazon Nova 2	model
+command-a	Command A	Command A (Cohere)	model
+mercury-llm	Mercury	Mercury (Inception Labs, Diffusion LLM)	model
+perplexity-sonar	Perplexity Sonar	Perplexity Sonar	model
+sora	Sora	Sora (OpenAI)	application
+veo	Veo	Veo (Google)	application
+nano-banana	Nano Banana	Nano Banana (Gemini Image)	application
+lyria	Lyria	Lyria (Google)	application
+flux	FLUX	FLUX (Black Forest Labs)	model
+midjourney	Midjourney	Midjourney	application
+ideogram	Ideogram	Ideogram	application
+suno	Suno	Suno	application
+elevenlabs	ElevenLabs	ElevenLabs	application
+runway	Runway	Runway (Gen)	application
+kling	Kling	Kling (Kuaishou)	application
