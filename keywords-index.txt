@@ -251,48 +251,48 @@ summarizer	서머라이저	Summarizer	agent
 world-model	월드 모델	World Model	model
 agentic-os	에이전틱 OS	Agentic Operating System	agent
 model-council	모델 카운슬	Multi-Model Council	agent
-grok	Grok	Grok (xAI)	model
-minimax	MiniMax	MiniMax	model
-kimi	Kimi	Kimi (Moonshot AI)	model
+grok	그록	Grok (xAI)	model
+minimax	미니맥스	MiniMax	model
+kimi	키미	Kimi (Moonshot AI)	model
 glm	GLM	GLM (Zhipu AI)	model
-nemotron	Nemotron	NVIDIA Nemotron	model
-granite	Granite	IBM Granite	model
-reka	Reka	Reka	model
+nemotron	네모트론	NVIDIA Nemotron	model
+granite	그래니트	IBM Granite	model
+reka	레카	Reka	model
 sparse-attention	희소 어텐션	Sparse Attention	model
 dynamic-workflows	다이나믹 워크플로우	Dynamic Workflows	tooling
-superpowers	Superpowers	Superpowers	tooling
-caveman	Caveman	Caveman	tooling
-graphify	Graphify	Graphify	tooling
-codeburn	Codeburn	Codeburn	tooling
+superpowers	슈퍼파워스	Superpowers	tooling
+caveman	케이브맨	Caveman	tooling
+graphify	그래파이	Graphify	tooling
+codeburn	코드번	Codeburn	tooling
 open-multi-agent	오픈 멀티 에이전트	Open Multi-Agent	agent
-claude-opus-4-8	Claude Opus 4.8	Claude Opus 4.8 (Anthropic)	model
-claude-sonnet-4-6	Claude Sonnet 4.6	Claude Sonnet 4.6 (Anthropic)	model
-claude-haiku-4-5	Claude Haiku 4.5	Claude Haiku 4.5 (Anthropic)	model
+claude-opus-4-8	클로드 오퍼스 4.8	Claude Opus 4.8 (Anthropic)	model
+claude-sonnet-4-6	클로드 소네트 4.6	Claude Sonnet 4.6 (Anthropic)	model
+claude-haiku-4-5	클로드 하이쿠 4.5	Claude Haiku 4.5 (Anthropic)	model
 gpt-5-5	GPT-5.5	GPT-5.5 (OpenAI)	model
-gemini-3-pro	Gemini 3 Pro	Gemini 3 Pro (Google)	model
-gemini-3-5-flash	Gemini 3.5 Flash	Gemini 3.5 Flash (Google)	model
-gemma-4	Gemma 4	Gemma 4 (Google)	model
-llama-4	Llama 4	Llama 4 (Meta)	model
-deepseek-v4	DeepSeek V4	DeepSeek V4	model
-qwen3-max	Qwen3 Max	Qwen3 Max (Alibaba)	model
-mistral-medium-3-5	Mistral Medium 3.5	Mistral Medium 3.5	model
-step-3-7	Step 3.7	Step 3.7 Flash (StepFun)	model
-seed-2	Seed 2.0	ByteDance Seed 2.0	model
-mimo	MiMo	Xiaomi MiMo	model
+gemini-3-pro	제미나이 3 프로	Gemini 3 Pro (Google)	model
+gemini-3-5-flash	제미나이 3.5 플래시	Gemini 3.5 Flash (Google)	model
+gemma-4	젬마 4	Gemma 4 (Google)	model
+llama-4	라마 4	Llama 4 (Meta)	model
+deepseek-v4	딥시크 V4	DeepSeek V4	model
+qwen3-max	큐원3 맥스	Qwen3 Max (Alibaba)	model
+mistral-medium-3-5	미스트랄 미디엄 3.5	Mistral Medium 3.5	model
+step-3-7	스텝 3.7	Step 3.7 Flash (StepFun)	model
+seed-2	시드 2.0	ByteDance Seed 2.0	model
+mimo	미모	Xiaomi MiMo	model
 olmo-3	OLMo 3	OLMo 3 (AllenAI)	model
 phi-4	Phi-4	Phi-4 (Microsoft)	model
-nova-2	Amazon Nova 2	Amazon Nova 2	model
-command-a	Command A	Command A (Cohere)	model
-mercury-llm	Mercury	Mercury (Inception Labs, Diffusion LLM)	model
-perplexity-sonar	Perplexity Sonar	Perplexity Sonar	model
-sora	Sora	Sora (OpenAI)	application
-veo	Veo	Veo (Google)	application
-nano-banana	Nano Banana	Nano Banana (Gemini Image)	application
-lyria	Lyria	Lyria (Google)	application
+nova-2	노바 2	Amazon Nova 2	model
+command-a	커맨드 A	Command A (Cohere)	model
+mercury-llm	머큐리	Mercury (Inception Labs, Diffusion LLM)	model
+perplexity-sonar	퍼플렉시티 소나	Perplexity Sonar	model
+sora	소라	Sora (OpenAI)	application
+veo	비오	Veo (Google)	application
+nano-banana	나노 바나나	Nano Banana (Gemini Image)	application
+lyria	리리아	Lyria (Google)	application
 flux	FLUX	FLUX (Black Forest Labs)	model
-midjourney	Midjourney	Midjourney	application
-ideogram	Ideogram	Ideogram	application
-suno	Suno	Suno	application
-elevenlabs	ElevenLabs	ElevenLabs	application
-runway	Runway	Runway (Gen)	application
-kling	Kling	Kling (Kuaishou)	application
+midjourney	미드저니	Midjourney	application
+ideogram	아이디오그램	Ideogram	application
+suno	수노	Suno	application
+elevenlabs	일레븐랩스	ElevenLabs	application
+runway	런웨이	Runway (Gen)	application
+kling	클링	Kling (Kuaishou)	application

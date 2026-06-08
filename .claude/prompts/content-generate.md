@@ -29,6 +29,8 @@
 - **조회수(viewCount)를 주요 판단 기준에 포함.**
 
 ### 기타
+- **t (한국어 키워드, 카드 상단)**: 한글 발음 표기를 우선한다. 모델·제품명도 한글로 (예: Claude Opus 4.8 → `클로드 오퍼스 4.8`, Gemini 3 Pro → `제미나이 3 프로`, Sora → `소라`). 단 약어·대문자 스타일 브랜드(GPT·GLM·RAG·MCP·FLUX·OLMo 등)는 영문 유지. → 한글 SEO(란/뜻/의미 키워드)가 t 기반으로 생성되므로 한글 표기가 중요.
+- **en (영문 정식명, 카드 하단)**: 영문 풀네임 (예: `Claude Opus 4.8 (Anthropic)`).
 - tags: 2~4개
 - c: prompting|model|tooling|data|agent|infra|safety|application
 - born: 기술 최초 등장 연-월 (YYYY-MM)
