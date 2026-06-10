@@ -298,3 +298,5 @@ runway	런웨이	Runway (Gen)	application
 kling	클링	Kling (Kuaishou)	application
 mimo-v2-5	미모 v2.5	Xiaomi MiMo v2.5 Pro (UltraSpeed)	model
 apple-intelligence	애플 인텔리전스	Apple Intelligence	application
+baoyu-design	바오위 디자인	Baoyu Design	tooling
+guard-skills	가드 스킬	Guard Skills	tooling
