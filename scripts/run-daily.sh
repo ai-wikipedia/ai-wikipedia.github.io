@@ -20,6 +20,19 @@ export PATH="/Users/hh/.nvm/versions/node/v24.14.0/bin:/Users/hh/.local/bin:/usr
 export HOME="/Users/hh"
 cd "$WORK_DIR"
 
+# --- Claude 인증 (헤드리스용 장기 토큰) ---
+# 대화형 로그인(키체인 OAuth)은 launchd 컨텍스트에서 401로 거부되므로,
+# `claude setup-token`으로 발급한 장기 토큰을 .env(CLAUDE_CODE_OAUTH_TOKEN)에서 주입한다.
+if [ -f "$WORK_DIR/.env" ]; then
+  TOKEN_LINE=$(grep -E '^CLAUDE_CODE_OAUTH_TOKEN=' "$WORK_DIR/.env" 2>/dev/null | tail -1 || true)
+  if [ -n "$TOKEN_LINE" ]; then
+    CLAUDE_CODE_OAUTH_TOKEN="${TOKEN_LINE#CLAUDE_CODE_OAUTH_TOKEN=}"
+    CLAUDE_CODE_OAUTH_TOKEN="${CLAUDE_CODE_OAUTH_TOKEN%\"}"
+    CLAUDE_CODE_OAUTH_TOKEN="${CLAUDE_CODE_OAUTH_TOKEN#\"}"
+    export CLAUDE_CODE_OAUTH_TOKEN
+  fi
+fi
+
 # --- Helpers ---
 ts() { date '+%Y-%m-%d %H:%M:%S'; }
 log() { echo "[$(ts)] $1" >> "$LOG"; }
