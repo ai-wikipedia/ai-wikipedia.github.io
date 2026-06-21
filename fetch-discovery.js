@@ -39,6 +39,14 @@ function parseArgs(argv) {
   return a;
 }
 
+// 타임아웃 있는 fetch — 소켓 hang 방지 (기본 15초). abort 시 호출부 try/catch가 처리.
+async function fetchT(url, opts = {}, ms = 15000) {
+  const ac = new AbortController();
+  const timer = setTimeout(() => ac.abort(), ms);
+  try { return await fetch(url, { ...opts, signal: ac.signal }); }
+  finally { clearTimeout(timer); }
+}
+
 // 기존 키워드 인덱스 (러프 dedup 힌트)
 function loadExistingBlob() {
   try { return readFileSync(resolve(__dirname, 'keywords-index.txt'), 'utf8').toLowerCase(); }
@@ -52,7 +60,7 @@ const META_RE = /awesome|roadmap|cheat[\s-]?sheet|curated list|list of|interview
 // D1: OpenRouter — 신규 모델
 // ---------------------------------------------------------------------------
 async function discoverModels(cutoff, blob) {
-  const r = await fetch('https://openrouter.ai/api/v1/models');
+  const r = await fetchT('https://openrouter.ai/api/v1/models');
   if (!r.ok) throw new Error(`OpenRouter ${r.status}`);
   const j = await r.json();
   const recent = (j.data || []).filter(m => m.created && m.created > cutoff)
@@ -92,7 +100,7 @@ async function discoverRepos(sinceDate, token) {
     try {
       const q = encodeURIComponent(`topic:${topic} created:>${sinceDate}`);
       const url = `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=15`;
-      const r = await fetch(url, { headers });
+      const r = await fetchT(url, { headers });
       if (!r.ok) { console.error(`  GitHub topic:${topic} → ${r.status}`); continue; }
       const j = await r.json();
       for (const it of j.items || []) {
@@ -119,7 +127,7 @@ async function discoverRepos(sinceDate, token) {
 // D4: Tavily — 기능 추출
 // ---------------------------------------------------------------------------
 async function tavilyFeatures(query, key) {
-  const r = await fetch('https://api.tavily.com/search', {
+  const r = await fetchT('https://api.tavily.com/search', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ api_key: key, query, max_results: 5, include_answer: true }),
   });
