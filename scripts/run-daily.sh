@@ -5,7 +5,7 @@
 set -euo pipefail
 
 # --- Config ---
-WORK_DIR="/Users/hh/Desktop/dev/ai-wikipedia.github.io"
+WORK_DIR="/Users/hh/dev/ai-wikipedia.github.io"
 LOG="$WORK_DIR/logs/daily.log"
 ERR_LOG="$WORK_DIR/logs/daily-err.log"
 LOCK="/tmp/aiwiki-daily.lock"
