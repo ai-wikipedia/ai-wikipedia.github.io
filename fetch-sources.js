@@ -151,8 +151,7 @@ async function main() {
     process.exit(1);
   }
   if (!YOUTUBE_API_KEY) {
-    console.error('Missing YOUTUBE_API_KEY in .env');
-    process.exit(1);
+    console.error('Warning: Missing YOUTUBE_API_KEY in .env — YouTube results will be empty');
   }
 
   const args = parseArgs(process.argv.slice(2));
@@ -166,17 +165,20 @@ async function main() {
     process.exit(1);
   }
 
-  // Run all 4 API calls in parallel
+  // Run all 4 API calls in parallel; YouTube failures are non-fatal
+  const safeYT = fn => (YOUTUBE_API_KEY ? fn().catch(e => { console.error('YouTube skip:', e.message); return []; }) : Promise.resolve([]));
   const [webEn, webKo, ytEn, ytKo] = await Promise.all([
     enQuery ? tavilySearch(enQuery, TAVILY_API_KEY) : Promise.resolve([]),
     koQuery ? tavilySearch(koQuery, TAVILY_API_KEY) : Promise.resolve([]),
-    enQuery ? youtubeSearch(enQuery, YOUTUBE_API_KEY) : Promise.resolve([]),
-    koQuery ? youtubeSearch(koQuery, YOUTUBE_API_KEY) : Promise.resolve([]),
+    safeYT(() => enQuery ? youtubeSearch(enQuery, YOUTUBE_API_KEY) : Promise.resolve([])),
+    safeYT(() => koQuery ? youtubeSearch(koQuery, YOUTUBE_API_KEY) : Promise.resolve([])),
   ]);
 
   // Collect all unique videoIds for statistics lookup
   const allVideoIds = [...new Set([...ytEn, ...ytKo].map(v => v.videoId).filter(Boolean))];
-  const statMap = await youtubeStatistics(allVideoIds, YOUTUBE_API_KEY);
+  const statMap = allVideoIds.length && YOUTUBE_API_KEY
+    ? await youtubeStatistics(allVideoIds, YOUTUBE_API_KEY).catch(e => { console.error('YouTube stats skip:', e.message); return {}; })
+    : {};
 
   const attachStats = videos =>
     videos.map(v => ({ ...v, viewCount: statMap[v.videoId] ?? 0 }));
