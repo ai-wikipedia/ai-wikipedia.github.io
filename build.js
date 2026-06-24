@@ -74,6 +74,7 @@ for (const e of D) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <title>${escHtml(title)}</title>
 <meta name="description" content="${escHtml(desc)}">
 <meta name="keywords" content="${escHtml(e.tags.join(', '))}, AI, ${escHtml(e.t)}, ${escHtml(e.t)}란, ${escHtml(e.t)} 뜻, ${escHtml(e.t)} 의미, ${escHtml(e.t)} 개념, ${escHtml(e.t)} 설명, ${escHtml(e.t)} 정리, ${escHtml(e.t)}이란">
