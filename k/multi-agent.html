@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="멀티 에이전트란? (Multi-Agent System) — AI Wiki">
 <meta property="og:description" content="멀티 에이전트란? 여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/multi-agent.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/multi-agent.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="멀티 에이전트란? (Multi-Agent System) — AI Wiki">
 <meta name="twitter:description" content="멀티 에이전트란? 여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/multi-agent.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/multi-agent.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/multi-agent.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/multi-agent.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "멀티 에이전트",
   "alternateName": "Multi-Agent System",
   "description": "여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.",
-  "url": "https://aiwiki.kro.kr/k/multi-agent.html",
+  "url": "https://aiwiki.work/k/multi-agent.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://aiwiki.kro.kr/?cat=agent"
+      "item": "https://aiwiki.work/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "멀티 에이전트",
-      "item": "https://aiwiki.kro.kr/k/multi-agent.html"
+      "item": "https://aiwiki.work/k/multi-agent.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "멀티 에이전트 (Multi-Agent System)",
   "description": "여러 AI 에이전트가 역할을 나눠 하나의 작업을 함께 처리하는 시스템. 혼자서는 컨텍스트 한계에 부딪히는 복잡한 작업도 팀으로 나누면 병렬로 해결할 수 있다.",
-  "url": "https://aiwiki.kro.kr/k/multi-agent.html",
+  "url": "https://aiwiki.work/k/multi-agent.html",
   "datePublished": "2026-03-30",
   "dateModified": "2026-04-05",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/multi-agent.html"
+    "@id": "https://aiwiki.work/k/multi-agent.html"
   }
 }
 </script>
@@ -126,8 +126,8 @@
 <h4>어떤 식으로 협업하나</h4><p>가장 흔한 방식은 <strong>감독자(Supervisor) 패턴</strong>이다. 메인 에이전트가 일감을 받으면, "이건 리서치 에이전트가, 이건 코딩 에이전트가" 하고 나눠준 뒤 결과를 모아서 최종 산출물을 만든다. <strong>파이프라인 패턴</strong>은 조립라인처럼 순서대로 넘기는 방식이다. A 에이전트가 요구사항을 정리하면 B가 구현하고 C가 테스트하는 식이다. <strong>스웜(Swarm) 패턴</strong>은 2026년 들어 주목받는 방식으로, 중앙 감독자 없이 에이전트들이 자율적으로 태스크를 가져가고 서로 핸드오프하는 구조다.</p>
 <h4>주의할 점</h4><p>팀이 크다고 항상 좋은 건 아니다. 에이전트가 4개를 넘어가면 서로 소통하는 비용이 실제 작업보다 커질 수 있다 — 회의가 너무 많아서 일이 안 되는 회사처럼. 단순한 작업이라면 에이전트 하나로 충분하다. 또한 멀티 에이전트를 프로덕션에 올리면 보안 공격 표면이 넓어지고 거버넌스가 복잡해진다. Stripe처럼 "제출 권한은 있되 머지 권한은 없게" 하는 식으로, 사람이 최종 검토하는 구조를 반드시 유지해야 한다.</p></div>
   <div class="tags"><span>#협업</span><span>#에이전트팀</span><span>#오케스트레이션</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.kro.kr/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.kro.kr/k/mcp.html">MCP</a>, <a href="https://aiwiki.kro.kr/k/a2a.html">A2A</a>, <a href="https://aiwiki.kro.kr/k/agentic-os.html">에이전틱 OS</a>, <a href="https://aiwiki.kro.kr/k/model-council.html">모델 카운슬</a>, <a href="https://aiwiki.kro.kr/k/dynamic-workflows.html">다이나믹 워크플로우</a>, <a href="https://aiwiki.kro.kr/k/open-multi-agent.html">오픈 멀티 에이전트</a>, <a href="https://aiwiki.kro.kr/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#multi-agent">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/a2a.html">A2A</a>, <a href="https://aiwiki.work/k/agentic-os.html">에이전틱 OS</a>, <a href="https://aiwiki.work/k/model-council.html">모델 카운슬</a>, <a href="https://aiwiki.work/k/dynamic-workflows.html">다이나믹 워크플로우</a>, <a href="https://aiwiki.work/k/open-multi-agent.html">오픈 멀티 에이전트</a>, <a href="https://aiwiki.work/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a></div>
+  <a class="back" href="https://aiwiki.work/#multi-agent">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-05</div>
 </div>
 </body>

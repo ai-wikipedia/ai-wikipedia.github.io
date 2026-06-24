@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="프루닝란? (Pruning) — AI Wiki">
 <meta property="og:description" content="프루닝란? 모델의 중요도가 낮은 가중치나 뉴런, 레이어를 제거해 모델을 작고 빠르게 만드는 기법. 성능 저하를 최소화하면서 모델 크기를 줄인다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/pruning.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/pruning.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="프루닝란? (Pruning) — AI Wiki">
 <meta name="twitter:description" content="프루닝란? 모델의 중요도가 낮은 가중치나 뉴런, 레이어를 제거해 모델을 작고 빠르게 만드는 기법. 성능 저하를 최소화하면서 모델 크기를 줄인다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/pruning.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/pruning.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/pruning.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/pruning.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "프루닝",
   "alternateName": "Pruning",
   "description": "모델의 중요도가 낮은 가중치나 뉴런, 레이어를 제거해 모델을 작고 빠르게 만드는 기법. 성능 저하를 최소화하면서 모델 크기를 줄인다.",
-  "url": "https://aiwiki.kro.kr/k/pruning.html",
+  "url": "https://aiwiki.work/k/pruning.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "프루닝",
-      "item": "https://aiwiki.kro.kr/k/pruning.html"
+      "item": "https://aiwiki.work/k/pruning.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "프루닝 (Pruning)",
   "description": "모델의 중요도가 낮은 가중치나 뉴런, 레이어를 제거해 모델을 작고 빠르게 만드는 기법. 성능 저하를 최소화하면서 모델 크기를 줄인다.",
-  "url": "https://aiwiki.kro.kr/k/pruning.html",
+  "url": "https://aiwiki.work/k/pruning.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/pruning.html"
+    "@id": "https://aiwiki.work/k/pruning.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Pruning</div>
   <div class="body"><p>모델의 중요도가 낮은 가중치나 뉴런, 레이어를 제거해 모델을 작고 빠르게 만드는 기법. 성능 저하를 최소화하면서 모델 크기를 줄인다.</p><h4>개념 설명</h4><p>수십억 개의 파라미터 중 모델 성능에 기여하는 가중치는 일부에 불과하다는 관찰에서 출발한다. 중요도가 낮은 가중치를 0으로 만들거나(가중치 프루닝), 뉴런/헤드 단위로 제거하거나(구조적 프루닝), 레이어 전체를 삭제하는 방식이 있다. 구조적 프루닝은 하드웨어 가속이 용이해 실제 추론 속도 향상으로 이어진다.</p><p>최근에는 <strong>SparseGPT</strong>, <strong>Wanda</strong> 같은 LLM 특화 프루닝이 주목받는다. Llama 계열에서 20~30% 프루닝 후 약간의 파인튜닝으로 성능을 회복하는 연구들이 나왔다. 양자화와 함께 사용하면 더 극적인 압축이 가능하다.</p><h4>사용 예시</h4><p>엣지 기기나 모바일 환경에 LLM을 배포할 때 모델 크기 제한이 있다면 프루닝이 유용하다. LLM-Pruner, llm-shearing 같은 라이브러리로 Llama 계열을 구조적 프루닝하는 파이프라인을 구성할 수 있다. 양자화보다 성능 복구를 위해 추가 파인튜닝이 필요한 경우가 많다.</p></div>
   <div class="tags"><span>#경량화</span><span>#가지치기</span><span>#희소화</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/quantization.html">양자화</a>, <a href="https://aiwiki.kro.kr/k/distillation.html">모델 증류</a>, <a href="https://aiwiki.kro.kr/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.kro.kr/k/lora.html">LoRA</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#pruning">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/distillation.html">모델 증류</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a></div>
+  <a class="back" href="https://aiwiki.work/#pruning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="온도란? (Temperature) — AI Wiki">
 <meta property="og:description" content="온도란? LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/temperature.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/temperature.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="온도란? (Temperature) — AI Wiki">
 <meta name="twitter:description" content="온도란? LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/temperature.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/temperature.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/temperature.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/temperature.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "온도",
   "alternateName": "Temperature",
   "description": "LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.",
-  "url": "https://aiwiki.kro.kr/k/temperature.html",
+  "url": "https://aiwiki.work/k/temperature.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "온도",
-      "item": "https://aiwiki.kro.kr/k/temperature.html"
+      "item": "https://aiwiki.work/k/temperature.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "온도 (Temperature)",
   "description": "LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.",
-  "url": "https://aiwiki.kro.kr/k/temperature.html",
+  "url": "https://aiwiki.work/k/temperature.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/temperature.html"
+    "@id": "https://aiwiki.work/k/temperature.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Temperature</div>
   <div class="body"><p>LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.</p><h4>개념 설명</h4><p>LLM은 각 토큰의 확률을 계산한 뒤 그 분포에서 샘플링한다. Temperature는 이 분포를 조절한다. T=0에 가까우면 항상 가장 높은 확률의 토큰을 고르는 Greedy Decoding과 같아진다. T=1은 모델이 계산한 확률 그대로 샘플링한다. T>1이면 낮은 확률의 토큰도 선택될 여지가 커져 더 다양하고 예상치 못한 결과가 나온다.</p><p>Temperature와 함께 <strong>Top-p(nucleus sampling)</strong>나 <strong>Top-k</strong> 샘플링도 자주 함께 사용된다. Top-p는 누적 확률 p를 넘는 후보 중에서만 샘플링해 낮은 확률의 희귀 토큰을 방지한다.</p><h4>사용 예시</h4><p>Claude나 OpenAI API 호출 시 <code>temperature</code> 파라미터로 직접 제어할 수 있다. 코드 생성이나 사실 질문에는 0~0.3, 창의적 글쓰기에는 0.7~1.0이 일반적이다. 동일한 프롬프트를 여러 번 실행해 다양한 결과를 얻고 싶다면 Temperature를 높이고, 일관된 결과가 중요하다면 낮춘다.</p></div>
   <div class="tags"><span>#샘플링</span><span>#다양성</span><span>#창의성</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.kro.kr/k/inference-optimization.html">추론 최적화</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#temperature">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a></div>
+  <a class="back" href="https://aiwiki.work/#temperature">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

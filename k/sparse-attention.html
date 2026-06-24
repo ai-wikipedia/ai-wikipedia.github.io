@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="희소 어텐션란? (Sparse Attention) — AI Wiki">
 <meta property="og:description" content="희소 어텐션란? 모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/sparse-attention.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/sparse-attention.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="희소 어텐션란? (Sparse Attention) — AI Wiki">
 <meta name="twitter:description" content="희소 어텐션란? 모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/sparse-attention.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/sparse-attention.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/sparse-attention.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/sparse-attention.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "희소 어텐션",
   "alternateName": "Sparse Attention",
   "description": "모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.",
-  "url": "https://aiwiki.kro.kr/k/sparse-attention.html",
+  "url": "https://aiwiki.work/k/sparse-attention.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "희소 어텐션",
-      "item": "https://aiwiki.kro.kr/k/sparse-attention.html"
+      "item": "https://aiwiki.work/k/sparse-attention.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "희소 어텐션 (Sparse Attention)",
   "description": "모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.",
-  "url": "https://aiwiki.kro.kr/k/sparse-attention.html",
+  "url": "https://aiwiki.work/k/sparse-attention.html",
   "datePublished": "2026-06-08",
   "dateModified": "2026-06-08",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/sparse-attention.html"
+    "@id": "https://aiwiki.work/k/sparse-attention.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Sparse Attention</div>
   <div class="body"><p>모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.</p><h4>왜 필요한가</h4><p>트랜스포머의 기본 어텐션은 문장 안의 모든 토큰이 다른 모든 토큰을 한 번씩 쳐다본다. 토큰이 1,000개면 100만 번, 10,000개면 1억 번을 비교하는 식이라, 글이 길어질수록 계산량이 제곱으로 폭발한다. 책 한 권 분량의 입력을 다루려고 하면 이 비용이 감당이 안 된다.</p><p><strong>희소 어텐션(Sparse Attention)</strong>은 여기서 "굳이 모든 토큰을 다 볼 필요가 있나?"라는 질문에서 출발한다. 실제로 어떤 단어를 이해할 때 정말 중요한 건 주변 몇 단어와 멀리 있는 핵심 단어 몇 개뿐인 경우가 많다. 그래서 모든 쌍을 계산하는 대신, 관련 있을 법한 일부 토큰만 골라서 어텐션을 계산한다. 빽빽하게 채워진(dense) 비교 행렬에서 대부분의 칸을 0으로 비워두는(sparse) 셈이다.</p><h4>어떻게 일부만 고르나</h4><p>고르는 방식은 크게 두 갈래다. 하나는 미리 정해진 규칙을 쓰는 것으로, 가까운 몇 개 토큰만 보는 슬라이딩 윈도우, 일정 간격으로 띄엄띄엄 보는 패턴, 모든 토큰이 공통으로 참조하는 소수의 전역 토큰을 두는 방식 등이 있다. <strong>Longformer</strong>나 <strong>BigBird</strong> 같은 초기 모델이 이런 고정 패턴을 조합해 긴 문서를 처리했다.</p><p>다른 하나는 학습으로 "어떤 토큰이 중요한지"를 모델이 스스로 판단하게 하는 것이다. 최근 <strong>DeepSeek Sparse Attention</strong>이 대표적인데, 가벼운 인덱서가 과거 토큰들에 점수를 매기고 선택기가 점수 높은 일부만 골라 어텐션에 넘긴다. DeepSeek V3.2에 적용돼 긴 컨텍스트 추론 비용을 크게 낮췄다고 알려져 있다.</p><h4>다른 최적화와의 관계</h4><p>희소 어텐션은 비교 자체를 줄이는 알고리즘 수준의 접근이라, GPU에서 계산을 효율적으로 배치하는 <code>flash-attention</code>이나 이미 계산한 키·값을 재활용하는 KV 캐시와는 노리는 지점이 다르다. 그래서 셋을 함께 쓰면 긴 컨텍스트를 다룰 때 효과가 겹쳐서 커진다.</p><h4>주의할 점</h4><p>중요해 보이지 않아 버린 토큰에 사실 핵심 정보가 들어 있었다면 품질이 떨어진다. "속도를 위해 모델을 멍청하게 만드는 것 아니냐"는 논쟁이 계속되는 이유다. 또 이론상 계산을 줄여도 메모리 접근이 띄엄띄엄해지면 실제 추론 속도는 기대만큼 안 빨라지는 경우가 많아서, 하드웨어에 맞춰 패턴을 설계하는 것이 관건이다.</p></div>
   <div class="tags"><span>#어텐션</span><span>#긴 컨텍스트</span><span>#추론 최적화</span><span>#DeepSeek</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.kro.kr/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.kro.kr/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.kro.kr/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.kro.kr/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.kro.kr/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.kro.kr/k/deepseek-v4.html">딥시크 V4</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#sparse-attention">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/deepseek-v4.html">딥시크 V4</a></div>
+  <a class="back" href="https://aiwiki.work/#sparse-attention">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>
 </body>

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="KV 캐시란? (KV Cache) — AI Wiki">
 <meta property="og:description" content="KV 캐시란? 트랜스포머가 토큰을 생성할 때마다 이전 계산 결과를 재사용할 수 있도록 저장해두는 캐시. 반복 계산을 줄여 추론 속도를 크게 높인다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/kv-cache.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/kv-cache.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KV 캐시란? (KV Cache) — AI Wiki">
 <meta name="twitter:description" content="KV 캐시란? 트랜스포머가 토큰을 생성할 때마다 이전 계산 결과를 재사용할 수 있도록 저장해두는 캐시. 반복 계산을 줄여 추론 속도를 크게 높인다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/kv-cache.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/kv-cache.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/kv-cache.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/kv-cache.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "KV 캐시",
   "alternateName": "KV Cache",
   "description": "트랜스포머가 토큰을 생성할 때마다 이전 계산 결과를 재사용할 수 있도록 저장해두는 캐시. 반복 계산을 줄여 추론 속도를 크게 높인다.",
-  "url": "https://aiwiki.kro.kr/k/kv-cache.html",
+  "url": "https://aiwiki.work/k/kv-cache.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "KV 캐시",
-      "item": "https://aiwiki.kro.kr/k/kv-cache.html"
+      "item": "https://aiwiki.work/k/kv-cache.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "KV 캐시 (KV Cache)",
   "description": "트랜스포머가 토큰을 생성할 때마다 이전 계산 결과를 재사용할 수 있도록 저장해두는 캐시. 반복 계산을 줄여 추론 속도를 크게 높인다.",
-  "url": "https://aiwiki.kro.kr/k/kv-cache.html",
+  "url": "https://aiwiki.work/k/kv-cache.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/kv-cache.html"
+    "@id": "https://aiwiki.work/k/kv-cache.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">KV Cache</div>
   <div class="body"><p>트랜스포머가 토큰을 생성할 때마다 이전 계산 결과를 재사용할 수 있도록 저장해두는 캐시. 반복 계산을 줄여 추론 속도를 크게 높인다.</p><h4>개념 설명</h4><p>LLM이 텍스트를 생성할 때 새 토큰을 하나 추가할 때마다 이전 모든 토큰에 대한 어텐션을 다시 계산하면 엄청난 낭비다. <strong>KV Cache</strong>는 어텐션 연산의 Key와 Value 행렬을 저장해두고, 새 토큰이 올 때 기존 캐시를 그대로 재사용한다. 첫 번째 토큰은 느리지만 이후 토큰은 훨씬 빠르게 생성되는 이유가 여기 있다.</p><h4>사용 예시</h4><p>긴 시스템 프롬프트를 매번 재계산하는 대신 Anthropic의 <strong>프롬프트 캐싱</strong> API로 KV Cache를 서버에 고정해두면 비용과 지연을 동시에 줄일 수 있다. vLLM 같은 추론 서버에서 PagedAttention은 KV Cache를 메모리 페이지처럼 관리해 여러 요청을 효율적으로 처리한다.</p></div>
   <div class="tags"><span>#추론최적화</span><span>#캐싱</span><span>#메모리</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.kro.kr/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.kro.kr/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.kro.kr/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.kro.kr/k/vllm.html">vLLM</a>, <a href="https://aiwiki.kro.kr/k/sparse-attention.html">희소 어텐션</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#kv-cache">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.work/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a></div>
+  <a class="back" href="https://aiwiki.work/#kv-cache">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

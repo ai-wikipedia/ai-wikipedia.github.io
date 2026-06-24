@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="툴 콜링란? (Tool Calling) — AI Wiki">
 <meta property="og:description" content="툴 콜링란? LLM이 외부 함수나 API를 직접 호출할 수 있게 하는 기능. AI가 검색, 계산, DB 조회 같은 실제 작업을 수행하는 방법이다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/tool-calling.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/tool-calling.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="툴 콜링란? (Tool Calling) — AI Wiki">
 <meta name="twitter:description" content="툴 콜링란? LLM이 외부 함수나 API를 직접 호출할 수 있게 하는 기능. AI가 검색, 계산, DB 조회 같은 실제 작업을 수행하는 방법이다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/tool-calling.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/tool-calling.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/tool-calling.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/tool-calling.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "툴 콜링",
   "alternateName": "Tool Calling",
   "description": "LLM이 외부 함수나 API를 직접 호출할 수 있게 하는 기능. AI가 검색, 계산, DB 조회 같은 실제 작업을 수행하는 방법이다.",
-  "url": "https://aiwiki.kro.kr/k/tool-calling.html",
+  "url": "https://aiwiki.work/k/tool-calling.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://aiwiki.kro.kr/?cat=agent"
+      "item": "https://aiwiki.work/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "툴 콜링",
-      "item": "https://aiwiki.kro.kr/k/tool-calling.html"
+      "item": "https://aiwiki.work/k/tool-calling.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "툴 콜링 (Tool Calling)",
   "description": "LLM이 외부 함수나 API를 직접 호출할 수 있게 하는 기능. AI가 검색, 계산, DB 조회 같은 실제 작업을 수행하는 방법이다.",
-  "url": "https://aiwiki.kro.kr/k/tool-calling.html",
+  "url": "https://aiwiki.work/k/tool-calling.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/tool-calling.html"
+    "@id": "https://aiwiki.work/k/tool-calling.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Tool Calling</div>
   <div class="body"><p>LLM이 외부 함수나 API를 직접 호출할 수 있게 하는 기능. AI가 검색, 계산, DB 조회 같은 실제 작업을 수행하는 방법이다.</p><h4>개념 설명</h4><p>툴 콜링(또는 함수 호출)은 LLM이 "이 작업은 내가 직접 처리할 수 없으니 외부 도구를 써야겠다"고 판단하고, 적절한 함수를 골라 필요한 인자를 채워 호출하는 과정이다. AI가 텍스트 생성만 하던 시대에서 실제 세계와 상호작용할 수 있게 된 핵심 전환점이다. 날씨 조회, 코드 실행, 데이터베이스 검색 등 LLM이 혼자 할 수 없는 모든 것을 툴로 연결할 수 있다.</p><h4>사용 예시</h4><p>Anthropic API에서 <code>tools</code> 파라미터로 사용 가능한 함수 목록과 JSON Schema를 정의하면, Claude가 대화 중 필요할 때 해당 함수를 자동으로 선택하고 인자를 채워 반환한다. 개발자는 반환된 툴 호출을 실행하고 결과를 다시 Claude에게 전달하면 된다. MCP는 이 툴 콜링을 표준화하고 생태계를 확장한 것이다.</p></div>
   <div class="tags"><span>#함수호출</span><span>#도구사용</span><span>#API</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.kro.kr/k/mcp.html">MCP</a>, <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/react-pattern.html">ReAct 패턴</a>, <a href="https://aiwiki.kro.kr/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.kro.kr/k/research-driven-agent.html">리서치 기반 에이전트</a>, <a href="https://aiwiki.kro.kr/k/qwen3-max.html">큐원3 맥스</a>, <a href="https://aiwiki.kro.kr/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.kro.kr/k/step-3-7.html">스텝 3.7</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#tool-calling">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/react-pattern.html">ReAct 패턴</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/research-driven-agent.html">리서치 기반 에이전트</a>, <a href="https://aiwiki.work/k/qwen3-max.html">큐원3 맥스</a>, <a href="https://aiwiki.work/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.work/k/step-3-7.html">스텝 3.7</a></div>
+  <a class="back" href="https://aiwiki.work/#tool-calling">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

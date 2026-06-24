@@ -1,1825 +1,1825 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aiwiki.kro.kr/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://aiwiki.work/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/harness-engineering.html</loc>
+    <loc>https://aiwiki.work/k/harness-engineering.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mcp.html</loc>
+    <loc>https://aiwiki.work/k/mcp.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-code.html</loc>
+    <loc>https://aiwiki.work/k/claude-code.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-agent.html</loc>
+    <loc>https://aiwiki.work/k/ai-agent.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/multi-agent.html</loc>
+    <loc>https://aiwiki.work/k/multi-agent.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-coding.html</loc>
+    <loc>https://aiwiki.work/k/ai-coding.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/skills.html</loc>
+    <loc>https://aiwiki.work/k/skills.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/hooks.html</loc>
+    <loc>https://aiwiki.work/k/hooks.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-md.html</loc>
+    <loc>https://aiwiki.work/k/claude-md.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tool-use.html</loc>
+    <loc>https://aiwiki.work/k/tool-use.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/rag.html</loc>
+    <loc>https://aiwiki.work/k/rag.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/context-window.html</loc>
+    <loc>https://aiwiki.work/k/context-window.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-framework.html</loc>
+    <loc>https://aiwiki.work/k/agent-framework.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-workflow.html</loc>
+    <loc>https://aiwiki.work/k/ai-workflow.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/prompt-engineering.html</loc>
+    <loc>https://aiwiki.work/k/prompt-engineering.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/system-prompt.html</loc>
+    <loc>https://aiwiki.work/k/system-prompt.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/chain-of-thought.html</loc>
+    <loc>https://aiwiki.work/k/chain-of-thought.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llm.html</loc>
+    <loc>https://aiwiki.work/k/llm.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/fine-tuning.html</loc>
+    <loc>https://aiwiki.work/k/fine-tuning.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/multimodal.html</loc>
+    <loc>https://aiwiki.work/k/multimodal.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/embedding.html</loc>
+    <loc>https://aiwiki.work/k/embedding.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/vector-db.html</loc>
+    <loc>https://aiwiki.work/k/vector-db.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/chunking.html</loc>
+    <loc>https://aiwiki.work/k/chunking.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/langchain.html</loc>
+    <loc>https://aiwiki.work/k/langchain.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/eval.html</loc>
+    <loc>https://aiwiki.work/k/eval.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/hallucination.html</loc>
+    <loc>https://aiwiki.work/k/hallucination.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/guardrail.html</loc>
+    <loc>https://aiwiki.work/k/guardrail.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/prompt-injection.html</loc>
+    <loc>https://aiwiki.work/k/prompt-injection.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/chatbot.html</loc>
+    <loc>https://aiwiki.work/k/chatbot.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-search.html</loc>
+    <loc>https://aiwiki.work/k/ai-search.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/structured-output.html</loc>
+    <loc>https://aiwiki.work/k/structured-output.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/react-pattern.html</loc>
+    <loc>https://aiwiki.work/k/react-pattern.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/few-shot.html</loc>
+    <loc>https://aiwiki.work/k/few-shot.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/transformer.html</loc>
+    <loc>https://aiwiki.work/k/transformer.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tokenization.html</loc>
+    <loc>https://aiwiki.work/k/tokenization.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/rlhf.html</loc>
+    <loc>https://aiwiki.work/k/rlhf.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/in-context-learning.html</loc>
+    <loc>https://aiwiki.work/k/in-context-learning.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/api-gateway.html</loc>
+    <loc>https://aiwiki.work/k/api-gateway.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/vibe-coding.html</loc>
+    <loc>https://aiwiki.work/k/vibe-coding.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/open-source-llm.html</loc>
+    <loc>https://aiwiki.work/k/open-source-llm.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-memory.html</loc>
+    <loc>https://aiwiki.work/k/agent-memory.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/distillation.html</loc>
+    <loc>https://aiwiki.work/k/distillation.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/synthetic-data.html</loc>
+    <loc>https://aiwiki.work/k/synthetic-data.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/inference-optimization.html</loc>
+    <loc>https://aiwiki.work/k/inference-optimization.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/moe.html</loc>
+    <loc>https://aiwiki.work/k/moe.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reasoning-model.html</loc>
+    <loc>https://aiwiki.work/k/reasoning-model.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/flash-attention.html</loc>
+    <loc>https://aiwiki.work/k/flash-attention.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/kv-cache.html</loc>
+    <loc>https://aiwiki.work/k/kv-cache.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gpt.html</loc>
+    <loc>https://aiwiki.work/k/gpt.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/bert.html</loc>
+    <loc>https://aiwiki.work/k/bert.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/diffusion-model.html</loc>
+    <loc>https://aiwiki.work/k/diffusion-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/long-context.html</loc>
+    <loc>https://aiwiki.work/k/long-context.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/speculative-decoding.html</loc>
+    <loc>https://aiwiki.work/k/speculative-decoding.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/model-merging.html</loc>
+    <loc>https://aiwiki.work/k/model-merging.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/pretraining.html</loc>
+    <loc>https://aiwiki.work/k/pretraining.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/instruction-tuning.html</loc>
+    <loc>https://aiwiki.work/k/instruction-tuning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/dpo.html</loc>
+    <loc>https://aiwiki.work/k/dpo.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/lora.html</loc>
+    <loc>https://aiwiki.work/k/lora.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/qlora.html</loc>
+    <loc>https://aiwiki.work/k/qlora.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/attention-mechanism.html</loc>
+    <loc>https://aiwiki.work/k/attention-mechanism.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/emergent-ability.html</loc>
+    <loc>https://aiwiki.work/k/emergent-ability.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/transfer-learning.html</loc>
+    <loc>https://aiwiki.work/k/transfer-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/self-supervised-learning.html</loc>
+    <loc>https://aiwiki.work/k/self-supervised-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reinforcement-learning.html</loc>
+    <loc>https://aiwiki.work/k/reinforcement-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reward-model.html</loc>
+    <loc>https://aiwiki.work/k/reward-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/grpo.html</loc>
+    <loc>https://aiwiki.work/k/grpo.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/quantization.html</loc>
+    <loc>https://aiwiki.work/k/quantization.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/pruning.html</loc>
+    <loc>https://aiwiki.work/k/pruning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/sft.html</loc>
+    <loc>https://aiwiki.work/k/sft.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/foundation-model.html</loc>
+    <loc>https://aiwiki.work/k/foundation-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/small-language-model.html</loc>
+    <loc>https://aiwiki.work/k/small-language-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ssm.html</loc>
+    <loc>https://aiwiki.work/k/ssm.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/temperature.html</loc>
+    <loc>https://aiwiki.work/k/temperature.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/frontier-model.html</loc>
+    <loc>https://aiwiki.work/k/frontier-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/vision-language-model.html</loc>
+    <loc>https://aiwiki.work/k/vision-language-model.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/benchmark.html</loc>
+    <loc>https://aiwiki.work/k/benchmark.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/model-serving.html</loc>
+    <loc>https://aiwiki.work/k/model-serving.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/continuous-batching.html</loc>
+    <loc>https://aiwiki.work/k/continuous-batching.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gpu-cluster.html</loc>
+    <loc>https://aiwiki.work/k/gpu-cluster.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tensor-parallelism.html</loc>
+    <loc>https://aiwiki.work/k/tensor-parallelism.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/vllm.html</loc>
+    <loc>https://aiwiki.work/k/vllm.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mlops.html</loc>
+    <loc>https://aiwiki.work/k/mlops.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llmops.html</loc>
+    <loc>https://aiwiki.work/k/llmops.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/streaming.html</loc>
+    <loc>https://aiwiki.work/k/streaming.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/latency-optimization.html</loc>
+    <loc>https://aiwiki.work/k/latency-optimization.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/batch-inference.html</loc>
+    <loc>https://aiwiki.work/k/batch-inference.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/observability.html</loc>
+    <loc>https://aiwiki.work/k/observability.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/cost-optimization.html</loc>
+    <loc>https://aiwiki.work/k/cost-optimization.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/prompt-caching.html</loc>
+    <loc>https://aiwiki.work/k/prompt-caching.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/token-budget.html</loc>
+    <loc>https://aiwiki.work/k/token-budget.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/data-flywheel.html</loc>
+    <loc>https://aiwiki.work/k/data-flywheel.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/data-labeling.html</loc>
+    <loc>https://aiwiki.work/k/data-labeling.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/knowledge-graph.html</loc>
+    <loc>https://aiwiki.work/k/knowledge-graph.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/hybrid-search.html</loc>
+    <loc>https://aiwiki.work/k/hybrid-search.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reranking.html</loc>
+    <loc>https://aiwiki.work/k/reranking.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/graph-rag.html</loc>
+    <loc>https://aiwiki.work/k/graph-rag.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/multimodal-rag.html</loc>
+    <loc>https://aiwiki.work/k/multimodal-rag.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-protocol.html</loc>
+    <loc>https://aiwiki.work/k/agent-protocol.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/a2a.html</loc>
+    <loc>https://aiwiki.work/k/a2a.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/orchestration-pattern.html</loc>
+    <loc>https://aiwiki.work/k/orchestration-pattern.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/subagent.html</loc>
+    <loc>https://aiwiki.work/k/subagent.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agentic-rag.html</loc>
+    <loc>https://aiwiki.work/k/agentic-rag.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/computer-use.html</loc>
+    <loc>https://aiwiki.work/k/computer-use.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/browser-agent.html</loc>
+    <loc>https://aiwiki.work/k/browser-agent.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/task-decomposition.html</loc>
+    <loc>https://aiwiki.work/k/task-decomposition.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/autonomous-agent.html</loc>
+    <loc>https://aiwiki.work/k/autonomous-agent.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/human-in-the-loop.html</loc>
+    <loc>https://aiwiki.work/k/human-in-the-loop.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tool-calling.html</loc>
+    <loc>https://aiwiki.work/k/tool-calling.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-eval.html</loc>
+    <loc>https://aiwiki.work/k/agent-eval.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reflection-pattern.html</loc>
+    <loc>https://aiwiki.work/k/reflection-pattern.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/swarm.html</loc>
+    <loc>https://aiwiki.work/k/swarm.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/langgraph.html</loc>
+    <loc>https://aiwiki.work/k/langgraph.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/crewai.html</loc>
+    <loc>https://aiwiki.work/k/crewai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/sandboxing.html</loc>
+    <loc>https://aiwiki.work/k/sandboxing.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/planning-pattern.html</loc>
+    <loc>https://aiwiki.work/k/planning-pattern.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/code-interpreter.html</loc>
+    <loc>https://aiwiki.work/k/code-interpreter.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-ide.html</loc>
+    <loc>https://aiwiki.work/k/ai-ide.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/cursor.html</loc>
+    <loc>https://aiwiki.work/k/cursor.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/windsurf.html</loc>
+    <loc>https://aiwiki.work/k/windsurf.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/copilot.html</loc>
+    <loc>https://aiwiki.work/k/copilot.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/anthropic-sdk.html</loc>
+    <loc>https://aiwiki.work/k/anthropic-sdk.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/openai-sdk.html</loc>
+    <loc>https://aiwiki.work/k/openai-sdk.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llm-gateway.html</loc>
+    <loc>https://aiwiki.work/k/llm-gateway.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/litellm.html</loc>
+    <loc>https://aiwiki.work/k/litellm.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/dspy.html</loc>
+    <loc>https://aiwiki.work/k/dspy.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llamaindex.html</loc>
+    <loc>https://aiwiki.work/k/llamaindex.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/langfuse.html</loc>
+    <loc>https://aiwiki.work/k/langfuse.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/langsmith.html</loc>
+    <loc>https://aiwiki.work/k/langsmith.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tracing.html</loc>
+    <loc>https://aiwiki.work/k/tracing.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/playground.html</loc>
+    <loc>https://aiwiki.work/k/playground.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/routing-pattern.html</loc>
+    <loc>https://aiwiki.work/k/routing-pattern.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/context-caching.html</loc>
+    <loc>https://aiwiki.work/k/context-caching.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agents-md.html</loc>
+    <loc>https://aiwiki.work/k/agents-md.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/prompt-management.html</loc>
+    <loc>https://aiwiki.work/k/prompt-management.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/zero-shot.html</loc>
+    <loc>https://aiwiki.work/k/zero-shot.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/tree-of-thought.html</loc>
+    <loc>https://aiwiki.work/k/tree-of-thought.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/self-consistency.html</loc>
+    <loc>https://aiwiki.work/k/self-consistency.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/meta-prompt.html</loc>
+    <loc>https://aiwiki.work/k/meta-prompt.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/prompt-chaining.html</loc>
+    <loc>https://aiwiki.work/k/prompt-chaining.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/role-prompting.html</loc>
+    <loc>https://aiwiki.work/k/role-prompting.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/xml-prompting.html</loc>
+    <loc>https://aiwiki.work/k/xml-prompting.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/context-stuffing.html</loc>
+    <loc>https://aiwiki.work/k/context-stuffing.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/auto-prompt.html</loc>
+    <loc>https://aiwiki.work/k/auto-prompt.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/output-formatting.html</loc>
+    <loc>https://aiwiki.work/k/output-formatting.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/data-curation.html</loc>
+    <loc>https://aiwiki.work/k/data-curation.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/data-augmentation.html</loc>
+    <loc>https://aiwiki.work/k/data-augmentation.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/context-compression.html</loc>
+    <loc>https://aiwiki.work/k/context-compression.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/semantic-cache.html</loc>
+    <loc>https://aiwiki.work/k/semantic-cache.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/red-teaming.html</loc>
+    <loc>https://aiwiki.work/k/red-teaming.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/alignment.html</loc>
+    <loc>https://aiwiki.work/k/alignment.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/constitutional-ai.html</loc>
+    <loc>https://aiwiki.work/k/constitutional-ai.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/jailbreak.html</loc>
+    <loc>https://aiwiki.work/k/jailbreak.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/bias.html</loc>
+    <loc>https://aiwiki.work/k/bias.html</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/watermarking.html</loc>
+    <loc>https://aiwiki.work/k/watermarking.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/explainability.html</loc>
+    <loc>https://aiwiki.work/k/explainability.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-regulation.html</loc>
+    <loc>https://aiwiki.work/k/ai-regulation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/privacy-preserving.html</loc>
+    <loc>https://aiwiki.work/k/privacy-preserving.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/adversarial-attack.html</loc>
+    <loc>https://aiwiki.work/k/adversarial-attack.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/deepfake-detection.html</loc>
+    <loc>https://aiwiki.work/k/deepfake-detection.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-copyright.html</loc>
+    <loc>https://aiwiki.work/k/ai-copyright.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/content-moderation.html</loc>
+    <loc>https://aiwiki.work/k/content-moderation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/output-filtering.html</loc>
+    <loc>https://aiwiki.work/k/output-filtering.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/model-audit.html</loc>
+    <loc>https://aiwiki.work/k/model-audit.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/text-to-image.html</loc>
+    <loc>https://aiwiki.work/k/text-to-image.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/text-to-speech.html</loc>
+    <loc>https://aiwiki.work/k/text-to-speech.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/speech-to-text.html</loc>
+    <loc>https://aiwiki.work/k/speech-to-text.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/code-generation.html</loc>
+    <loc>https://aiwiki.work/k/code-generation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/summarization.html</loc>
+    <loc>https://aiwiki.work/k/summarization.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/translation.html</loc>
+    <loc>https://aiwiki.work/k/translation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/text-to-sql.html</loc>
+    <loc>https://aiwiki.work/k/text-to-sql.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-video-generation.html</loc>
+    <loc>https://aiwiki.work/k/ai-video-generation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/voice-ai.html</loc>
+    <loc>https://aiwiki.work/k/voice-ai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-writing.html</loc>
+    <loc>https://aiwiki.work/k/ai-writing.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/document-ai.html</loc>
+    <loc>https://aiwiki.work/k/document-ai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-code-review.html</loc>
+    <loc>https://aiwiki.work/k/ai-code-review.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/test-generation.html</loc>
+    <loc>https://aiwiki.work/k/test-generation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/no-code-ai.html</loc>
+    <loc>https://aiwiki.work/k/no-code-ai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-assistant.html</loc>
+    <loc>https://aiwiki.work/k/ai-assistant.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/personalization.html</loc>
+    <loc>https://aiwiki.work/k/personalization.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/knowledge-base.html</loc>
+    <loc>https://aiwiki.work/k/knowledge-base.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-ops.html</loc>
+    <loc>https://aiwiki.work/k/ai-ops.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/question-answering.html</loc>
+    <loc>https://aiwiki.work/k/question-answering.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/semantic-search.html</loc>
+    <loc>https://aiwiki.work/k/semantic-search.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/document-parsing.html</loc>
+    <loc>https://aiwiki.work/k/document-parsing.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/multimodal-embedding.html</loc>
+    <loc>https://aiwiki.work/k/multimodal-embedding.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/unstructured-data.html</loc>
+    <loc>https://aiwiki.work/k/unstructured-data.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/data-pipeline.html</loc>
+    <loc>https://aiwiki.work/k/data-pipeline.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/generative-ai.html</loc>
+    <loc>https://aiwiki.work/k/generative-ai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/neural-network.html</loc>
+    <loc>https://aiwiki.work/k/neural-network.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/deep-learning.html</loc>
+    <loc>https://aiwiki.work/k/deep-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/nlp.html</loc>
+    <loc>https://aiwiki.work/k/nlp.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/machine-learning.html</loc>
+    <loc>https://aiwiki.work/k/machine-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/attention-head.html</loc>
+    <loc>https://aiwiki.work/k/attention-head.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/parameter.html</loc>
+    <loc>https://aiwiki.work/k/parameter.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/overfitting.html</loc>
+    <loc>https://aiwiki.work/k/overfitting.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/loss-function.html</loc>
+    <loc>https://aiwiki.work/k/loss-function.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gradient-descent.html</loc>
+    <loc>https://aiwiki.work/k/gradient-descent.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/backpropagation.html</loc>
+    <loc>https://aiwiki.work/k/backpropagation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/activation-function.html</loc>
+    <loc>https://aiwiki.work/k/activation-function.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/federated-learning.html</loc>
+    <loc>https://aiwiki.work/k/federated-learning.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/test-time-compute.html</loc>
+    <loc>https://aiwiki.work/k/test-time-compute.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/context-engineering.html</loc>
+    <loc>https://aiwiki.work/k/context-engineering.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/on-device-ai.html</loc>
+    <loc>https://aiwiki.work/k/on-device-ai.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/open-weights.html</loc>
+    <loc>https://aiwiki.work/k/open-weights.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/model-collapse.html</loc>
+    <loc>https://aiwiki.work/k/model-collapse.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/post-training.html</loc>
+    <loc>https://aiwiki.work/k/post-training.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/codex.html</loc>
+    <loc>https://aiwiki.work/k/codex.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/devin.html</loc>
+    <loc>https://aiwiki.work/k/devin.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gemini.html</loc>
+    <loc>https://aiwiki.work/k/gemini.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llama.html</loc>
+    <loc>https://aiwiki.work/k/llama.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gemma.html</loc>
+    <loc>https://aiwiki.work/k/gemma.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mistral.html</loc>
+    <loc>https://aiwiki.work/k/mistral.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/qwen.html</loc>
+    <loc>https://aiwiki.work/k/qwen.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/whisper.html</loc>
+    <loc>https://aiwiki.work/k/whisper.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ollama.html</loc>
+    <loc>https://aiwiki.work/k/ollama.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/stable-diffusion.html</loc>
+    <loc>https://aiwiki.work/k/stable-diffusion.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/self-improving-agent.html</loc>
+    <loc>https://aiwiki.work/k/self-improving-agent.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-handoff.html</loc>
+    <loc>https://aiwiki.work/k/agent-handoff.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-simulation.html</loc>
+    <loc>https://aiwiki.work/k/agent-simulation.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/copilot-sdk.html</loc>
+    <loc>https://aiwiki.work/k/copilot-sdk.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-dispatch.html</loc>
+    <loc>https://aiwiki.work/k/claude-dispatch.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-supply-chain-attack.html</loc>
+    <loc>https://aiwiki.work/k/ai-supply-chain-attack.html</loc>
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ontology.html</loc>
+    <loc>https://aiwiki.work/k/ontology.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agentic-engineering.html</loc>
+    <loc>https://aiwiki.work/k/agentic-engineering.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/deepseek.html</loc>
+    <loc>https://aiwiki.work/k/deepseek.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/n8n.html</loc>
+    <loc>https://aiwiki.work/k/n8n.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/token-economics.html</loc>
+    <loc>https://aiwiki.work/k/token-economics.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/12-factor-agents.html</loc>
+    <loc>https://aiwiki.work/k/12-factor-agents.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/pydantic-ai.html</loc>
+    <loc>https://aiwiki.work/k/pydantic-ai.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/background-agent.html</loc>
+    <loc>https://aiwiki.work/k/background-agent.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/spec-driven-dev.html</loc>
+    <loc>https://aiwiki.work/k/spec-driven-dev.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agent-friendly-cli.html</loc>
+    <loc>https://aiwiki.work/k/agent-friendly-cli.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mastra.html</loc>
+    <loc>https://aiwiki.work/k/mastra.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llamafile.html</loc>
+    <loc>https://aiwiki.work/k/llamafile.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/hermes-agent.html</loc>
+    <loc>https://aiwiki.work/k/hermes-agent.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/protocol-wars.html</loc>
+    <loc>https://aiwiki.work/k/protocol-wars.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/kokoro-tts.html</loc>
+    <loc>https://aiwiki.work/k/kokoro-tts.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/open-webui.html</loc>
+    <loc>https://aiwiki.work/k/open-webui.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/time-series-fm.html</loc>
+    <loc>https://aiwiki.work/k/time-series-fm.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/goose.html</loc>
+    <loc>https://aiwiki.work/k/goose.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/emotion-prompting.html</loc>
+    <loc>https://aiwiki.work/k/emotion-prompting.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mechanistic-interpretability.html</loc>
+    <loc>https://aiwiki.work/k/mechanistic-interpretability.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ai-vulnerability-discovery.html</loc>
+    <loc>https://aiwiki.work/k/ai-vulnerability-discovery.html</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/neurosymbolic-ai.html</loc>
+    <loc>https://aiwiki.work/k/neurosymbolic-ai.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/research-driven-agent.html</loc>
+    <loc>https://aiwiki.work/k/research-driven-agent.html</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agi.html</loc>
+    <loc>https://aiwiki.work/k/agi.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/scaling-law.html</loc>
+    <loc>https://aiwiki.work/k/scaling-law.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gan.html</loc>
+    <loc>https://aiwiki.work/k/gan.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/critic-pattern.html</loc>
+    <loc>https://aiwiki.work/k/critic-pattern.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/summarizer.html</loc>
+    <loc>https://aiwiki.work/k/summarizer.html</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/world-model.html</loc>
+    <loc>https://aiwiki.work/k/world-model.html</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/agentic-os.html</loc>
+    <loc>https://aiwiki.work/k/agentic-os.html</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/model-council.html</loc>
+    <loc>https://aiwiki.work/k/model-council.html</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/grok.html</loc>
+    <loc>https://aiwiki.work/k/grok.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/minimax.html</loc>
+    <loc>https://aiwiki.work/k/minimax.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/kimi.html</loc>
+    <loc>https://aiwiki.work/k/kimi.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/glm.html</loc>
+    <loc>https://aiwiki.work/k/glm.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/nemotron.html</loc>
+    <loc>https://aiwiki.work/k/nemotron.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/granite.html</loc>
+    <loc>https://aiwiki.work/k/granite.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/reka.html</loc>
+    <loc>https://aiwiki.work/k/reka.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/sparse-attention.html</loc>
+    <loc>https://aiwiki.work/k/sparse-attention.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/dynamic-workflows.html</loc>
+    <loc>https://aiwiki.work/k/dynamic-workflows.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/superpowers.html</loc>
+    <loc>https://aiwiki.work/k/superpowers.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/caveman.html</loc>
+    <loc>https://aiwiki.work/k/caveman.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/graphify.html</loc>
+    <loc>https://aiwiki.work/k/graphify.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/codeburn.html</loc>
+    <loc>https://aiwiki.work/k/codeburn.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/open-multi-agent.html</loc>
+    <loc>https://aiwiki.work/k/open-multi-agent.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-opus-4-8.html</loc>
+    <loc>https://aiwiki.work/k/claude-opus-4-8.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-sonnet-4-6.html</loc>
+    <loc>https://aiwiki.work/k/claude-sonnet-4-6.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/claude-haiku-4-5.html</loc>
+    <loc>https://aiwiki.work/k/claude-haiku-4-5.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gpt-5-5.html</loc>
+    <loc>https://aiwiki.work/k/gpt-5-5.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gemini-3-pro.html</loc>
+    <loc>https://aiwiki.work/k/gemini-3-pro.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gemini-3-5-flash.html</loc>
+    <loc>https://aiwiki.work/k/gemini-3-5-flash.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/gemma-4.html</loc>
+    <loc>https://aiwiki.work/k/gemma-4.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/llama-4.html</loc>
+    <loc>https://aiwiki.work/k/llama-4.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/deepseek-v4.html</loc>
+    <loc>https://aiwiki.work/k/deepseek-v4.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/qwen3-max.html</loc>
+    <loc>https://aiwiki.work/k/qwen3-max.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mistral-medium-3-5.html</loc>
+    <loc>https://aiwiki.work/k/mistral-medium-3-5.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/step-3-7.html</loc>
+    <loc>https://aiwiki.work/k/step-3-7.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/seed-2.html</loc>
+    <loc>https://aiwiki.work/k/seed-2.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mimo.html</loc>
+    <loc>https://aiwiki.work/k/mimo.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/olmo-3.html</loc>
+    <loc>https://aiwiki.work/k/olmo-3.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/phi-4.html</loc>
+    <loc>https://aiwiki.work/k/phi-4.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/nova-2.html</loc>
+    <loc>https://aiwiki.work/k/nova-2.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/command-a.html</loc>
+    <loc>https://aiwiki.work/k/command-a.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mercury-llm.html</loc>
+    <loc>https://aiwiki.work/k/mercury-llm.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/perplexity-sonar.html</loc>
+    <loc>https://aiwiki.work/k/perplexity-sonar.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/sora.html</loc>
+    <loc>https://aiwiki.work/k/sora.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/veo.html</loc>
+    <loc>https://aiwiki.work/k/veo.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/nano-banana.html</loc>
+    <loc>https://aiwiki.work/k/nano-banana.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/lyria.html</loc>
+    <loc>https://aiwiki.work/k/lyria.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/flux.html</loc>
+    <loc>https://aiwiki.work/k/flux.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/midjourney.html</loc>
+    <loc>https://aiwiki.work/k/midjourney.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/ideogram.html</loc>
+    <loc>https://aiwiki.work/k/ideogram.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/suno.html</loc>
+    <loc>https://aiwiki.work/k/suno.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/elevenlabs.html</loc>
+    <loc>https://aiwiki.work/k/elevenlabs.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/runway.html</loc>
+    <loc>https://aiwiki.work/k/runway.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/kling.html</loc>
+    <loc>https://aiwiki.work/k/kling.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/mimo-v2-5.html</loc>
+    <loc>https://aiwiki.work/k/mimo-v2-5.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/apple-intelligence.html</loc>
+    <loc>https://aiwiki.work/k/apple-intelligence.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/baoyu-design.html</loc>
+    <loc>https://aiwiki.work/k/baoyu-design.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/guard-skills.html</loc>
+    <loc>https://aiwiki.work/k/guard-skills.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aiwiki.kro.kr/k/glm-5-2.html</loc>
+    <loc>https://aiwiki.work/k/glm-5-2.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

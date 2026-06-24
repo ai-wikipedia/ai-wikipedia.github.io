@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="XML 프롬프팅란? (XML Prompting) — AI Wiki">
 <meta property="og:description" content="XML 프롬프팅란? XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/xml-prompting.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/xml-prompting.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="XML 프롬프팅란? (XML Prompting) — AI Wiki">
 <meta name="twitter:description" content="XML 프롬프팅란? XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/xml-prompting.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/xml-prompting.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/xml-prompting.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/xml-prompting.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "XML 프롬프팅",
   "alternateName": "XML Prompting",
   "description": "XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.",
-  "url": "https://aiwiki.kro.kr/k/xml-prompting.html",
+  "url": "https://aiwiki.work/k/xml-prompting.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "프롬프팅",
-      "item": "https://aiwiki.kro.kr/?cat=prompting"
+      "item": "https://aiwiki.work/?cat=prompting"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "XML 프롬프팅",
-      "item": "https://aiwiki.kro.kr/k/xml-prompting.html"
+      "item": "https://aiwiki.work/k/xml-prompting.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "XML 프롬프팅 (XML Prompting)",
   "description": "XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.",
-  "url": "https://aiwiki.kro.kr/k/xml-prompting.html",
+  "url": "https://aiwiki.work/k/xml-prompting.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/xml-prompting.html"
+    "@id": "https://aiwiki.work/k/xml-prompting.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">XML Prompting</div>
   <div class="body"><p>XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.</p><h4>개념 설명</h4><p>긴 프롬프트에서 "지시사항과 예시와 사용자 입력"을 줄바꿈으로만 구분하면 LLM이 경계를 혼동하기 쉽다. <strong>XML 프롬프팅</strong>은 <code>&lt;instructions&gt;</code>, <code>&lt;examples&gt;</code>, <code>&lt;user_query&gt;</code>처럼 XML 태그로 각 영역을 명확히 표시해서 구조를 잡는 방식이다. Anthropic은 Claude가 XML 태그 구조에 특히 잘 반응하도록 학습됐다고 밝혀, Claude 프롬프팅 가이드에서 권장하는 방식이다.</p><h4>사용 예시</h4><p>복잡한 시스템 프롬프트를 구성할 때 <code>&lt;role&gt;</code>에 역할을, <code>&lt;context&gt;</code>에 배경 정보를, <code>&lt;rules&gt;</code>에 제약 조건을, <code>&lt;task&gt;</code>에 실제 작업을 담으면 Claude가 각 섹션을 정확히 구분해서 처리한다. 프롬프트 인젝션을 방어하는 데도 유용하다.</p></div>
   <div class="tags"><span>#구조화</span><span>#Anthropic</span><span>#Claude</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.kro.kr/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.kro.kr/k/harness-engineering.html">하네스 엔지니어링</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#xml-prompting">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a></div>
+  <a class="back" href="https://aiwiki.work/#xml-prompting">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

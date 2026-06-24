@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="모델 서빙란? (Model Serving) — AI Wiki">
 <meta property="og:description" content="모델 서빙란? 학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/model-serving.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/model-serving.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="모델 서빙란? (Model Serving) — AI Wiki">
 <meta name="twitter:description" content="모델 서빙란? 학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/model-serving.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/model-serving.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/model-serving.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/model-serving.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "모델 서빙",
   "alternateName": "Model Serving",
   "description": "학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.",
-  "url": "https://aiwiki.kro.kr/k/model-serving.html",
+  "url": "https://aiwiki.work/k/model-serving.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://aiwiki.kro.kr/?cat=infra"
+      "item": "https://aiwiki.work/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "모델 서빙",
-      "item": "https://aiwiki.kro.kr/k/model-serving.html"
+      "item": "https://aiwiki.work/k/model-serving.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "모델 서빙 (Model Serving)",
   "description": "학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.",
-  "url": "https://aiwiki.kro.kr/k/model-serving.html",
+  "url": "https://aiwiki.work/k/model-serving.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/model-serving.html"
+    "@id": "https://aiwiki.work/k/model-serving.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Model Serving</div>
   <div class="body"><p>학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.</p><h4>개념 설명</h4><p>좋은 모델을 만들어도 빠르고 안정적으로 서빙하지 못하면 쓸모가 없다. LLM 서빙은 일반 모델보다 훨씬 복잡하다. 요청마다 생성 토큰 수가 다르고, 스트리밍 응답이 필요하며, 배치 처리를 위한 연속 배칭이 필요하다. KV 캐시 관리, GPU 메모리 최적화, 요청 스케줄링이 서빙 성능을 결정한다.</p><p><strong>vLLM</strong>, <strong>TGI(Text Generation Inference)</strong>, <strong>TensorRT-LLM</strong>이 대표적인 오픈소스 서빙 프레임워크다. 각각 Paged Attention, 연속 배칭, TensorRT 최적화로 서빙 효율을 높인다.</p><h4>사용 예시</h4><p>vLLM을 Docker로 띄우면 OpenAI 호환 API 엔드포인트가 생성된다. <code>--model meta-llama/Llama-3-8B</code> 같이 모델을 지정하면 기본 설정으로 서빙을 시작할 수 있다. 트래픽에 따라 GPU 수를 동적으로 조절하는 Kubernetes 기반 오토스케일링과 결합해 운영한다.</p></div>
   <div class="tags"><span>#배포</span><span>#API</span><span>#프로덕션</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/vllm.html">vLLM</a>, <a href="https://aiwiki.kro.kr/k/continuous-batching.html">연속 배칭</a>, <a href="https://aiwiki.kro.kr/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.kro.kr/k/quantization.html">양자화</a>, <a href="https://aiwiki.kro.kr/k/latency-optimization.html">레이턴시 최적화</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#model-serving">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/continuous-batching.html">연속 배칭</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/latency-optimization.html">레이턴시 최적화</a></div>
+  <a class="back" href="https://aiwiki.work/#model-serving">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

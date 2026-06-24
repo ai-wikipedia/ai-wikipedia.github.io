@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="컨텍스트 압축란? (Context Compression) — AI Wiki">
 <meta property="og:description" content="컨텍스트 압축란? 긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/context-compression.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/context-compression.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="컨텍스트 압축란? (Context Compression) — AI Wiki">
 <meta name="twitter:description" content="컨텍스트 압축란? 긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/context-compression.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/context-compression.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/context-compression.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/context-compression.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "컨텍스트 압축",
   "alternateName": "Context Compression",
   "description": "긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.",
-  "url": "https://aiwiki.kro.kr/k/context-compression.html",
+  "url": "https://aiwiki.work/k/context-compression.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "데이터",
-      "item": "https://aiwiki.kro.kr/?cat=data"
+      "item": "https://aiwiki.work/?cat=data"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "컨텍스트 압축",
-      "item": "https://aiwiki.kro.kr/k/context-compression.html"
+      "item": "https://aiwiki.work/k/context-compression.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "컨텍스트 압축 (Context Compression)",
   "description": "긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.",
-  "url": "https://aiwiki.kro.kr/k/context-compression.html",
+  "url": "https://aiwiki.work/k/context-compression.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/context-compression.html"
+    "@id": "https://aiwiki.work/k/context-compression.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Context Compression</div>
   <div class="body"><p>긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.</p><h4>개념 설명</h4><p>긴 대화 이력이나 문서를 통째로 컨텍스트에 넣으면 비용이 크고 정작 중요한 정보가 묻힌다. <strong>컨텍스트 압축</strong>은 긴 컨텍스트에서 현재 질문과 관련 없는 부분을 제거하거나 요약해서, 핵심만 남긴 짧은 컨텍스트를 만드는 기법이다. LLM Lingua, Selective Context 같은 도구가 이 역할을 담당한다.</p><h4>사용 예시</h4><p>장기 대화 에이전트에서 대화가 50턴을 넘어가면, 초기 대화를 "사용자는 Python 백엔드 개발자, React 사용, Docker 환경"처럼 사실 요약으로 압축하고 최근 10턴만 전체로 유지한다. LangChain의 <code>ConversationSummaryMemory</code>가 이 패턴을 구현한 컴포넌트다.</p></div>
   <div class="tags"><span>#압축</span><span>#요약</span><span>#효율화</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/chunking.html">청킹</a>, <a href="https://aiwiki.kro.kr/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.kro.kr/k/caveman.html">케이브맨</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#context-compression">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a></div>
+  <a class="back" href="https://aiwiki.work/#context-compression">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

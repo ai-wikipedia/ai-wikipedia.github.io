@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="양자화란? (Quantization) — AI Wiki">
 <meta property="og:description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/quantization.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/quantization.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="양자화란? (Quantization) — AI Wiki">
 <meta name="twitter:description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/quantization.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/quantization.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/quantization.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/quantization.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "양자화",
   "alternateName": "Quantization",
   "description": "모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.",
-  "url": "https://aiwiki.kro.kr/k/quantization.html",
+  "url": "https://aiwiki.work/k/quantization.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "양자화",
-      "item": "https://aiwiki.kro.kr/k/quantization.html"
+      "item": "https://aiwiki.work/k/quantization.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "양자화 (Quantization)",
   "description": "모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.",
-  "url": "https://aiwiki.kro.kr/k/quantization.html",
+  "url": "https://aiwiki.work/k/quantization.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/quantization.html"
+    "@id": "https://aiwiki.work/k/quantization.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Quantization</div>
   <div class="body"><p>모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.</p><h4>개념 설명</h4><p>float32(4바이트)로 저장된 가중치를 int8(1바이트)로 변환하면 모델 크기가 4분의 1로 줄고, GPU 메모리 사용량이 대폭 감소한다. 4비트 양자화는 8분의 1 수준이다. 정밀도가 낮아지면서 약간의 성능 저하가 생기지만, 적절한 양자화 방법을 쓰면 손실이 미미하다. <strong>GPTQ</strong>(사후 학습 양자화)와 <strong>AWQ</strong>가 가장 널리 쓰이는 LLM 양자화 방법이다.</p><p>로컬 실행에서는 <strong>GGUF</strong> 형식이 표준이다. llama.cpp가 GGUF를 지원하며, CPU에서도 양자화된 LLM을 실행할 수 있게 했다. HuggingFace에서 Q4_K_M, Q5_K_S 같은 이름의 GGUF 파일을 쉽게 찾을 수 있다.</p><h4>사용 예시</h4><p>Ollama로 Llama나 Mistral을 로컬에서 실행하면 자동으로 양자화된 모델을 받아 사용한다. 프로덕션 서빙에서는 <code>bitsandbytes</code>나 GPTQ로 양자화해 GPU 메모리를 아끼거나 배치 크기를 늘린다. vLLM도 AWQ, GPTQ 양자화를 지원한다.</p></div>
   <div class="tags"><span>#경량화</span><span>#INT8</span><span>#GGUF</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.kro.kr/k/lora.html">LoRA</a>, <a href="https://aiwiki.kro.kr/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.kro.kr/k/model-serving.html">모델 서빙</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#quantization">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a></div>
+  <a class="back" href="https://aiwiki.work/#quantization">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

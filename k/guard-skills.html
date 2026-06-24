@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="가드 스킬란? (Guard Skills) — AI Wiki">
 <meta property="og:description" content="가드 스킬란? AI가 생성한 코드·테스트·문서가 흔히 빠지는 실패 패턴을, 작업이 끝난 변경분에 한 번 더 돌려 잡아내는 2차 품질 검증용 스킬.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/guard-skills.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/guard-skills.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="가드 스킬란? (Guard Skills) — AI Wiki">
 <meta name="twitter:description" content="가드 스킬란? AI가 생성한 코드·테스트·문서가 흔히 빠지는 실패 패턴을, 작업이 끝난 변경분에 한 번 더 돌려 잡아내는 2차 품질 검증용 스킬.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/guard-skills.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/guard-skills.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/guard-skills.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/guard-skills.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "가드 스킬",
   "alternateName": "Guard Skills",
   "description": "AI가 생성한 코드·테스트·문서가 흔히 빠지는 실패 패턴을, 작업이 끝난 변경분에 한 번 더 돌려 잡아내는 2차 품질 검증용 스킬.",
-  "url": "https://aiwiki.kro.kr/k/guard-skills.html",
+  "url": "https://aiwiki.work/k/guard-skills.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://aiwiki.kro.kr/?cat=tooling"
+      "item": "https://aiwiki.work/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "가드 스킬",
-      "item": "https://aiwiki.kro.kr/k/guard-skills.html"
+      "item": "https://aiwiki.work/k/guard-skills.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "가드 스킬 (Guard Skills)",
   "description": "AI가 생성한 코드·테스트·문서가 흔히 빠지는 실패 패턴을, 작업이 끝난 변경분에 한 번 더 돌려 잡아내는 2차 품질 검증용 스킬.",
-  "url": "https://aiwiki.kro.kr/k/guard-skills.html",
+  "url": "https://aiwiki.work/k/guard-skills.html",
   "datePublished": "2026-06-10",
   "dateModified": "2026-06-10",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/guard-skills.html"
+    "@id": "https://aiwiki.work/k/guard-skills.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Guard Skills</div>
   <div class="body"><p>AI가 생성한 코드·테스트·문서가 흔히 빠지는 실패 패턴을, 작업이 끝난 변경분에 한 번 더 돌려 잡아내는 2차 품질 검증용 스킬.</p><h4>개념 설명</h4><p>AI 코딩 에이전트는 그럴듯해 보이지만 실제로는 허점이 있는 결과물을 자주 만든다. 아무것도 검증하지 못하는 테스트를 쓰거나, 사실상 같은 테스트를 중복으로 찍어내거나, 실제 코드와 어긋나는 문서를 채워 넣는 식이다. <strong>가드 스킬(Guard Skills)</strong>은 이렇게 AI 결과물이 반복적으로 빠지는 실패 모드를 겨냥해, 에이전트가 작업을 마친 뒤 그 변경분(diff)에 한 번 더 돌리는 2차 검증용 스킬이다.</p><p>핵심은 "만드는 일"과 "검사하는 일"을 분리한다는 데 있다. 코드를 짠 에이전트가 자기 결과를 스스로 평가하면 같은 맹점을 그대로 통과시키기 쉽다. 그래서 가드 스킬은 별도의 검사 기준만 들고 diff를 다시 들여다본다.</p><h4>사용 예시</h4><p>에이전트에게 일단 작업을 끝내게 한 뒤, 결과를 발표하거나 커밋·머지하기 직전에 변경분에 가드를 건다. 테스트를 새로 짰다면 <code>$test-guard</code>를 그 테스트에 돌려서 목(mock) 남용, 구현 세부사항에 매달리는 단언, 사실상 아무것도 잡지 못하는 테스트가 섞여 있는지 점검한다. README를 고쳤다면 <code>$docs-guard</code>로 문서가 실제 동작과 어긋나지 않는지 본다.</p><p>가드마다 담당 영역이 정해져 있다. <code>clean-code-guard</code>는 일반 코드 품질을, <code>test-guard</code>는 테스트를, <code>docs-guard</code>는 문서를 맡는다. WordPress·WooCommerce처럼 특정 프레임워크 변경에만 거는 전용 가드(<code>wp-guard</code>, <code>woo-guard</code>)도 따로 있다.</p><h4>심화 내용</h4><p>가드 스킬은 Claude Code의 <strong>스킬(Skill)</strong> 메커니즘 위에 구현된다. 그래서 평소처럼 에이전트가 코드를 생성하게 두고, 마지막에 사람이 "이 diff에 test-guard 돌려줘"라고 부르는 식으로 사람이 게이트를 통과시키는 시점을 직접 정한다. 자동 훅으로 매번 강제하기보다, 발표·커밋·머지 직전이라는 명확한 길목에서만 검사를 끼워 넣는 것이 권장 사용법이다.</p><h4>주의할 점</h4><p>가드는 만능 린터가 아니다. AI 코드 특유의 실패 모드를 좁게 겨냥한 도구라, 일반적인 정적 분석이나 사람 코드 리뷰를 대체하지는 않는다. 또한 가드 자체도 AI가 판단하므로, 통과했다고 무결을 보장하지는 않는다 — 어디까지나 "흔한 함정을 한 번 더 걸러주는" 안전망으로 보는 편이 맞다.</p></div>
   <div class="tags"><span>#스킬</span><span>#품질 게이트</span><span>#AI 코드 리뷰</span><span>#Claude Code</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/skills.html">스킬</a>, <a href="https://aiwiki.kro.kr/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.kro.kr/k/ai-code-review.html">AI 코드 리뷰</a>, <a href="https://aiwiki.kro.kr/k/test-generation.html">테스트 생성</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#guard-skills">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/skills.html">스킬</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-code-review.html">AI 코드 리뷰</a>, <a href="https://aiwiki.work/k/test-generation.html">테스트 생성</a></div>
+  <a class="back" href="https://aiwiki.work/#guard-skills">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-10</div>
 </div>
 </body>

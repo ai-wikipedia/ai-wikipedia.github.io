@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="DSPy란? — AI Wiki">
 <meta property="og:description" content="DSPy란? 프롬프트를 직접 작성하는 대신 프로그래밍 방식으로 LLM 파이프라인을 최적화하는 프레임워크.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/dspy.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/dspy.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DSPy란? — AI Wiki">
 <meta name="twitter:description" content="DSPy란? 프롬프트를 직접 작성하는 대신 프로그래밍 방식으로 LLM 파이프라인을 최적화하는 프레임워크.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/dspy.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/dspy.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/dspy.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/dspy.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "DSPy",
   "alternateName": "DSPy",
   "description": "프롬프트를 직접 작성하는 대신 프로그래밍 방식으로 LLM 파이프라인을 최적화하는 프레임워크.",
-  "url": "https://aiwiki.kro.kr/k/dspy.html",
+  "url": "https://aiwiki.work/k/dspy.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://aiwiki.kro.kr/?cat=tooling"
+      "item": "https://aiwiki.work/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "DSPy",
-      "item": "https://aiwiki.kro.kr/k/dspy.html"
+      "item": "https://aiwiki.work/k/dspy.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "DSPy",
   "description": "프롬프트를 직접 작성하는 대신 프로그래밍 방식으로 LLM 파이프라인을 최적화하는 프레임워크.",
-  "url": "https://aiwiki.kro.kr/k/dspy.html",
+  "url": "https://aiwiki.work/k/dspy.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/dspy.html"
+    "@id": "https://aiwiki.work/k/dspy.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en"></div>
   <div class="body"><p>프롬프트를 직접 작성하는 대신 프로그래밍 방식으로 LLM 파이프라인을 최적화하는 프레임워크.</p><h4>개념 설명</h4><p>프롬프트를 손으로 조율하는 작업은 모델이 바뀌거나 태스크가 변할 때마다 처음부터 다시 해야 한다. Stanford에서 만든 <strong>DSPy</strong>는 프롬프트를 직접 쓰는 대신, "이 입력으로 저 출력을 내야 한다"는 명세와 예시 데이터를 주면 프레임워크가 알아서 프롬프트와 퓨샷 예시를 최적화한다. ML 모델을 학습시키듯 LLM 파이프라인을 최적화하는 방식이다.</p><h4>사용 예시</h4><p>질의응답 파이프라인을 <code>dspy.ChainOfThought("question -> answer")</code>로 선언하고 정답 예시를 주면, DSPy 옵티마이저가 CoT 프롬프트와 퓨샷 예시를 자동으로 최적화해준다. 같은 파이프라인을 GPT-4o에서 Claude로 옮길 때도 코드 변경 없이 재최적화만 돌리면 된다.</p></div>
   <div class="tags"><span>#Stanford</span><span>#프롬프트최적화</span><span>#프로그래밍</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/auto-prompt.html">자동 프롬프트 최적화</a>, <a href="https://aiwiki.kro.kr/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.kro.kr/k/chain-of-thought.html">사고의 사슬</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#dspy">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/auto-prompt.html">자동 프롬프트 최적화</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a></div>
+  <a class="back" href="https://aiwiki.work/#dspy">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

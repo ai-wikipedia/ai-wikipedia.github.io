@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="텐서 병렬화란? (Tensor Parallelism) — AI Wiki">
 <meta property="og:description" content="텐서 병렬화란? 모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/tensor-parallelism.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/tensor-parallelism.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="텐서 병렬화란? (Tensor Parallelism) — AI Wiki">
 <meta name="twitter:description" content="텐서 병렬화란? 모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/tensor-parallelism.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/tensor-parallelism.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/tensor-parallelism.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/tensor-parallelism.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "텐서 병렬화",
   "alternateName": "Tensor Parallelism",
   "description": "모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.",
-  "url": "https://aiwiki.kro.kr/k/tensor-parallelism.html",
+  "url": "https://aiwiki.work/k/tensor-parallelism.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://aiwiki.kro.kr/?cat=infra"
+      "item": "https://aiwiki.work/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "텐서 병렬화",
-      "item": "https://aiwiki.kro.kr/k/tensor-parallelism.html"
+      "item": "https://aiwiki.work/k/tensor-parallelism.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "텐서 병렬화 (Tensor Parallelism)",
   "description": "모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.",
-  "url": "https://aiwiki.kro.kr/k/tensor-parallelism.html",
+  "url": "https://aiwiki.work/k/tensor-parallelism.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/tensor-parallelism.html"
+    "@id": "https://aiwiki.work/k/tensor-parallelism.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Tensor Parallelism</div>
   <div class="body"><p>모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.</p><h4>개념 설명</h4><p>70B 모델은 FP16 기준 140GB로, 80GB A100 두 개에도 안 들어간다. 텐서 병렬화는 행렬 자체를 쪼개어 여러 GPU에 분산하는 방법이다. 예를 들어 큰 행렬 W를 열 방향으로 4등분해 GPU 4개에 하나씩 나눠주고, 각 GPU는 자신의 열에 해당하는 연산만 수행한 뒤 결과를 합친다. NVIDIA의 Megatron-LM이 이 방식을 체계화했다.</p><p>텐서 병렬화 외에 레이어를 GPU에 순서대로 배치하는 <strong>파이프라인 병렬화</strong>, 같은 모델 복사본에 다른 데이터를 넣는 <strong>데이터 병렬화</strong>를 조합해 대규모 학습을 구성한다.</p><h4>사용 예시</h4><p>vLLM 서빙 시 <code>--tensor-parallel-size 4</code>로 4개 GPU에 모델을 분산할 수 있다. 학습에서는 Megatron-LM, DeepSpeed의 ZeRO 전략이 텐서 병렬화를 지원한다. 8개 GPU 서버에서 70B 모델을 텐서 병렬화로 서빙하면 단일 GPU 대비 지연이 크게 줄어든다.</p></div>
   <div class="tags"><span>#분산학습</span><span>#Megatron</span><span>#멀티GPU</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/gpu-cluster.html">GPU 클러스터</a>, <a href="https://aiwiki.kro.kr/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.kro.kr/k/vllm.html">vLLM</a>, <a href="https://aiwiki.kro.kr/k/pretraining.html">사전학습</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#tensor-parallelism">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gpu-cluster.html">GPU 클러스터</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a></div>
+  <a class="back" href="https://aiwiki.work/#tensor-parallelism">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="에이전트 프로토콜란? (Agent Protocol) — AI Wiki">
 <meta property="og:description" content="에이전트 프로토콜란? AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/agent-protocol.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/agent-protocol.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="에이전트 프로토콜란? (Agent Protocol) — AI Wiki">
 <meta name="twitter:description" content="에이전트 프로토콜란? AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/agent-protocol.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/agent-protocol.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/agent-protocol.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/agent-protocol.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "에이전트 프로토콜",
   "alternateName": "Agent Protocol",
   "description": "AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.",
-  "url": "https://aiwiki.kro.kr/k/agent-protocol.html",
+  "url": "https://aiwiki.work/k/agent-protocol.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://aiwiki.kro.kr/?cat=agent"
+      "item": "https://aiwiki.work/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "에이전트 프로토콜",
-      "item": "https://aiwiki.kro.kr/k/agent-protocol.html"
+      "item": "https://aiwiki.work/k/agent-protocol.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "에이전트 프로토콜 (Agent Protocol)",
   "description": "AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.",
-  "url": "https://aiwiki.kro.kr/k/agent-protocol.html",
+  "url": "https://aiwiki.work/k/agent-protocol.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/agent-protocol.html"
+    "@id": "https://aiwiki.work/k/agent-protocol.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Agent Protocol</div>
   <div class="body"><p>AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.</p><h4>개념 설명</h4><p>에이전트 프로토콜은 AI 에이전트 간의 메시지 교환 방식을 표준화한 규약이다. 에이전트마다 입출력 형식이 제각각이면 협력이 불가능한데, 공통 프로토콜이 있으면 어떤 프레임워크로 만들어진 에이전트든 서로 연결할 수 있다. LangChain 에이전트와 AutoGPT 에이전트가 같은 작업에 협력할 수 있는 것이 대표적인 예다.</p><h4>사용 예시</h4><p>AI 에이전트 서버를 구축할 때 에이전트 프로토콜을 따르면 표준 REST API 엔드포인트(<code>/agent/tasks</code>, <code>/agent/tasks/{id}/steps</code>)를 통해 외부에서 작업을 지시하고 결과를 수신할 수 있다. 이렇게 하면 프론트엔드나 오케스트레이터가 내부 구현에 상관없이 동일한 방식으로 에이전트를 제어할 수 있다.</p></div>
   <div class="tags"><span>#표준</span><span>#상호운용성</span><span>#프로토콜</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.kro.kr/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.kro.kr/k/a2a.html">A2A</a>, <a href="https://aiwiki.kro.kr/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.kro.kr/k/agent-framework.html">에이전트 프레임워크</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#agent-protocol">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/a2a.html">A2A</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a></div>
+  <a class="back" href="https://aiwiki.work/#agent-protocol">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

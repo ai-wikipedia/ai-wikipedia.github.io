@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="에이전트 핸드오프란? (Agent Handoff) — AI Wiki">
 <meta property="og:description" content="에이전트 핸드오프란? 한 에이전트가 자신의 역할 범위를 벗어나는 요청을 받으면 적합한 다른 에이전트에게 대화와 맥락을 넘기는 메커니즘.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/agent-handoff.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/agent-handoff.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="에이전트 핸드오프란? (Agent Handoff) — AI Wiki">
 <meta name="twitter:description" content="에이전트 핸드오프란? 한 에이전트가 자신의 역할 범위를 벗어나는 요청을 받으면 적합한 다른 에이전트에게 대화와 맥락을 넘기는 메커니즘.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/agent-handoff.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/agent-handoff.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/agent-handoff.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/agent-handoff.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "에이전트 핸드오프",
   "alternateName": "Agent Handoff",
   "description": "한 에이전트가 자신의 역할 범위를 벗어나는 요청을 받으면 적합한 다른 에이전트에게 대화와 맥락을 넘기는 메커니즘.",
-  "url": "https://aiwiki.kro.kr/k/agent-handoff.html",
+  "url": "https://aiwiki.work/k/agent-handoff.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "에이전트",
-      "item": "https://aiwiki.kro.kr/?cat=agent"
+      "item": "https://aiwiki.work/?cat=agent"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "에이전트 핸드오프",
-      "item": "https://aiwiki.kro.kr/k/agent-handoff.html"
+      "item": "https://aiwiki.work/k/agent-handoff.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "에이전트 핸드오프 (Agent Handoff)",
   "description": "한 에이전트가 자신의 역할 범위를 벗어나는 요청을 받으면 적합한 다른 에이전트에게 대화와 맥락을 넘기는 메커니즘.",
-  "url": "https://aiwiki.kro.kr/k/agent-handoff.html",
+  "url": "https://aiwiki.work/k/agent-handoff.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/agent-handoff.html"
+    "@id": "https://aiwiki.work/k/agent-handoff.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Agent Handoff</div>
   <div class="body"><p>한 에이전트가 자신의 역할 범위를 벗어나는 요청을 받으면 적합한 다른 에이전트에게 대화와 맥락을 넘기는 메커니즘.</p><h4>개념 설명</h4><p>고객 지원에서 일반 상담원이 기술 문제를 받으면 기술팀으로 전화를 넘기는 것처럼, 에이전트도 자신이 처리할 수 없는 요청을 다른 전문 에이전트에게 넘긴다. 핸드오프 시 대화 이력과 맥락이 함께 전달되어야 사용자가 같은 말을 반복하지 않는다. OpenAI Swarm이 이 패턴을 핵심 기능으로 구현했고, A2A 프로토콜도 에이전트 간 핸드오프를 표준화한다.</p><h4>사용 예시</h4><p>멀티에이전트 고객 지원 시스템에서 일반 문의 에이전트가 "결제 오류"를 감지하면 결제 전문 에이전트에게 핸드오프한다. LangGraph에서 조건부 엣지로 구현하거나, OpenAI Swarm의 <code>handoff()</code> 함수로 에이전트 전환을 정의할 수 있다. 핸드오프 기준(언제 넘길지)과 맥락 전달 범위(무엇을 넘길지)가 설계의 핵심이다.</p></div>
   <div class="tags"><span>#위임</span><span>#전환</span><span>#멀티에이전트</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/swarm.html">스웜</a>, <a href="https://aiwiki.kro.kr/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.kro.kr/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.kro.kr/k/a2a.html">A2A</a>, <a href="https://aiwiki.kro.kr/k/agent-protocol.html">에이전트 프로토콜</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#agent-handoff">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/swarm.html">스웜</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/a2a.html">A2A</a>, <a href="https://aiwiki.work/k/agent-protocol.html">에이전트 프로토콜</a></div>
+  <a class="back" href="https://aiwiki.work/#agent-handoff">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

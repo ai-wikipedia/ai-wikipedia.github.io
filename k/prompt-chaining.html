@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="프롬프트 체이닝란? (Prompt Chaining) — AI Wiki">
 <meta property="og:description" content="프롬프트 체이닝란? 하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/prompt-chaining.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/prompt-chaining.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="프롬프트 체이닝란? (Prompt Chaining) — AI Wiki">
 <meta name="twitter:description" content="프롬프트 체이닝란? 하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/prompt-chaining.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/prompt-chaining.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/prompt-chaining.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/prompt-chaining.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "프롬프트 체이닝",
   "alternateName": "Prompt Chaining",
   "description": "하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.",
-  "url": "https://aiwiki.kro.kr/k/prompt-chaining.html",
+  "url": "https://aiwiki.work/k/prompt-chaining.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "프롬프팅",
-      "item": "https://aiwiki.kro.kr/?cat=prompting"
+      "item": "https://aiwiki.work/?cat=prompting"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "프롬프트 체이닝",
-      "item": "https://aiwiki.kro.kr/k/prompt-chaining.html"
+      "item": "https://aiwiki.work/k/prompt-chaining.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "프롬프트 체이닝 (Prompt Chaining)",
   "description": "하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.",
-  "url": "https://aiwiki.kro.kr/k/prompt-chaining.html",
+  "url": "https://aiwiki.work/k/prompt-chaining.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/prompt-chaining.html"
+    "@id": "https://aiwiki.work/k/prompt-chaining.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Prompt Chaining</div>
   <div class="body"><p>하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.</p><h4>개념 설명</h4><p>복잡한 작업을 하나의 프롬프트로 해결하려 하면 LLM이 중간에 헷갈리거나 품질이 떨어진다. <strong>프롬프트 체이닝</strong>은 큰 작업을 독립적인 단계로 나누고, 각 단계를 별도의 LLM 호출로 처리하면서 앞 단계의 결과를 다음 단계의 입력으로 연결하는 방식이다. 각 단계가 단순해지므로 전체 품질이 올라간다.</p><h4>사용 예시</h4><p>블로그 포스트 작성을 "주제 브레인스토밍 → 개요 작성 → 섹션별 초안 → 편집 및 교정"처럼 네 번의 LLM 호출로 체이닝하면, 한 번에 쓰는 것보다 훨씬 구조적인 결과가 나온다. LangChain의 <code>SequentialChain</code>이나 LangGraph의 선형 그래프로 구현할 수 있다.</p></div>
   <div class="tags"><span>#파이프라인</span><span>#순차처리</span><span>#분해</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.kro.kr/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.kro.kr/k/langchain.html">랭체인</a>, <a href="https://aiwiki.kro.kr/k/langgraph.html">랭그래프</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#prompt-chaining">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/langgraph.html">랭그래프</a></div>
+  <a class="back" href="https://aiwiki.work/#prompt-chaining">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>

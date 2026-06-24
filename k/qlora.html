@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="QLoRA란? (Quantized LoRA) — AI Wiki">
 <meta property="og:description" content="QLoRA란? 4비트 양자화된 모델에 LoRA를 적용해 메모리를 극적으로 줄인 파인튜닝 기법. 24GB 이하 GPU에서 65B 이상의 대형 모델도 파인튜닝할 수 있게 해줬다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/qlora.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/qlora.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="QLoRA란? (Quantized LoRA) — AI Wiki">
 <meta name="twitter:description" content="QLoRA란? 4비트 양자화된 모델에 LoRA를 적용해 메모리를 극적으로 줄인 파인튜닝 기법. 24GB 이하 GPU에서 65B 이상의 대형 모델도 파인튜닝할 수 있게 해줬다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/qlora.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/qlora.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/qlora.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/qlora.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "QLoRA",
   "alternateName": "Quantized LoRA",
   "description": "4비트 양자화된 모델에 LoRA를 적용해 메모리를 극적으로 줄인 파인튜닝 기법. 24GB 이하 GPU에서 65B 이상의 대형 모델도 파인튜닝할 수 있게 해줬다.",
-  "url": "https://aiwiki.kro.kr/k/qlora.html",
+  "url": "https://aiwiki.work/k/qlora.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "QLoRA",
-      "item": "https://aiwiki.kro.kr/k/qlora.html"
+      "item": "https://aiwiki.work/k/qlora.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "QLoRA (Quantized LoRA)",
   "description": "4비트 양자화된 모델에 LoRA를 적용해 메모리를 극적으로 줄인 파인튜닝 기법. 24GB 이하 GPU에서 65B 이상의 대형 모델도 파인튜닝할 수 있게 해줬다.",
-  "url": "https://aiwiki.kro.kr/k/qlora.html",
+  "url": "https://aiwiki.work/k/qlora.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/qlora.html"
+    "@id": "https://aiwiki.work/k/qlora.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Quantized LoRA</div>
   <div class="body"><p>4비트 양자화된 모델에 LoRA를 적용해 메모리를 극적으로 줄인 파인튜닝 기법. 24GB 이하 GPU에서 65B 이상의 대형 모델도 파인튜닝할 수 있게 해줬다.</p><h4>개념 설명</h4><p>LoRA만으로는 모델 가중치를 메모리에 올리는 것 자체가 벅찰 수 있다. <strong>QLoRA</strong>는 베이스 모델을 4비트로 양자화해 메모리 부담을 크게 줄이고, 그 위에 LoRA 어댑터를 붙여 학습한다. 논문 발표 시 단일 GPU로 65B 모델 파인튜닝이 가능하다는 것을 보여주며 오픈소스 파인튜닝 붐을 일으켰다.</p><h4>사용 예시</h4><p><code>bitsandbytes</code>와 <code>peft</code> 라이브러리를 함께 쓰면 <code>load_in_4bit=True</code> 옵션으로 QLoRA 학습 환경을 쉽게 구성할 수 있다. Google Colab 무료 GPU에서도 13B 모델 파인튜닝이 가능해 많은 개발자들이 커스텀 모델을 만드는 진입점이 됐다.</p></div>
   <div class="tags"><span>#4비트양자화</span><span>#파인튜닝</span><span>#메모리절약</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/lora.html">LoRA</a>, <a href="https://aiwiki.kro.kr/k/quantization.html">양자화</a>, <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.kro.kr/k/sft.html">SFT</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#qlora">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/sft.html">SFT</a></div>
+  <a class="back" href="https://aiwiki.work/#qlora">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

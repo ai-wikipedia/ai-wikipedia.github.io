@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="지식 베이스란? (Knowledge Base) — AI Wiki">
 <meta property="og:description" content="지식 베이스란? 조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/knowledge-base.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/knowledge-base.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="지식 베이스란? (Knowledge Base) — AI Wiki">
 <meta name="twitter:description" content="지식 베이스란? 조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/knowledge-base.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/knowledge-base.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/knowledge-base.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/knowledge-base.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "지식 베이스",
   "alternateName": "Knowledge Base",
   "description": "조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.",
-  "url": "https://aiwiki.kro.kr/k/knowledge-base.html",
+  "url": "https://aiwiki.work/k/knowledge-base.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "응용",
-      "item": "https://aiwiki.kro.kr/?cat=application"
+      "item": "https://aiwiki.work/?cat=application"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "지식 베이스",
-      "item": "https://aiwiki.kro.kr/k/knowledge-base.html"
+      "item": "https://aiwiki.work/k/knowledge-base.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "지식 베이스 (Knowledge Base)",
   "description": "조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.",
-  "url": "https://aiwiki.kro.kr/k/knowledge-base.html",
+  "url": "https://aiwiki.work/k/knowledge-base.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/knowledge-base.html"
+    "@id": "https://aiwiki.work/k/knowledge-base.html"
   }
 }
 </script>
@@ -120,8 +120,8 @@
   <div class="body"><p>조직이나 도메인의 정보를 체계적으로 저장하고 AI가 참조할 수 있게 구성한 데이터 저장소. RAG의 핵심 재료이자 AI의 전문 지식 공급원이다.</p><h4>개념 설명</h4><p>LLM은 학습 시점 이후의 정보를 모르고, 특정 조직의 내부 정보도 없다. 지식 베이스는 이 공백을 채운다. 회사 내부 문서, 제품 매뉴얼, FAQ, 코드 레포지토리를 인덱싱해서 AI가 질문할 때 관련 정보를 검색해 참조할 수 있게 만든다. 전통적인 검색 가능한 문서 저장소와 달리, AI용 지식 베이스는 의미 기반 검색이 가능하도록 임베딩 벡터로 변환해서 저장한다.</p>
 <h4>사용 예시</h4><p>회사 내부 위키, Notion 페이지, Confluence 문서를 자동으로 임베딩해서 벡터 DB에 저장하면 직원이 "이 기능 관련 기획서 있어?"라고 물을 때 AI가 관련 문서를 찾아서 답변을 생성할 수 있다. Notion AI, Confluence AI, 또는 커스텀 RAG 파이프라인으로 구현한다. 문서가 업데이트될 때 임베딩을 자동으로 갱신하는 동기화 파이프라인이 지식 베이스의 품질을 유지하는 핵심이다.</p></div>
   <div class="tags"><span>#RAG</span><span>#문서관리</span><span>#검색</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.kro.kr/k/embedding.html">임베딩</a>, <a href="https://aiwiki.kro.kr/k/document-ai.html">문서 AI</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#knowledge-base">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/document-ai.html">문서 AI</a></div>
+  <a class="back" href="https://aiwiki.work/#knowledge-base">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

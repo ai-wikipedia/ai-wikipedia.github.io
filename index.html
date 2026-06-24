@@ -16,10 +16,10 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI Wiki — AI 기술 키워드 사전">
 <meta property="og:description" content="복잡한 AI 기술을 쉽게 이해할 수 있는 키워드 위키. 200개 이상의 AI 용어를 카드로 한눈에 파악하세요.">
-<meta property="og:url" content="https://aiwiki.kro.kr/">
+<meta property="og:url" content="https://aiwiki.work/">
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 
@@ -27,16 +27,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Wiki — AI 기술 키워드 사전">
 <meta name="twitter:description" content="복잡한 AI 기술을 쉽게 이해할 수 있는 키워드 위키. 200개 이상의 AI 용어를 카드로 한눈에 파악하세요.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 
-<link rel="canonical" href="https://aiwiki.kro.kr/">
+<link rel="canonical" href="https://aiwiki.work/">
 
 <!-- Hreflang -->
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/">
-<link rel="alternate" hreflang="en" href="https://aiwiki.kro.kr/?lang=en">
-<link rel="alternate" hreflang="zh" href="https://aiwiki.kro.kr/?lang=zh">
-<link rel="alternate" hreflang="ja" href="https://aiwiki.kro.kr/?lang=ja">
-<link rel="alternate" hreflang="x-default" href="https://aiwiki.kro.kr/">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/">
+<link rel="alternate" hreflang="en" href="https://aiwiki.work/?lang=en">
+<link rel="alternate" hreflang="zh" href="https://aiwiki.work/?lang=zh">
+<link rel="alternate" hreflang="ja" href="https://aiwiki.work/?lang=ja">
+<link rel="alternate" hreflang="x-default" href="https://aiwiki.work/">
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -45,12 +45,12 @@
   "@type": "WebSite",
   "name": "AI Wiki",
   "alternateName": "AI 기술 키워드 사전",
-  "url": "https://aiwiki.kro.kr/",
+  "url": "https://aiwiki.work/",
   "description": "복잡한 AI 기술을 쉽게 이해할 수 있는 키워드 위키. 200개 이상의 AI 용어를 카드로 한눈에 파악하세요.",
   "inLanguage": ["ko", "en", "zh", "ja"],
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://aiwiki.kro.kr/?q={search_term_string}",
+    "target": "https://aiwiki.work/?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -61,7 +61,7 @@
   "@type": "DefinedTermSet",
   "name": "AI Wiki 용어 사전",
   "description": "AI 기술 용어 200개 이상을 비전공자도 이해할 수 있도록 쉽게 설명하는 용어 사전",
-  "url": "https://aiwiki.kro.kr/",
+  "url": "https://aiwiki.work/",
   "inLanguage": "ko",
   "hasDefinedTerm": []
 }
@@ -740,7 +740,7 @@ document.addEventListener('keydown', e => {
   if(document.getElementById('detail').classList.contains('open')&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){const hash=location.hash.slice(1);if(!hash)return;const{prev,next}=getPrevNext(hash);if(e.key==='ArrowLeft'&&prev){e.preventDefault();open_m(prev.id)}if(e.key==='ArrowRight'&&next){e.preventDefault();open_m(next.id)}}
 });
 
-const BASE_URL='https://aiwiki.kro.kr/';
+const BASE_URL='https://aiwiki.work/';
 const KAKAO_KEY=location.hostname==='localhost'||location.hostname==='127.0.0.1'?'c5d123be2f7b4ebcf0373e1866870893':'ef7fa3e76c33651598db26d7ab7990ec';
 if(window.Kakao&&KAKAO_KEY&&!Kakao.isInitialized()) Kakao.init(KAKAO_KEY);
 
@@ -757,7 +757,7 @@ function shareKakao(id,btn){
   if(window.Kakao&&Kakao.isInitialized()){
     Kakao.Share.sendDefault({
       objectType:'feed',
-      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiwiki.kro.kr/og-thumbnail.png?v=2',imageWidth:1200,imageHeight:600,link:{mobileWebUrl:url,webUrl:url}}
+      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiwiki.work/og-thumbnail.png?v=2',imageWidth:1200,imageHeight:600,link:{mobileWebUrl:url,webUrl:url}}
     });
   } else {
     navigator.clipboard.writeText(name+' - AI Wiki\n'+url).then(()=>_shareFb(btn));
@@ -792,7 +792,7 @@ if (location.hash) { const id = location.hash.slice(1); if (D.find(x=>x.id===id)
       "@type":"DefinedTerm",
       "name":e.t,
       "description":e.sum,
-      "url":"https://aiwiki.kro.kr/#"+e.id
+      "url":"https://aiwiki.work/#"+e.id
     }));
     ld[1].textContent = JSON.stringify(obj);
   }

@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="비용 최적화란? (LLM Cost Optimization) — AI Wiki">
 <meta property="og:description" content="비용 최적화란? LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/cost-optimization.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/cost-optimization.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="비용 최적화란? (LLM Cost Optimization) — AI Wiki">
 <meta name="twitter:description" content="비용 최적화란? LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/cost-optimization.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/cost-optimization.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/cost-optimization.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/cost-optimization.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "비용 최적화",
   "alternateName": "LLM Cost Optimization",
   "description": "LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.",
-  "url": "https://aiwiki.kro.kr/k/cost-optimization.html",
+  "url": "https://aiwiki.work/k/cost-optimization.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "인프라",
-      "item": "https://aiwiki.kro.kr/?cat=infra"
+      "item": "https://aiwiki.work/?cat=infra"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "비용 최적화",
-      "item": "https://aiwiki.kro.kr/k/cost-optimization.html"
+      "item": "https://aiwiki.work/k/cost-optimization.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "비용 최적화 (LLM Cost Optimization)",
   "description": "LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.",
-  "url": "https://aiwiki.kro.kr/k/cost-optimization.html",
+  "url": "https://aiwiki.work/k/cost-optimization.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/cost-optimization.html"
+    "@id": "https://aiwiki.work/k/cost-optimization.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">LLM Cost Optimization</div>
   <div class="body"><p>LLM API 호출 비용을 줄이는 전략. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 절약 등을 조합해 품질을 유지하면서 비용을 낮춘다.</p><h4>개념 설명</h4><p>프로덕션에서 LLM을 사용하면 비용이 생각보다 빠르게 쌓인다. 입력 토큰 수, 출력 토큰 수, 호출 빈도가 모두 비용에 영향을 미친다. 주요 전략은 네 가지다. 반복되는 컨텍스트는 <strong>프롬프트 캐싱</strong>으로 재계산을 막고, 간단한 태스크는 <strong>소형 모델</strong>로 라우팅하며, 실시간이 필요 없으면 <strong>배치 API</strong>를 쓰고, 프롬프트는 간결하게 최적화한다.</p><p>모델 라우팅은 특히 효과적이다. 간단한 질문은 GPT-4o mini, 복잡한 추론만 GPT-4o로 보내면 평균 비용이 크게 줄어든다. LLM Router, RouteLLM 같은 라우팅 라이브러리가 이를 자동화한다.</p><h4>사용 예시</h4><p>Claude API에서 <code>cache_control</code>로 긴 시스템 프롬프트를 캐시하면 반복 호출 시 입력 비용이 90%까지 줄어든다. LangChain의 <code>SQLiteCache</code>로 동일한 프롬프트 결과를 캐싱하면 중복 API 호출 자체를 없앨 수 있다.</p></div>
   <div class="tags"><span>#토큰비용</span><span>#캐싱</span><span>#모델라우팅</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.kro.kr/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.kro.kr/k/batch-inference.html">배치 추론</a>, <a href="https://aiwiki.kro.kr/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.kro.kr/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.kro.kr/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.kro.kr/k/codeburn.html">코드번</a>, <a href="https://aiwiki.kro.kr/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.kro.kr/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#cost-optimization">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/batch-inference.html">배치 추론</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a>, <a href="https://aiwiki.work/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.work/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a></div>
+  <a class="back" href="https://aiwiki.work/#cost-optimization">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

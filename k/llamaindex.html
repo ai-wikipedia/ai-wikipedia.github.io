@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="라마인덱스란? (LlamaIndex) — AI Wiki">
 <meta property="og:description" content="라마인덱스란? 다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/llamaindex.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/llamaindex.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="라마인덱스란? (LlamaIndex) — AI Wiki">
 <meta name="twitter:description" content="라마인덱스란? 다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/llamaindex.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/llamaindex.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/llamaindex.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/llamaindex.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "라마인덱스",
   "alternateName": "LlamaIndex",
   "description": "다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.",
-  "url": "https://aiwiki.kro.kr/k/llamaindex.html",
+  "url": "https://aiwiki.work/k/llamaindex.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://aiwiki.kro.kr/?cat=tooling"
+      "item": "https://aiwiki.work/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "라마인덱스",
-      "item": "https://aiwiki.kro.kr/k/llamaindex.html"
+      "item": "https://aiwiki.work/k/llamaindex.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "라마인덱스 (LlamaIndex)",
   "description": "다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.",
-  "url": "https://aiwiki.kro.kr/k/llamaindex.html",
+  "url": "https://aiwiki.work/k/llamaindex.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/llamaindex.html"
+    "@id": "https://aiwiki.work/k/llamaindex.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">LlamaIndex</div>
   <div class="body"><p>다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.</p><h4>개념 설명</h4><p>PDF, 데이터베이스, API, 웹페이지 등 다양한 소스에서 데이터를 가져와 LLM이 답변에 활용할 수 있도록 준비하는 과정은 복잡하다. <strong>LlamaIndex</strong>는 이 과정을 표준화한 프레임워크로, 데이터 로딩, 청킹, 임베딩, 인덱싱, 검색까지 RAG의 전체 파이프라인을 커버한다. LangChain이 에이전트와 체인에 강점을 보인다면, LlamaIndex는 데이터 연결과 인덱싱에 더 특화되어 있다.</p><h4>사용 예시</h4><p>사내 문서 질의응답 시스템을 만들 때, <code>SimpleDirectoryReader</code>로 문서를 로드하고 <code>VectorStoreIndex</code>로 인덱싱한 뒤 <code>index.as_query_engine()</code>으로 바로 질의할 수 있다. 복잡한 RAG가 필요하다면 <code>RouterQueryEngine</code>으로 여러 인덱스 중 적합한 것을 골라 검색하도록 구성할 수 있다.</p></div>
   <div class="tags"><span>#RAG</span><span>#데이터연결</span><span>#인덱싱</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.kro.kr/k/embedding.html">임베딩</a>, <a href="https://aiwiki.kro.kr/k/langchain.html">랭체인</a>, <a href="https://aiwiki.kro.kr/k/chunking.html">청킹</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#llamaindex">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a></div>
+  <a class="back" href="https://aiwiki.work/#llamaindex">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

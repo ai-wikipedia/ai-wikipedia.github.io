@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="코드번란? (Codeburn) — AI Wiki">
 <meta property="og:description" content="코드번란? Claude Code나 Codex 같은 AI 코딩 도구가 토큰을 어디에 얼마나 썼는지 터미널 대시보드로 한눈에 보여주는 오픈소스 도구.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/codeburn.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/codeburn.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="코드번란? (Codeburn) — AI Wiki">
 <meta name="twitter:description" content="코드번란? Claude Code나 Codex 같은 AI 코딩 도구가 토큰을 어디에 얼마나 썼는지 터미널 대시보드로 한눈에 보여주는 오픈소스 도구.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/codeburn.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/codeburn.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/codeburn.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/codeburn.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "코드번",
   "alternateName": "Codeburn",
   "description": "Claude Code나 Codex 같은 AI 코딩 도구가 토큰을 어디에 얼마나 썼는지 터미널 대시보드로 한눈에 보여주는 오픈소스 도구.",
-  "url": "https://aiwiki.kro.kr/k/codeburn.html",
+  "url": "https://aiwiki.work/k/codeburn.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "도구",
-      "item": "https://aiwiki.kro.kr/?cat=tooling"
+      "item": "https://aiwiki.work/?cat=tooling"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "코드번",
-      "item": "https://aiwiki.kro.kr/k/codeburn.html"
+      "item": "https://aiwiki.work/k/codeburn.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "코드번 (Codeburn)",
   "description": "Claude Code나 Codex 같은 AI 코딩 도구가 토큰을 어디에 얼마나 썼는지 터미널 대시보드로 한눈에 보여주는 오픈소스 도구.",
-  "url": "https://aiwiki.kro.kr/k/codeburn.html",
+  "url": "https://aiwiki.work/k/codeburn.html",
   "datePublished": "2026-06-08",
   "dateModified": "2026-06-08",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/codeburn.html"
+    "@id": "https://aiwiki.work/k/codeburn.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Codeburn</div>
   <div class="body"><p>Claude Code나 Codex 같은 AI 코딩 도구가 토큰을 어디에 얼마나 썼는지 터미널 대시보드로 한눈에 보여주는 오픈소스 도구.</p><h4>토큰이 어디로 새는지 보여주는 계량기</h4><p>AI 코딩 도구를 쓰다 보면 한 달에 200달러어치 토큰을 다 태우고도 "대체 어디서 이렇게 많이 썼지?" 싶을 때가 있다. 코드를 고친 건 얼마 안 되는 것 같은데 한도는 금방 차오른다. <strong>Codeburn</strong>은 바로 이 답답함을 풀어주는 도구로, AI 코딩 도구가 토큰을 어떤 작업에 얼마나 썼는지 터미널 대시보드(TUI)로 보여준다. 전기 계량기가 어느 가전제품이 전기를 잡아먹는지 알려주는 것처럼, Codeburn은 코딩 세션의 어느 부분이 토큰을 잡아먹는지 알려준다.</p><p>핵심은 <strong>로컬 우선(local-first)</strong>이라는 점이다. API 키도, 프록시도, 별도 계정도 필요 없다. Claude Code나 Codex가 작업 기록을 컴퓨터에 남기는 세션 로그 파일(보통 <code>~/.claude/projects/</code> 안의 <code>messages.jsonl</code> 같은 파일)을 직접 읽어서, 각 호출의 토큰 수와 비용을 계산해 화면에 그려준다.</p><h4>실제로 어떻게 쓰나</h4><p>설치할 것도 없이 <code>npx codeburn</code> 한 줄이면 7일치 사용량 대시보드가 바로 뜬다. <code>codeburn today</code>로 오늘 쓴 양만 보거나, <code>codeburn month</code>로 이번 달 전체를 볼 수 있고, 작업 유형·모델·도구·프로젝트·제공자별로 비용이 쪼개져서 나온다. 흥미로운 건 모든 대화 턴을 코딩·디버깅·탐색 등 13가지 범주로 분류해준다는 점인데, 한 사용자는 이걸 보고 "실제 코드 편집은 전체의 21%뿐이고 나머지는 그냥 대화로 토큰이 나갔다"는 걸 깨닫기도 했다.</p><p>가격 계산은 별도 래퍼 없이 <code>LiteLLM</code>의 모델 가격표를 그대로 가져다 쓴다. 결과를 CSV나 JSON으로 내보낼 수 있고, <code>codeburn optimize</code>를 돌리면 낭비되는 부분을 찾아 바로 복사해 쓸 수 있는 개선안까지 제시한다. macOS 메뉴바 위젯으로 띄워두고 실시간으로 지켜보는 것도 가능하다.</p><h4>왜 지금 주목받나</h4><p>Claude Code, Cursor 같은 구독형 AI 코딩 도구가 널리 쓰이면서 "내 토큰 예산이 어디로 가는가"가 실무자들의 공통 고민이 됐다. Codeburn은 이 가시성 문제를 정면으로 다루면서 GitHub에서 빠르게 스타를 모았고, Claude Code뿐 아니라 Codex, Cursor, OpenCode 등 25개에 달하는 AI 코딩 도구를 제공자 플러그인 방식으로 지원한다. 비용을 줄이려면 먼저 어디에 쓰는지부터 봐야 한다는, 토큰 예산 관리의 가장 기본적인 출발점을 채워준 셈이다.</p></div>
   <div class="tags"><span>#토큰 사용량</span><span>#비용 추적</span><span>#TUI</span><span>#Claude Code</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.kro.kr/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.kro.kr/k/token-economics.html">토큰 경제학</a>, <a href="https://aiwiki.kro.kr/k/observability.html">옵저버빌리티</a>, <a href="https://aiwiki.kro.kr/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.kro.kr/k/ai-coding.html">AI 코딩 어시스턴트</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#codeburn">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/token-economics.html">토큰 경제학</a>, <a href="https://aiwiki.work/k/observability.html">옵저버빌리티</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a></div>
+  <a class="back" href="https://aiwiki.work/#codeburn">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>
 </body>

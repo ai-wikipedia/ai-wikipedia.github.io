@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="추측적 디코딩란? (Speculative Decoding) — AI Wiki">
 <meta property="og:description" content="추측적 디코딩란? 작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/speculative-decoding.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/speculative-decoding.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="추측적 디코딩란? (Speculative Decoding) — AI Wiki">
 <meta name="twitter:description" content="추측적 디코딩란? 작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/speculative-decoding.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/speculative-decoding.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/speculative-decoding.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/speculative-decoding.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "추측적 디코딩",
   "alternateName": "Speculative Decoding",
   "description": "작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.",
-  "url": "https://aiwiki.kro.kr/k/speculative-decoding.html",
+  "url": "https://aiwiki.work/k/speculative-decoding.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "추측적 디코딩",
-      "item": "https://aiwiki.kro.kr/k/speculative-decoding.html"
+      "item": "https://aiwiki.work/k/speculative-decoding.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "추측적 디코딩 (Speculative Decoding)",
   "description": "작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.",
-  "url": "https://aiwiki.kro.kr/k/speculative-decoding.html",
+  "url": "https://aiwiki.work/k/speculative-decoding.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-10",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/speculative-decoding.html"
+    "@id": "https://aiwiki.work/k/speculative-decoding.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Speculative Decoding</div>
   <div class="body"><p>작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.</p><h4>개념 설명</h4><p>LLM 추론은 토큰을 하나씩 순서대로 생성하는 자기회귀 방식이라 본질적으로 느리다. 흥미로운 점은, GPU가 토큰 1개를 생성할 때와 여러 개를 동시에 검증할 때 걸리는 시간이 비슷하다는 것이다. 추론 과정이 연산이 아니라 메모리 대역폭에 병목이 걸리기 때문이다. <strong>추측적 디코딩</strong>은 이 빈 연산 자원을 활용한다.</p><p>작고 빠른 <strong>드래프트 모델</strong>이 먼저 5~7개 토큰을 추측으로 생성하고, 큰 타겟 모델이 이 토큰들을 한 번의 forward pass로 병렬 검증한다. 맞으면 그대로 채택하고, 틀린 부분부터 다시 생성한다. 수학적으로 타겟 모델 단독 생성과 완전히 동일한 출력 분포를 보장하면서도 2~3배 빠른 추론이 가능하다.</p><h4>사용 예시</h4><p>vLLM에서 <code>--speculative-model</code> 플래그로 드래프트 모델을 지정하면 같은 GPU로 처리량을 2.8배까지 높일 수 있다. TensorRT-LLM도 Medusa, EAGLE 등 다양한 방식을 기본 지원한다. 코드 자동완성처럼 반복 패턴이 많은 태스크에서 드래프트 모델의 예측 적중률이 높아져 효과가 극대화된다. 구글은 AI Overviews 검색 기능에서 이 기법을 적용해 응답 속도를 개선했다.</p><h4>심화 내용</h4><p>드래프트 모델 방식 외에도 여러 변형이 등장했다. <strong>Medusa</strong>는 타겟 모델에 여러 개의 디코딩 헤드를 추가해 별도 드래프트 모델 없이 추측을 수행한다. <strong>EAGLE</strong>은 타겟 모델의 중간 특징(feature)을 활용해 더 정확한 드래프트를 생성하며, LLaMA2-Chat 70B에서 2.7~3.5배 속도 향상을 달성했다. 2025년의 EAGLE-3는 학습 시점에서 최적화를 통합해 성능을 더 끌어올렸다.</p><h4>주의할 점</h4><p>추측 토큰 수(<code>num_speculative_tokens</code>)는 5~7개가 최적 구간이다. 7개를 넘으면 드래프트의 적중률이 떨어져 오히려 처리량이 줄어든다. 드래프트 모델이 타겟 모델과 분포가 비슷할수록 효과가 크므로, 같은 계열의 작은 모델을 드래프트로 쓰는 것이 일반적이다.</p></div>
   <div class="tags"><span>#추론속도</span><span>#드래프트모델</span><span>#Medusa</span><span>#EAGLE</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.kro.kr/k/vllm.html">vLLM</a>, <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://aiwiki.kro.kr/k/mimo-v2-5.html">미모 v2.5</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#speculative-decoding">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://aiwiki.work/k/mimo-v2-5.html">미모 v2.5</a></div>
+  <a class="back" href="https://aiwiki.work/#speculative-decoding">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-10</div>
 </div>
 </body>

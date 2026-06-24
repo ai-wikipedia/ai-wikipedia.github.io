@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aiwiki.kro.kr/sitemap.xml
+Sitemap: https://aiwiki.work/sitemap.xml

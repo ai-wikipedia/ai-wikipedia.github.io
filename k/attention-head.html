@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="어텐션 헤드란? (Attention Head) — AI Wiki">
 <meta property="og:description" content="어텐션 헤드란? Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/attention-head.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/attention-head.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="어텐션 헤드란? (Attention Head) — AI Wiki">
 <meta name="twitter:description" content="어텐션 헤드란? Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/attention-head.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/attention-head.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/attention-head.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/attention-head.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "어텐션 헤드",
   "alternateName": "Attention Head",
   "description": "Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.",
-  "url": "https://aiwiki.kro.kr/k/attention-head.html",
+  "url": "https://aiwiki.work/k/attention-head.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "모델",
-      "item": "https://aiwiki.kro.kr/?cat=model"
+      "item": "https://aiwiki.work/?cat=model"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "어텐션 헤드",
-      "item": "https://aiwiki.kro.kr/k/attention-head.html"
+      "item": "https://aiwiki.work/k/attention-head.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "어텐션 헤드 (Attention Head)",
   "description": "Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.",
-  "url": "https://aiwiki.kro.kr/k/attention-head.html",
+  "url": "https://aiwiki.work/k/attention-head.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-04",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/attention-head.html"
+    "@id": "https://aiwiki.work/k/attention-head.html"
   }
 }
 </script>
@@ -120,8 +120,8 @@
   <div class="body"><p>Transformer에서 입력 시퀀스의 서로 다른 위치 간 관계를 학습하는 단위. 여러 헤드가 병렬로 동작해서 단어 간 다양한 관계를 동시에 포착한다.</p><h4>개념 설명</h4><p>"The cat sat on the mat because it was tired" — 여기서 "it"이 "cat"을 가리킨다는 걸 이해하려면 문장 내 단어 간 관계를 파악해야 한다. 어텐션 메커니즘이 이 역할을 한다. 각 어텐션 헤드는 서로 다른 종류의 관계(문법적 관계, 의미적 관계, 위치 관계 등)를 담당한다. 멀티헤드 어텐션은 이런 헤드를 여러 개 병렬로 운영해서 다양한 관점에서 관계를 학습한다.</p>
 <h4>사용 예시</h4><p>Transformer 모델의 헤드 수는 하이퍼파라미터로, GPT-4 같은 대형 모델은 수십 개 헤드를 사용한다. 어텐션 맵을 시각화하면 모델이 특정 단어를 예측할 때 어떤 단어에 집중하는지 볼 수 있어서 설명가능성 연구에 활용된다. 파인튜닝 시 어텐션 레이어만 학습하고 나머지를 동결하는 방식(Adapter, LoRA)으로 학습 비용을 크게 줄일 수 있다.</p></div>
   <div class="tags"><span>#Transformer</span><span>#어텐션</span><span>#아키텍처</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.kro.kr/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.kro.kr/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.kro.kr/k/explainability.html">설명가능성</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#attention-head">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/explainability.html">설명가능성</a></div>
+  <a class="back" href="https://aiwiki.work/#attention-head">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
 </body>

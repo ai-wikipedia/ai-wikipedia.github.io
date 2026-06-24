@@ -9,8 +9,8 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="시맨틱 캐시란? (Semantic Cache) — AI Wiki">
 <meta property="og:description" content="시맨틱 캐시란? 이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.">
-<meta property="og:url" content="https://aiwiki.kro.kr/k/semantic-cache.html">
-<meta property="og:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
+<meta property="og:url" content="https://aiwiki.work/k/semantic-cache.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
 <meta property="og:site_name" content="AI Wiki">
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="시맨틱 캐시란? (Semantic Cache) — AI Wiki">
 <meta name="twitter:description" content="시맨틱 캐시란? 이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.">
-<meta name="twitter:image" content="https://aiwiki.kro.kr/og-thumbnail.png?v=2">
-<link rel="canonical" href="https://aiwiki.kro.kr/k/semantic-cache.html">
-<link rel="alternate" hreflang="ko" href="https://aiwiki.kro.kr/k/semantic-cache.html">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/semantic-cache.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/semantic-cache.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,11 +30,11 @@
   "name": "시맨틱 캐시",
   "alternateName": "Semantic Cache",
   "description": "이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.",
-  "url": "https://aiwiki.kro.kr/k/semantic-cache.html",
+  "url": "https://aiwiki.work/k/semantic-cache.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   }
 }
 </script>
@@ -47,19 +47,19 @@
       "@type": "ListItem",
       "position": 1,
       "name": "AI Wiki",
-      "item": "https://aiwiki.kro.kr/"
+      "item": "https://aiwiki.work/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "데이터",
-      "item": "https://aiwiki.kro.kr/?cat=data"
+      "item": "https://aiwiki.work/?cat=data"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "시맨틱 캐시",
-      "item": "https://aiwiki.kro.kr/k/semantic-cache.html"
+      "item": "https://aiwiki.work/k/semantic-cache.html"
     }
   ]
 }
@@ -70,7 +70,7 @@
   "@type": "Article",
   "headline": "시맨틱 캐시 (Semantic Cache)",
   "description": "이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.",
-  "url": "https://aiwiki.kro.kr/k/semantic-cache.html",
+  "url": "https://aiwiki.work/k/semantic-cache.html",
   "datePublished": "2026-03-28",
   "dateModified": "2026-04-11",
   "author": {
@@ -80,11 +80,11 @@
   "publisher": {
     "@type": "Organization",
     "name": "AI Wiki",
-    "url": "https://aiwiki.kro.kr/"
+    "url": "https://aiwiki.work/"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://aiwiki.kro.kr/k/semantic-cache.html"
+    "@id": "https://aiwiki.work/k/semantic-cache.html"
   }
 }
 </script>
@@ -119,8 +119,8 @@
   <div class="en">Semantic Cache</div>
   <div class="body"><p>이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.</p><h4>개념 설명</h4><p>일반 캐시는 완전히 동일한 입력에만 적용된다. 하지만 "오늘 날씨 어때?"와 "오늘 날씨가 어떻습니까?"는 다른 문자열이지만 같은 질문이다. <strong>시맨틱 캐시</strong>는 쿼리를 임베딩으로 변환해서 벡터 유사도를 측정하고, 충분히 유사한 과거 쿼리가 있으면 LLM 호출 없이 캐시된 답변을 반환한다. 반복 질문이 많은 서비스에서 비용을 크게 줄일 수 있다.</p><h4>사용 예시</h4><p>FAQ 기반 고객 지원 챗봇은 비슷한 질문이 반복되므로 시맨틱 캐시 효과가 크다. GPTCache나 Redis의 시맨틱 캐시 기능을 붙이면, 임베딩 유사도가 0.95 이상인 쿼리에 대해서는 LLM을 호출하지 않고 캐시에서 바로 응답한다. 코사인 유사도 임계값을 조정해 캐시 히트율과 정확도를 균형 잡는다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#유사도검색</span><span>#비용절감</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.kro.kr/k/embedding.html">임베딩</a>, <a href="https://aiwiki.kro.kr/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.kro.kr/k/rag.html">RAG</a>, <a href="https://aiwiki.kro.kr/k/context-caching.html">컨텍스트 캐싱</a></div>
-  <a class="back" href="https://aiwiki.kro.kr/#semantic-cache">← AI Wiki에서 더 보기</a>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/context-caching.html">컨텍스트 캐싱</a></div>
+  <a class="back" href="https://aiwiki.work/#semantic-cache">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>
 </body>
