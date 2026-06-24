@@ -75,6 +75,7 @@ for (const e of D) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>${escHtml(title)}</title>
 <meta name="description" content="${escHtml(desc)}">
 <meta name="keywords" content="${escHtml(e.tags.join(', '))}, AI, ${escHtml(e.t)}, ${escHtml(e.t)}란, ${escHtml(e.t)} 뜻, ${escHtml(e.t)} 의미, ${escHtml(e.t)} 개념, ${escHtml(e.t)} 설명, ${escHtml(e.t)} 정리, ${escHtml(e.t)}이란">
@@ -119,7 +120,7 @@ ${JSON.stringify(article, null, 2)}
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
   .cat{font-size:11px;color:#a09888;margin-bottom:8px}
   h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
@@ -138,6 +139,10 @@ ${JSON.stringify(article, null, 2)}
   .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
   .back:hover{text-decoration:underline}
   .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
 </style>
 </head>
 <body>
@@ -151,6 +156,10 @@ ${JSON.stringify(article, null, 2)}
   <a class="back" href="${BASE}/#${e.id}">← AI Wiki에서 더 보기</a>
   ${e.added ? `<div class="added-date">updated at ${e.updated||e.added}</div>` : ''}
 </div>
+<footer class="site-footer">
+  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
 </body>
 </html>`;
 
@@ -162,6 +171,9 @@ const today = new Date().toISOString().slice(0,10);
 const urls = [
   `  <url>\n    <loc>${BASE}/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>`
 ];
+for (const p of ['about.html', 'privacy.html', 'contact.html']) {
+  urls.push(`  <url>\n    <loc>${BASE}/${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>`);
+}
 for (const e of D) {
   urls.push(`  <url>\n    <loc>${BASE}/k/${e.id}.html</loc>\n    <lastmod>${e.updated || today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
 }
