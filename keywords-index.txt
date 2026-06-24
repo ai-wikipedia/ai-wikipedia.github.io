@@ -301,3 +301,5 @@ apple-intelligence	애플 인텔리전스	Apple Intelligence	application
 baoyu-design	바오위 디자인	Baoyu Design	tooling
 guard-skills	가드 스킬	Guard Skills	tooling
 glm-5-2	GLM 5.2	GLM 5.2 (Z.ai)	model
+fugu-ultra	푸구 울트라	Sakana Fugu Ultra	agent
+nano-banana-2	나노 바나나 2	Nano Banana 2 (Gemini 3.1 Flash Image)	application
