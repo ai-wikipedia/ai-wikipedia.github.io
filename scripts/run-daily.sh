@@ -4,6 +4,16 @@
 
 set -euo pipefail
 
+# --- 시스템 슬립 방지 (caffeinate 재실행) ---
+# launchd 예약 실행 중 맥북이 maintenance sleep에 빠지면 `sleep` 타이머와 네트워크가
+# 멈춰 Claude 단계가 수 시간 hang하다 "Request timed out"으로 죽는다(워치독도 무력화).
+# 실행 내내 깨어있도록 caffeinate로 자신을 한 번 재실행한다.
+#   -i 유휴 슬립 방지 · -m 디스크 슬립 방지 · -s AC 전원 시 시스템 슬립 방지
+if [ -z "${AIWIKI_CAFFEINATED:-}" ] && [ -x /usr/bin/caffeinate ]; then
+  export AIWIKI_CAFFEINATED=1
+  exec /usr/bin/caffeinate -ims /bin/bash "$0" "$@"
+fi
+
 # --- Config ---
 WORK_DIR="/Users/hh/dev/ai-wikipedia.github.io"
 LOG="$WORK_DIR/logs/daily.log"
@@ -71,9 +81,9 @@ claude_with_timeout() {
     sleep_pid=$!
     wait "$sleep_pid" 2>/dev/null || exit 0
     log "STAGE TIMEOUT: Claude PID=$claude_pid ${timeout}초 초과, 강제 종료"
-    kill -TERM "$claude_pid" 2>/dev/null
+    kill_tree "$claude_pid" TERM
     sleep 3
-    kill -9 "$claude_pid" 2>/dev/null
+    kill_tree "$claude_pid" KILL
   ) &
   local watchdog_pid=$!
 
@@ -87,9 +97,17 @@ claude_with_timeout() {
       wait "$sleep_pid" 2>/dev/null || exit 0
       if [ -s "$output_file" ] && extract_json "$output_file" "$check_file" 2>/dev/null; then
         log "Claude 출력 완료 감지 (JSON valid), 프로세스 종료 중"
-        kill -TERM "$claude_pid" 2>/dev/null
+        kill_tree "$claude_pid" TERM
         sleep 2
-        kill -9 "$claude_pid" 2>/dev/null
+        kill_tree "$claude_pid" KILL
+        exit 0
+      fi
+      # claude 자체 타임아웃 메시지 조기 감지 — 무한 재시도/hang 방지
+      if grep -qiE 'Request timed out|Execution error' "$output_file" 2>/dev/null; then
+        log "Claude 타임아웃 메시지 감지, 프로세스 종료 중"
+        kill_tree "$claude_pid" TERM
+        sleep 2
+        kill_tree "$claude_pid" KILL
         exit 0
       fi
     done
