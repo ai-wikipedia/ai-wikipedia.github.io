@@ -1,3 +1,7 @@
+## 2026-06-27 08:25
+- 추가: gpt-5-6, generative-engine-optimization, auth-md
+- HOT: (없음)
+
 ## 2026-06-26 08:21
 - 추가: (없음)
 - HOT: (없음)
