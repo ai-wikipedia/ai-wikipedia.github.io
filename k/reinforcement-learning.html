@@ -125,7 +125,7 @@
   <div class="en">Reinforcement Learning</div>
   <div class="body"><p>에이전트가 환경과 상호작용하며 보상을 최대화하도록 행동 정책을 학습하는 방법. LLM 정렬(RLHF, GRPO)과 추론 모델 학습의 핵심 원리다.</p><h4>개념 설명</h4><p>강화학습은 시행착오를 통한 학습이다. 에이전트가 어떤 상태에서 행동을 하면 환경이 보상을 돌려주고, 에이전트는 장기적으로 누적 보상을 최대화하는 정책을 찾는다. 규칙을 직접 코딩하지 않아도 되고, 레이블 데이터도 필요 없다. LLM에 적용하면 모델의 출력이 "행동"이고, 인간 평가나 자동화된 기준이 "보상"이 된다.</p><p>RLHF에서는 사람의 선호도를 보상으로 삼아 모델을 정렬한다. DeepSeek-R1처럼 추론 모델 학습에서는 수학 문제의 정오답을 보상으로 삼아 사고 과정 자체를 강화한다. GRPO, PPO가 LLM 학습에 주로 쓰이는 RL 알고리즘이다.</p><h4>사용 예시</h4><p>TRL 라이브러리의 <code>PPOTrainer</code>나 <code>GRPOTrainer</code>를 사용해 보상 함수를 정의하고 RL 학습을 시작할 수 있다. 수학 풀이 정확도, 코드 실행 성공 여부, 포맷 준수 같은 검증 가능한 보상 신호가 있을 때 효과적이다.</p></div>
   <div class="tags"><span>#RL</span><span>#보상</span><span>#정책학습</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/reward-model.html">보상 모델</a>, <a href="https://aiwiki.work/k/grpo.html">GRPO</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/reward-model.html">보상 모델</a>, <a href="https://aiwiki.work/k/grpo.html">GRPO</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a>, <a href="https://aiwiki.work/k/continual-learning.html">지속 학습</a></div>
   <a class="back" href="https://aiwiki.work/#reinforcement-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

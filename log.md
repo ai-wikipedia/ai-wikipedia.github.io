@@ -1,3 +1,7 @@
+## 2026-06-28 08:25
+- 추가: continual-learning, code-as-harness
+- HOT: (없음)
+
 ## 2026-06-27 08:25
 - 추가: gpt-5-6, generative-engine-optimization, auth-md
 - HOT: (없음)

@@ -306,3 +306,5 @@ nano-banana-2	나노 바나나 2	Nano Banana 2 (Gemini 3.1 Flash Image)	applicat
 gpt-5-6	GPT-5.6	GPT-5.6 Sol (OpenAI)	model
 generative-engine-optimization	GEO	Generative Engine Optimization	application
 auth-md	auth.md	auth.md Agent Authentication Protocol	tooling
+continual-learning	지속 학습	Continual Learning	model
+code-as-harness	코드 에이전트 하네스	Code as Agent Harness	agent
