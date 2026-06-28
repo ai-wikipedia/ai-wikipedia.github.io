@@ -1,5 +1,5 @@
 const HOT_IDS = ['continual-learning'];
-const LAST_UPDATED = '2026-06-27T23:25:29Z';
+const LAST_UPDATED = '2026-06-28T23:29:54Z';
 
 const D = [
   {id:'harness-engineering',t:'하네스 엔지니어링',en:'Harness Engineering',c:'prompting',h:4,born:'2026-02',tags:['시스템설계','오케스트레이션'],
@@ -2148,6 +2148,23 @@ refs:[
    refs:[],
    videos:[],
    added:'2026-06-27',updated:'2026-06-27'},
+
+  {id:'tokenmaxxing',t:'토큰맥싱',en:'Tokenmaxxing',c:'infra',h:4,born:'2025-01',tags:['생산성지표','AI도입','토큰소비'],
+   sum:'AI 토큰 사용량을 생산성의 지표로 삼아 소비를 극대화하려는 행동 패턴. 빅테크 기업들이 사내 리더보드로 AI 활용을 독려하면서 생겨난 직장 문화 현상이다.',
+   det:`<h4>어떤 현상인가</h4><p>토큰맥싱은 'maxxing'(어떤 행동을 극단까지 최적화한다는 인터넷 슬랭)과 AI 토큰을 합친 말이다. AI 모델이 텍스트를 처리하는 최소 단위인 토큰을 얼마나 많이 소비하는지를 업무 성과의 지표로 보고, 사용량을 의도적으로 늘리는 행동을 가리킨다.</p><p>이 현상은 메타와 마이크로소프트 같은 빅테크에서 사내 AI 도입을 독려하기 위해 <strong>토큰 리더보드</strong>를 도입하면서 본격화됐다. 메타 내부에서는 'Session Immortal', 'Token Legend' 같은 칭호를 부여하며 직원들의 토큰 사용량을 순위로 매겼다. 일부 직원들은 리더보드를 의식하지 않더라도 "토큰을 너무 적게 쓰는 것처럼 보이고 싶지 않아서" 사용량을 늘렸다고 고백했다.</p><h4>왜 문제가 되나</h4><p>토큰 사용량은 측정하기 쉽고, 자동으로 집계되며, 팀 전체에 일관되게 적용할 수 있다. 경영진 입장에서는 AI 도입 현황을 한눈에 보여주는 매력적인 숫자처럼 보인다. 하지만 비판론자들은 이 지표가 실제 생산성과 거의 무관하다고 지적한다. 토큰을 많이 썼다는 것은 AI와 긴 대화를 나눴다는 뜻이지, 그 결과로 좋은 코드가 나왔거나 문제가 해결됐다는 보장이 없다.</p><p>더 심각한 문제는 역효과다. 관리자가 어떤 지표든 목표로 설정하면, 직원들은 그 지표를 높이는 방식으로 행동을 바꾼다. 실제로 Uber의 COO는 AI 예산을 4개월 만에 소진했다고 밝혔고, 한 AI 컨설턴트는 고객사가 Claude 라이선스에 사용 한도를 설정하지 않아 한 달에 5억 달러를 소비한 사례를 공유했다. "우리가 더 생산적이 된 건지, 아니면 그냥 토큰 태우는 데 돈을 쓴 건지" 구분이 안 된다는 지적이 이어지고 있다.</p><h4>무엇을 측정해야 하나</h4><p>토큰맥싱에 대한 반성으로, 기술 조직에서는 <strong>valuemaxxing</strong>이라는 개념이 논의되기 시작했다. 토큰 소비량 자체보다, 수용된 출력물과 모델 비용, 리뷰 부담, 에이전트 행동 등 실제 가치와 연결된 지표를 추적하자는 방향이다. 엔지니어링 리더들은 토큰 사용량 대신 코드 병합 속도, 버그 해결률, 배포 빈도 같은 기존 개발 지표와 AI 사용을 연계해 판단하는 접근을 권한다.</p><h4>주의할 점</h4><p>토큰맥싱이라는 용어는 맥락에 따라 두 가지로 쓰인다. 부정적 의미로는 지표 조작 현상을 가리키지만, 중립적 의미로는 단순히 AI 도구를 적극적으로 활용하는 행동 자체를 뜻하기도 한다. 토큰 소비 자체가 문제가 아니라, 소비를 목적으로 삼는 것이 문제다. 토큰이 많이 드는 작업이라도 실제 생산성 향상으로 이어진다면 정당한 활용이다.</p>`,
+   rel:['token-budget','token-economics','cost-optimization','observability','eval','llmops'],
+   refs:[
+     {title:'Token maxxing — Wikipedia',url:'https://en.wikipedia.org/wiki/Token_maxxing',type:'tutorial'},
+     {title:"The Pulse: 'Tokenmaxxing' as a weird new trend — Pragmatic Engineer",url:'https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend',type:'blog'},
+     {title:"Why 'Tokenmaxxing' Is Out And 'Valuemaxxing' Is In — Forbes",url:'https://www.forbes.com/sites/timkeary/2026/06/02/why-tokenmaxxing-is-out-and-valuemaxxing-is-in',type:'blog'},
+     {title:'Tokenmaxxing and the search for AI metrics that matter — LeadDev',url:'https://leaddev.com/ai/tokenmaxxing-and-the-search-for-ai-metrics-that-matter',type:'blog'}
+   ],
+   videos:[
+     {title:'Tokenmaxxing Madness Brings Anthropic To Profitability',id:'qkArtT8tYQo',lang:'en'},
+     {title:'Tokenmaxxing: How Top Builders Use AI To Do The Work Of 400 Engineers',id:'57lDpTwiW6g',lang:'en'},
+     {title:'연봉 7억 개발자면, 토큰에 3억은 써야죠',id:'hdBpd99QT-8',lang:'ko'}
+   ],
+   added:'2026-06-29',updated:'2026-06-29'},
 ];
 
 const I18N_CONTENT = {en:{
@@ -2765,6 +2782,10 @@ const I18N_CONTENT = {en:{
   'code-as-harness':{
     sum: 'A design pattern where AI agent execution flow is defined and controlled directly using general-purpose code instead of dedicated agent frameworks. The code itself becomes the orchestration layer.',
     det: `<h4>Concept</h4><p>When building AI agents, there are typically two choices: using a dedicated framework like LangChain, CrewAI, or LangGraph, or defining agent execution flow directly in general-purpose code like Python or JavaScript. The latter is the <strong>Code as Agent Harness</strong> approach.</p><p>Here, code is not just an agent invocation script. All orchestration logic — the execution order of agents, branching conditions, and how results are passed to the next step — is expressed explicitly in code. Without the abstraction layer of a framework, the code directly acts as the harness.</p><h4>Use Cases</h4><p>Claude Code's workflow scripts are a prime example. Complex multi-agent pipelines are written in plain JavaScript by combining basic functions like <code>agent()</code>, <code>parallel()</code>, and <code>pipeline()</code>. Logic like "run three code review agents in parallel, collect results, and pass them to a verification agent" is expressed in just a few lines of <code>parallel()</code> and <code>pipeline()</code> calls.</p><p>This approach allows complete control over agent behavior without any framework. Debugging is straightforward — just read the code — and execution flow can be traced without additional tooling.</p><h4>Difference from Frameworks</h4><p>Dedicated agent frameworks define agents using abstracted concepts like <strong>Actors</strong>, <strong>Nodes</strong>, and <strong>Edges</strong>. The code as agent harness approach instead orchestrates agents directly through function calls and control flow, without such abstractions. This aligns with the 12-factor agents principle of treating agents like regular software.</p><h4>Caveats</h4><p>While this approach offers high transparency and control, common patterns must be abstracted manually. Teams need to implement or build internal libraries for patterns like parallel execution, error handling, and retry logic.</p>`
+  },
+  'tokenmaxxing':{
+    sum: 'A behavioral pattern of maximizing AI token consumption by treating it as a productivity metric. A workplace culture phenomenon that emerged from Big Tech companies promoting AI adoption through internal leaderboards.',
+    det: `<h4>What Is It?</h4><p>Tokenmaxxing combines the internet slang suffix "maxxing" — meaning to optimize a behavior to its absolute extreme — with AI tokens. It refers to the practice of intentionally increasing token consumption by treating how many tokens an AI model processes as a measure of work output.</p><p>The phenomenon took off when companies like Meta and Microsoft introduced internal <strong>token leaderboards</strong> to encourage AI adoption. Inside Meta, employees competed for titles like "Session Immortal" and "Token Legend" based on their token usage rankings. Some employees admitted they were tokenmaxxing not because of the leaderboard, but because they "didn't want to be seen as using too few tokens."</p><h4>Why Is It a Problem?</h4><p>Token usage is easy to measure, automatically tracked, and consistently applied across teams — making it an appealing number for management to show AI adoption at a glance. But critics point out that this metric has almost no correlation with actual productivity. Consuming a lot of tokens simply means having long conversations with AI; it doesn't guarantee good code came out of it or that problems were solved.</p><p>The real danger is perverse incentives. When management sets any metric as a goal, employees adjust behavior to hit it. Uber's COO disclosed that the company burned through its entire AI budget in just four months. An AI consultant shared a case where a client spent $500 million in a month because no usage limits were set on employee Claude licenses. "Have we actually become more productive, or are we just burning money on tokens?" has become a recurring question.</p><h4>What Should Be Measured Instead?</h4><p>In response to the tokenmaxxing backlash, the concept of <strong>valuemaxxing</strong> has emerged in tech circles — tracking metrics tied to real value rather than raw token consumption, such as accepted outputs, model cost, review burden, and agent behavior. Engineering leaders suggest linking AI usage to existing development metrics like code merge rate, bug resolution rate, and deployment frequency rather than token counts alone.</p><h4>Caveats</h4><p>The term tokenmaxxing is used in two ways depending on context. Negatively, it refers to the metric-gaming phenomenon described above. Neutrally, it can simply mean actively embracing AI tools. Token consumption itself is not the problem — treating consumption as the goal is. If a token-intensive task genuinely improves productivity, it's a legitimate use of AI.</p>`
   },
 },zh:{
   'harness-engineering': {

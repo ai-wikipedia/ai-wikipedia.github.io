@@ -308,3 +308,4 @@ generative-engine-optimization	GEO	Generative Engine Optimization	application
 auth-md	auth.md	auth.md Agent Authentication Protocol	tooling
 continual-learning	지속 학습	Continual Learning	model
 code-as-harness	코드 에이전트 하네스	Code as Agent Harness	agent
+tokenmaxxing	토큰맥싱	Tokenmaxxing	infra
