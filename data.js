@@ -8,7 +8,7 @@ const D = [
 <h4>사용 예시</h4><p>Claude Code에서 하네스 엔지니어링은 이미 일상적으로 쓰이고 있다. <code>CLAUDE.md</code>에 프로젝트 규칙과 코딩 컨벤션을 적어 두면 에이전트가 매 세션마다 그 맥락을 읽고 시작한다. 훅으로 파일 수정 후 자동 린트를 걸거나, 위험한 명령을 차단하는 가드레일을 만든다. 스킬로 반복 워크플로우를 정의하고, MCP로 외부 도구 접근 범위를 통제한다. 이 모든 게 모델을 감싸는 하네스의 구성 요소다.</p>
 <p>직접 에이전트를 만들 때도 마찬가지다. 시스템 프롬프트로 역할과 제약을 잡고, 도구 정의로 에이전트가 할 수 있는 일의 범위를 정하고, 출력 검증 루프로 잘못된 결과를 걸러내는 구조를 짠다. 모델을 바꾸지 않고도 이 구조만 다시 설계하면 성능이 눈에 띄게 올라가는 경우가 많다.</p>
 <h4>주의할 점</h4><p>하네스를 너무 빡빡하게 짜면 에이전트가 유연하게 대응하지 못하고, 너무 느슨하면 엉뚱한 방향으로 간다. 처음에는 최소한의 제약만 걸고, 실제로 문제가 생기는 지점에 하나씩 가드레일을 추가하는 방식이 실용적이다.</p>`,
-   rel:['system-prompt','mcp','tool-use','agent-framework','dynamic-workflows','code-as-harness'],
+   rel:['system-prompt','mcp','tool-use','agent-framework','dynamic-workflows','code-as-harness','self-scaffolding'],
    refs:[{"title": "Harness engineering – OpenAI", "url": "https://openai.com/index/harness-engineering/", "type": "blog"}, {"title": "Harness Engineering – Martin Fowler", "url": "https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html", "type": "blog"}, {"title": "Effective harnesses for long-running agents – Anthropic", "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents", "type": "official"}],
    videos:[{"title": "How We Build Effective Agents – Barry Zhang, Anthropic", "id": "D7_ipDqhtwk", "lang": "en"},{title:'Claude Code Skills AI Agent Team Guide',id:'OdtGN27LchE',lang:'en'},{title:'Build Anything with Claude Agents',id:'5CmAKm1wWW0',lang:'en'}],
    added:'2026-03-30',updated:'2025-12-01'},
@@ -1514,7 +1514,7 @@ refs:[{title:'Federated Learning - Google Research',url:'https://federated.withg
   {id:'self-improving-agent',t:'자기학습 에이전트',en:'Self-Improving Agent',c:'agent',h:3,born:'2025-06',tags:['자율학습','스킬생성','Hermes'],
    sum:'실행 경험에서 스스로 스킬을 생성하고 개선하는 에이전트. 사람이 매번 새 능력을 가르치지 않아도 사용할수록 더 잘하게 된다.',
    det:`<h4>개념 설명</h4><p>일반 에이전트는 정해진 도구와 프롬프트 안에서만 작동한다. 자기학습 에이전트는 작업을 수행하면서 성공한 패턴을 스킬로 저장하고, 실패한 패턴을 분석해 다음에 더 나은 전략을 쓴다. Nous Research의 Hermes Agent가 이 개념을 구체화했다. 에이전트가 자신의 실행 로그를 리플렉션하고, 반복되는 작업 패턴을 재사용 가능한 스킬로 추출하는 구조다.</p><h4>사용 예시</h4><p>Claude Code에서 스킬을 직접 정의해 재사용하는 것이 수동 버전이라면, 자기학습 에이전트는 이 과정을 자동화한다. "이 작업을 5번 했으니 스킬로 만들어두자"를 에이전트가 스스로 판단한다. 장기 실행 에이전트나 반복 업무 자동화에서 시간이 지날수록 효율이 올라가는 구조를 만들 수 있다.</p>`,
-   rel:['autonomous-agent','agent-memory','reflection-pattern','skills','agent-loop'],
+   rel:['autonomous-agent','agent-memory','reflection-pattern','skills','agent-loop','self-scaffolding'],
    refs:[{title:'A Comprehensive Survey of Self-Evolving AI Agents',url:'https://arxiv.org/abs/2508.07407',type:'paper'},{title:'A Survey of Self-Evolving Agents',url:'https://arxiv.org/abs/2507.21046',type:'paper'}],videos:[{title:'Self-Improving AI Agents: Future of Autonomous Systems',id:'lWnSIa6su68',lang:'en'},{title:'AI Agent Evolution: From Static to Self-Evolving',id:'it7jCSBvvGo',lang:'en'},{title:'자율 진화하는 AI 에이전트 개념',id:'VqVHVb9PE3o',lang:'ko'}],added:'2026-03-28',updated:'2026-04-04'},
 
   {id:'agent-handoff',t:'에이전트 핸드오프',en:'Agent Handoff',c:'agent',h:3,born:'2024-10',tags:['위임','전환','멀티에이전트'],
@@ -2144,7 +2144,7 @@ refs:[
    videos:[{title:'Real Intelligence is Continual Learning - Ilya Sutskever',id:'AeIsIVgjP4A',lang:'en'},{title:'Continual Learning in Claude Code',id:'sWbsD-cP4rI',lang:'en'},{title:'[Open DMQA Seminar] Generative Replay for Continual Learning',id:'Kuy8MnoxEng',lang:'ko'}],
    added:'2026-06-27',updated:'2026-06-27'},
   {id:'code-as-harness',t:'코드 에이전트 하네스',en:'Code as Agent Harness',c:'agent',h:0,born:'2023-06',tags:['오케스트레이션','에이전트 하네스','코드'],
-   sum:'전용 에이전트 프레임워크 대신 일반 프로그래밍 코드로 AI 에이전트의 실행 흐름을 직접 정의하고 제어하는 설계 패턴. 코드 자체가 오케스트레이션 레이어가 된다.',det:`<h4>개념 설명</h4><p>AI 에이전트를 구축할 때 보통 두 가지 선택지가 있다. LangChain, CrewAI, LangGraph 같은 전용 프레임워크를 쓰거나, Python이나 JavaScript 같은 일반 코드로 직접 에이전트 실행 흐름을 정의하는 것이다. 후자가 바로 <strong>코드 에이전트 하네스</strong> 접근 방식이다.</p><p>여기서 코드는 단순한 에이전트 호출 스크립트가 아니다. 에이전트가 어떤 순서로 실행되고, 어떤 조건에서 분기하고, 결과를 어떻게 다음 단계로 넘기는지 — 이 모든 오케스트레이션 로직을 코드로 명시적으로 표현한다. 프레임워크의 추상화 레이어 없이 코드가 직접 하네스 역할을 한다.</p><h4>사용 예시</h4><p>Claude Code의 워크플로우 스크립트가 대표적인 사례다. <code>agent()</code>, <code>parallel()</code>, <code>pipeline()</code> 같은 기본 함수를 조합해서 복잡한 멀티에이전트 파이프라인을 일반 JavaScript 코드로 작성한다. "코드 리뷰 에이전트 3개를 병렬로 실행하고, 결과를 모아 검증 에이전트에 넘긴다"는 로직이 <code>parallel()</code>과 <code>pipeline()</code> 호출 몇 줄로 표현된다.</p><p>이 방식은 프레임워크 없이도 에이전트 동작을 완전히 제어할 수 있다는 장점이 있다. 디버깅할 때는 코드를 그대로 읽으면 되고, 실행 흐름을 추적할 때도 별도 도구가 필요 없다.</p><h4>프레임워크와의 차이</h4><p>전용 에이전트 프레임워크는 추상화된 <strong>액터(Actor)</strong>, <strong>노드(Node)</strong>, <strong>엣지(Edge)</strong> 같은 개념으로 에이전트를 정의한다. 반면 코드 에이전트 하네스에서는 이런 추상화 없이 직접 함수 호출과 제어 흐름으로 에이전트를 조율한다. 12-factor agents 원칙에서도 에이전트를 일반 소프트웨어처럼 다루라고 강조하는데, 이 철학과 맥을 같이한다.</p><h4>주의할 점</h4><p>코드 에이전트 하네스 방식은 투명성과 제어력이 높은 반면, 재사용 패턴을 직접 추상화해야 한다. 병렬 실행, 오류 처리, 재시도 로직 같은 공통 패턴을 팀에서 매번 구현하거나 내부 라이브러리로 만들어야 한다는 부담이 있다.</p>`,rel:['harness-engineering','multi-agent','orchestration-pattern','agent-framework','12-factor-agents','claude-code'],
+   sum:'전용 에이전트 프레임워크 대신 일반 프로그래밍 코드로 AI 에이전트의 실행 흐름을 직접 정의하고 제어하는 설계 패턴. 코드 자체가 오케스트레이션 레이어가 된다.',det:`<h4>개념 설명</h4><p>AI 에이전트를 구축할 때 보통 두 가지 선택지가 있다. LangChain, CrewAI, LangGraph 같은 전용 프레임워크를 쓰거나, Python이나 JavaScript 같은 일반 코드로 직접 에이전트 실행 흐름을 정의하는 것이다. 후자가 바로 <strong>코드 에이전트 하네스</strong> 접근 방식이다.</p><p>여기서 코드는 단순한 에이전트 호출 스크립트가 아니다. 에이전트가 어떤 순서로 실행되고, 어떤 조건에서 분기하고, 결과를 어떻게 다음 단계로 넘기는지 — 이 모든 오케스트레이션 로직을 코드로 명시적으로 표현한다. 프레임워크의 추상화 레이어 없이 코드가 직접 하네스 역할을 한다.</p><h4>사용 예시</h4><p>Claude Code의 워크플로우 스크립트가 대표적인 사례다. <code>agent()</code>, <code>parallel()</code>, <code>pipeline()</code> 같은 기본 함수를 조합해서 복잡한 멀티에이전트 파이프라인을 일반 JavaScript 코드로 작성한다. "코드 리뷰 에이전트 3개를 병렬로 실행하고, 결과를 모아 검증 에이전트에 넘긴다"는 로직이 <code>parallel()</code>과 <code>pipeline()</code> 호출 몇 줄로 표현된다.</p><p>이 방식은 프레임워크 없이도 에이전트 동작을 완전히 제어할 수 있다는 장점이 있다. 디버깅할 때는 코드를 그대로 읽으면 되고, 실행 흐름을 추적할 때도 별도 도구가 필요 없다.</p><h4>프레임워크와의 차이</h4><p>전용 에이전트 프레임워크는 추상화된 <strong>액터(Actor)</strong>, <strong>노드(Node)</strong>, <strong>엣지(Edge)</strong> 같은 개념으로 에이전트를 정의한다. 반면 코드 에이전트 하네스에서는 이런 추상화 없이 직접 함수 호출과 제어 흐름으로 에이전트를 조율한다. 12-factor agents 원칙에서도 에이전트를 일반 소프트웨어처럼 다루라고 강조하는데, 이 철학과 맥을 같이한다.</p><h4>주의할 점</h4><p>코드 에이전트 하네스 방식은 투명성과 제어력이 높은 반면, 재사용 패턴을 직접 추상화해야 한다. 병렬 실행, 오류 처리, 재시도 로직 같은 공통 패턴을 팀에서 매번 구현하거나 내부 라이브러리로 만들어야 한다는 부담이 있다.</p>`,rel:['harness-engineering','multi-agent','orchestration-pattern','agent-framework','12-factor-agents','claude-code','self-scaffolding'],
    refs:[],
    videos:[],
    added:'2026-06-27',updated:'2026-06-27'},
@@ -2165,6 +2165,46 @@ refs:[
      {title:'연봉 7억 개발자면, 토큰에 3억은 써야죠',id:'hdBpd99QT-8',lang:'ko'}
    ],
    added:'2026-06-29',updated:'2026-06-29'},
+
+  {id:'self-scaffolding',t:'셀프 스캐폴딩 LLM',en:'Self-Scaffolding LLM',c:'agent',h:4,born:'2026-06',tags:['스캐폴딩','에이전트','자기개선','하네스'],
+   sum:'LLM이 자신을 감싸는 실행 구조(스캐폴드)를 스스로 생성하고 최적화하는 방식. 사람이 직접 에이전트 하네스를 설계하는 대신, 모델이 자신에게 맞는 실행 코드를 직접 만들어낸다.',
+   det:`<h4>개념 설명</h4><p>일반적인 LLM 에이전트는 사람이 미리 설계한 <strong>스캐폴드</strong>(프롬프트 흐름, 메모리, 도구 호출 로직 등의 외부 구조)를 전제로 동작한다. 반면 <strong>Self-Scaffolding LLM</strong>은 이 구조 자체를 모델이 스스로 작성한다. 즉, 어떤 도구를 언제 부르고, 어떤 순서로 작업을 이어갈지를 결정하는 코드를 모델이 직접 생성하고 실행하는 방식이다.</p><p>이 접근의 핵심 동기는 하네스 엔지니어링의 병목을 제거하는 것이다. 복잡한 에이전트 시스템을 만들려면 지금까지는 숙련된 개발자가 스캐폴드를 직접 짜야 했는데, Self-Scaffolding은 그 부담을 모델에게 넘긴다.</p><h4>사용 예시</h4><p>코딩 에이전트 분야에서 구체적인 시도가 나오고 있다. Ornith 1.0은 Self-Scaffolding LLM을 표방하며 설계된 에이전트 코딩 모델로, 주어진 작업에 맞게 자신의 실행 하네스를 생성하고 최적화한다. 개발자가 '이 레포를 리팩토링해줘'라고 요청하면, 모델이 파일 탐색 → 의존성 분석 → 수정 계획 수립 → 코드 실행이라는 실행 흐름을 직접 코드로 구성해서 돌리는 식이다.</p><p><strong>Self-Harness 아키텍처</strong>라고도 불리는 이 패턴에서는 에이전트가 자신의 스캐폴딩 코드를 자동으로 생성하고, 결과를 평가한 뒤, 더 나은 방식으로 재작성하는 루프를 반복한다. 이는 code-as-harness 패턴과 자기개선(self-improving) 패턴이 결합된 형태로 볼 수 있다.</p><h4>심화 내용</h4><p>이 개념은 LLM의 스캐폴드 자체를 학습 대상으로 삼는 연구로도 확장된다. SIA(Self-Improving Agent) 계열 연구에서는 모델 가중치와 스캐폴딩 코드를 동시에 개선하는 방식을 탐구한다. 스캐폴드 코드가 고정된 기존 방식에 비해, 작업 유형에 따라 실행 구조가 달라질 수 있다는 점이 차별점이다.</p><h4>주의할 점</h4><p>Self-Scaffolding은 모델 자체의 능력에 크게 의존한다. 스캐폴드를 잘못 생성하면 작업 전체가 틀어질 수 있고, 생성된 코드를 안전하게 실행하려면 <strong>샌드박싱</strong>이 필수다. 또한 현재까지의 연구에서는 더 나은 스캐폴드보다 더 좋은 기반 모델이 성능에 더 큰 영향을 미친다는 분석도 있어, 스캐폴딩 자동화의 실질적 이득을 측정하는 것이 과제로 남아 있다.</p>`,
+   rel:['code-as-harness','self-improving-agent','harness-engineering','sandboxing','code-interpreter','agent-framework','planning-pattern'],
+   refs:[
+     {title:'Scaffolded LLMs as natural language computers',url:'https://www.lesswrong.com/posts/43C3igfmMrE9Qoyfe/scaffolded-llms-as-natural-language-computers',type:'blog'},
+     {title:'Agent Scaffolding: Architecture and Design Patterns for Agentic AI',url:'https://zbrain.ai/agent-scaffolding',type:'tutorial'},
+     {title:'Automating Agent Scaffolding - The Self Harness Architecture',url:'https://anantha.blog/self-harness',type:'blog'},
+     {title:'Introducing Ornith 1.0 - Agentic Coding LLMs',url:'https://samwitteveen.com/ornith',type:'blog'},
+     {title:'Does scaffolding help humans?',url:'https://www.beren.io/2024-05-05-Does-Scaffolding-Help-Humans',type:'blog'}
+   ],
+   videos:[
+     {title:'Introducing Ornith 1.0 - Agentic Coding LLMs',id:'uD4-uy0GmHE',lang:'en'},
+     {title:'This Self-Improving Model Beats Claude at Coding - Run Locally | Ornith-1.0 Local Setup',id:'WEPcgxRHcdI',lang:'en'},
+     {title:'Automating Agent Scaffolding - The Self Harness Architecture',id:'CfR4jDBFrmQ',lang:'en'}
+   ],
+   added:'2026-06-30',updated:'2026-06-30'},
+  {id:'micro-agent',
+   t:'Micro-Agent',
+   en:'Micro-Agent',
+   c:'agent',
+   h:0,
+   tags:['단일목적','코드생성','모듈화'],
+   sum:'하나의 작업에만 집중하는 소형 특화 에이전트. 범용 에이전트의 불안정성 대신 좁은 목표와 명확한 검증 기준을 갖춰 신뢰할 수 있는 결과를 낸다.',
+   det:`<h4>왜 작게 만드는가</h4><p>범용 AI 에이전트는 다양한 작업을 처리할 수 있지만 그만큼 실패 지점도 많고, 어디서 틀렸는지 파악하기 어렵다. Micro-Agent는 반대 방향에서 접근한다. 에이전트 하나가 하나의 일만 한다. 범위가 좁을수록 결과를 검증하기 쉽고, 실패해도 해당 에이전트만 다시 돌리면 된다.</p><p>마이크로서비스 아키텍처가 거대한 서버 애플리케이션을 작은 독립 서비스로 분리한 것처럼, Micro-Agent 아키텍처는 AI 에이전트를 역할별로 나눠 각자 독립적으로 동작하게 만든다. 느슨한 결합(loose coupling)과 명확한 책임 분리가 핵심 원칙이다.</p><h4>사용 예시</h4><p>Builder.io가 공개한 오픈소스 <code>micro-agent</code>가 대표적인 구현체다. 사용자가 프롬프트를 입력하면 먼저 단위 테스트를 생성하고, 그 테스트를 통과할 때까지 코드를 반복 수정한다. 목표가 "테스트 통과"라는 명확한 기준으로 고정되어 있어 무한 루프나 방향 상실 없이 수렴한다.</p><p>보안 인시던트 조사에서도 활용된다. 로그 수집, 패턴 분석, 결과 해석을 각각 별도 에이전트가 맡으면, 각 단계를 과거 실제 데이터로 독립적으로 테스트하고 튜닝할 수 있다. 단계별 정확도를 따로 측정할 수 있다는 점이 모놀리식 에이전트와 가장 큰 차이다.</p><h4>멀티에이전트 시스템과의 관계</h4><p>Micro-Agent는 멀티에이전트 시스템의 구성 단위로 자주 쓰인다. 오케스트레이터가 복잡한 작업을 분해하면, 각 세부 작업을 전담 Micro-Agent가 처리한다. Builder.io의 비주얼 매칭 기능도 이 구조를 쓴다. 한 에이전트가 디자인을 분석해 피드백을 주고, 다른 에이전트가 그 피드백으로 코드를 수정하는 식이다.</p><h4>주의할 점</h4><p>에이전트를 잘게 나눌수록 에이전트 간 통신과 조율 비용이 늘어난다. 어디까지 분리할지 기준이 불명확하면 오히려 시스템이 복잡해진다. 각 Micro-Agent의 입출력 인터페이스를 명확히 정의하고, 전체 흐름을 조율하는 오케스트레이터 설계를 함께 고려해야 한다.</p>`,
+   rel:['ai-agent','multi-agent','task-decomposition','subagent','orchestration-pattern','code-as-harness'],
+   refs:[
+     {title:'Introducing Micro Agent: An (Actually Reliable) AI Coding Agent',url:'https://www.builder.io/blog/micro-agent',type:'blog'},
+     {title:'BuilderIO/micro-agent GitHub',url:'https://github.com/BuilderIO/micro-agent',type:'official'},
+     {title:'Micro-Agents vs. Monolithic AI: Why Smaller is Better',url:'https://www.blinkops.com/blog/micro-agents-vs-monolithic-ai-why-smaller-is-better',type:'blog'},
+     {title:'Micro Agents: AI-Powered Investigation at Scale',url:'https://www.wildmoose.ai/post/micro-agents-ai-powered-investigation-at-scale',type:'blog'},
+     {title:'What is Micro-Agent Architecture?',url:'https://fulcrumdigital.com/glossary/micro-agent-architecture',type:'tutorial'}
+   ],
+   videos:[
+     {title:'Micro Agent, a New AI Coding Agent, in 60 Seconds',id:'C3uI06xOGSE',lang:'en'},
+     {title:'Introducing Micro Agent: An (Actually Reliable) AI Coding Agent',id:'n6uhqo8mSJ8',lang:'en'},
+     {title:'AI Agents explained in 3 steps',id:'BF2k_fKuCVM',lang:'ko'}
+   ],
+   added:'2026-06-30',updated:'2026-06-30'},
 ];
 
 const I18N_CONTENT = {en:{
