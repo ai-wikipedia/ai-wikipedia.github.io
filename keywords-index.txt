@@ -311,3 +311,4 @@ code-as-harness	코드 에이전트 하네스	Code as Agent Harness	agent
 tokenmaxxing	토큰맥싱	Tokenmaxxing	infra
 self-scaffolding	셀프 스캐폴딩 LLM	Self-Scaffolding LLM	agent
 micro-agent	Micro-Agent	Micro-Agent	agent
+prompt-steganography	프롬프트 스테가노그래피	Prompt Steganography	safety
