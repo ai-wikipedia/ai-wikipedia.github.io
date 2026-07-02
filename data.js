@@ -1,5 +1,5 @@
 const HOT_IDS = ['claude-sonnet-5'];
-const LAST_UPDATED = '2026-07-01T23:06:27Z';
+const LAST_UPDATED = '2026-07-02T23:27:35Z';
 
 const D = [
   {id:'harness-engineering',t:'하네스 엔지니어링',en:'Harness Engineering',c:'prompting',h:4,born:'2026-02',tags:['시스템설계','오케스트레이션'],
@@ -2222,6 +2222,52 @@ refs:[
    refs:[{title:'Introducing Claude Sonnet 5',url:'https://www.anthropic.com/news/claude-sonnet-5',type:'blog'},{title:'Model Drop: Claude Sonnet 5',url:'https://handyai.substack.com/p/model-drop-claude-sonnet-5',type:'tutorial'},{title:'Anthropic launches Claude Sonnet 5 as a cheaper way to run agents',url:'https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents',type:'tutorial'},{title:'Introducing Claude Sonnet 5 on AWS',url:'https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-on-aws-anthropics-most-capable-sonnet-model',type:'official'},{title:'Claude Sonnet 5 review: Should you switch?',url:'https://www.coderabbit.ai/blog/claude-sonnet-5-review',type:'tutorial'}],
    videos:[{title:'Sonnet 5 is LIVE And It Competes With Opus',id:'_QE7v4VFxsE',lang:'en'},{title:'Claude Sonnet 5 just dropped. I\'m changing how I use AI...',id:'uU0RFxGv-Ks',lang:'en'},{title:'Claude Sonnet 5 Is HERE – Hands-On With Anthropic\'s NEW Model!',id:'tIyQoLeTT3s',lang:'en'}],
    added:'2026-07-01',updated:'2026-07-01'},
+  {id:'evidence-gate',t:'에비던스 게이트',en:'Evidence Gate',c:'infra',h:0,born:'2025-01',tags:['품질 게이트','AI 거버넌스','CI/CD','에이전트 파이프라인'],
+   sum:'AI 에이전트가 코드와 테스트를 모두 작성하는 환경에서, 품질 기준을 에이전트에게 노출하지 않고 서버 측에서만 평가하는 파이프라인 게이트. AI가 통과 기준을 역으로 최적화하지 못하도록 막는 풀스택 거버넌스 메커니즘이다.',
+   det:`<h4>왜 필요한가</h4><p>AI 에이전트가 코드를 작성하고, 테스트를 작성하고, 심지어 인프라까지 운영하는 환경에서는 기존 품질 게이트가 근본적으로 취약해진다. 테스트 커버리지 80% 이상이라는 기준이 파이프라인에 보이는 순간, LLM은 그 기준을 충족하는 쪽으로 테스트를 생성하지, 실제 품질을 높이는 쪽으로 코드를 개선하지 않는다. 기준 자체가 최적화 타깃이 되어버리는 것이다.</p><h4>블라인드 게이트: 핵심 메커니즘</h4><p>에비던스 게이트의 핵심은 <strong>블라인드 게이트(Blind Gate)</strong>다. 평가 기준을 파이프라인, 저장소, AI 에이전트 어디에도 노출하지 않고 서버 측에서만 보관한다. 에이전트는 코드와 테스트를 제출하면 pass 또는 fail만 돌려받는다. 어떤 기준으로 평가됐는지는 알 수 없다. 이렇게 하면 AI가 기준을 보고 역으로 맞추는 전략 자체가 불가능해진다.</p><p>실제로 어떻게 쓰이는지 보면, Claude Code 같은 도구로 AI가 PR을 자동 생성하는 파이프라인에서 에비던스 게이트를 중간 검문소로 배치한다. AI가 작성한 코드가 게이트를 통과해야만 다음 단계(스테이징 배포, 머지)로 넘어갈 수 있다. 게이트는 증거(evidence)를 기록하고, 그 기록이 다운스트림 감사 추적에 남는다.</p><h4>풀스택 거버넌스와의 연결</h4><p>에비던스 게이트는 코드 품질 검사에만 머물지 않는다. 샌드박스 격리 수준이 정책에 맞는지, 인퍼런스 라우팅 예산이 설정됐는지, 청사진(blueprint)이 올바른 구성을 따르는지까지 검증하는 정책 레이어로 확장된다. <strong>fail-closed</strong> 원칙 — 판단 불가 시 기본적으로 차단 — 을 채택해 불확실한 상황에서 파이프라인이 멈추도록 설계한다.</p><h4>주의할 점</h4><p>블라인드 게이트는 에이전트의 게이밍은 막지만, 기준 자체가 잘못 설계됐을 때의 오탐/미탐은 막지 못한다. 기준을 설계하고 유지하는 책임은 사람에게 남는다. 또한 기준이 완전히 불투명하면 개발자도 왜 실패했는지 디버깅하기 어려워지므로, 실패 이유를 어느 수준까지 공개할지 세밀하게 조율해야 한다.</p>`,
+   rel:['eval','guardrail','sandboxing','human-in-the-loop','agent-eval'],
+   refs:[
+     {title:'Evidence Gate — Quality Gates for Full-Stack AI Governance',url:'https://evidence-gate.dev',type:'official'},
+     {title:'Evidence Gate — Styxis Knowledge',url:'https://styxis-io.com/en/knowledge/evidence-gate',type:'blog'}
+   ],
+   videos:[
+     {title:'The Evidence Gate | Rook\'s Philosophy',id:'QtV4cK0E8KQ',lang:'en'},
+     {title:'The Evidence Gate With Spectacles | Rook\'s Dreams Log 035',id:'kpkoYPacfo8',lang:'en'},
+     {title:'The Evidence Gate | Rook\'s Philosophy',id:'QtV4cK0E8KQ',lang:'ko'}
+   ],
+   added:'2026-07-03',updated:'2026-07-03'},
+
+  {id:'laguna-xs-2-1',t:'Laguna XS 2.1',en:'Poolside Laguna XS 2.1',c:'model',h:0,born:'2026-06',tags:['Poolside','MoE','에이전틱 코딩','로컬 모델'],
+   sum:'Poolside가 개발한 33B MoE 코딩 특화 모델로, 토큰당 3B 파라미터만 활성화하면서 로컬 머신에서 에이전틱 코딩과 장기 작업을 처리한다.',
+   det:`<h4>개념 설명</h4><p>Laguna XS 2.1은 Poolside가 개발한 33B 총 파라미터 규모의 Mixture-of-Experts 모델이다. 전체 파라미터 중 토큰당 3B만 활성화되는 구조 덕분에, 실제 추론 비용은 소형 모델 수준이면서 33B의 지식을 활용할 수 있다. 에이전틱 코딩과 터미널 명령처럼 여러 단계에 걸친 장기 작업에 특화되어 있다.</p><p>이전 버전 XS.2의 업그레이드 버전으로, SWE-bench Multilingual 점수를 5.4포인트 끌어올려 63.1%를 기록했다. 아키텍처는 XS.2와 동일하지만 다국어 코드 수정 벤치마크와 터미널 스타일 작업에서 성능이 향상됐다.</p><h4>사용 예시</h4><p>36GB RAM이 있는 Mac에서 <code>ollama run laguna-xs-2.1</code> 명령으로 로컬 실행이 가능하다. Claude Code, Codex App, OpenCode 등 Ollama 기반 에이전트 도구와 통합할 수 있고, vLLM, SGLang, Transformers, Llama.cpp, TRT-LLM도 론칭 당일부터 지원한다. OpenRouter API를 통해 클라우드 추론도 가능하며 최대 256K 컨텍스트 윈도우를 제공한다.</p><h4>주의할 점</h4><p>이전 버전 XS.2가 Apache 2.0 라이선스로 완전히 오픈 소스였던 것과 달리, XS 2.1은 OpenMDW-1.1 라이선스가 적용된다. 상업적 활용이나 파인튜닝 시 라이선스 조건을 별도로 확인해야 한다.</p>`,
+   rel:['moe','small-language-model','open-weights','ollama','inference-optimization','agentic-engineering'],
+   refs:[
+     {title:'Introducing Laguna XS 2.1 — Poolside',url:'https://poolside.ai/blog/introducing-laguna-xs-2-1',type:'blog'},
+     {title:'poolside/Laguna-XS-2.1 · Hugging Face',url:'https://huggingface.co/poolside/Laguna-XS-2.1',type:'official'},
+     {title:'laguna-xs-2.1 — Ollama',url:'https://ollama.com/library/laguna-xs-2.1',type:'official'}
+   ],
+   videos:[
+     {title:'Laguna XS 2.1: Poolside\'s Local Coding Agent Tested - Nine Languages',id:'fobY4W_0_2g',lang:'en'},
+     {title:'Episode 73: OpenClaw v2026.6.9 Released; Poolside Adds Laguna XS 2.1',id:'EKmBODC2E2g',lang:'en'},
+     {title:'Laguna XS 2.1 33B A3B 동급 최강. 로컬,장기작업용 소형모델.',id:'uNg-nzgaY-4',lang:'ko'}
+   ],
+   added:'2026-07-03',updated:'2026-07-03'},
+
+  {id:'ai-slop',t:'AI 슬롭',en:'AI Slop',c:'safety',h:0,born:'2024-04',tags:['콘텐츠 품질','생성형 AI','소셜미디어'],
+   sum:'노력·품질·의미가 결여된 채 대량으로 생산된 AI 생성 콘텐츠. 소셜 미디어의 어텐션 경제를 이용해 확산되며, 고품질 콘텐츠를 밀어내고 허위 정보 유포에 악용된다.',
+   det:`<h4>개념 설명</h4><p>생성형 AI 도구가 대중화되면서 인터넷에 특정 유형의 콘텐츠가 넘쳐나기 시작했다. 사실 확인 없이 뽑아낸 글, 이상한 손가락이나 텍스트가 섞인 AI 이미지, 의미 없이 클릭을 유도하는 영상들이다. <strong>AI 슬롭(AI Slop)</strong>은 이처럼 노력·품질·의미가 결여된 채 대량으로 생산된 AI 생성 콘텐츠를 가리키는 용어다.</p><p>이 용어는 2024년 2분기에 급격히 확산됐다. 구글이 Gemini를 검색 결과에 통합하면서 저품질 AI 답변이 검색 상단을 차지하고, 페이스북 같은 플랫폼에서 AI 이미지가 수십만 조회수를 기록하는 사례들이 주목받았다. 2024년 4분기에는 주요 언론에서 비판적으로 보도하기 시작했다.</p><h4>왜 문제인가</h4><p>AI 슬롭이 퍼지는 이유는 소셜 미디어 플랫폼이 조회수와 참여도를 기준으로 콘텐츠를 증폭시키기 때문이다. AI는 이 기준을 충족하는 콘텐츠를 매우 낮은 비용으로 대량 생산할 수 있다. 생산자는 광고 수익을 얻고, 플랫폼은 트래픽을 얻는다. 결과적으로 정성 들여 만든 실제 창작자의 콘텐츠가 알고리즘에서 밀려나는 문제가 생긴다.</p><p>명백한 AI 생성 티가 나더라도 잠깐 스크롤하는 사람들에게 허위 정보를 심을 수 있다는 점도 위험하다. 재난 현장의 AI 이미지나 정치인의 딥페이크가 한 번 퍼지면 사실처럼 기억되는 현상이 발생한다.</p><h4>개발자 관점에서의 AI 슬롭</h4><p>개발자가 AI 슬롭을 만들지 않으려면 결과물 품질을 의식적으로 관리해야 한다. 자동화된 콘텐츠 파이프라인을 만들 때, 사실 확인 단계와 사람의 검토 없이 AI 출력을 바로 퍼블리싱하지 않는 것이 기본이다. 코드 리뷰 없이 AI가 생성한 코드를 그대로 머지하거나, 프롬프트 하나로 블로그 포스트를 양산하는 방식도 같은 문제 패턴에 해당한다.</p><h4>주의할 점</h4><p>AI 슬롭은 기술적 정의라기보다 문화적 용어다. 일부 커뮤니티에서는 품질과 무관하게 AI로 만든 모든 콘텐츠에 이 표현을 쓰기도 한다. AI 도구를 활용하더라도 인간의 판단과 편집이 들어간 결과물은 슬롭과 구분해서 볼 필요가 있다.</p>`,
+   rel:['hallucination','deepfake-detection','content-moderation','watermarking','ai-regulation','guardrail'],
+   refs:[
+     {title:'AI slop — Wikipedia',url:'https://en.wikipedia.org/wiki/AI_slop',type:'tutorial'},
+     {title:'What is AI slop? A technologist explains — The Conversation',url:'https://theconversation.com/what-is-ai-slop-a-technologist-explains-this-new-and-largely-unwelcome-form-of-online-content-256554',type:'blog'},
+     {title:'AI \'slop\' is transforming social media — BBC',url:'https://www.bbc.com/news/articles/c9wx2dz2v44o',type:'blog'}
+   ],
+   videos:[
+     {title:'AI Slop Is Destroying The Internet',id:'_zfN9wnPvU0',lang:'en'},
+     {title:'AI Slop: Last Week Tonight with John Oliver (HBO)',id:'TWpg1RmzAbc',lang:'en'},
+     {title:'AI SLOP. AI 판타지로 고통 받는 현업자들',id:'gjyn9axr2-w',lang:'ko'}
+   ],
+   added:'2026-07-03',updated:'2026-07-03'},
 ];
 
 const I18N_CONTENT = {en:{

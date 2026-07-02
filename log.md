@@ -1,3 +1,7 @@
+## 2026-07-03 08:27
+- 추가: laguna-xs-2-1, ai-slop, evidence-gate
+- HOT: (없음)
+
 ## 2026-07-02 08:06
 - 추가: claude-sonnet-5
 - HOT: (없음)
