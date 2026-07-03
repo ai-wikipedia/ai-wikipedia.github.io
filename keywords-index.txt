@@ -316,3 +316,4 @@ claude-sonnet-5	클로드 소네트 5	Claude Sonnet 5 (Anthropic)	model
 evidence-gate	에비던스 게이트	Evidence Gate	infra
 laguna-xs-2-1	Laguna XS 2.1	Poolside Laguna XS 2.1	model
 ai-slop	AI 슬롭	AI Slop	safety
+pxpipe	픽스파이프	PxPipe (Image-Based Token Compression)	infra
