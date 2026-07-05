@@ -1,5 +1,5 @@
-const HOT_IDS = ['claude-sonnet-5'];
-const LAST_UPDATED = '2026-07-02T23:27:35Z';
+const HOT_IDS = ['open-memory-protocol'];
+const LAST_UPDATED = '2026-07-05T23:12:33Z';
 
 const D = [
   {id:'harness-engineering',t:'하네스 엔지니어링',en:'Harness Engineering',c:'prompting',h:4,born:'2026-02',tags:['시스템설계','오케스트레이션'],
@@ -18,7 +18,7 @@ const D = [
    det:`<h4>MCP란</h4><p>AI 모델이 외부 시스템과 대화하려면 각 서비스마다 다른 연결 방식을 만들어야 했다. GitHub API 따로, DB 따로, 파일시스템 따로. MCP는 이 연결을 하나의 표준으로 통일한 프로토콜이다. AI 입장에서 USB-C 같은 존재 — 어떤 서비스든 MCP 서버만 있으면 같은 방식으로 접근할 수 있다.</p>
 <h4>사용 예시</h4><p>Claude Code에서 <code>settings.json</code>에 MCP 서버를 등록하면, 에이전트가 해당 서비스를 도구로 바로 사용할 수 있다. GitHub MCP 서버를 연결하면 이슈를 읽고 PR을 만들고, Slack MCP를 붙이면 채널에 메시지를 보낸다. PostgreSQL MCP를 연결하면 에이전트가 직접 쿼리를 날려 데이터를 조회한다.</p>
 <p>직접 MCP 서버를 만들 수도 있다. 사내 API나 자체 서비스에 MCP 서버를 붙이면, AI 에이전트가 그 서비스에 표준화된 방식으로 접근한다. 서버 하나를 만들어 두면 Claude Code, Cursor, Windsurf 등 MCP를 지원하는 모든 클라이언트에서 그대로 쓸 수 있다.</p>`,
-   rel:['tool-use','harness-engineering','claude-code','auth-md'],
+   rel:['tool-use','harness-engineering','claude-code','auth-md','open-memory-protocol'],
    refs:[{"title": "Introducing the Model Context Protocol – Anthropic", "url": "https://www.anthropic.com/news/model-context-protocol", "type": "official"}, {"title": "MCP Specification", "url": "https://modelcontextprotocol.io/specification/2025-11-25", "type": "official"}, {"title": "Code execution with MCP – Anthropic Engineering", "url": "https://www.anthropic.com/engineering/code-execution-with-mcp", "type": "official"}],
    videos:[{"title": "Model Context Protocol explained – Fireship", "id": "HyzlYwjoXOQ", "lang": "en"}, {"title": "MCP Workshop – Mahesh Murag, Anthropic", "id": "kQmXtrmQ5Zg", "lang": "en"}],
    added:'2026-03-30',updated:'2025-12-01'},
@@ -105,7 +105,7 @@ const D = [
 <h4>사용 예시</h4><p>Claude API에서 도구를 정의할 때 이름, 설명, 입력 스키마를 JSON으로 전달한다. 모델이 사용자 요청을 보고 적절한 도구를 골라 호출하면, 개발자 코드가 실행 결과를 다시 모델에 전달하는 루프를 반복한다.</p>
 <p>예를 들어 웹 검색, DB 조회, 코드 실행 도구를 묶어 두면 "지난달 매출 추이를 분석해줘"라는 요청에 모델이 DB 조회 → 데이터 정리 → 분석 코드 실행을 스스로 이어간다. Claude Code에서 파일 읽기, 편집, 셸 실행, 검색이 모두 도구로 구현되어 있어서, 에이전트가 코드베이스를 자율적으로 다룰 수 있는 것도 이 메커니즘 덕분이다.</p>
 <p>MCP는 이 도구 연결을 표준화한 것이다. 도구를 하나하나 코드로 정의하는 대신, MCP 서버를 연결하면 해당 서비스의 기능이 도구로 자동 등록된다.</p>`,
-   rel:['mcp','agent-framework','harness-engineering','research-driven-agent','command-a','auth-md'],
+   rel:['mcp','agent-framework','harness-engineering','research-driven-agent','command-a','auth-md','open-memory-protocol'],
    refs:[{"title": "Tool use with Claude – API Docs", "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview", "type": "official"}, {"title": "Advanced tool use – Anthropic Engineering", "url": "https://www.anthropic.com/engineering/advanced-tool-use", "type": "official"}, {"title": "Writing effective tools for AI agents – Anthropic", "url": "https://www.anthropic.com/engineering/writing-tools-for-agents", "type": "official"}],
    videos:[{"title": "MCP Workshop – Mahesh Murag, Anthropic", "id": "kQmXtrmQ5Zg", "lang": "en"},{title:'Building Agents with MCP - Anthropic',id:'kQmXtrmQ5Zg',lang:'en'},{title:'Build Anything with Claude Agents',id:'5CmAKm1wWW0',lang:'en'}],
    added:'2026-03-30',updated:'2025-12-01'},
@@ -409,7 +409,7 @@ const D = [
   {id:'agent-memory',t:'에이전트 메모리',en:'Agent Memory',c:'agent',h:3,born:'2024-04',tags:['장기기억','Mem0','세션유지'],
    sum:'AI 에이전트가 대화와 작업 경험을 기억하고, 다음 세션에서 그 기억을 꺼내 쓸 수 있게 하는 기술. 일회성 챗봇을 개인화되고 자기 개선하는 시스템으로 바꾸는 핵심 요소다.',
    det:`<h4>왜 에이전트에게 기억이 필요한가</h4><p>LLM은 기본적으로 기억력이 없다. 대화가 끝나면 모든 걸 잊는다. 어제 "Python으로 작성해 줘"라고 했던 것도, 지난주에 함께 디버깅했던 프로젝트 구조도 매번 처음부터 다시 설명해야 한다. 에이전트 메모리는 이 문제를 해결한다.</p><p>사람의 기억처럼 에이전트 메모리도 여러 종류가 있다. <strong>단기 메모리</strong>는 지금 진행 중인 대화의 맥락으로, 컨텍스트 윈도우가 이 역할을 한다. <strong>장기 메모리</strong>는 세션이 끝나도 사라지지 않는 기억이다. "이 사용자는 TypeScript를 선호한다" 같은 의미 메모리, "지난번 배포에서 환경 변수 빠뜨려서 롤백했다" 같은 에피소드 메모리가 있다.</p><h4>사용 예시</h4><p>Claude Code에서는 <code>CLAUDE.md</code>가 가장 기본적인 메모리 역할을 한다. 프로젝트 규칙, 코딩 컨벤션, 아키텍처 결정을 적어 두면 매 세션 시작 시 자동으로 읽는다. Mem0는 코드 한 줄로 에이전트에 장기 기억을 추가할 수 있는 오픈소스 인프라로, 대화에서 자동으로 중요한 정보를 추출해서 벡터 DB + 그래프 메모리에 저장한다.</p><p>Hermes Agent는 여기서 한 발 더 나아간다. 복잡한 문제를 풀면 그 과정을 자동으로 스킬 문서로 만들어 저장한다. 다음에 비슷한 문제가 생기면 기억 속 스킬을 꺼내 쓰는 식이다. 쓸수록 똑똑해지는 에이전트를 만드는 것이 에이전트 메모리의 궁극적인 목표다.</p><h4>주의할 점</h4><p>기억이 많다고 좋은 건 아니다. 오래되거나 틀린 기억을 꺼내 쓰면 오히려 성능이 떨어진다. 어떤 정보를 저장할지, 언제 업데이트하거나 삭제할지를 판단하는 메모리 관리 전략이 메모리 저장 자체보다 더 어려운 문제다.</p>`,
-   rel:['ai-agent','context-window','rag','vector-db','claude-md','agentic-os','continual-learning'],
+   rel:['ai-agent','context-window','rag','vector-db','claude-md','agentic-os','continual-learning','open-memory-protocol'],
    refs:[{title:'What Is AI Agent Memory? - IBM',url:'https://www.ibm.com/think/topics/ai-agent-memory',type:'official'},{title:'Memory in the Age of AI Agents - arXiv',url:'https://arxiv.org/abs/2512.13564',type:'paper'},{title:'State of AI Agent Memory 2026 - Mem0',url:'https://mem0.ai/blog/state-of-ai-agent-memory-2026',type:'blog'},{title:'LLMs as Operating Systems: Agent Memory - DeepLearning.AI',url:'https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/',type:'tutorial'}],
    videos:[{title:'LangChain: Agent UI with Memory, Knowledge, Tools & Reasoning',id:'ZKgIiiKuvrU',lang:'en'},{title:'Why LLMs get dumb (Context Windows Explained)',id:'TeQDr4DkLYo',lang:'en'},{title:'AI 에이전트 메모리 시스템',id:'mxGCEWOxfe8',lang:'ko'}],
    added:'2026-03-30',updated:'2025-12-01'},
@@ -760,7 +760,7 @@ refs:[{title:'Multimodal Retrieval-Augmented Generation (RAG) with Document Retr
   {id:'agent-protocol',t:'에이전트 프로토콜',en:'Agent Protocol',c:'agent',h:3,born:'2024-04',tags:['표준','상호운용성','프로토콜'],
 sum:'AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.',
 det:`<h4>개념 설명</h4><p>에이전트 프로토콜은 AI 에이전트 간의 메시지 교환 방식을 표준화한 규약이다. 에이전트마다 입출력 형식이 제각각이면 협력이 불가능한데, 공통 프로토콜이 있으면 어떤 프레임워크로 만들어진 에이전트든 서로 연결할 수 있다. LangChain 에이전트와 AutoGPT 에이전트가 같은 작업에 협력할 수 있는 것이 대표적인 예다.</p><h4>사용 예시</h4><p>AI 에이전트 서버를 구축할 때 에이전트 프로토콜을 따르면 표준 REST API 엔드포인트(<code>/agent/tasks</code>, <code>/agent/tasks/{id}/steps</code>)를 통해 외부에서 작업을 지시하고 결과를 수신할 수 있다. 이렇게 하면 프론트엔드나 오케스트레이터가 내부 구현에 상관없이 동일한 방식으로 에이전트를 제어할 수 있다.</p>`,
-rel:['ai-agent','multi-agent','a2a','orchestration-pattern','agent-framework'],
+rel:['ai-agent','multi-agent','a2a','orchestration-pattern','agent-framework','open-memory-protocol'],
 refs:[{title:'Agent2Agent (A2A) 프로토콜 시작하기: Cloud Run 및 Agent Engine ...',url:'https://codelabs.developers.google.com/intro-a2a-purchasing-concierge?hl=ko',type:'official'},{title:'Agent Protocol: Interoperability for LLM agents - LangChain Blog',url:'https://blog.langchain.com/agent-protocol-interoperability-for-llm-agents/',type:'blog'},{title:'Agentic AI Protocols: MCP, A2A, and ACP | by Manav Gupta',url:'https://medium.com/@manavg/agentic-ai-protocols-mcp-a2a-and-acp-ea0200eac18b',type:'blog'},{title:'Announcing the Agent2Agent Protocol (A2A)',url:'https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/',type:'blog'}],videos:[{title:'A2A: The Agent2Agent Protocol (DeepLearning.AI / Google Cloud)',id:'4gYm0Rp7VHc',lang:'en'},{title:'Building Agents with Model Context Protocol (Anthropic)',id:'kQmXtrmQ5Zg',lang:'en'},{title:'에이전트 프로토콜 - 테디노트',id:'b8GfaOVRqH8',lang:'ko'}],added:'2026-03-28',updated:'2026-04-04'},
 
   {id:'a2a',t:'A2A',en:'Agent-to-Agent Protocol',c:'agent',h:3,born:'2025-04',tags:['Google','상호운용성','에이전트통신'],
@@ -2296,6 +2296,11 @@ refs:[
    ],
    hot:false,
    added:'2026-07-06',updated:'2026-07-06'},
+  {id:'open-memory-protocol',t:'오픈 메모리 프로토콜',en:'Open Memory Protocol',c:'tooling',h:0,born:'2026-06',tags:['메모리','MCP','크로스모델','로컬 퍼스트'],
+   sum:'Claude, ChatGPT, Cursor 같은 서로 다른 AI 도구들이 하나의 메모리 저장소를 공유할 수 있게 해주는 오픈 프로토콜. 매번 새 도구에서 처음부터 설명하지 않아도 이전 대화 맥락이 이어진다.',det:`<h4>개념 설명</h4><p>AI 도구를 여러 개 쓰다 보면 매번 같은 상황을 설명해야 하는 문제가 생긴다. Claude에게 프로젝트 배경을 설명했어도 ChatGPT로 전환하면 처음부터 다시 시작이다. Open Memory Protocol(OMP)은 이 문제를 해결하기 위해 등장한 오픈소스 프로젝트다. MCP를 기반으로 구축된 <strong>공유 메모리 레이어</strong>로, 여러 AI 도구가 같은 메모리 저장소를 읽고 쓸 수 있게 한다. 메모리는 로컬에 저장되어 클라우드로 나가지 않으며, 사용자가 직접 소유하고 관리한다.</p><h4>사용 예시</h4><p>Claude Desktop에서 코드 리뷰를 받으며 쌓은 프로젝트 맥락이 Cursor나 ChatGPT를 열었을 때도 그대로 이어진다. 개발자 입장에서는 <code>pip install open-memory-protocol</code>로 패키지를 설치하고 로컬 서버를 띄운 뒤, 각 AI 클라이언트에 어댑터 URL을 설정하는 방식으로 연동한다. 현재 실제로 쓸 수 있는 경로는 Claude(MCP 통합), OMP Bridge 브라우저 확장, REST 클라이언트 세 가지다.</p><h4>주의할 점</h4><p>어댑터 지원이 아직 초기 단계라 OpenAI Assistants, Cursor, Copilot, VS Code, Gemini는 연동이 완성되지 않았다. 실질적인 크로스 툴 경험은 Claude 중심으로 제한적이다. 비슷한 목표를 가진 Mem0의 <strong>OpenMemory MCP</strong>처럼 경쟁 프로젝트가 여럿 존재하며, 이 생태계가 어떤 방식으로 수렴할지는 아직 불확실하다.</p>`,rel:['mcp','agent-memory','tool-use','agent-protocol'],
+   refs:[{title:'Open Memory Protocol Gives Compatible AI Tools One Memory Store',url:'https://winbuzzer.com/2026/06/30/open-memory-protocol-gives-compatible-ai-tools-one-memory-st-xcxwbn',type:'tutorial'},{title:'Open Memory Protocol Shares AI Memory Across Models',url:'https://www.promptzone.com/priya_sharma_cee38bf2/open-memory-protocol-shares-ai-memory-across-models-5bao',type:'tutorial'},{title:'Introducing OpenMemory MCP',url:'https://mem0.ai/blog/introducing-openmemory-mcp',type:'blog'}],
+   videos:[{title:'All My AI Apps Are Connected to One MIND — With Open Memory',id:'Y2XI2nk44WE',lang:'en'},{title:'80% Cheaper Tokens: The "Noiseless" AI Memory Protocol',id:'AGxcQ-j64Ms',lang:'en'},{title:'OpenMemory MCP, a Private Memory for MCP-compatible Clients',id:'BTZxfbdDW-4',lang:'ko'}],
+   added:'2026-07-05',updated:'2026-07-05'},
 ];
 
 const I18N_CONTENT = {en:{
@@ -2930,6 +2935,10 @@ const I18N_CONTENT = {en:{
     sum: 'An AI learning companion that provides personalized 1:1 instruction adapted to each learner\'s level, goals, and style — available 24/7 for any subject.',
     det: `<h4>What Is It</h4><p>What if you could ask a teacher a question the moment something didn't make sense? That's what an AI tutor does. It adapts explanations to the learner's level, goals, and learning style, answers questions the moment they arise, and generates practice problems — a personal 1:1 AI learning companion.</p><p>What sets it apart from search engines or YouTube is <strong>conversational interaction</strong>. Say "I don't understand this concept" and the AI reframes the explanation with a different analogy, identifies exactly where you got stuck, and zeroes in on that point. Being available 24 hours a day, for any subject, is another major advantage.</p><h4>Usage Examples</h4><p>Khan Academy's <strong>Khanmigo</strong> is a leading example. When a student gets a math problem wrong, instead of giving the answer it asks "where did you get stuck?" A UC San Diego research team's AI tutor follows the same principle — trained on course materials, it only offers hints and guiding questions even when a student directly asks for the answer. This <strong>Socratic approach</strong> is what differentiates a purpose-built AI tutor from a general-purpose AI that just hands over answers.</p><p>When building an AI tutor yourself, the typical approach is to connect specific textbooks or course materials as the knowledge base via RAG, then constrain the system prompt with "never give the answer directly — only ask guiding questions." Platforms like YouLearn let users upload PDFs, YouTube videos, and recorded lectures, and the AI generates quizzes and answers questions based on that uploaded content.</p><h4>Caveats</h4><p>The biggest risk with AI tutors is <strong>hallucination</strong>. If wrong information is delivered with confidence, learners may internalize incorrect facts. Reliable AI tutors address this by answering only from verified sources via RAG, or by explicitly flagging uncertain content as "needs verification." Educators also worry that the convenience of getting instant answers may weaken students' ability to think through problems independently.</p>`
   },
+  'open-memory-protocol':{
+    sum: 'An open protocol that lets different AI tools like Claude, ChatGPT, and Cursor share a single memory store. Previous conversation context carries over when switching tools, so you never have to explain everything from scratch again.',
+    det: `<h4>Concept</h4><p>Using multiple AI tools often means repeating the same context every time you switch. You explain your project background to Claude, then switch to ChatGPT and start over. Open Memory Protocol (OMP) is an open-source project built to solve this. Built on MCP, it provides a <strong>shared memory layer</strong> that lets multiple AI tools read from and write to the same memory store. Memory stays local — no cloud sync — and remains fully under your control.</p><h4>Usage</h4><p>Context built up in Claude Desktop carries over when you open Cursor or ChatGPT. Developers install via <code>pip install open-memory-protocol</code>, start a local server, and configure each AI client with the adapter URL. Currently supported paths include Claude (via MCP integration), the OMP Bridge browser extension, and REST clients.</p><h4>Things to Watch Out For</h4><p>Adapter support is still early-stage — OpenAI Assistants, Cursor, Copilot, VS Code, and Gemini integrations are not yet complete. Practical cross-tool experience remains Claude-centric for now. Competing projects like Mem0's <strong>OpenMemory MCP</strong> share similar goals, and how this ecosystem converges remains uncertain.</p>`
+  },
 },zh:{
   'harness-engineering': {
     sum: '不是AI模型本身，而是设计模型周围结构的学科。同一个模型，周围的harness怎么搭，直接决定了产出质量的高低。',
@@ -3558,6 +3567,10 @@ const I18N_CONTENT = {en:{
     sum: '利用像素级图像表示减少视觉语言模型中视觉令牌数量的压缩管道，用于降低处理高分辨率图像或视频时的上下文成本和推理延迟。',
     det: `<h4>概念说明</h4><p>视觉语言模型（VLM）将单张图像转换为数百乃至数千个令牌进行处理。当输入高分辨率图像或长视频时，令牌数量急剧膨胀，占满上下文窗口并推高推理成本。PxPipe通过像素级处理管道解决这一问题：不是将每个像素直接转化为令牌，而是检测帧间或空间区域间的冗余信息并逐步压缩。</p><p>其背后的核心洞察是，图像令牌可以携带比文本令牌高得多的信息密度。研究表明，单个图像令牌可以以近乎完美的精度编码相当于10个文本令牌的信息。这也意味着反向操作是可行的：将文本或文档渲染为图像后再传递给模型，可以在相同的上下文窗口中塞入更多信息。</p><h4>使用示例</h4><p>在视频理解管道中，图像令牌压缩让你在增加帧数的同时保持上下文预算。CVPR 2025发布的<strong>PVC（渐进式视觉令牌压缩）</strong>将图像视为静态视频，在默认仅64个令牌/帧的预算内同时保留了空间细节和时间变化，以统一的像素管道处理图像和视频，无需分别制定策略。</p><p>在文本密集型任务中，这一方法也在被探索：将长文档或代码渲染为图像并作为图像令牌传递，可以用更少的令牌表达相同的信息，从而绕过上下文长度限制。</p><h4>注意事项</h4><p>压缩率越高，图表、表格和小文字等细粒度视觉信息的损失风险越大。对高信息密度区域采用低压缩率的自适应策略十分重要。此外，压缩模块本身需要单独训练，难以即插即用地集成到现有VLM中。</p>`
   },
+  'open-memory-protocol':{
+    sum: '一个开放协议，让 Claude、ChatGPT、Cursor 等不同 AI 工具共享同一个记忆存储。切换工具时无需重新解释背景，之前的对话上下文会自动延续。',
+    det: `<h4>概念说明</h4><p>使用多个 AI 工具时，每次切换都要重新介绍背景，这是个常见痛点。你向 Claude 解释了项目背景，切换到 ChatGPT 后又要从头开始。Open Memory Protocol（OMP）是为解决这一问题而诞生的开源项目。它基于 MCP 构建，提供一个<strong>共享记忆层</strong>，让多个 AI 工具能读写同一个记忆存储。记忆保存在本地，不上传云端，完全由用户控制。</p><h4>使用示例</h4><p>在 Claude Desktop 积累的项目上下文，打开 Cursor 或 ChatGPT 时同样可用。开发者通过 <code>pip install open-memory-protocol</code> 安装包，启动本地服务器后，在各 AI 客户端配置适配器 URL 即可接入。目前可用的接入方式包括 Claude（MCP 集成）、OMP Bridge 浏览器扩展和 REST 客户端。</p><h4>注意事项</h4><p>适配器支持仍处于早期阶段，OpenAI Assistants、Cursor、Copilot、VS Code 和 Gemini 的集成尚未完成。实际的跨工具体验目前仍以 Claude 为中心。Mem0 的 <strong>OpenMemory MCP</strong> 等竞品项目目标类似，生态系统如何整合尚不明朗。</p>`
+  },
 },ja:{
   'harness-engineering': {
     sum: 'AIモデルそのものではなく、モデルを包む構造を設計する規律。同じモデルでも、周囲のハーネスをどう組むかによって成果物の品質が大きく変わる。',
@@ -4185,5 +4198,9 @@ const I18N_CONTENT = {en:{
   'pxpipe':{
     sum: 'ピクセルレベルの画像表現を活用してビジョン言語モデルの視覚トークン数を削減する圧縮パイプライン。高解像度画像や動画処理時のコンテキストコストと推論レイテンシを下げるために使用する。',
     det: `<h4>概念説明</h4><p>ビジョン言語モデル（VLM）は1枚の画像を数百から数千のトークンに変換して処理する。高解像度画像や長い動画が入力されると、トークン数が爆発的に増えてコンテキストウィンドウを埋め、推論コストを押し上げる。PxPipeはこの問題をピクセル単位の処理パイプラインで解決する。すべてのピクセルをそのままトークンに変換するのではなく、フレーム間や空間領域間の冗長な情報を検出して段階的に圧縮する方式だ。</p><p>背景にある核心的な洞察は、画像トークンがテキストトークンよりもはるかに高い情報密度を持てるという点だ。研究によると、画像トークン1個でテキストトークン10個分の情報をほぼ完璧な精度でエンコードできる。これは逆も可能であることを示唆している——テキストや文書をイメージとしてレンダリングしてから渡すことで、同じコンテキストウィンドウにより多くの情報を詰め込める可能性がある。</p><h4>使用例</h4><p>動画理解パイプラインでは、画像ベースのトークン圧縮によってフレーム数を増やしながらコンテキスト予算を維持できる。CVPR 2025で発表された<strong>PVC（Progressive Visual Token Compression）</strong>は、画像を静的動画として処理し、デフォルト64トークン/フレームというわずかな予算内で空間的詳細と時間的変化をともに保持した。画像と動画で別々の戦略を使う代わりに、統一されたピクセルパイプライン一つで両方の入力を処理する。</p><p>テキスト中心のタスクでも応用可能性が探索されている。長い文書やコードをイメージとしてレンダリングして画像トークンとして渡すことで、テキストトークンより少ない数で同じ情報を表現でき、コンテキスト長の制限を回避する戦略として活用できる。</p><h4>注意点</h4><p>圧縮率が高くなるほど、グラフ、表、小さな文字などの細かい視覚情報が失われるリスクが高まる。情報密度の高い領域には低い圧縮率を適用する適応型戦略が必要だ。また、圧縮モジュール自体を別途学習する必要があるため、既存のVLMへの即插即用での統合は難しい場合が多い。</p>`
+  },
+  'open-memory-protocol':{
+    sum: 'Claude、ChatGPT、Cursor など異なる AI ツールが一つのメモリストアを共有できるオープンプロトコル。ツールを切り替えても以前の会話の文脈が引き継がれ、毎回一から説明し直す必要がなくなる。',
+    det: `<h4>概念説明</h4><p>複数の AI ツールを使っていると、切り替えのたびに同じ背景を説明しなければならない問題が生じる。Claude にプロジェクトの背景を説明しても、ChatGPT に切り替えれば最初からやり直しだ。Open Memory Protocol（OMP）はこの問題を解決するために登場したオープンソースプロジェクトで、MCP をベースに構築された<strong>共有メモリレイヤー</strong>により、複数の AI ツールが同じメモリストアを読み書きできるようになる。メモリはローカルに保存され、クラウドには送信されず、ユーザーが完全に管理する。</p><h4>使用例</h4><p>Claude Desktop で積み上げたプロジェクトの文脈が、Cursor や ChatGPT を開いた際にそのまま引き継がれる。開発者は <code>pip install open-memory-protocol</code> でパッケージをインストールし、ローカルサーバーを起動した後、各 AI クライアントにアダプター URL を設定するだけで連携できる。現在利用可能な経路は Claude（MCP 統合）、OMP Bridge ブラウザ拡張、REST クライアントの 3 つだ。</p><h4>注意点</h4><p>アダプターのサポートはまだ初期段階で、OpenAI Assistants、Cursor、Copilot、VS Code、Gemini の統合は未完成だ。実質的なクロスツール体験は Claude 中心に留まっている。Mem0 の <strong>OpenMemory MCP</strong> など同様の目標を持つ競合プロジェクトが複数存在し、このエコシステムがどのように収束するかはまだ不透明だ。</p>`
   },
 }};
