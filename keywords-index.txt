@@ -321,3 +321,4 @@ ai-tutor	AI 튜터	AI Tutor	application
 open-memory-protocol	오픈 메모리 프로토콜	Open Memory Protocol	tooling
 loop-engineering	루프 엔지니어링	Loop Engineering	agent
 engram	엔그램	Engram (Evidence-Based Learning Engine)	model
+tencent-hy3	텐센트 HY3	Tencent Hunyuan 3 (Hy3)	model
