@@ -125,7 +125,7 @@
   <div class="en">Test-Time Compute</div>
   <div class="body"><p>모델이 답을 생성하는 시점에 더 많은 연산을 투입해 성능을 높이는 패러다임. 학습 데이터나 파라미터를 늘리지 않고도 어려운 문제의 정확도를 올리는 새로운 스케일링 축이다.</p><h4>개념 설명</h4><p>기존 스케일링은 모델을 키우거나 데이터를 늘려서 성능을 올렸다. 추론 시 연산은 제3의 축이다. 모델 크기와 학습 데이터는 그대로 두고, 답을 내는 순간에 더 오래 "생각"하게 해서 성능을 끌어올린다. OpenAI의 o1이 이 패러다임을 처음 대중화했고, 내부적으로 수천~수만 개의 사고 토큰을 생성하며 문제를 탐색한다. "더 오래 생각하면 더 정확하다"는 직관을 수학적으로 입증한 것이다.</p><h4>사용 예시</h4><p>Claude의 Extended Thinking에서 <code>budget_tokens</code>를 높이면 추론 시 연산을 늘리는 것이다. 수학 증명이나 복잡한 코드 디버깅에는 예산을 크게 잡고, 단순 질문에는 낮추거나 끄는 식으로 비용과 품질을 조절한다. 모델 라우터를 써서 요청 복잡도에 따라 자동으로 사고 예산을 배분하는 것이 프로덕션 전략이다.</p></div>
   <div class="tags"><span>#추론모델</span><span>#스케일링</span><span>#사고예산</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/scaling-law.html">스케일링 법칙</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/scaling-law.html">스케일링 법칙</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/grok-4-5.html">그록 4.5</a></div>
   <a class="back" href="https://aiwiki.work/#test-time-compute">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

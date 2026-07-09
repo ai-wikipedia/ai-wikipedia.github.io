@@ -126,7 +126,7 @@
   <div class="body"><p>데이터를 수집, 변환, 저장, 배포하는 일련의 자동화된 처리 흐름. AI 시스템에서는 학습 데이터 준비부터 실시간 추론 데이터 공급까지 AI의 품질을 결정하는 인프라다.</p><h4>개념 설명</h4><p>AI 시스템은 데이터를 지속적으로 공급받아야 한다. 데이터 파이프라인은 원천 데이터(DB, API, 파일)에서 데이터를 가져와 정제·변환·검증한 뒤 목적지(벡터 DB, 학습용 저장소, 모델 서빙 레이어)로 보내는 자동화된 흐름이다. RAG 시스템에서는 문서 파싱 → 청킹 → 임베딩 → 벡터 DB 저장의 흐름이 데이터 파이프라인이다.</p>
 <h4>사용 예시</h4><p>RAG 지식 베이스를 최신 상태로 유지하려면 원천 문서가 업데이트될 때 파이프라인이 자동으로 재인덱싱해야 한다. Airflow, Prefect, Dagster 같은 파이프라인 오케스트레이션 도구로 이 흐름을 스케줄링하고 모니터링한다. LlamaIndex, LangChain의 Document Loader는 이 파이프라인 구축을 단순화하는 도구다. 파이프라인 어딘가에서 데이터 품질이 나빠지면 모델 성능에 직접 영향을 미치므로 각 단계의 검증 로직이 중요하다.</p></div>
   <div class="tags"><span>#ETL</span><span>#데이터처리</span><span>#자동화</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/pilotfish.html">파일럿피시</a></div>
   <a class="back" href="https://aiwiki.work/#data-pipeline">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

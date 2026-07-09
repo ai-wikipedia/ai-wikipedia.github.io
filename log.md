@@ -1,3 +1,7 @@
+## 2026-07-10 08:28
+- 추가: weave-router, grok-4-5, weave-router, pilotfish, motion-anything
+- HOT: (없음)
+
 ## 2026-07-08 08:08
 - 추가: (없음)
 - HOT: (없음)

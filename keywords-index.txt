@@ -323,3 +323,6 @@ loop-engineering	루프 엔지니어링	Loop Engineering	agent
 engram	엔그램	Engram (Evidence-Based Learning Engine)	model
 tencent-hy3	텐센트 HY3	Tencent Hunyuan 3 (Hy3)	model
 motion-anything	모션 애니씽	motion-anything (Agentic Motion Engine)	tooling
+weave-router	위브 라우터	Weave Router	tooling
+grok-4-5	그록 4.5	Grok 4.5 (xAI)	model
+pilotfish	파일럿피시	Pilotfish	infra
