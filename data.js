@@ -2341,6 +2341,21 @@ refs:[
    ],
    hot:true,
    added:'2026-07-08',updated:'2026-07-08'},
+  {id:'motion-anything',t:'모션 애니씽',en:'motion-anything (Agentic Motion Engine)',c:'tooling',h:0,born:'2025-03',tags:['모션 생성','에이전틱 AI','애니메이션','오픈소스'],
+   sum:'채팅으로 원하는 느낌을 묘사하면 AI가 직접 애니메이션을 만들어주는 오픈소스 에이전틱 모션 엔진. 8개 코딩 에이전트와 403개 모션 레시피를 기반으로 JSON·CSS·React·Lottie·MP4·GIF 등 다양한 형식으로 출력한다.',
+   det:`<h4>개념 설명</h4><p>motion-anything은 '무엇이든 모션이 된다'는 철학으로 만들어진 오픈소스 에이전틱 모션 레이어다. 기존 애니메이션 작업은 개발자나 디자이너가 CSS 키프레임을 직접 짜거나 After Effects 같은 전문 도구를 익혀야 했다. motion-anything은 그 과정을 채팅 한 줄로 대체한다. "팝업이 가볍게 튕기면서 나타났으면 해"라고 말하면, AI 에이전트가 적합한 모션 레시피를 찾아 코드를 생성해준다.</p><h4>사용 예시</h4><p>Claude Code, Codex, Cursor, Gemini 등 8개 코딩 에이전트 엔진을 BYOK(Bring Your Own Key) 방식으로 연결해 쓴다. 403개의 큐레이션된 <strong>모션 레시피</strong> 라이브러리에서 원하는 패턴을 찾아 코드를 생성하고, 결과를 JSON·CSS·React·Lottie·MP4·GIF 중 원하는 형식으로 내보낸다. Open Design 생태계와 연결되어 있어 59개의 <code>DESIGN.md</code> 브랜드 팩, 58개의 HyperFrames 비디오 템플릿, 112개의 HTML 프로토타입 템플릿과 함께 사용할 수 있다.</p><h4>주의할 점</h4><p>같은 이름의 arXiv 논문 'Motion Anything: Any to Motion Generation'(2025)이 별도로 존재한다. 이 논문은 텍스트·음악 등 멀티모달 입력으로 3D 인간 모션을 생성하는 연구 프레임워크로, nexu-io의 motion-anything 도구와는 완전히 별개의 작업이다. 이름이 같아 혼동하기 쉽다.</p>`,
+   rel:['multi-agent','claude-code','ai-coding','ai-video-generation','text-to-image'],
+   refs:[
+     {title:'nexu-io/motion-anything — GitHub',url:'https://github.com/nexu-io/motion-anything',type:'official'},
+     {title:'Motion Anything: Any to Motion Generation — arXiv',url:'https://arxiv.org/html/2503.06955v2',type:'paper'}
+   ],
+   videos:[
+     {title:'AI Just Changed 3D Animation Forever',id:'lS4HlO-1GyM',lang:'en'},
+     {title:'AI Agents, Clearly Explained',id:'FwOTs4UxQS4',lang:'en'},
+     {title:'How to Animate ANYTHING - 4 Types of Motion',id:'iZBKWoSTVX8',lang:'ko'}
+   ],
+   hot:false,
+   added:'2026-07-10',updated:'2026-07-10'},
 ];
 
 const I18N_CONTENT = {en:{
@@ -2991,6 +3006,10 @@ const I18N_CONTENT = {en:{
     sum: "Tencent's open-source MoE model released in April 2026 with 295B total parameters, activating only 21B per query for cost-efficient complex reasoning, coding, and agent tasks.",
     det: `<h4>What is Tencent HY3?</h4><p>Tencent HY3 is an open-source large language model released by the Tencent Hy team in April 2026. It adopts a <strong>Mixture-of-Experts (MoE)</strong> architecture with 295B total parameters, activating only 21B per query — delivering far lower compute costs relative to its full parameter count. Released under the Apache 2.0 license, it is free for commercial use.</p><p>The team started rebuilding its infrastructure from scratch in late January 2026, completing the model in roughly 90 days. The core principle was not to chase benchmark scores but to build a model that works across real products at scale. It has been integrated into Tencent's own services — Yuanbao, CodeBuddy, and WorkBuddy — and further refined through real user feedback.</p><h4>Usage Examples</h4><p>You can try the free API immediately at OpenRouter using <code>tencent/hy3:free</code>, and local deployment via vLLM or SGLang is also supported. A key feature is configurable <strong>reasoning mode</strong>: switch to no-think mode for fast responses, or high CoT mode for complex math and coding problems, letting you balance speed and depth as needed.</p><p>It shows particular strength in coding tasks. In blind evaluations by 270 domain experts, it outperformed GLM-5.1 in frontend development, CI/CD pipelines, and data storage tasks. It's also available directly in AI coding tools like Kilo Code and Cursor.</p><h4>Architecture</h4><p>The model uses a MoE architecture with 192 experts and top-8 routing, plus a 3.8B-parameter MTP (Multi-Token Prediction) layer to improve generation quality. It supports a 256K-token context window. In internal evaluations, the hallucination rate dropped from 12.5% to 5.4%, and commonsense error rates fell from 25.4% to 12.7%.</p>`
   },
+  'motion-anything': {
+    sum: "An open-source, chat-native agentic motion engine that generates animations from natural language descriptions. Powered by 8 coding-agent engines and 403 curated motion recipes, it exports to JSON, CSS, React, Lottie, MP4, GIF, and more.",
+    det: `<h4>What It Is</h4><p>motion-anything is an open-source agentic motion layer built on the philosophy that 'anything becomes motion.' Traditional animation work required developers or designers to hand-write CSS keyframes or learn specialized tools like After Effects. motion-anything replaces that entire process with a single chat message. Tell it "I want the popup to bounce in lightly," and an AI agent finds the right motion recipe and generates the code.</p><h4>How to Use It</h4><p>It connects to 8 coding-agent engines — including Claude Code, Codex, Cursor, and Gemini — via BYOK (Bring Your Own Key). The agent searches a library of 403 curated <strong>motion recipes</strong> to find matching patterns and generates code, then exports to JSON, CSS, React, Lottie, MP4, or GIF. Integrated with the Open Design ecosystem, it works alongside 59 <code>DESIGN.md</code> brand packs, 58 HyperFrames video templates, and 112 HTML prototype templates.</p><h4>Things to Watch Out For</h4><p>There is also an arXiv paper titled 'Motion Anything: Any to Motion Generation' (2025), which is a separate multimodal research framework for generating 3D human motion from text and music inputs. Despite sharing the name, it is an entirely different project from nexu-io's motion-anything. The two are easy to confuse.</p>`
+  },
 },zh:{
   'harness-engineering': {
     sum: '不是AI模型本身，而是设计模型周围结构的学科。同一个模型，周围的harness怎么搭，直接决定了产出质量的高低。',
@@ -3635,6 +3654,10 @@ const I18N_CONTENT = {en:{
     sum: '腾讯于2026年4月发布的开源MoE模型，总参数295B，每次查询仅激活21B参数，以较低计算成本高效处理复杂推理、编程和智能体任务。',
     det: `<h4>概念说明</h4><p>腾讯HY3是腾讯Hy团队于2026年4月发布的开源大型语言模型。它采用<strong>Mixture-of-Experts（MoE）</strong>架构，总参数295B，每次查询仅激活21B参数，相对于全量参数规模，计算成本大幅降低。该模型基于Apache 2.0协议开源，可免费商用。</p><p>腾讯Hy团队于2026年1月底开始对基础设施进行全面重建，约90天内完成。核心原则不是追求基准分数，而是构建能在真实产品中泛化使用的模型。已集成到腾讯自有服务元宝、CodeBuddy、WorkBuddy中，并通过真实用户反馈持续优化。</p><h4>使用示例</h4><p>可通过OpenRouter的<code>tencent/hy3:free</code>立即免费调用API，也支持通过vLLM或SGLang进行本地部署。其特色之一是可配置<strong>推理模式</strong>：需要快速响应时切换到no-think模式，面对复杂数学或编程问题时切换到high CoT模式，灵活平衡速度与深度。</p><p>在编程任务上表现尤为突出。在270名专家参与的盲测评估中，在前端开发、CI/CD流水线、数据存储任务上超过了GLM-5.1。Kilo Code、Cursor等AI编程工具中也可直接使用。</p><h4>架构特点</h4><p>采用192个专家与top-8路由的MoE结构，并附加3.8B参数的MTP（多Token预测）层提升生成质量，支持256K token的长上下文窗口。内部评估显示，幻觉率从12.5%降至5.4%，常识错误率从25.4%降至12.7%。</p>`
   },
+  'motion-anything': {
+    sum: '一个开源的对话原生代理运动引擎，通过自然语言描述生成动画。由8个编码代理引擎和403个精心策划的运动配方驱动，可导出为JSON、CSS、React、Lottie、MP4、GIF等格式。',
+    det: `<h4>概念说明</h4><p>motion-anything是一个基于"万物皆可成为动画"理念构建的开源代理运动层。传统动画制作需要开发者或设计师手动编写CSS关键帧，或学习After Effects等专业工具。motion-anything用一句聊天消息替代了这整个过程。只需说"我希望弹窗轻轻弹入"，AI代理就会找到合适的运动配方并生成代码。</p><h4>使用示例</h4><p>通过BYOK（自带密钥）方式连接包括Claude Code、Codex、Cursor、Gemini在内的8个编码代理引擎。代理在403个精心策划的<strong>运动配方</strong>库中搜索匹配的模式并生成代码，最终导出为JSON、CSS、React、Lottie、MP4或GIF格式。与Open Design生态系统集成，可与59个<code>DESIGN.md</code>品牌包、58个HyperFrames视频模板和112个HTML原型模板配合使用。</p><h4>注意事项</h4><p>arXiv上也有一篇同名论文《Motion Anything: Any to Motion Generation》（2025），它是一个通过文本和音乐输入生成3D人体动作的多模态研究框架，与nexu-io的motion-anything项目完全无关。名称相同容易混淆，需注意区分。</p>`
+  },
 },ja:{
   'harness-engineering': {
     sum: 'AIモデルそのものではなく、モデルを包む構造を設計する規律。同じモデルでも、周囲のハーネスをどう組むかによって成果物の品質が大きく変わる。',
@@ -4278,5 +4301,9 @@ const I18N_CONTENT = {en:{
   'tencent-hy3': {
     sum: 'テンセントが2026年4月にオープンソースとして公開した295BパラメータのMoEモデル。クエリごとに21Bパラメータのみ有効化し、低コストで複雑な推論・コーディング・エージェントタスクを処理する。',
     det: `<h4>概念説明</h4><p>テンセントHY3は、テンセントHyチームが2026年4月に公開したオープンソースの大規模言語モデルだ。総295Bパラメータのうち、クエリごとに21Bのみ有効化する<strong>Mixture-of-Experts（MoE）</strong>アーキテクチャを採用しており、フルパラメータ規模に比べて大幅に低い計算コストで動作する。Apache 2.0ライセンスで公開されており、商用利用も自由だ。</p><p>テンセントHyチームは2026年1月末にインフラの全面再構築を開始し、約90日で完成させた。ベンチマークスコアを追うのではなく、実製品で汎用的に使えるモデルを作ることを基本方針とした。テンセント自社サービスのYuanbao、CodeBuddy、WorkBuddyに統合され、実ユーザーのフィードバックをもとにさらに改善されている。</p><h4>使用例</h4><p>OpenRouterで<code>tencent/hy3:free</code>として無料APIをすぐ試せるほか、vLLMやSGLangによるローカル展開もサポートする。<strong>推論モードを設定</strong>できるのが特徴で、素早いレスポンスが必要なときはno-thinkモード、複雑な数学・コーディング問題にはhigh CoTモードに切り替えてスピードと深さを柔軟に調節できる。</p><p>コーディングタスクで特に強みを発揮する。270名の専門家によるブラインド評価では、フロントエンド開発・CI/CDパイプライン・データストレージタスクでGLM-5.1を上回った。Kilo CodeやCursorなどのAIコーディングツールでもそのまま使用できる。</p><h4>アーキテクチャの特徴</h4><p>192の専門家（expert）とtop-8ルーティングによるMoE構造を採用し、3.8BパラメータのMTP（Multi-Token Prediction）レイヤーを加えて生成品質を向上させた。256Kトークンの長いコンテキストウィンドウをサポートする。内部評価ではハルシネーション率が12.5%から5.4%に、常識的誤りが25.4%から12.7%に低下した。</p>`
+  },
+  'motion-anything': {
+    sum: '自然言語の説明からアニメーションを生成するオープンソースのチャットネイティブなエージェント型モーションエンジン。8つのコーディングエージェントエンジンと403個のキュレーションされたモーションレシピを搭載し、JSON・CSS・React・Lottie・MP4・GIFなど様々な形式で出力できる。',
+    det: `<h4>概念説明</h4><p>motion-anythingは「何でもモーションになる」という哲学で作られたオープンソースのエージェント型モーションレイヤーだ。従来のアニメーション制作では、開発者やデザイナーがCSSキーフレームを手書きするか、After Effectsのような専門ツールを習得する必要があった。motion-anythingはそのプロセス全体をチャット一文で置き換える。「ポップアップが軽くバウンスしながら表示されてほしい」と言えば、AIエージェントが適切なモーションレシピを見つけてコードを生成してくれる。</p><h4>使用例</h4><p>Claude Code・Codex・Cursor・GeminiなどをBYOK（Bring Your Own Key）方式で8つのコーディングエージェントエンジンに接続して使う。403個のキュレーションされた<strong>モーションレシピ</strong>ライブラリから適切なパターンを見つけてコードを生成し、JSON・CSS・React・Lottie・MP4・GIFのいずれかの形式でエクスポートできる。Open Designエコシステムと連携しており、59個の<code>DESIGN.md</code>ブランドパック・58個のHyperFramesビデオテンプレート・112個のHTMLプロトタイプテンプレートと組み合わせて使用できる。</p><h4>注意点</h4><p>arXivに同名の論文「Motion Anything: Any to Motion Generation」（2025）が存在する。これはテキストや音楽などのマルチモーダル入力から3D人体モーションを生成する研究フレームワークであり、nexu-ioのmotion-anythingプロジェクトとは別物だ。名前が同じため混同しやすいので注意が必要だ。</p>`
   },
 }};
