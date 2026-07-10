@@ -1,3 +1,7 @@
+## 2026-07-11 08:19
+- 추가: gpt-5-6-terra
+- HOT: (없음)
+
 ## 2026-07-10 08:28
 - 추가: weave-router, grok-4-5, weave-router, pilotfish, motion-anything
 - HOT: (없음)
