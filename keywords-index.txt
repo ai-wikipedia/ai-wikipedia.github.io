@@ -328,3 +328,6 @@ grok-4-5	그록 4.5	Grok 4.5 (xAI)	model
 pilotfish	파일럿피시	Pilotfish	infra
 gpt-5-6-terra	GPT-5.6 Terra	GPT-5.6 Terra (OpenAI)	model
 gpt-5-6-luna	GPT-5.6 Luna	GPT-5.6 Luna (OpenAI)	model
+aion-3-0	에이온 3.0	Aion-3.0 (AionLabs)	model
+aion-3-0-mini	에이온 3.0 미니	Aion-3.0-Mini (AionLabs)	model
+reverse-centaur	리버스 센타우르	Reverse Centaur	agent
