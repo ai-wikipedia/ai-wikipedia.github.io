@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-04-04">
+<meta property="article:modified_time" content="2026-07-12">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="라마란? (Llama) — AI Wiki">
 <meta name="twitter:description" content="라마란? Meta가 공개한 오픈 웨이트 LLM 시리즈. 오픈소스 LLM 생태계의 기반이 되었으며 파인튜닝, 양자화, 모델 병합 연구의 주요 대상이다.">
@@ -74,7 +74,7 @@
   "description": "Meta가 공개한 오픈 웨이트 LLM 시리즈. 오픈소스 LLM 생태계의 기반이 되었으며 파인튜닝, 양자화, 모델 병합 연구의 주요 대상이다.",
   "url": "https://aiwiki.work/k/llama.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-04",
+  "dateModified": "2026-07-12",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -151,13 +151,13 @@
   <div class="cat">모델</div>
   <h1>라마</h1>
   <div class="en">Llama</div>
-  <div class="body"><p>Meta가 공개한 오픈 웨이트 LLM 시리즈. 오픈소스 LLM 생태계의 기반이 되었으며 파인튜닝, 양자화, 모델 병합 연구의 주요 대상이다.</p><h4>개념 설명</h4><p>2023년 Meta가 Llama를 공개하면서 오픈소스 LLM 시대가 본격적으로 열렸다. Llama 2(2023.07), Llama 3(2024.04), Llama 4(2025)로 이어지며 상업적 사용이 가능한 라이선스와 함께 커뮤니티 생태계가 폭발적으로 성장했다. 대부분의 오픈소스 파인튜닝 연구, 양자화 실험, 모델 병합이 Llama를 베이스로 이루어진다.</p><h4>사용 예시</h4><p>Ollama로 <code>ollama run llama3</code> 한 줄이면 로컬에서 바로 실행된다. vLLM으로 서빙하면 OpenAI 호환 API를 자체 인프라에서 운영할 수 있다. LoRA로 도메인 특화 파인튜닝을 하거나, GGUF로 양자화해서 모바일에 배포하는 것이 대표적 활용 방식이다.</p></div>
+  <div class="body"><p>Meta가 공개한 오픈 웨이트 LLM 시리즈. 오픈소스 LLM 생태계의 기반이 되었으며 파인튜닝, 양자화, 모델 병합 연구의 주요 대상이다.</p><h4>오픈 웨이트가 왜 특별한가</h4><p>대부분의 강력한 AI 모델은 회사가 운영하는 서버 안에만 존재한다. 우리는 API로 질문을 보내고 답을 받을 뿐, 모델 자체를 손에 쥘 수는 없다. Llama가 판을 바꾼 지점이 바로 여기다. Meta는 학습이 끝난 모델의 <strong>가중치(weight)</strong>, 즉 모델이 학습으로 얻은 지식 덩어리를 통째로 내려받을 수 있게 공개했다. 내 노트북이나 회사 서버, 인터넷이 끊긴 폐쇄망에서도 돌릴 수 있다는 뜻이다.</p><p>이게 개발자에게 왜 중요하냐면, 남의 서버에 데이터를 보내지 않아도 되고, 사용량이 늘어도 API 요금 폭탄을 걱정할 필요가 없으며, 무엇보다 모델을 내 입맛대로 뜯어고칠 수 있기 때문이다. 오픈소스 진영의 파인튜닝 실험, 양자화 연구, 모델 병합 같은 시도 대부분이 Llama를 출발점으로 삼은 이유다. Llama는 하나의 모델이라기보다, 그 위에 수많은 파생 모델이 자라나는 토양에 가깝다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 쉬운 길은 Ollama 같은 도구다. <code>ollama run llama3</code> 한 줄이면 모델이 자동으로 내려받아지고 곧바로 로컬에서 대화를 시작할 수 있다. 이때 내려받는 파일이 <code>GGUF</code> 형식인데, 이게 요즘 로컬 실행의 사실상 표준이다. 원본 모델은 수십 GB라 일반 PC에서 버겁지만, <strong>양자화(quantization)</strong>를 거치면 정밀도를 살짝 낮추는 대신 크기를 크게 줄여서 평범한 게이밍 PC에서도 돌아간다.</p><p>회사 서비스에 붙일 때는 vLLM으로 서빙해서 OpenAI와 똑같은 형태의 API를 자체 서버에 세우는 방식을 많이 쓴다. 기존에 OpenAI로 짜둔 코드를 주소만 바꿔 그대로 재사용할 수 있어 갈아타기가 수월하다. 특정 분야에 맞춰 성능을 끌어올리고 싶으면 <strong>LoRA</strong>나 <strong>QLoRA</strong>로 파인튜닝한다. 모델 전체를 다시 학습시키는 게 아니라 작은 보조 층만 얹어 조정하는 방식이라, GPU 한 장으로도 법률 문서나 의료 상담 같은 도메인 특화 모델을 만들어낼 수 있다.</p><h4>버전의 흐름과 짚어둘 점</h4><p>2023년 Llama 2가 상업적 사용까지 허용하며 생태계에 불을 지폈고, 2024년 Llama 3로 성능이 크게 올라섰다. 2025년 4월 공개된 Llama 4는 처음으로 <strong>전문가 혼합(MoE)</strong> 구조를 채택했는데, 질문마다 전체 모델이 아니라 관련 있는 일부 '전문가'만 골라 쓰는 방식이라 덩치에 비해 빠르게 돈다. Scout와 Maverick 두 모델이 공개됐고, 가장 큰 Behemoth는 예고만 된 뒤 지금까지 오픈 웨이트로 풀리지 않았다.</p><p>다만 오픈 웨이트라고 무조건 최고 성능인 건 아니라는 점은 기억해야 한다. Llama 4는 출시 당시 벤치마크 논란을 겪었다. Meta가 순위표(LMArena)에 올린 건 사람 평가자가 선호하도록 대화체로 다듬은 실험 버전이었는데, 정작 누구나 내려받을 수 있는 공개 가중치는 그만큼의 점수가 나오지 않았다. 실제로 쓸 모델을 고를 때는 홍보용 순위표 숫자보다 내 작업에 직접 돌려본 결과를 믿는 편이 안전하다.</p></div>
   <div class="tags"><span>#Meta</span><span>#오픈소스</span><span>#커뮤니티</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/grok.html">그록</a>, <a href="https://aiwiki.work/k/nemotron.html">네모트론</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/perplexity-sonar.html">퍼플렉시티 소나</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/" target="_blank" rel="nofollow noopener">The Llama 4 herd - Meta AI</a> <span class="ref-type">공식</span></li><li><a href="https://www.llama.com/" target="_blank" rel="nofollow noopener">Llama Official</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/meta-llama" target="_blank" rel="nofollow noopener">Meta Llama - Hugging Face</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=DV6V_PFkoO0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DV6V_PFkoO0/mqdefault.jpg" alt="The New Llama 4 Has The Longest Context Ever" loading="lazy" width="160" height="90"><span>The New Llama 4 Has The Longest Context Ever</span></a><a class="video-item" href="https://www.youtube.com/watch?v=VCaQZdWMFV8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VCaQZdWMFV8/mqdefault.jpg" alt="Llama 3.1 Is A Huge Leap Forward" loading="lazy" width="160" height="90"><span>Llama 3.1 Is A Huge Leap Forward</span></a><a class="video-item" href="https://www.youtube.com/watch?v=usjPCQAoF44" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/usjPCQAoF44/mqdefault.jpg" alt="메타 라마 4 오픈소스 AI 모델 분석" loading="lazy" width="160" height="90"><span>메타 라마 4 오픈소스 AI 모델 분석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#llama">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-04</div>
+  <div class="added-date">updated at 2026-07-12</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>

@@ -38,6 +38,17 @@ function stripTags(html) {
   return html.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim();
 }
 
+// 한글 받침 여부에 따라 "란?" / "이란?" 선택 (바이브 코딩이란?, 제미나이란?)
+function ranSuffix(word) {
+  const last = (word || '').trim().slice(-1);
+  const code = last ? last.charCodeAt(0) : 0;
+  if (code >= 0xAC00 && code <= 0xD7A3) {
+    const hasJongseong = (code - 0xAC00) % 28 !== 0;
+    return hasJongseong ? '이란?' : '란?';
+  }
+  return '란?'; // 비한글(영문 약어·숫자)은 기본 "란?"
+}
+
 // D를 id로 빠르게 조회할 수 있도록 맵 생성
 const DMap = {};
 for (const e of D) DMap[e.id] = e;
@@ -45,10 +56,11 @@ for (const e of D) DMap[e.id] = e;
 for (const e of D) {
   // 1. 검색 의도 반영 타이틀: "MCP란? (Model Context Protocol) — AI Wiki"
   const suffix = e.en && e.en !== e.t ? ` (${e.en})` : '';
-  const title = `${e.t}란?${suffix} — AI Wiki`;
+  const ran = ranSuffix(e.t);
+  const title = `${e.t}${ran}${suffix} — AI Wiki`;
   // 2. 검색 의도 반영 디스크립션: "MCP란 무엇인가? ..."
   const rawDesc = stripTags(e.sum);
-  const desc = `${e.t}란? ${rawDesc}`.slice(0, 160);
+  const desc = `${e.t}${ran} ${rawDesc}`.slice(0, 160);
   const url = `${BASE}/k/${e.id}.html`;
   const catName = CATS[e.c] || e.c;
 

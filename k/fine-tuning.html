@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
-<title>파인튜닝란? (Fine-Tuning) — AI Wiki</title>
-<meta name="description" content="파인튜닝란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
+<title>파인튜닝이란? (Fine-Tuning) — AI Wiki</title>
+<meta name="description" content="파인튜닝이란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
 <meta name="keywords" content="학습, LoRA, 맞춤화, AI, 파인튜닝, 파인튜닝란, 파인튜닝 뜻, 파인튜닝 의미, 파인튜닝 개념, 파인튜닝 설명, 파인튜닝 정리, 파인튜닝이란">
 <meta property="og:type" content="article">
-<meta property="og:title" content="파인튜닝란? (Fine-Tuning) — AI Wiki">
-<meta property="og:description" content="파인튜닝란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
+<meta property="og:title" content="파인튜닝이란? (Fine-Tuning) — AI Wiki">
+<meta property="og:description" content="파인튜닝이란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
 <meta property="og:url" content="https://aiwiki.work/k/fine-tuning.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2025-12-01">
+<meta property="article:modified_time" content="2026-07-12">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="파인튜닝란? (Fine-Tuning) — AI Wiki">
-<meta name="twitter:description" content="파인튜닝란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
+<meta name="twitter:title" content="파인튜닝이란? (Fine-Tuning) — AI Wiki">
+<meta name="twitter:description" content="파인튜닝이란? 사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/fine-tuning.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/fine-tuning.html">
@@ -74,7 +74,7 @@
   "description": "사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.",
   "url": "https://aiwiki.work/k/fine-tuning.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2025-12-01",
+  "dateModified": "2026-07-12",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -151,16 +151,13 @@
   <div class="cat">모델</div>
   <h1>파인튜닝</h1>
   <div class="en">Fine-Tuning</div>
-  <div class="body"><p>사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.</p><h4>파인튜닝이란</h4><p>범용 LLM은 모든 걸 조금씩 알지만, 특정 분야에서는 전문가 수준이 아닐 수 있다. 파인튜닝은 해당 도메인의 데이터로 모델을 추가 학습시켜 전문성을 높이는 과정이다. 프롬프트 엔지니어링으로 해결 안 되는 수준의 도메인 특화가 필요할 때 쓴다.</p>
-<h4>사용 예시</h4><p>OpenAI, AWS Bedrock, Google Vertex AI가 관리형 파인튜닝 서비스를 제공한다. 학습 데이터를 JSONL로 준비해서 업로드하면 클라우드에서 파인튜닝이 진행된다. 직접 하려면 Hugging Face의 <code>transformers</code> + <code>peft</code> 라이브러리로 LoRA 파인튜닝을 할 수 있다.</p>
-<p><strong>LoRA</strong>는 전체 파라미터의 0.1~1%만 학습하면서 풀 파인튜닝에 근접한 성능을 낸다. <strong>QLoRA</strong>는 4비트 양자화까지 적용해서 소비자용 GPU 한 장으로도 파인튜닝할 수 있게 했다.</p>
-<h4>주의할 점</h4><p>파인튜닝은 프롬프트 엔지니어링이나 RAG로 해결이 안 될 때 마지막으로 고려하는 게 좋다. 데이터 준비 비용이 크고, 모델 업데이트 시 다시 학습해야 하기 때문이다.</p></div>
+  <div class="body"><p>사전 학습된 모델을 특정 도메인 데이터로 추가 학습시키는 기법. LoRA 덕분에 GPU 한 장으로도 가능해져서 접근성이 크게 낮아졌다.</p><h4>모델의 말투와 실력을 바꾼다는 것</h4><p>범용 LLM은 세상의 거의 모든 걸 조금씩 배웠지만, 특정 회사의 법률 문서 양식이나 의료 용어, 사내 코드 컨벤션처럼 좁고 깊은 영역에서는 어설플 때가 있다. 파인튜닝은 이 모델을 우리 데이터로 한 번 더 학습시켜서, 매번 프롬프트로 설명하지 않아도 원하는 방식으로 답하게 만드는 과정이다. 흔히 오해하는데, 파인튜닝은 새로운 지식을 채워 넣는 것보다 정해진 형식, 말투, 판단 기준을 몸에 익히게 하는 데 훨씬 강하다. 그래서 최신 정보를 계속 알아야 하는 일에는 RAG가, 일관된 형식과 톤을 원하는 일에는 파인튜닝이 어울린다.</p><h4>어떻게 학습시키나</h4><p>기본 재료는 질문과 이상적인 답변을 짝지은 예시 묶음이다. 보통 한 줄에 대화 한 쌍씩 담은 JSONL 파일로 만들어 두고, 이걸 모델에게 반복해서 보여주며 답을 흉내 내도록 가중치를 조금씩 조정한다. 예전에는 수십억 개 파라미터를 통째로 다시 학습해야 해서 값비싼 GPU 여러 장이 필요했다. 지금은 <strong>LoRA</strong> 방식이 판도를 바꿨다. 원래 모델은 얼려 두고, 각 층 옆에 아주 작은 보조 행렬 한 쌍만 새로 붙여서 그것만 학습한다. 전체의 1퍼센트도 안 되는 부분만 건드리는데도 성능은 통짜 학습에 거의 근접한다. 여기에 원본 모델을 4비트로 압축해 메모리를 더 아끼는 <strong>QLoRA</strong>를 쓰면, 개인이 쓰는 GPU 한 장으로도 큰 모델을 다룰 수 있다. 직접 하려면 Hugging Face의 <code>peft</code> 라이브러리를 쓰고, 데이터 준비가 부담이면 OpenAI나 클라우드의 관리형 파인튜닝에 파일만 올리는 방법도 있다.</p><h4>먼저 다른 방법부터 시도하라</h4><p>파인튜닝은 강력하지만 대개 마지막 카드다. 프롬프트를 다듬거나 RAG로 문서를 붙여서 풀리는 문제라면 굳이 학습까지 갈 이유가 없다. 학습 데이터를 모으고 다듬는 손이 많이 가고, 원본 모델이 새 버전으로 올라가면 처음부터 다시 학습해야 하기 때문이다. 또 하나 조심할 건 <strong>파괴적 망각</strong>이다. 좁은 데이터만 집중해서 먹이면 정작 원래 잘하던 일반 상식이나 추론 능력이 흐려질 수 있다. 그래서 특화 데이터에 일반적인 예시를 적당히 섞고, 학습 뒤에는 기존 실력이 유지되는지 함께 점검해야 한다.</p></div>
   <div class="tags"><span>#학습</span><span>#LoRA</span><span>#맞춤화</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/continual-learning.html">지속 학습</a>, <a href="https://aiwiki.work/k/engram.html">엔그램</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/html/2408.13296v1" target="_blank" rel="nofollow noopener">Ultimate Guide to Fine-Tuning LLMs – arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://www.philschmid.de/fine-tune-llms-in-2025" target="_blank" rel="nofollow noopener">Fine-Tune Open LLMs in 2025 – philschmid.de</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://developers.google.com/machine-learning/crash-course/llm/tuning" target="_blank" rel="nofollow noopener">Fine-Tuning an LLM – Google ML Crash Course</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=eC6Hd1hFvos" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eC6Hd1hFvos/mqdefault.jpg" alt="Fine-tuning LLMs with Example Code" loading="lazy" width="160" height="90"><span>Fine-tuning LLMs with Example Code</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#fine-tuning">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2025-12-01</div>
+  <div class="added-date">updated at 2026-07-12</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>

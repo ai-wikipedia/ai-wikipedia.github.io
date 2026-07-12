@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-04-04">
+<meta property="article:modified_time" content="2026-07-12">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="양자화란? (Quantization) — AI Wiki">
 <meta name="twitter:description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
@@ -74,7 +74,7 @@
   "description": "모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.",
   "url": "https://aiwiki.work/k/quantization.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-04",
+  "dateModified": "2026-07-12",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -151,13 +151,13 @@
   <div class="cat">모델</div>
   <h1>양자화</h1>
   <div class="en">Quantization</div>
-  <div class="body"><p>모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.</p><h4>개념 설명</h4><p>float32(4바이트)로 저장된 가중치를 int8(1바이트)로 변환하면 모델 크기가 4분의 1로 줄고, GPU 메모리 사용량이 대폭 감소한다. 4비트 양자화는 8분의 1 수준이다. 정밀도가 낮아지면서 약간의 성능 저하가 생기지만, 적절한 양자화 방법을 쓰면 손실이 미미하다. <strong>GPTQ</strong>(사후 학습 양자화)와 <strong>AWQ</strong>가 가장 널리 쓰이는 LLM 양자화 방법이다.</p><p>로컬 실행에서는 <strong>GGUF</strong> 형식이 표준이다. llama.cpp가 GGUF를 지원하며, CPU에서도 양자화된 LLM을 실행할 수 있게 했다. HuggingFace에서 Q4_K_M, Q5_K_S 같은 이름의 GGUF 파일을 쉽게 찾을 수 있다.</p><h4>사용 예시</h4><p>Ollama로 Llama나 Mistral을 로컬에서 실행하면 자동으로 양자화된 모델을 받아 사용한다. 프로덕션 서빙에서는 <code>bitsandbytes</code>나 GPTQ로 양자화해 GPU 메모리를 아끼거나 배치 크기를 늘린다. vLLM도 AWQ, GPTQ 양자화를 지원한다.</p></div>
+  <div class="body"><p>모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.</p><h4>왜 정밀도를 낮추나</h4><p>큰 언어 모델은 숫자 수십억 개로 이루어진 거대한 표라고 생각하면 된다. 원래 이 숫자 하나하나를 아주 정밀하게(<strong>float32</strong>, 4바이트) 저장하는데, 그러면 모델 하나를 올리는 데만 웬만한 그래픽카드 메모리가 통째로 필요하다. 그런데 사진을 고해상도 원본 대신 적당히 압축한 JPG로 저장해도 눈으로 보기엔 큰 차이가 없듯이, 모델의 숫자들도 정밀도를 좀 깎아도 대답 품질은 거의 유지된다. 이렇게 숫자를 낮은 정밀도로 바꿔 모델을 가볍게 만드는 게 <strong>양자화</strong>다.</p><p>숫자 하나를 4바이트에서 1바이트(int8)로 줄이면 모델 크기가 4분의 1이 되고, 4비트로 줄이면 8분의 1까지 작아진다. 그 덕분에 데이터센터급 장비가 있어야 돌아가던 모델을 노트북이나 게이밍 그래픽카드 한 장으로 실행할 수 있게 된다. 정밀도를 극단적으로(2비트 같은) 낮추면 복잡한 추론에서 티가 나기 시작하지만, 4비트 정도까지는 대화하면서 차이를 느끼기 어려운 수준이다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 쉬운 길은 로컬 실행 도구를 쓰는 것이다. <code>ollama run</code>으로 모델을 받으면 이미 양자화된 버전이 자동으로 내려온다. 직접 파일을 고를 때는 허깅페이스에서 <code>Q4_K_M</code>이나 <code>Q5_K_M</code> 같은 이름이 붙은 <strong>GGUF</strong> 파일을 받는데, 이 형식은 llama.cpp 계열 도구가 쓰는 로컬 표준이라 CPU만으로도 돌릴 수 있다. 이름의 숫자가 비트 수라 클수록 무겁고 정확하다.</p><p>서버에서 서비스를 돌릴 때는 이야기가 달라진다. vLLM 같은 추론 엔진에 <strong>AWQ</strong>나 <strong>GPTQ</strong>로 양자화한 모델을 올리면 GPU 메모리가 남아, 그만큼 한 번에 더 많은 요청을 묶어 처리(배치)할 수 있어 처리량이 올라간다. 파인튜닝할 때도 <code>bitsandbytes</code>로 4비트 로딩을 해두고 그 위에 LoRA 어댑터만 학습하는 방식(QLoRA)을 쓰면, 큰 모델을 작은 장비에서도 미세조정할 수 있다.</p><h4>방법마다 성격이 다르다</h4><p>양자화 방법은 크게 두 갈래다. 대부분은 <strong>사후 학습 양자화(PTQ)</strong>로, 이미 다 학습된 모델을 나중에 눌러 담는 방식이라 빠르고 부담이 없다. GPTQ는 소량의 예시 데이터로 오차를 보정하고, AWQ는 출력에 크게 영향을 주는 중요한 숫자들만 골라 정밀도를 지켜줘서 손실을 더 줄인다. 반대로 <strong>양자화 인지 학습(QAT)</strong>은 학습하는 동안 미리 낮은 정밀도를 겪게 해서 더 튼튼하게 만드는 방식인데, 정확도는 더 좋지만 다시 학습해야 해서 비용이 크다. 그래서 개발자가 실무에서 만나는 건 거의 PTQ다. 다만 정밀도를 무작정 낮추면 원래 학습으로 지운 정보가 되살아나는 등 예상 못한 부작용이 생길 수 있어, 어느 비트까지 내릴지는 용도에 맞게 시험해보고 정하는 게 좋다.</p></div>
   <div class="tags"><span>#경량화</span><span>#INT8</span><span>#GGUF</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2103.13630" target="_blank" rel="nofollow noopener">A Survey of Quantization Methods for Efficient Neural Network Inference</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2210.17323" target="_blank" rel="nofollow noopener">GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers</a> <span class="ref-type">논문</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#quantization">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-04</div>
+  <div class="added-date">updated at 2026-07-12</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>

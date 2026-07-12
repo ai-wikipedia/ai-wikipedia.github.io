@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-04-04">
+<meta property="article:modified_time" content="2026-07-12">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="비정형 데이터란? (Unstructured Data) — AI Wiki">
 <meta name="twitter:description" content="비정형 데이터란? 행과 열로 정리되지 않은 텍스트, 이미지, 음성, 영상 형태의 데이터. 세상의 데이터 대부분이 비정형이며, AI가 이를 처리하는 능력이 LLM의 핵심 가치다.">
@@ -74,7 +74,7 @@
   "description": "행과 열로 정리되지 않은 텍스트, 이미지, 음성, 영상 형태의 데이터. 세상의 데이터 대부분이 비정형이며, AI가 이를 처리하는 능력이 LLM의 핵심 가치다.",
   "url": "https://aiwiki.work/k/unstructured-data.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-04",
+  "dateModified": "2026-07-12",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -151,14 +151,13 @@
   <div class="cat">데이터</div>
   <h1>비정형 데이터</h1>
   <div class="en">Unstructured Data</div>
-  <div class="body"><p>행과 열로 정리되지 않은 텍스트, 이미지, 음성, 영상 형태의 데이터. 세상의 데이터 대부분이 비정형이며, AI가 이를 처리하는 능력이 LLM의 핵심 가치다.</p><h4>개념 설명</h4><p>데이터베이스 테이블처럼 정해진 구조가 있는 데이터가 정형 데이터라면, 이메일 본문·PDF 계약서·회의 녹음·SNS 게시물은 비정형 데이터다. 기업이 가진 데이터의 80~90%가 비정형이라는 추정이 있다. 기존 데이터 분석 도구는 비정형 데이터를 처리하기 어려웠는데, LLM이 등장하면서 비정형 데이터에서 의미와 정보를 추출하는 능력이 획기적으로 향상됐다.</p>
-<h4>사용 예시</h4><p>비정형 데이터를 AI가 쓸 수 있게 만드는 파이프라인을 구축하는 것이 실질적인 작업이다. 이메일을 파싱해서 의도·긴급도·담당자를 추출하거나, 고객 리뷰를 분석해서 감성과 주제를 분류하거나, 계약서에서 핵심 조항을 추출하는 식이다. Unstructured.io, LlamaIndex 같은 라이브러리는 다양한 비정형 데이터 형식을 LLM이 처리하기 좋은 구조로 변환하는 전처리 파이프라인을 제공한다.</p></div>
+  <div class="body"><p>행과 열로 정리되지 않은 텍스트, 이미지, 음성, 영상 형태의 데이터. 세상의 데이터 대부분이 비정형이며, AI가 이를 처리하는 능력이 LLM의 핵심 가치다.</p><h4>정형과 비정형, 뭐가 다른가</h4><p>데이터베이스 테이블처럼 행과 열이 정해져 있어서 곧바로 계산하고 집계할 수 있는 게 정형 데이터다. 반대로 이메일 본문, 스캔한 PDF 계약서, 회의 녹음, 고객이 남긴 리뷰, SNS 게시물처럼 정해진 틀이 없는 것이 비정형 데이터다. 사람은 이런 자료를 읽고 뜻을 알아채지만, 기계 입장에서는 그저 긴 글자 뭉치나 픽셀 덩어리라 무엇이 제목이고 무엇이 표인지조차 알기 어렵다. IDC 추정으로 기업이 가진 데이터의 80~90%가 이런 비정형 형태이고, 대부분은 문서 안에 잠긴 채 활용되지 못한다. 예전 분석 도구로는 손대기 힘들던 이 영역을 LLM이 열어젖혔다는 것이 지금 벌어지는 변화의 핵심이다.</p><h4>실제로 어떻게 다루나</h4><p>비정형 데이터를 AI가 쓸 수 있게 만드는 파이프라인을 짜는 것이 실무의 대부분이다. 흐름은 대개 파싱 → 청킹 → 임베딩 순서다. 먼저 파싱 단계에서 원본 파일을 기계가 읽을 수 있는 요소로 뜯어낸다. 이때 그냥 텍스트로 뭉개는 게 아니라 제목, 문단, 표, 목록을 구분해서 읽는 순서와 구조를 살려두는 것이 중요하다. <code>Unstructured</code>나 <code>LlamaParse</code> 같은 도구는 PDF나 HTML을 이렇게 뜯어서 제목·표·본문 같은 이름표가 붙은 조각으로 바꿔주고, RAG에서 쓰기 좋게 마크다운이나 JSON으로 내보낸다.</p><p>스캔 문서나 손글씨처럼 텍스트 레이어가 없는 경우엔 두 갈래로 나뉜다. 예전 방식은 OCR로 글자를 먼저 뽑은 뒤 LLM에 넘기는 것이고, 요즘 방식은 페이지 이미지를 눈이 달린 멀티모달 모델에 통째로 보여주고 바로 이해시키는 것이다. 후자에서는 문서에서 정보를 뽑는 일이 좌표를 맞추는 문제가 아니라 맥락을 읽는 문제로 바뀐다. 그래서 처음 보는 양식이라도 다시 프로그래밍하지 않고 곧바로 핵심 항목을 집어낼 수 있다.</p><h4>여전히 어려운 부분</h4><p>비정형 데이터가 만만해 보여도 함정이 많다. 여러 칸이 병합된 복잡한 표나, 그림과 캡션이 섞인 레이아웃은 파싱이 조금만 어긋나도 뒤에 이어지는 검색과 답변 품질이 통째로 흔들린다. 청킹을 어떻게 자르느냐에 따라 문맥이 끊겨 엉뚱한 답이 나오기도 한다. 그래서 파이프라인의 가장 앞단인 파싱에 공을 들이는 것이 결국 전체 결과를 좌우한다. 정형화가 목적이 아니라 원래 의미를 잃지 않고 AI가 다루기 좋은 형태로 옮기는 것이 요령이다.</p></div>
   <div class="tags"><span>#데이터처리</span><span>#텍스트</span><span>#전처리</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/document-parsing.html">문서 파싱</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/document-ai.html">문서 AI</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.unstructured.io/welcome" target="_blank" rel="nofollow noopener">Unstructured Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://unstructured.io/" target="_blank" rel="nofollow noopener">Unstructured Data Platform for GenAI</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G2fqAlgmoPo/mqdefault.jpg" alt="Introduction to Generative AI - Google Cloud" loading="lazy" width="160" height="90"><span>Introduction to Generative AI - Google Cloud</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Gv9_4yMHFhI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" alt="A Gentle Introduction to Machine Learning" loading="lazy" width="160" height="90"><span>A Gentle Introduction to Machine Learning</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#unstructured-data">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-04</div>
+  <div class="added-date">updated at 2026-07-12</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>

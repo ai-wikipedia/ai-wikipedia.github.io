@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-04-04">
+<meta property="article:modified_time" content="2026-07-12">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="플레이그라운드란? (AI Playground) — AI Wiki">
 <meta name="twitter:description" content="플레이그라운드란? 코드 없이 브라우저에서 바로 LLM을 호출하고 프롬프트를 테스트할 수 있는 웹 인터페이스.">
@@ -74,7 +74,7 @@
   "description": "코드 없이 브라우저에서 바로 LLM을 호출하고 프롬프트를 테스트할 수 있는 웹 인터페이스.",
   "url": "https://aiwiki.work/k/playground.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-04-04",
+  "dateModified": "2026-07-12",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -151,13 +151,13 @@
   <div class="cat">도구</div>
   <h1>플레이그라운드</h1>
   <div class="en">AI Playground</div>
-  <div class="body"><p>코드 없이 브라우저에서 바로 LLM을 호출하고 프롬프트를 테스트할 수 있는 웹 인터페이스.</p><h4>개념 설명</h4><p>새 프롬프트를 테스트하거나 모델 파라미터를 조정할 때마다 코드를 짜는 건 번거롭다. <strong>플레이그라운드</strong>는 API 키만 있으면 브라우저에서 바로 LLM과 대화하고, 온도, top-p, 최대 토큰 등 파라미터를 실시간으로 조정해 결과 차이를 볼 수 있는 인터페이스다. 빠른 프로토타이핑과 프롬프트 초안 작업에 유용하다.</p><h4>사용 예시</h4><p>Anthropic의 Claude.ai, OpenAI의 Playground, Google AI Studio가 대표적이다. 시스템 프롬프트를 바꿔가며 응답 스타일 차이를 비교하거나, temperature를 0에서 1로 올려가며 창의성 변화를 확인하는 용도로 쓴다. 프롬프트가 완성되면 "코드 보기"로 API 호출 코드를 바로 복사할 수 있다.</p></div>
+  <div class="body"><p>코드 없이 브라우저에서 바로 LLM을 호출하고 프롬프트를 테스트할 수 있는 웹 인터페이스.</p><h4>왜 굳이 놀이터인가</h4><p>새 프롬프트가 잘 먹히는지 확인하려고 매번 코드를 짜서 API를 호출하고, 응답을 출력해 보고, 파라미터를 조금 바꿔 다시 실행하는 건 생각보다 성가신 일이다. 한 문장 고칠 때마다 코드를 다시 돌려야 한다면 실험 자체가 귀찮아진다. 플레이그라운드는 이 왕복을 없앤 웹 화면이다. 브라우저에 프롬프트를 입력하고 실행 버튼을 누르면 바로 모델의 답이 뜨고, 마음에 안 들면 문구를 고쳐 다시 눌러 보면 된다. 개발 환경을 세팅하거나 SDK를 설치할 필요 없이, 모델과 대화하듯 프롬프트를 다듬어 가는 실험실인 셈이다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 흔한 사용법은 시스템 프롬프트를 바꿔 가며 답변의 성격이 어떻게 달라지는지 비교하는 것이다. 예를 들어 화면 한쪽에 "친절하고 짧게 답하라"고 지시했을 때와 "전문가처럼 근거를 들어 설명하라"고 지시했을 때의 결과를 나란히 놓고 보면, 어떤 지시가 원하는 톤을 만드는지 금방 감이 온다. 온도(temperature)를 0에 가깝게 두면 매번 비슷하고 안정적인 답이 나오고, 값을 올리면 표현이 다양하고 예측하기 어려운 답이 나오는 것도 슬라이더를 움직이며 눈으로 확인할 수 있다.</p><p>프롬프트에 <code>{{변수}}</code> 형태의 자리를 넣어 두고 값만 바꿔 가며 여러 입력을 한 번에 시험해 보는 기능도 자주 쓴다. 문구가 어느 정도 완성되면 화면의 코드 보기 기능으로 지금 설정 그대로를 호출하는 API 코드를 복사해, 실제 애플리케이션에 그대로 옮겨 붙일 수 있다. 놀이터에서 다듬은 결과가 곧 제품 코드로 이어지는 것이다.</p><h4>단순한 실험을 넘어서</h4><p>요즘 플레이그라운드는 프롬프트를 한 번 눌러 보고 마는 곳을 넘어, 프롬프트를 저장하고 버전을 관리하는 작업 공간으로 진화하고 있다. 초안·검증·운영 같은 딱지를 붙여 프롬프트 이력을 관리하거나, 여러 입력 예시를 모아 두고 프롬프트를 바꿨을 때 결과가 전반적으로 좋아졌는지 나란히 채점하는 평가 기능이 붙는 식이다. 프롬프트를 팀원과 공유해 함께 다듬는 흐름도 생겼다.</p><p>한 가지 기억할 점은, 플레이그라운드에서 잘 나온다고 실제 서비스에서도 똑같이 나오리라는 보장은 없다는 것이다. 여기서는 보통 한 번의 대화를 짧게 확인하지만, 실제 앱에서는 긴 대화 기록이 쌓이고 사용자 입력이 제각각이라 훨씬 다양한 상황을 만난다. 그래서 놀이터는 아이디어를 빠르게 검증하는 출발점으로 삼고, 실제 트래픽에 가까운 조건에서 다시 점검하는 과정이 필요하다.</p></div>
   <div class="tags"><span>#실험</span><span>#테스트</span><span>#프로토타이핑</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/playground/" target="_blank" rel="nofollow noopener">OpenAI Playground</a> <span class="ref-type">공식</span></li><li><a href="https://uit.stanford.edu/aiplayground" target="_blank" rel="nofollow noopener">AI Playground Quick Start - Stanford IT</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=nQCOTzS5oU0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/nQCOTzS5oU0/mqdefault.jpg" alt="Open WebUI + LiteLLM - NetworkChuck" loading="lazy" width="160" height="90"><span>Open WebUI + LiteLLM - NetworkChuck</span></a><a class="video-item" href="https://www.youtube.com/watch?v=cV413ZDo3bA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/cV413ZDo3bA/mqdefault.jpg" alt="How To Use Claude Code AI FOR FREE" loading="lazy" width="160" height="90"><span>How To Use Claude Code AI FOR FREE</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#playground">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-04</div>
+  <div class="added-date">updated at 2026-07-12</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>

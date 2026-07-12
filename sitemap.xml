@@ -158,7 +158,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/prompt-engineering.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/fine-tuning.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -200,7 +200,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/vector-db.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -212,7 +212,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/langchain.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/hallucination.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -302,7 +302,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/vibe-coding.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -470,7 +470,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/quantization.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -710,7 +710,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/human-in-the-loop.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -740,7 +740,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/langgraph.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -800,7 +800,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/openai-sdk.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -848,7 +848,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/playground.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -962,7 +962,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/red-teaming.html</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1028,7 +1028,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/ai-copyright.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1160,7 +1160,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/question-answering.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1184,7 +1184,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/unstructured-data.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1322,13 +1322,13 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/gemini.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/k/llama.html</loc>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
