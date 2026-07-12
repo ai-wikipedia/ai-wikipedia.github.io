@@ -13,8 +13,22 @@ eval(dataContent);
 const CATS = {prompting:'프롬프팅',model:'모델',tooling:'도구',data:'데이터',agent:'에이전트',infra:'인프라',safety:'안전',application:'응용'};
 const BASE = 'https://aiwiki.work';
 const OUT = path.join(__dirname, 'k');
+const OUTC = path.join(__dirname, 'c');
 
 if (!fs.existsSync(OUT)) fs.mkdirSync(OUT);
+if (!fs.existsSync(OUTC)) fs.mkdirSync(OUTC);
+
+// 카테고리 허브 소개문 (토픽 클러스터 페이지용 — 각기 다른 고유 줄글)
+const CAT_INTRO = {
+  prompting: 'AI에게 원하는 답을 얻으려면 "무엇을 묻느냐"만큼 "어떻게 묻느냐"가 중요합니다. 프롬프트 엔지니어링, 사고의 사슬(CoT), 시스템 프롬프트처럼 모델을 정확하게 다루기 위한 기법들을 모았습니다.',
+  model: 'GPT·Claude·Gemini 같은 대규모 언어 모델은 AI의 "두뇌"에 해당합니다. 모델이 어떻게 학습되고 작동하는지, 파인튜닝·양자화·멀티모달처럼 모델 자체를 이해하는 데 필요한 개념들을 모았습니다.',
+  tooling: 'AI를 실제 개발과 업무에 활용하게 해주는 도구와 표준입니다. MCP, Claude Code, LangChain, 스킬·훅처럼 모델과 외부 세계를 잇는 기술들을 모았습니다.',
+  data: 'AI가 최신 정보나 내 문서를 근거로 답하려면 데이터를 잘 다뤄야 합니다. RAG, 임베딩, 벡터 DB, 청킹처럼 검색과 지식 연결에 관한 개념들을 모았습니다.',
+  agent: '스스로 판단하고 도구를 써서 일을 끝까지 처리하는 것이 AI 에이전트입니다. 멀티에이전트, ReAct, 에이전트 프레임워크·메모리처럼 "알아서 일하는 AI"를 이해하는 키워드를 모았습니다.',
+  infra: 'AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 컨텍스트 윈도우, API 게이트웨이, 평가(Eval)처럼 운영과 확장에 관한 개념들을 모았습니다.',
+  safety: 'AI를 안전하고 믿을 수 있게 쓰기 위한 개념입니다. 환각, 가드레일, 프롬프트 인젝션처럼 위험을 이해하고 막는 기술들을 모았습니다.',
+  application: 'AI가 실제 제품과 현장에서 어떻게 쓰이는지에 관한 개념입니다. AI 코딩, 챗봇, AI 검색, 워크플로우처럼 응용 분야의 키워드를 모았습니다.'
+};
 
 function escHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -72,7 +86,7 @@ for (const e of D) {
     "@type":"BreadcrumbList",
     "itemListElement":[
       {"@type":"ListItem","position":1,"name":"AI Wiki","item":BASE+"/"},
-      {"@type":"ListItem","position":2,"name":catName,"item":BASE+"/?cat="+e.c},
+      {"@type":"ListItem","position":2,"name":catName,"item":BASE+"/c/"+e.c+".html"},
       {"@type":"ListItem","position":3,"name":e.t,"item":url}
     ]
   };
@@ -192,7 +206,7 @@ ${JSON.stringify(article, null, 2)}
   <a class="topnav-logo" href="${BASE}/">AI Wiki</a>
   <nav class="topnav-links">
     <a href="${BASE}/">홈</a>
-    <a href="${BASE}/?cat=${e.c}">${escHtml(catName)}</a>
+    <a href="${BASE}/c/${e.c}.html">${escHtml(catName)}</a>
     <a href="${BASE}/about.html">소개</a>
   </nav>
 </header>
@@ -218,6 +232,112 @@ ${JSON.stringify(article, null, 2)}
   fs.writeFileSync(path.join(OUT, `${e.id}.html`), html);
 }
 
+// ── 카테고리 허브 페이지 생성 (토픽 클러스터 + 내부 링크 강화) ──
+const hubBuilt = [];
+for (const cat of Object.keys(CATS)) {
+  const catName = CATS[cat];
+  const items = D.filter(e => e.c === cat).sort((a, b) => a.t.localeCompare(b.t, 'ko'));
+  if (!items.length) continue;
+  const hubUrl = `${BASE}/c/${cat}.html`;
+  const intro = CAT_INTRO[cat] || '';
+  const listHtml = items.map(e => {
+    const en = e.en && e.en !== e.t ? ` <span class="hub-en">${escHtml(e.en)}</span>` : '';
+    return `<li><a class="hub-link" href="${BASE}/k/${e.id}.html"><span class="hub-t">${escHtml(e.t)}${en}</span><span class="hub-sum">${escHtml(stripTags(e.sum))}</span></a></li>`;
+  }).join('');
+  const otherCats = Object.keys(CATS).filter(c => c !== cat && D.some(e => e.c === c))
+    .map(c => `<a href="${BASE}/c/${c}.html">${escHtml(CATS[c])}</a>`).join(' · ');
+  const itemListLd = {
+    "@context": "https://schema.org", "@type": "CollectionPage",
+    "name": `${catName} — AI 기술 키워드 모음`, "url": hubUrl,
+    "mainEntity": {
+      "@type": "ItemList", "numberOfItems": items.length,
+      "itemListElement": items.map((e, i) => ({ "@type": "ListItem", "position": i + 1, "name": e.t, "url": `${BASE}/k/${e.id}.html` }))
+    }
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "AI Wiki", "item": BASE + "/" },
+      { "@type": "ListItem", "position": 2, "name": catName, "item": hubUrl }
+    ]
+  };
+  const hubDesc = `${catName} 분야의 AI 용어 ${items.length}개를 비전공자도 이해할 수 있게 쉽게 정리했습니다. ${intro}`.slice(0, 160);
+  const hubHtml = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>${escHtml(catName)} — AI 기술 키워드 모음 | AI Wiki</title>
+<meta name="description" content="${escHtml(hubDesc)}">
+<meta name="keywords" content="${escHtml(catName)}, AI ${escHtml(catName)}, AI 용어, 인공지능 ${escHtml(catName)}, AI 사전">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escHtml(catName)} — AI 기술 키워드 모음 | AI Wiki">
+<meta property="og:description" content="${escHtml(hubDesc)}">
+<meta property="og:url" content="${hubUrl}">
+<meta property="og:image" content="${BASE}/og-thumbnail.png?v=2">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<link rel="canonical" href="${hubUrl}">
+<script type="application/ld+json">
+${JSON.stringify(breadcrumbLd, null, 2)}
+</script>
+<script type="application/ld+json">
+${JSON.stringify(itemListLd, null, 2)}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .topnav{max-width:760px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .wrap{max-width:760px;width:100%;background:#fff;border-radius:16px;padding:44px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:16px}
+  .hub-intro{color:#5a5550;line-height:1.8;font-size:15px;margin-bottom:28px}
+  .hub-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+  .hub-link{display:block;padding:12px 14px;border-radius:10px;text-decoration:none;color:inherit}
+  .hub-link:hover{background:#fdfcfa}
+  .hub-t{display:block;font-size:15px;font-weight:700;color:#2d2a26}
+  .hub-en{font-size:12px;font-weight:400;color:#a09888;margin-left:4px}
+  .hub-sum{display:block;font-size:13px;color:#5a5550;line-height:1.6;margin-top:2px}
+  .hub-nav{max-width:760px;width:100%;margin-top:24px;font-size:13px;color:#a09888;line-height:1.9}
+  .hub-nav a{color:#C4613A;text-decoration:none}
+  .hub-nav a:hover{text-decoration:underline}
+  .site-footer{max-width:760px;width:100%;margin-top:24px;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="${BASE}/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="${BASE}/">홈</a>
+    <a href="${BASE}/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">AI Wiki · 분야별 키워드</div>
+  <h1>${escHtml(catName)}</h1>
+  <div class="hub-intro">${escHtml(intro)}</div>
+  <ul class="hub-list">${listHtml}</ul>
+</div>
+<nav class="hub-nav">다른 분야 둘러보기: ${otherCats}</nav>
+<footer class="site-footer">
+  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>`;
+  fs.writeFileSync(path.join(OUTC, `${cat}.html`), hubHtml);
+  hubBuilt.push(cat);
+}
+console.log(`✓ ${hubBuilt.length}개 카테고리 허브 페이지 생성 → /c/`);
+
 // sitemap.xml 갱신
 const today = new Date().toISOString().slice(0,10);
 const urls = [
@@ -225,6 +345,9 @@ const urls = [
 ];
 for (const p of ['about.html', 'privacy.html', 'contact.html']) {
   urls.push(`  <url>\n    <loc>${BASE}/${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>`);
+}
+for (const cat of hubBuilt) {
+  urls.push(`  <url>\n    <loc>${BASE}/c/${cat}.html</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
 }
 for (const e of D) {
   urls.push(`  <url>\n    <loc>${BASE}/k/${e.id}.html</loc>\n    <lastmod>${e.updated || today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
