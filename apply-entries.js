@@ -268,6 +268,11 @@ function main() {
       continue;
     }
 
+    if (entry.skip) {
+      process.stderr.write(`Info: entry '${entry.id}' marked skip=true (quality gate), skipping\n`);
+      continue;
+    }
+
     if (existingIdSet.has(entry.id)) {
       process.stderr.write(`Warning: duplicate id '${entry.id}', skipping\n`);
       continue;
