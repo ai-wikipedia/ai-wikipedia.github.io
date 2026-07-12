@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>MLOps</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>머신러닝 모델의 개발·배포·모니터링을 자동화하고 표준화하는 실천 방법론. ML과 DevOps를 결합해 모델의 생산 배포를 안정적으로 만든다.</p><h4>개념 설명</h4><p>연구실에서 좋은 성능을 보인 모델이 실제 서비스에서는 데이터 분포 변화, 인프라 문제, 재현성 부재로 실패하는 경우가 많다. MLOps는 이 간극을 메우는 방법론이다. 데이터 버전 관리, 실험 추적, 모델 레지스트리, CI/CD 파이프라인, 모니터링을 체계화한다. MLflow, DVC, Weights & Biases, Kubeflow, Airflow가 MLOps 도구의 대표 주자다.</p><p>LLM 시대에 들어서며 전통적 MLOps와 다른 <strong>LLMOps</strong>가 필요해졌다. 프롬프트 버전 관리, 평가(eval) 파이프라인, 파인튜닝 파이프라인 등 LLM 특화 과제들이 추가됐다.</p><h4>사용 예시</h4><p>MLflow로 실험 파라미터와 메트릭을 추적하고, DVC로 학습 데이터 버전을 관리하며, GitHub Actions로 모델 평가·배포 CI/CD를 구성한다. 새 모델 버전이 스테이징에서 일정 점수를 넘으면 자동으로 프로덕션에 배포되는 파이프라인이 MLOps의 전형이다.</p></div>
   <div class="tags"><span>#운영</span><span>#파이프라인</span><span>#DevOps</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/observability.html">옵저버빌리티</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/pilotfish.html">파일럿피시</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning" target="_blank" rel="nofollow noopener">MLOps: Continuous Delivery and Automation Pipelines in ML — Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://research.google/pubs/hidden-technical-debt-in-machine-learning-systems/" target="_blank" rel="nofollow noopener">Hidden Technical Debt in Machine Learning Systems — Google Research</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#mlops">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

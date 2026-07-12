@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>모션 애니씽</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>채팅으로 원하는 느낌을 묘사하면 AI가 직접 애니메이션을 만들어주는 오픈소스 에이전틱 모션 엔진. 8개 코딩 에이전트와 403개 모션 레시피를 기반으로 JSON·CSS·React·Lottie·MP4·GIF 등 다양한 형식으로 출력한다.</p><h4>개념 설명</h4><p>motion-anything은 '무엇이든 모션이 된다'는 철학으로 만들어진 오픈소스 에이전틱 모션 레이어다. 기존 애니메이션 작업은 개발자나 디자이너가 CSS 키프레임을 직접 짜거나 After Effects 같은 전문 도구를 익혀야 했다. motion-anything은 그 과정을 채팅 한 줄로 대체한다. "팝업이 가볍게 튕기면서 나타났으면 해"라고 말하면, AI 에이전트가 적합한 모션 레시피를 찾아 코드를 생성해준다.</p><h4>사용 예시</h4><p>Claude Code, Codex, Cursor, Gemini 등 8개 코딩 에이전트 엔진을 BYOK(Bring Your Own Key) 방식으로 연결해 쓴다. 403개의 큐레이션된 <strong>모션 레시피</strong> 라이브러리에서 원하는 패턴을 찾아 코드를 생성하고, 결과를 JSON·CSS·React·Lottie·MP4·GIF 중 원하는 형식으로 내보낸다. Open Design 생태계와 연결되어 있어 59개의 <code>DESIGN.md</code> 브랜드 팩, 58개의 HyperFrames 비디오 템플릿, 112개의 HTML 프로토타입 템플릿과 함께 사용할 수 있다.</p><h4>주의할 점</h4><p>같은 이름의 arXiv 논문 'Motion Anything: Any to Motion Generation'(2025)이 별도로 존재한다. 이 논문은 텍스트·음악 등 멀티모달 입력으로 3D 인간 모션을 생성하는 연구 프레임워크로, nexu-io의 motion-anything 도구와는 완전히 별개의 작업이다. 이름이 같아 혼동하기 쉽다.</p></div>
   <div class="tags"><span>#모션 생성</span><span>#에이전틱 AI</span><span>#애니메이션</span><span>#오픈소스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/ai-video-generation.html">AI 비디오 생성</a>, <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://github.com/nexu-io/motion-anything" target="_blank" rel="nofollow noopener">nexu-io/motion-anything — GitHub</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/html/2503.06955v2" target="_blank" rel="nofollow noopener">Motion Anything: Any to Motion Generation — arXiv</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=lS4HlO-1GyM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lS4HlO-1GyM/mqdefault.jpg" alt="AI Just Changed 3D Animation Forever" loading="lazy" width="160" height="90"><span>AI Just Changed 3D Animation Forever</span></a><a class="video-item" href="https://www.youtube.com/watch?v=FwOTs4UxQS4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/FwOTs4UxQS4/mqdefault.jpg" alt="AI Agents, Clearly Explained" loading="lazy" width="160" height="90"><span>AI Agents, Clearly Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=iZBKWoSTVX8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iZBKWoSTVX8/mqdefault.jpg" alt="How to Animate ANYTHING - 4 Types of Motion" loading="lazy" width="160" height="90"><span>How to Animate ANYTHING - 4 Types of Motion</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#motion-anything">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-10</div>
 </div>

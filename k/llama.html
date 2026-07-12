@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>라마</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Meta가 공개한 오픈 웨이트 LLM 시리즈. 오픈소스 LLM 생태계의 기반이 되었으며 파인튜닝, 양자화, 모델 병합 연구의 주요 대상이다.</p><h4>개념 설명</h4><p>2023년 Meta가 Llama를 공개하면서 오픈소스 LLM 시대가 본격적으로 열렸다. Llama 2(2023.07), Llama 3(2024.04), Llama 4(2025)로 이어지며 상업적 사용이 가능한 라이선스와 함께 커뮤니티 생태계가 폭발적으로 성장했다. 대부분의 오픈소스 파인튜닝 연구, 양자화 실험, 모델 병합이 Llama를 베이스로 이루어진다.</p><h4>사용 예시</h4><p>Ollama로 <code>ollama run llama3</code> 한 줄이면 로컬에서 바로 실행된다. vLLM으로 서빙하면 OpenAI 호환 API를 자체 인프라에서 운영할 수 있다. LoRA로 도메인 특화 파인튜닝을 하거나, GGUF로 양자화해서 모바일에 배포하는 것이 대표적 활용 방식이다.</p></div>
   <div class="tags"><span>#Meta</span><span>#오픈소스</span><span>#커뮤니티</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/grok.html">그록</a>, <a href="https://aiwiki.work/k/nemotron.html">네모트론</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/perplexity-sonar.html">퍼플렉시티 소나</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/" target="_blank" rel="nofollow noopener">The Llama 4 herd - Meta AI</a> <span class="ref-type">공식</span></li><li><a href="https://www.llama.com/" target="_blank" rel="nofollow noopener">Llama Official</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/meta-llama" target="_blank" rel="nofollow noopener">Meta Llama - Hugging Face</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=DV6V_PFkoO0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DV6V_PFkoO0/mqdefault.jpg" alt="The New Llama 4 Has The Longest Context Ever" loading="lazy" width="160" height="90"><span>The New Llama 4 Has The Longest Context Ever</span></a><a class="video-item" href="https://www.youtube.com/watch?v=VCaQZdWMFV8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VCaQZdWMFV8/mqdefault.jpg" alt="Llama 3.1 Is A Huge Leap Forward" loading="lazy" width="160" height="90"><span>Llama 3.1 Is A Huge Leap Forward</span></a><a class="video-item" href="https://www.youtube.com/watch?v=usjPCQAoF44" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/usjPCQAoF44/mqdefault.jpg" alt="메타 라마 4 오픈소스 AI 모델 분석" loading="lazy" width="160" height="90"><span>메타 라마 4 오픈소스 AI 모델 분석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#llama">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

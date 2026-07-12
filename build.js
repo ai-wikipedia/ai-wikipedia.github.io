@@ -44,6 +44,28 @@ for (const e of D) {
     .map(id => `<a href="${BASE}/k/${id}.html">${escHtml(DMap[id].t)}</a>`)
     .join(', ');
 
+  // 참고 자료 (출처) — 페이지 신뢰도(E-E-A-T) 보강
+  const REF_LABEL = {official:'공식', blog:'블로그', paper:'논문', tutorial:'튜토리얼', news:'뉴스', doc:'문서'};
+  const refItems = (e.refs || [])
+    .filter(r => r && r.url && r.title)
+    .map(r => {
+      const lbl = REF_LABEL[r.type] || '';
+      return `<li><a href="${escHtml(r.url)}" target="_blank" rel="nofollow noopener">${escHtml(r.title)}</a>${lbl ? ` <span class="ref-type">${lbl}</span>` : ''}</li>`;
+    }).join('');
+  const refsBlock = refItems ? `<div class="refs"><b>참고 자료</b><ul>${refItems}</ul></div>` : '';
+
+  // 관련 영상 (썸네일 링크 — iframe 대신 이미지 링크로 쿠키/무게 최소화)
+  const vidItems = (e.videos || [])
+    .filter(v => v && v.id && v.title)
+    .map(v => `<a class="video-item" href="https://www.youtube.com/watch?v=${escHtml(v.id)}" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/${escHtml(v.id)}/mqdefault.jpg" alt="${escHtml(v.title)}" loading="lazy" width="160" height="90"><span>${escHtml(v.title)}</span></a>`)
+    .join('');
+  const videosBlock = vidItems ? `<div class="videos"><b>관련 영상</b><div class="video-list">${vidItems}</div></div>` : '';
+
+  // 얇은 페이지 noindex: 본문이 매우 짧고 출처도 없는 경우만 (색인 품질 방어)
+  const detLen = stripTags(e.det || '').length;
+  const robotsMeta = (detLen < 400 && (!e.refs || !e.refs.length))
+    ? '\n<meta name="robots" content="noindex,follow">' : '';
+
   // 3. BreadcrumbList JSON-LD
   const breadcrumb = {
     "@context":"https://schema.org",
@@ -73,7 +95,7 @@ for (const e of D) {
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">${robotsMeta}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>${escHtml(title)}</title>
@@ -143,9 +165,37 @@ ${JSON.stringify(article, null, 2)}
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="${BASE}/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="${BASE}/">홈</a>
+    <a href="${BASE}/?cat=${e.c}">${escHtml(catName)}</a>
+    <a href="${BASE}/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">${escHtml(catName)}</div>
   <h1>${escHtml(e.t)}</h1>
@@ -153,6 +203,8 @@ ${JSON.stringify(article, null, 2)}
   <div class="body"><p>${e.sum}</p>${e.det}</div>
   ${e.tags.length ? `<div class="tags">${e.tags.map(t=>`<span>#${escHtml(t)}</span>`).join('')}</div>` : ''}
   ${relLinks ? `<div class="related"><b>관련 키워드</b> ${relLinks}</div>` : ''}
+  ${refsBlock}
+  ${videosBlock}
   <a class="back" href="${BASE}/#${e.id}">← AI Wiki에서 더 보기</a>
   ${e.added ? `<div class="added-date">updated at ${e.updated||e.added}</div>` : ''}
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>지식 그래프</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>엔티티와 그 관계를 그래프 구조로 표현한 데이터베이스. AI에서는 RAG의 검색 정확도를 높이거나, LLM의 사실 기반 추론을 보강하는 데 활용된다.</p><h4>개념 설명</h4><p>"스티브 잡스는 Apple의 공동창업자이고, Apple은 아이폰을 만들었다"처럼 엔티티(사람, 회사, 제품)와 관계(창업, 제조)를 노드와 엣지로 표현하는 것이 지식 그래프다. 구글의 Knowledge Graph(2012)가 검색 결과의 "Knowledge Panel"에 쓰이면서 유명해졌다. 관계형 데이터베이스가 테이블로 데이터를 표현한다면, 지식 그래프는 연결로 의미를 표현한다.</p><p>LLM과 결합할 때 강점이 드러난다. LLM은 지식 그래프에서 필요한 사실을 정확하게 검색하고, 그래프의 관계를 따라 다단계 추론을 수행한다. Graph RAG가 이 결합의 대표적인 패턴이다.</p><h4>사용 예시</h4><p>Neo4j나 Amazon Neptune에 도메인 지식을 그래프로 저장하고, LangChain의 <code>GraphCypherQAChain</code>으로 자연어 질문을 Cypher 쿼리로 변환해 답변하는 파이프라인을 구성할 수 있다. 기업 내부의 조직도, 제품 의존성, 규정 관계를 그래프로 모델링하면 복잡한 관계 질의에 LLM이 정확히 답할 수 있다.</p></div>
   <div class="tags"><span>#그래프DB</span><span>#관계추출</span><span>#Neo4j</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/graph-rag.html">그래프 RAG</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/ontology.html">온톨로지</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.google.com/knowledge-graph" target="_blank" rel="nofollow noopener">Google Knowledge Graph Search API — Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://neo4j.com/use-cases/knowledge-graph/" target="_blank" rel="nofollow noopener">Neo4j Knowledge Graphs</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=YVLwu3jE09c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/YVLwu3jE09c/mqdefault.jpg" alt="What is a Knowledge Graph? (Neo4j)" loading="lazy" width="160" height="90"><span>What is a Knowledge Graph? (Neo4j)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Za7aG-ooGLQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Za7aG-ooGLQ/mqdefault.jpg" alt="GraphRAG Explained: AI Retrieval with Knowledge Graphs (IBM)" loading="lazy" width="160" height="90"><span>GraphRAG Explained: AI Retrieval with Knowledge Graphs (IBM)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hh2Bx6DYgpw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hh2Bx6DYgpw/mqdefault.jpg" alt="지식 그래프 RAG - 테디노트" loading="lazy" width="160" height="90"><span>지식 그래프 RAG - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#knowledge-graph">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>토큰 예산</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>추론 모델이 답을 생성하기 전에 얼마나 오래 "생각"할 수 있는지를 제한하는 파라미터. 응답 품질과 토큰 비용·지연 사이의 균형을 제어한다.</p><h4>개념 설명</h4><p>Claude의 확장 사고나 OpenAI의 추론 모델(o-series)처럼 내부적으로 사고 과정을 생성하는 모델들은 얼마나 길게 생각할지 조절할 수 있다. 토큰 예산은 이 사고에 사용할 수 있는 최대 토큰 수를 설정하는 파라미터다. 예산이 높을수록 더 깊이 생각해 어려운 문제에서 정확도가 올라가지만, 비용과 지연도 함께 늘어난다.</p><p>간단한 질문에 불필요하게 큰 예산을 쓰는 것은 낭비이므로, 태스크 복잡도에 따라 예산을 동적으로 조절하는 전략이 필요하다.</p><h4>사용 예시</h4><p>Claude API에서 <code>thinking: {type: "enabled", budget_tokens: 10000}</code>으로 사고 예산을 설정한다. 수학 증명이나 복잡한 코드 디버깅에는 예산을 높게, 단순 요약이나 번역에는 낮게 또는 비활성화해 비용을 관리한다. 프로덕션에서는 요청의 복잡도를 분류해 예산을 자동으로 설정하는 라우터를 구성하는 것이 이상적이다.</p></div>
   <div class="tags"><span>#사고예산</span><span>#비용제어</span><span>#추론</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" target="_blank" rel="nofollow noopener">What Are Tokens and How to Count Them — OpenAI Help Center</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/rate-limits" target="_blank" rel="nofollow noopener">Rate Limits (Token Management) — OpenAI Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=9tvJ_GYJA-o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9tvJ_GYJA-o/mqdefault.jpg" alt="Mastering LLM Inference Optimization" loading="lazy" width="160" height="90"><span>Mastering LLM Inference Optimization</span></a><a class="video-item" href="https://www.youtube.com/watch?v=D7_ipDqhtwk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/D7_ipDqhtwk/mqdefault.jpg" alt="How We Build Effective Agents (Anthropic)" loading="lazy" width="160" height="90"><span>How We Build Effective Agents (Anthropic)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mFBaEZ4VAGI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mFBaEZ4VAGI/mqdefault.jpg" alt="토큰 관리와 비용 절감 - 테디노트" loading="lazy" width="160" height="90"><span>토큰 관리와 비용 절감 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#token-budget">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>위스퍼</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>OpenAI가 공개한 범용 음성 인식 모델. 68만 시간의 다국어 데이터로 학습되어 잡음 환경에서도 높은 정확도를 보이며, 음성→텍스트 변환의 사실상 표준이 됐다.</p><h4>개념 설명</h4><p>Whisper 이전의 음성 인식은 언어별로 모델을 따로 만들거나, 특정 환경에서만 잘 작동하는 경우가 많았다. Whisper는 인터넷에서 수집한 68만 시간의 다국어 오디오를 Transformer로 학습해 99개 언어를 하나의 모델로 처리한다. 잡음이 많은 환경, 억양이 강한 발화에서도 견고하게 작동한다.</p><h4>사용 예시</h4><p>OpenAI API의 <code>whisper-1</code> 모델로 오디오 파일을 전사하거나, 오픈소스 Whisper를 로컬에서 실행할 수 있다. <code>faster-whisper</code>는 CTranslate2로 최적화해 4배 빠르게 돌아간다. 회의 녹음 전사, 유튜브 자막 생성, 음성 명령 인식 파이프라인의 첫 단계로 널리 쓰인다. Whispree처럼 STT 결과를 LLM으로 교정하는 조합도 트렌드다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#STT</span><span>#다국어</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/speech-to-text.html">음성 인식</a>, <a href="https://aiwiki.work/k/voice-ai.html">보이스 AI</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/on-device-ai.html">온디바이스 AI</a>, <a href="https://aiwiki.work/k/elevenlabs.html">일레븐랩스</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/whisper/" target="_blank" rel="nofollow noopener">Introducing Whisper - OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/speech-to-text" target="_blank" rel="nofollow noopener">Speech to text - OpenAI API</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/openai/whisper" target="_blank" rel="nofollow noopener">OpenAI Whisper - GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=8SQV-B83tPU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8SQV-B83tPU/mqdefault.jpg" alt="Best FREE Speech to Text AI - Whisper" loading="lazy" width="160" height="90"><span>Best FREE Speech to Text AI - Whisper</span></a><a class="video-item" href="https://www.youtube.com/watch?v=GrLpdfhTwLg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GrLpdfhTwLg/mqdefault.jpg" alt="Self-Hosted AI: Whisper + More" loading="lazy" width="160" height="90"><span>Self-Hosted AI: Whisper + More</span></a><a class="video-item" href="https://www.youtube.com/watch?v=77dJJBFPLpY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/77dJJBFPLpY/mqdefault.jpg" alt="OpenAI Whisper 음성인식 사용법" loading="lazy" width="160" height="90"><span>OpenAI Whisper 음성인식 사용법</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#whisper">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

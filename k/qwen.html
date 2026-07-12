@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>큐원</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Alibaba Cloud가 개발한 오픈 웨이트 LLM 시리즈. 다국어 성능이 뛰어나고 코드, 수학, 멀티모달, TTS까지 다양한 변형을 공개하고 있다.</p><h4>개념 설명</h4><p>Qwen은 중국어와 영어를 중심으로 다국어를 강력하게 지원하는 오픈 모델이다. Qwen2.5부터 코딩(Qwen-Coder), 수학(Qwen-Math), 멀티모달(Qwen-VL), 음성 합성(Qwen-TTS)까지 특화 모델을 체계적으로 공개하고 있다. Apache 2.0 라이선스로 상업적 사용이 자유롭다.</p><h4>사용 예시</h4><p>HuggingFace에서 Qwen2.5-72B-Instruct를 vLLM으로 서빙하면 GPT-4 수준에 근접한 성능을 자체 인프라에서 운영할 수 있다. Qwen-Coder는 코딩 벤치마크에서 상위권을 차지해 AI 코딩 도구의 백엔드로 쓰이고, Qwen3-TTS는 자연스러운 한국어 음성 합성도 가능하다.</p></div>
   <div class="tags"><span>#Alibaba</span><span>#중국</span><span>#다국어</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/llama.html">라마</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/text-to-speech.html">텍스트-음성 변환</a>, <a href="https://aiwiki.work/k/minimax.html">미니맥스</a>, <a href="https://aiwiki.work/k/kimi.html">키미</a>, <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/qwen3-max.html">큐원3 맥스</a>, <a href="https://aiwiki.work/k/seed-2.html">시드 2.0</a>, <a href="https://aiwiki.work/k/mimo.html">미모</a>, <a href="https://aiwiki.work/k/olmo-3.html">OLMo 3</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.alibabacloud.com/blog/alibaba-introduces-qwen3-setting-new-benchmark-in-open-source-ai-with-hybrid-reasoning_602192" target="_blank" rel="nofollow noopener">Alibaba Introduces Qwen3</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/Qwen" target="_blank" rel="nofollow noopener">Qwen - Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://qwen.ai/" target="_blank" rel="nofollow noopener">Qwen Official Site</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=PUHMTL_YY6I" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PUHMTL_YY6I/mqdefault.jpg" alt="Qwen 3: Powerful Opensource Hybrid LLM" loading="lazy" width="160" height="90"><span>Qwen 3: Powerful Opensource Hybrid LLM</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Z8-kcPe73_M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Z8-kcPe73_M/mqdefault.jpg" alt="Qwen 3 Coder: FREE AI Coder" loading="lazy" width="160" height="90"><span>Qwen 3 Coder: FREE AI Coder</span></a><a class="video-item" href="https://www.youtube.com/watch?v=8jBw0CVPZPM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8jBw0CVPZPM/mqdefault.jpg" alt="Qwen 3 코더 활용 가이드" loading="lazy" width="160" height="90"><span>Qwen 3 코더 활용 가이드</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#qwen">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>AI 코딩 어시스턴트</h1>
@@ -129,6 +157,8 @@
 <h4>자동 완성에서 에이전트로</h4><p>핵심 변화는 "한 줄 제안"에서 "작업 전체 수행"으로의 전환이다. 이전에는 개발자가 주도하고 AI가 보조했다면, 에이전트형에서는 AI가 주도하고 개발자가 검토한다. 이 전환을 뒷받침하는 게 도구 사용(Tool Use), 하네스 엔지니어링, 멀티에이전트 같은 기술들이다.</p></div>
   <div class="tags"><span>#코딩</span><span>#IDE</span><span>#개발도구</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a>, <a href="https://aiwiki.work/k/mimo.html">미모</a>, <a href="https://aiwiki.work/k/glm-5-2.html">GLM 5.2</a>, <a href="https://aiwiki.work/k/gpt-5-6.html">GPT-5.6</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://cloud.google.com/discover/what-is-vibe-coding" target="_blank" rel="nofollow noopener">Vibe Coding Explained – Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://getdx.com/blog/ai-code-enterprise-adoption/" target="_blank" rel="nofollow noopener">AI code generation: Best practices – DX</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=GepHGs_CZdk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GepHGs_CZdk/mqdefault.jpg" alt="Claude Code Tutorial – Peter Yang" loading="lazy" width="160" height="90"><span>Claude Code Tutorial – Peter Yang</span></a><a class="video-item" href="https://www.youtube.com/watch?v=cV413ZDo3bA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/cV413ZDo3bA/mqdefault.jpg" alt="How To Use Claude Code AI FOR FREE" loading="lazy" width="160" height="90"><span>How To Use Claude Code AI FOR FREE</span></a><a class="video-item" href="https://www.youtube.com/watch?v=OdtGN27LchE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OdtGN27LchE/mqdefault.jpg" alt="Claude Code Skills AI Agent Team Guide" loading="lazy" width="160" height="90"><span>Claude Code Skills AI Agent Team Guide</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-coding">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

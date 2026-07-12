@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>컨텍스트 압축</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>긴 컨텍스트를 핵심 정보만 남기도록 압축해서 LLM 비용을 줄이고 성능을 높이는 기법.</p><h4>개념 설명</h4><p>긴 대화 이력이나 문서를 통째로 컨텍스트에 넣으면 비용이 크고 정작 중요한 정보가 묻힌다. <strong>컨텍스트 압축</strong>은 긴 컨텍스트에서 현재 질문과 관련 없는 부분을 제거하거나 요약해서, 핵심만 남긴 짧은 컨텍스트를 만드는 기법이다. LLM Lingua, Selective Context 같은 도구가 이 역할을 담당한다.</p><h4>사용 예시</h4><p>장기 대화 에이전트에서 대화가 50턴을 넘어가면, 초기 대화를 "사용자는 Python 백엔드 개발자, React 사용, Docker 환경"처럼 사실 요약으로 압축하고 최근 10턴만 전체로 유지한다. LangChain의 <code>ConversationSummaryMemory</code>가 이 패턴을 구현한 컴포넌트다.</p></div>
   <div class="tags"><span>#압축</span><span>#요약</span><span>#효율화</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.agno.com/compression/overview" target="_blank" rel="nofollow noopener">Context Compression - Agno</a> <span class="ref-type">공식</span></li><li><a href="https://wikidocs.net/231608" target="_blank" rel="nofollow noopener">2-6-2. Contextual Compression - 랭체인(LangChain) 입문 ... - 위키독스</a> <span class="ref-type">공식</span></li><li><a href="https://blog.langchain.com/autonomous-context-compression/" target="_blank" rel="nofollow noopener">Autonomous context compression - LangChain Blog</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/the-ai-forum/automatic-context-compression-in-llm-agents-why-agents-need-to-forget-and-how-to-help-them-do-it-43bff14c341d" target="_blank" rel="nofollow noopener">Automatic Context Compression in LLM Agents: Why Agents Need ...</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#context-compression">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

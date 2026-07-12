@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>MoE</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>하나의 큰 모델 대신 여러 개의 전문가(expert) 네트워크를 두고, 입력에 따라 일부만 활성화하는 아키텍처. 전체 파라미터 수를 늘리면서도 실제 연산량은 줄여 효율적으로 모델을 스케일업할 수 있다.</p><h4>개념 설명</h4><p>모델이 커질수록 모든 파라미터를 매번 계산하는 건 비효율적이다. <strong>MoE(Mixture of Experts)</strong>는 이 문제를 '전문가 분업'으로 해결한다. 모델 내부에 여러 개의 독립적인 전문가 네트워크를 두고, 입력 토큰마다 라우터(router)가 어떤 전문가를 쓸지 선택한다. 예를 들어 총 8명의 전문가가 있더라도, 각 토큰은 그 중 2명의 전문가만 거친다. 덕분에 파라미터 수는 8배로 늘어나도 실제 연산량은 2배 수준에 그친다.</p><p>이 구조는 트랜스포머의 피드포워드 레이어(FFN)를 MoE 레이어로 교체하는 방식으로 구현된다. 각 전문가는 구조상 일반 FFN과 동일하지만, 학습 과정에서 서로 다른 유형의 토큰에 자연스럽게 특화된다.</p><h4>사용 예시</h4><p>오늘날 주요 프런티어 모델 대부분이 MoE를 채택하고 있다. Mistral AI의 Mixtral 8×7B는 총 467억 개의 파라미터를 갖지만, 토큰당 실제 활성화 파라미터는 129억 개에 불과하다. 훨씬 적은 연산으로 더 큰 모델과 동등한 성능을 낸다. DeepSeek-V3는 이를 극단까지 밀어붙여 총 6,710억 개의 파라미터에 256개의 전문가를 두되, 토큰당 370억 개만 활성화한다. 이 덕분에 경쟁 모델 대비 훨씬 적은 GPU 시간으로 학습을 완료했다. Google의 Gemini 1.5도 MoE 아키텍처를 적용한 것으로 알려져 있다.</p><p>개발자 입장에서는 MoE 모델을 API로 쓸 때 특별히 달라지는 것은 없다. 다만 오픈소스 MoE 모델을 로컬에서 운용할 때는 총 파라미터 수만큼 VRAM이 필요하다는 점을 주의해야 한다. Mixtral 8×7B를 풀 정밀도로 로드하려면 전문가 전체를 메모리에 올려야 하기 때문이다.</p><h4>심화 내용</h4><p>라우팅 방식은 크게 세 가지로 나뉜다. 토큰이 전문가를 선택하는 방식(token-choice), 전문가가 토큰을 선택하는 방식(expert-choice), 그리고 전역 매칭 방식이다. 가장 일반적인 token-choice는 라우터가 각 토큰에 대해 점수를 계산하고 상위 k개의 전문가를 선택해 출력을 가중합산한다.</p><h4>주의할 점</h4><p>MoE의 가장 큰 약점은 <strong>전문가 붕괴(expert collapse)</strong>다. 학습 초기에 특정 전문가가 더 많은 토큰을 받으면, 그 전문가가 더 잘 학습되고, 라우터는 그 전문가를 더 선호하는 악순환이 생긴다. 결국 몇몇 전문가만 일하고 나머지는 유휴 상태가 되어, MoE의 장점이 사라진다. 이를 막기 위한 보조 손실 함수(auxiliary loss)나 손실 없는 밸런싱(loss-free balancing) 기법이 함께 사용된다. DeepSeek-V3는 보조 손실 없이 밸런싱을 달성한 방식으로 주목받았다.</p></div>
   <div class="tags"><span>#아키텍처</span><span>#희소 활성화</span><span>#스케일링</span><span>#LLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/distillation.html">모델 증류</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/grok.html">그록</a>, <a href="https://aiwiki.work/k/kimi.html">키미</a>, <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/nemotron.html">네모트론</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/deepseek-v4.html">딥시크 V4</a>, <a href="https://aiwiki.work/k/qwen3-max.html">큐원3 맥스</a>, <a href="https://aiwiki.work/k/step-3-7.html">스텝 3.7</a>, <a href="https://aiwiki.work/k/command-a.html">커맨드 A</a>, <a href="https://aiwiki.work/k/mimo-v2-5.html">미모 v2.5</a>, <a href="https://aiwiki.work/k/glm-5-2.html">GLM 5.2</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://huggingface.co/blog/moe" target="_blank" rel="nofollow noopener">Mixture of Experts Explained</a> <span class="ref-type">블로그</span></li><li><a href="https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/" target="_blank" rel="nofollow noopener">Applying Mixture of Experts in LLM Architectures</a> <span class="ref-type">블로그</span></li><li><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mixture-of-experts" target="_blank" rel="nofollow noopener">A Visual Guide to Mixture of Experts (MoE)</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://arxiv.org/abs/2401.04088" target="_blank" rel="nofollow noopener">Mixtral of Experts (arXiv:2401.04088)</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2407.06204" target="_blank" rel="nofollow noopener">A Survey on Mixture of Experts in LLMs (arXiv:2407.06204)</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=sOPDGQjFcuM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sOPDGQjFcuM/mqdefault.jpg" alt="A Visual Guide to Mixture of Experts (MoE)" loading="lazy" width="160" height="90"><span>A Visual Guide to Mixture of Experts (MoE)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=UiX8K-xBUpE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UiX8K-xBUpE/mqdefault.jpg" alt="Mistral / Mixtral Explained: Sparse Mixture of Experts" loading="lazy" width="160" height="90"><span>Mistral / Mixtral Explained: Sparse Mixture of Experts</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#moe">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

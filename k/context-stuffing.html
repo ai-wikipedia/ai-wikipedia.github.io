@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>컨텍스트 스터핑</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM에게 많은 양의 참고 문서를 컨텍스트로 넣어서 답변 정확도를 높이는 방식. RAG의 검색 단계를 생략하고 전부 넣는다.</p><h4>개념 설명</h4><p>RAG는 벡터 검색으로 관련 문서를 골라 넣지만, 어떤 문서가 필요한지 정확히 예측하기 어려울 때는 놓치는 정보가 생긴다. <strong>컨텍스트 스터핑</strong>은 필요한 문서를 선별하는 대신, 관련 문서 전체를 컨텍스트에 쏟아 넣어서 LLM이 스스로 필요한 부분을 찾아 쓰게 하는 방식이다. 컨텍스트 윈도우가 길어지면서 현실적인 선택지가 됐다.</p><h4>사용 예시</h4><p>소규모 회사 내부 문서(전체 100만 토큰 이하)라면 RAG 파이프라인을 구축하는 대신 전체를 컨텍스트에 넣고 질의하는 방식이 더 간단하다. Claude의 200K 컨텍스트를 활용하면 긴 소설을 통째로 넣고 내용을 분석하거나, 전체 코드베이스를 넣고 리팩토링 계획을 세울 수 있다. 단, 비용과 속도를 고려해야 한다.</p></div>
   <div class="tags"><span>#RAG</span><span>#긴컨텍스트</span><span>#검색</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://medium.com/@vipulkc/context-stuffing-e904b8aa5264" target="_blank" rel="nofollow noopener">Context Stuffing - by Vipul Kumar</a> <span class="ref-type">블로그</span></li><li><a href="https://tianpan.co/blog/2026-04-09-context-stuffing-antipattern-llm-production" target="_blank" rel="nofollow noopener">The Context Stuffing Antipattern: Why More Context Makes ...</a> <span class="ref-type">블로그</span></li><li><a href="https://www.spyglassmtg.com/blog/rag-vs.-prompt-stuffing-overcoming-context-window-limits-for-large-information-dense-documents" target="_blank" rel="nofollow noopener">RAG vs. Prompt Stuffing: Overcoming Context Window Limits for Large, Information-Dense Documents</a> <span class="ref-type">블로그</span></li><li><a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/context-engineering-give-ai-what-needs" target="_blank" rel="nofollow noopener">Context engineering: How to give AI exactly what it needs | Thoughtworks United States</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#context-stuffing">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

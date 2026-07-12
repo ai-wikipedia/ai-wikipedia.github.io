@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>헤르메스 에이전트</h1>
@@ -130,6 +158,8 @@
 <h4>주의할 점</h4><p>자기학습 에이전트는 잘못된 패턴도 학습할 수 있다. 초기에 잘못된 스킬이 저장되면 이후 작업에도 영향을 미치므로, 생성된 스킬을 주기적으로 리뷰하고 정리하는 과정이 필요하다.</p></div>
   <div class="tags"><span>#자기학습</span><span>#NousResearch</span><span>#자율에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/self-improving-agent.html">자기학습 에이전트</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="nofollow noopener">Hermes Agent — Official Site</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/nousresearch/hermes-agent" target="_blank" rel="nofollow noopener">Hermes Agent GitHub — NousResearch</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=D7_ipDqhtwk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/D7_ipDqhtwk/mqdefault.jpg" alt="How We Build Effective Agents - Anthropic" loading="lazy" width="160" height="90"><span>How We Build Effective Agents - Anthropic</span></a><a class="video-item" href="https://www.youtube.com/watch?v=5CmAKm1wWW0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5CmAKm1wWW0/mqdefault.jpg" alt="Build Anything with Claude Agents" loading="lazy" width="160" height="90"><span>Build Anything with Claude Agents</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#hermes-agent">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-05</div>
 </div>

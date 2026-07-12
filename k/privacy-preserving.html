@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>프라이버시 보호 AI</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>개인 데이터를 직접 수집·노출하지 않고도 AI를 학습하거나 활용할 수 있게 하는 기술 모음. 의료, 금융처럼 민감한 데이터를 다루는 분야에서 개인정보 보호와 AI 성능을 동시에 추구한다.</p><h4>개념 설명</h4><p>AI 모델을 학습시키려면 대량의 데이터가 필요한데, 그 데이터에 개인 정보가 담겨 있다면 수집·공유 자체가 문제가 된다. 프라이버시 보호 AI는 이 딜레마를 푸는 기술 집합이다. 대표적으로 <strong>연합학습</strong>은 데이터를 중앙에 모으지 않고 각 기기에서 학습해 모델만 공유하고, 차분 프라이버시는 학습 데이터에 통계적 노이즈를 추가해 개인 식별이 불가능하게 만든다.</p><h4>사용 예시</h4><p>병원 여러 곳의 환자 데이터로 진단 모델을 만들어야 할 때, 연합학습을 쓰면 각 병원이 데이터를 공유하지 않고도 공동으로 모델을 개선할 수 있다. 사용자 행동 데이터를 학습에 쓸 때 차분 프라이버시를 적용하면, 모델이 특정 개인의 정보를 기억할 가능성을 통계적으로 제한할 수 있다.</p></div>
   <div class="tags"><span>#연합학습</span><span>#차분 프라이버시</span><span>#데이터 보호</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/federated-learning.html">연합학습</a>, <a href="https://aiwiki.work/k/ai-regulation.html">AI 규제</a>, <a href="https://aiwiki.work/k/bias.html">편향</a>, <a href="https://aiwiki.work/k/alignment.html">AI 정렬</a>, <a href="https://aiwiki.work/k/apple-intelligence.html">애플 인텔리전스</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://pair.withgoogle.com/explorables/federated-learning/" target="_blank" rel="nofollow noopener">How Federated Learning Protects Privacy - Google PAIR</a> <span class="ref-type">공식</span></li><li><a href="https://dl.acm.org/doi/10.1145/3387107" target="_blank" rel="nofollow noopener">Federated learning for privacy-preserving AI - ACM</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=NksTTtfkFqI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NksTTtfkFqI/mqdefault.jpg" alt="What Is Federated Learning? Privacy-Preserving AI" loading="lazy" width="160" height="90"><span>What Is Federated Learning? Privacy-Preserving AI</span></a><a class="video-item" href="https://www.youtube.com/watch?v=VrEQBlEVri0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VrEQBlEVri0/mqdefault.jpg" alt="What Is Federated Learning?" loading="lazy" width="160" height="90"><span>What Is Federated Learning?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=CXyXjheIzCE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CXyXjheIzCE/mqdefault.jpg" alt="연합학습 데이터 보호하며 AI를 똑똑하게" loading="lazy" width="160" height="90"><span>연합학습 데이터 보호하며 AI를 똑똑하게</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#privacy-preserving">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

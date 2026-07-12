@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>스케일링 법칙</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 크기, 학습 데이터 양, 컴퓨팅 자원을 늘릴수록 AI 성능이 예측 가능하게 향상된다는 법칙. GPT-3부터 현재 대형 모델까지 AI 개발의 핵심 원리로 작동해왔다.</p><h4>개념 설명</h4><p>스케일링 법칙이란 간단히 말해 "더 크게 만들수록 더 잘한다"는 관찰을 수식으로 표현한 것이다. 모델의 파라미터 수, 학습에 사용한 데이터 양, 투입한 컴퓨팅 자원(FLOPs) — 이 세 가지를 늘리면 모델의 손실(loss)이 멱함수(power-law) 형태로 꾸준히 줄어든다. 성능이 조금씩 나아지는 게 아니라, 규모를 10배 늘리면 그에 비례해 예측 가능한 폭으로 좋아진다는 뜻이다.</p><p>2020년 OpenAI의 Jared Kaplan 팀이 발표한 논문 "Scaling Laws for Neural Language Models"에서 이 관계를 처음 체계적으로 정리했다. 이 논문이 나오기 전까지는 얼마나 큰 모델을 만들어야 할지, 데이터는 얼마나 모아야 할지 명확한 기준이 없었다. 스케일링 법칙은 그 기준을 수치로 제시했다.</p><h4>사용 예시</h4><p>GPT-2에서 GPT-3로 넘어갈 때 연구자들이 "그냥 더 크게 만들어보자"가 아니라 "이 크기면 이 정도 성능이 나올 것"이라고 예측하고 투자 결정을 내릴 수 있었던 게 스케일링 법칙 덕분이다. 실제로 GPT-3는 예측에 가깝게 few-shot 능력이 급격히 향상됐다.</p><p>2022년에는 DeepMind의 Chinchilla 연구가 기존 법칙을 보정했다. 당시 대부분의 대형 모델은 파라미터를 늘리는 데 집중하면서 데이터는 상대적으로 적게 사용하고 있었다. Chinchilla는 컴퓨팅 예산이 고정돼 있을 때 모델 크기와 학습 토큰 수를 동일한 비율로 함께 키워야 최적이라는 걸 보여줬다. 이후 Llama 시리즈처럼 상대적으로 작은 모델을 훨씬 많은 데이터로 훈련시키는 방향이 주류가 됐다.</p><h4>심화 내용</h4><p>최근에는 스케일링의 축이 사전학습에서 추론 시점으로 이동하고 있다. 사전학습 스케일링(모델과 데이터를 키우는 것)만으로는 성능 향상이 점차 둔화된다는 주장이 나오면서, 추론 시 더 많은 컴퓨팅을 쓰는 <strong>테스트 타임 스케일링(test-time scaling)</strong>이 주목받고 있다. OpenAI o1, o3처럼 답을 내기 전에 더 오래 생각하게 하는 추론 모델이 이 방향의 산물이다. 학습이 아니라 추론 단계에서 컴퓨팅을 더 쓸수록 성능이 오른다는 새로운 스케일링 축이 생긴 셈이다.</p><h4>주의할 점</h4><p>스케일링 법칙은 평균적인 언어 모델링 손실을 예측하지, 특정 태스크에서의 성능을 보장하지 않는다. 모델이 커지면서 예상치 못한 능력이 갑자기 생기는 <strong>창발(emergence)</strong> 현상도 나타나는데, 이는 스케일링 법칙으로는 미리 예측하기 어렵다. 또한 법칙이 성립하려면 데이터 품질, 학습 방식, 아키텍처 등이 일정 수준 이상이어야 하며, 단순히 규모만 키운다고 항상 예측대로 되는 건 아니다.</p></div>
   <div class="tags"><span>#LLM</span><span>#컴퓨팅</span><span>#Chinchilla</span><span>#사전학습</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="nofollow noopener">Scaling Laws for Neural Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="nofollow noopener">Training Compute-Optimal Large Language Models (Chinchilla)</a> <span class="ref-type">논문</span></li><li><a href="https://en.wikipedia.org/wiki/Neural_scaling_law" target="_blank" rel="nofollow noopener">Neural scaling law — Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://blogs.nvidia.com/blog/ai-scaling-laws/" target="_blank" rel="nofollow noopener">How Scaling Laws Drive Smarter AI — NVIDIA Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=5eqRuVp65eY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5eqRuVp65eY/mqdefault.jpg" alt="AI can't cross this line and we don't know why." loading="lazy" width="160" height="90"><span>AI can't cross this line and we don't know why.</span></a><a class="video-item" href="https://www.youtube.com/watch?v=GrloGdp5wdc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GrloGdp5wdc/mqdefault.jpg" alt="Scaling Laws of AI explained | Dario Amodei and Lex Fridman" loading="lazy" width="160" height="90"><span>Scaling Laws of AI explained | Dario Amodei and Lex Fridman</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QkPeMzr3Qz4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QkPeMzr3Qz4/mqdefault.jpg" alt="챗지피티는 집에서 만들지 말고 사서 쓰세요 | 스케일링 법칙" loading="lazy" width="160" height="90"><span>챗지피티는 집에서 만들지 말고 사서 쓰세요 | 스케일링 법칙</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#scaling-law">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-12</div>
 </div>

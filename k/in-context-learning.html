@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>인컨텍스트 러닝</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.</p><h4>인컨텍스트 러닝이란</h4><p>프롬프트 내에 입출력 예시를 제시하여 모델이 패턴을 파악하고 올바른 출력을 생성하게 하는 방식이다. 대화가 끝나면 모델은 원래 상태로 돌아간다. GPT-3의 2020년 논문에서 처음 보고됐다.</p><h4>실제 활용 사례</h4><p>Nature Communications 연구에 따르면 인컨텍스트 러닝만으로 병리 이미지 분류에서 전용 학습 신경망과 동등한 성능을 보였다. 파인튜닝에 수백만 원이 들 수 있지만 잘 설계된 퓨샷 프롬프트는 즉시 유사한 성능을 낼 수 있다. 번역, 감성 분석, 코드 변환 업무에서 프롬프트 라이브러리를 구축해 재사용하는 패턴이 보편화되고 있다.</p></div>
   <div class="tags"><span>#추론시학습</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aclanthology.org/2024.emnlp-main.64/" target="_blank" rel="nofollow noopener">A Survey on In-context Learning – EMNLP 2024</a> <span class="ref-type">논문</span></li><li><a href="https://wikidocs.net/237982" target="_blank" rel="nofollow noopener">ICL – AI·ML 사전 (WikiDocs, 한국어)</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=jkrNMKz9pWU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jkrNMKz9pWU/mqdefault.jpg" alt="A Hackers Guide to Language Models - Jeremy Howard" loading="lazy" width="160" height="90"><span>A Hackers Guide to Language Models - Jeremy Howard</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#in-context-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

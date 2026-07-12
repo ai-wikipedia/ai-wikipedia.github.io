@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>스웜</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>수많은 에이전트가 중앙 조율 없이 각자 역할을 맡아 협력하는 방식. 개미떼처럼 분산된 집단이 복잡한 작업을 처리한다.</p><h4>개념 설명</h4><p>일반적인 멀티에이전트는 오케스트레이터가 전체를 지휘한다. <strong>스웜</strong>은 중앙 지휘자 없이 각 에이전트가 자신의 작업을 처리하다가 필요하면 다른 에이전트에게 제어권을 넘기는 방식이다. OpenAI가 2024년 공개한 Swarm 프레임워크가 이 개념을 구체화했다. 에이전트는 다른 에이전트를 직접 호출하거나 작업을 핸드오프(handoff)할 수 있다.</p><h4>사용 예시</h4><p>고객 지원 스웜을 구성하면, 일반 문의 에이전트가 기술적 문제를 감지하는 순간 기술지원 에이전트에게 핸드오프하고, 기술지원 에이전트가 결제 문제를 발견하면 결제 에이전트에게 다시 넘기는 식으로 자연스럽게 흘러간다. OpenAI의 <code>Swarm</code> 라이브러리나 Claude의 멀티에이전트 API로 구현할 수 있다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#분산처리</span><span>#집단지성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/agent-protocol.html">에이전트 프로토콜</a>, <a href="https://aiwiki.work/k/kimi.html">키미</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://github.com/openai/swarm" target="_blank" rel="nofollow noopener">OpenAI Swarm - Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://cookbook.openai.com/examples/orchestrating_agents" target="_blank" rel="nofollow noopener">Orchestrating Agents: Routines and Handoffs - OpenAI Cookbook</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=CTMXGkNjg8g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CTMXGkNjg8g/mqdefault.jpg" alt="Introducing Swarm: OpenAI Agent Framework" loading="lazy" width="160" height="90"><span>Introducing Swarm: OpenAI Agent Framework</span></a><a class="video-item" href="https://www.youtube.com/watch?v=WL27HZxA0YY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WL27HZxA0YY/mqdefault.jpg" alt="OpenAI Swarm Tutorial: Multi-Agent Systems" loading="lazy" width="160" height="90"><span>OpenAI Swarm Tutorial: Multi-Agent Systems</span></a><a class="video-item" href="https://www.youtube.com/watch?v=0DcNPFsxOic" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0DcNPFsxOic/mqdefault.jpg" alt="OpenAI Swarm 멀티에이전트 프레임워크 실습" loading="lazy" width="160" height="90"><span>OpenAI Swarm 멀티에이전트 프레임워크 실습</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#swarm">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>GPT-5.5</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>OpenAI가 2026년 4월 공개한 플래그십 모델로, 복잡하고 여러 단계로 얽힌 실제 업무를 스스로 계획하고 도구를 쓰며 자기 결과를 검증해 끝까지 처리하도록 만들어졌다.</p><h4>무엇인가</h4><p>GPT-5.5는 OpenAI가 GPT-5.4의 뒤를 이어 내놓은 차세대 플래그십 모델이다. 이전 모델들이 '질문하면 답하는' 도우미에 가까웠다면, GPT-5.5는 지저분하고 여러 갈래로 나뉜 작업을 통째로 던져줘도 알아서 계획을 세우고, 도구를 써가며 일을 진행하고, 중간에 자기가 한 걸 다시 확인하면서 끝까지 밀고 나가는 데 초점을 맞췄다. OpenAI는 이를 '실제 업무(real work)와 에이전트를 위한 새로운 단계의 지능'이라고 설명한다.</p><p>덩치가 커지면 보통 느려지기 마련인데, GPT-5.5는 토큰당 응답 속도를 GPT-5.4와 비슷하게 유지하면서도 전반적인 작업 수준을 끌어올렸다는 점을 내세운다. 1M 토큰이 넘는 긴 컨텍스트(입력 약 922K, 출력 128K)를 다루고, 텍스트와 이미지를 함께 입력으로 받아 대규모 추론·코딩·멀티모달 작업을 한 모델 안에서 처리한다.</p><h4>개발자가 어떻게 쓰나</h4><p>API에서 <code>gpt-5.5</code> 모델을 호출해 쓴다. 가장 많이 쓰이는 곳은 코딩 에이전트다. OpenAI의 <code>Codex</code> 환경에서 GPT-5.5는 문서·스프레드시트·슬라이드 같은 작업에서 이전 GPT-5.4보다 더 좋은 결과를 내며, 마치 사람 옆에서 컴퓨터를 직접 만지는 동료처럼 화면을 인식하고 클릭·입력을 수행하는 수준에 가까워졌다. Lovable 같은 빌더 도구는 복잡한 앱을 만들 때 GPT-5.5가 더 나은 계획을 세워준다는 점을 활용하고, Abridge 같은 의료 서비스는 진료 노트를 정리하고 임상 판단을 보조하는 데 쓴다.</p><p>한 번의 호출로 끝나는 단순 질의보다는, 여러 도구를 번갈아 호출하며 오래 이어지는 작업에 강점이 있다. 예를 들어 '이 레포의 버그를 찾아 고치고 테스트까지 통과시켜라' 같은 모호하고 긴 지시를 주면, 스스로 어디부터 볼지 정하고 파일을 읽고 수정한 뒤 결과를 검증하는 과정을 반복한다. 더 높은 정확도가 필요한 작업을 위해 Responses API에는 <code>gpt-5.5-pro</code>가, 빠른 대화용으로는 <code>GPT-5.5 Instant</code>가 따로 제공된다.</p><h4>주의할 점</h4><p>성능이 올라간 만큼 사이버 보안 같은 민감한 능력도 강해져, OpenAI는 이 모델에 별도의 안전장치를 두고 검증된 사용자에게만 일부 기능을 개방한다. 또한 가장 강력한 <code>gpt-5.5-pro</code>는 비용이 높아, 단순 작업까지 최상위 모델을 쓰는 게 합리적인지는 따져봐야 한다는 지적도 있다. 능력의 도약보다는 '효율과 신뢰성을 다듬은 모델'에 가깝다는 평가도 함께 나온다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#GPT</span><span>#프론티어 모델</span><span>#에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gpt.html">GPT</a>, <a href="https://aiwiki.work/k/codex.html">코덱스</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/computer-use.html">컴퓨터 사용</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/gpt-5-6.html">GPT-5.6</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/introducing-gpt-5-5" target="_blank" rel="nofollow noopener">Introducing GPT-5.5</a> <span class="ref-type">공식</span></li><li><a href="https://community.openai.com/t/gpt-5-5-is-here-available-in-the-api-codex-and-chatgpt-today/1379630" target="_blank" rel="nofollow noopener">GPT-5.5 is here! Available in the API, Codex and ChatGPT today</a> <span class="ref-type">공식</span></li><li><a href="https://openrouter.ai/openai/gpt-5.5" target="_blank" rel="nofollow noopener">GPT-5.5 - API Pricing &amp; Benchmarks - OpenRouter</a> <span class="ref-type">블로그</span></li><li><a href="https://openai.com/index/gpt-5-5-instant" target="_blank" rel="nofollow noopener">GPT-5.5 Instant: smarter, clearer, and more personalized</a> <span class="ref-type">공식</span></li><li><a href="https://www.hankookilbo.com/news/article/A2026042401520001105" target="_blank" rel="nofollow noopener">챗GPT, 덜 시켜도 더 한다…오픈AI, GPT-5.5 공개 '스스로 판단하는 AI'</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=blGtYq9mL18" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/blGtYq9mL18/mqdefault.jpg" alt="Introducing GPT-5.5" loading="lazy" width="160" height="90"><span>Introducing GPT-5.5</span></a><a class="video-item" href="https://www.youtube.com/watch?v=tNV9_I-zLO0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/tNV9_I-zLO0/mqdefault.jpg" alt="OpenAI just dropped GPT-5.5... (WOAH)" loading="lazy" width="160" height="90"><span>OpenAI just dropped GPT-5.5... (WOAH)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=liL-iUamzl8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/liL-iUamzl8/mqdefault.jpg" alt="Claude Mythos보다 좋다... OpenAI 다시 황제로 귀환 | GPT5.5 출시부터 기업 AX 순식간에 해결" loading="lazy" width="160" height="90"><span>Claude Mythos보다 좋다... OpenAI 다시 황제로 귀환 | GPT5.5 출시부터 기업 AX 순식간에 해결</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#gpt-5-5">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

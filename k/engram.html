@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>엔그램</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>뇌의 기억 흔적(engram) 개념에서 착안해, 지식을 컨텍스트 창이나 RAG에 의존하지 않고 모델 가중치에 직접 학습시켜 내면화하는 AI 메모리 패러다임이다.</p><h4>개념 설명</h4><p>엔그램은 원래 뇌과학 용어다. 특정 경험을 한 뒤 뇌세포에 남는 물리적 흔적으로, 나중에 같은 맥락이 오면 그 세포들이 다시 활성화되며 기억이 떠오른다. AI 분야에서는 이 개념을 모델이 지식을 가중치에 직접 새겨 넣는 방식, 즉 <strong>지속 학습(continual learning)</strong>의 은유로 가져왔다.</p><p>기존 방식에서 AI가 새 정보를 쓰는 방법은 두 가지였다. 컨텍스트 창에 정보를 담아 매번 불러오거나(Context Stuffing), RAG로 외부 데이터베이스를 실시간 검색하는 것이다. 엔그램 방식은 이와 다르다. 지식을 검색해 오는 대신, 모델이 그 지식을 처음부터 알고 있게 학습시키는 것이다. 신입사원이 입사 후 몇 년을 일하며 회사 내부 사정을 몸에 익히는 것과 같다.</p><h4>사용 예시</h4><p>AI 스타트업 Engram은 이 개념을 제품화했다. Microsoft, Notion, Harvey와 협력해 기업의 내부 문서와 코드베이스를 어댑터 기반 학습으로 모델 가중치에 직접 새긴다. RAG 방식보다 최대 100배 적은 토큰을 쓰면서도 프론티어 모델 수준의 응답 품질을 유지한다. "어제 업데이트된 내부 규정이 뭐야?"라는 질문에 벡터 검색 없이 즉시 답하는 것이다.</p><p>에이전트 메모리 도구로는 <strong>engram.so</strong>가 있다. Claude와 ChatGPT에 걸쳐 하나의 공유 메모리를 유지하는 레이어로, 한 플랫폼에서 저장한 선호도나 컨텍스트를 다른 플랫폼에서 그대로 불러올 수 있다. 오픈소스 CLI 도구(<code>github.com/Gentleman-Programming/engram</code>)도 있어 MCP 서버 형태로 Claude Code, Cursor 같은 에이전트에 영구 메모리를 연결할 수 있다.</p><h4>DeepSeek Engram 아키텍처</h4><p>2026년 초 DeepSeek이 공개한 Engram 논문은 LLM 레이어 사이에 에이전틱 추론을 삽입하는 구조를 제안했다. 여러 판단 모듈이 증거를 교차 검증하며 추론하는 방식이어서 "Evidence-Based Learning Engine"이라는 이름이 붙었다. 기존 트랜스포머의 순차적 레이어 처리에서 벗어나 추론과 학습이 동시에 개입할 수 있다는 점에서 주목받았다.</p><h4>주의할 점</h4><p>가중치에 지식을 직접 학습할 때 가장 큰 위험은 <strong>치명적 망각(catastrophic forgetting)</strong>이다. 새 지식을 학습하면서 기존 지식이 손상되는 현상이다. 어댑터 구조나 학습률 조절로 완화할 수 있지만, 도메인 특화 학습과 범용 능력의 균형은 여전히 활발히 연구 중인 과제다.</p></div>
   <div class="tags"><span>#메모리</span><span>#지속 학습</span><span>#에이전트 메모리</span><span>#DeepSeek</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/continual-learning.html">지속 학습</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://engram.so" target="_blank" rel="nofollow noopener">Engram — Persistent Memory for AI Agents</a> <span class="ref-type">공식</span></li><li><a href="https://www.calcalistech.com/ctechnews/article/skoqbrumze" target="_blank" rel="nofollow noopener">AI startup Engram raises $98 million at $600 million valuation with just 13 employees</a> <span class="ref-type">블로그</span></li><li><a href="https://github.com/Gentleman-Programming/engram" target="_blank" rel="nofollow noopener">Gentleman-Programming/engram: Persistent memory for AI agents (GitHub)</a> <span class="ref-type">공식</span></li><li><a href="https://d2jud02ci9yv69.cloudfront.net/2025-04-28-engram-172/blog/engram" target="_blank" rel="nofollow noopener">In Search of the Engram in LLMs: A Neuroscience Perspective on Memory Functions in AI Models</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=xUlX6jvwVfM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xUlX6jvwVfM/mqdefault.jpg" alt="DeepSeek's Insane Architecture Breakthrough [Engram Explained]" loading="lazy" width="160" height="90"><span>DeepSeek's Insane Architecture Breakthrough [Engram Explained]</span></a><a class="video-item" href="https://www.youtube.com/watch?v=iDkePlVasEk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iDkePlVasEk/mqdefault.jpg" alt="DeepSeek Just Made LLMs Way More Powerful: Introducing ENGRAM" loading="lazy" width="160" height="90"><span>DeepSeek Just Made LLMs Way More Powerful: Introducing ENGRAM</span></a><a class="video-item" href="https://www.youtube.com/watch?v=aiR7F4jqjXY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/aiR7F4jqjXY/mqdefault.jpg" alt="Memory and Continual Learning: Engram's Dan Biderman and Jessy Lin" loading="lazy" width="160" height="90"><span>Memory and Continual Learning: Engram's Dan Biderman and Jessy Lin</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#engram">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-06</div>
 </div>

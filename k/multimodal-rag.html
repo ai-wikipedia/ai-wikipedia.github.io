@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>멀티모달 RAG</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>텍스트뿐 아니라 이미지, 표, 차트를 포함한 문서에서 검색하고 답변하는 RAG 확장. PDF나 프레젠테이션처럼 시각적 요소가 섞인 비즈니스 문서 처리에 필수다.</p><h4>개념 설명</h4><p>기업 문서의 상당 부분은 텍스트만이 아니다. 연간 보고서의 재무 차트, 기술 문서의 다이어그램, 발표 자료의 이미지에 중요한 정보가 있다. 일반 RAG는 이 시각적 정보를 무시한다. 멀티모달 RAG는 문서의 이미지·차트를 VLM으로 분석해 의미 있는 텍스트 설명으로 변환하거나, CLIP 같은 멀티모달 임베딩으로 직접 이미지를 벡터로 저장해 검색한다.</p><p><strong>ColPali</strong>는 문서 페이지 자체를 이미지로 임베딩해 레이아웃과 시각 정보를 보존하는 새로운 접근으로 2024년 주목받았다.</p><h4>사용 예시</h4><p>기술 매뉴얼 PDF에서 다이어그램을 GPT-4o로 설명문으로 변환하고 텍스트 청크와 함께 인덱싱하면, "배선도에서 A 모듈과 B 모듈의 연결 방식은?"에도 답할 수 있다. Unstructured.io나 LlamaParse가 PDF에서 표·이미지·텍스트를 분리하는 파이프라인을 제공한다.</p></div>
   <div class="tags"><span>#이미지검색</span><span>#멀티모달</span><span>#문서이해</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/vision-language-model.html">비전-언어 모델</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://huggingface.co/learn/cookbook/multimodal_rag_using_document_retrieval_and_vlms" target="_blank" rel="nofollow noopener">Multimodal Retrieval-Augmented Generation (RAG) with Document Retrieval (ColPali) and Vision Language Models (VLMs) · Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://codelabs.developers.google.com/multimodal-rag-gemini?hl=ko" target="_blank" rel="nofollow noopener">Gemini Pro를 사용해 멀티모달 RAG를 기반으로 한 Q&amp;A 앱 빌드하기</a> <span class="ref-type">공식</span></li><li><a href="https://kanerika.com/blogs/multimodal-rag/" target="_blank" rel="nofollow noopener">Multimodal RAG: What It Is &amp; How It Works in 2026</a> <span class="ref-type">블로그</span></li><li><a href="https://www.elastic.co/search-labs/blog/building-multimodal-rag-system" target="_blank" rel="nofollow noopener">Multimodal RAG: Building a multimodal RAG system with Elastic - Elasticsearch Labs</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=NaT5Eo97_I0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NaT5Eo97_I0/mqdefault.jpg" alt="Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM, and Milvus" loading="lazy" width="160" height="90"><span>Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM, and Milvus</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Uh9bYiVrW_s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Uh9bYiVrW_s/mqdefault.jpg" alt="Rerankers and Two-Stage Retrieval (Pinecone)" loading="lazy" width="160" height="90"><span>Rerankers and Two-Stage Retrieval (Pinecone)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hh2Bx6DYgpw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hh2Bx6DYgpw/mqdefault.jpg" alt="멀티모달 RAG - 테디노트" loading="lazy" width="160" height="90"><span>멀티모달 RAG - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#multimodal-rag">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

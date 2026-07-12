@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>미모 v2.5</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>샤오미가 만든 오픈소스 거대 언어 모델 시리즈로, 1조 파라미터 규모의 MoE 모델을 1M 토큰 컨텍스트로 돌린다. UltraSpeed 버전은 표준 GPU 한 노드만으로 초당 1,000 토큰 생성 속도를 처음으로 돌파해 화제가 됐다.</p><h4>개념 설명</h4><p>MiMo v2.5는 샤오미가 공개한 오픈소스 거대 언어 모델 시리즈다. 핵심 모델인 <strong>MiMo-V2.5-Pro</strong>는 총 1.02조 개의 파라미터를 가지지만 토큰 하나를 처리할 때 그중 42B만 켜지는 MoE(전문가 혼합) 구조라, 거대한 모델을 비교적 적은 연산으로 굴린다. 컨텍스트 길이가 최대 1M 토큰이라 수천 번의 도구 호출이 필요한 긴 작업이나 큰 코드베이스를 통째로 넣는 용도에 맞춰 설계됐다.</p><p>최근 화제가 된 건 속도를 극단까지 끌어올린 <strong>UltraSpeed</strong> 버전이다. 추론 시스템 전문 팀인 TileRT와 협업해, 1조 파라미터급 모델에서 처음으로 <strong>초당 1,000 토큰</strong> 생성 속도를 돌파했다. 핵심은 방식이다 — 세레브라스처럼 웨이퍼 한 장을 통째로 쓰는 특수 하드웨어가 아니라, 어디서나 구할 수 있는 표준 8-GPU 노드 한 대만으로 이 속도를 냈다. 모델이 이만큼 빨라지면 기다려야 하는 도구가 아니라 생각의 속도에 맞춰 실시간으로 반응하는 동료에 가까워진다.</p><h4>사용 예시</h4><p>개발자는 샤오미 MiMo API나 OpenRouter 같은 게이트웨이로 호출하고, OpenCode·Claude Code 같은 에이전트 도구에 모델로 연결해 쓴다. 1M 컨텍스트 덕분에 대형 저장소를 통째로 올려놓고 자율 코딩을 시키는 식의 활용이 많다 — 실제로 한 사용자는 이 모델로 301번의 커밋과 60여 페이지 분량을 자율 작성하게 했다. ClawEval·GDPVal·SWE-bench Pro 같은 에이전트·소프트웨어 엔지니어링 벤치마크에서 상위권을 차지한다.</p><h4>심화 내용</h4><p>언어 백본은 MiMo-V2-Flash 구조를 물려받아, 가벼운 <code>슬라이딩 윈도우 어텐션</code>과 무거운 글로벌 어텐션을 6:1로 번갈아 끼우는 하이브리드 어텐션을 쓴다. 384개 전문가 중 토큰당 8개를 고르고, 3-layer MTP(Multi-Token Prediction) 헤드로 추측적 디코딩을 가능하게 해 속도를 끌어올린다. 가중치는 처음부터 FP8로 만들어져 메모리와 연산을 아낀다. UltraSpeed의 1,000 TPS는 단일 기법이 아니라 모델 팀과 시스템 팀이 함께 설계(codesign)한 결과물이다.</p><h4>주의할 점</h4><p>UltraSpeed는 고속 추론 자원이 제한적이라 신청 기반의 한정 기간(6월 8~23일)으로만 열렸고, 가격도 일반 MiMo-V2.5-Pro의 3배다(대신 약 10배 빠름). 일반 API의 기본 출력 속도는 초당 50토큰 안팎으로 평범한 편이며, 벤치마크에서 토큰을 많이 쓰는(verbose) 경향이 있어 그만큼 출력 비용이 늘 수 있다.</p></div>
   <div class="tags"><span>#샤오미</span><span>#MoE</span><span>#1000 TPS</span><span>#오픈소스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/mimo.html">미모</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/speculative-decoding.html">추측적 디코딩</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps" target="_blank" rel="nofollow noopener">MiMo-V2.5-Pro-UltraSpeed: Pushing 1T-Parameter Model Generation Speed to 1000 TPS</a> <span class="ref-type">블로그</span></li><li><a href="https://recipes.vllm.ai/XiaomiMiMo/MiMo-V2.5-Pro" target="_blank" rel="nofollow noopener">XiaomiMiMo/MiMo-V2.5-Pro - vLLM Recipes</a> <span class="ref-type">공식</span></li><li><a href="https://openrouter.ai/xiaomi/mimo-v2.5-pro" target="_blank" rel="nofollow noopener">Xiaomi: MiMo-V2.5-Pro - API Pricing &amp; Benchmarks</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/XiaomiMiMo/MiMo-V2.5" target="_blank" rel="nofollow noopener">XiaomiMiMo/MiMo-V2.5 - Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://artificialanalysis.ai/models/mimo-v2-5-pro" target="_blank" rel="nofollow noopener">MiMo-V2.5-Pro - Intelligence, Performance &amp; Price Analysis</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=jOGfQV9mcTs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jOGfQV9mcTs/mqdefault.jpg" alt="Xiaomi Just Made A Trillion-Parameter AI Model Running at 1000 TPS" loading="lazy" width="160" height="90"><span>Xiaomi Just Made A Trillion-Parameter AI Model Running at 1000 TPS</span></a><a class="video-item" href="https://www.youtube.com/watch?v=5JhSI_GTdi0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5JhSI_GTdi0/mqdefault.jpg" alt="Xiaomi MiMo V2.5 Pro Full Test – Is THIS The BEST Open Source Model?" loading="lazy" width="160" height="90"><span>Xiaomi MiMo V2.5 Pro Full Test – Is THIS The BEST Open Source Model?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=popj1l3LA-I" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/popj1l3LA-I/mqdefault.jpg" alt="Xiaomi MiMo V2.5 Pro IS INSANE! New Opensource Frontier AI Model Beats Deepseek v4!" loading="lazy" width="160" height="90"><span>Xiaomi MiMo V2.5 Pro IS INSANE! New Opensource Frontier AI Model Beats Deepseek v4!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#mimo-v2-5">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

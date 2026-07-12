@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>LiteLLM</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>100개 이상의 LLM을 단일 OpenAI 호환 인터페이스로 호출할 수 있는 오픈소스 라이브러리.</p><h4>개념 설명</h4><p>Claude, GPT, Gemini, Llama, Mistral 등 LLM마다 API 형식이 다르다. <strong>LiteLLM</strong>은 이 모든 모델을 OpenAI SDK 형식으로 통일해서, 모델 이름만 바꾸면 어떤 모델이든 호출할 수 있게 한다. 라이브러리로 코드에 직접 임베드하거나, 프록시 서버로 띄워서 팀 전체가 공유하는 게이트웨이로 쓸 수도 있다.</p><h4>사용 예시</h4><p><code>from litellm import completion</code>을 임포트하면 <code>completion(model="claude-opus-4-5", messages=[...])</code>와 <code>completion(model="gpt-4o", messages=[...])</code>가 같은 코드 구조로 작동한다. A/B 테스트나 비용 최적화를 위해 모델을 자주 바꿔야 하는 프로젝트에 특히 유용하다.</p></div>
   <div class="tags"><span>#통합</span><span>#오픈소스</span><span>#프록시</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm-gateway.html">LLM 게이트웨이</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/routing-pattern.html">라우팅 패턴</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/ai-supply-chain-attack.html">AI 공급망 공격</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.litellm.ai/" target="_blank" rel="nofollow noopener">LiteLLM Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/BerriAI/litellm" target="_blank" rel="nofollow noopener">LiteLLM GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://docs.litellm.ai/docs/providers" target="_blank" rel="nofollow noopener">LiteLLM Providers - 100+ LLM Support</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Rd82RTqb9Ik" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Rd82RTqb9Ik/mqdefault.jpg" alt="LiteLLM: Call 100+ LLMs with One API" loading="lazy" width="160" height="90"><span>LiteLLM: Call 100+ LLMs with One API</span></a><a class="video-item" href="https://www.youtube.com/watch?v=fRg9GBH3VNk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/fRg9GBH3VNk/mqdefault.jpg" alt="LiteLLM Proxy Server Setup Tutorial" loading="lazy" width="160" height="90"><span>LiteLLM Proxy Server Setup Tutorial</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hj5AQ3Nb2cM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hj5AQ3Nb2cM/mqdefault.jpg" alt="LiteLLM으로 LLM 통합 게이트웨이 구축하기" loading="lazy" width="160" height="90"><span>LiteLLM으로 LLM 통합 게이트웨이 구축하기</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#litellm">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

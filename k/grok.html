@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>그록</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>일론 머스크의 xAI가 만든 대규모 언어 모델이자 AI 챗봇. X(옛 트위터)와 웹을 실시간으로 검색해 지금 일어나는 일까지 답해주는 게 특징이다.</p><h4>Grok이 뭔가</h4><p>대부분의 챗봇은 학습이 끝난 시점까지의 데이터만 알고 있어서 "오늘 무슨 일이 있었어?" 같은 질문에 약하다. <strong>Grok</strong>은 일론 머스크가 세운 <strong>xAI</strong>가 만든 LLM 기반 챗봇으로, 이 한계를 정면으로 공략한다. 답변을 만들 때 X(옛 트위터)와 웹을 그 자리에서 검색하기 때문에, 작년 학습 데이터가 아니라 방금 올라온 게시물까지 반영해서 대답한다. xAI는 Grok을 "진실을 추구하는(truth-seeking)" AI로 내세우며 2023년 11월 처음 공개했다.</p><p>모델 자체도 빠르게 세대를 갈아치웠다. 초기 <code>Grok-1</code>은 3,140억 파라미터의 <strong>MoE(전문가 혼합)</strong> 구조로 가중치가 오픈 릴리스되기도 했고, 이후 Grok 3, Grok 4를 거쳐 추론에 특화된 버전과 빠른 경량 버전으로 갈라졌다. 단순 채팅을 넘어 이미지·영상 생성(Grok Imagine), 음성 대화, 코딩까지 한 자리에서 다루는 멀티모달 도구로 확장됐다.</p><h4>실제로 어떻게 쓰나</h4><p>개발자 입장에서는 OpenAI와 거의 똑같은 방식으로 API를 호출할 수 있다. <code>baseURL</code>을 <code>https://api.x.ai/v1</code>로 바꾸고 채팅 completions를 쏘면, 기존 OpenAI SDK 코드를 거의 그대로 재사용해 Grok 모델을 붙일 수 있다. 답변 품질이 실시간성에 좌우되는 서비스 — 예를 들어 뉴스 요약이나 "지금 화제인 글"을 정리하는 봇 — 에서는 Grok의 라이브 X 검색이 직접적인 이점이 된다.</p><p>최근에는 코딩 에이전트 쪽으로도 확장 중이다. <code>Grok Build</code>(grok CLI)는 터미널에서 여러 하위 에이전트를 병렬로 띄워 코드베이스를 탐색하고 수정하는 식으로 동작해, Claude Code나 Codex 같은 에이전트형 코딩 도구와 같은 결을 노린다. 일반 사용자에게는 Tesla 차량이나 X 앱 안에 통합된 형태로도 노출돼 있다.</p><h4>주의할 점</h4><p>실시간 X 데이터를 끌어오는 구조와 "덜 검열된" 톤을 표방하는 성격 때문에, 출처가 검증되지 않은 게시물을 그대로 반영하거나 편향·부정확한 답을 낼 위험이 다른 모델보다 두드러질 수 있다. 사실 확인이 중요한 용도라면 Grok의 답변도 별도로 교차검증하는 게 안전하다.</p></div>
   <div class="tags"><span>#xAI</span><span>#일론 머스크</span><span>#실시간 검색</span><span>#LLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/gemini.html">제미나이</a>, <a href="https://aiwiki.work/k/llama.html">라마</a>, <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/ai-search.html">AI 검색</a>, <a href="https://aiwiki.work/k/grok-4-5.html">그록 4.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://x.ai/grok" target="_blank" rel="nofollow noopener">Grok — Truth-seeking AI Chatbot with Voice &amp; Image Generation</a> <span class="ref-type">공식</span></li><li><a href="https://en.wikipedia.org/wiki/Grok_(chatbot)" target="_blank" rel="nofollow noopener">Grok (chatbot) - Wikipedia</a> <span class="ref-type">블로그</span></li><li><a href="https://github.com/xai-org/grok-1" target="_blank" rel="nofollow noopener">xai-org/grok-1: Grok open release - GitHub</a> <span class="ref-type">공식</span></li><li><a href="https://docs.x.ai/developers/models" target="_blank" rel="nofollow noopener">Models - xAI Docs</a> <span class="ref-type">공식</span></li><li><a href="https://x.ai" target="_blank" rel="nofollow noopener">xAI</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=81rm_VC987M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/81rm_VC987M/mqdefault.jpg" alt="How to Use Grok For Beginners!" loading="lazy" width="160" height="90"><span>How to Use Grok For Beginners!</span></a><a class="video-item" href="https://www.youtube.com/watch?v=H1cJc1xek1s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/H1cJc1xek1s/mqdefault.jpg" alt="Elon Musk's New &quot;GROK 4&quot; AI System is a Massive Wake-Up Call..." loading="lazy" width="160" height="90"><span>Elon Musk's New &quot;GROK 4&quot; AI System is a Massive Wake-Up Call...</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Jal6r7N8wH4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Jal6r7N8wH4/mqdefault.jpg" alt="구글, OpenAI와는 다르다... xAI Grok, 초간단 실시간 시스템 만든다 | 기업 정보 정확도까지 1등 | RAG API" loading="lazy" width="160" height="90"><span>구글, OpenAI와는 다르다... xAI Grok, 초간단 실시간 시스템 만든다 | 기업 정보 정확도까지 1등 | RAG API</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#grok">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

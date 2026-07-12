@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>하이브리드 검색</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>키워드 기반 검색(BM25)과 의미 기반 벡터 검색을 결합해 두 방식의 장점을 모두 취하는 검색 기법. RAG의 검색 품질을 높이는 가장 실용적인 방법이다.</p><h4>개념 설명</h4><p>벡터 검색은 의미가 비슷한 문서를 잘 찾지만, "GPT-4o-2024-11-20"처럼 정확한 키워드나 고유명사를 찾는 데 약하다. BM25 같은 키워드 검색은 정확한 단어 매칭에 강하지만 의미 유사성을 모른다. 하이브리드 검색은 두 방식으로 각각 검색한 결과를 <strong>RRF(Reciprocal Rank Fusion)</strong>로 합쳐 두 방식의 장단점을 보완한다.</p><p>Elasticsearch, Weaviate, Pinecone, Qdrant 등 주요 벡터 DB가 하이브리드 검색을 기본 기능으로 제공한다.</p><h4>사용 예시</h4><p>코드 문서나 API 레퍼런스처럼 정확한 키워드가 중요한 도메인에서 순수 벡터 검색 대비 하이브리드 검색이 훨씬 좋은 결과를 보인다. LangChain의 <code>EnsembleRetriever</code>로 BM25Retriever와 벡터 리트리버를 합칠 수 있다. alpha 값(0~1)으로 두 방식의 가중치를 조절한다.</p></div>
   <div class="tags"><span>#키워드검색</span><span>#의미검색</span><span>#BM25</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/reranking.html">리랭킹</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.weaviate.io/weaviate/search/hybrid" target="_blank" rel="nofollow noopener">Hybrid Search — Weaviate Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cloud.google.com/vertex-ai/docs/vector-search/about-hybrid-search" target="_blank" rel="nofollow noopener">About Hybrid Search — Google Cloud Vertex AI Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Uh9bYiVrW_s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Uh9bYiVrW_s/mqdefault.jpg" alt="Rerankers and Two-Stage Retrieval (Pinecone)" loading="lazy" width="160" height="90"><span>Rerankers and Two-Stage Retrieval (Pinecone)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=NaT5Eo97_I0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NaT5Eo97_I0/mqdefault.jpg" alt="Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM, and Milvus" loading="lazy" width="160" height="90"><span>Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM, and Milvus</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k2Mf6hacjqw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k2Mf6hacjqw/mqdefault.jpg" alt="하이브리드 검색 RAG - 테디노트" loading="lazy" width="160" height="90"><span>하이브리드 검색 RAG - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#hybrid-search">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

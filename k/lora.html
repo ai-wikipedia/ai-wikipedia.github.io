@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>LoRA</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 전체를 재학습하는 대신 적은 수의 파라미터만 학습해 특정 작업에 맞게 조정하는 파인튜닝 기법. 소비자급 GPU에서도 대형 모델을 파인튜닝할 수 있게 해줬다.</p><h4>개념 설명</h4><p>70억 파라미터 모델의 가중치를 모두 업데이트하려면 엄청난 GPU 메모리가 필요하다. <strong>LoRA</strong>는 각 가중치 행렬에 크기가 훨씬 작은 두 개의 행렬(A, B)을 붙여서 그 두 행렬만 학습한다. 전체 파라미터의 0.1~1%만 학습해도 전체 파인튜닝에 버금가는 성능이 나온다.</p><h4>사용 예시</h4><p>소비자급 GPU(RTX 4090)에서 Llama-3 70B를 LoRA로 파인튜닝하거나, Stable Diffusion에 특정 화풍을 학습시킬 때 쓴다. 학습된 LoRA 어댑터는 수십 MB에 불과해서 공유하고 교체하기도 쉽다. Hugging Face의 PEFT 라이브러리가 표준 구현이다.</p></div>
   <div class="tags"><span>#파인튜닝</span><span>#경량화</span><span>#어댑터</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.work/k/sft.html">SFT</a>, <a href="https://aiwiki.work/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/flux.html">FLUX</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="nofollow noopener">LoRA: Low-Rank Adaptation of Large Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/microsoft/LoRA" target="_blank" rel="nofollow noopener">Microsoft LoRA — Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/docs/peft/en/package_reference/lora" target="_blank" rel="nofollow noopener">Hugging Face PEFT — LoRA Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=PXWYUTMt-AU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PXWYUTMt-AU/mqdefault.jpg" alt="LoRA: Low-Rank Adaptation Explained (Umar Jamil)" loading="lazy" width="160" height="90"><span>LoRA: Low-Rank Adaptation Explained (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=90mGPxR2GgY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/90mGPxR2GgY/mqdefault.jpg" alt="BERT: Training, Inference, Fine tuning (Umar Jamil)" loading="lazy" width="160" height="90"><span>BERT: Training, Inference, Fine tuning (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=qlxrXX5uBoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qlxrXX5uBoU/mqdefault.jpg" alt="자연어 언어모델 BERT" loading="lazy" width="160" height="90"><span>자연어 언어모델 BERT</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#lora">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

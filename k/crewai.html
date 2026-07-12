@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>크루AI</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>역할(Role), 목표(Goal), 배경(Backstory)을 가진 에이전트들이 팀을 이뤄 작업하는 멀티에이전트 프레임워크.</p><h4>개념 설명</h4><p><strong>CrewAI</strong>는 마치 실제 팀처럼 에이전트를 구성하는 프레임워크다. "시니어 리서처", "콘텐츠 작가", "품질 검토자"처럼 각 에이전트에게 구체적인 역할과 목표를 부여하면, 에이전트들이 자연스럽게 협력하며 최종 결과물을 만든다. LangGraph가 명시적 그래프 설계에 초점을 맞춘다면, CrewAI는 역할 기반의 협업 설계에 초점을 맞춘다.</p><h4>사용 예시</h4><p>블로그 포스트 자동 생성을 위해 리서처, 작가, 편집자 세 에이전트로 Crew를 구성하면, 리서처가 최신 자료를 수집하고, 작가가 초안을 쓰고, 편집자가 검토하는 파이프라인이 완성된다. <code>@agent</code>, <code>@task</code> 데코레이터로 각 에이전트와 태스크를 선언하고 <code>Crew</code>로 묶으면 실행된다.</p></div>
   <div class="tags"><span>#역할분담</span><span>#팀워크</span><span>#프레임워크</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/open-multi-agent.html">오픈 멀티 에이전트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.crewai.com/en/introduction" target="_blank" rel="nofollow noopener">CrewAI Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/crewaiinc/crewai" target="_blank" rel="nofollow noopener">CrewAI GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank" rel="nofollow noopener">Multi AI Agent Systems with crewAI - DeepLearning.AI</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=sPzc6hMg7So" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sPzc6hMg7So/mqdefault.jpg" alt="CrewAI Crash Course: Multi-Agent AI Systems" loading="lazy" width="160" height="90"><span>CrewAI Crash Course: Multi-Agent AI Systems</span></a><a class="video-item" href="https://www.youtube.com/watch?v=tnejrr-0a94" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/tnejrr-0a94/mqdefault.jpg" alt="Multi AI Agent Systems with CrewAI" loading="lazy" width="160" height="90"><span>Multi AI Agent Systems with CrewAI</span></a><a class="video-item" href="https://www.youtube.com/watch?v=VBU3Jt4QJWI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VBU3Jt4QJWI/mqdefault.jpg" alt="CrewAI 멀티에이전트 시스템 구축 실습" loading="lazy" width="160" height="90"><span>CrewAI 멀티에이전트 시스템 구축 실습</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#crewai">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

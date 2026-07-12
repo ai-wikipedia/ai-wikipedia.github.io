@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>트리 오브 쏘트</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM이 여러 가능한 추론 경로를 동시에 탐색하고 가장 유망한 것을 선택하며 문제를 푸는 방법.</p><h4>개념 설명</h4><p>Chain-of-Thought는 한 줄기 생각을 순서대로 이어가는 방식이다. <strong>Tree of Thought(ToT)</strong>는 체스 플레이어처럼 "이 방향으로 가면 어떻게 될까, 저 방향은?"처럼 여러 가능성을 동시에 탐색하고, 각 경로를 평가해 가장 유망한 방향을 선택하며 나아간다. 수학 퍼즐, 전략 게임, 복잡한 계획 수립처럼 탐색이 필요한 문제에 Chain-of-Thought보다 효과적이다.</p><h4>사용 예시</h4><p>복잡한 설계 결정을 내릴 때 ToT를 쓰면, LLM이 "방법 A: 장점은 ~, 단점은 ~" "방법 B: 장점은 ~, 단점은 ~"처럼 여러 대안을 전개하고 가장 좋은 것을 선택하는 과정을 밟는다. 프롬프트에 "3가지 다른 접근법을 먼저 탐색하고, 각각 장단점을 평가한 뒤 최선을 선택하라"고 명시하면 된다.</p></div>
   <div class="tags"><span>#추론</span><span>#탐색</span><span>#복잡문제</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.prompthub.us/blog/how-tree-of-thoughts-prompting-works" target="_blank" rel="nofollow noopener">How Tree of Thoughts Prompting Works - PromptHub</a> <span class="ref-type">블로그</span></li><li><a href="https://cobusgreyling.medium.com/tree-of-thoughts-prompting-tot-08555b04123e" target="_blank" rel="nofollow noopener">Tree Of Thoughts Prompting (ToT) - Cobus Greyling - Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.kakaocloud.com/87" target="_blank" rel="nofollow noopener">&lt;지식 사전&gt; 프롬프트 엔지니어링이란 ③ - 고급 기법 (CoT, ToT, ReAct)</a> <span class="ref-type">블로그</span></li><li><a href="https://m.blog.naver.com/simula/224071471997" target="_blank" rel="nofollow noopener">Tree of Thoughts 추론 프레임워크 - 네이버 블로그</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#tree-of-thought">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

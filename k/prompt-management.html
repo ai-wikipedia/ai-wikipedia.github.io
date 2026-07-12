@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>프롬프트 관리</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>프롬프트를 코드처럼 버전 관리하고, 팀이 협업하며, 성능 변화를 추적하는 체계적인 접근 방식.</p><h4>개념 설명</h4><p>초기에는 코드 안에 하드코딩된 프롬프트로 충분하다. 하지만 프로덕션에서 프롬프트를 자주 수정해야 하면, 어떤 버전이 가장 잘 작동했는지, 누가 언제 바꿨는지 추적하기 어렵다. <strong>프롬프트 관리</strong>는 프롬프트를 코드 배포 없이 업데이트하고, 버전별 성능을 비교하고, 팀이 함께 리뷰할 수 있는 워크플로우를 만드는 것이다.</p><h4>사용 예시</h4><p>LangSmith나 Langfuse의 프롬프트 허브에 프롬프트를 등록해두면, 코드에서는 <code>client.pull_prompt("my-prompt")</code>로 최신 버전을 동적으로 로드할 수 있다. 프롬프트를 수정해도 코드 배포 없이 즉시 반영되고, 이전 버전으로 롤백도 쉽다.</p></div>
   <div class="tags"><span>#버전관리</span><span>#협업</span><span>#운영</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/langsmith.html">랭스미스</a>, <a href="https://aiwiki.work/k/langfuse.html">랭퓨즈</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aws.amazon.com/bedrock/prompt-management/" target="_blank" rel="nofollow noopener">prompt-management</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-reference/prompt-classes?hl=ko" target="_blank" rel="nofollow noopener">프롬프트 관리 | Generative AI on Vertex AI</a> <span class="ref-type">공식</span></li><li><a href="https://cloud.google.com/discover/what-is-prompt-engineering?hl=ko" target="_blank" rel="nofollow noopener">AI를 위한 프롬프트 엔지니어링 가이드 - Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://humanloop.com/blog/prompt-management" target="_blank" rel="nofollow noopener">What is Prompt Management?</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#prompt-management">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

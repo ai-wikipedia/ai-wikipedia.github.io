@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>소라</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>OpenAI가 만든 영상 생성 모델로, 글이나 이미지로 설명만 하면 그 장면을 짧은 동영상으로 만들어준다.</p><h4>누가 만들었고 어떤 모델인가</h4><p><strong>Sora</strong>는 OpenAI가 만든 텍스트-투-비디오(text-to-video) 모델이다. ChatGPT나 DALL·E를 만든 그 회사가, 이번엔 글로 쓴 설명을 영상으로 바꿔주는 모델을 내놓은 것이다. "눈 덮인 초원을 걸어가는 거대한 매머드 떼" 같은 프롬프트를 넣으면, Sora가 그 장면을 실제로 촬영한 듯한 짧은 동영상으로 만들어낸다. 2024년 2월에 처음 공개됐고, 같은 해 12월 ChatGPT 구독자에게 정식 오픈됐다. 2025년 9월에는 화질과 사실성을 크게 끌어올린 <strong>Sora 2</strong>가 나왔는데, 이때부터는 영상에 어울리는 소리(대사·효과음)까지 함께 생성된다.</p><h4>무엇을 잘하나</h4><p>Sora의 핵심은 단순히 예쁜 화면을 그리는 게 아니라, 물체가 움직이고 부딪히는 "물리 세계"를 어느 정도 흉내 낸다는 점이다. 카메라가 인물 주위를 도는 동안에도 같은 사람이 같은 모습으로 유지되고(객체 영속성), 물이 튀거나 천이 바람에 날리는 움직임이 자연스럽게 이어진다. OpenAI는 이런 능력이 단순히 데이터를 더 많이 학습시키는 것만으로 저절로 나타났다고 설명하며, 영상 생성에서 "GPT-1의 순간"에 비유했다. 텍스트뿐 아니라 이미지나 짧은 영상을 입력으로 넣어 그것을 움직이게 만들거나 이어붙이는 것도 가능하다.</p><h4>개발자가 어떻게 쓰나</h4><p>일반 사용자는 <code>sora.com</code>이나 Sora iOS 앱에서 프롬프트를 입력해 영상을 만든다. 개발자라면 OpenAI의 <strong>Videos API</strong>를 통해 코드로 영상을 생성할 수 있다. <code>POST /videos</code>로 생성 작업을 요청하면 작업 <code>id</code>와 상태가 담긴 객체가 돌아오고, <code>GET /videos/{video_id}</code>를 반복 조회하거나 웹훅으로 완료 알림을 받은 뒤 <code>GET /videos/{video_id}/content</code>로 최종 MP4 파일을 내려받는 식이다. 영상 길이가 길어 생성에 시간이 걸리므로, 폴링 대신 <code>video.completed</code>·<code>video.failed</code> 웹훅 이벤트로 비동기 처리하는 게 권장된다. 화면 비율(16:9·1:1·9:16)과 해상도(480p~1080p)를 골라 유튜브·인스타그램·틱톡 같은 플랫폼에 맞춘 영상을 뽑아낼 수 있다.</p><h4>주의할 점</h4><p>Sora 영상에는 출처를 식별할 수 있는 <strong>C2PA</strong> 메타데이터와 눈에 보이는 워터마크가 기본으로 붙는다. 실제 사람의 얼굴을 합성하는 딥페이크 악용을 막기 위한 안전장치다. 다만 이런 사실적인 영상 생성 능력은 저작권·초상권 분쟁을 함께 불러왔고, 2026년 들어 OpenAI가 소비자용 Sora 서비스 운영 방식을 바꾸는 등 정책이 계속 변하고 있어 활용 전에 최신 약관을 확인하는 게 좋다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#텍스트-투-비디오</span><span>#영상 생성</span><span>#Sora 2</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-video-generation.html">AI 비디오 생성</a>, <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a>, <a href="https://aiwiki.work/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://aiwiki.work/k/gpt.html">GPT</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a>, <a href="https://aiwiki.work/k/gemini.html">제미나이</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/sora-2" target="_blank" rel="nofollow noopener">Sora 2 is here</a> <span class="ref-type">공식</span></li><li><a href="https://openai.com/index/sora" target="_blank" rel="nofollow noopener">Sora: Creating video from text</a> <span class="ref-type">공식</span></li><li><a href="https://developers.openai.com/api/docs/guides/video-generation" target="_blank" rel="nofollow noopener">Video generation with Sora | OpenAI API</a> <span class="ref-type">공식</span></li><li><a href="https://openai.com/index/sora-is-here" target="_blank" rel="nofollow noopener">Sora is here</a> <span class="ref-type">공식</span></li><li><a href="https://en.wikipedia.org/wiki/Sora_(text-to-video_model)" target="_blank" rel="nofollow noopener">Sora (text-to-video model) - Wikipedia</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=HK6y8DAPN_0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/HK6y8DAPN_0/mqdefault.jpg" alt="Introducing Sora — OpenAI's text-to-video model" loading="lazy" width="160" height="90"><span>Introducing Sora — OpenAI's text-to-video model</span></a><a class="video-item" href="https://www.youtube.com/watch?v=gzneGhpXwjU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gzneGhpXwjU/mqdefault.jpg" alt="Introducing Sora 2" loading="lazy" width="160" height="90"><span>Introducing Sora 2</span></a><a class="video-item" href="https://www.youtube.com/watch?v=pCrxp7FC_uE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/pCrxp7FC_uE/mqdefault.jpg" alt="AI 영상 소라 완전정복! 사용법 정리부터 후기까지 총정리!" loading="lazy" width="160" height="90"><span>AI 영상 소라 완전정복! 사용법 정리부터 후기까지 총정리!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#sora">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

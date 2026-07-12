@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>AI 정렬</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 시스템이 인간의 의도, 가치관, 목표에 맞게 행동하도록 만드는 연구 분야. AI가 강력해질수록 의도하지 않은 방향으로 행동할 위험이 커지기 때문에 핵심 과제로 떠올랐다.</p><h4>개념 설명</h4><p>AI 정렬 문제는 단순히 모델이 질문에 올바르게 답하는 것과는 다르다. 아무리 뛰어난 AI라도 인간이 진짜로 원하는 것이 무엇인지 정확히 이해하지 못한다면, 겉으로는 지시를 따르면서도 의도와 전혀 다른 결과를 낼 수 있다. 예를 들어 "방을 깨끗하게 해줘"라는 지시에 AI가 방 안에 있는 물건을 전부 없애버리는 것이 극단적인 미스얼라인먼트의 예다. 정렬 연구는 이런 불일치를 사전에 방지하는 방법을 찾는다.</p><h4>사용 예시</h4><p>Anthropic의 <strong>헌법적 AI</strong>나 OpenAI의 <strong>RLHF</strong>는 모두 정렬 연구의 산물이다. 모델이 유해한 출력을 피하고, 사용자의 진의를 파악하며, 불확실할 때 되묻도록 훈련하는 것이 실제 정렬 작업의 핵심이다. 개발자 입장에서는 시스템 프롬프트로 모델의 행동 범위를 명확히 정의하는 것이 가장 직접적인 정렬 실천이다.</p></div>
   <div class="tags"><span>#AI 안전</span><span>#정렬</span><span>#AGI</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/constitutional-ai.html">헌법적 AI</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/hallucination.html">환각</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.datacamp.com/fr/blog/ai-alignment" target="_blank" rel="nofollow noopener">What is AI Alignment? Ensuring AI Works for Humanity - DataCamp</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2310.19852" target="_blank" rel="nofollow noopener">[2310.19852] AI Alignment: A Comprehensive Survey - arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://en.wikipedia.org/wiki/AI_alignment" target="_blank" rel="nofollow noopener">AI alignment - Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.lesswrong.com/w/ai-alignment" target="_blank" rel="nofollow noopener">AI alignment — LessWrong</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#alignment">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

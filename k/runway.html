@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>런웨이</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>글이나 사진 한 장을 넣으면 짧은 영상으로 만들어주는 대표적인 AI 영상 생성·편집 서비스. 광고, 숏폼, 영화 콘셉트 영상을 코드 없이 브라우저에서 만들 수 있다.</p><h4>누가 만든 무엇인가</h4><p>Runway는 미국 스타트업 Runway가 만든 AI 영상 생성 서비스다. 핵심은 <code>Gen</code> 시리즈라고 불리는 자체 영상 생성 모델인데, "세상을 시뮬레이션하는 AI를 만든다"는 목표 아래 텍스트나 이미지를 입력하면 그 장면이 실제로 움직이는 짧은 영상을 만들어낸다. 초기 <code>Gen-2</code>가 텍스트·이미지·영상 클립을 받아 새 영상을 합성하는 멀티모달 시스템으로 주목받았고, 이후 <code>Gen-3</code>, <code>Gen-4</code>를 거쳐 현재 최신 모델인 <code>Gen-4.5</code>까지 발전했다.</p><h4>이 모델의 차별점</h4><p>Runway가 내세우는 강점은 영상의 "움직임 품질"과 "프롬프트를 얼마나 충실히 따르는가"다. 최신 <code>Gen-4.5</code>는 사람이 걷거나 물체가 부딪히는 동작이 자연스럽고, 한 영상 안에서 인물·배경의 모습이 흔들리지 않고 일관되게 유지되는 점을 강조한다. 사진처럼 사실적인 영상부터 애니메이션풍까지 폭넓은 스타일을 한 모델로 처리할 수 있다는 것도 특징이다. 단순히 영상을 새로 만드는 것뿐 아니라, 기존 영상에서 물체를 추가·삭제하거나 카메라 각도를 바꾸고 조명을 다시 입히는 식의 편집도 글 한 줄로 지시할 수 있다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 흔한 사용법은 두 가지다. 텍스트만 입력해 영상을 만드는 <strong>Text to Video</strong>, 그리고 사진 한 장을 넣고 그것이 움직이게 만드는 <strong>Image to Video</strong>다. 예를 들어 동물 사진 한 장을 올리고 "고개를 돌려 카메라를 본다"고 적으면 그 장면이 영상으로 살아난다. 광고 시안, 유튜브 숏폼, 영화 콘셉트 영상을 만드는 사람들이 브라우저에서 바로 쓴다. 개발자 입장에서는 Runway가 제공하는 API로 자기 서비스 안에서 영상 생성을 자동화할 수 있고, 최근에는 Adobe Firefly와 Premiere 같은 외부 편집 도구 안에서도 <code>Gen-4.5</code>를 직접 호출해 쓸 수 있게 통합됐다.</p><h4>알아둘 점</h4><p>AI 영상 생성은 한 번에 만들 수 있는 길이가 짧고(보통 수 초 단위), 손가락이나 글자처럼 세밀한 부분이 어색하게 나올 때가 있다. 그래서 Runway는 Kling, Sora, Pika, Seedance 같은 경쟁 모델들과 화질·동작·프롬프트 충실도를 두고 끊임없이 비교되며, 작업할 때는 같은 프롬프트로 여러 번 생성해 가장 나은 결과를 고르는 식으로 쓰는 경우가 많다.</p></div>
   <div class="tags"><span>#Runway</span><span>#비디오 생성</span><span>#Gen-4.5</span><span>#텍스트-투-비디오</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-video-generation.html">AI 비디오 생성</a>, <a href="https://aiwiki.work/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a>, <a href="https://aiwiki.work/k/generative-ai.html">생성형 AI</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://runwayml.com/en" target="_blank" rel="nofollow noopener">Runway | Building AI to Simulate the World</a> <span class="ref-type">공식</span></li><li><a href="https://runwayml.com/research/gen-2" target="_blank" rel="nofollow noopener">Gen-2: Generate novel videos with text, images or video clips</a> <span class="ref-type">공식</span></li><li><a href="https://www.adobe.com/products/firefly/partner-models/runway.html" target="_blank" rel="nofollow noopener">Runway AI video generator, now in Firefly - Adobe</a> <span class="ref-type">공식</span></li><li><a href="https://invideo.io/make/runway-ai" target="_blank" rel="nofollow noopener">Runway AI: Free AI Video Generator</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=AwKSrJFvdps" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AwKSrJFvdps/mqdefault.jpg" alt="Introducing Gen-4.5 Image to Video | Runway" loading="lazy" width="160" height="90"><span>Introducing Gen-4.5 Image to Video | Runway</span></a><a class="video-item" href="https://www.youtube.com/watch?v=c38vtLw1nSk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/c38vtLw1nSk/mqdefault.jpg" alt="Runway AI - Tutorial for Beginners in 13 MINUTES! [FULL GUIDE]" loading="lazy" width="160" height="90"><span>Runway AI - Tutorial for Beginners in 13 MINUTES! [FULL GUIDE]</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PTcupGrgpQQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PTcupGrgpQQ/mqdefault.jpg" alt="이젠 텍스트만 쳐도 영상이 되는 마법, Runway AI" loading="lazy" width="160" height="90"><span>이젠 텍스트만 쳐도 영상이 되는 마법, Runway AI</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#runway">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

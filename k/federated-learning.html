@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>연합학습</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>PySyft, Flower(flwr) 같은 프레임워크를 쓰면 연합학습 실험을 구현할 수 있다. 의료, 금융, 모바일 앱처럼 민감 데이터가 있고 규제가 엄격한 환경에서 AI를 학습해야 할 때 고려하는 아키텍처다. 실제로는 기울기 자체에도 데이터 정보가 포함될 수 있어서 차등 프라이버시와 함께 쓰는 것이 더 안전하다. 통신 비용(업데이트를 주고받는 비용)이 병목이 되는 경우가 많아 업데이트 압축 기법도 함께 연구된다.</p></div>
   <div class="tags"><span>#프라이버시</span><span>#분산학습</span><span>#온디바이스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/privacy-preserving.html">프라이버시 보호 AI</a>, <a href="https://aiwiki.work/k/machine-learning.html">머신러닝</a>, <a href="https://aiwiki.work/k/deep-learning.html">딥러닝</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://federated.withgoogle.com/" target="_blank" rel="nofollow noopener">Federated Learning - Google Research</a> <span class="ref-type">공식</span></li><li><a href="https://www.tensorflow.org/federated" target="_blank" rel="nofollow noopener">TensorFlow Federated</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G2fqAlgmoPo/mqdefault.jpg" alt="Introduction to Generative AI - Google Cloud" loading="lazy" width="160" height="90"><span>Introduction to Generative AI - Google Cloud</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Gv9_4yMHFhI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" alt="A Gentle Introduction to Machine Learning" loading="lazy" width="160" height="90"><span>A Gentle Introduction to Machine Learning</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#federated-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

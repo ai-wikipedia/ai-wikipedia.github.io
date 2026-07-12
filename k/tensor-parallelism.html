@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>텐서 병렬화</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델의 가중치 행렬을 여러 GPU에 분할해 각 GPU가 행렬 연산의 일부를 담당하도록 하는 분산 학습 기법. 단일 GPU에 올리기 너무 큰 모델을 처리할 수 있게 한다.</p><h4>개념 설명</h4><p>70B 모델은 FP16 기준 140GB로, 80GB A100 두 개에도 안 들어간다. 텐서 병렬화는 행렬 자체를 쪼개어 여러 GPU에 분산하는 방법이다. 예를 들어 큰 행렬 W를 열 방향으로 4등분해 GPU 4개에 하나씩 나눠주고, 각 GPU는 자신의 열에 해당하는 연산만 수행한 뒤 결과를 합친다. NVIDIA의 Megatron-LM이 이 방식을 체계화했다.</p><p>텐서 병렬화 외에 레이어를 GPU에 순서대로 배치하는 <strong>파이프라인 병렬화</strong>, 같은 모델 복사본에 다른 데이터를 넣는 <strong>데이터 병렬화</strong>를 조합해 대규모 학습을 구성한다.</p><h4>사용 예시</h4><p>vLLM 서빙 시 <code>--tensor-parallel-size 4</code>로 4개 GPU에 모델을 분산할 수 있다. 학습에서는 Megatron-LM, DeepSpeed의 ZeRO 전략이 텐서 병렬화를 지원한다. 8개 GPU 서버에서 70B 모델을 텐서 병렬화로 서빙하면 단일 GPU 대비 지연이 크게 줄어든다.</p></div>
   <div class="tags"><span>#분산학습</span><span>#Megatron</span><span>#멀티GPU</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gpu-cluster.html">GPU 클러스터</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/1909.08053" target="_blank" rel="nofollow noopener">Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/NVIDIA/Megatron-LM" target="_blank" rel="nofollow noopener">NVIDIA Megatron-LM — Official GitHub Repository</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#tensor-parallelism">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

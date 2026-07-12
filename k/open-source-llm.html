@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>오픈소스 LLM</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 가중치가 공개되어 누구나 다운로드해서 로컬에서 실행하고 수정할 수 있는 대규모 언어 모델. 상용 API에 의존하지 않고 자체 인프라에서 AI를 운영할 수 있게 해준다.</p><h4>오픈소스 LLM이란</h4><p>GPT나 Claude 같은 상용 모델은 API로만 접근할 수 있지만, 오픈소스 LLM은 가중치를 다운로드해서 자기 컴퓨터에서 직접 돌릴 수 있다. Meta의 Llama, DeepSeek, 알리바바의 Qwen, Mistral 등이 대표적이다. 2023년 Llama 1 공개를 기점으로 생태계가 폭발적으로 성장했다.</p><h4>사용 예시</h4><p>Ollama를 설치하고 <code>ollama run llama3</code>을 실행하면 로컬에서 LLM이 바로 돌아간다. LM Studio는 GUI로 모델을 관리하고 테스트할 수 있다. 회사 내부 데이터를 외부 API로 보내지 않고 자체 서버에서 RAG를 구축하거나, 파인튜닝해서 도메인 특화 모델을 만드는 데 주로 쓰인다. 2026년 기준 7B 모델이 2년 전 70B 모델 성능을 넘어서면서, 일반 노트북에서도 실용적인 AI를 돌리는 게 가능해졌다.</p><h4>주요 모델</h4><p>Llama(Meta)는 가장 큰 커뮤니티, DeepSeek는 추론 특화로 주목, Qwen(알리바바)은 다국어와 코딩에서 강세, Mistral은 유럽 기반으로 경량 모델에 강하다. GitHub에서 Ollama는 16만 스타를 넘었다.</p></div>
   <div class="tags"><span>#Llama</span><span>#DeepSeek</span><span>#Qwen</span><span>#Ollama</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/kimi.html">키미</a>, <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/nemotron.html">네모트론</a>, <a href="https://aiwiki.work/k/granite.html">그래니트</a>, <a href="https://aiwiki.work/k/gemma-4.html">젬마 4</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.work/k/step-3-7.html">스텝 3.7</a>, <a href="https://aiwiki.work/k/seed-2.html">시드 2.0</a>, <a href="https://aiwiki.work/k/mimo.html">미모</a>, <a href="https://aiwiki.work/k/olmo-3.html">OLMo 3</a>, <a href="https://aiwiki.work/k/phi-4.html">Phi-4</a>, <a href="https://aiwiki.work/k/command-a.html">커맨드 A</a>, <a href="https://aiwiki.work/k/mimo-v2-5.html">미모 v2.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ollama.ai" target="_blank" rel="nofollow noopener">Ollama - Official Site</a> <span class="ref-type">공식</span></li><li><a href="https://llama.meta.com" target="_blank" rel="nofollow noopener">Meta Llama - Official</a> <span class="ref-type">공식</span></li><li><a href="https://www.deepseek.com" target="_blank" rel="nofollow noopener">DeepSeek - Official</a> <span class="ref-type">공식</span></li><li><a href="https://www.bentoml.com/blog/navigating-the-world-of-open-source-large-language-models" target="_blank" rel="nofollow noopener">Best Open Source LLMs 2026 - BentoML</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=oM4VmoabDAI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/oM4VmoabDAI/mqdefault.jpg" alt="Coding LLaMA 2 From Scratch in PyTorch (Umar Jamil)" loading="lazy" width="160" height="90"><span>Coding LLaMA 2 From Scratch in PyTorch (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=qlxrXX5uBoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qlxrXX5uBoU/mqdefault.jpg" alt="오픈소스 LLM 활용하기" loading="lazy" width="160" height="90"><span>오픈소스 LLM 활용하기</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#open-source-llm">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

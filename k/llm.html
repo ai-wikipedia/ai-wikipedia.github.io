@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>대규모 언어 모델</h1>
@@ -128,6 +156,8 @@
 <p>LLM 단독으로는 학습 시점 이후의 정보를 모르고, 외부 시스템에 접근할 수 없고, 가끔 그럴듯한 거짓말(환각)을 한다. 이 한계를 RAG(외부 지식 검색), Tool Use(외부 도구 연결), 가드레일(출력 검증)로 보완하는 게 현재 AI 애플리케이션 개발의 핵심 패턴이다.</p></div>
   <div class="tags"><span>#GPT</span><span>#Claude</span><span>#Transformer</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/tokenization.html">토큰화</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/grok.html">그록</a>, <a href="https://aiwiki.work/k/minimax.html">미니맥스</a>, <a href="https://aiwiki.work/k/kimi.html">키미</a>, <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.work/k/gemini-3-pro.html">제미나이 3 프로</a>, <a href="https://aiwiki.work/k/qwen3-max.html">큐원3 맥스</a>, <a href="https://aiwiki.work/k/seed-2.html">시드 2.0</a>, <a href="https://aiwiki.work/k/nova-2.html">노바 2</a>, <a href="https://aiwiki.work/k/command-a.html">커맨드 A</a>, <a href="https://aiwiki.work/k/mercury-llm.html">머큐리</a>, <a href="https://aiwiki.work/k/generative-engine-optimization.html">GEO</a>, <a href="https://aiwiki.work/k/grok-4-5.html">그록 4.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2402.06196" target="_blank" rel="nofollow noopener">Large Language Models: A Survey – arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://developers.google.com/machine-learning/crash-course/llm" target="_blank" rel="nofollow noopener">LLM – Google ML Crash Course</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/mqdefault.jpg" alt="Intro to Large Language Models – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Intro to Large Language Models – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#llm">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

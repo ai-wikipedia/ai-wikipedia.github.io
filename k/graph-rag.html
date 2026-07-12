@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>그래프 RAG</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>지식 그래프를 RAG에 결합해 단순 유사도 검색을 넘어 엔티티 간 관계를 탐색하며 답변하는 방식. Microsoft가 2024년 발표하며 주목받았다.</p><h4>개념 설명</h4><p>표준 RAG는 쿼리와 유사한 텍스트 청크를 찾는다. "A와 B의 공통점은?"처럼 여러 엔티티에 걸친 질문이나 전체 문서에 분산된 정보를 종합해야 하는 질문에는 약하다. Graph RAG는 문서에서 엔티티와 관계를 추출해 지식 그래프를 만들고, 커뮤니티 감지로 관련 노드들을 그룹화한다. 질문에 답할 때 그래프를 탐색해 연결된 정보들을 수집한다.</p><p>Microsoft의 GraphRAG(2024)는 Local 검색(특정 엔티티 주변)과 Global 검색(전체 그래프 요약)을 제공해 기존 RAG가 못하는 글로벌 질의("이 보고서의 주요 테마는?")에도 답한다.</p><h4>사용 예시</h4><p><code>graphrag</code> 패키지로 문서 컬렉션에 Graph RAG를 구성할 수 있다. 학술 논문 데이터베이스, 기업 문서, 의료 기록처럼 엔티티 간 관계가 중요한 도메인에서 표준 RAG 대비 답변 품질이 크게 향상된다.</p></div>
   <div class="tags"><span>#지식그래프</span><span>#RAG</span><span>#관계추론</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/knowledge-graph.html">지식 그래프</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/ontology.html">온톨로지</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://microsoft.github.io/graphrag/" target="_blank" rel="nofollow noopener">GraphRAG — Microsoft Official Documentation Site</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/microsoft/graphrag" target="_blank" rel="nofollow noopener">GraphRAG — Microsoft Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2404.16130" target="_blank" rel="nofollow noopener">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Za7aG-ooGLQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Za7aG-ooGLQ/mqdefault.jpg" alt="GraphRAG Explained: AI Retrieval with Knowledge Graphs (IBM)" loading="lazy" width="160" height="90"><span>GraphRAG Explained: AI Retrieval with Knowledge Graphs (IBM)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=YVLwu3jE09c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/YVLwu3jE09c/mqdefault.jpg" alt="What is a Knowledge Graph? (Neo4j)" loading="lazy" width="160" height="90"><span>What is a Knowledge Graph? (Neo4j)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hh2Bx6DYgpw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hh2Bx6DYgpw/mqdefault.jpg" alt="Graph RAG 집중 탐구 - 테디노트" loading="lazy" width="160" height="90"><span>Graph RAG 집중 탐구 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#graph-rag">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>배치 추론</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>실시간 응답 없이 대량의 입력을 모아 한꺼번에 처리하는 LLM 추론 방식. 속도보다 처리량과 비용 효율이 중요한 오프라인 워크로드에 적합하다.</p><h4>개념 설명</h4><p>모든 LLM 요청이 즉각적인 응답을 필요로 하지는 않는다. 수백만 개의 문서를 분류하거나, 대규모 데이터셋에 요약을 생성하거나, 야간 리포트를 작성하는 작업은 몇 시간 내에 완료되면 된다. 배치 추론은 이런 요청을 실시간 큐에서 분리해 GPU 활용률이 최대가 되는 방식으로 처리한다. 레이턴시 SLA가 없으므로 스팟 인스턴스를 활용하거나 off-peak 시간대를 이용해 비용을 크게 줄일 수 있다.</p><p>Anthropic, OpenAI 모두 배치 API를 제공하며 온디맨드 대비 50% 저렴한 요금을 적용한다.</p><h4>사용 예시</h4><p>Anthropic Batch API로 JSONL 파일에 요청을 담아 제출하면 24시간 내에 처리된다. 수십만 개 상품 설명을 동시에 번역하거나, 대규모 로그를 분석해 이상 패턴을 찾는 데이터 파이프라인에서 비용을 절반으로 줄일 수 있다.</p></div>
   <div class="tags"><span>#비동기</span><span>#대용량</span><span>#비용절감</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/continuous-batching.html">연속 배칭</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/docs/guides/batch" target="_blank" rel="nofollow noopener">Batch API — OpenAI Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.anthropic.com/en/api/creating-message-batches" target="_blank" rel="nofollow noopener">Message Batches API — Anthropic Claude Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=j3EOaQnVmOI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/j3EOaQnVmOI/mqdefault.jpg" alt="Scaling LLM Batch Inference: Ray Data and vLLM" loading="lazy" width="160" height="90"><span>Scaling LLM Batch Inference: Ray Data and vLLM</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QjyJlmgBGqs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QjyJlmgBGqs/mqdefault.jpg" alt="Databricks vLLM Optimization for Cost-Effective LLM Inference" loading="lazy" width="160" height="90"><span>Databricks vLLM Optimization for Cost-Effective LLM Inference</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hh2Bx6DYgpw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hh2Bx6DYgpw/mqdefault.jpg" alt="RAG 집중 탐구 - 테디노트" loading="lazy" width="160" height="90"><span>RAG 집중 탐구 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#batch-inference">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

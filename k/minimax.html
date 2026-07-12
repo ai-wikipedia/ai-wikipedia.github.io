@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>미니맥스</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>중국의 MiniMax가 만든 AI 모델 시리즈로, 100만 토큰을 다루는 오픈웨이트 코딩·에이전트 모델 M3와 음성·음악·영상 생성 모델까지 아우른다. 프론티어급 성능을 훨씬 싼 값에 쓸 수 있어 주목받는다.</p><h4>MiniMax가 뭔가</h4><p>MiniMax는 중국의 AI 스타트업이자 그곳에서 내놓는 모델들을 통칭하는 이름이다. 가장 화제가 된 건 <strong>MiniMax M3</strong>인데, 이건 가중치를 공개한 오픈웨이트 모델이면서도 코딩과 에이전트 작업에서 최상위권 성능을 내는 게 특징이다. 그동안은 100만 토큰짜리 긴 문맥, 멀티모달, 프론티어급 코딩 능력을 동시에 갖춘 모델은 사실상 닫힌(폐쇄형) 모델 몇 개뿐이었는데, M3는 이걸 누구나 내려받아 쓸 수 있는 형태로 풀어버린 셈이다.</p><p>핵심 기술은 <strong>MiniMax Sparse Attention(MSA)</strong>라는 구조다. 보통 모델은 문맥이 길어질수록 모든 토큰끼리 일일이 관계를 계산하느라 비용이 폭발하는데, MSA는 전체를 다 보는 대신 중요한 KV 블록만 골라서 보는 방식으로 토큰당 연산을 확 줄인다. 그 결과 100만 토큰 길이에서도 이전 세대 대비 약 1/20 수준의 비용으로, 더 빠른 응답을 내면서 품질은 거의 유지한다.</p><h4>실제로 어떻게 쓰나</h4><p>개발자 입장에서 가장 손쉬운 길은 <code>claude-code</code>나 VS Code 같은 익숙한 코딩 도구에 M3를 연결해서 쓰는 것이다. 예를 들어 Ollama에서 <code>ollama run minimax-m3:cloud</code>로 불러오거나 OpenRouter·Together 같은 API 제공처를 통해 붙이면, 평소 쓰던 에이전트 워크플로우는 그대로 두고 모델만 갈아끼우는 식으로 동작한다. 100만 토큰 문맥 덕분에 거대한 코드베이스 전체를 한 번에 넣고 여러 파일을 오가며 리팩토링하거나, 여러 단계에 걸친 긴 작업(long-horizon task)을 중간에 끊기지 않고 처리하는 데 잘 맞는다.</p><p>M3는 단발성 질의응답보다 <strong>여러 턴에 걸친 협업과 도구 사용</strong>에 맞춰 튜닝됐다. 사용자 행동을 흉내 내는 시뮬레이터로 다회차 상호작용을 학습시켰기 때문에, 한 번 시키고 끝이 아니라 사람과 주고받으며 계획하고 도구를 호출하는 에이전트형 작업에서 강점을 보인다. 비용이 폐쇄형 프론티어 모델의 수십분의 일 수준이라, 개인 개발자가 평소엔 비싸서 못 돌리던 대규모 에이전트 실험을 부담 없이 해볼 수 있다는 점이 특히 화제가 됐다.</p><h4>코딩 모델만 있는 게 아니다</h4><p>MiniMax라는 이름 아래에는 텍스트 모델뿐 아니라 음성 합성(MiniMax Audio/Speech), 음악 생성(Music), 영상 생성(Hailuo) 모델도 함께 묶여 있다. 한국에서는 감정 표현이 살아있는 음성 복제와 다국어 TTS로 먼저 알려졌고, 영상이나 음성 생성 기능은 <code>mcp</code> 서버 형태로도 열려 있어 다른 AI 도구에서 도구로 불러 쓸 수 있다.</p></div>
   <div class="tags"><span>#오픈웨이트</span><span>#롱컨텍스트</span><span>#중국 AI</span><span>#코딩 모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/qwen.html">큐원</a>, <a href="https://aiwiki.work/k/voice-ai.html">보이스 AI</a>, <a href="https://aiwiki.work/k/kling.html">클링</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openrouter.ai/minimax/minimax-m3" target="_blank" rel="nofollow noopener">MiniMax M3 - API Pricing &amp; Benchmarks</a> <span class="ref-type">공식</span></li><li><a href="https://ollama.com/library/minimax-m3" target="_blank" rel="nofollow noopener">minimax-m3 - Ollama</a> <span class="ref-type">공식</span></li><li><a href="https://www.minimax.io" target="_blank" rel="nofollow noopener">MiniMax 공식 사이트</a> <span class="ref-type">공식</span></li><li><a href="https://www.scmp.com/tech/tech-trends/article/3355529/minimax-debuts-ai-model-built-long-and-complex-coding-tasks" target="_blank" rel="nofollow noopener">MiniMax debuts AI model built for long and complex coding tasks</a> <span class="ref-type">블로그</span></li><li><a href="https://developers.cloudflare.com/ai/models/minimax/m3" target="_blank" rel="nofollow noopener">MiniMax M3 - AI - Cloudflare Docs</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=p6Npi-HBoRU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/p6Npi-HBoRU/mqdefault.jpg" alt="MiniMax M3 IS INSANE! BEST Opensource AI Model! Beats Opus 4.7 and 50x Cheaper! (Fully Tested)" loading="lazy" width="160" height="90"><span>MiniMax M3 IS INSANE! BEST Opensource AI Model! Beats Opus 4.7 and 50x Cheaper! (Fully Tested)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=lzurOY40aFQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lzurOY40aFQ/mqdefault.jpg" alt="Minimax-M3 is officially the cheapest Chinese AI model we have tested." loading="lazy" width="160" height="90"><span>Minimax-M3 is officially the cheapest Chinese AI model we have tested.</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Wa7moxQmBlo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Wa7moxQmBlo/mqdefault.jpg" alt="API 비용에서 해방! 미친 가성비 AI 살펴봤습니다" loading="lazy" width="160" height="90"><span>API 비용에서 해방! 미친 가성비 AI 살펴봤습니다</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#minimax">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

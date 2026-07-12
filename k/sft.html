@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>SFT</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>입력-출력 쌍으로 이루어진 라벨된 데이터로 사전학습 모델을 추가 학습하는 방법. RLHF나 DPO 이전 단계로, 모델이 원하는 형식과 스타일로 응답하도록 가르친다.</p><h4>개념 설명</h4><p>사전학습 모델은 언어를 알지만 지시를 따르는 법은 모른다. SFT는 "질문 → 좋은 답변" 쌍 수천~수십만 개로 모델을 학습시켜 응답 형식, 언어 스타일, 특정 도메인 지식을 주입한다. 크로스 엔트로피 손실로 학습하는 가장 표준적인 파인튜닝 방식이다.</p><p>인스트럭션 튜닝이 SFT의 대표적 활용이다. RLHF 파이프라인에서는 SFT 모델이 기준점(reference model)이 되어 이후 강화학습 단계를 안정화한다. 고품질 데이터가 수량보다 중요하다는 것이 반복적으로 확인됐다.</p><h4>사용 예시</h4><p><code>trl</code>의 <code>SFTTrainer</code>를 쓰면 HuggingFace 데이터셋 형식의 대화 데이터로 빠르게 SFT를 시작할 수 있다. LoRA와 결합해 작은 리소스로 수행하는 것이 일반적이다. 회사 내부 스타일 가이드, Q&A 형식, 특수 출력 포맷을 모델에 가르치는 데 효과적이다.</p></div>
   <div class="tags"><span>#지도학습</span><span>#파인튜닝</span><span>#데이터</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/instruction-tuning.html">인스트럭션 튜닝</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/qlora.html">QLoRA</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="nofollow noopener">Training language models to follow instructions with human feedback (InstructGPT)</a> <span class="ref-type">논문</span></li><li><a href="https://huggingface.co/docs/trl/en/sft_trainer" target="_blank" rel="nofollow noopener">Hugging Face TRL — SFT Trainer Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#sft">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

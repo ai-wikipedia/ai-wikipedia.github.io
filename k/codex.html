@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>코덱스</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>OpenAI가 만든 클라우드 기반 AI 코딩 에이전트. 샌드박스 환경에서 코드를 읽고, 쓰고, 실행하며 GitHub 이슈와 PR을 자율적으로 처리한다.</p><h4>개념 설명</h4><p>Claude Code가 로컬 터미널에서 작동하는 에이전트라면, <strong>Codex</strong>는 클라우드에서 작동하는 에이전트다. GitHub 이슈를 할당하면 별도의 샌드박스 환경에서 코드를 분석하고, 수정하고, 테스트를 돌려 PR을 올린다. 여러 태스크를 병렬로 처리할 수 있어 팀 차원의 개발 자동화에 적합하다. OpenAI의 o3 모델을 기반으로 동작한다.</p><h4>사용 예시</h4><p>GitHub 리포지토리에 Codex를 연결하고 이슈에 "Codex" 라벨을 붙이면 자동으로 작업을 시작한다. 버그 수정, 테스트 추가, 문서 업데이트 같은 반복적인 태스크를 맡기면 개발자는 설계와 리뷰에 집중할 수 있다. Claude Code의 CLAUDE.md처럼 AGENTS.md로 프로젝트 규칙을 정의해 품질을 관리한다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#클라우드에이전트</span><span>#코딩</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-ide.html">AI IDE</a>, <a href="https://aiwiki.work/k/agents-md.html">AGENTS.md</a>, <a href="https://aiwiki.work/k/sandboxing.html">샌드박싱</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/introducing-codex/" target="_blank" rel="nofollow noopener">Introducing Codex - OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://developers.openai.com/codex" target="_blank" rel="nofollow noopener">Codex - OpenAI Developers</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/openai/codex" target="_blank" rel="nofollow noopener">OpenAI Codex CLI - GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=F0y2juGCpEQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/F0y2juGCpEQ/mqdefault.jpg" alt="NEW AI: GPT-5-Codex in 8 mins!" loading="lazy" width="160" height="90"><span>NEW AI: GPT-5-Codex in 8 mins!</span></a><a class="video-item" href="https://www.youtube.com/watch?v=TYe4pi7_svM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TYe4pi7_svM/mqdefault.jpg" alt="Build Anything with Codex" loading="lazy" width="160" height="90"><span>Build Anything with Codex</span></a><a class="video-item" href="https://www.youtube.com/watch?v=SpLQIqElMRo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SpLQIqElMRo/mqdefault.jpg" alt="OpenAI Codex AI Agent 소개" loading="lazy" width="160" height="90"><span>OpenAI Codex AI Agent 소개</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#codex">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

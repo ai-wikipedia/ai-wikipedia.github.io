@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>코드 인터프리터</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI가 코드를 직접 작성하고 실행해서 계산, 데이터 분석, 시각화 결과를 실시간으로 확인하는 기능.</p><h4>개념 설명</h4><p>LLM이 아무리 정확한 코드를 짜도 실제로 실행해보지 않으면 작동 여부를 알 수 없다. <strong>코드 인터프리터</strong>는 AI가 코드를 쓰는 동시에 실행까지 해서 결과를 바로 확인하고, 오류가 나면 수정하는 사이클을 돌릴 수 있게 한다. OpenAI ChatGPT의 Code Interpreter가 이 기능을 대중화시켰고, 데이터 분석, 그래프 생성, 파일 처리 등에 특히 유용하다.</p><h4>사용 예시</h4><p>CSV 파일을 업로드하고 "이 데이터에서 월별 매출 추이를 그래프로 그려줘"라고 하면, 코드 인터프리터가 pandas로 데이터를 읽고 matplotlib으로 시각화하는 코드를 작성·실행해서 결과 이미지를 바로 보여준다. E2B나 Pyodide를 이용해 자체 코드 인터프리터 기능을 구현할 수도 있다.</p></div>
   <div class="tags"><span>#코드실행</span><span>#데이터분석</span><span>#Python</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/sandboxing.html">샌드박싱</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.openai.com/api/docs/guides/tools-code-interpreter" target="_blank" rel="nofollow noopener">Code Interpreter - OpenAI API Docs</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/openinterpreter/open-interpreter" target="_blank" rel="nofollow noopener">Open Interpreter - GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=pVPp4gdOBkc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/pVPp4gdOBkc/mqdefault.jpg" alt="OpenAI Code Interpreter: Complete Guide" loading="lazy" width="160" height="90"><span>OpenAI Code Interpreter: Complete Guide</span></a><a class="video-item" href="https://www.youtube.com/watch?v=xZDB1naRUlk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xZDB1naRUlk/mqdefault.jpg" alt="Build a Code Interpreter with Assistants API" loading="lazy" width="160" height="90"><span>Build a Code Interpreter with Assistants API</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Z3k25ZMOknQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Z3k25ZMOknQ/mqdefault.jpg" alt="코드 인터프리터 완벽 활용법" loading="lazy" width="160" height="90"><span>코드 인터프리터 완벽 활용법</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#code-interpreter">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

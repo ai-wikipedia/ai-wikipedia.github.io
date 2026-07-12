@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>제미나이 3 프로</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>구글이 만든 Gemini 계열의 최상위 추론 모델로, 텍스트뿐 아니라 이미지·오디오·동영상·PDF·코드까지 한꺼번에 이해하고 100만 토큰의 긴 맥락을 다루는 데 쓴다.</p><h4>어떤 모델인가</h4><p>Gemini 3 Pro는 구글(딥마인드)이 2025년 11월에 프리뷰로 공개한 Gemini 3 세대의 대표 모델이다. 이전 세대인 Gemini 2.5 Pro가 한동안 평가 순위 상단을 지켰는데, 그걸 한 단계 더 끌어올린 버전이라고 보면 된다. 가장 큰 특징은 단순히 글을 잘 쓰는 모델이 아니라 <strong>깊게 생각하고(추론) 도구를 직접 다루는</strong> 데 초점이 맞춰져 있다는 점이다.</p><p>또 하나의 핵심은 입력의 폭이다. 텍스트와 코드는 물론 이미지, 오디오, 동영상, PDF까지 한 번에 넣을 수 있고, 컨텍스트 창이 100만 토큰이라 코드 저장소 전체나 긴 문서 묶음을 통째로 던져 넣고 질문할 수 있다. 그래서 "이 영상에서 무슨 일이 벌어지는지 설명해줘", "이 PDF 더미에서 핵심만 정리해줘" 같은 작업을 한 모델로 처리한다.</p><h4>실제로 어떻게 쓰나</h4><p>개발자 입장에서 가장 직접적인 통로는 <code>gemini-3-pro-preview</code> 모델 ID로 호출하는 Gemini API다. 구글 AI Studio에서 API 키를 받아 곧바로 코드에서 부르거나, 엔터프라이즈 환경이라면 Vertex AI를 통해 붙인다. 프로토타입은 AI Studio에서 만들고 그대로 Cloud Run에 배포하는 식으로 이어가기도 한다.</p><p>터미널에서 일하는 사람에게는 <strong>Gemini CLI</strong> 연동이 특히 유용하다. <code>npm install -g @google/gemini-cli@latest</code>로 최신 버전을 깔고 설정에서 프리뷰 기능을 켜면 CLI가 기본 모델로 Gemini 3 Pro를 쓴다. 이렇게 하면 복잡한 엔지니어링 작업을 모델이 명령을 실행하고 도구를 호출하며 단계적으로 풀어가는 <strong>에이전틱 코딩</strong> 방식으로 진행할 수 있다. 구글은 같은 시점에 에이전트 기반 개발 환경인 Antigravity도 함께 내놓아, 모델이 사람처럼 계획을 세우고 코드를 짜도록 묶었다.</p><h4>차별점과 강점</h4><p>커뮤니티에서 가장 많이 언급되는 강점은 <strong>바이브 코딩(vibe coding)</strong>이다. 자세한 사양 없이 "이런 앱을 만들어줘" 정도의 자연어 지시만으로도 계획부터 코드 생성까지 한 번에 처리하는 제로샷 생성 능력이 두드러진다. 수학·물리 추론과 시각 정보 이해도 강해서, 표·그래프·차트처럼 정보가 빽빽한 자료를 읽고 해석하는 데 적합하다.</p><h4>주의할 점</h4><p>출시 시점 기준으로 프리뷰 단계라 "있는 그대로" 제공되며 지원이 제한될 수 있고, 이후 <code>gemini-3.1-pro-preview</code> 같은 후속 버전으로 빠르게 이어졌다. 또 모든 입력을 다루긴 하지만 오디오를 세밀하게 분석하거나 이미지를 영역 단위로 분할하는 용도는 우선순위로 설계되지 않았으니, 그런 작업에는 다른 모델을 함께 쓰는 편이 낫다.</p></div>
   <div class="tags"><span>#Google</span><span>#Gemini</span><span>#멀티모달</span><span>#추론 모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gemini.html">제미나이</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/vibe-coding.html">바이브 코딩</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://blog.google/products-and-platforms/products/gemini/gemini-3" target="_blank" rel="nofollow noopener">A new era of intelligence with Gemini 3 - Google Blog</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro" target="_blank" rel="nofollow noopener">Gemini 3 Pro - Gemini Enterprise Agent Platform - Google Cloud Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/google-gemini/gemini-cli/discussions/13280" target="_blank" rel="nofollow noopener">Gemini 3 Pro is now available in Gemini CLI! (GitHub Discussion)</a> <span class="ref-type">공식</span></li><li><a href="https://developers.googleblog.com/5-things-to-try-with-gemini-3-pro-in-gemini-cli" target="_blank" rel="nofollow noopener">5 things to try with Gemini 3 Pro in Gemini CLI - Google Developers Blog</a> <span class="ref-type">블로그</span></li><li><a href="https://deepmind.google/models/gemini/pro" target="_blank" rel="nofollow noopener">Gemini 3.1 Pro - Google DeepMind</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=uYQGrK55gxQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uYQGrK55gxQ/mqdefault.jpg" alt="Google Search with Gemini 3: Our most intelligent search yet" loading="lazy" width="160" height="90"><span>Google Search with Gemini 3: Our most intelligent search yet</span></a><a class="video-item" href="https://www.youtube.com/watch?v=cwai8SjMZWM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/cwai8SjMZWM/mqdefault.jpg" alt="Master NEW Gemini in 33 Minutes (2026 Tutorial)" loading="lazy" width="160" height="90"><span>Master NEW Gemini in 33 Minutes (2026 Tutorial)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=KMfj3IZhr9M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/KMfj3IZhr9M/mqdefault.jpg" alt="제미나이 3.0이 뒤집은 AI 판도…증시도 급변 [경제콘서트] / KBS" loading="lazy" width="160" height="90"><span>제미나이 3.0이 뒤집은 AI 판도…증시도 급변 [경제콘서트] / KBS</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#gemini-3-pro">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

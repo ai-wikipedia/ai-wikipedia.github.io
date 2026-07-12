@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>바이브 코딩</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>자연어로 원하는 걸 설명하면 AI가 코드를 통째로 만들어주는 개발 방식. "코드를 짜는" 게 아니라 "분위기를 전달하면 결과물이 나오는" 패러다임이다.</p><h4>바이브 코딩이란</h4><p>Andrej Karpathy가 2025년 2월에 처음 쓴 용어다. 기존 코딩은 문법과 로직을 직접 작성하는 것이었다면, 바이브 코딩은 "이런 느낌의 앱 만들어줘"라고 자연어로 설명하고 AI가 코드를 생성하는 방식이다. 개발자가 코드를 한 줄도 직접 쓰지 않고 프로토타입을 완성하는 게 가능해졌다.</p><h4>사용 예시</h4><p>Claude Code에서 "할 일 관리 앱 만들어줘, React로, 드래그앤드롭 지원하고 로컬스토리지에 저장"이라고 말하면 프로젝트 구조부터 컴포넌트, 스타일까지 전부 생성한다. Cursor나 Replit에서도 비슷하게 자연어 지시만으로 동작하는 앱을 만들 수 있다. 비개발자가 아이디어를 바로 프로토타입으로 만들거나, 개발자가 보일러플레이트를 건너뛰는 용도로 쓰인다.</p><h4>주의할 점</h4><p>생성된 코드를 이해하지 못한 채 배포하면 보안 취약점이나 버그가 숨어들 수 있다. Fortune은 "바이브 코딩 시대의 진짜 병목은 신뢰"라고 짚었다. 프로토타이핑에는 강력하지만, 프로덕션에 올리려면 코드 리뷰와 검증이 필수다.</p></div>
   <div class="tags"><span>#자연어코딩</span><span>#프로토타이핑</span><span>#비개발자</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/superpowers.html">슈퍼파워스</a>, <a href="https://aiwiki.work/k/gemini-3-pro.html">제미나이 3 프로</a>, <a href="https://aiwiki.work/k/baoyu-design.html">바오위 디자인</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="nofollow noopener">Karpathy 원문 트윗 (2025.02)</a> <span class="ref-type">공식</span></li><li><a href="https://en.wikipedia.org/wiki/Vibe_coding" target="_blank" rel="nofollow noopener">Vibe Coding - Wikipedia</a> <span class="ref-type">공식</span></li><li><a href="https://cloud.google.com/discover/what-is-vibe-coding" target="_blank" rel="nofollow noopener">What is Vibe Coding? - Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://www.ibm.com/think/topics/vibe-coding" target="_blank" rel="nofollow noopener">What is Vibe Coding? - IBM</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2510.12399" target="_blank" rel="nofollow noopener">A Survey of Vibe Coding with LLMs - arXiv</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Tw18-4U7mts" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Tw18-4U7mts/mqdefault.jpg" alt="Vibe Coding Mind Virus Explained - Fireship" loading="lazy" width="160" height="90"><span>Vibe Coding Mind Virus Explained - Fireship</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#vibe-coding">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

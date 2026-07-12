@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>추측적 디코딩</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>작은 드래프트 모델이 여러 토큰을 미리 예측하고, 큰 모델이 한 번에 검증해 처리 속도를 높이는 기법. 품질은 유지하면서 지연 시간을 크게 줄인다.</p><h4>개념 설명</h4><p>LLM 추론은 토큰을 하나씩 순서대로 생성하는 자기회귀 방식이라 본질적으로 느리다. 흥미로운 점은, GPU가 토큰 1개를 생성할 때와 여러 개를 동시에 검증할 때 걸리는 시간이 비슷하다는 것이다. 추론 과정이 연산이 아니라 메모리 대역폭에 병목이 걸리기 때문이다. <strong>추측적 디코딩</strong>은 이 빈 연산 자원을 활용한다.</p><p>작고 빠른 <strong>드래프트 모델</strong>이 먼저 5~7개 토큰을 추측으로 생성하고, 큰 타겟 모델이 이 토큰들을 한 번의 forward pass로 병렬 검증한다. 맞으면 그대로 채택하고, 틀린 부분부터 다시 생성한다. 수학적으로 타겟 모델 단독 생성과 완전히 동일한 출력 분포를 보장하면서도 2~3배 빠른 추론이 가능하다.</p><h4>사용 예시</h4><p>vLLM에서 <code>--speculative-model</code> 플래그로 드래프트 모델을 지정하면 같은 GPU로 처리량을 2.8배까지 높일 수 있다. TensorRT-LLM도 Medusa, EAGLE 등 다양한 방식을 기본 지원한다. 코드 자동완성처럼 반복 패턴이 많은 태스크에서 드래프트 모델의 예측 적중률이 높아져 효과가 극대화된다. 구글은 AI Overviews 검색 기능에서 이 기법을 적용해 응답 속도를 개선했다.</p><h4>심화 내용</h4><p>드래프트 모델 방식 외에도 여러 변형이 등장했다. <strong>Medusa</strong>는 타겟 모델에 여러 개의 디코딩 헤드를 추가해 별도 드래프트 모델 없이 추측을 수행한다. <strong>EAGLE</strong>은 타겟 모델의 중간 특징(feature)을 활용해 더 정확한 드래프트를 생성하며, LLaMA2-Chat 70B에서 2.7~3.5배 속도 향상을 달성했다. 2025년의 EAGLE-3는 학습 시점에서 최적화를 통합해 성능을 더 끌어올렸다.</p><h4>주의할 점</h4><p>추측 토큰 수(<code>num_speculative_tokens</code>)는 5~7개가 최적 구간이다. 7개를 넘으면 드래프트의 적중률이 떨어져 오히려 처리량이 줄어든다. 드래프트 모델이 타겟 모델과 분포가 비슷할수록 효과가 크므로, 같은 계열의 작은 모델을 드래프트로 쓰는 것이 일반적이다.</p></div>
   <div class="tags"><span>#추론속도</span><span>#드래프트모델</span><span>#Medusa</span><span>#EAGLE</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://aiwiki.work/k/mimo-v2-5.html">미모 v2.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://research.google/blog/looking-back-at-speculative-decoding/" target="_blank" rel="nofollow noopener">Looking back at speculative decoding – Google Research</a> <span class="ref-type">블로그</span></li><li><a href="https://pytorch.org/blog/hitchhikers-guide-speculative-decoding/" target="_blank" rel="nofollow noopener">A Hitchhiker Guide to Speculative Decoding – PyTorch</a> <span class="ref-type">공식</span></li><li><a href="https://docs.vllm.ai/en/v0.9.0/features/spec_decode.html" target="_blank" rel="nofollow noopener">Speculative Decoding – vLLM Docs</a> <span class="ref-type">공식</span></li><li><a href="https://developer.nvidia.com/blog/an-introduction-to-speculative-decoding-for-reducing-latency-in-ai-inference/" target="_blank" rel="nofollow noopener">Introduction to Speculative Decoding – NVIDIA</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2401.15077" target="_blank" rel="nofollow noopener">EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=bQ5BoolX9Ag" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bQ5BoolX9Ag/mqdefault.jpg" alt="Decoder-Only Transformers, ChatGPT's Transformer (StatQuest)" loading="lazy" width="160" height="90"><span>Decoder-Only Transformers, ChatGPT's Transformer (StatQuest)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="트랜스포머 어텐션 이즈 올 유 니드 - 허민석" loading="lazy" width="160" height="90"><span>트랜스포머 어텐션 이즈 올 유 니드 - 허민석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#speculative-decoding">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-10</div>
 </div>

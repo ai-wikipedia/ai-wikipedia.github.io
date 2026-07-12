@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>클로드 소네트 4.6</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Anthropic의 중급(Sonnet) 라인업을 전면 업그레이드한 모델로, 코딩과 컴퓨터 사용, 에이전트 작업에서 상위 모델인 Opus에 근접한 성능을 훨씬 저렴한 가격에 제공한다.</p><h4>어떤 모델인가</h4><p>Claude Sonnet 4.6은 Anthropic이 2026년 2월에 내놓은 모델로, Claude 라인업의 가운데 등급인 <strong>Sonnet</strong> 계열을 한 단계 끌어올린 버전이다. Anthropic의 모델은 보통 똑똑하지만 비싼 Opus, 균형 잡힌 Sonnet, 빠르고 싼 Haiku 세 갈래로 나뉘는데, 4.6은 이 가운데 Sonnet을 맡는다. 흥미로운 점은 가격은 Sonnet 그대로인데 실력은 윗급인 Opus에 가까워졌다는 것이다. 실제로 Anthropic이 사용자에게 직접 비교를 시켰을 때, 한 단계 위 모델인 Opus 4.5보다 Sonnet 4.6을 더 선호한 비율이 더 높게 나왔을 정도다.</p><h4>무엇을 잘하나</h4><p>가장 두드러진 강점은 <strong>컴퓨터 사용(computer use)</strong>이다. 화면을 보고 마우스를 움직이고 버튼을 누르며 사람이 컴퓨터를 다루듯 작업을 처리하는 능력인데, Sonnet 4.6은 이전 버전인 Sonnet 4.5보다 크게 향상됐고 윗급 Opus 4.6과 비슷한 수준에 올라섰다. 웹사이트에서 양식을 채우거나, 여러 화면을 오가며 업무를 자동화하는 작업에서 안정적으로 동작한다. 여기에 더해 한 번에 최대 <strong>100만(1M) 토큰</strong>까지 입력을 받아들이는 긴 맥락 처리, 여러 단계로 이어지는 작업을 스스로 계획하고 진행하는 에이전트 능력, 그리고 코딩 실력 전반이 함께 좋아졌다.</p><h4>실제로 어떻게 쓰나</h4><p>개발자는 Claude API에서 모델 이름 <code>claude-sonnet-4-6</code>을 지정해 바로 쓸 수 있고, Amazon Bedrock이나 Google Cloud의 Gemini Enterprise 같은 클라우드 플랫폼에서도 같은 ID로 호출할 수 있다. 무료·Pro 요금제 사용자라면 claude.ai와 Claude Cowork의 기본 모델이 바로 이 Sonnet 4.6이라, 별도 설정 없이도 쓰게 된다.</p><p>비용이 Opus의 몇 분의 일 수준이라, 실무에서는 <strong>스마트 라우팅</strong> 전략으로 많이 활용된다. 정말 어려운 추론만 Opus에 맡기고, 코드 리뷰나 문서 작성, 반복적인 에이전트 작업처럼 양은 많지만 난이도가 극단적이지 않은 일은 Sonnet 4.6으로 돌려서 전체 비용을 크게 낮추는 식이다. 긴 코드베이스를 탐색하며 여러 파일을 고치는 작업이나, 기억을 유지하며 프로젝트를 끝까지 끌고 가는 에이전트 워크플로우에 잘 맞는다.</p><h4>주의할 점</h4><p>이름은 4.6이지만 같은 시기의 Opus 4.6과 동급은 아니다. 가장 까다로운 추론이나 최고 난이도 작업에서는 여전히 Opus 계열이 앞선다. Sonnet 4.6은 "성능 대비 가격"이 핵심인 모델이므로, 품질을 한 톨도 양보할 수 없는 작업보다는 비용과 성능의 균형이 중요한 대량 작업에 쓰는 것이 제격이다.</p></div>
   <div class="tags"><span>#Anthropic</span><span>#Claude</span><span>#Sonnet</span><span>#컴퓨터 사용</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/computer-use.html">컴퓨터 사용</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank" rel="nofollow noopener">Introducing Claude Sonnet 4.6 - Anthropic</a> <span class="ref-type">공식</span></li><li><a href="https://www.anthropic.com/claude/sonnet" target="_blank" rel="nofollow noopener">Claude Sonnet 4.6 - Anthropic</a> <span class="ref-type">공식</span></li><li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-6.html" target="_blank" rel="nofollow noopener">Claude Sonnet 4.6 - Amazon Bedrock</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/sonnet-4-6?hl=ko" target="_blank" rel="nofollow noopener">Claude Sonnet 4.6 | Gemini Enterprise Agent Platform | Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://openrouter.ai/anthropic/claude-sonnet-4.6" target="_blank" rel="nofollow noopener">Claude Sonnet 4.6 - API Pricing &amp; Benchmarks - OpenRouter</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=BYxF-svDl8Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BYxF-svDl8Q/mqdefault.jpg" alt="Anthropic just dropped Sonnet 4.6..." loading="lazy" width="160" height="90"><span>Anthropic just dropped Sonnet 4.6...</span></a><a class="video-item" href="https://www.youtube.com/watch?v=EQ7nk9KgvrY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EQ7nk9KgvrY/mqdefault.jpg" alt="Claude Sonnet 4.6 Is Here (and Better Than Opus?)" loading="lazy" width="160" height="90"><span>Claude Sonnet 4.6 Is Here (and Better Than Opus?)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=szMMsnMuJdk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/szMMsnMuJdk/mqdefault.jpg" alt="Sonnet 5가 아니라 아쉽지만 어쨋든 신규 버전.. Sonnet 4.6" loading="lazy" width="160" height="90"><span>Sonnet 5가 아니라 아쉽지만 어쨋든 신규 버전.. Sonnet 4.6</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#claude-sonnet-4-6">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

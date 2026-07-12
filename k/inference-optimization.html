@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>추론 최적화</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>학습된 LLM이 실제로 답변을 생성할 때 속도를 높이고 비용을 줄이는 기술들의 총칭. 양자화, 추측적 디코딩, KV 캐시 최적화 등을 조합하면 모델을 바꾸지 않고도 3~10배 빠른 응답이 가능하다.</p><h4>추론 최적화란</h4><p>LLM은 학습(Training)과 추론(Inference) 두 단계로 나뉜다. 학습은 모델을 만드는 과정이고, 추론은 만들어진 모델이 실제로 질문에 답하는 과정이다. ChatGPT에 메시지를 보내면 글자가 하나씩 나타나는 그 순간이 추론이다. 문제는 이 추론 과정이 느리고 비싸다는 것이다. GPU는 엄청난 연산 능력을 가지고 있지만, LLM은 토큰을 하나씩 순서대로 생성해야 해서 대부분의 GPU 성능이 놀고 있게 된다. 추론 최적화는 이 낭비를 줄여서 같은 GPU로 더 많은 요청을 더 빨리 처리하게 만드는 기술들을 통칭한다.</p><h4>사용 예시</h4><p>가장 즉각적인 효과를 주는 건 <strong>양자화(Quantization)</strong>다. 모델의 가중치를 16비트에서 4비트로 줄이면 메모리 사용량이 4분의 1로 줄고, 더 저렴한 GPU에서도 모델을 돌릴 수 있게 된다. Ollama로 로컬 LLM을 돌릴 수 있는 이유가 양자화 덕분이다. vLLM에서 AWQ 4비트 양자화를 적용하면 원래 모델 대비 3배 많은 요청을 동시에 처리하면서도 품질 차이는 거의 없다.</p><p><strong>추측적 디코딩(Speculative Decoding)</strong>은 작고 빠른 드래프트 모델이 먼저 여러 토큰을 예측하고, 큰 모델이 한꺼번에 검증하는 방식이다. 한 번의 연산으로 여러 토큰을 생성하는 효과가 나서, 품질 손실 없이 2~3배 빠른 생성이 가능하다.</p><p><strong>KV 캐시 최적화</strong>는 이미 계산한 어텐션 값을 재활용해서 중복 연산을 없앤다. vLLM의 <strong>PagedAttention</strong>은 KV 캐시를 운영체제의 가상 메모리처럼 페이지 단위로 관리해서 메모리 낭비를 극적으로 줄인다. 긴 문맥을 다루는 RAG 파이프라인이나 멀티턴 대화에서 특히 효과적이다.</p><h4>주의할 점</h4><p>양자화를 너무 공격적으로 하면(예: 2비트) 품질이 눈에 띄게 떨어질 수 있다. 최적화 효과는 반드시 자신의 워크로드로 벤치마크해봐야 한다.</p></div>
   <div class="tags"><span>#양자화</span><span>#vLLM</span><span>#추론속도</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/distillation.html">모델 증류</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/mercury-llm.html">머큐리</a>, <a href="https://aiwiki.work/k/mimo-v2-5.html">미모 v2.5</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://huggingface.co/docs/transformers/ko/llm_optims" target="_blank" rel="nofollow noopener">LLM 추론 최적화 - Hugging Face Docs</a> <span class="ref-type">공식</span></li><li><a href="https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/" target="_blank" rel="nofollow noopener">Mastering LLM Inference Optimization - NVIDIA</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/vllm-project/vllm" target="_blank" rel="nofollow noopener">vLLM - GitHub</a> <span class="ref-type">공식</span></li><li><a href="https://pytorch.org/blog/hitchhikers-guide-speculative-decoding/" target="_blank" rel="nofollow noopener">A Hitchhiker's Guide to Speculative Decoding - PyTorch</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=TnTnAFpIkUo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TnTnAFpIkUo/mqdefault.jpg" alt="LLM Inference Optimization - Umar Jamil" loading="lazy" width="160" height="90"><span>LLM Inference Optimization - Umar Jamil</span></a><a class="video-item" href="https://www.youtube.com/watch?v=80bIUggRJf4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/80bIUggRJf4/mqdefault.jpg" alt="The KV Cache: Memory Usage in Transformers" loading="lazy" width="160" height="90"><span>The KV Cache: Memory Usage in Transformers</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#inference-optimization">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

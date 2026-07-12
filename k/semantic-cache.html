@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>시맨틱 캐시</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>이전에 처리한 쿼리와 의미적으로 유사한 새 쿼리가 들어오면 LLM을 다시 호출하지 않고 캐시된 답변을 반환하는 기법.</p><h4>개념 설명</h4><p>일반 캐시는 완전히 동일한 입력에만 적용된다. 하지만 "오늘 날씨 어때?"와 "오늘 날씨가 어떻습니까?"는 다른 문자열이지만 같은 질문이다. <strong>시맨틱 캐시</strong>는 쿼리를 임베딩으로 변환해서 벡터 유사도를 측정하고, 충분히 유사한 과거 쿼리가 있으면 LLM 호출 없이 캐시된 답변을 반환한다. 반복 질문이 많은 서비스에서 비용을 크게 줄일 수 있다.</p><h4>사용 예시</h4><p>FAQ 기반 고객 지원 챗봇은 비슷한 질문이 반복되므로 시맨틱 캐시 효과가 크다. GPTCache나 Redis의 시맨틱 캐시 기능을 붙이면, 임베딩 유사도가 0.95 이상인 쿼리에 대해서는 LLM을 호출하지 않고 캐시에서 바로 응답한다. 코사인 유사도 임계값을 조정해 캐시 히트율과 정확도를 균형 잡는다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#유사도검색</span><span>#비용절감</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/context-caching.html">컨텍스트 캐싱</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/semantic-cache" target="_blank" rel="nofollow noopener">Semantic Cache for Large Language Models - Azure Cosmos DB | Microsoft Learn</a> <span class="ref-type">공식</span></li><li><a href="https://zuplo.com/blog/what-is-semantic-caching/" target="_blank" rel="nofollow noopener">Semantic Caching: What it is &amp; Why You Need it - Zuplo</a> <span class="ref-type">블로그</span></li><li><a href="https://redis.io/blog/what-is-semantic-caching/" target="_blank" rel="nofollow noopener">What is semantic caching? Guide to faster, smarter LLM apps</a> <span class="ref-type">블로그</span></li><li><a href="https://www.catchpoint.com/blog/semantic-caching-what-we-measured-why-it-matters" target="_blank" rel="nofollow noopener">Semantic Caching: What We Measured, Why It Matters - Catchpoint</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#semantic-cache">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

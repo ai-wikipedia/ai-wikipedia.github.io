@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>나노 바나나</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>구글이 만든 Gemini 기반의 이미지 생성·편집 모델. 사진을 올리고 말로 "이렇게 바꿔줘"라고 하면 그대로 고쳐주는 게 핵심이다.</p><h4>누가 만든 무엇인가</h4><p><strong>Nano Banana</strong>는 구글 딥마인드가 만든 이미지 생성·편집 모델의 별칭이다. 정식 이름은 <code>Gemini 2.5 Flash Image</code>인데, 출시 전 테스트 단계에서 붙은 "nano banana"라는 코드네임이 입소문을 타면서 그대로 공식 애칭이 됐다. 이후 Gemini 3 Pro를 기반으로 한 상위 버전 <strong>Nano Banana Pro</strong>(<code>Gemini 3 Pro Image</code>)까지 나오면서, 지금은 속도 위주의 기본 모델과 품질 위주의 Pro 모델을 묶어 부르는 이름이 됐다.</p><p>가장 큰 특징은 이미지 전용 모델이 따로 도는 게 아니라 <strong>Gemini라는 언어 모델 안에 이미지 능력이 통합</strong>돼 있다는 점이다. 그래서 "노을 지는 하늘로 바꾸되 인물 얼굴은 그대로 둬" 같은 복잡한 지시를 글의 뉘앙스까지 이해해서 처리한다.</p><h4>무엇을 잘하나</h4><p>이 모델이 화제가 된 건 <strong>대화형 편집</strong> 때문이다. 한 번 생성한 그림을 두고 "배경만 바다로", "이번엔 모자를 씌워줘"처럼 계속 말을 걸어 조금씩 고쳐나갈 수 있다. 이때 <strong>캐릭터 일관성</strong>이 유지돼서, 같은 인물이 여러 장면에 등장하는 동화책이나 웹툰 컷을 만들 때 얼굴이 계속 같은 사람으로 나온다.</p><p>여러 장의 사진을 한 장으로 <strong>합성</strong>하는 것도 강점이다. 내 얼굴 사진과 옷 사진, 배경 사진을 주면 셋을 자연스럽게 합쳐준다. Pro 버전은 여기에 더해 추론 능력을 활용해 표·인포그래픽처럼 <strong>글자가 정확히 박혀야 하는 이미지</strong>를 만드는 데 강하고, 여러 언어 텍스트도 깨지지 않게 렌더링한다.</p><h4>개발자가 어떻게 쓰나</h4><p>가장 흔한 진입점은 <code>Gemini API</code>다. <code>gemini-2.5-flash-image</code> 같은 모델 ID로 요청을 보내면 텍스트만으로 그림을 만들거나(text-to-image), 이미지와 지시문을 같이 넣어 편집을(image-and-image-to-image) 한다. Google AI Studio에서 프롬프트를 먼저 실험해보고 바로 코드로 내보내거나 GitHub에 저장하는 식으로 앱을 붙이는 흐름이 자연스럽다.</p><p>직접 코드를 안 짜더라도 손이 닿는다. Gemini 앱에서 사진을 올려 편집하거나, 어도비 <code>Firefly</code>·포토샵의 Generative Fill에 파트너 모델로 들어가 있어 기존 디자인 작업 안에서 호출된다. 상세페이지 이미지나 광고 소재를 빠르게 여러 버전 뽑는 실무 용도로 많이 쓰인다.</p><h4>주의할 점</h4><p>생성·편집된 모든 이미지에는 구글의 <code>SynthID</code> 워터마크가 눈에 안 보이게 새겨진다. AI로 만든 이미지임을 추적하기 위한 장치라, 출처 투명성이 필요한 작업에서는 이 점을 알고 써야 한다.</p></div>
   <div class="tags"><span>#Google</span><span>#Gemini</span><span>#이미지 생성</span><span>#이미지 편집</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gemini.html">제미나이</a>, <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/stable-diffusion.html">스테이블 디퓨전</a>, <a href="https://aiwiki.work/k/generative-ai.html">생성형 AI</a>, <a href="https://aiwiki.work/k/watermarking.html">워터마킹</a>, <a href="https://aiwiki.work/k/nano-banana-2.html">나노 바나나 2</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank" rel="nofollow noopener">Gemini API: image generation (Nano Banana)</a> <span class="ref-type">공식</span></li><li><a href="https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image" target="_blank" rel="nofollow noopener">Introducing Gemini 2.5 Flash Image, our state-of-the-art image model</a> <span class="ref-type">공식</span></li><li><a href="https://blog.google/innovation-and-ai/products/nano-banana-pro" target="_blank" rel="nofollow noopener">Introducing Nano Banana Pro</a> <span class="ref-type">공식</span></li><li><a href="https://deepmind.google/models/gemini-image" target="_blank" rel="nofollow noopener">Gemini Image – Nano Banana</a> <span class="ref-type">공식</span></li><li><a href="https://www.adobe.com/products/firefly/partner-models/google-gemini-nano-banana.html" target="_blank" rel="nofollow noopener">Nano Banana 2 &amp; Nano Banana Pro - now in Adobe Firefly</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=AeBOzler4nE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AeBOzler4nE/mqdefault.jpg" alt="Meet Nano Banana Pro: Next-Level AI Image Generation &amp; Editing" loading="lazy" width="160" height="90"><span>Meet Nano Banana Pro: Next-Level AI Image Generation &amp; Editing</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Al5OABK1Lak" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Al5OABK1Lak/mqdefault.jpg" alt="Create Trending AI Images with Google Nano Banana Prompts" loading="lazy" width="160" height="90"><span>Create Trending AI Images with Google Nano Banana Prompts</span></a><a class="video-item" href="https://www.youtube.com/watch?v=roAORBdDTDI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/roAORBdDTDI/mqdefault.jpg" alt="제미나이 미친 기능 나노바나나 ai무료로 써보세요!" loading="lazy" width="160" height="90"><span>제미나이 미친 기능 나노바나나 ai무료로 써보세요!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#nano-banana">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

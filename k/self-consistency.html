@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>셀프 컨시스턴시</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>같은 질문을 여러 번 답하게 한 뒤 가장 많이 나온 답을 최종 답으로 선택해 정확도를 높이는 기법.</p><h4>개념 설명</h4><p>사람도 어려운 문제를 여러 방법으로 풀어보고 같은 답이 나오면 확신을 갖는다. <strong>셀프 컨시스턴시</strong>는 같은 프롬프트를 temperature를 높여 여러 번 실행하고, 각각 다른 추론 경로로 도달한 답 중 가장 빈번하게 나온 것을 최종 답으로 채택하는 방식이다. 단일 생성보다 비용이 들지만 수학, 논리 추론 문제에서 정확도가 크게 올라간다.</p><h4>사용 예시</h4><p>중요한 분류 작업이나 수학 계산을 할 때 같은 프롬프트를 5번 실행하고 다수결로 답을 정하면 오답률이 줄어든다. 코드로 구현할 때는 <code>temperature=0.7</code>로 설정하고 N번 호출한 뒤 답을 집계하면 된다. reasoning-model처럼 단일 호출이 이미 다양한 경로를 탐색한다면 셀프 컨시스턴시의 추가 효과는 줄어든다.</p></div>
   <div class="tags"><span>#앙상블</span><span>#정확도향상</span><span>#다수결</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://medium.com/@dan_43009/self-consistency-and-universal-self-consistency-prompting-00b14f2d1992" target="_blank" rel="nofollow noopener">Self-Consistency and Universal Self-Consistency Prompting | by Dan Cleary | Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.nadoo.ai/self-consistency/" target="_blank" rel="nofollow noopener">일관성 있는 AI, self-consistency 프롬프팅 기법 - 나두AI 블로그</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.sionic.ai/self-discover" target="_blank" rel="nofollow noopener">LLM 추론력 향상을 위한 Self-Discover 방법론</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/pdf/2203.11171" target="_blank" rel="nofollow noopener">[PDF] Self-Consistency Improves Chain of Thought Reasoning in ... - arXiv</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#self-consistency">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

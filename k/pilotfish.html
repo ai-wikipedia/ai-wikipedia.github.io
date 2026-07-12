@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>파일럿피시</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>클라우드 서비스, 레거시 시스템, 의료기기 등 어떤 시스템이든 연결할 수 있는 데이터 통합 플랫폼으로, AI 서비스와 기존 엔터프라이즈 시스템을 잇는 통합 레이어로 활용된다.</p><h4>개념 설명</h4><p>PilotFish는 '어떤 데이터든, 어떤 시스템이든'을 표방하는 데이터 통합 플랫폼이다. eiPlatform이라는 런타임 인터페이스 엔진이 클라우드 서비스, 소프트웨어 애플리케이션, 의료기기 등 서로 다른 시스템 사이의 데이터 변환과 라우팅을 처리한다. AI 서비스가 기업 인프라에 급속히 확산되면서, 기존 레거시 시스템과 신규 AI 워크플로우를 연결해야 하는 통합 레이어 수요가 높아지고 있어 이 역할에 적합하다.</p><h4>사용 예시</h4><p>의료 기관이 기존 EMR 시스템과 새로운 AI 진단 서비스를 연결해야 할 때, 두 시스템이 서로 다른 데이터 포맷을 사용하더라도 PilotFish의 eiPlatform이 중간에서 변환·라우팅을 처리한다. AI 분석 파이프라인 구축 시에도 레거시 DB, REST API, 파일 시스템 등 이기종 데이터 소스를 하나의 통합 레이어로 묶어 AI 모델에 정규화된 데이터를 공급하는 데 활용할 수 있다. 환경 무관(온프레미스, 클라우드, 외부 조직)으로 동작한다는 점이 특징이다.</p><h4>주의할 점</h4><p>PilotFish는 AI 전용 플랫폼이 아닌 범용 데이터 통합 솔루션이다. AI 워크플로우 자동화 자체가 목적이라면 LangChain, n8n 같은 AI 특화 오케스트레이션 도구와 역할을 나눠 함께 사용하는 편이 적합하다.</p></div>
   <div class="tags"><span>#데이터 통합</span><span>#인터페이스 엔진</span><span>#상호운용성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/data-pipeline.html">데이터 파이프라인</a>, <a href="https://aiwiki.work/k/mlops.html">MLOps</a>, <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/n8n.html">n8n</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.pilotfishtechnology.com" target="_blank" rel="nofollow noopener">PilotFish Integration Platform</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#pilotfish">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-09</div>
 </div>

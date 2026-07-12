@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>GPT</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>OpenAI가 개발한 트랜스포머 기반 언어 모델 시리즈. 대규모 텍스트로 사전학습 후 다양한 언어 작업을 수행할 수 있음을 보여주며 현대 LLM 시대를 열었다.</p><h4>개념 설명</h4><p>GPT는 트랜스포머의 <strong>디코더</strong>만을 사용해 "다음 토큰 예측"이라는 단순한 목표로 대규모 텍스트를 학습한다. GPT-1(2018)에서 GPT-4(2023)로 이어지는 시리즈는 스케일을 늘릴수록 성능이 급격히 향상된다는 것을 입증했고, 이 발견이 현재 AI 붐의 출발점이 됐다. ChatGPT를 통해 대중에게 처음으로 LLM의 능력을 직접 경험하게 만든 모델이기도 하다.</p><h4>사용 예시</h4><p>OpenAI API를 통해 GPT-4를 호출하면 텍스트 생성, 코드 작성, 분석 등을 처리할 수 있다. Claude나 Gemini 같은 경쟁 모델들도 GPT와 같은 디코더-온리 트랜스포머 구조를 따르며, GPT가 정착시킨 "사전학습 후 정렬"이라는 패러다임을 공유한다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#생성모델</span><span>#디코더</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/scaling-law.html">스케일링 법칙</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/sora.html">소라</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf" target="_blank" rel="nofollow noopener">Improving Language Understanding by Generative Pre-Training (GPT-1)</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="nofollow noopener">Language Models are Few-Shot Learners (GPT-3)</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2303.08774" target="_blank" rel="nofollow noopener">GPT-4 Technical Report</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wjZofJX0v4M/mqdefault.jpg" alt="But what is a GPT? Visual intro to Transformers (3Blue1Brown)" loading="lazy" width="160" height="90"><span>But what is a GPT? Visual intro to Transformers (3Blue1Brown)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kCc8FmEb1nY/mqdefault.jpg" alt="Let's build GPT: from scratch (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Let's build GPT: from scratch (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="트랜스포머 어텐션 이즈 올 유 니드 - 허민석" loading="lazy" width="160" height="90"><span>트랜스포머 어텐션 이즈 올 유 니드 - 허민석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#gpt">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>트레이싱</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM 앱의 각 실행 단계를 기록해서 어떤 일이 일어났는지 추적하는 것. 복잡한 에이전트 파이프라인 디버깅에 필수다.</p><h4>개념 설명</h4><p>LLM 앱이 여러 단계를 거치면 최종 출력이 왜 그렇게 나왔는지 파악하기 어렵다. <strong>트레이싱</strong>은 분산 시스템 디버깅에서 가져온 개념으로, 각 LLM 호출, 툴 실행, 에이전트 단계를 "스팬"으로 기록하고 전체 실행 흐름을 트리 구조로 시각화한다. 지연 시간, 토큰 비용, 오류 위치를 한눈에 파악할 수 있다.</p><h4>사용 예시</h4><p>에이전트가 5단계를 거쳐 답변을 만드는데 결과가 이상하다면, 트레이싱 대시보드에서 각 단계의 입출력을 펼쳐보면 어느 단계에서 잘못됐는지 바로 알 수 있다. OpenTelemetry 표준을 쓰거나 Langfuse, LangSmith, Helicone 같은 서비스를 붙이면 된다.</p></div>
   <div class="tags"><span>#관측성</span><span>#디버깅</span><span>#로깅</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/langfuse.html">랭퓨즈</a>, <a href="https://aiwiki.work/k/langsmith.html">랭스미스</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/agent-eval.html">에이전트 평가</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://posthog.com/blog/best-open-source-llm-observability-tools" target="_blank" rel="nofollow noopener">7 best free and open source LLM observability tools - PostHog</a> <span class="ref-type">블로그</span></li><li><a href="https://m.blog.naver.com/eol_grim/221874356064" target="_blank" rel="nofollow noopener">트레이싱으로 인물화 쉽게 그리기 가능? 트레이싱으로 캐리커쳐 ...</a> <span class="ref-type">블로그</span></li><li><a href="https://arize.com/resource/llm-tracing/" target="_blank" rel="nofollow noopener">LLM Tracing - Arize AI</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://mlflow.org/docs/latest/genai/tracing/" target="_blank" rel="nofollow noopener">LLM Tracing and Agent Observability | MLflow AI Platform | MLflow</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#tracing">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

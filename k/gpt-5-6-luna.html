@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>GPT-5.6 Luna</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>GPT-5.6 패밀리에서 가장 빠르고 비용 효율적인 모델로, Sol 대비 5배 저렴한 가격에 대규모 고용량 작업을 처리할 수 있다.</p><h4>GPT-5.6 패밀리의 최저비용 모델</h4><p>GPT-5.6 Luna는 OpenAI가 2026년 7월 9일 출시한 GPT-5.6 패밀리 중 속도와 비용 효율을 최우선으로 설계한 모델이다. Sol 대비 입력·출력 토큰 단가가 각각 5배 낮아, 수천 건의 요청을 처리해야 하는 서비스에서 AI 기능을 비용 부담 없이 탑재할 수 있다. OpenAI 발표에 따르면 Luna도 Agents' Last Exam 벤치마크에서 Claude Fable 5를 약 1/4 비용으로 능가한다.</p><p>고용량, 낮은 지연시간(latency-sensitive) 환경에 최적화되어 있으며, 채팅, 텍스트 분류, 경량 에이전트 워크플로우처럼 빠른 응답이 중요하고 반복 요청이 많은 시나리오에 적합하다.</p><h4>사용 예시</h4><p>API에서는 <code>gpt-5.6-luna</code>로 직접 호출한다. 수천 건의 고객 문의를 실시간으로 분류하거나, 콘텐츠 모더레이션처럼 대규모로 반복되는 짧은 판단 작업에 Luna를 붙이면 Sol이나 Terra 대비 비용을 대폭 절감하면서도 충분한 성능을 얻을 수 있다. 챗봇처럼 응답 속도가 UX를 결정하는 서비스에서도 Luna의 빠른 레이턴시가 직접적인 이점이 된다.</p><h4>주의할 점</h4><p>Luna는 비용·속도 최우선 티어인 만큼, 복잡한 다단계 추론이나 긴 에이전트 워크플로우보다는 빠른 처리가 필요한 반복 작업에 효과적이다. 고난도 코딩이나 심층 분석이 필요한 작업에는 Terra나 Sol을 선택하는 것이 적합하다.</p></div>
   <div class="tags"><span>#OpenAI</span><span>#경량 모델</span><span>#GPT-5.6</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gpt-5-6.html">GPT-5.6</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/gpt.html">GPT</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a>, <a href="https://aiwiki.work/k/small-language-model.html">소형 언어 모델</a>, <a href="https://aiwiki.work/k/gpt-5-6-terra.html">GPT-5.6 Terra</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/gpt-5-6" target="_blank" rel="nofollow noopener">GPT-5.6: Frontier intelligence that scales with your ambition</a> <span class="ref-type">공식</span></li><li><a href="https://openrouter.ai/openai/gpt-5.6-luna" target="_blank" rel="nofollow noopener">GPT-5.6 Luna - API Pricing &amp; Providers</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.vellum.ai/blog/gpt-5-6-benchmarks-explained" target="_blank" rel="nofollow noopener">GPT-5.6 Sol vs Terra vs Luna: Which Tier Should You Actually Use?</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.datacamp.com/blog/gpt-5-6-sol-luna-terra" target="_blank" rel="nofollow noopener">GPT-5.6 Sol, Terra, and Luna: OpenAI's Next-Generation Model Family</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=ELh8R7bGlxE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ELh8R7bGlxE/mqdefault.jpg" alt="Sol, Terra, and Luna, our GPT‑5.6 family of models are here." loading="lazy" width="160" height="90"><span>Sol, Terra, and Luna, our GPT‑5.6 family of models are here.</span></a><a class="video-item" href="https://www.youtube.com/watch?v=-MPGU2a67Ls" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-MPGU2a67Ls/mqdefault.jpg" alt="Meet GPT-5.6" loading="lazy" width="160" height="90"><span>Meet GPT-5.6</span></a><a class="video-item" href="https://www.youtube.com/watch?v=OM9QC_0ae7w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OM9QC_0ae7w/mqdefault.jpg" alt="챗GPT 5.6 등장! Sol·Terra·Luna 모델 실전 비교" loading="lazy" width="160" height="90"><span>챗GPT 5.6 등장! Sol·Terra·Luna 모델 실전 비교</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#gpt-5-6-luna">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-11</div>
 </div>

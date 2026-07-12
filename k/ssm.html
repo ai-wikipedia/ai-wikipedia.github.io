@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>상태 공간 모델</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>시퀀스를 선형 시간에 처리하는 모델 아키텍처. Transformer의 이차 복잡도 어텐션을 대체할 수 있는 구조로, 긴 시퀀스 처리에서 특히 효율적이다.</p><h4>개념 설명</h4><p>Transformer의 Self-Attention은 시퀀스 길이의 제곱에 비례하는 계산이 필요하다. 시퀀스가 두 배 길어지면 계산량이 네 배 늘어난다. 상태 공간 모델(SSM)은 은닉 상태를 유지하며 시퀀스를 선형 시간으로 처리하는 대안이다. 신호 처리에서 온 개념을 신경망에 적용한 것이다.</p><p>2023년 등장한 <strong>Mamba</strong>가 가장 주목받는 SSM이다. 입력에 따라 상태 전이 행렬을 동적으로 변경하는 <strong>선택적 상태 공간</strong> 메커니즘을 도입해 어텐션 없이도 좋은 성능을 보였다. Transformer와 Mamba를 결합한 <strong>하이브리드 아키텍처</strong>도 활발히 연구 중이다.</p><h4>사용 예시</h4><p>생체 신호, 오디오, 긴 코드 시퀀스처럼 매우 긴 시퀀스를 처리하는 태스크에서 Mamba 기반 모델을 실험해볼 수 있다. HuggingFace에 Mamba-2 등의 구현체가 공개되어 있다. 아직 Transformer 대비 생태계가 작지만 롱 컨텍스트 효율에서의 강점으로 주목받는다.</p></div>
   <div class="tags"><span>#Mamba</span><span>#선형복잡도</span><span>#시퀀스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/granite.html">그래니트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2312.00752" target="_blank" rel="nofollow noopener">Mamba: Linear-Time Sequence Modeling with Selective State Spaces</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/state-spaces/mamba" target="_blank" rel="nofollow noopener">Mamba SSM Architecture — Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2111.00396" target="_blank" rel="nofollow noopener">Efficiently Modeling Long Sequences with Structured State Spaces (S4)</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#ssm">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

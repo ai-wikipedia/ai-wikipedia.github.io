@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>푸구 울트라</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>여러 프론티어 모델을 하나의 API 뒤에서 조율하는 Sakana AI의 멀티에이전트 오케스트레이션 시스템. 약 70억 파라미터 규모의 코디네이터 모델이 작업을 분석해 적합한 전문 모델에 위임하고 결과를 합성한다.</p><h4>개념 설명</h4><p>Fugu Ultra는 일본 AI 연구소 Sakana AI가 2026년 6월에 출시한 멀티에이전트 오케스트레이션 시스템이다. 핵심은 Fugu Ultra 자체가 하나의 LLM(약 70억 파라미터)이지만, 사용자의 프롬프트에 직접 답하도록 훈련된 게 아니라는 점이다. 요청이 들어오면 Fugu Ultra는 자신이 관리하는 프론티어 모델 풀에서 작업에 적합한 모델을 1~3개 선택하고, 각각에게 작업을 맡긴 뒤 출력을 검증하고 합성해 단일 응답으로 반환한다.</p><p>비유하자면 여러 전문가를 보유한 에이전시처럼, 클라이언트는 에이전시(Fugu Ultra)에 일을 맡기고 에이전시가 내부에서 가장 적합한 전문가를 투입한다. Sakana는 두 가지 버전을 제공하는데, Fugu가 저지연 기본 버전이라면 <strong>Fugu Ultra</strong>는 속도보다 답변 깊이와 품질을 최우선으로 하는 고난도 멀티스텝 태스크용 버전이다.</p><h4>사용 예시</h4><p>OpenAI 호환 API로 제공되기 때문에 기존 OpenAI SDK를 사용하는 코드에서 base URL과 모델명만 바꿔 바로 연결할 수 있다. <code>sakana/fugu-ultra</code>로 모델을 지정하면 복잡한 추론 문제나 코딩 태스크에서 Fugu Ultra가 내부적으로 최적 모델 조합을 결정해 처리한다. 기존에 멀티에이전트 오케스트레이션을 직접 구현할 때 겪던 모델 선택·폴백·결과 합성의 복잡성을 API 호출 한 번으로 위임하는 셈이다.</p><h4>주의할 점</h4><p>내부 라우팅이 블랙박스라 어떤 모델이 어떤 작업을 처리했는지 알 수 없어 <strong>옵저버빌리티</strong>가 크게 제한된다. 코디네이터가 여러 모델을 순차적으로 호출하는 구조상 단일 모델 대비 레이턴시가 높고 비용 예측이 어렵다. 또한 출시 시점 기준으로 EEA(유럽경제지역) 등 일부 지역에서는 접근이 제한돼 있다.</p></div>
   <div class="tags"><span>#Sakana AI</span><span>#오케스트레이션</span><span>#멀티에이전트</span><span>#코디네이터 모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/routing-pattern.html">라우팅 패턴</a>, <a href="https://aiwiki.work/k/model-council.html">모델 카운슬</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://wavespeed.ai/blog/posts/what-is-fugu-ultra" target="_blank" rel="nofollow noopener">What Is Fugu Ultra? Sakana AI's Multi-Agent API</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://coursiv.io/blog/fugu-ultra" target="_blank" rel="nofollow noopener">Fugu Ultra: Sakana AI Model, Price &amp; Benchmarks</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.theverge.com/ai-artificial-intelligence/953904/sakana-fugu-ai" target="_blank" rel="nofollow noopener">Sakana Fugu Ultra promises to deliver 'the very best frontier-level performance'</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://sakanafugu.com" target="_blank" rel="nofollow noopener">Sakana Fugu: the multi-agent AI orchestration system that works like a single model</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=GpSqBjW6hR4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GpSqBjW6hR4/mqdefault.jpg" alt="I Battle Tested Sakana Fugu's Fable Killer" loading="lazy" width="160" height="90"><span>I Battle Tested Sakana Fugu's Fable Killer</span></a><a class="video-item" href="https://www.youtube.com/watch?v=SIGNgo8NzE8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SIGNgo8NzE8/mqdefault.jpg" alt="Sakana Fugu Hands-On Test – Does THIS Really Beat Fable 5?" loading="lazy" width="160" height="90"><span>Sakana Fugu Hands-On Test – Does THIS Really Beat Fable 5?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=zlU74QG2ASE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zlU74QG2ASE/mqdefault.jpg" alt="Claude Fable級！？国産AI『Sakana Fugu』を解説【8万円分課金して徹底検証】" loading="lazy" width="160" height="90"><span>Claude Fable級！？国産AI『Sakana Fugu』を解説【8万円分課金して徹底検証】</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#fugu-ultra">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-24</div>
 </div>

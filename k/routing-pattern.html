@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>라우팅 패턴</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>요청의 복잡도와 특성에 따라 가장 적합한 LLM 모델을 자동으로 선택해 전달하는 시스템.</p><h4>개념 설명</h4><p>"모든 요청을 GPT-4o로 처리하면 비용이 너무 크고, 모두 작은 모델로 처리하면 품질이 떨어진다"는 딜레마를 해결하는 것이 <strong>모델 라우터</strong>다. 간단한 질문은 빠르고 저렴한 모델로, 복잡한 추론이 필요한 요청은 강력한 모델로 자동 분류해서 보낸다. 비용과 품질 사이의 균형을 시스템 수준에서 관리한다.</p><h4>사용 예시</h4><p>Martian, RouteLLM 같은 도구를 쓰면 요청 복잡도를 분류하는 작은 분류 모델이 앞단에서 판단해 적절한 모델로 보내준다. LiteLLM 라우터를 구성해 "토큰 200개 이하는 haiku, 이상은 sonnet, 코딩 관련은 claude-code"처럼 규칙 기반으로 라우팅할 수도 있다.</p></div>
   <div class="tags"><span>#라우팅</span><span>#비용최적화</span><span>#선택</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/llm-gateway.html">LLM 게이트웨이</a>, <a href="https://aiwiki.work/k/litellm.html">LiteLLM</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/fugu-ultra.html">푸구 울트라</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router" target="_blank" rel="nofollow noopener">Model router for Microsoft Foundry concepts - Microsoft Foundry | Microsoft Learn</a> <span class="ref-type">공식</span></li><li><a href="https://www.mindstudio.ai/blog/set-up-ai-model-router-llm-stack/" target="_blank" rel="nofollow noopener">How to Set Up an AI Model Router for Your LLM Stack</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/@michael.hannecke/the-model-router-running-a-team-of-local-llms-instead-of-one-big-one-fd75eeec9d39" target="_blank" rel="nofollow noopener">Model Router: local Running Team of small LLMs over One Big</a> <span class="ref-type">블로그</span></li><li><a href="https://www.truefoundry.com/blog/what-is-llm-router" target="_blank" rel="nofollow noopener">What is LLM Router? - TrueFoundry</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#routing-pattern">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

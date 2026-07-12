@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>AI API 게이트웨이</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>여러 LLM 공급자에 대한 요청을 중앙에서 관리하며 라우팅, 폴백, 비용 통제를 단일 레이어로 처리하는 인프라 컴포넌트다.</p><h4>필요한 이유</h4><p>LLM API는 응답 지연이 길고 비용이 토큰 단위로 누적되며 공급자마다 형식이 다르다. AI 게이트웨이는 모든 LLM 트래픽의 단일 진입점으로 라우팅, 폴백, 캐싱, 감사 로그를 중앙에서 집행한다.</p><h4>실제 활용 사례</h4><p>Kong은 2024년 최초의 전용 AI 게이트웨이를 출시, Portkey 대비 228% 높은 처리량을 기록했다. 폴백 라우팅으로 GPT-4o 실패 시 Claude로 자동 전환해 서비스를 유지한다. 시맨틱 캐싱은 동일한 질문에 이전 응답을 재사용해 비용을 30~60% 절감한다. 멀티모델 기업들은 간단한 작업은 소형 모델, 복잡한 추론은 대형 모델로 자동 분기하는 지능형 라우팅을 구현하고 있다.</p></div>
   <div class="tags"><span>#라우팅</span><span>#비용관리</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/pilotfish.html">파일럿피시</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.konghq.com/gateway/latest/ai-gateway/" target="_blank" rel="nofollow noopener">Kong AI Gateway – Official Docs</a> <span class="ref-type">공식</span></li><li><a href="https://docs.litellm.ai/docs/simple_proxy" target="_blank" rel="nofollow noopener">LiteLLM Proxy – Official Docs</a> <span class="ref-type">공식</span></li><li><a href="https://konghq.com/blog/learning-center/api-gateway-vs--ai-gateway" target="_blank" rel="nofollow noopener">API Gateway vs AI Gateway – Kong Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zy8ChVd_oTM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zy8ChVd_oTM/mqdefault.jpg" alt="Flash Attention derived and coded from first principles with Triton" loading="lazy" width="160" height="90"><span>Flash Attention derived and coded from first principles with Triton</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PSs6nxngL6k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PSs6nxngL6k/mqdefault.jpg" alt="Neural Networks Part 13: Attention (StatQuest)" loading="lazy" width="160" height="90"><span>Neural Networks Part 13: Attention (StatQuest)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Bmx2S1dSAV0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Bmx2S1dSAV0/mqdefault.jpg" alt="CS231n 한글설명 Attention - 송교석" loading="lazy" width="160" height="90"><span>CS231n 한글설명 Attention - 송교석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#api-gateway">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

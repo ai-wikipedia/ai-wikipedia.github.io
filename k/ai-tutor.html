@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>AI 튜터</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>학습자의 수준과 목표에 맞춰 1:1로 설명하고 질문에 답해주는 AI 교육 도우미. 24시간 어떤 주제든 자기 속도로 배울 수 있게 해준다.</p><h4>개념 설명</h4><p>수업이 이해가 안 갈 때 선생님에게 바로 물어볼 수 있다면 얼마나 좋을까. AI 튜터는 바로 그 역할을 한다. 학습자의 수준, 목표, 학습 스타일에 맞춰 설명하고, 모르는 개념이 생기면 즉시 질문에 답해주며, 연습 문제까지 생성해주는 1:1 AI 학습 도우미다.</p><p>기존 검색이나 유튜브와 다른 점은 <strong>대화형 상호작용</strong>이다. "이 개념이 이해가 안 돼"라고 하면 AI가 다른 비유로 다시 설명하고, 어느 부분에서 막혔는지 파악해서 그 지점을 집중적으로 보충해준다. 시간이나 장소에 구애받지 않고 24시간 이용할 수 있다는 것도 큰 강점이다.</p><h4>사용 예시</h4><p>Khan Academy의 <strong>Khanmigo</strong>는 대표적인 사례다. 학생이 수학 문제를 틀렸을 때 바로 답을 알려주는 대신 "어느 단계에서 막혔어?"라고 되묻는다. UC 샌디에이고 연구팀이 만든 AI 튜터도 같은 원칙을 따른다 — 강의 자료를 학습한 뒤 학생이 "답이 뭐야?"라고 물어도 힌트와 유도 질문만 제공한다. 이 <strong>소크라테스식 접근</strong>이 단순히 답을 주는 범용 AI와 다른 지점이다.</p><p>직접 AI 튜터를 만들 때는 RAG로 특정 교재나 강의 자료를 지식 기반으로 연결하고, 시스템 프롬프트로 "절대 직접 답을 주지 말고 유도 질문만 하라"는 제약을 건다. YouLearn처럼 PDF, 유튜브 영상, 강의 녹화본을 업로드하면 그 내용 기반으로 AI가 퀴즈를 만들고 질문에 답하는 방식이 실제 서비스에서도 많이 쓰인다.</p><h4>주의할 점</h4><p>AI 튜터의 가장 큰 위험은 <strong>환각</strong>이다. 잘못된 정보를 자신 있게 설명하면 학습자가 틀린 내용을 사실로 받아들일 수 있다. 그래서 신뢰도 높은 AI 튜터들은 RAG로 검증된 출처에서만 답변하거나, 불확실한 내용에 명시적으로 "확인이 필요한 부분"이라고 표시한다. 또한 AI가 즉시 답을 주는 편의성이 스스로 생각하는 능력을 약화시킬 수 있다는 점도 교육계의 주요 우려사항이다.</p></div>
   <div class="tags"><span>#교육</span><span>#개인화</span><span>#EdTech</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/personalization.html">개인화</a>, <a href="https://aiwiki.work/k/chatbot.html">챗봇</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/ai-assistant.html">AI 어시스턴트</a>, <a href="https://aiwiki.work/k/question-answering.html">질의응답</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://today.ucsd.edu/story/this-bespoke-ai-tutor-helps-students-learning" target="_blank" rel="nofollow noopener">This Bespoke AI Tutor Helps Students Learn — UC San Diego</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.tutor.com/ai" target="_blank" rel="nofollow noopener">Responsible, Human-powered AI Learning — Tutor.com</a> <span class="ref-type">공식</span></li><li><a href="https://www.youlearn.ai" target="_blank" rel="nofollow noopener">YouLearn AI — An AI tutor made for you</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Ia3CPhVkUtg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Ia3CPhVkUtg/mqdefault.jpg" alt="Meet Khanmigo: The student tutor AI being tested in school districts | 60 Minutes" loading="lazy" width="160" height="90"><span>Meet Khanmigo: The student tutor AI being tested in school districts | 60 Minutes</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Yg50CBpw8tM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Yg50CBpw8tM/mqdefault.jpg" alt="An AI tutor for every student" loading="lazy" width="160" height="90"><span>An AI tutor for every student</span></a><a class="video-item" href="https://www.youtube.com/watch?v=RC7TXdnuG8w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/RC7TXdnuG8w/mqdefault.jpg" alt="Which is the best AI language tutor?" loading="lazy" width="160" height="90"><span>Which is the best AI language tutor?</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-tutor">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-06</div>
 </div>

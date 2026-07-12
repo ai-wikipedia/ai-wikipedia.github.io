@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>오케스트레이션 패턴</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>여러 AI 에이전트의 실행 순서와 역할을 조율하여 하나의 목표를 달성하는 것. 각 에이전트가 언제, 무엇을, 어떤 순서로 할지 결정하는 중앙 관제 역할이다.</p><h4>개념 설명</h4><p>오케스트레이션은 마치 오케스트라 지휘자처럼 여러 에이전트를 조율하는 것이다. 단순히 에이전트를 여러 개 띄우는 것과 달리, 어떤 에이전트가 먼저 실행될지, 중간 결과를 어떻게 다음 에이전트에게 전달할지, 실패했을 때 어떻게 처리할지까지 설계한다. 순차 실행, 병렬 실행, 조건 분기 등 다양한 패턴이 있으며 복잡한 작업일수록 세밀한 오케스트레이션이 필요하다.</p><h4>사용 예시</h4><p>코드 리뷰 파이프라인을 만든다면, 먼저 정적 분석 에이전트가 코드를 검사하고, 그 결과를 받아 보안 취약점 에이전트가 특정 파일에 집중하고, 마지막으로 리뷰 요약 에이전트가 전체 결과를 통합해 PR 코멘트를 작성하는 식이다. LangGraph나 Claude Code의 멀티에이전트 기능을 쓰면 이런 흐름을 코드로 정의할 수 있다.</p></div>
   <div class="tags"><span>#조율</span><span>#워크플로우</span><span>#멀티에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/critic-pattern.html">크리틱 패턴</a>, <a href="https://aiwiki.work/k/summarizer.html">서머라이저</a>, <a href="https://aiwiki.work/k/routing-pattern.html">라우팅 패턴</a>, <a href="https://aiwiki.work/k/reflection-pattern.html">리플렉션 패턴</a>, <a href="https://aiwiki.work/k/agentic-os.html">에이전틱 OS</a>, <a href="https://aiwiki.work/k/dynamic-workflows.html">다이나믹 워크플로우</a>, <a href="https://aiwiki.work/k/open-multi-agent.html">오픈 멀티 에이전트</a>, <a href="https://aiwiki.work/k/fugu-ultra.html">푸구 울트라</a>, <a href="https://aiwiki.work/k/code-as-harness.html">코드 에이전트 하네스</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aws.amazon.com/solutions/guidance/multi-agent-orchestration-on-aws/" target="_blank" rel="nofollow noopener">Guidance for Multi-Agent Orchestration on AWS</a> <span class="ref-type">공식</span></li><li><a href="https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns" target="_blank" rel="nofollow noopener">AI Agent Orchestration Patterns - Azure Architecture Center</a> <span class="ref-type">공식</span></li><li><a href="https://www.lyzr.ai/blog/agent-orchestration/" target="_blank" rel="nofollow noopener">Agent Orchestration 101: Making Multiple AI Agents Work as One</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/@akankshasinha247/agent-orchestration-when-to-use-langchain-langgraph-autogen-or-build-an-agentic-rag-system-cc298f785ea4" target="_blank" rel="nofollow noopener">Agent Orchestration: When to Use LangChain, LangGraph, AutoGen — or Build an Agentic RAG System | by Akanksha Sinha | Medium</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=D7_ipDqhtwk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/D7_ipDqhtwk/mqdefault.jpg" alt="How We Build Effective Agents (Anthropic)" loading="lazy" width="160" height="90"><span>How We Build Effective Agents (Anthropic)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kQmXtrmQ5Zg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kQmXtrmQ5Zg/mqdefault.jpg" alt="Building Agents with Model Context Protocol (Anthropic)" loading="lazy" width="160" height="90"><span>Building Agents with Model Context Protocol (Anthropic)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=b8GfaOVRqH8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/b8GfaOVRqH8/mqdefault.jpg" alt="에이전트 오케스트레이션 - 테디노트" loading="lazy" width="160" height="90"><span>에이전트 오케스트레이션 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#orchestration-pattern">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

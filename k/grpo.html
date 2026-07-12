@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>GRPO</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>같은 질문에 대해 여러 응답을 샘플링하고 그룹 내 상대적 점수로 보상을 계산하는 RL 알고리즘. DeepSeek-R1에서 사용해 추론 모델 학습 방법으로 주목받았다.</p><h4>개념 설명</h4><p>기존 PPO는 강화학습 과정에서 별도의 가치 함수(critic)를 학습해야 해서 메모리와 계산 비용이 높았다. GRPO는 같은 질문에 여러 응답을 생성하고, 그 그룹 내에서 상대적으로 좋고 나쁨을 비교해 보상을 계산한다. 가치 함수 없이 그룹 내 비교만으로 학습 신호를 만드는 것이다.</p><p>DeepSeek이 DeepSeek-Math(2024)와 DeepSeek-R1에서 GRPO로 추론 능력을 획기적으로 향상시키면서 큰 주목을 받았다. 수학 문제의 정오답처럼 검증 가능한 보상이 있을 때 특히 효과적이다.</p><h4>사용 예시</h4><p>TRL 라이브러리에 <code>GRPOTrainer</code>가 구현되어 있다. 수학 풀이, 코드 생성, 형식 준수 같이 자동으로 정오답을 판별할 수 있는 태스크에 적합하다. 보상 함수를 정답 확인 함수로 정의하고, 같은 문제에 8~16개의 응답을 샘플링해 상대적 점수를 계산한다.</p></div>
   <div class="tags"><span>#강화학습</span><span>#DeepSeek</span><span>#추론모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/reinforcement-learning.html">강화학습</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/reward-model.html">보상 모델</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2402.03300" target="_blank" rel="nofollow noopener">DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="nofollow noopener">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2603.01162" target="_blank" rel="nofollow noopener">Demystifying Group Relative Policy Optimization</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#grpo">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

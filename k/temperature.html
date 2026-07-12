@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>온도</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.</p><h4>개념 설명</h4><p>LLM은 각 토큰의 확률을 계산한 뒤 그 분포에서 샘플링한다. Temperature는 이 분포를 조절한다. T=0에 가까우면 항상 가장 높은 확률의 토큰을 고르는 Greedy Decoding과 같아진다. T=1은 모델이 계산한 확률 그대로 샘플링한다. T>1이면 낮은 확률의 토큰도 선택될 여지가 커져 더 다양하고 예상치 못한 결과가 나온다.</p><p>Temperature와 함께 <strong>Top-p(nucleus sampling)</strong>나 <strong>Top-k</strong> 샘플링도 자주 함께 사용된다. Top-p는 누적 확률 p를 넘는 후보 중에서만 샘플링해 낮은 확률의 희귀 토큰을 방지한다.</p><h4>사용 예시</h4><p>Claude나 OpenAI API 호출 시 <code>temperature</code> 파라미터로 직접 제어할 수 있다. 코드 생성이나 사실 질문에는 0~0.3, 창의적 글쓰기에는 0.7~1.0이 일반적이다. 동일한 프롬프트를 여러 번 실행해 다양한 결과를 얻고 싶다면 Temperature를 높이고, 일관된 결과가 중요하다면 낮춘다.</p></div>
   <div class="tags"><span>#샘플링</span><span>#다양성</span><span>#창의성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/docs/api-reference/chat/create" target="_blank" rel="nofollow noopener">OpenAI API Reference — Chat Completions (temperature parameter)</a> <span class="ref-type">공식</span></li><li><a href="https://www.promptingguide.ai/introduction/settings" target="_blank" rel="nofollow noopener">Prompt Engineering Guide — LLM Settings</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#temperature">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

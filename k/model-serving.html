@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>모델 서빙</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>학습된 LLM을 실제 사용자 요청에 응답하도록 배포하고 운영하는 인프라. 지연 시간, 처리량, 비용의 균형을 맞추는 게 핵심 과제다.</p><h4>개념 설명</h4><p>좋은 모델을 만들어도 빠르고 안정적으로 서빙하지 못하면 쓸모가 없다. LLM 서빙은 일반 모델보다 훨씬 복잡하다. 요청마다 생성 토큰 수가 다르고, 스트리밍 응답이 필요하며, 배치 처리를 위한 연속 배칭이 필요하다. KV 캐시 관리, GPU 메모리 최적화, 요청 스케줄링이 서빙 성능을 결정한다.</p><p><strong>vLLM</strong>, <strong>TGI(Text Generation Inference)</strong>, <strong>TensorRT-LLM</strong>이 대표적인 오픈소스 서빙 프레임워크다. 각각 Paged Attention, 연속 배칭, TensorRT 최적화로 서빙 효율을 높인다.</p><h4>사용 예시</h4><p>vLLM을 Docker로 띄우면 OpenAI 호환 API 엔드포인트가 생성된다. <code>--model meta-llama/Llama-3-8B</code> 같이 모델을 지정하면 기본 설정으로 서빙을 시작할 수 있다. 트래픽에 따라 GPU 수를 동적으로 조절하는 Kubernetes 기반 오토스케일링과 결합해 운영한다.</p></div>
   <div class="tags"><span>#배포</span><span>#API</span><span>#프로덕션</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/continuous-batching.html">연속 배칭</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/latency-optimization.html">레이턴시 최적화</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.pytorch.org/serve/" target="_blank" rel="nofollow noopener">TorchServe — Official PyTorch Model Serving Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/pytorch/serve" target="_blank" rel="nofollow noopener">TorchServe — Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://docs.ray.io/en/latest/serve/tutorials/serve-ml-models.html" target="_blank" rel="nofollow noopener">Ray Serve — Serve ML Models</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#model-serving">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

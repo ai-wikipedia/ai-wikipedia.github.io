@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>제로샷</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>예시 없이 지시만으로 원하는 결과를 얻는 프롬프팅 방식. LLM의 사전 학습 지식만으로 작업을 처리한다.</p><h4>개념 설명</h4><p>사람도 설명만 들으면 처음 보는 작업을 어느 정도 해낼 수 있다. <strong>제로샷 프롬프팅</strong>은 예시를 전혀 주지 않고 "이 리뷰가 긍정인지 부정인지 분류해줘"처럼 지시만 담은 프롬프트로 LLM에 원하는 작업을 시키는 방식이다. 모델이 충분히 크고 해당 작업 유형을 사전 학습에서 많이 접했다면 꽤 잘 작동한다.</p><h4>사용 예시</h4><p>고객 리뷰 감성 분석, 텍스트 요약, 번역 같이 명확한 지시가 가능한 작업은 제로샷으로 시작하는 게 좋다. 결과가 아쉬우면 Few-Shot으로 예시를 추가하거나 Chain-of-Thought로 단계별 추론을 유도하는 순서로 발전시킨다. 지시를 명확하게 쓸수록, 역할을 지정할수록 제로샷 성능이 올라간다.</p></div>
   <div class="tags"><span>#프롬프팅</span><span>#기본기법</span><span>#GPT</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/in-context-learning.html">인컨텍스트 러닝</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://wikidocs.net/280323" target="_blank" rel="nofollow noopener">3.1 제로샷(zero-shot): 간단하지만 강력하게 - 위키독스</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/docs/transformers/ko/tasks/zero_shot_image_classification" target="_blank" rel="nofollow noopener">제로샷(zero-shot) 이미지 분류 - Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://medium.com/@zeusorion/a-beginners-guide-to-zero-shot-prompting-in-generative-ai-176a0b5bac4d" target="_blank" rel="nofollow noopener">A Beginner's Guide to Zero-Shot Prompting in Generative AI - Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://www.matillion.com/blog/gen-ai-prompt-strategy-zero-shot-few-shot-prompt" target="_blank" rel="nofollow noopener">How to Choose Your GenAI Prompting Strategy: Zero Shot vs. Few Shot…</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#zero-shot">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

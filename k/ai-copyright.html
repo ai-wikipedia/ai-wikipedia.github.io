@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>AI 저작권</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI가 생성한 창작물의 저작권 귀속과, AI 훈련에 사용된 저작물에 대한 보호를 다루는 법적·정책적 문제. 창작자, AI 기업, 사용자 모두에게 영향을 미치는 미해결 쟁점이다.</p><h4>개념 설명</h4><p>AI 저작권 문제는 두 갈래다. 첫째, AI가 만든 그림이나 글의 저작권은 누구의 것인가 — 개발사인지, 사용자인지, 아니면 아무도 없는지. 둘째, AI 모델이 저작권 있는 텍스트, 이미지, 코드를 학습 데이터로 쓴 것이 저작권 침해인가. 미국, EU, 일본 등에서 다른 기준을 적용하고 있어 글로벌 서비스라면 복잡한 판단이 필요하다.</p><h4>사용 예시</h4><p>AI가 생성한 코드를 상업적으로 사용할 때, 훈련 데이터에 포함된 오픈소스 코드의 라이선스 조건이 적용될 수 있는지 검토해야 한다. 이미지 생성 모델을 B2B 서비스에 쓸 때는 계약서에 저작권 귀속 조항을 명시하는 것이 일반적이다. Anthropic, OpenAI 등은 사용 약관에 생성 콘텐츠의 IP 처리 방식을 명시해두고 있다.</p></div>
   <div class="tags"><span>#저작권</span><span>#법률</span><span>#생성형 AI</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-regulation.html">AI 규제</a>, <a href="https://aiwiki.work/k/watermarking.html">워터마킹</a>, <a href="https://aiwiki.work/k/generative-ai.html">생성형 AI</a>, <a href="https://aiwiki.work/k/content-moderation.html">콘텐츠 모더레이션</a>, <a href="https://aiwiki.work/k/suno.html">수노</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.copyright.gov/ai/" target="_blank" rel="nofollow noopener">Copyright and AI - U.S. Copyright Office</a> <span class="ref-type">공식</span></li><li><a href="https://www.congress.gov/crs-product/LSB10922" target="_blank" rel="nofollow noopener">Generative AI and Copyright Law - Congress.gov</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=C5urX3jsc84" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/C5urX3jsc84/mqdefault.jpg" alt="AI and Copyright Law" loading="lazy" width="160" height="90"><span>AI and Copyright Law</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Mb1m7VQIuXA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Mb1m7VQIuXA/mqdefault.jpg" alt="Who Owns the Output? AI Copyright Explained" loading="lazy" width="160" height="90"><span>Who Owns the Output? AI Copyright Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=0xz3JjQazG4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0xz3JjQazG4/mqdefault.jpg" alt="생성형 AI 저작권 미국 판례" loading="lazy" width="160" height="90"><span>생성형 AI 저작권 미국 판례</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-copyright">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

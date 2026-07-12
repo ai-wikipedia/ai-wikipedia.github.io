@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>AI 규제</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 시스템의 개발과 배포를 규율하는 법률·정책 체계. EU AI Act, 미국 행정명령 등 각국이 고위험 AI 용도를 분류하고 의무를 부과하는 방향으로 빠르게 정비되고 있다.</p><h4>개념 설명</h4><p>AI가 채용, 의료, 신용 평가, 공공 서비스 등 삶에 직접 영향을 주는 영역에 쓰이기 시작하면서, 어떤 AI를 어떻게 만들고 쓸 수 있는지 규정하는 규제가 등장하기 시작했다. EU AI Act는 AI를 위험도에 따라 4단계로 분류해 고위험 AI에는 투명성 확보, 감사 기록, 인간 감독을 의무화한다. 기술 표준이 아니라 법적 의무이기 때문에 개발사에 직접적인 영향을 미친다.</p><h4>사용 예시</h4><p>EU에 서비스를 제공하는 개발자라면 자신의 AI가 고위험 분류에 해당하는지 먼저 확인해야 한다. 해당된다면 <strong>모델 감사</strong> 기록 유지, <strong>설명가능성</strong> 확보, 사용자에게 AI 사용 사실 고지 등의 조건을 충족해야 한다. 생성형 AI 서비스라면 <strong>워터마킹</strong>이나 AI 생성 콘텐츠 표시 의무가 적용될 수 있다.</p></div>
   <div class="tags"><span>#EU AI Act</span><span>#정책</span><span>#거버넌스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/model-audit.html">모델 감사</a>, <a href="https://aiwiki.work/k/explainability.html">설명가능성</a>, <a href="https://aiwiki.work/k/watermarking.html">워터마킹</a>, <a href="https://aiwiki.work/k/bias.html">편향</a>, <a href="https://aiwiki.work/k/alignment.html">AI 정렬</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="nofollow noopener">AI Act - EU Official</a> <span class="ref-type">공식</span></li><li><a href="https://artificialintelligenceact.eu/" target="_blank" rel="nofollow noopener">EU Artificial Intelligence Act</a> <span class="ref-type">공식</span></li><li><a href="https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence" target="_blank" rel="nofollow noopener">EU AI Act - European Parliament</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=s_rxOnCt3HQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/s_rxOnCt3HQ/mqdefault.jpg" alt="The EU AI Act Explained" loading="lazy" width="160" height="90"><span>The EU AI Act Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=GELAXU9XReI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GELAXU9XReI/mqdefault.jpg" alt="EU AI Act Explained: Everything You Must Know" loading="lazy" width="160" height="90"><span>EU AI Act Explained: Everything You Must Know</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PqFcEZq3UEM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PqFcEZq3UEM/mqdefault.jpg" alt="AI 기본법 세계 첫 시행 - SBS 8뉴스" loading="lazy" width="160" height="90"><span>AI 기본법 세계 첫 시행 - SBS 8뉴스</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-regulation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

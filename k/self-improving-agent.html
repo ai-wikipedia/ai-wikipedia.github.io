@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>자기학습 에이전트</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>실행 경험에서 스스로 스킬을 생성하고 개선하는 에이전트. 사람이 매번 새 능력을 가르치지 않아도 사용할수록 더 잘하게 된다.</p><h4>개념 설명</h4><p>일반 에이전트는 정해진 도구와 프롬프트 안에서만 작동한다. 자기학습 에이전트는 작업을 수행하면서 성공한 패턴을 스킬로 저장하고, 실패한 패턴을 분석해 다음에 더 나은 전략을 쓴다. Nous Research의 Hermes Agent가 이 개념을 구체화했다. 에이전트가 자신의 실행 로그를 리플렉션하고, 반복되는 작업 패턴을 재사용 가능한 스킬로 추출하는 구조다.</p><h4>사용 예시</h4><p>Claude Code에서 스킬을 직접 정의해 재사용하는 것이 수동 버전이라면, 자기학습 에이전트는 이 과정을 자동화한다. "이 작업을 5번 했으니 스킬로 만들어두자"를 에이전트가 스스로 판단한다. 장기 실행 에이전트나 반복 업무 자동화에서 시간이 지날수록 효율이 올라가는 구조를 만들 수 있다.</p></div>
   <div class="tags"><span>#자율학습</span><span>#스킬생성</span><span>#Hermes</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/autonomous-agent.html">자율 에이전트</a>, <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/reflection-pattern.html">리플렉션 패턴</a>, <a href="https://aiwiki.work/k/skills.html">스킬</a>, <a href="https://aiwiki.work/k/self-scaffolding.html">셀프 스캐폴딩 LLM</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2508.07407" target="_blank" rel="nofollow noopener">A Comprehensive Survey of Self-Evolving AI Agents</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2507.21046" target="_blank" rel="nofollow noopener">A Survey of Self-Evolving Agents</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=lWnSIa6su68" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lWnSIa6su68/mqdefault.jpg" alt="Self-Improving AI Agents: Future of Autonomous Systems" loading="lazy" width="160" height="90"><span>Self-Improving AI Agents: Future of Autonomous Systems</span></a><a class="video-item" href="https://www.youtube.com/watch?v=it7jCSBvvGo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/it7jCSBvvGo/mqdefault.jpg" alt="AI Agent Evolution: From Static to Self-Evolving" loading="lazy" width="160" height="90"><span>AI Agent Evolution: From Static to Self-Evolving</span></a><a class="video-item" href="https://www.youtube.com/watch?v=VqVHVb9PE3o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/VqVHVb9PE3o/mqdefault.jpg" alt="자율 진화하는 AI 에이전트 개념" loading="lazy" width="160" height="90"><span>자율 진화하는 AI 에이전트 개념</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#self-improving-agent">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

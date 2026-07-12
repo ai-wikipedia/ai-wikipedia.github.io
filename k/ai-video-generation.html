@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>AI 비디오 생성</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>광고 소재 프로토타입, 교육 콘텐츠 초안, 게임 컷신 스토리보드 등 영상 제작 초기 단계에서 빠르게 아이디어를 시각화하는 용도로 쓰인다. Runway API나 Kling API를 앱에 통합하면 사용자가 텍스트만 입력해도 짧은 클립을 생성하는 기능을 구현할 수 있다. 현재는 2분 이내 짧은 영상에서 강점을 보이며, 긴 영상이나 복잡한 내러티브 일관성은 아직 한계가 있다.</p></div>
   <div class="tags"><span>#Sora</span><span>#동영상</span><span>#생성형AI</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/ai-writing.html">AI 글쓰기</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a>, <a href="https://aiwiki.work/k/reka.html">레카</a>, <a href="https://aiwiki.work/k/sora.html">소라</a>, <a href="https://aiwiki.work/k/veo.html">비오</a>, <a href="https://aiwiki.work/k/lyria.html">리리아</a>, <a href="https://aiwiki.work/k/midjourney.html">미드저니</a>, <a href="https://aiwiki.work/k/elevenlabs.html">일레븐랩스</a>, <a href="https://aiwiki.work/k/runway.html">런웨이</a>, <a href="https://aiwiki.work/k/kling.html">클링</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openai.com/index/sora/" target="_blank" rel="nofollow noopener">Sora: Creating video from text - OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://openai.com/sora/" target="_blank" rel="nofollow noopener">Sora - OpenAI</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Kib8UcDiNJA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Kib8UcDiNJA/mqdefault.jpg" alt="Ultimate Guide to AI Video Generation" loading="lazy" width="160" height="90"><span>Ultimate Guide to AI Video Generation</span></a><a class="video-item" href="https://www.youtube.com/watch?v=NmCAtCueJI8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NmCAtCueJI8/mqdefault.jpg" alt="AI Video generation hype or real tool?" loading="lazy" width="160" height="90"><span>AI Video generation hype or real tool?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=dWQvk9lzb0Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dWQvk9lzb0Y/mqdefault.jpg" alt="AI 영상 5분 Sora2 초보자 완벽 가이드" loading="lazy" width="160" height="90"><span>AI 영상 5분 Sora2 초보자 완벽 가이드</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-video-generation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

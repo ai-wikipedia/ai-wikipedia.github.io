@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>클로드 코드</h1>
@@ -128,6 +156,8 @@
 <p>CLAUDE.md에 프로젝트 규칙을 적어 두면 매 세션마다 자동으로 읽어서 코딩 컨벤션을 지킨다. 훅으로 파일 수정 후 자동 린트를 걸거나, 스킬로 <code>/commit</code>, <code>/deploy</code> 같은 반복 워크플로우를 명령 한 줄로 실행할 수 있다. MCP로 GitHub, Slack, DB 등 외부 서비스를 연결하면 에이전트의 작업 범위가 코드 바깥까지 확장된다.</p></div>
   <div class="tags"><span>#CLI</span><span>#Anthropic</span><span>#코딩에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/skills.html">스킬</a>, <a href="https://aiwiki.work/k/hooks.html">훅</a>, <a href="https://aiwiki.work/k/claude-md.html">CLAUDE.md</a>, <a href="https://aiwiki.work/k/dynamic-workflows.html">다이나믹 워크플로우</a>, <a href="https://aiwiki.work/k/superpowers.html">슈퍼파워스</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a>, <a href="https://aiwiki.work/k/claude-opus-4-8.html">클로드 오퍼스 4.8</a>, <a href="https://aiwiki.work/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.work/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a>, <a href="https://aiwiki.work/k/baoyu-design.html">바오위 디자인</a>, <a href="https://aiwiki.work/k/guard-skills.html">가드 스킬</a>, <a href="https://aiwiki.work/k/code-as-harness.html">코드 에이전트 하네스</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="nofollow noopener">Claude Code Overview – Official Docs</a> <span class="ref-type">공식</span></li><li><a href="https://code.claude.com/docs/en/best-practices" target="_blank" rel="nofollow noopener">Claude Code Best Practices</a> <span class="ref-type">공식</span></li><li><a href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank" rel="nofollow noopener">Claude Code in Action – Anthropic Courses</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=GepHGs_CZdk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GepHGs_CZdk/mqdefault.jpg" alt="Claude Code Tutorial – Peter Yang" loading="lazy" width="160" height="90"><span>Claude Code Tutorial – Peter Yang</span></a><a class="video-item" href="https://www.youtube.com/watch?v=OdtGN27LchE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OdtGN27LchE/mqdefault.jpg" alt="Claude Code Skills AI Agent Team Guide" loading="lazy" width="160" height="90"><span>Claude Code Skills AI Agent Team Guide</span></a><a class="video-item" href="https://www.youtube.com/watch?v=cV413ZDo3bA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/cV413ZDo3bA/mqdefault.jpg" alt="How To Use Claude Code AI FOR FREE" loading="lazy" width="160" height="90"><span>How To Use Claude Code AI FOR FREE</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#claude-code">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>비전-언어 모델</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>이미지와 텍스트를 함께 이해하고 생성하는 모델. 이미지를 보고 설명하거나, 이미지 속 정보를 바탕으로 질문에 답하는 등 시각과 언어를 연결한다.</p><h4>개념 설명</h4><p>텍스트만 처리하던 LLM에 시각 인식 능력을 더한 것이 VLM이다. 이미지를 패치로 분할해 Visual Encoder(주로 ViT)로 임베딩을 추출하고, 이를 언어 모델이 이해할 수 있는 토큰으로 변환해 텍스트와 함께 처리한다. CLIP(2021)이 이미지-텍스트 정렬의 기반을 만들었고, GPT-4V, Claude 3 Vision, Gemini, LLaVA가 이를 발전시켰다.</p><p>단순 이미지 설명을 넘어 UI 스크린샷 이해, 차트 분석, 의료 영상 판독, 문서 OCR 등으로 활용 범위가 넓어지고 있다.</p><h4>사용 예시</h4><p>Claude나 GPT-4o API에 이미지를 첨부하면 "이 에러 스크린샷이 왜 발생했는지 설명해줘"처럼 시각 정보를 포함한 질문이 가능하다. Figma 디자인 스크린샷을 넣고 코드 구현을 요청하거나, UI 테스트에서 스크린샷과 예상 화면을 비교하는 자동화 파이프라인도 VLM으로 구현된다.</p></div>
   <div class="tags"><span>#멀티모달</span><span>#이미지이해</span><span>#VLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/diffusion-model.html">디퓨전 모델</a>, <a href="https://aiwiki.work/k/reka.html">레카</a>, <a href="https://aiwiki.work/k/step-3-7.html">스텝 3.7</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2304.00685" target="_blank" rel="nofollow noopener">Vision-Language Models for Vision Tasks: A Survey</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2501.02189" target="_blank" rel="nofollow noopener">A Survey of State of the Art Large Vision Language Models</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#vision-language-model">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>에이온 3.0</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AionLabs가 만든 롤플레이·스토리텔링 특화 언어 모델. GLM 패밀리를 기반으로 여러 전문 모델이 협업해 한 응답을 생성하는 다중 모델 시스템이다.</p><h4>어떤 모델인가</h4><p>Aion 3.0은 단일 모델이 아니다. 여러 전문 모델이 하나의 응답을 함께 만들어 내는 <strong>협업 생성(collaborative generation)</strong> 구조를 채택했다. 각 모델이 서사 구조, 갈등, 긴장감 등 서로 다른 요소를 담당하고, 그 결과를 합쳐 최종 출력을 만든다. GLM 패밀리를 기반 모델로 사용하며, 크리에이티브 라이팅과 롤플레이에서 단일 모델 대비 더 풍부한 내러티브를 만들어 내는 데 초점을 맞췄다.</p><p>컨텍스트 윈도우는 131,072 토큰, 최대 출력은 33,000 토큰이다. 가격은 입력 $3/1M 토큰, 출력 $6/1M 토큰이며, OpenRouter를 통해 API로 접근할 수 있다.</p><h4>사용 예시</h4><p>OpenAI 호환 API를 제공하기 때문에, 기존 GPT 기반 앱에서 엔드포인트와 API 키만 바꿔서 바로 붙일 수 있다. 인터랙티브 픽션 게임, TRPG 보조 도구, 장편 소설 협업 도구처럼 서사의 일관성과 긴장감이 중요한 프로젝트에 적합하다. 성인 테마나 복잡한 도덕적 갈등이 있는 시나리오처럼 일반 모델이 회피하는 영역도 다룰 수 있도록 설계되어 있다.</p><h4>주의할 점</h4><p>협업 생성 구조 특성상 레이턴시가 단일 모델 대비 높을 수 있다. 창작 외 일반 작업(코딩, 분석 등)에서는 범용 모델 대비 이점이 크지 않다. 경량 버전인 Aion 3.0 Mini도 같은 구조로 제공된다.</p></div>
   <div class="tags"><span>#롤플레이</span><span>#스토리텔링</span><span>#GLM</span><span>#협업생성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/aion-3-0-mini.html">에이온 3.0 미니</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://openrouter.ai/aion-labs/aion-3.0" target="_blank" rel="nofollow noopener">Aion-3.0 – OpenRouter</a> <span class="ref-type">공식</span></li><li><a href="https://www.aionlabs.ai" target="_blank" rel="nofollow noopener">Aion Labs – 공식 사이트</a> <span class="ref-type">공식</span></li><li><a href="https://nano-gpt.com/models/text/aion-labs/aion-3.0" target="_blank" rel="nofollow noopener">Aion 3.0 – NanoGPT</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#aion-3-0">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-12</div>
 </div>

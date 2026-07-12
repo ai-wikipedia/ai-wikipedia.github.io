@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>픽스파이프</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>이미지의 픽셀 표현을 활용해 비전-언어 모델의 시각 토큰 수를 줄이는 압축 파이프라인. 고해상도 이미지나 영상을 처리할 때 컨텍스트 비용과 추론 레이턴시를 낮추기 위해 쓴다.</p><h4>개념 설명</h4><p>비전-언어 모델(VLM)은 이미지 하나를 수백에서 수천 개의 토큰으로 변환해 처리한다. 고해상도 이미지나 긴 영상이 입력되면 토큰 수가 폭발적으로 늘어나 컨텍스트 창을 채우고 추론 비용을 끌어올린다. PxPipe는 이 문제를 픽셀 단위 처리 파이프라인으로 접근한다. 모든 픽셀 정보를 그대로 토큰으로 변환하는 대신, 프레임 간 또는 공간 영역 간 중복 정보를 탐지해 단계적으로 압축하는 방식이다.</p><p>이 접근의 배경에는 이미지 토큰이 텍스트 토큰보다 훨씬 높은 정보 밀도를 가질 수 있다는 통찰이 있다. 이미지 토큰 1개에서 텍스트 토큰 10개 분량의 정보를 거의 완벽한 정확도로 추출할 수 있다는 연구 결과가 있다. 반대로 생각하면, 텍스트나 문서를 이미지로 렌더링해 전달했을 때 동일한 컨텍스트 창에 훨씬 많은 정보를 담을 수 있다는 가능성이기도 하다.</p><h4>사용 예시</h4><p>영상 이해 파이프라인에서 이미지 기반 토큰 압축을 적용하면 프레임 수를 늘리면서도 컨텍스트 예산을 유지할 수 있다. CVPR 2025에서 발표된 <strong>PVC(Progressive Visual Token Compression)</strong>는 이미지를 정적 영상으로 처리하고 프레임당 기본 64개 토큰이라는 제한 내에서도 공간적 세부사항과 시간적 변화를 함께 보존했다. 이미지와 영상에 별도 전략을 쓰는 대신 하나의 통합된 픽셀 파이프라인으로 두 가지 입력을 처리하는 것이 핵심이다.</p><p>텍스트 중심 작업에서도 응용 가능성이 탐색되고 있다. 긴 문서나 코드를 이미지로 렌더링해 이미지 토큰으로 전달하면 텍스트 토큰보다 적은 수로 동일한 정보를 표현할 수 있어, 컨텍스트 길이 한계를 우회하는 전략으로 활용될 수 있다.</p><h4>주의할 점</h4><p>시각 토큰 압축률이 높아질수록 차트, 표, 소형 텍스트 같은 세밀한 시각 정보가 손실될 수 있다. 정보 밀도가 높은 영역에는 낮은 압축률을 적용하는 적응형 전략이 필요하다. 또한 압축 모듈 자체를 별도로 학습해야 하므로 기존 VLM에 단순 추가 방식으로 붙이기 어려운 경우가 많다.</p></div>
   <div class="tags"><span>#토큰압축</span><span>#비전언어모델</span><span>#추론최적화</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/vision-language-model.html">비전-언어 모델</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/tokenization.html">토큰화</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/context-compression.html">컨텍스트 압축</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/html/2412.09613v1" target="_blank" rel="nofollow noopener">PVC: Progressive Visual Token Compression for Unified Image and Video Processing</a> <span class="ref-type">논문</span></li><li><a href="https://www.seangoedecke.com/text-tokens-as-image-tokens" target="_blank" rel="nofollow noopener">Should LLMs just treat text content as an image?</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.aussieai.com/research/token-compression" target="_blank" rel="nofollow noopener">Token Compression - AussieAI Research</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#pxpipe">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-04</div>
 </div>

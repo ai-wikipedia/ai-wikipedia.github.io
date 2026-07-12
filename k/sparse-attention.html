@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>희소 어텐션</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.</p><h4>왜 필요한가</h4><p>트랜스포머의 기본 어텐션은 문장 안의 모든 토큰이 다른 모든 토큰을 한 번씩 쳐다본다. 토큰이 1,000개면 100만 번, 10,000개면 1억 번을 비교하는 식이라, 글이 길어질수록 계산량이 제곱으로 폭발한다. 책 한 권 분량의 입력을 다루려고 하면 이 비용이 감당이 안 된다.</p><p><strong>희소 어텐션(Sparse Attention)</strong>은 여기서 "굳이 모든 토큰을 다 볼 필요가 있나?"라는 질문에서 출발한다. 실제로 어떤 단어를 이해할 때 정말 중요한 건 주변 몇 단어와 멀리 있는 핵심 단어 몇 개뿐인 경우가 많다. 그래서 모든 쌍을 계산하는 대신, 관련 있을 법한 일부 토큰만 골라서 어텐션을 계산한다. 빽빽하게 채워진(dense) 비교 행렬에서 대부분의 칸을 0으로 비워두는(sparse) 셈이다.</p><h4>어떻게 일부만 고르나</h4><p>고르는 방식은 크게 두 갈래다. 하나는 미리 정해진 규칙을 쓰는 것으로, 가까운 몇 개 토큰만 보는 슬라이딩 윈도우, 일정 간격으로 띄엄띄엄 보는 패턴, 모든 토큰이 공통으로 참조하는 소수의 전역 토큰을 두는 방식 등이 있다. <strong>Longformer</strong>나 <strong>BigBird</strong> 같은 초기 모델이 이런 고정 패턴을 조합해 긴 문서를 처리했다.</p><p>다른 하나는 학습으로 "어떤 토큰이 중요한지"를 모델이 스스로 판단하게 하는 것이다. 최근 <strong>DeepSeek Sparse Attention</strong>이 대표적인데, 가벼운 인덱서가 과거 토큰들에 점수를 매기고 선택기가 점수 높은 일부만 골라 어텐션에 넘긴다. DeepSeek V3.2에 적용돼 긴 컨텍스트 추론 비용을 크게 낮췄다고 알려져 있다.</p><h4>다른 최적화와의 관계</h4><p>희소 어텐션은 비교 자체를 줄이는 알고리즘 수준의 접근이라, GPU에서 계산을 효율적으로 배치하는 <code>flash-attention</code>이나 이미 계산한 키·값을 재활용하는 KV 캐시와는 노리는 지점이 다르다. 그래서 셋을 함께 쓰면 긴 컨텍스트를 다룰 때 효과가 겹쳐서 커진다.</p><h4>주의할 점</h4><p>중요해 보이지 않아 버린 토큰에 사실 핵심 정보가 들어 있었다면 품질이 떨어진다. "속도를 위해 모델을 멍청하게 만드는 것 아니냐"는 논쟁이 계속되는 이유다. 또 이론상 계산을 줄여도 메모리 접근이 띄엄띄엄해지면 실제 추론 속도는 기대만큼 안 빨라지는 경우가 많아서, 하드웨어에 맞춰 패턴을 설계하는 것이 관건이다.</p></div>
   <div class="tags"><span>#어텐션</span><span>#긴 컨텍스트</span><span>#추론 최적화</span><span>#DeepSeek</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/deepseek-v4.html">딥시크 V4</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://sebastianraschka.com/llm-architecture-gallery/deepseek-sparse-attention" target="_blank" rel="nofollow noopener">DeepSeek Sparse Attention | Sebastian Raschka</a> <span class="ref-type">블로그</span></li><li><a href="https://www.aussieai.com/research/sparse-attention" target="_blank" rel="nofollow noopener">Sparse Attention | Aussie AI</a> <span class="ref-type">블로그</span></li><li><a href="https://github.com/PiotrNawrot/nano-sparse-attention" target="_blank" rel="nofollow noopener">nano-sparse-attention</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://ncsoft.github.io/ncresearch/6fc502ede05ca318787928fa22332a82b112805b" target="_blank" rel="nofollow noopener">긴 글을 위한 트랜스포머 모델 - Longformer와 BigBird</a> <span class="ref-type">블로그</span></li><li><a href="https://magazine.sebastianraschka.com/p/visual-attention-variants" target="_blank" rel="nofollow noopener">A Visual Guide to Attention Variants in Modern LLMs</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Y-o545eYjXM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Y-o545eYjXM/mqdefault.jpg" alt="How Attention Got So Efficient [GQA/MLA/DSA]" loading="lazy" width="160" height="90"><span>How Attention Got So Efficient [GQA/MLA/DSA]</span></a><a class="video-item" href="https://www.youtube.com/watch?v=CLsjuRBLstY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CLsjuRBLstY/mqdefault.jpg" alt="DeepSeek Sparse Attention Explained" loading="lazy" width="160" height="90"><span>DeepSeek Sparse Attention Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=4olugH4x4-Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4olugH4x4-Y/mqdefault.jpg" alt="긴 글도 빠르게 이해하는 AI의 비밀? #희소어텐션 #AI용어집" loading="lazy" width="160" height="90"><span>긴 글도 빠르게 이해하는 AI의 비밀? #희소어텐션 #AI용어집</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#sparse-attention">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

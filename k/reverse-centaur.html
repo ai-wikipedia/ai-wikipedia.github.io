@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>리버스 센타우르</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI가 작업 전체를 주도하고 사람은 AI가 처리하지 못하는 예외 부분만 개입하는 인간-AI 협업 패턴. 기존 "사람이 방향, AI가 보조"의 역전이다.</p><h4>센타우르에서 리버스 센타우르로</h4><p>체스에서 나온 개념인 <strong>센타우르(Centaur)</strong>는 사람이 전략을 짜고 AI가 계산을 보조하는 팀 구조다. 사람의 직관과 AI의 연산력을 합치면 둘 중 하나만으로는 이기기 어려운 상대도 꺾을 수 있다는 아이디어로, AI 분야에서는 "사람이 방향 설정, AI가 실행 지원"이라는 협업 모델로 통용된다.</p><p><strong>리버스 센타우르(Reverse Centaur)</strong>는 이 구조를 뒤집는다. AI가 전체 흐름을 주도하고, 사람은 AI가 혼자 처리하기 어려운 소규모 조각 — 최종 승인, 예외 판단, 윤리적 가치 결정 — 만 담당한다. Ethan Mollick 등 AI 노동 연구자들이 2023~2024년에 이 패턴을 집중적으로 논의하며 확산됐다.</p><h4>사용 예시</h4><p>에이전트 파이프라인에서 리버스 센타우르 패턴은 이미 일반화되고 있다. 백그라운드 에이전트가 코드를 분석하고 PR을 작성하면, 사람은 머지 버튼만 누른다. 고객 문의 처리 시스템에서 AI가 답변을 생성하고, 사람은 정책 예외나 감정적으로 민감한 케이스만 직접 처리한다. Claude Code에서 에이전트가 리팩토링 전체를 진행하고 사람은 <strong>human-in-the-loop</strong> 체크포인트에서 진행 여부만 승인하는 구조가 전형적인 예다.</p><h4>주의할 점</h4><p>이 패턴의 핵심 위험은 <strong>고무 도장(rubber stamp)</strong> 현상이다. 사람이 AI 출력을 충분히 검토하지 않고 습관적으로 승인하면, 실질적인 감독이 사라지고 AI 오류가 그대로 통과된다. 리버스 센타우르가 제대로 작동하려면 사람의 개입 지점이 실제로 의미 있는 판단을 요구하는 곳에 배치돼 있어야 한다. 단순히 승인 버튼을 누르는 역할로 전락하면, 사람은 책임만 지고 실제 통제권은 없는 구조가 된다.</p></div>
   <div class="tags"><span>#인간-AI협업</span><span>#자동화</span><span>#노동패턴</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/background-agent.html">백그라운드 에이전트</a>, <a href="https://aiwiki.work/k/autonomous-agent.html">자율 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.reversecentaur.ai/what-is-a-reverse-centaur" target="_blank" rel="nofollow noopener">What is a Reverse Centaur?</a> <span class="ref-type">공식</span></li><li><a href="https://pluralistic.net/2025/12/05/pop-that-bubble" target="_blank" rel="nofollow noopener">The Reverse-Centaur's Guide to Criticizing AI</a> <span class="ref-type">블로그</span></li><li><a href="https://us.macmillan.com/books/9780374621575/thereversecentaursguidetolifeafterai" target="_blank" rel="nofollow noopener">The Reverse Centaur's Guide to Life After AI</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=SPQNPJ0CEPo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SPQNPJ0CEPo/mqdefault.jpg" alt="AI Was Never About Helping You | Cory Doctorow" loading="lazy" width="160" height="90"><span>AI Was Never About Helping You | Cory Doctorow</span></a><a class="video-item" href="https://www.youtube.com/watch?v=0wVt9Ey-1C8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0wVt9Ey-1C8/mqdefault.jpg" alt="Cory Doctorow defines a 'reverse centaur'" loading="lazy" width="160" height="90"><span>Cory Doctorow defines a 'reverse centaur'</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#reverse-centaur">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-12</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>AI IDE</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 코드 보조 기능이 깊이 통합된 개발 환경. 단순 자동완성을 넘어 코드 생성, 리팩토링, 디버깅을 AI와 함께 한다.</p><h4>개념 설명</h4><p>전통적인 IDE는 문법 강조, 자동완성, 디버거를 제공했다. <strong>AI IDE</strong>는 여기에 LLM 기반 코드 생성, 자연어 지시로 코드 수정, 오류 원인 설명, 테스트 자동 생성 같은 기능을 통합한다. AI가 단순 도우미가 아니라 페어 프로그래밍 파트너처럼 함께 개발하는 환경이다.</p><h4>사용 예시</h4><p>Cursor나 Windsurf에서 "이 함수를 async로 바꾸고 에러 처리 추가해줘"라고 채팅창에 입력하면 AI가 현재 파일 맥락을 이해하고 즉시 수정해준다. 코드 전체를 선택해서 "리팩토링해줘"라고 하면 제안을 받아 승인하거나 거부할 수 있다. Copilot은 VS Code에 통합되어 같은 방식으로 작동한다.</p></div>
   <div class="tags"><span>#개발환경</span><span>#코딩보조</span><span>#자동완성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/cursor.html">커서</a>, <a href="https://aiwiki.work/k/copilot.html">깃허브 코파일럿</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/vibe-coding.html">바이브 코딩</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://cursor.com/" target="_blank" rel="nofollow noopener">Cursor - The best way to code with AI</a> <span class="ref-type">공식</span></li><li><a href="https://windsurf.com/" target="_blank" rel="nofollow noopener">Windsurf Editor - AI-Native IDE</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=rBnvSlABh-Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/rBnvSlABh-Y/mqdefault.jpg" alt="AI IDEs Compared: Cursor vs Windsurf vs Copilot" loading="lazy" width="160" height="90"><span>AI IDEs Compared: Cursor vs Windsurf vs Copilot</span></a><a class="video-item" href="https://www.youtube.com/watch?v=aaEYM_CPqs0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/aaEYM_CPqs0/mqdefault.jpg" alt="The Rise of AI Code Editors" loading="lazy" width="160" height="90"><span>The Rise of AI Code Editors</span></a><a class="video-item" href="https://www.youtube.com/watch?v=G4tGS_Ha0Dw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G4tGS_Ha0Dw/mqdefault.jpg" alt="AI IDE 비교 - 커서 vs 윈드서프" loading="lazy" width="160" height="90"><span>AI IDE 비교 - 커서 vs 윈드서프</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-ide">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

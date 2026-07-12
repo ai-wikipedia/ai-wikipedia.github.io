@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>연속 배칭</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM 서빙에서 완료된 요청을 즉시 새 요청으로 교체해 GPU를 쉬지 않고 활용하는 스케줄링 기법. 기존 정적 배칭 대비 처리량을 수십 배 높인다.</p><h4>개념 설명</h4><p>기존 배칭은 같은 배치의 모든 요청이 끝날 때까지 새 요청을 받지 않았다. 짧은 요청이 먼저 끝나도 긴 요청이 끝날 때까지 GPU가 절반 놀고 있는 셈이다. 연속 배칭은 한 요청이 완료되는 즉시 대기 중인 새 요청이 그 자리를 채운다. 항상 GPU가 꽉 찬 상태로 돌아가기 때문에 처리량이 극적으로 향상된다.</p><p>vLLM, TGI 등 현대 LLM 서빙 프레임워크의 핵심 기능이다. <strong>iteration-level 스케줄링</strong>이라고도 불리며, 각 토큰 생성 단계에서 배치를 동적으로 재구성한다.</p><h4>사용 예시</h4><p>vLLM은 기본적으로 연속 배칭을 사용한다. 다양한 길이의 요청이 섞이는 실제 서비스 환경에서 단순 정적 배칭 대비 GPU 활용률이 크게 올라가고, 같은 인프라로 더 많은 요청을 처리할 수 있다. 특히 짧은 요청과 긴 요청이 혼재하는 챗봇 서비스에서 효과가 크다.</p></div>
   <div class="tags"><span>#처리량</span><span>#스케줄링</span><span>#vLLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/batch-inference.html">배치 추론</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.usenix.org/conference/osdi22/presentation/yu" target="_blank" rel="nofollow noopener">Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI '22)</a> <span class="ref-type">논문</span></li><li><a href="https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/" target="_blank" rel="nofollow noopener">Mastering LLM Techniques: Inference Optimization — NVIDIA Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#continuous-batching">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

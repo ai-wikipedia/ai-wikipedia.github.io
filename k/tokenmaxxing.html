@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>토큰맥싱</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 토큰 사용량을 생산성의 지표로 삼아 소비를 극대화하려는 행동 패턴. 빅테크 기업들이 사내 리더보드로 AI 활용을 독려하면서 생겨난 직장 문화 현상이다.</p><h4>어떤 현상인가</h4><p>토큰맥싱은 'maxxing'(어떤 행동을 극단까지 최적화한다는 인터넷 슬랭)과 AI 토큰을 합친 말이다. AI 모델이 텍스트를 처리하는 최소 단위인 토큰을 얼마나 많이 소비하는지를 업무 성과의 지표로 보고, 사용량을 의도적으로 늘리는 행동을 가리킨다.</p><p>이 현상은 메타와 마이크로소프트 같은 빅테크에서 사내 AI 도입을 독려하기 위해 <strong>토큰 리더보드</strong>를 도입하면서 본격화됐다. 메타 내부에서는 'Session Immortal', 'Token Legend' 같은 칭호를 부여하며 직원들의 토큰 사용량을 순위로 매겼다. 일부 직원들은 리더보드를 의식하지 않더라도 "토큰을 너무 적게 쓰는 것처럼 보이고 싶지 않아서" 사용량을 늘렸다고 고백했다.</p><h4>왜 문제가 되나</h4><p>토큰 사용량은 측정하기 쉽고, 자동으로 집계되며, 팀 전체에 일관되게 적용할 수 있다. 경영진 입장에서는 AI 도입 현황을 한눈에 보여주는 매력적인 숫자처럼 보인다. 하지만 비판론자들은 이 지표가 실제 생산성과 거의 무관하다고 지적한다. 토큰을 많이 썼다는 것은 AI와 긴 대화를 나눴다는 뜻이지, 그 결과로 좋은 코드가 나왔거나 문제가 해결됐다는 보장이 없다.</p><p>더 심각한 문제는 역효과다. 관리자가 어떤 지표든 목표로 설정하면, 직원들은 그 지표를 높이는 방식으로 행동을 바꾼다. 실제로 Uber의 COO는 AI 예산을 4개월 만에 소진했다고 밝혔고, 한 AI 컨설턴트는 고객사가 Claude 라이선스에 사용 한도를 설정하지 않아 한 달에 5억 달러를 소비한 사례를 공유했다. "우리가 더 생산적이 된 건지, 아니면 그냥 토큰 태우는 데 돈을 쓴 건지" 구분이 안 된다는 지적이 이어지고 있다.</p><h4>무엇을 측정해야 하나</h4><p>토큰맥싱에 대한 반성으로, 기술 조직에서는 <strong>valuemaxxing</strong>이라는 개념이 논의되기 시작했다. 토큰 소비량 자체보다, 수용된 출력물과 모델 비용, 리뷰 부담, 에이전트 행동 등 실제 가치와 연결된 지표를 추적하자는 방향이다. 엔지니어링 리더들은 토큰 사용량 대신 코드 병합 속도, 버그 해결률, 배포 빈도 같은 기존 개발 지표와 AI 사용을 연계해 판단하는 접근을 권한다.</p><h4>주의할 점</h4><p>토큰맥싱이라는 용어는 맥락에 따라 두 가지로 쓰인다. 부정적 의미로는 지표 조작 현상을 가리키지만, 중립적 의미로는 단순히 AI 도구를 적극적으로 활용하는 행동 자체를 뜻하기도 한다. 토큰 소비 자체가 문제가 아니라, 소비를 목적으로 삼는 것이 문제다. 토큰이 많이 드는 작업이라도 실제 생산성 향상으로 이어진다면 정당한 활용이다.</p></div>
   <div class="tags"><span>#생산성지표</span><span>#AI도입</span><span>#토큰소비</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/token-economics.html">토큰 경제학</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/observability.html">옵저버빌리티</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/llmops.html">LLMOps</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://en.wikipedia.org/wiki/Token_maxxing" target="_blank" rel="nofollow noopener">Token maxxing — Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://blog.pragmaticengineer.com/the-pulse-tokenmaxxing-as-a-weird-new-trend" target="_blank" rel="nofollow noopener">The Pulse: 'Tokenmaxxing' as a weird new trend — Pragmatic Engineer</a> <span class="ref-type">블로그</span></li><li><a href="https://www.forbes.com/sites/timkeary/2026/06/02/why-tokenmaxxing-is-out-and-valuemaxxing-is-in" target="_blank" rel="nofollow noopener">Why 'Tokenmaxxing' Is Out And 'Valuemaxxing' Is In — Forbes</a> <span class="ref-type">블로그</span></li><li><a href="https://leaddev.com/ai/tokenmaxxing-and-the-search-for-ai-metrics-that-matter" target="_blank" rel="nofollow noopener">Tokenmaxxing and the search for AI metrics that matter — LeadDev</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=qkArtT8tYQo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qkArtT8tYQo/mqdefault.jpg" alt="Tokenmaxxing Madness Brings Anthropic To Profitability" loading="lazy" width="160" height="90"><span>Tokenmaxxing Madness Brings Anthropic To Profitability</span></a><a class="video-item" href="https://www.youtube.com/watch?v=57lDpTwiW6g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/57lDpTwiW6g/mqdefault.jpg" alt="Tokenmaxxing: How Top Builders Use AI To Do The Work Of 400 Engineers" loading="lazy" width="160" height="90"><span>Tokenmaxxing: How Top Builders Use AI To Do The Work Of 400 Engineers</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hdBpd99QT-8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hdBpd99QT-8/mqdefault.jpg" alt="연봉 7억 개발자면, 토큰에 3억은 써야죠" loading="lazy" width="160" height="90"><span>연봉 7억 개발자면, 토큰에 3억은 써야죠</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#tokenmaxxing">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-29</div>
 </div>

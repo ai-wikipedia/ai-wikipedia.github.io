@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>라마 4</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>메타가 만든 오픈 웨이트 AI 모델 4세대로, 텍스트와 이미지를 함께 이해하고 처음으로 전문가 혼합(MoE) 구조를 적용해 적은 연산으로 큰 모델의 성능을 내도록 설계됐다.</p><h4>메타가 무료로 푸는 AI 모델</h4><p><strong>Llama 4</strong>는 페이스북·인스타그램을 만든 메타가 2025년 4월에 공개한 AI 모델 묶음이다. 가장 큰 특징은 가중치(모델 파일)를 누구나 내려받아 자기 서버에서 돌릴 수 있게 공개했다는 점이다. ChatGPT나 Claude처럼 회사 API로만 쓸 수 있는 모델과 달리, Llama 4는 <code>llama.com</code>이나 Hugging Face에서 직접 받아 내 컴퓨터·서버에서 실행할 수 있다.</p><p>Llama 4는 한 덩어리가 아니라 여러 크기로 나온다. 가벼운 <strong>Scout</strong>는 H100 GPU 한 장에 올라갈 만큼 효율적이면서도 아주 긴 문서를 통째로 읽을 수 있고, 더 강력한 <strong>Maverick</strong>은 코딩·추론 같은 어려운 작업을 겨냥한다.</p><h4>처음 도입된 전문가 혼합(MoE) 구조</h4><p>Llama 시리즈에서 처음으로 <strong>전문가 혼합(Mixture of Experts, MoE)</strong> 방식을 썼다. 보통의 AI는 질문 하나에 답할 때 모델의 모든 부분을 다 가동하는데, MoE는 질문 성격에 맞는 일부 '전문가'만 골라 켠다. 덕분에 모델 전체는 크지만 실제로 한 번 답할 때 쓰는 계산량은 작아서, 큰 모델의 똑똑함과 작은 모델의 빠른 속도·낮은 비용을 동시에 노린다.</p><p>또 하나는 텍스트와 이미지를 처음부터 한 흐름으로 학습한 <strong>네이티브 멀티모달</strong> 설계다. 이미지 인식을 나중에 붙인 게 아니라 학습 단계에서 텍스트 토큰과 이미지 토큰을 함께 녹여 넣어서, 사진을 보고 설명하거나 화면 속 글자를 읽는 작업을 자연스럽게 처리한다.</p><h4>개발자가 쓰는 법</h4><p>로컬에서 가볍게 돌려보려면 <code>ollama run llama4</code> 한 줄로 받아 실행할 수 있고, 회사 서비스에 붙일 때는 메타의 Llama API나 직접 띄운 서버를 통해 호출한다. 오픈 웨이트라서 사내 데이터로 파인튜닝하거나, Llama 4의 출력을 가져다 더 작은 모델을 학습시키는 증류(distillation)에도 쓸 수 있어 자체 모델을 만들려는 팀이 출발점으로 자주 고른다.</p><h4>주의할 점</h4><p>출시 직후 일부 벤치마크 점수가 실사용 체감과 다르다는 논란이 있었고, 메타는 점수 조작 의혹을 부인하면서도 환경에 따라 성능이 엇갈린다는 점은 인정했다. 화제가 됐던 1,000만 토큰 수준의 초장문 컨텍스트도 실제로는 길어질수록 품질이 떨어질 수 있어, 도입 전 자기 작업으로 직접 검증해 보는 게 좋다.</p></div>
   <div class="tags"><span>#Meta</span><span>#Llama</span><span>#MoE</span><span>#오픈웨이트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llama.html">라마</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence" target="_blank" rel="nofollow noopener">The Llama 4 herd: The beginning of a new era of natively multimodal AI</a> <span class="ref-type">공식</span></li><li><a href="https://www.llama.com/models/llama-4" target="_blank" rel="nofollow noopener">Unmatched Performance and Efficiency | Llama 4</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/meta-llama" target="_blank" rel="nofollow noopener">Meta Llama 4 models - Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://ollama.com/library/llama4" target="_blank" rel="nofollow noopener">llama4 - Ollama</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://wikidocs.net/blog/@jaehong/2195" target="_blank" rel="nofollow noopener">Llama 4 모델의 혁신 분석과 전망</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=P4M9wfJH-yI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/P4M9wfJH-yI/mqdefault.jpg" alt="Meta’s Llama 4 is mindblowing… but did it cheat?" loading="lazy" width="160" height="90"><span>Meta’s Llama 4 is mindblowing… but did it cheat?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=HzccUP87u6s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/HzccUP87u6s/mqdefault.jpg" alt="Meta is in BIG Trouble with Llama 4" loading="lazy" width="160" height="90"><span>Meta is in BIG Trouble with Llama 4</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BJZdklp8sVY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BJZdklp8sVY/mqdefault.jpg" alt="메타 반전의 시작? AI 기업 인수하는 저커버그의 진짜 속셈, Llama 4" loading="lazy" width="160" height="90"><span>메타 반전의 시작? AI 기업 인수하는 저커버그의 진짜 속셈, Llama 4</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#llama-4">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

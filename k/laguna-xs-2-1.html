@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>Laguna XS 2.1</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Poolside가 개발한 33B MoE 코딩 특화 모델로, 토큰당 3B 파라미터만 활성화하면서 로컬 머신에서 에이전틱 코딩과 장기 작업을 처리한다.</p><h4>개념 설명</h4><p>Laguna XS 2.1은 Poolside가 개발한 33B 총 파라미터 규모의 Mixture-of-Experts 모델이다. 전체 파라미터 중 토큰당 3B만 활성화되는 구조 덕분에, 실제 추론 비용은 소형 모델 수준이면서 33B의 지식을 활용할 수 있다. 에이전틱 코딩과 터미널 명령처럼 여러 단계에 걸친 장기 작업에 특화되어 있다.</p><p>이전 버전 XS.2의 업그레이드 버전으로, SWE-bench Multilingual 점수를 5.4포인트 끌어올려 63.1%를 기록했다. 아키텍처는 XS.2와 동일하지만 다국어 코드 수정 벤치마크와 터미널 스타일 작업에서 성능이 향상됐다.</p><h4>사용 예시</h4><p>36GB RAM이 있는 Mac에서 <code>ollama run laguna-xs-2.1</code> 명령으로 로컬 실행이 가능하다. Claude Code, Codex App, OpenCode 등 Ollama 기반 에이전트 도구와 통합할 수 있고, vLLM, SGLang, Transformers, Llama.cpp, TRT-LLM도 론칭 당일부터 지원한다. OpenRouter API를 통해 클라우드 추론도 가능하며 최대 256K 컨텍스트 윈도우를 제공한다.</p><h4>주의할 점</h4><p>이전 버전 XS.2가 Apache 2.0 라이선스로 완전히 오픈 소스였던 것과 달리, XS 2.1은 OpenMDW-1.1 라이선스가 적용된다. 상업적 활용이나 파인튜닝 시 라이선스 조건을 별도로 확인해야 한다.</p></div>
   <div class="tags"><span>#Poolside</span><span>#MoE</span><span>#에이전틱 코딩</span><span>#로컬 모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/small-language-model.html">소형 언어 모델</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/ollama.html">올라마</a>, <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/agentic-engineering.html">에이전틱 엔지니어링</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://poolside.ai/blog/introducing-laguna-xs-2-1" target="_blank" rel="nofollow noopener">Introducing Laguna XS 2.1 — Poolside</a> <span class="ref-type">블로그</span></li><li><a href="https://huggingface.co/poolside/Laguna-XS-2.1" target="_blank" rel="nofollow noopener">poolside/Laguna-XS-2.1 · Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://ollama.com/library/laguna-xs-2.1" target="_blank" rel="nofollow noopener">laguna-xs-2.1 — Ollama</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=fobY4W_0_2g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/fobY4W_0_2g/mqdefault.jpg" alt="Laguna XS 2.1: Poolside's Local Coding Agent Tested - Nine Languages" loading="lazy" width="160" height="90"><span>Laguna XS 2.1: Poolside's Local Coding Agent Tested - Nine Languages</span></a><a class="video-item" href="https://www.youtube.com/watch?v=EKmBODC2E2g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EKmBODC2E2g/mqdefault.jpg" alt="Episode 73: OpenClaw v2026.6.9 Released; Poolside Adds Laguna XS 2.1" loading="lazy" width="160" height="90"><span>Episode 73: OpenClaw v2026.6.9 Released; Poolside Adds Laguna XS 2.1</span></a><a class="video-item" href="https://www.youtube.com/watch?v=uNg-nzgaY-4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uNg-nzgaY-4/mqdefault.jpg" alt="Laguna XS 2.1 33B A3B 동급 최강. 로컬,장기작업용 소형모델." loading="lazy" width="160" height="90"><span>Laguna XS 2.1 33B A3B 동급 최강. 로컬,장기작업용 소형모델.</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#laguna-xs-2-1">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-03</div>
 </div>

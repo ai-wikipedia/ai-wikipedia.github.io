@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>n8n</h1>
@@ -129,6 +157,8 @@
 <h4>주의할 점</h4><p>셀프호스팅은 자유도가 높지만, 서버 관리와 업데이트를 직접 해야 한다. LangChain 기반 AI 노드는 강력하지만 복잡한 에이전트 로직을 구현하려면 노드 구성이 많아질 수 있어서, 처음에는 공식 템플릿에서 시작해 점진적으로 확장하는 게 실용적이다.</p></div>
   <div class="tags"><span>#워크플로우자동화</span><span>#노코드</span><span>#오픈소스</span><span>#AI에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-workflow.html">AI 워크플로우</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/pilotfish.html">파일럿피시</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://n8n.io/" target="_blank" rel="nofollow noopener">n8n 공식 사이트</a> <span class="ref-type">공식</span></li><li><a href="https://docs.n8n.io/" target="_blank" rel="nofollow noopener">n8n Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://n8n.io/ai-agents/" target="_blank" rel="nofollow noopener">n8n AI Agent 공식 문서</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/n8n-io/n8n" target="_blank" rel="nofollow noopener">n8n GitHub Repository</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=ZbIVOy_GPyQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ZbIVOy_GPyQ/mqdefault.jpg" alt="N8N Full Tutorial: Building AI Agents — 2025" loading="lazy" width="160" height="90"><span>N8N Full Tutorial: Building AI Agents — 2025</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#n8n">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-05</div>
 </div>

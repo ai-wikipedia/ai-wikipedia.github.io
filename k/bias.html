@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>편향</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 모델이 훈련 데이터나 설계 방식의 영향으로 특정 집단에 대해 불공정하거나 왜곡된 결과를 내는 현상. 의도치 않더라도 차별적 결과를 낳을 수 있어 배포 전 검증이 중요하다.</p><h4>개념 설명</h4><p>AI는 데이터에서 패턴을 학습하는데, 그 데이터 자체가 이미 사회적 편견을 담고 있다면 모델도 그 편견을 그대로 학습한다. 예를 들어 채용 모델이 과거 채용 기록으로 훈련됐다면 특정 성별이나 인종에 불리하게 작동할 수 있다. 이는 개발자의 의도와 무관하게 데이터에서 자동으로 흡수되는 문제라 더 까다롭다.</p><h4>사용 예시</h4><p>모델을 배포하기 전에 성별, 연령, 인종 등 민감한 속성별로 출력이 어떻게 달라지는지 <strong>Eval</strong>을 통해 측정한다. 편향이 발견되면 데이터 재샘플링, <strong>파인튜닝</strong>, 또는 후처리 필터로 완화한다. 이미지 생성 모델에서는 특정 직업이나 역할에 어떤 외모가 생성되는지 정기적으로 감사하는 것이 좋은 관행이다.</p></div>
   <div class="tags"><span>#공정성</span><span>#데이터 편향</span><span>#윤리</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/alignment.html">AI 정렬</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/model-audit.html">모델 감사</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias?hl=ko" target="_blank" rel="nofollow noopener">Machine Learning - 공정성: 편향의 유형</a> <span class="ref-type">공식</span></li><li><a href="https://www.crescendo.ai/blog/ai-bias-examples-mitigation-guide" target="_blank" rel="nofollow noopener">AI Bias: 16 Real AI Bias Examples &amp; Mitigation Guide</a> <span class="ref-type">블로그</span></li><li><a href="https://m.blog.naver.com/angryking/222353029428" target="_blank" rel="nofollow noopener">인지적 편향의 종류 - 확증 편향, 생존자 편향 등 : 네이버 블로그</a> <span class="ref-type">블로그</span></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12405166/" target="_blank" rel="nofollow noopener">Biases in AI: acknowledging and addressing the inevitable ethical ...</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#bias">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

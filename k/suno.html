@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>수노</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>텍스트 프롬프트 한 줄이나 가사를 입력하면 보컬·반주·믹싱까지 갖춘 완성곡을 1분 안에 만들어 주는 대표적인 AI 음악 생성 서비스.</p><h4>Suno가 뭔가</h4><p>Suno는 미국 스타트업 Suno가 만든 AI 음악 생성 서비스다. 작곡이나 악기 연주를 전혀 몰라도 "신나는 80년대 신스팝, 여성 보컬" 같은 짧은 설명만 적으면, AI가 멜로디·코드·보컬·반주를 한꺼번에 만들어 실제로 들을 수 있는 완성된 노래를 내놓는다. 가사를 직접 써넣을 수도 있고, 주제만 던지면 가사까지 AI가 지어 준다. 1분도 안 되는 시간에 한 번에 두 곡이 나오는 식이라, 음악을 만든다기보다 마음에 드는 곡이 나올 때까지 계속 뽑아 보는 느낌에 가깝다.</p><h4>다른 AI 음악 도구와 뭐가 다른가</h4><p>이미지 생성에 미드저니가 있다면 음악 쪽 대표 주자가 Suno라고 보면 된다. 가장 큰 차별점은 <strong>보컬이 들어간 완성곡</strong>을 통째로 만들어 준다는 점이다. 반주만 깔아 주는 도구들과 달리, 가사를 노래로 부르는 사람 목소리까지 한 번에 생성한다. 모델이 버전을 거듭하며 음질과 자연스러움이 빠르게 좋아졌고, 최신 <code>v5.5</code> 모델에서는 자기 목소리를 업로드해 그 목소리로 노래를 만들거나 곡 스타일을 더 세밀하게 다루는 기능까지 들어갔다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 흔한 사용법은 두 가지다. 간단하게는 분위기·장르만 적는 프롬프트 방식이고, 본격적으로는 가사와 곡 구조(벌스·코러스 등)를 직접 지정하는 커스텀 방식이다. 만들어진 곡은 바로 오디오 파일로 내려받아 유튜브 영상 배경음악, 팟캐스트 인트로, 짧은 광고 음원 등에 쓴다. Pro 요금제에서는 보컬과 악기를 따로 분리하는 스템 분리, 곡 일부만 다시 만드는 편집 기능, 8분 길이의 오디오 업로드 등을 제공해, 단순 생성을 넘어 한 곡을 다듬어 가는 작업도 가능하다. 개발자라면 <code>Suno API</code>를 통해 자신의 서비스 안에서 음악 생성을 자동화할 수도 있다.</p><h4>주의할 점</h4><p>퀄리티가 매번 일정하지는 않아서, 좋은 결과를 얻으려면 같은 프롬프트로 여러 번 뽑고 고르는 과정이 필요하다. 무료 플랜으로 만든 곡은 상업적으로 쓸 수 없고 상업적 사용은 유료 플랜에서만 허용된다. 무엇보다 AI가 기존 음악을 학습해 만든다는 점에서 <strong>저작권</strong> 논란이 크다. 음반사들이 Suno를 상대로 소송을 제기했을 만큼 민감한 영역이라, 만든 곡을 상업적으로 활용할 때는 약관과 권리 관계를 잘 확인해야 한다.</p></div>
   <div class="tags"><span>#Suno</span><span>#AI 음악 생성</span><span>#텍스트-투-뮤직</span><span>#생성형 AI</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/text-to-speech.html">텍스트-음성 변환</a>, <a href="https://aiwiki.work/k/voice-ai.html">보이스 AI</a>, <a href="https://aiwiki.work/k/text-to-image.html">텍스트-이미지 생성</a>, <a href="https://aiwiki.work/k/generative-ai.html">생성형 AI</a>, <a href="https://aiwiki.work/k/ai-copyright.html">AI 저작권</a>, <a href="https://aiwiki.work/k/diffusion-model.html">디퓨전 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://suno.com" target="_blank" rel="nofollow noopener">Suno | AI Music Generator</a> <span class="ref-type">공식</span></li><li><a href="https://suno.com/ko" target="_blank" rel="nofollow noopener">Suno | AI 음악 생성기 (한국어)</a> <span class="ref-type">공식</span></li><li><a href="https://play.google.com/store/apps/details?id=com.suno.android&amp;hl=en_US" target="_blank" rel="nofollow noopener">Suno - AI Music &amp; Songs Maker (Google Play)</a> <span class="ref-type">공식</span></li><li><a href="https://medium.com/write-a-catalyst/i-tried-suno-ai-music-creator-for-a-month-87cec19f20f2" target="_blank" rel="nofollow noopener">I Tried Suno AI Music Creator For A Month</a> <span class="ref-type">블로그</span></li><li><a href="https://namu.wiki/w/Suno" target="_blank" rel="nofollow noopener">Suno - 나무위키</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=U8dcFhF0Dlk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/U8dcFhF0Dlk/mqdefault.jpg" alt="Suno, AI Music, and the Bad Future" loading="lazy" width="160" height="90"><span>Suno, AI Music, and the Bad Future</span></a><a class="video-item" href="https://www.youtube.com/watch?v=JH1eah3snoU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JH1eah3snoU/mqdefault.jpg" alt="How to use Suno Ai Tutorial | Ai Music Tutorial (Suno Ai V5)" loading="lazy" width="160" height="90"><span>How to use Suno Ai Tutorial | Ai Music Tutorial (Suno Ai V5)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=1gaJeRy8uq4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1gaJeRy8uq4/mqdefault.jpg" alt="AI 작곡 수노 V5 성능 미쳤네요;; 현타옵니다." loading="lazy" width="160" height="90"><span>AI 작곡 수노 V5 성능 미쳤네요;; 현타옵니다.</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#suno">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

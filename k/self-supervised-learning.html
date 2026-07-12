@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>자기 지도 학습</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>정답 라벨 없이 데이터 자체에서 학습 신호를 만들어내는 방법. LLM의 "다음 토큰 예측"이 대표적 자기 지도 학습으로, 수십억 개의 레이블 없는 텍스트를 그대로 학습 데이터로 쓸 수 있다.</p><h4>개념 설명</h4><p>사람이 일일이 라벨을 붙여야 하는 지도 학습과 달리, 자기 지도 학습은 데이터 내에 숨겨진 구조를 문제로 삼는다. "다음 단어 예측"은 글 자체가 정답이고, "가려진 단어 맞추기"도 마찬가지다. 이 덕분에 인터넷에 존재하는 모든 텍스트를 라벨링 비용 없이 학습 데이터로 활용할 수 있다. 현대 LLM이 수조 개의 토큰으로 학습될 수 있는 이유다.</p><p>텍스트뿐 아니라 이미지(MAE — Masked Autoencoder), 오디오(wav2vec), 비디오 등 다양한 모달리티에서도 같은 원리가 적용된다.</p><h4>사용 예시</h4><p>Llama, Mistral 등 오픈소스 모델의 사전학습은 모두 자기 지도 학습 방식이다. 도메인 특화 모델을 만들 때 해당 분야의 논문, 문서, 코드를 모아 레이블 없이 지속적 사전학습을 하면 전문성이 올라간다. HuggingFace의 <code>DataCollatorForLanguageModeling</code>이 이 학습 방식을 지원한다.</p></div>
   <div class="tags"><span>#레이블없음</span><span>#사전학습</span><span>#표현학습</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/transfer-learning.html">전이 학습</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2301.05712" target="_blank" rel="nofollow noopener">A Survey on Self-supervised Learning: Algorithms, Applications, and Future Trends</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="nofollow noopener">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a> <span class="ref-type">논문</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#self-supervised-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

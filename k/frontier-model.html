@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>프론티어 모델</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>현재 AI 기술의 최전선에 있는 가장 강력한 대형 언어 모델. GPT-4, Claude 3, Gemini Ultra처럼 최고 수준의 능력을 보이는 모델을 가리킨다.</p><h4>개념 설명</h4><p>프론티어 모델은 특정 아키텍처를 가리키는 기술 용어가 아니라, 현재 시점에서 인류가 만들 수 있는 가장 강력한 AI 모델을 통칭하는 말이다. 전문가 수준의 추론, 복잡한 코드 작성, 멀티모달 이해를 갖추며, 새로운 프론티어 모델이 등장할 때마다 이전 최고 수준을 넘어선다.</p><p>AI 안전 논의에서 중요한 개념이기도 하다. 프론티어 모델은 새로운 위험과 능력이 처음으로 나타나는 지점이기 때문에, Anthropic, OpenAI, Google DeepMind가 프론티어 모델의 안전 평가를 별도로 진행한다.</p><h4>사용 예시</h4><p>Claude 3.5 Sonnet이나 GPT-4o 같은 프론티어 모델은 API로 접근해 가장 복잡한 태스크(다단계 추론, 코드베이스 이해, 복잡한 문서 분석)에 활용한다. 비용이 높기 때문에 단순 태스크에는 소형 모델을 쓰고, 최고 품질이 필요한 경우에만 선택적으로 프론티어 모델을 호출하는 라우팅 전략이 일반적이다.</p></div>
   <div class="tags"><span>#최첨단</span><span>#GPT-4</span><span>#Claude</span><span>#능력한계</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/scaling-law.html">스케일링 법칙</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/emergent-ability.html">창발적 능력</a>, <a href="https://aiwiki.work/k/model-council.html">모델 카운슬</a>, <a href="https://aiwiki.work/k/claude-opus-4-8.html">클로드 오퍼스 4.8</a>, <a href="https://aiwiki.work/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/gemini-3-5-flash.html">제미나이 3.5 플래시</a>, <a href="https://aiwiki.work/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.work/k/nova-2.html">노바 2</a>, <a href="https://aiwiki.work/k/fugu-ultra.html">푸구 울트라</a>, <a href="https://aiwiki.work/k/gpt-5-6.html">GPT-5.6</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a>, <a href="https://aiwiki.work/k/grok-4-5.html">그록 4.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.frontiermodelforum.org/" target="_blank" rel="nofollow noopener">Frontier Model Forum — Official Website</a> <span class="ref-type">공식</span></li><li><a href="https://ai.meta.com/static-resource/meta-frontier-ai-framework/" target="_blank" rel="nofollow noopener">Meta Frontier AI Framework</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#frontier-model">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>데이터 플라이휠</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>사용자가 많아질수록 데이터가 쌓이고, 데이터로 모델이 좋아지며, 좋은 모델이 더 많은 사용자를 끌어오는 선순환 구조. AI 서비스의 핵심 경쟁력이다.</p><h4>개념 설명</h4><p>플라이휠은 한 번 돌기 시작하면 자체 관성으로 계속 도는 무거운 바퀴를 뜻한다. AI 데이터 플라이휠은 이 선순환이다. 사용자가 서비스를 쓰면 그들의 입력, 선택, 피드백이 데이터가 된다. 이 데이터로 모델을 파인튜닝하면 서비스가 더 좋아진다. 더 좋은 서비스는 더 많은 사용자를 끌어오고, 사이클이 반복된다. ChatGPT가 수억 명의 대화 데이터로 지속적으로 개선되는 것이 대표적 사례다.</p><p>데이터 플라이휠이 강력한 이유는 진입 장벽이 된다는 것이다. 나중에 시장에 들어온 경쟁자는 초기 데이터 부족으로 같은 품질을 낼 수 없다.</p><h4>사용 예시</h4><p>AI 서비스 설계 시 사용자 피드백(좋아요/싫어요, 재생성 클릭, 수동 수정)을 로깅하는 구조를 처음부터 설계하면 나중에 이 데이터로 DPO나 SFT에 활용할 수 있다. 챗봇이 잘못 답한 케이스를 수집해 주기적으로 파인튜닝에 반영하는 파이프라인이 데이터 플라이휠의 실천이다.</p></div>
   <div class="tags"><span>#선순환</span><span>#사용자데이터</span><span>#모델개선</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/synthetic-data.html">합성 데이터</a>, <a href="https://aiwiki.work/k/data-labeling.html">데이터 레이블링</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.nvidia.com/en-us/glossary/data-flywheel/" target="_blank" rel="nofollow noopener">Data Flywheel — NVIDIA Glossary</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/NVIDIA-AI-Blueprints/data-flywheel" target="_blank" rel="nofollow noopener">NVIDIA Data Flywheel AI Blueprint — GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=hTYrjYbFHyU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hTYrjYbFHyU/mqdefault.jpg" alt="Build Self-Improving AI Agents with the NVIDIA Data Flywheel Blueprint" loading="lazy" width="160" height="90"><span>Build Self-Improving AI Agents with the NVIDIA Data Flywheel Blueprint</span></a><a class="video-item" href="https://www.youtube.com/watch?v=d5EltXhbcfA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/d5EltXhbcfA/mqdefault.jpg" alt="Building and Evaluating AI Agents" loading="lazy" width="160" height="90"><span>Building and Evaluating AI Agents</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k2Mf6hacjqw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k2Mf6hacjqw/mqdefault.jpg" alt="데이터 플라이휠 개념 - 테디노트" loading="lazy" width="160" height="90"><span>데이터 플라이휠 개념 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#data-flywheel">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

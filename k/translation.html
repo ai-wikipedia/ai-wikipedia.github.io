@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>AI 번역</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>DeepL API, Google Translation API, OpenAI를 직접 번역에 쓸 때 성격이 다르다. 공식 문서나 법률 문서처럼 정밀도가 중요한 번역에는 DeepL이 강하고, 맥락 이해와 자연스러움이 필요한 경우는 LLM에게 직접 번역 지시를 주는 방식이 좋다. 다국어 앱을 개발할 때 번역 API를 i18n 파이프라인에 통합해서 UI 텍스트를 자동 번역하는 용도로도 쓴다.</p></div>
   <div class="tags"><span>#다국어</span><span>#번역</span><span>#NLP</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/nlp.html">자연어 처리</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cloud.google.com/translate/docs/advanced/nmt-model" target="_blank" rel="nofollow noopener">Neural Machine Translation - Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://opennmt.net/" target="_blank" rel="nofollow noopener">OpenNMT - Open-Source Neural Machine Translation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=NZTVm_0UTpc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NZTVm_0UTpc/mqdefault.jpg" alt="Inside a neural machine translation system" loading="lazy" width="160" height="90"><span>Inside a neural machine translation system</span></a><a class="video-item" href="https://www.youtube.com/watch?v=clEgO6VP-lg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/clEgO6VP-lg/mqdefault.jpg" alt="Machine Translation in 2 Minutes" loading="lazy" width="160" height="90"><span>Machine Translation in 2 Minutes</span></a><a class="video-item" href="https://www.youtube.com/watch?v=YJ5TyiW0Myw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/YJ5TyiW0Myw/mqdefault.jpg" alt="인공신경망 기계번역 NMT" loading="lazy" width="160" height="90"><span>인공신경망 기계번역 NMT</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#translation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>데이터 증강</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>부족한 학습 데이터를 변형하거나 생성해서 늘리는 기법. LLM을 활용한 합성 데이터 생성이 최근 주류가 됐다.</p><h4>개념 설명</h4><p>특정 도메인 학습 데이터가 부족하면 파인튜닝 성능이 떨어진다. <strong>데이터 증강</strong>은 기존 데이터를 변형(동의어 치환, 역번역, 순서 변경)하거나 LLM으로 유사한 새 예시를 생성해서 데이터를 불려 학습 효과를 높이는 기법이다. 이미지 분류에서 시작된 개념이지만, LLM 시대에는 텍스트 증강과 합성 데이터 생성으로 더 광범위하게 쓰인다.</p><h4>사용 예시</h4><p>의료 상담 챗봇을 파인튜닝할 때 실제 상담 데이터가 1,000건뿐이라면, Claude에게 "같은 의도이지만 표현이 다른 질문 10가지를 만들어줘"라고 요청해서 10,000건으로 늘릴 수 있다. 생성된 합성 데이터를 실제 데이터와 섞어 학습하면 다양한 표현 방식에 강건한 모델이 된다.</p></div>
   <div class="tags"><span>#학습데이터</span><span>#데이터부족</span><span>#합성데이터</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/synthetic-data.html">합성 데이터</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/data-curation.html">데이터 큐레이션</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aws.amazon.com/what-is/data-augmentation/" target="_blank" rel="nofollow noopener">What is Data Augmentation? - Data Augmentation Techniques Explained - AWS</a> <span class="ref-type">공식</span></li><li><a href="https://www.tensorflow.org/tutorials/images/data_augmentation" target="_blank" rel="nofollow noopener">Data augmentation  |  TensorFlow Core</a> <span class="ref-type">공식</span></li><li><a href="https://medium.com/@adnan.mazraeh1993/data-augmentation-from-basics-to-super-advanced-concepts-2a366c17489e" target="_blank" rel="nofollow noopener">Data Augmentation: From Basics to Super-Advanced Concepts</a> <span class="ref-type">블로그</span></li><li><a href="https://encord.com/blog/data-augmentation-guide/" target="_blank" rel="nofollow noopener">The Ultimate Guide to Data Augmentation in Computer Vision | Encord</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#data-augmentation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>창발적 능력</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 규모가 특정 임계치를 넘어서면 이전에 없던 능력이 갑자기 나타나는 현상. 산술 계산, 다단계 추론 등이 소형 모델에서는 전혀 안 되다가 대형 모델에서 갑자기 가능해진다.</p><h4>개념 설명</h4><p>작은 모델을 크게 만들면 성능이 꾸준히 좋아지는 게 아니라, 어떤 능력은 특정 크기 이전에는 거의 0이다가 임계치를 넘으면 갑자기 가능해진다. 이 현상을 창발적 능력이라 한다. 2022년 Google의 Wei 등이 체계적으로 정리했다. 멀티스텝 수학 문제, 코드 생성, 번역 등에서 이런 현상이 관찰됐다.</p><p>다만 이후 연구들은 이 현상이 평가 지표의 특성(이산적 채점 방식)에 의한 착시일 수 있다고 반박하기도 한다. 연속적인 지표로 측정하면 점진적 향상이 보인다는 것이다. 현재도 학계에서 논쟁 중인 주제다.</p><h4>사용 예시</h4><p>실무에서는 소형 모델로 실험하다가 기대 성능이 나오지 않을 때, 모델 크기 자체가 문제일 수 있다는 판단 근거로 활용된다. 특히 복잡한 추론이나 다단계 태스크에서 7B 모델이 실패할 때 70B로 교체하면 갑자기 풀리는 경험이 창발적 능력의 실례다.</p></div>
   <div class="tags"><span>#스케일</span><span>#예측불가</span><span>#능력도약</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/scaling-law.html">스케일링 법칙</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2206.07682" target="_blank" rel="nofollow noopener">Emergent Abilities of Large Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2304.15004" target="_blank" rel="nofollow noopener">Are Emergent Abilities of Large Language Models a Mirage?</a> <span class="ref-type">논문</span></li><li><a href="https://research.google/pubs/emergent-abilities-of-large-language-models/" target="_blank" rel="nofollow noopener">Emergent Abilities of Large Language Models — Google Research</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wjZofJX0v4M/mqdefault.jpg" alt="But what is a GPT? Visual intro to Transformers (3Blue1Brown)" loading="lazy" width="160" height="90"><span>But what is a GPT? Visual intro to Transformers (3Blue1Brown)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="트랜스포머 어텐션 이즈 올 유 니드 - 허민석" loading="lazy" width="160" height="90"><span>트랜스포머 어텐션 이즈 올 유 니드 - 허민석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#emergent-ability">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

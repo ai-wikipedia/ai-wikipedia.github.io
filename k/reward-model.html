@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>보상 모델</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM 응답의 품질을 수치로 평가하는 모델. RLHF에서 인간 선호도를 학습해 이후 강화학습의 보상 신호로 활용된다.</p><h4>개념 설명</h4><p>RLHF 과정에서 매번 사람이 직접 평가할 수 없기 때문에, 인간 선호를 흉내 내는 보상 모델을 따로 학습한다. "같은 질문에 대한 응답 A와 B 중 A가 더 좋다"는 비교 데이터(preference pair)로 학습되며, 이후 LLM이 생성한 응답에 점수를 매긴다. 강화학습 단계에서는 이 점수를 최대화하도록 LLM의 가중치를 업데이트한다.</p><p>보상 모델 자체가 잘못된 신호를 줄 경우 LLM이 높은 점수를 받는 방향으로 <strong>해킹</strong>하는 문제(reward hacking)가 생긴다. 이를 방지하기 위해 여러 보상 모델을 앙상블하거나, DPO처럼 보상 모델을 아예 없애는 접근도 나왔다.</p><h4>사용 예시</h4><p>OpenAssistant, Anthropic의 HH-RLHF 등 공개 선호도 데이터셋으로 보상 모델을 학습할 수 있다. <code>trl</code>의 <code>RewardTrainer</code>가 이를 지원한다. 보상 모델을 평가 파이프라인에 사용해 LLM 응답을 자동으로 채점하는 용도로도 활용된다.</p></div>
   <div class="tags"><span>#RLHF</span><span>#선호도</span><span>#평가모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/reinforcement-learning.html">강화학습</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a>, <a href="https://aiwiki.work/k/grpo.html">GRPO</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2204.05862" target="_blank" rel="nofollow noopener">Training a Helpful and Harmless Assistant with RLHF</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="nofollow noopener">Training language models to follow instructions with human feedback (InstructGPT)</a> <span class="ref-type">논문</span></li><li><a href="https://huggingface.co/blog/rlhf" target="_blank" rel="nofollow noopener">Illustrating Reinforcement Learning from Human Feedback (RLHF) — Hugging Face Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#reward-model">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

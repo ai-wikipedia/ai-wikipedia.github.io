@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>자율 에이전트</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>사람의 개입 없이 스스로 계획하고 도구를 사용해 목표를 달성하는 AI 에이전트. 지시만 주면 나머지는 알아서 처리한다.</p><h4>개념 설명</h4><p>자율 에이전트는 목표를 받으면 어떻게 달성할지 스스로 계획하고, 필요한 도구를 골라 쓰고, 중간 결과를 보며 방향을 조정하면서 최종 목표에 도달한다. 사람이 매 단계마다 지시하는 "반자율" 방식과 달리, 한 번 목표를 주면 완료될 때까지 독립적으로 실행된다. 높은 자율성은 효율적이지만, 잘못된 방향으로 가도 중간에 잡기 어렵다는 트레이드오프가 있다.</p><h4>사용 예시</h4><p>Claude Code를 자율 에이전트로 사용할 때 "이 레포의 테스트 커버리지를 80%로 올려줘"라고 지시하면, 에이전트가 현재 커버리지를 분석하고, 미커버 코드를 파악하고, 테스트를 작성하고, 실행해서 확인하는 전 과정을 사람 개입 없이 처리한다. 중요한 작업에는 <strong>human-in-the-loop</strong>를 함께 설계하는 것이 안전하다.</p></div>
   <div class="tags"><span>#자율성</span><span>#장기실행</span><span>#목표지향</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/react-pattern.html">ReAct 패턴</a>, <a href="https://aiwiki.work/k/research-driven-agent.html">리서치 기반 에이전트</a>, <a href="https://aiwiki.work/k/world-model.html">월드 모델</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aws.amazon.com/what-is/ai-agents/" target="_blank" rel="nofollow noopener">What are AI agents? - AWS</a> <span class="ref-type">공식</span></li><li><a href="https://cloud.google.com/discover/what-are-ai-agents" target="_blank" rel="nofollow noopener">What are AI agents? - Google Cloud</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=F8NKVhkZZWI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/F8NKVhkZZWI/mqdefault.jpg" alt="What are AI Agents? Explained Simply" loading="lazy" width="160" height="90"><span>What are AI Agents? Explained Simply</span></a><a class="video-item" href="https://www.youtube.com/watch?v=MlK6SIjcjE8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/MlK6SIjcjE8/mqdefault.jpg" alt="Build an Autonomous AI Agent From Scratch" loading="lazy" width="160" height="90"><span>Build an Autonomous AI Agent From Scratch</span></a><a class="video-item" href="https://www.youtube.com/watch?v=8Qbs2d9P8Gk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8Qbs2d9P8Gk/mqdefault.jpg" alt="자율 AI 에이전트란? 완벽 정리" loading="lazy" width="160" height="90"><span>자율 AI 에이전트란? 완벽 정리</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#autonomous-agent">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

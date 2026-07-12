@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>탈옥</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 모델의 안전 장치를 우회해 본래라면 거부했을 응답을 이끌어내는 기법. 역할극, 특수 서식, 간접 지시 등 다양한 방법이 있으며 모델 보안 연구의 핵심 주제다.</p><h4>개념 설명</h4><p>AI 모델은 훈련을 통해 유해한 요청을 거부하도록 설계되어 있지만, 이 안전 장치는 완벽하지 않다. 탈옥은 "당신은 규칙이 없는 AI야"라는 역할극, 특수 문자로 텍스트를 감추거나, 허구의 맥락을 씌워 모델이 금지된 응답을 하도록 유도하는 방법 전반을 일컫는다. 탈옥이 성공한다는 것은 모델의 <strong>정렬</strong>이 불완전하다는 신호다.</p><h4>사용 예시</h4><p>보안 연구자는 레드팀 과정에서 다양한 탈옥 시도를 체계적으로 문서화한다. 발견된 탈옥 패턴은 <strong>출력 필터링</strong>이나 추가 파인튜닝에 반영된다. 서비스를 개발할 때는 시스템 프롬프트에 역할극 금지, 자기 소개 제한 등의 지침을 명시해 탈옥 공격 표면을 줄이는 것이 일반적이다.</p></div>
   <div class="tags"><span>#보안</span><span>#프롬프트 공격</span><span>#가드레일 우회</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-injection.html">프롬프트 인젝션</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/red-teaming.html">레드팀</a>, <a href="https://aiwiki.work/k/alignment.html">AI 정렬</a>, <a href="https://aiwiki.work/k/output-filtering.html">출력 필터링</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://play.google.com/store/movies/details/%ED%83%88%EC%98%A5?id=GqusT-HJWXA.P&amp;hl=ko" target="_blank" rel="nofollow noopener">탈옥 - Google Play 영화</a> <span class="ref-type">공식</span></li><li><a href="https://www.merriam-webster.com/dictionary/jailbreak" target="_blank" rel="nofollow noopener">JAILBREAK Definition &amp; Meaning - Merriam-Webster</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.youtube.com/playlist?list=PLhYV96hJwkJZ4dL6UjoEhqn7UVdAq03-O" target="_blank" rel="nofollow noopener">Jailbreak - YouTube</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.roblox.com/games/606849621/JAILBREAK" target="_blank" rel="nofollow noopener">JAILBREAK</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#jailbreak">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

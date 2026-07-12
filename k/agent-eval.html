@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>에이전트 평가</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 에이전트가 얼마나 잘 작동하는지 체계적으로 측정하는 방법. 단순 LLM 평가와 달리 다단계 실행, 도구 선택, 목표 달성 여부까지 종합 판단한다.</p><h4>개념 설명</h4><p>에이전트 평가는 단순히 답변이 맞는지 보는 것보다 훨씬 복잡하다. 에이전트가 올바른 도구를 선택했는지, 불필요한 단계를 거치지 않았는지, 중간에 잘못된 방향으로 흘렀다가 수정했는지, 최종 목표를 실제로 달성했는지를 모두 평가해야 한다. 에이전트가 올바른 결과를 내더라도 비효율적인 경로로 갔다면 개선이 필요하다.</p><h4>사용 예시</h4><p>코드 작성 에이전트를 평가할 때 LangSmith나 Langfuse로 각 실행의 전체 트레이스를 기록하고, 도구 호출 횟수, 총 토큰 사용량, 태스크 성공률, 평균 완료 시간을 지표로 삼는다. 실패 케이스를 모아 <strong>실패 분석</strong>을 하면 에이전트 프롬프트나 도구 설계의 개선점을 찾을 수 있다.</p></div>
   <div class="tags"><span>#평가</span><span>#벤치마크</span><span>#품질</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/tracing.html">트레이싱</a>, <a href="https://aiwiki.work/k/langsmith.html">랭스미스</a>, <a href="https://aiwiki.work/k/langfuse.html">랭퓨즈</a>, <a href="https://aiwiki.work/k/gpt-5-6.html">GPT-5.6</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2503.16416" target="_blank" rel="nofollow noopener">Evaluation of LLM-based Agents Survey</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2308.03688" target="_blank" rel="nofollow noopener">AgentBench: Evaluating LLMs as Agents</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=2VYH_FPWaYo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/2VYH_FPWaYo/mqdefault.jpg" alt="How to Evaluate AI Agents" loading="lazy" width="160" height="90"><span>How to Evaluate AI Agents</span></a><a class="video-item" href="https://www.youtube.com/watch?v=JkRK2wDPnKs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JkRK2wDPnKs/mqdefault.jpg" alt="LLM Evaluation Best Practices with Langfuse" loading="lazy" width="160" height="90"><span>LLM Evaluation Best Practices with Langfuse</span></a><a class="video-item" href="https://www.youtube.com/watch?v=SxGoh6ANY-0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SxGoh6ANY-0/mqdefault.jpg" alt="AI 에이전트 평가 방법론 총정리" loading="lazy" width="160" height="90"><span>AI 에이전트 평가 방법론 총정리</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#agent-eval">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

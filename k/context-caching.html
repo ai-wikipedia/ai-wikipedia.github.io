@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>컨텍스트 캐싱</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>긴 시스템 프롬프트나 문서를 매 요청마다 재처리하지 않고 캐시해서 비용과 지연 시간을 줄이는 기법.</p><h4>개념 설명</h4><p>RAG나 긴 시스템 프롬프트를 쓸 때, 매 API 호출마다 같은 긴 텍스트를 처리하면 비용이 크게 늘어난다. <strong>컨텍스트 캐싱</strong>은 변하지 않는 부분(시스템 프롬프트, 참고 문서 등)을 서버 측에 캐시해두고, 이후 요청에서는 캐시된 내용을 재사용해 입력 토큰 비용을 절감하는 기능이다. Anthropic은 캐시된 토큰을 일반 입력보다 약 90% 저렴하게 제공한다.</p><h4>사용 예시</h4><p>법률 문서 분석 앱에서 1만 토큰짜리 참고 문서를 매 요청마다 넣는다면, Anthropic SDK의 <code>cache_control: {"type": "ephemeral"}</code> 파라미터로 해당 블록을 캐시 대상으로 지정하면 된다. 같은 문서를 참조하는 반복 요청이 많을수록 절감 효과가 크다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#비용절감</span><span>#성능</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview" target="_blank" rel="nofollow noopener">Context caching overview  |  Generative AI on Vertex AI  |  Google Cloud Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://api-docs.deepseek.com/guides/kv_cache" target="_blank" rel="nofollow noopener">Context Caching | DeepSeek API Docs</a> <span class="ref-type">공식</span></li><li><a href="https://docs.z.ai/guides/capabilities/cache" target="_blank" rel="nofollow noopener">Context Caching - Overview - Z.AI DEVELOPER DOCUMENT</a> <span class="ref-type">공식</span></li><li><a href="https://medium.com/@wael-saideni/understanding-the-difference-between-context-caching-and-semantic-caching-a-step-toward-optimizing-1a2b44d25c12" target="_blank" rel="nofollow noopener">Understanding the difference between context caching or prompt ...</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#context-caching">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

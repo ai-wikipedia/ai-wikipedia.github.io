@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>코파일럿 SDK</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>GitHub Copilot의 AI 기능을 외부 앱이나 IDE에 통합할 수 있게 해주는 공식 SDK. Copilot의 코드 완성과 채팅 기능을 자체 도구에 임베드할 수 있다.</p><h4>개념 설명</h4><p>기존에는 Copilot을 VS Code나 JetBrains 같은 지원 IDE에서만 쓸 수 있었다. Copilot SDK가 나오면서 개발자가 자체 에디터, CLI 도구, 웹 앱에 Copilot의 코드 완성·채팅·에이전트 기능을 직접 통합할 수 있게 됐다. GitHub이 Copilot을 제품이 아닌 플랫폼으로 확장하려는 전략의 일환이다.</p><h4>사용 예시</h4><p>사내 개발 도구에 Copilot SDK를 연동하면 GitHub Copilot의 코드 제안 기능을 커스텀 에디터에서 바로 쓸 수 있다. 코드 리뷰 도구에 Copilot의 설명 기능을 넣거나, 내부 문서 시스템에 코드 질의응답을 추가하는 식으로 활용할 수 있다.</p></div>
   <div class="tags"><span>#GitHub</span><span>#확장</span><span>#API</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/copilot.html">깃허브 코파일럿</a>, <a href="https://aiwiki.work/k/ai-ide.html">AI IDE</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/anthropic-sdk.html">앤트로픽 SDK</a>, <a href="https://aiwiki.work/k/openai-sdk.html">오픈AI SDK</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://github.com/github/copilot-sdk" target="_blank" rel="nofollow noopener">GitHub Copilot SDK - GitHub</a> <span class="ref-type">공식</span></li><li><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/" target="_blank" rel="nofollow noopener">Microsoft Copilot Studio Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=d5W5tRaImJA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/d5W5tRaImJA/mqdefault.jpg" alt="Microsoft Copilot AI Overview and Demo" loading="lazy" width="160" height="90"><span>Microsoft Copilot AI Overview and Demo</span></a><a class="video-item" href="https://www.youtube.com/watch?v=DyJJ_aEPtZs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DyJJ_aEPtZs/mqdefault.jpg" alt="GitHub Copilot FREE: Best FREE AI Editor" loading="lazy" width="160" height="90"><span>GitHub Copilot FREE: Best FREE AI Editor</span></a><a class="video-item" href="https://www.youtube.com/watch?v=IXo1mhVqMIw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/IXo1mhVqMIw/mqdefault.jpg" alt="Microsoft Copilot SDK 활용 가이드" loading="lazy" width="160" height="90"><span>Microsoft Copilot SDK 활용 가이드</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#copilot-sdk">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

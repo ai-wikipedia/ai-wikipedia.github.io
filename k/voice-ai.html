@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>보이스 AI</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>OpenAI Realtime API나 ElevenLabs Conversational AI를 쓰면 WebSocket 기반으로 실시간 음성 대화 앱을 구현할 수 있다. 고객 서비스 봇, 언어 학습 앱, 접근성 기능에서 주로 쓰인다. 음성 입력의 끝을 감지하는 VAD(음성 활동 감지)와 지연 관리가 사용자 경험을 결정하는 핵심 기술 요소다.</p></div>
   <div class="tags"><span>#음성인터페이스</span><span>#실시간대화</span><span>#어시스턴트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/speech-to-text.html">음성 인식</a>, <a href="https://aiwiki.work/k/text-to-speech.html">텍스트-음성 변환</a>, <a href="https://aiwiki.work/k/ai-assistant.html">AI 어시스턴트</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/minimax.html">미니맥스</a>, <a href="https://aiwiki.work/k/nova-2.html">노바 2</a>, <a href="https://aiwiki.work/k/lyria.html">리리아</a>, <a href="https://aiwiki.work/k/suno.html">수노</a>, <a href="https://aiwiki.work/k/elevenlabs.html">일레븐랩스</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://a16z.com/ai-voice-agents-2025-update/" target="_blank" rel="nofollow noopener">AI Voice Agents 2025 - a16z</a> <span class="ref-type">블로그</span></li><li><a href="https://elevenlabs.io/blog/voice-agents-and-conversational-ai-new-developer-trends-2025" target="_blank" rel="nofollow noopener">Voice agents and Conversational AI - ElevenLabs</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zWLZ3bVVwD8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zWLZ3bVVwD8/mqdefault.jpg" alt="Learn Voice Agents Now Full Guide" loading="lazy" width="160" height="90"><span>Learn Voice Agents Now Full Guide</span></a><a class="video-item" href="https://www.youtube.com/watch?v=jEZ159wzSJY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jEZ159wzSJY/mqdefault.jpg" alt="What Are Voice Agents" loading="lazy" width="160" height="90"><span>What Are Voice Agents</span></a><a class="video-item" href="https://www.youtube.com/watch?v=y2h_WNSLGZw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/y2h_WNSLGZw/mqdefault.jpg" alt="보이스 에이전트 1시간 튜토리얼" loading="lazy" width="160" height="90"><span>보이스 에이전트 1시간 튜토리얼</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#voice-ai">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

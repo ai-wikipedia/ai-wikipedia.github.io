@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>옵저버빌리티</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>LLM 애플리케이션의 내부 동작을 추적하고 이해할 수 있게 하는 시스템. 프롬프트·응답 로그, 체인 실행 추적, 성능 메트릭을 수집해 문제를 진단한다.</p><h4>개념 설명</h4><p>LLM 앱은 블랙박스다. 같은 입력에도 결과가 다르고, 복잡한 에이전트 체인에서 무엇이 잘못됐는지 알기 어렵다. LLM 옵저버빌리티는 모든 LLM 호출의 입출력, 지연, 비용, 에러를 로깅하고, 멀티스텝 에이전트 실행을 트리 구조로 시각화한다. 특정 응답이 왜 나왔는지 역추적할 수 있다.</p><p>OpenTelemetry를 LLM 트레이싱에 표준으로 확장한 <strong>OpenInference</strong>나 <strong>OTLP</strong> 기반 도구들이 나오고 있다. LangSmith, Langfuse, Arize Phoenix가 대표 도구다.</p><h4>사용 예시</h4><p>Langfuse를 LangChain 앱에 콜백으로 추가하면 에이전트의 전체 실행 과정이 트레이스로 기록된다. "이 사용자의 대화에서 어떤 프롬프트가 사용됐고, 각 LLM 호출이 몇 ms 걸렸으며, 토큰 비용은 얼마인가"를 한눈에 볼 수 있다.</p></div>
   <div class="tags"><span>#모니터링</span><span>#트레이싱</span><span>#로깅</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/mlops.html">MLOps</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://github.com/langfuse/langfuse" target="_blank" rel="nofollow noopener">Langfuse — Open Source LLM Observability Platform (GitHub)</a> <span class="ref-type">공식</span></li><li><a href="https://docs.langchain.com/langsmith/observability" target="_blank" rel="nofollow noopener">LangSmith Observability — LangChain Official Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=vRFSVGaNaG4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vRFSVGaNaG4/mqdefault.jpg" alt="LLM Observability with Langfuse (Webinar)" loading="lazy" width="160" height="90"><span>LLM Observability with Langfuse (Webinar)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=DuCL7eRsaYI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DuCL7eRsaYI/mqdefault.jpg" alt="AI and LLM Observability with Dynatrace" loading="lazy" width="160" height="90"><span>AI and LLM Observability with Dynatrace</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k2Mf6hacjqw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k2Mf6hacjqw/mqdefault.jpg" alt="LLM 모니터링과 옵저버빌리티 - 테디노트" loading="lazy" width="160" height="90"><span>LLM 모니터링과 옵저버빌리티 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#observability">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>프롬프트 체이닝</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>하나의 복잡한 작업을 여러 LLM 호출로 나눠서 이전 출력이 다음 입력이 되도록 순서대로 처리하는 방식.</p><h4>개념 설명</h4><p>복잡한 작업을 하나의 프롬프트로 해결하려 하면 LLM이 중간에 헷갈리거나 품질이 떨어진다. <strong>프롬프트 체이닝</strong>은 큰 작업을 독립적인 단계로 나누고, 각 단계를 별도의 LLM 호출로 처리하면서 앞 단계의 결과를 다음 단계의 입력으로 연결하는 방식이다. 각 단계가 단순해지므로 전체 품질이 올라간다.</p><h4>사용 예시</h4><p>블로그 포스트 작성을 "주제 브레인스토밍 → 개요 작성 → 섹션별 초안 → 편집 및 교정"처럼 네 번의 LLM 호출로 체이닝하면, 한 번에 쓰는 것보다 훨씬 구조적인 결과가 나온다. LangChain의 <code>SequentialChain</code>이나 LangGraph의 선형 그래프로 구현할 수 있다.</p></div>
   <div class="tags"><span>#파이프라인</span><span>#순차처리</span><span>#분해</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/langgraph.html">랭그래프</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://medium.com/@nivalabs.ai/prompt-chaining-for-the-ai-agents-modular-reliable-and-scalable-workflows-a22d15fd5d33" target="_blank" rel="nofollow noopener">Prompt Chaining for the AI Agents: Modular, Reliable, and Scalable ...</a> <span class="ref-type">블로그</span></li><li><a href="https://www.prompthub.us/blog/prompt-chaining-guide" target="_blank" rel="nofollow noopener">Prompt Chaining Guide - PromptHub</a> <span class="ref-type">블로그</span></li><li><a href="https://natesnewsletter.substack.com/p/prompt-chaining-masterclass-how-to" target="_blank" rel="nofollow noopener">Prompt Chaining Masterclass: How to Orchestrate Multiple AI ...</a> <span class="ref-type">블로그</span></li><li><a href="https://botpress.com/ko/blog/what-is-ai-prompt-chaining" target="_blank" rel="nofollow noopener">AI 프롬프트 체이닝이란 무엇인가요? - Botpress</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#prompt-chaining">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>문서 AI</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>Claude나 GPT-4o의 멀티모달 능력을 쓰면 PDF 이미지를 직접 보내고 "이 계약서의 계약 기간과 해지 조건을 찾아줘"라고 할 수 있다. Google Document AI, AWS Textract 같은 서비스는 특정 문서 유형(세금계산서, 운전면허증 등)에 특화된 파서를 제공한다. 대량 문서 처리에는 배치 API와 비동기 처리를 조합하고, 추출 결과의 신뢰도 점수를 기준으로 사람 검토 대상을 필터링하는 파이프라인을 구성한다.</p></div>
   <div class="tags"><span>#OCR</span><span>#문서처리</span><span>#데이터추출</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/document-parsing.html">문서 파싱</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/summarization.html">요약</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cloud.google.com/document-ai/docs/release-notes" target="_blank" rel="nofollow noopener">Document AI - Google Cloud</a> <span class="ref-type">공식</span></li><li><a href="https://mistral.ai/news/mistral-ocr" target="_blank" rel="nofollow noopener">Mistral OCR - Mistral AI</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Yrj3xqh3k6Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Yrj3xqh3k6Y/mqdefault.jpg" alt="Agentic Document Extraction" loading="lazy" width="160" height="90"><span>Agentic Document Extraction</span></a><a class="video-item" href="https://www.youtube.com/watch?v=_pEEJu-2KKM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/_pEEJu-2KKM/mqdefault.jpg" alt="LLMs and AI Agents: Transforming Unstructured Data" loading="lazy" width="160" height="90"><span>LLMs and AI Agents: Transforming Unstructured Data</span></a><a class="video-item" href="https://www.youtube.com/watch?v=JdjGQFnnqB0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JdjGQFnnqB0/mqdefault.jpg" alt="Mistral OCR + n8n 문서 스캔 자동" loading="lazy" width="160" height="90"><span>Mistral OCR + n8n 문서 스캔 자동</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#document-ai">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

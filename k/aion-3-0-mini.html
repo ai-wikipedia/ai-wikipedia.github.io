@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>에이온 3.0 미니</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Aion 3.0의 경량 버전. 협업 생성 구조와 롤플레이 특화 능력은 유지하면서 비용을 풀 모델 대비 약 1/4 수준으로 낮췄다.</p><h4>어떤 모델인가</h4><p>Aion 3.0 Mini는 AionLabs의 다중 모델 협업 생성 구조를 그대로 유지하면서 크기를 줄인 경량 버전이다. GLM 패밀리 기반의 롤플레이·스토리텔링 특화 설계를 계승하며, 추론(reasoning) 기능도 지원한다.</p><p>컨텍스트 윈도우는 131,072 토큰, 최대 출력은 32,768 토큰으로 풀 모델과 동일하다. 가격은 입력 $0.7/1M 토큰, 출력 $1.4/1M 토큰으로, 풀 모델(입력 $3, 출력 $6) 대비 약 1/4 수준이다. 캐시 읽기는 $0.18/1M 토큰.</p><h4>사용 예시</h4><p>컨텍스트 길이와 출력 한도가 풀 모델과 같아서, 긴 대화형 롤플레이나 장편 스토리 작성에서도 동일하게 활용할 수 있다. 빠른 프로토타이핑이나 비용이 민감한 크리에이티브 앱에서 먼저 Mini로 개발하고, 필요하면 풀 모델로 전환하는 방식이 실용적이다. OpenAI 호환 API로 제공되어 기존 워크플로우에 바로 붙일 수 있다.</p><h4>주의할 점</h4><p>경량화 모델인 만큼 복잡한 다중 등장인물 서사나 고도로 세밀한 감정 묘사에서는 풀 모델 대비 출력 품질 차이가 있을 수 있다. 실제 품질은 용례에 따라 직접 비교해 보는 것이 좋다.</p></div>
   <div class="tags"><span>#롤플레이</span><span>#스토리텔링</span><span>#경량모델</span><span>#GLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/aion-3-0.html">에이온 3.0</a>, <a href="https://aiwiki.work/k/glm.html">GLM</a>, <a href="https://aiwiki.work/k/small-language-model.html">소형 언어 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developer.puter.com/ai/aion-labs/aion-3.0-mini" target="_blank" rel="nofollow noopener">Aion-3.0-Mini – Puter Developer</a> <span class="ref-type">공식</span></li><li><a href="https://pi.dev/models/openrouter/aion-labs-aion-3-0-mini" target="_blank" rel="nofollow noopener">Aion-3.0-Mini – Pi.dev</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#aion-3-0-mini">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-12</div>
 </div>

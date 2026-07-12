@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>미스트랄 미디엄 3.5</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>프랑스 Mistral AI가 내놓은 첫 플래그십 통합 모델로, 지시 따르기·추론·코딩을 하나의 모델에 합쳐 에이전트 작업과 코딩에 강하다.</p><h4>어떤 모델인가</h4><p>Mistral Medium 3.5는 프랑스 AI 스타트업 <strong>Mistral AI</strong>가 만든 모델이다. 그동안 Mistral은 일상 대화를 잘하는 모델, 수학 추론에 특화된 모델(Magistral), 코딩에 특화된 모델(Devstral)을 따로따로 내놓았는데, 이 버전부터는 그 능력들을 하나로 합쳤다. 그래서 회사 스스로 첫 플래그십 통합(merged) 모델이라고 부른다. 파라미터를 부분적으로만 켜는 MoE 방식이 아니라 1,280억 개 가중치를 통째로 쓰는 <strong>dense 모델</strong>이고, 한 번에 25만 6천 토큰(책 여러 권 분량)을 읽을 수 있는 긴 컨텍스트와 이미지 입력까지 받는 멀티모달 기능을 갖췄다.</p><h4>무엇이 다른가</h4><p>가장 큰 특징은 추론 모드를 켜고 끌 수 있다는 점이다. 빠른 답이 필요하면 곧장 답하고, 어려운 문제는 <code>high</code> 같은 추론 강도를 요청 단위로 올려서 더 오래 생각하게 만들 수 있다. 이전 세대를 여러 개로 나눠 쓰던 것을 하나로 합쳤기 때문에, Mistral의 자체 서비스 Le Chat에서도 Mistral Medium 3.1과 Magistral을 이 모델로 교체했다. 도구를 여러 번 연달아 호출하면서 긴 작업을 끝까지 끌고 가는 능력이 강해, 코딩 에이전트 같은 곳에서 특히 빛을 본다.</p><h4>개발자가 어떻게 쓰나</h4><p>API로 부르는 게 가장 간단하다. 모델 이름 <code>mistral-medium-3.5</code>를 지정하고 추론 강도만 조절하면 된다. 가중치가 공개(Modified MIT 라이선스)되어 있어서 직접 받아 돌릴 수도 있는데, <code>ollama run mistral-medium-3.5</code> 한 줄이면 로컬에서 띄울 수 있고 <code>vLLM</code>이나 SGLang으로 서빙도 한다. Mistral은 이 모델의 에이전트 능력을 살려 자사 코딩 에이전트 <code>Vibe</code>의 기본 엔진을 기존 Devstral 2에서 이 모델로 바꿨고, Vibe 안에서 원격 에이전트가 코드 작업을 돌리는 데 쓴다.</p><h4>주의할 점</h4><p>1,280억 dense 모델이라 로컬에서 돌리려면 GPU가 넉넉히 필요하고, 돌아간다와 빠르게 돌아간다는 전혀 다른 얘기라 실사용엔 만만치 않다. API 가격도 비슷한 크기의 다른 오픈 웨이트 모델보다 비싼 편이고(입력 100만 토큰당 약 $1.5, 출력 $7.5), 답을 장황하게 내놓는 경향이 있어 출력 토큰이 많이 나올 수 있다.</p></div>
   <div class="tags"><span>#Mistral AI</span><span>#오픈 웨이트</span><span>#에이전트</span><span>#코딩</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/mistral.html">미스트랄</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/tool-calling.html">툴 콜링</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://huggingface.co/mistralai/Mistral-Medium-3.5-128B" target="_blank" rel="nofollow noopener">Mistral-Medium-3.5-128B · Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04" target="_blank" rel="nofollow noopener">Mistral Medium 3.5 - Mistral Docs</a> <span class="ref-type">공식</span></li><li><a href="https://ollama.com/library/mistral-medium-3.5" target="_blank" rel="nofollow noopener">mistral-medium-3.5 - Ollama Library</a> <span class="ref-type">공식</span></li><li><a href="https://openrouter.ai/mistralai/mistral-medium-3-5" target="_blank" rel="nofollow noopener">Mistral Medium 3.5 - API Pricing &amp; Benchmarks | OpenRouter</a> <span class="ref-type">블로그</span></li><li><a href="https://artificialanalysis.ai/models/mistral-medium-3-5" target="_blank" rel="nofollow noopener">Mistral Medium 3.5 - Intelligence, Performance &amp; Price Analysis</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=LkbREGlNX8Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LkbREGlNX8Y/mqdefault.jpg" alt="The AI Model Nobody's Talking About — Mistral 3.5 &amp; The Sovereignty Question" loading="lazy" width="160" height="90"><span>The AI Model Nobody's Talking About — Mistral 3.5 &amp; The Sovereignty Question</span></a><a class="video-item" href="https://www.youtube.com/watch?v=MfcqdqCLJwc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/MfcqdqCLJwc/mqdefault.jpg" alt="Mistral Medium 3.5 First Test – A 128B Dense Open-Source Model!" loading="lazy" width="160" height="90"><span>Mistral Medium 3.5 First Test – A 128B Dense Open-Source Model!</span></a><a class="video-item" href="https://www.youtube.com/watch?v=p68v3OLlC_E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/p68v3OLlC_E/mqdefault.jpg" alt="에이전트 성능 보강된 프랑스 모델. Mistral Medium 3.5 128B 엔지니어링 업무 능력 테스트" loading="lazy" width="160" height="90"><span>에이전트 성능 보강된 프랑스 모델. Mistral Medium 3.5 128B 엔지니어링 업무 능력 테스트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#mistral-medium-3-5">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

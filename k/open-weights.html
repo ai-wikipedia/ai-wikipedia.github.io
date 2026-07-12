@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>오픈 웨이트</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델의 가중치를 공개해 누구나 다운로드·수정·배포할 수 있게 한 모델 배포 방식. Llama, Mistral, Gemma가 대표적이며 AI 생태계의 저변을 넓히고 있다.</p><h4>개념 설명</h4><p>오픈 웨이트 모델은 학습된 파라미터를 공개하지만, 학습 코드나 데이터까지 공개하지는 않는 경우가 많아 "오픈소스"와 구별해서 부른다. Meta의 Llama 시리즈가 이 흐름을 열었고, Mistral, Google Gemma, Alibaba Qwen이 뒤를 이었다. API 호출 대신 직접 서빙할 수 있어 비용 통제, 커스터마이징, 데이터 주권 면에서 장점이 크다.</p><h4>사용 예시</h4><p>HuggingFace에서 Llama 3를 다운받아 vLLM으로 자체 서빙하면 API 비용 없이 LLM을 운영할 수 있다. LoRA로 파인튜닝해 도메인 특화 모델을 만들거나, 양자화해서 노트북에서 실행하는 것도 가능하다. 기업이 민감 데이터를 외부로 보내지 않으면서 AI를 활용하려 할 때 오픈 웨이트가 핵심 선택지다.</p></div>
   <div class="tags"><span>#오픈소스</span><span>#Llama</span><span>#Mistral</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/llama.html">라마</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/minimax.html">미니맥스</a>, <a href="https://aiwiki.work/k/nemotron.html">네모트론</a>, <a href="https://aiwiki.work/k/granite.html">그래니트</a>, <a href="https://aiwiki.work/k/reka.html">레카</a>, <a href="https://aiwiki.work/k/gemma-4.html">젬마 4</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/deepseek-v4.html">딥시크 V4</a>, <a href="https://aiwiki.work/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.work/k/step-3-7.html">스텝 3.7</a>, <a href="https://aiwiki.work/k/olmo-3.html">OLMo 3</a>, <a href="https://aiwiki.work/k/flux.html">FLUX</a>, <a href="https://aiwiki.work/k/glm-5-2.html">GLM 5.2</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://opensource.org/ai/open-weights" target="_blank" rel="nofollow noopener">Open Weights: not quite what you have been told</a> <span class="ref-type">블로그</span></li><li><a href="https://openai.com/global-affairs/open-weights-and-ai-for-all/" target="_blank" rel="nofollow noopener">Open weights and AI for all - OpenAI</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=SqtF-D4tPuI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SqtF-D4tPuI/mqdefault.jpg" alt="OpenAI Open Source Models Are Here" loading="lazy" width="160" height="90"><span>OpenAI Open Source Models Are Here</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kl7jSRW-1Dw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kl7jSRW-1Dw/mqdefault.jpg" alt="A Dream of Spring for Open-Weight LLMs" loading="lazy" width="160" height="90"><span>A Dream of Spring for Open-Weight LLMs</span></a><a class="video-item" href="https://www.youtube.com/watch?v=rpAtVIZB72U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/rpAtVIZB72U/mqdefault.jpg" alt="오픈소스 vs 오픈웨이트 AI 모델 차이" loading="lazy" width="160" height="90"><span>오픈소스 vs 오픈웨이트 AI 모델 차이</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#open-weights">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

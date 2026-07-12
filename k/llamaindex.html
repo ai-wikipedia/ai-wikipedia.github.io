@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>라마인덱스</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>다양한 데이터 소스를 LLM에 연결하기 위한 프레임워크. RAG 파이프라인 구축에 특화되어 있다.</p><h4>개념 설명</h4><p>PDF, 데이터베이스, API, 웹페이지 등 다양한 소스에서 데이터를 가져와 LLM이 답변에 활용할 수 있도록 준비하는 과정은 복잡하다. <strong>LlamaIndex</strong>는 이 과정을 표준화한 프레임워크로, 데이터 로딩, 청킹, 임베딩, 인덱싱, 검색까지 RAG의 전체 파이프라인을 커버한다. LangChain이 에이전트와 체인에 강점을 보인다면, LlamaIndex는 데이터 연결과 인덱싱에 더 특화되어 있다.</p><h4>사용 예시</h4><p>사내 문서 질의응답 시스템을 만들 때, <code>SimpleDirectoryReader</code>로 문서를 로드하고 <code>VectorStoreIndex</code>로 인덱싱한 뒤 <code>index.as_query_engine()</code>으로 바로 질의할 수 있다. 복잡한 RAG가 필요하다면 <code>RouterQueryEngine</code>으로 여러 인덱스 중 적합한 것을 골라 검색하도록 구성할 수 있다.</p></div>
   <div class="tags"><span>#RAG</span><span>#데이터연결</span><span>#인덱싱</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/langchain.html">랭체인</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.llamaindex.ai/" target="_blank" rel="nofollow noopener">LlamaIndex Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/run-llama/llama_index" target="_blank" rel="nofollow noopener">LlamaIndex GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://docs.llamaindex.ai/en/stable/understanding/rag/" target="_blank" rel="nofollow noopener">Introduction to RAG - LlamaIndex Docs</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=cXpkqWnKbMo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/cXpkqWnKbMo/mqdefault.jpg" alt="LlamaIndex Full Tutorial: Build RAG Apps" loading="lazy" width="160" height="90"><span>LlamaIndex Full Tutorial: Build RAG Apps</span></a><a class="video-item" href="https://www.youtube.com/watch?v=lQvy5xIT5kE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lQvy5xIT5kE/mqdefault.jpg" alt="RAG Pipeline with LlamaIndex" loading="lazy" width="160" height="90"><span>RAG Pipeline with LlamaIndex</span></a><a class="video-item" href="https://www.youtube.com/watch?v=q7JZz45rU3k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/q7JZz45rU3k/mqdefault.jpg" alt="LlamaIndex로 RAG 시스템 구축하기" loading="lazy" width="160" height="90"><span>LlamaIndex로 RAG 시스템 구축하기</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#llamaindex">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

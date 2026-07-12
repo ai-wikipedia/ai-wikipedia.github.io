@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>AGENTS.md</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 에이전트가 프로젝트를 이해하고 올바르게 행동하도록 가이드하는 마크다운 문서. CLAUDE.md의 멀티에이전트 버전이다.</p><h4>개념 설명</h4><p>CLAUDE.md가 Claude에게 프로젝트 컨텍스트를 주는 파일이라면, <strong>AGENTS.md</strong>는 여러 AI 에이전트 시스템(Codex, Gemini, 커스텀 에이전트 등)이 공통으로 참조할 수 있는 표준화된 지침 파일이다. 코딩 컨벤션, 브랜치 전략, 테스트 방법, 배포 절차 같은 정보를 담아두면 어떤 에이전트가 작업하든 일관된 방식을 따르게 된다.</p><h4>사용 예시</h4><p>리포지토리 루트에 <code>AGENTS.md</code>를 두고 "PR은 feature/ 브랜치에서, 커밋 메시지는 Conventional Commits 형식, 테스트는 npm test로 확인"처럼 작성해두면, Claude Code든 Codex든 이 파일을 읽고 규칙에 맞게 작업한다. 하위 디렉토리에 별도 AGENTS.md를 두면 해당 영역에 특화된 지침을 추가할 수 있다.</p></div>
   <div class="tags"><span>#에이전트지침</span><span>#문서</span><span>#컨벤션</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/claude-md.html">CLAUDE.md</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/auth-md.html">auth.md</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.openai.com/codex/guides/agents-md" target="_blank" rel="nofollow noopener">Custom instructions with AGENTS.md – Codex | OpenAI Developers</a> <span class="ref-type">공식</span></li><li><a href="https://plgah.medium.com/one-agents-md-to-rule-them-all-70e6dc87a05f" target="_blank" rel="nofollow noopener">One AGENTS.md to Rule Them All - Pascal Heus - Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/" target="_blank" rel="nofollow noopener">How to write a great agents.md: Lessons from over 2,500 repositories</a> <span class="ref-type">블로그</span></li><li><a href="https://agents.md/" target="_blank" rel="nofollow noopener">AGENTS.md</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#agents-md">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

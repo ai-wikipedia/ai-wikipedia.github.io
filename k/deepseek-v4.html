@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>딥시크 V4</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>중국 DeepSeek가 만든 오픈웨이트 대규모 언어 모델로, 100만 토큰의 긴 맥락을 아주 적은 비용으로 처리하면서 추론과 코딩, 에이전트 작업에서 최상위권 성능을 내는 게 특징이다.</p><h4>누가 만든 무엇인가</h4><p><strong>DeepSeek V4</strong>는 중국 AI 기업 DeepSeek가 2026년 4월에 공개한 차세대 언어 모델이다. 앞선 V3 계열을 잇는 후속작으로, 가중치를 MIT 라이선스로 공개하는 <strong>오픈웨이트</strong> 방식을 유지해 누구나 내려받아 직접 돌릴 수 있다. 모델 안에 여러 전문가(expert)를 두고 입력마다 일부만 깨우는 <code>MoE</code>(Mixture-of-Experts) 구조라서, 전체 파라미터는 1.6조 개로 거대하지만 한 번 답할 때 실제로 켜지는 건 490억 개뿐이다. 덩치는 크되 계산은 가볍게 가져가는 설계다.</p><h4>이 모델의 핵심 차별점</h4><p>가장 두드러진 점은 <strong>긴 맥락을 싸게 처리한다</strong>는 것이다. 한 번에 100만 토큰까지 넣을 수 있는데, 이 정도면 책 여러 권이나 거대한 코드베이스를 통째로 던져 넣는 수준이다. V4는 입력을 압축해서 보는 새로운 어텐션 방식(Compressed Sparse Attention과 Heavily Compressed Attention을 섞은 하이브리드 구조)을 써서, 100만 토큰 길이에서 이전 세대인 V3.2 대비 계산량의 27%, 메모리 캐시의 10%만으로 같은 일을 해낸다. 긴 문서를 다룰 때 비용이 폭발하던 문제를 구조적으로 줄인 것이다.</p><p>성능 자체도 프론티어급에 근접했다. 코딩(LiveCodeBench), 어려운 과학 추론(GPQA Diamond), 실제 깃허브 이슈를 고치는 에이전트 과제(SWE-Bench Verified) 같은 까다로운 평가에서 상위권 점수를 받았다. 동시에 가격이 파격적이라, 출력 100만 토큰당 몇 달러 수준으로 서구권 상용 모델의 수분의 일에 불과해 화제가 됐다.</p><h4>개발자가 실제로 쓰는 법</h4><p>가중치가 공개돼 있어 <code>Ollama</code>로 <code>ollama run deepseek-v4-pro:cloud</code>처럼 바로 띄우거나, <code>vLLM</code>·<code>SGLang</code>으로 직접 서빙할 수 있다. 클라우드에서 쓰고 싶으면 DeepSeek 공식 API(<code>deepseek-ai/DeepSeek-V4-Pro</code>)나 Together AI, NVIDIA NIM 같은 호스팅 업체를 통해 호출하면 된다. 긴 맥락과 낮은 비용 덕분에 <code>Cursor</code>·<code>Kilo Code</code> 같은 AI 코딩 도구의 백엔드 모델로 꽂아 쓰거나, 도구 호출을 반복하는 에이전트 워크플로우의 엔진으로 많이 활용된다. 한 작업을 길게 끌고 가는 에이전트일수록 토큰이 빠르게 쌓이는데, V4는 그 비용을 크게 낮춰준다.</p><p>제품군은 최상위 <strong>V4-Pro</strong>와 더 가볍고 저렴한 <strong>V4-Flash</strong>로 나뉜다. 빠른 응답이나 대량 처리에는 Flash를, 복잡한 추론에는 Pro를 골라 쓰는 식으로 비용과 성능을 조절할 수 있다.</p><h4>주의할 점</h4><p>중국에서 만든 모델이라 중국 정치 관련 주제에는 응답이 제한되는 검열이 들어 있다는 점은 감안해야 한다. 또 공개된 벤치마크 점수와 제3자 독립 평가(미국 NIST 산하 기관 등) 사이에 격차가 있다는 지적도 있어, 도입 전에 자신의 실제 작업으로 직접 검증해 보는 것이 좋다.</p></div>
   <div class="tags"><span>#DeepSeek</span><span>#MoE</span><span>#오픈웨이트</span><span>#롱컨텍스트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="nofollow noopener">DeepSeek V4 Preview Release</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" target="_blank" rel="nofollow noopener">deepseek-ai/DeepSeek-V4-Pro - Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://www.together.ai/models/deepseek-v4-pro" target="_blank" rel="nofollow noopener">DeepSeek V4 Pro API - Together AI</a> <span class="ref-type">공식</span></li><li><a href="https://ollama.com/library/deepseek-v4-pro" target="_blank" rel="nofollow noopener">deepseek-v4-pro - Ollama</a> <span class="ref-type">공식</span></li><li><a href="https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro" target="_blank" rel="nofollow noopener">CAISI Evaluation of DeepSeek V4 Pro | NIST</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=XJUpuOBpT-4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/XJUpuOBpT-4/mqdefault.jpg" alt="The insane engineering of Deepseek V4" loading="lazy" width="160" height="90"><span>The insane engineering of Deepseek V4</span></a><a class="video-item" href="https://www.youtube.com/watch?v=p7K3xfViWCE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/p7K3xfViWCE/mqdefault.jpg" alt="DeepSeek V4 AI Beats Billion Dollar Systems…For Free" loading="lazy" width="160" height="90"><span>DeepSeek V4 AI Beats Billion Dollar Systems…For Free</span></a><a class="video-item" href="https://www.youtube.com/watch?v=uhng_Z5IMO0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/uhng_Z5IMO0/mqdefault.jpg" alt="딥시크가 미쳤습니다... GPT보다 30배 싼 가격 | 딥시크 V4 Pro, AI가 오래 기억하는 비용을 줄이는 기술 적용 의미" loading="lazy" width="160" height="90"><span>딥시크가 미쳤습니다... GPT보다 30배 싼 가격 | 딥시크 V4 Pro, AI가 오래 기억하는 비용을 줄이는 기술 적용 의미</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#deepseek-v4">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>에비던스 게이트</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 에이전트가 코드와 테스트를 모두 작성하는 환경에서, 품질 기준을 에이전트에게 노출하지 않고 서버 측에서만 평가하는 파이프라인 게이트. AI가 통과 기준을 역으로 최적화하지 못하도록 막는 풀스택 거버넌스 메커니즘이다.</p><h4>왜 필요한가</h4><p>AI 에이전트가 코드를 작성하고, 테스트를 작성하고, 심지어 인프라까지 운영하는 환경에서는 기존 품질 게이트가 근본적으로 취약해진다. 테스트 커버리지 80% 이상이라는 기준이 파이프라인에 보이는 순간, LLM은 그 기준을 충족하는 쪽으로 테스트를 생성하지, 실제 품질을 높이는 쪽으로 코드를 개선하지 않는다. 기준 자체가 최적화 타깃이 되어버리는 것이다.</p><h4>블라인드 게이트: 핵심 메커니즘</h4><p>에비던스 게이트의 핵심은 <strong>블라인드 게이트(Blind Gate)</strong>다. 평가 기준을 파이프라인, 저장소, AI 에이전트 어디에도 노출하지 않고 서버 측에서만 보관한다. 에이전트는 코드와 테스트를 제출하면 pass 또는 fail만 돌려받는다. 어떤 기준으로 평가됐는지는 알 수 없다. 이렇게 하면 AI가 기준을 보고 역으로 맞추는 전략 자체가 불가능해진다.</p><p>실제로 어떻게 쓰이는지 보면, Claude Code 같은 도구로 AI가 PR을 자동 생성하는 파이프라인에서 에비던스 게이트를 중간 검문소로 배치한다. AI가 작성한 코드가 게이트를 통과해야만 다음 단계(스테이징 배포, 머지)로 넘어갈 수 있다. 게이트는 증거(evidence)를 기록하고, 그 기록이 다운스트림 감사 추적에 남는다.</p><h4>풀스택 거버넌스와의 연결</h4><p>에비던스 게이트는 코드 품질 검사에만 머물지 않는다. 샌드박스 격리 수준이 정책에 맞는지, 인퍼런스 라우팅 예산이 설정됐는지, 청사진(blueprint)이 올바른 구성을 따르는지까지 검증하는 정책 레이어로 확장된다. <strong>fail-closed</strong> 원칙 — 판단 불가 시 기본적으로 차단 — 을 채택해 불확실한 상황에서 파이프라인이 멈추도록 설계한다.</p><h4>주의할 점</h4><p>블라인드 게이트는 에이전트의 게이밍은 막지만, 기준 자체가 잘못 설계됐을 때의 오탐/미탐은 막지 못한다. 기준을 설계하고 유지하는 책임은 사람에게 남는다. 또한 기준이 완전히 불투명하면 개발자도 왜 실패했는지 디버깅하기 어려워지므로, 실패 이유를 어느 수준까지 공개할지 세밀하게 조율해야 한다.</p></div>
   <div class="tags"><span>#품질 게이트</span><span>#AI 거버넌스</span><span>#CI/CD</span><span>#에이전트 파이프라인</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/sandboxing.html">샌드박싱</a>, <a href="https://aiwiki.work/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://aiwiki.work/k/agent-eval.html">에이전트 평가</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://evidence-gate.dev" target="_blank" rel="nofollow noopener">Evidence Gate — Quality Gates for Full-Stack AI Governance</a> <span class="ref-type">공식</span></li><li><a href="https://styxis-io.com/en/knowledge/evidence-gate" target="_blank" rel="nofollow noopener">Evidence Gate — Styxis Knowledge</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=QtV4cK0E8KQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QtV4cK0E8KQ/mqdefault.jpg" alt="The Evidence Gate | Rook's Philosophy" loading="lazy" width="160" height="90"><span>The Evidence Gate | Rook's Philosophy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kpkoYPacfo8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kpkoYPacfo8/mqdefault.jpg" alt="The Evidence Gate With Spectacles | Rook's Dreams Log 035" loading="lazy" width="160" height="90"><span>The Evidence Gate With Spectacles | Rook's Dreams Log 035</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QtV4cK0E8KQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QtV4cK0E8KQ/mqdefault.jpg" alt="The Evidence Gate | Rook's Philosophy" loading="lazy" width="160" height="90"><span>The Evidence Gate | Rook's Philosophy</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#evidence-gate">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-03</div>
 </div>

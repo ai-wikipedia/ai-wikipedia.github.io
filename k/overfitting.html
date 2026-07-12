@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>과적합</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>파인튜닝할 때 가장 흔히 만나는 문제다. 훈련 손실은 계속 줄어드는데 검증 손실이 어느 순간부터 늘어나기 시작하면 과적합이 시작된 것이다. 드롭아웃(학습 중 일부 뉴런을 무작위로 비활성화), L2 정규화, 조기 종료(early stopping), 데이터 증강으로 과적합을 줄인다. 훈련/검증/테스트 데이터를 분리하고 검증 성능을 모니터링하는 습관이 과적합 탐지의 기본이다.</p></div>
   <div class="tags"><span>#일반화</span><span>#정규화</span><span>#검증</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/machine-learning.html">머신러닝</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/loss-function.html">손실 함수</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.google.com/machine-learning/crash-course/overfitting/overfitting" target="_blank" rel="nofollow noopener">Overfitting - Google ML Crash Course</a> <span class="ref-type">공식</span></li><li><a href="https://aws.amazon.com/what-is/overfitting/" target="_blank" rel="nofollow noopener">What is Overfitting? - AWS</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=EuBBz3bI-aA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EuBBz3bI-aA/mqdefault.jpg" alt="Bias and Variance - StatQuest" loading="lazy" width="160" height="90"><span>Bias and Variance - StatQuest</span></a><a class="video-item" href="https://www.youtube.com/watch?v=fSytzGwwBVw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/fSytzGwwBVw/mqdefault.jpg" alt="Cross Validation - StatQuest" loading="lazy" width="160" height="90"><span>Cross Validation - StatQuest</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#overfitting">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

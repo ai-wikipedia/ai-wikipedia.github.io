@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>커서</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 기능이 깊이 내장된 코드 편집기. VS Code 기반으로 자연어 지시로 코드를 작성·수정·리팩토링할 수 있다.</p><h4>개념 설명</h4><p><strong>Cursor</strong>는 VS Code를 포크해 만든 AI 전용 코드 편집기로, 코드베이스 전체를 인덱싱해서 AI가 프로젝트 맥락을 이해한 상태로 도움을 준다. 단순 자동완성(Tab)부터 채팅 기반 코드 생성(Cmd+K), 파일 전체 수정(Composer)까지 여러 모드를 제공한다. Claude, GPT-4, 자체 모델 등을 백엔드로 선택할 수 있다.</p><h4>사용 예시</h4><p>새 API 엔드포인트를 추가할 때 Cursor의 Composer 모드에서 "기존 /users 패턴과 동일하게 /products CRUD 엔드포인트 추가해줘"라고 하면, 프로젝트 구조를 파악하고 라우터, 컨트롤러, 서비스 파일을 한번에 생성해준다. <code>.cursorrules</code> 파일에 프로젝트 규칙을 정의해두면 일관성이 유지된다.</p></div>
   <div class="tags"><span>#IDE</span><span>#코드편집기</span><span>#AI코딩</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-ide.html">AI IDE</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/vibe-coding.html">바이브 코딩</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/copilot.html">깃허브 코파일럿</a>, <a href="https://aiwiki.work/k/baoyu-design.html">바오위 디자인</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://cursor.com/docs" target="_blank" rel="nofollow noopener">Cursor Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://cursor.com/features" target="_blank" rel="nofollow noopener">Cursor Features</a> <span class="ref-type">공식</span></li><li><a href="https://cursor.com/docs/agent/overview" target="_blank" rel="nofollow noopener">Cursor Agent Overview</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=gqUQbjsYZLQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gqUQbjsYZLQ/mqdefault.jpg" alt="Cursor AI Crash Course for Beginners" loading="lazy" width="160" height="90"><span>Cursor AI Crash Course for Beginners</span></a><a class="video-item" href="https://www.youtube.com/watch?v=aaEYM_CPqs0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/aaEYM_CPqs0/mqdefault.jpg" alt="Cursor IDE: The AI Code Editor" loading="lazy" width="160" height="90"><span>Cursor IDE: The AI Code Editor</span></a><a class="video-item" href="https://www.youtube.com/watch?v=G4tGS_Ha0Dw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G4tGS_Ha0Dw/mqdefault.jpg" alt="커서(Cursor) AI IDE 완벽 사용법" loading="lazy" width="160" height="90"><span>커서(Cursor) AI IDE 완벽 사용법</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#cursor">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

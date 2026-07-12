@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>컨텍스트 엔지니어링</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>프롬프트뿐 아니라 도구 정의, 검색 결과, 대화 이력, 시스템 상태 등 LLM에 전달되는 전체 맥락을 체계적으로 설계하는 방법론. 프롬프트 엔지니어링의 진화형이다.</p><h4>개념 설명</h4><p>프롬프트 엔지니어링이 "어떤 말을 하느냐"에 집중했다면, 컨텍스트 엔지니어링은 "모델이 보는 전체 그림을 어떻게 구성하느냐"로 범위가 넓어진다. 시스템 프롬프트, 도구 정의, RAG 검색 결과, 대화 요약, 사용자 프로필까지 모델의 컨텍스트 윈도우에 들어가는 모든 것을 설계 대상으로 본다. Anthropic의 Toby Lutke가 이 용어를 대중화했다.</p><h4>사용 예시</h4><p>Claude Code에서 CLAUDE.md에 프로젝트 규칙을 적고, 에이전트 정의를 .claude/agents/에 두고, MCP로 도구를 연결하고, 훅으로 가드레일을 거는 것 전체가 컨텍스트 엔지니어링이다. 단순히 프롬프트 한 줄을 다듬는 것보다 이 전체 구조를 어떻게 짜느냐가 에이전트 품질을 결정한다.</p></div>
   <div class="tags"><span>#프롬프팅진화</span><span>#컨텍스트설계</span><span>#하네스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/claude-md.html">CLAUDE.md</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="nofollow noopener">Effective Context Engineering for AI Agents - Anthropic</a> <span class="ref-type">공식</span></li><li><a href="https://www.promptingguide.ai/guides/context-engineering-guide" target="_blank" rel="nofollow noopener">Context Engineering Guide - Prompt Engineering Guide</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=LPZh9BOjkQs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LPZh9BOjkQs/mqdefault.jpg" alt="Large Language Models Explained Briefly" loading="lazy" width="160" height="90"><span>Large Language Models Explained Briefly</span></a><a class="video-item" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wjZofJX0v4M/mqdefault.jpg" alt="Transformers, the Tech Behind LLMs | 3Blue1Brown" loading="lazy" width="160" height="90"><span>Transformers, the Tech Behind LLMs | 3Blue1Brown</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#context-engineering">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

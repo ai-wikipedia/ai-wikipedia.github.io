@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>다이나믹 워크플로우</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Claude가 작업을 받으면 그 자리에서 직접 오케스트레이션 스크립트를 짜서 수십~수백 개의 서브에이전트를 병렬로 돌리고 결과를 검증해 하나의 답으로 정리하는 Claude Code 기능.</p><h4>코드가 계획을 쥔다</h4><p>지금까지 Claude에게 큰 작업을 맡기면, 어떤 순서로 무엇을 할지를 매번 Claude가 대화 속에서 즉흥적으로 정했다. 단계가 많아질수록 그 계획이 컨텍스트에 쌓이고, 중간 결과까지 전부 기억하느라 컨텍스트가 터지거나 길을 잃는 일이 잦았다. <strong>다이나믹 워크플로우</strong>는 발상을 뒤집는다. 작업을 받은 Claude가 그 작업에 딱 맞는 짧은 JavaScript 프로그램을 즉석에서 작성하고, 그 코드가 서브에이전트들을 지휘한다. 핵심은 "계획이 어디에 사는가"다. 계획이 모델의 한 턴이 아니라 <strong>실행 가능한 스크립트</strong> 안에 들어가 있어서, 에이전트들을 부르고 결과를 모으는 조율 작업 자체는 모델 토큰을 한 푼도 쓰지 않는다.</p><h4>어떻게 쓰나</h4><p>가장 흔한 사용법은 프롬프트에 <code>ultracode</code>라는 단어를 넣는 것이다. 그러면 Claude가 "이 작업은 워크플로우로 짜는 게 낫겠다"고 판단해 스크립트를 자동으로 만들어준다. "quick workflow로 만들어줘"처럼 규모를 직접 지정할 수도 있고, 번들로 제공되는 <code>/deep-research</code> 같은 워크플로우를 바로 실행할 수도 있다. 실제 동작은 이렇다. 대규모 코드베이스 마이그레이션을 시킨다고 하면, Claude는 파일 탐색·수정·테스트를 맡을 에이전트들의 팬아웃을 계획하고, 한 번에 최대 16개씩 병렬로(한 실행당 최대 1,000개까지) 돌린다. 한 에이전트가 내놓은 결과를 다른 에이전트가 반박해보고, 답이 수렴할 때까지 <strong>구현 → 적대적 검증 → 수정</strong> 루프를 반복한 뒤 검증된 결과만 사용자에게 건넨다.</p><h4>하네스·멀티에이전트 관점</h4><p>이건 사실상 Claude가 자기 자신을 위한 <strong>하네스를 그 작업에 맞춰 즉석에서 만드는 것</strong>이다. 사람이 미리 짜둔 고정된 멀티에이전트 파이프라인이 아니라, 작업마다 오케스트레이션 구조가 달라진다는 점이 다르다. 중간 결과는 Claude의 컨텍스트가 아니라 스크립트 변수에 머물기 때문에, 런타임이 각 에이전트의 결과를 추적해 같은 세션 안에서 중단했다가 이어서 실행(resume)하는 것도 가능하다. 비싼 Opus를 지휘자로 두고 저렴한 Haiku 에이전트들에게 잔일을 분배하는 식의 모델 조합도 여기서 나온다.</p><h4>주의할 점</h4><p>조율 코드는 토큰을 안 쓰지만, 그 코드가 부리는 수백 개의 에이전트는 각자 토큰을 쓴다. 한 번 잘못 돌리면 20억 토큰을 태웠다는 사례가 나올 만큼 비용이 폭주할 수 있어서 "토큰은 인건비"라는 말이 따라붙는다. 또 적대적 검증 루프가 제대로 작동하려면 강력한 테스트 스위트나 상세한 스펙 같은 <strong>객관적 판단 기준(oracle)</strong>이 있어야 한다. 그게 없으면 에이전트들이 서로의 부정확함을 증폭시키기만 한다. 작은 작업이라면 워크플로우의 오버헤드가 오히려 손해다.</p></div>
   <div class="tags"><span>#Claude Code</span><span>#Opus 4.8</span><span>#ultracode</span><span>#오케스트레이션</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/claude-dispatch.html">클로드 디스패치</a>, <a href="https://aiwiki.work/k/claude-opus-4-8.html">클로드 오퍼스 4.8</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://code.claude.com/docs/en/workflows" target="_blank" rel="nofollow noopener">Orchestrate subagents at scale with dynamic workflows</a> <span class="ref-type">공식</span></li><li><a href="https://www.productcompass.pm/p/claude-code-dynamic-workflows" target="_blank" rel="nofollow noopener">Claude Dynamic Workflows for PMs: The Ultimate Guide</a> <span class="ref-type">블로그</span></li><li><a href="https://claudefa.st/blog/guide/development/dynamic-workflows" target="_blank" rel="nofollow noopener">Dynamic Workflows in Claude Code: How the Harness Actually Works</a> <span class="ref-type">블로그</span></li><li><a href="https://linas.substack.com/p/claude-code-dynamic-workflows-guide" target="_blank" rel="nofollow noopener">The Complete Guide to Claude Dynamic Workflows</a> <span class="ref-type">블로그</span></li><li><a href="https://www.youtube.com/watch?v=WnmVGVOPtrA" target="_blank" rel="nofollow noopener">Anthropic's Dynamic Workflows: What Everyone Gets Wrong!</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=jZgcWCzxh1I" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jZgcWCzxh1I/mqdefault.jpg" alt="Claude Code Dynamic Workflows Clearly Explained" loading="lazy" width="160" height="90"><span>Claude Code Dynamic Workflows Clearly Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=g9b9G8dcS8Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/g9b9G8dcS8Y/mqdefault.jpg" alt="Every Claude Code Dynamic Workflow (&amp; When to Use Each)" loading="lazy" width="160" height="90"><span>Every Claude Code Dynamic Workflow (&amp; When to Use Each)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=9fx2_1aTzq8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9fx2_1aTzq8/mqdefault.jpg" alt="클로드 코드 Dynamic Workflow 기능 비교 총정리!" loading="lazy" width="160" height="90"><span>클로드 코드 Dynamic Workflow 기능 비교 총정리!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#dynamic-workflows">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

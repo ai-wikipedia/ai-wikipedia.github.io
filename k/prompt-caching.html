@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>프롬프트 캐싱</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>반복되는 긴 프롬프트 컨텍스트를 서버에 캐시해 다음 요청에서 재처리 없이 재사용하는 기능. 비용을 최대 90%, 지연을 최대 85% 줄인다.</p><h4>개념 설명</h4><p>같은 시스템 프롬프트나 긴 문서를 매 요청마다 다시 처리하는 것은 낭비다. 프롬프트 캐싱은 서버가 특정 컨텍스트의 KV Cache를 메모리에 보존해두고, 다음 요청에서 같은 컨텍스트가 오면 재계산을 건너뛴다. Anthropic이 2024년 8월 Claude API에 도입했다. 캐시 히트 시 입력 토큰 비용이 90% 감소하고, TTFT도 크게 줄어든다.</p><p>캐시는 약 5분간 유지된다. 캐시할 컨텐츠는 요청에서 <code>cache_control: {type: "ephemeral"}</code>로 명시적으로 지정한다. 최소 1024토큰 이상이어야 캐싱된다.</p><h4>사용 예시</h4><p>긴 코드베이스를 컨텍스트로 제공하는 AI 코딩 도우미에서, 코드베이스 부분에 <code>cache_control</code>을 붙이면 첫 요청에서 캐시가 생성되고 이후 요청은 캐시에서 불러온다. 수백 페이지 문서를 자주 참조하는 RAG 시스템에서도 문서 부분을 캐시하면 비용이 대폭 줄어든다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#비용절감</span><span>#KV캐시</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" target="_blank" rel="nofollow noopener">Prompt Caching — Anthropic Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/prompt-caching" target="_blank" rel="nofollow noopener">Prompt Caching — OpenAI Official Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=LFvw_xlj0LQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LFvw_xlj0LQ/mqdefault.jpg" alt="Prompt Caching with Claude 3.5 Sonnet (Elvis Saravia)" loading="lazy" width="160" height="90"><span>Prompt Caching with Claude 3.5 Sonnet (Elvis Saravia)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=WBB2GnpOLhE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WBB2GnpOLhE/mqdefault.jpg" alt="Advanced AI Agents, Claude Prompt Caching" loading="lazy" width="160" height="90"><span>Advanced AI Agents, Claude Prompt Caching</span></a><a class="video-item" href="https://www.youtube.com/watch?v=b8GfaOVRqH8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/b8GfaOVRqH8/mqdefault.jpg" alt="프롬프트 캐싱 활용 - 테디노트" loading="lazy" width="160" height="90"><span>프롬프트 캐싱 활용 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#prompt-caching">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

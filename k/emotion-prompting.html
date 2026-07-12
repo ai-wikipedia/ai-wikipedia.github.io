@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>감정 프롬프팅</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>프롬프트에 감정적 표현을 덧붙여 LLM의 응답 품질을 높이는 기법. "이건 내 커리어에 정말 중요해"처럼 감정을 실은 문장을 추가하면 모델이 더 신중하고 정확한 답변을 생성하는 경향이 있다.</p><h4>개념 설명</h4><p>감정 프롬프팅은 프롬프트 끝에 감정적 자극 문장을 추가해서 LLM의 응답 품질을 끌어올리는 기법이다. 사람에게 "이거 정말 중요하니까 잘 부탁해"라고 말하면 더 집중하는 것처럼, LLM에게도 비슷한 효과가 나타난다. 2023년 Microsoft Research 팀이 발표한 EmotionPrompt 논문에서 처음 체계적으로 연구되었고, 심리학의 <strong>자기 감시</strong>, <strong>사회인지이론</strong>, <strong>인지적 감정 조절</strong> 세 가지 이론에 기반해 11개의 감정 자극 문장을 설계했다.</p><p>대표적인 감정 자극 문장으로는 "This is very important to my career", "You'd better be sure", "Believe in your abilities and strive for excellence" 등이 있다. 이런 문장을 원래 프롬프트 뒤에 붙이기만 하면 된다.</p><h4>사용 예시</h4><p>기존 프롬프트 끝에 감정 자극 문장을 한두 줄 덧붙이는 것만으로 충분하다. 코드 리뷰를 요청할 때 "이 코드에서 버그를 찾아줘"만 쓰는 대신 "이 코드에서 버그를 찾아줘. 이건 프로덕션에 바로 배포될 코드라 정말 중요해. 꼼꼼하게 확인해줘"라고 쓰면 모델이 더 세밀하게 분석하는 경향이 있다. 시스템 프롬프트에 "You take pride in your work and always give your best" 같은 문장을 포함시키는 것도 같은 원리다.</p><p>Chain-of-Thought와 결합하면 효과가 더 커진다. "단계별로 생각해봐. 이건 정말 중요한 문제니까 실수하지 않도록 신중하게"처럼 추론 유도와 감정 자극을 함께 쓰는 방식이다.</p><h4>주의할 점</h4><p>감정 프롬프팅은 만능이 아니다. 수학 추론이나 순수 논리적 과제에서는 효과가 거의 없고, 모델과 과제에 따라 효과가 크게 달라진다. 2026년 하버드 연구진의 후속 연구에서는 고정된 감정 문구보다 과제에 맞게 감정을 적응적으로 선택하는 방식이 더 일관된 결과를 냈다.</p></div>
   <div class="tags"><span>#EmotionPrompt</span><span>#프롬프트기법</span><span>#심리학</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/role-prompting.html">역할 프롬프팅</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/zero-shot.html">제로샷</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2307.11760" target="_blank" rel="nofollow noopener">Large Language Models Understand and Can be Enhanced by Emotional Stimuli</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2604.02236" target="_blank" rel="nofollow noopener">Do Emotions in Prompts Matter?</a> <span class="ref-type">논문</span></li><li><a href="https://learnprompting.org/docs/advanced/zero_shot/emotion_prompting" target="_blank" rel="nofollow noopener">Emotion Prompting - Learn Prompting</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://bdtechtalks.com/2023/11/06/llm-emotion-prompting/" target="_blank" rel="nofollow noopener">Emotional prompts enhance LLMs - TechTalks</a> <span class="ref-type">블로그</span></li><li><a href="https://disquiet.io/@agilegrowth/makerlog/llm-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EB%8C%80%EC%9E%A5%EC%9D%80-%EB%88%84%EA%B5%AC-%EA%B0%90%EC%A0%95-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%A5%BC-%EC%86%8C%EA%B0%9C%ED%95%A9%EB%8B%88%EB%8B%A4" target="_blank" rel="nofollow noopener">감정 프롬프트를 소개합니다 - Disquiet</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/mqdefault.jpg" alt="Intro to LLMs - Andrej Karpathy" loading="lazy" width="160" height="90"><span>Intro to LLMs - Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=9vM4p9NN0Ts" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9vM4p9NN0Ts/mqdefault.jpg" alt="LLMs from Scratch" loading="lazy" width="160" height="90"><span>LLMs from Scratch</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#emotion-prompting">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-05</div>
 </div>

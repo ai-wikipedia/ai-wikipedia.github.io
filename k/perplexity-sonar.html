@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>퍼플렉시티 소나</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Perplexity가 직접 만든 검색 특화 언어 모델로, 답변할 때 실시간으로 웹을 뒤져 출처가 달린 답을 빠르게 내놓는다.</p><h4>웹을 보고 답하도록 만든 모델</h4><p>보통의 언어 모델은 학습이 끝난 시점까지의 지식만 머릿속에 담고 있어서, 최신 뉴스나 오늘 일어난 일을 물으면 모르거나 지어낸다. <strong>Perplexity Sonar</strong>는 이 약점을 정면으로 겨냥한 모델이다. AI 검색 서비스로 유명한 Perplexity가 자체 개발했고, Meta의 <code>Llama 3.3 70B</code>를 가져와 "질문이 들어오면 일단 웹을 검색해서 그 결과를 근거로 답한다"는 방향으로 추가 훈련했다. 그래서 답변마다 어디서 가져온 정보인지 출처 링크가 본문에 함께 붙는다.</p><p>다른 모델과 비교하면 성격이 분명하다. 거대한 추론 모델처럼 어려운 수학이나 코딩을 푸는 게 목적이 아니라, "방금 일어난 일을 출처와 함께 정확하고 빠르게 알려주기"에 특화돼 있다. Cerebras의 전용 추론 칩 위에서 돌아가 초당 수백~1,200토큰 수준으로 답을 쏟아낼 만큼 빠르고, 같은 검색 용도에서는 가볍고 저렴한 모델로 분류된다.</p><h4>개발자가 실제로 쓰는 법</h4><p>가장 흔한 사용처는 자기 앱에 "실시간 정보 검색" 기능을 붙이는 것이다. 예전에는 최신 정보를 답하게 하려면 검색 엔진 API를 따로 붙이고, 결과를 긁어와 정리한 뒤 다시 LLM에 넘기는 <code>RAG</code> 파이프라인을 손수 만들어야 했다. Sonar는 이 과정을 모델 하나로 합쳤다. <code>chat completions</code> 형태의 API에 질문만 던지면 모델이 알아서 웹을 검색하고, 출처가 달린 답을 돌려준다. 검색을 얼마나 깊게 할지 High/Medium/Low로 골라 속도와 정확도를 맞출 수 있고, 검색 대상 도메인도 지정할 수 있다.</p><p>예를 들어 주식 앱에서 "오늘 이 종목이 왜 떨어졌어?"라고 물으면, Sonar가 방금 올라온 뉴스를 찾아 출처와 함께 요약해주는 식이다. 더 복잡하고 긴 조사가 필요하면 검색 결과를 2배 더 끌어오는 <strong>Sonar Pro</strong> 같은 상위 모델을 함께 쓴다. Perplexity 앱 자체의 기본 검색 모델이기도 해서, 무료 사용자가 빠른 답을 받을 때 뒤에서 돌아가는 것도 바로 이 Sonar다.</p><h4>알아둘 점</h4><p>Sonar는 만능 모델이 아니다. 출처 기반 검색 답변에 최적화된 만큼, 긴 추론이나 창의적 글쓰기, 복잡한 코딩에서는 같은 회사가 끌어다 쓰는 GPT나 Claude 계열 모델보다 약하다. Perplexity 앱이 사실상 여러 외부 모델을 골라 쓰는 구조라는 점에서, Sonar는 그중 "빠른 검색 전용" 카드라고 이해하면 된다.</p></div>
   <div class="tags"><span>#Perplexity</span><span>#검색특화</span><span>#실시간 웹</span><span>#Llama 3.3</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-search.html">AI 검색</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/llama.html">라마</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/agentic-rag.html">에이전틱 RAG</a>, <a href="https://aiwiki.work/k/question-answering.html">질의응답</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.perplexity.ai/hub/blog/meet-new-sonar" target="_blank" rel="nofollow noopener">Meet new Sonar: A Blazing Fast Model Optimized for Perplexity Search</a> <span class="ref-type">공식</span></li><li><a href="https://www.mindstudio.ai/models/sonar" target="_blank" rel="nofollow noopener">Sonar — AI Model | MindStudio</a> <span class="ref-type">블로그</span></li><li><a href="https://docs.perplexity.ai/docs/sonar/quickstart" target="_blank" rel="nofollow noopener">Sonar API Quickstart - Perplexity Docs</a> <span class="ref-type">공식</span></li><li><a href="https://docs.perplexity.ai/docs/sonar/models/sonar-pro" target="_blank" rel="nofollow noopener">Sonar Pro - Perplexity Docs</a> <span class="ref-type">공식</span></li><li><a href="https://chathub.gg/models/perplexity/sonar-online" target="_blank" rel="nofollow noopener">Perplexity Sonar Online Chat | ChatHub</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=oMmzFeuvo6w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/oMmzFeuvo6w/mqdefault.jpg" alt="Is Perplexity Sonar The FUTURE Of Search?" loading="lazy" width="160" height="90"><span>Is Perplexity Sonar The FUTURE Of Search?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=WH40D_B6lSI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WH40D_B6lSI/mqdefault.jpg" alt="Perplexity Sonar: The New AI Model CRUSHES The Competition!" loading="lazy" width="160" height="90"><span>Perplexity Sonar: The New AI Model CRUSHES The Competition!</span></a><a class="video-item" href="https://www.youtube.com/watch?v=lm1Pbs9Ihj4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lm1Pbs9Ihj4/mqdefault.jpg" alt="AI 뉴스 - 딥시크 R1, 스타게이트, 오퍼레이터, Sonar 등" loading="lazy" width="160" height="90"><span>AI 뉴스 - 딥시크 R1, 스타게이트, 오퍼레이터, Sonar 등</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#perplexity-sonar">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

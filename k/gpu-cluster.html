@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=infra">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">인프라</div>
   <h1>GPU 클러스터</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>대규모 AI 학습과 추론을 위해 수십~수천 개의 GPU를 네트워크로 연결한 컴퓨팅 인프라. LLM 사전학습의 필수 기반이다.</p><h4>개념 설명</h4><p>GPT-4나 Claude 같은 모델을 학습하려면 단일 GPU로는 불가능하다. 수백~수천 개의 A100, H100 GPU를 고속 인터커넥트(NVLink, InfiniBand)로 연결한 클러스터가 필요하다. 이 클러스터에서 모델을 여러 GPU에 나눠 올리고(텐서 병렬화, 파이프라인 병렬화), 데이터도 나눠 처리(데이터 병렬화)한다.</p><p>H100 GPU 하나가 수만 달러이고, 대형 클러스터는 수천 개를 운영하므로 인프라 비용만 수십억 달러에 달한다. 이 때문에 대부분의 스타트업은 클라우드(AWS, GCP, Azure)의 GPU 인스턴스를 빌려 사용한다.</p><h4>사용 예시</h4><p>대규모 학습은 AWS의 <code>p4d.24xlarge</code>(A100 8개), <code>p5.48xlarge</code>(H100 8개) 인스턴스를 여러 개 묶어 DeepSpeed나 FSDP로 분산 학습을 구성한다. Slurm이나 Kubernetes로 클러스터를 관리하며, 노드 간 통신에는 NCCL을 사용한다.</p></div>
   <div class="tags"><span>#분산학습</span><span>#H100</span><span>#인프라</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/tensor-parallelism.html">텐서 병렬화</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.nvidia.com/dgx-superpod/index.html" target="_blank" rel="nofollow noopener">NVIDIA DGX SuperPOD — Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://www.nvidia.com/en-us/data-center/dgx-superpod/" target="_blank" rel="nofollow noopener">NVIDIA DGX SuperPOD — Product Page</a> <span class="ref-type">공식</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#gpu-cluster">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

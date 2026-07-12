@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>커맨드 A</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Cohere가 만든 기업용 대규모 언어 모델로, GPU 두 장만으로 돌아가는 가벼운 몸집으로 도구 사용·RAG·다국어 작업을 잘 처리하도록 만들어졌다.</p><h4>누가 왜 만들었나</h4><p>Command A는 캐나다 AI 기업 <strong>Cohere</strong>가 2025년 3월 내놓은 대규모 언어 모델이다. Cohere는 처음부터 일반 소비자용 챗봇이 아니라 은행·정부·제조 같은 기업 현장에서 쓸 모델을 만들어 온 회사다. 그래서 Command A의 설계 목표도 분명하다. 화려한 점수 경쟁보다는, 회사 내부 문서를 검색해 답하고(RAG), 사내 시스템을 도구로 호출하고, 여러 나라 언어를 동시에 다루는 실무 작업을 안정적으로 잘 해내는 것이다.</p><h4>무엇이 다른가</h4><p>가장 큰 차별점은 <strong>적은 자원으로 돌아간다</strong>는 점이다. 1110억 개 파라미터에 25만 6천 토큰의 긴 컨텍스트를 다루면서도 A100·H100 GPU 단 두 장이면 구동되고, 이전 모델인 <code>Command R+</code>보다 추론 처리량이 1.5배 높다. 보통 이 정도 성능을 내려면 GPU를 훨씬 많이 깔아야 하는데, Command A는 같은 일을 더 싸고 빠르게 처리하도록 효율에 초점을 맞췄다. 덕분에 기업이 자체 서버에 모델을 직접 올려 데이터를 외부로 내보내지 않고 운영하기가 수월하다.</p><h4>개발자가 어떻게 쓰나</h4><p>Cohere API에서 모델 이름 <code>command-a-03-2025</code>로 호출하거나, AWS Bedrock·Oracle OCI 같은 클라우드에서 바로 불러 쓸 수 있다. 모델 가중치가 Hugging Face의 <code>CohereLabs/c4ai-command-a-03-2025</code>로 공개돼 있어 vLLM이나 Transformers로 자체 환경에 올리는 것도 가능하다. 실무에서는 사내 위키나 계약서 더미를 벡터 DB에 넣어두고 Command A로 RAG 파이프라인을 꾸려 "이 조항이 어느 문서에 있나"를 답하게 하거나, 사내 API를 도구로 등록해 두고 모델이 직접 조회·실행하는 에이전트로 쓰는 식이다. 기본값이 대화체로 장황하게 답하고 마크다운을 쓰기 때문에, 간결한 답만 필요하면 시스템 프롬프트로 "마크다운 없이 답만 달라"고 지시하는 게 권장된다.</p><h4>주의할 점</h4><p>범용 채팅이나 창의적 글쓰기보다 기업 업무에 최적화된 모델이라, 일상 대화용으로는 더 큰 프론티어 모델만큼의 폭넓은 만족도를 기대하기 어렵다. 또 2025년 8월에는 추론 특화 버전인 Command A Reasoning, 2026년에는 MoE 구조의 오픈소스 Command A+가 따로 나왔으므로, 작업 성격에 맞는 변종을 골라 쓰는 편이 좋다.</p></div>
   <div class="tags"><span>#Cohere</span><span>#엔터프라이즈</span><span>#RAG</span><span>#에이전트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://cohere.com/blog/command-a" target="_blank" rel="nofollow noopener">Introducing Command A: Max performance, minimal compute</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cohere.com/docs/command-a" target="_blank" rel="nofollow noopener">Command A | Cohere Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.oracle.com/en-us/iaas/Content/generative-ai/cohere-command-a-03-2025.htm" target="_blank" rel="nofollow noopener">Cohere Command A - Oracle Help Center</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/CohereLabs/c4ai-command-a-03-2025" target="_blank" rel="nofollow noopener">CohereLabs/c4ai-command-a-03-2025 · Hugging Face</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2504.00698" target="_blank" rel="nofollow noopener">Command A: An Enterprise-Ready Large Language Model (arXiv)</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=6Z0QyERuV6U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/6Z0QyERuV6U/mqdefault.jpg" alt="North by Cohere: AI agents in action" loading="lazy" width="160" height="90"><span>North by Cohere: AI agents in action</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Pd1z4oNpd4w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Pd1z4oNpd4w/mqdefault.jpg" alt="Cohere's Command A Reasoning: Canada's Answer to OpenAI?" loading="lazy" width="160" height="90"><span>Cohere's Command A Reasoning: Canada's Answer to OpenAI?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k80T1f-btGE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k80T1f-btGE/mqdefault.jpg" alt="캐나다 대표 AI 모델 Command A 111b 출시! 논리, 수학, 코딩 능력 테스트!" loading="lazy" width="160" height="90"><span>캐나다 대표 AI 모델 Command A 111b 출시! 논리, 수학, 코딩 능력 테스트!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#command-a">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

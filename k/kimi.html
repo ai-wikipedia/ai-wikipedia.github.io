@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>키미</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>중국 스타트업 문샷 AI가 만든 챗봇이자 그 뒤에 있는 모델 시리즈로, 가중치를 공개한 오픈소스이면서도 코딩과 에이전트 작업에서 최상위권 성능을 내는 것으로 주목받는다.</p><h4>Kimi가 뭔가</h4><p>Kimi는 중국 베이징의 AI 스타트업 <strong>문샷 AI(Moonshot AI)</strong>가 2023년 10월에 처음 내놓은 챗봇이다. 회사 이름은 창업자 양즈린이 가장 좋아하는 핑크 플로이드 앨범 'The Dark Side of the Moon'에서 따왔다. 처음에는 한 번에 아주 긴 글(중국어 20만 자 분량)을 읽고 답할 수 있는 점으로 화제가 됐는데, 지금은 챗봇 이름이면서 동시에 그 뒤에서 돌아가는 모델 시리즈(K2, K2.5, K2.6 등)를 통틀어 부르는 이름이 됐다.</p><p>Kimi가 특별한 이유는 두 가지를 동시에 잡았다는 점이다. 하나는 모델 가중치를 누구나 내려받아 쓸 수 있게 푼 <strong>오픈소스</strong>라는 것, 다른 하나는 그러면서도 코딩과 에이전트 작업에서 Claude나 GPT 같은 비공개 최상위 모델에 견줄 만한 성능을 낸다는 것이다. 내부적으로는 1조 개에 달하는 파라미터를 두고 그중 필요한 부분만 골라 쓰는 <strong>MoE(전문가 혼합)</strong> 구조라서, 덩치는 크지만 한 번 답할 때 드는 비용은 상대적으로 낮다.</p><h4>실제로 어떻게 쓰나</h4><p>가장 쉬운 방법은 <code>kimi.com</code>에 들어가 챗봇처럼 대화하는 것이다. 긴 문서를 통째로 붙여넣고 요약을 시키거나, 자료 조사를 맡기거나, 슬라이드·표를 만들게 할 수 있다. 개발자라면 모델 가중치가 공개돼 있으니 직접 서버에 올려 돌리거나, 문샷의 API를 호출해 자기 서비스에 붙일 수도 있다. 터미널에서 코드를 짜게 하고 싶으면 <code>Kimi Code</code> CLI를 쓰면 된다.</p><p>최근 버전에서 특히 주목받은 건 <strong>Agent Swarm(에이전트 스웜)</strong>이다. 하나의 모델이 한 단계씩 순서대로 일하는 대신, 수십~수백 개의 하위 에이전트를 동시에 띄워 큰 작업을 잘게 쪼개 병렬로 처리하게 하는 방식이다. 예를 들어 방대한 논문 검토나 긴 산업 보고서 작성처럼 원래 몇 시간 걸리던 일을, 여러 에이전트가 나눠 맡아 훨씬 짧은 시간에 끝낸다. 또 K2.5부터는 그림과 화면을 직접 보고 이해하는 <strong>멀티모달</strong> 능력이 더해져, 스크린샷을 보고 UI를 만들거나 화면을 조작하는 에이전트 작업도 가능해졌다.</p><h4>알아둘 점</h4><p>Kimi는 DeepSeek, Qwen과 함께 '미국 비공개 모델을 위협하는 중국발 오픈소스'의 대표 사례로 자주 묶여 언급된다. 가중치가 공개돼 있어 저렴하게 또는 자체 인프라에서 돌릴 수 있다는 점이 큰 장점이지만, 회사가 중국 기업이라 데이터 처리·검열 정책이나 민감한 주제에 대한 응답 방식이 서구 모델과 다를 수 있다는 점은 도입 전에 따져볼 부분이다.</p></div>
   <div class="tags"><span>#Moonshot AI</span><span>#오픈소스</span><span>#에이전트</span><span>#멀티모달</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/qwen.html">큐원</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/swarm.html">스웜</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/mimo.html">미모</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.codecademy.com/article/kimi-k-2-5-complete-guide-to-moonshots-ai-model" target="_blank" rel="nofollow noopener">Kimi K2.5: Complete Guide to Moonshot's AI Model</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://en.wikipedia.org/wiki/Moonshot_AI" target="_blank" rel="nofollow noopener">Moonshot AI - Wikipedia</a> <span class="ref-type">블로그</span></li><li><a href="https://en.wikipedia.org/wiki/Kimi_(chatbot)" target="_blank" rel="nofollow noopener">Kimi (chatbot) - Wikipedia</a> <span class="ref-type">블로그</span></li><li><a href="https://www.moonshot.ai" target="_blank" rel="nofollow noopener">Moonshot AI Official Site</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/moonshotai" target="_blank" rel="nofollow noopener">Moonshot AI - GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=w-kFe24zZIE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/w-kFe24zZIE/mqdefault.jpg" alt="Kimi K2.5: The GREATEST Opensource AI Model That Beats Opus 4.5 and Gemini 3 (Fully Tested)" loading="lazy" width="160" height="90"><span>Kimi K2.5: The GREATEST Opensource AI Model That Beats Opus 4.5 and Gemini 3 (Fully Tested)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=LSfpwaujqLQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LSfpwaujqLQ/mqdefault.jpg" alt="Kimi K2 explained in 5 minutes" loading="lazy" width="160" height="90"><span>Kimi K2 explained in 5 minutes</span></a><a class="video-item" href="https://www.youtube.com/watch?v=X20Aa1fqAd4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/X20Aa1fqAd4/mqdefault.jpg" alt="중국 문샷 AI에서 출시한 Kimi 2.5 성능이 진짜 미쳤습니다!" loading="lazy" width="160" height="90"><span>중국 문샷 AI에서 출시한 Kimi 2.5 성능이 진짜 미쳤습니다!</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#kimi">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

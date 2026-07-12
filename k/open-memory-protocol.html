@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=tooling">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">도구</div>
   <h1>오픈 메모리 프로토콜</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>Claude, ChatGPT, Cursor 같은 서로 다른 AI 도구들이 하나의 메모리 저장소를 공유할 수 있게 해주는 오픈 프로토콜. 매번 새 도구에서 처음부터 설명하지 않아도 이전 대화 맥락이 이어진다.</p><h4>개념 설명</h4><p>AI 도구를 여러 개 쓰다 보면 매번 같은 상황을 설명해야 하는 문제가 생긴다. Claude에게 프로젝트 배경을 설명했어도 ChatGPT로 전환하면 처음부터 다시 시작이다. Open Memory Protocol(OMP)은 이 문제를 해결하기 위해 등장한 오픈소스 프로젝트다. MCP를 기반으로 구축된 <strong>공유 메모리 레이어</strong>로, 여러 AI 도구가 같은 메모리 저장소를 읽고 쓸 수 있게 한다. 메모리는 로컬에 저장되어 클라우드로 나가지 않으며, 사용자가 직접 소유하고 관리한다.</p><h4>사용 예시</h4><p>Claude Desktop에서 코드 리뷰를 받으며 쌓은 프로젝트 맥락이 Cursor나 ChatGPT를 열었을 때도 그대로 이어진다. 개발자 입장에서는 <code>pip install open-memory-protocol</code>로 패키지를 설치하고 로컬 서버를 띄운 뒤, 각 AI 클라이언트에 어댑터 URL을 설정하는 방식으로 연동한다. 현재 실제로 쓸 수 있는 경로는 Claude(MCP 통합), OMP Bridge 브라우저 확장, REST 클라이언트 세 가지다.</p><h4>주의할 점</h4><p>어댑터 지원이 아직 초기 단계라 OpenAI Assistants, Cursor, Copilot, VS Code, Gemini는 연동이 완성되지 않았다. 실질적인 크로스 툴 경험은 Claude 중심으로 제한적이다. 비슷한 목표를 가진 Mem0의 <strong>OpenMemory MCP</strong>처럼 경쟁 프로젝트가 여럿 존재하며, 이 생태계가 어떤 방식으로 수렴할지는 아직 불확실하다.</p></div>
   <div class="tags"><span>#메모리</span><span>#MCP</span><span>#크로스모델</span><span>#로컬 퍼스트</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/agent-memory.html">에이전트 메모리</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/agent-protocol.html">에이전트 프로토콜</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://winbuzzer.com/2026/06/30/open-memory-protocol-gives-compatible-ai-tools-one-memory-st-xcxwbn" target="_blank" rel="nofollow noopener">Open Memory Protocol Gives Compatible AI Tools One Memory Store</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.promptzone.com/priya_sharma_cee38bf2/open-memory-protocol-shares-ai-memory-across-models-5bao" target="_blank" rel="nofollow noopener">Open Memory Protocol Shares AI Memory Across Models</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://mem0.ai/blog/introducing-openmemory-mcp" target="_blank" rel="nofollow noopener">Introducing OpenMemory MCP</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Y2XI2nk44WE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Y2XI2nk44WE/mqdefault.jpg" alt="All My AI Apps Are Connected to One MIND — With Open Memory" loading="lazy" width="160" height="90"><span>All My AI Apps Are Connected to One MIND — With Open Memory</span></a><a class="video-item" href="https://www.youtube.com/watch?v=AGxcQ-j64Ms" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AGxcQ-j64Ms/mqdefault.jpg" alt="80% Cheaper Tokens: The &quot;Noiseless&quot; AI Memory Protocol" loading="lazy" width="160" height="90"><span>80% Cheaper Tokens: The &quot;Noiseless&quot; AI Memory Protocol</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BTZxfbdDW-4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BTZxfbdDW-4/mqdefault.jpg" alt="OpenMemory MCP, a Private Memory for MCP-compatible Clients" loading="lazy" width="160" height="90"><span>OpenMemory MCP, a Private Memory for MCP-compatible Clients</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#open-memory-protocol">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-05</div>
 </div>

@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>전이 학습</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>한 태스크에서 학습한 지식을 다른 태스크에 재사용하는 머신러닝 방법론. 현대 LLM의 "사전학습 → 파인튜닝" 패러다임 전체가 전이 학습의 응용이다.</p><h4>개념 설명</h4><p>수백만 장의 이미지로 학습한 모델이 물체의 엣지, 색상, 형태를 인식하는 법을 배웠다면, 그 지식을 의료 X-ray 분류에 재사용할 수 있다. 처음부터 다시 배울 필요가 없다. 이것이 전이 학습의 핵심이다. LLM에서는 대규모 텍스트로 언어 구조와 세상 지식을 습득한 사전학습 모델을 특정 도메인이나 태스크에 맞게 파인튜닝하는 모든 과정이 전이 학습이다.</p><p>전이가 잘 되려면 원본 도메인과 목표 도메인이 충분히 유사해야 한다. 영어로만 사전학습된 모델은 한국어 태스크로의 전이가 제한적이다.</p><h4>사용 예시</h4><p>일반 대화용으로 사전학습된 Llama를 의료 문서 Q&A에 파인튜닝하거나, 코드 생성 모델을 특정 프레임워크 전용으로 추가 학습하는 것이 전이 학습의 전형적 활용이다. LoRA를 쓰면 사전학습된 표현을 손상시키지 않으면서 새 태스크에 적응시킬 수 있다.</p></div>
   <div class="tags"><span>#사전학습</span><span>#파인튜닝</span><span>#재사용</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/self-supervised-learning.html">자기 지도 학습</a>, <a href="https://aiwiki.work/k/continual-learning.html">지속 학습</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ieeexplore.ieee.org/document/5288526/" target="_blank" rel="nofollow noopener">A Survey on Transfer Learning (Pan &amp; Yang, IEEE TKDE 2010)</a> <span class="ref-type">논문</span></li><li><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf" target="_blank" rel="nofollow noopener">Improving Language Understanding by Generative Pre-Training (GPT-1)</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=90mGPxR2GgY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/90mGPxR2GgY/mqdefault.jpg" alt="BERT: Training, Inference, Fine tuning (Umar Jamil)" loading="lazy" width="160" height="90"><span>BERT: Training, Inference, Fine tuning (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Bmx2S1dSAV0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Bmx2S1dSAV0/mqdefault.jpg" alt="CS231n 한글설명 Attention - 송교석" loading="lazy" width="160" height="90"><span>CS231n 한글설명 Attention - 송교석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#transfer-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

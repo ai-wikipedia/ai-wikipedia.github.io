@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=safety">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">안전</div>
   <h1>AI 슬롭</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>노력·품질·의미가 결여된 채 대량으로 생산된 AI 생성 콘텐츠. 소셜 미디어의 어텐션 경제를 이용해 확산되며, 고품질 콘텐츠를 밀어내고 허위 정보 유포에 악용된다.</p><h4>개념 설명</h4><p>생성형 AI 도구가 대중화되면서 인터넷에 특정 유형의 콘텐츠가 넘쳐나기 시작했다. 사실 확인 없이 뽑아낸 글, 이상한 손가락이나 텍스트가 섞인 AI 이미지, 의미 없이 클릭을 유도하는 영상들이다. <strong>AI 슬롭(AI Slop)</strong>은 이처럼 노력·품질·의미가 결여된 채 대량으로 생산된 AI 생성 콘텐츠를 가리키는 용어다.</p><p>이 용어는 2024년 2분기에 급격히 확산됐다. 구글이 Gemini를 검색 결과에 통합하면서 저품질 AI 답변이 검색 상단을 차지하고, 페이스북 같은 플랫폼에서 AI 이미지가 수십만 조회수를 기록하는 사례들이 주목받았다. 2024년 4분기에는 주요 언론에서 비판적으로 보도하기 시작했다.</p><h4>왜 문제인가</h4><p>AI 슬롭이 퍼지는 이유는 소셜 미디어 플랫폼이 조회수와 참여도를 기준으로 콘텐츠를 증폭시키기 때문이다. AI는 이 기준을 충족하는 콘텐츠를 매우 낮은 비용으로 대량 생산할 수 있다. 생산자는 광고 수익을 얻고, 플랫폼은 트래픽을 얻는다. 결과적으로 정성 들여 만든 실제 창작자의 콘텐츠가 알고리즘에서 밀려나는 문제가 생긴다.</p><p>명백한 AI 생성 티가 나더라도 잠깐 스크롤하는 사람들에게 허위 정보를 심을 수 있다는 점도 위험하다. 재난 현장의 AI 이미지나 정치인의 딥페이크가 한 번 퍼지면 사실처럼 기억되는 현상이 발생한다.</p><h4>개발자 관점에서의 AI 슬롭</h4><p>개발자가 AI 슬롭을 만들지 않으려면 결과물 품질을 의식적으로 관리해야 한다. 자동화된 콘텐츠 파이프라인을 만들 때, 사실 확인 단계와 사람의 검토 없이 AI 출력을 바로 퍼블리싱하지 않는 것이 기본이다. 코드 리뷰 없이 AI가 생성한 코드를 그대로 머지하거나, 프롬프트 하나로 블로그 포스트를 양산하는 방식도 같은 문제 패턴에 해당한다.</p><h4>주의할 점</h4><p>AI 슬롭은 기술적 정의라기보다 문화적 용어다. 일부 커뮤니티에서는 품질과 무관하게 AI로 만든 모든 콘텐츠에 이 표현을 쓰기도 한다. AI 도구를 활용하더라도 인간의 판단과 편집이 들어간 결과물은 슬롭과 구분해서 볼 필요가 있다.</p></div>
   <div class="tags"><span>#콘텐츠 품질</span><span>#생성형 AI</span><span>#소셜미디어</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/hallucination.html">환각</a>, <a href="https://aiwiki.work/k/deepfake-detection.html">딥페이크 탐지</a>, <a href="https://aiwiki.work/k/content-moderation.html">콘텐츠 모더레이션</a>, <a href="https://aiwiki.work/k/watermarking.html">워터마킹</a>, <a href="https://aiwiki.work/k/ai-regulation.html">AI 규제</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://en.wikipedia.org/wiki/AI_slop" target="_blank" rel="nofollow noopener">AI slop — Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://theconversation.com/what-is-ai-slop-a-technologist-explains-this-new-and-largely-unwelcome-form-of-online-content-256554" target="_blank" rel="nofollow noopener">What is AI slop? A technologist explains — The Conversation</a> <span class="ref-type">블로그</span></li><li><a href="https://www.bbc.com/news/articles/c9wx2dz2v44o" target="_blank" rel="nofollow noopener">AI 'slop' is transforming social media — BBC</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=_zfN9wnPvU0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/_zfN9wnPvU0/mqdefault.jpg" alt="AI Slop Is Destroying The Internet" loading="lazy" width="160" height="90"><span>AI Slop Is Destroying The Internet</span></a><a class="video-item" href="https://www.youtube.com/watch?v=TWpg1RmzAbc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TWpg1RmzAbc/mqdefault.jpg" alt="AI Slop: Last Week Tonight with John Oliver (HBO)" loading="lazy" width="160" height="90"><span>AI Slop: Last Week Tonight with John Oliver (HBO)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=gjyn9axr2-w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gjyn9axr2-w/mqdefault.jpg" alt="AI SLOP. AI 판타지로 고통 받는 현업자들" loading="lazy" width="160" height="90"><span>AI SLOP. AI 판타지로 고통 받는 현업자들</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-slop">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-07-03</div>
 </div>

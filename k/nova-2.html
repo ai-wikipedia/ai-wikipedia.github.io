@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>노바 2</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>아마존이 직접 만든 차세대 멀티모달 모델 계열로, 텍스트·이미지·영상·음성을 한 번에 다루면서 "가격 대비 성능"을 앞세운 게 특징이다.</p><h4>아마존이 만든 자체 모델</h4><p>우리가 흔히 쓰는 AI 모델은 OpenAI나 구글, 앤트로픽 같은 회사 것들이지만, 아마존도 자기 클라우드(AWS)에서 돌릴 자체 모델을 만들고 있다. 그게 <strong>Amazon Nova</strong>이고, 2025년 말에 나온 두 번째 세대가 <strong>Nova 2</strong>다. 텍스트만 다루는 게 아니라 이미지, 영상, 음성, 문서까지 한 번에 이해하는 <strong>멀티모달</strong> 모델이고, 한 번에 최대 100만 토큰까지 읽을 수 있어서 긴 문서나 코드베이스를 통째로 넣고 작업시킬 수 있다.</p><p>Nova 2는 하나의 모델이 아니라 용도별로 나뉜 계열이다. 빠르고 저렴해서 일상적인 작업에 쓰는 <code>Nova 2 Lite</code>, 여러 단계를 거치는 복잡한 작업을 가장 똑똑하게 처리하는 <code>Nova 2 Pro</code>, 그리고 음성 입출력에 특화된 <code>Nova 2 Sonic</code>이 있다. 아마존이 내세우는 핵심은 화려한 최고 점수가 아니라 "같은 성능을 더 싸게"라는 가성비 쪽이다.</p><h4>개발자가 어떻게 쓰나</h4><p>Nova 2는 AWS의 모델 호스팅 서비스인 <strong>Amazon Bedrock</strong>을 통해 쓴다. 이미 AWS 위에서 서비스를 돌리고 있는 팀이라면, 별도 외부 API 키를 발급받아 다른 회사에 데이터를 보낼 필요 없이 같은 AWS 계정·권한 체계 안에서 모델을 호출할 수 있다는 게 실질적인 장점이다. 비용에 민감한 대량 처리(고객 문의 분류, 문서 요약 같은 일상 업무)는 Lite로, 여러 문서를 종합 분석하거나 코드 마이그레이션처럼 추론이 많이 필요한 작업은 Pro로 나눠 붙이는 식으로 쓴다.</p><p>음성 쪽은 <code>Nova 2 Sonic</code>이 맡는다. 말을 듣고 바로 말로 답하는 구조라 응답이 빨라서, 전화 상담 봇이나 음성 비서처럼 실시간 대화가 중요한 곳에 쓴다. 아마존은 여기에 더해 에이전트가 화면을 직접 조작하게 해주는 <strong>Nova Act</strong>, 기업이 자기 데이터로 Nova의 맞춤 버전을 만들게 해주는 <strong>Nova Forge</strong> 같은 도구도 함께 내놓아서, Nova 2를 단순한 모델이 아니라 에이전트를 만드는 토대로 밀고 있다.</p><h4>주의할 점</h4><p>Nova 2의 강점은 어디까지나 "가성비"다. 일부 벤치마크에서는 같은 시기의 다른 최상위 모델만큼 압도적인 성능을 보여주지 못한다는 평가도 있어서, 최고 수준의 추론 정확도가 꼭 필요한 작업이라면 다른 프론티어 모델과 비교해보는 게 좋다. 반대로 비용과 속도가 중요하고 이미 AWS 생태계 안에 있다면 가장 자연스러운 선택지가 된다.</p></div>
   <div class="tags"><span>#Amazon</span><span>#AWS</span><span>#Bedrock</span><span>#멀티모달</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/frontier-model.html">프론티어 모델</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/voice-ai.html">보이스 AI</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock" target="_blank" rel="nofollow noopener">Announcing Amazon Nova 2 foundation models now available in Amazon Bedrock</a> <span class="ref-type">공식</span></li><li><a href="https://docs.aws.amazon.com/nova/latest/nova2-userguide/what-is-nova-2.html" target="_blank" rel="nofollow noopener">What is Amazon Nova 2? - Amazon Nova Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://www.aboutamazon.com/news/aws/aws-agentic-ai-amazon-bedrock-nova-models" target="_blank" rel="nofollow noopener">Meet new Amazon Nova AI models that help build highly reliable AI agents</a> <span class="ref-type">블로그</span></li><li><a href="https://aws.amazon.com/nova/models" target="_blank" rel="nofollow noopener">Amazon Nova models - AWS</a> <span class="ref-type">공식</span></li><li><a href="https://www.reddit.com/r/aws/comments/1pcd7za/amazon_nova_2_omni" target="_blank" rel="nofollow noopener">Amazon Nova 2 Omni - r/aws discussion</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=pO2rZ6MoN1Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/pO2rZ6MoN1Y/mqdefault.jpg" alt="Introducing Amazon Nova 2 Sonic | Amazon Web Services" loading="lazy" width="160" height="90"><span>Introducing Amazon Nova 2 Sonic | Amazon Web Services</span></a><a class="video-item" href="https://www.youtube.com/watch?v=GOtf-A-1Bt0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GOtf-A-1Bt0/mqdefault.jpg" alt="Meet Amazon Nova 2 Foundation Models | Amazon Web Services" loading="lazy" width="160" height="90"><span>Meet Amazon Nova 2 Foundation Models | Amazon Web Services</span></a><a class="video-item" href="https://www.youtube.com/watch?v=XcNb901aw6g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/XcNb901aw6g/mqdefault.jpg" alt="&quot;가격 대비 최고 성능&quot;…AWS, 자체 AI 모델 '노바2' 공개" loading="lazy" width="160" height="90"><span>&quot;가격 대비 최고 성능&quot;…AWS, 자체 AI 모델 '노바2' 공개</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#nova-2">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-06-08</div>
 </div>

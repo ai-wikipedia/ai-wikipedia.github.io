@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>멀티모달</h1>
@@ -128,6 +156,8 @@
 <p>개발에서 자주 쓰이는 패턴은 디자인 시안(이미지)을 보고 코드를 생성하거나, 다이어그램을 읽고 아키텍처를 설명하거나, PDF 문서의 표와 그래프를 함께 분석하는 것이다. 음성 입출력이 결합되면 실시간 대화형 AI 인터페이스도 가능해진다.</p></div>
   <div class="tags"><span>#비전</span><span>#음성</span><span>#영상</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/reka.html">레카</a>, <a href="https://aiwiki.work/k/gemini-3-pro.html">제미나이 3 프로</a>, <a href="https://aiwiki.work/k/gemini-3-5-flash.html">제미나이 3.5 플래시</a>, <a href="https://aiwiki.work/k/llama-4.html">라마 4</a>, <a href="https://aiwiki.work/k/mistral-medium-3-5.html">미스트랄 미디엄 3.5</a>, <a href="https://aiwiki.work/k/seed-2.html">시드 2.0</a>, <a href="https://aiwiki.work/k/nova-2.html">노바 2</a>, <a href="https://aiwiki.work/k/veo.html">비오</a>, <a href="https://aiwiki.work/k/nano-banana.html">나노 바나나</a>, <a href="https://aiwiki.work/k/ideogram.html">아이디오그램</a>, <a href="https://aiwiki.work/k/runway.html">런웨이</a>, <a href="https://aiwiki.work/k/kling.html">클링</a>, <a href="https://aiwiki.work/k/apple-intelligence.html">애플 인텔리전스</a>, <a href="https://aiwiki.work/k/nano-banana-2.html">나노 바나나 2</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.shaip.com/blog/multimodal-ai-the-complete-guide-to-training-data/" target="_blank" rel="nofollow noopener">Multimodal AI: Complete Guide 2025 – Shaip</a> <span class="ref-type">블로그</span></li><li><a href="https://www.deeplearning.ai/short-courses/building-multimodal-search-and-rag/" target="_blank" rel="nofollow noopener">Building Multimodal Search and RAG – DeepLearning.AI</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mkI7EPD1vp8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mkI7EPD1vp8/mqdefault.jpg" alt="Large Multimodal Models CVPR 2023" loading="lazy" width="160" height="90"><span>Large Multimodal Models CVPR 2023</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#multimodal">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

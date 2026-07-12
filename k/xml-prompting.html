@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=prompting">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">프롬프팅</div>
   <h1>XML 프롬프팅</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>XML 태그로 프롬프트의 각 부분을 명확히 구분해서 LLM이 역할과 내용을 혼동하지 않도록 하는 방식.</p><h4>개념 설명</h4><p>긴 프롬프트에서 "지시사항과 예시와 사용자 입력"을 줄바꿈으로만 구분하면 LLM이 경계를 혼동하기 쉽다. <strong>XML 프롬프팅</strong>은 <code>&lt;instructions&gt;</code>, <code>&lt;examples&gt;</code>, <code>&lt;user_query&gt;</code>처럼 XML 태그로 각 영역을 명확히 표시해서 구조를 잡는 방식이다. Anthropic은 Claude가 XML 태그 구조에 특히 잘 반응하도록 학습됐다고 밝혀, Claude 프롬프팅 가이드에서 권장하는 방식이다.</p><h4>사용 예시</h4><p>복잡한 시스템 프롬프트를 구성할 때 <code>&lt;role&gt;</code>에 역할을, <code>&lt;context&gt;</code>에 배경 정보를, <code>&lt;rules&gt;</code>에 제약 조건을, <code>&lt;task&gt;</code>에 실제 작업을 담으면 Claude가 각 섹션을 정확히 구분해서 처리한다. 프롬프트 인젝션을 방어하는 데도 유용하다.</p></div>
   <div class="tags"><span>#구조화</span><span>#Anthropic</span><span>#Claude</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://community.openai.com/t/use-xml-tags-to-structure-my-prompts/1068871" target="_blank" rel="nofollow noopener">Use XML tags to structure my prompts - Prompting - OpenAI Developer Community</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies?hl=ko" target="_blank" rel="nofollow noopener">프롬프트 작성 전략 개요  |  Generative AI on Vertex AI  |  Google Cloud Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://codeconductor.ai/blog/structured-prompting-techniques-xml-json/" target="_blank" rel="nofollow noopener">Structured Prompting Techniques: XML &amp; JSON Prompting Guide</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/@TechforHumans/effective-prompt-engineering-mastering-xml-tags-for-clarity-precision-and-security-in-llms-992cae203fdc" target="_blank" rel="nofollow noopener">Effective Prompt Engineering: Mastering XML Tags for ...</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#xml-prompting">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

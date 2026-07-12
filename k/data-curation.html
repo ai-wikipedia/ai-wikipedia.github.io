@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>데이터 큐레이션</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>모델 학습이나 RAG에 쓸 데이터를 수집하고 정제하고 선별하는 과정. 데이터 품질이 모델 성능을 결정한다.</p><h4>개념 설명</h4><p>"쓰레기를 넣으면 쓰레기가 나온다"는 말이 AI에서 가장 잘 맞는 분야가 데이터다. <strong>데이터 큐레이션</strong>은 원시 데이터에서 노이즈, 중복, 편향, 부정확한 레이블을 걸러내고 고품질 데이터만 남기는 과정이다. 파인튜닝용 학습 데이터든, RAG용 문서든, 데이터 품질이 최종 성능을 좌우한다.</p><h4>사용 예시</h4><p>고객 지원 로그로 챗봇을 파인튜닝할 때, 전체 로그를 그대로 쓰면 잘못된 답변, 불완전한 대화, 개인정보가 섞인다. 먼저 해결 완료된 케이스만 필터링하고, 답변 품질을 점수로 평가해서 상위 20%만 선별하고, PII를 제거하는 큐레이션 파이프라인을 거쳐야 유효한 학습 데이터가 만들어진다.</p></div>
   <div class="tags"><span>#데이터품질</span><span>#필터링</span><span>#학습데이터</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/synthetic-data.html">합성 데이터</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.cos.io/blog/data-curation" target="_blank" rel="nofollow noopener">Transforming Research with Data Curation Practices</a> <span class="ref-type">블로그</span></li><li><a href="https://www.acceldata.io/blog/data-curation" target="_blank" rel="nofollow noopener">What Is Data Curation? Real-World Examples</a> <span class="ref-type">블로그</span></li><li><a href="https://www.ataccama.com/blog/what-is-data-curation" target="_blank" rel="nofollow noopener">What is data curation?</a> <span class="ref-type">블로그</span></li><li><a href="https://www.alation.com/blog/what-is-data-curation/" target="_blank" rel="nofollow noopener">What Is Data Curation? Why Is It Important? | Alation</a> <span class="ref-type">블로그</span></li></ul></div>
+  
   <a class="back" href="https://aiwiki.work/#data-curation">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-11</div>
 </div>

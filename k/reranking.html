@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=data">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">데이터</div>
   <h1>리랭킹</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>초기 검색으로 가져온 문서들을 더 정밀한 모델로 재평가해 순위를 재조정하는 기법. RAG의 컨텍스트 품질을 높이는 가장 효과적인 후처리 단계다.</p><h4>개념 설명</h4><p>벡터 검색으로 100개 후보 문서를 빠르게 가져오는 건 쉽다. 하지만 이 중 어떤 10개를 LLM에 넘길지 선별이 중요하다. 리랭킹은 쿼리와 각 문서를 쌍으로 묶어 Cross-Encoder 모델로 더 정밀하게 관련성을 평가한다. 처음부터 100개를 정밀 모델로 평가하는 것보다 빠르면서, 초기 검색보다 훨씬 정확하다. 2단계 검색 파이프라인의 핵심이다.</p><p>Cohere Rerank, BGE-Reranker, Jina Reranker가 대표적인 리랭킹 모델이다. LLM을 직접 리랭커로 쓰는 <strong>LLM-based Reranking</strong>도 정확도가 높지만 비용이 크다.</p><h4>사용 예시</h4><p>LangChain에서 <code>CohereRerank</code>를 <code>ContextualCompressionRetriever</code>에 추가하면 검색-리랭킹 파이프라인이 완성된다. 벡터 검색으로 top-50을 가져오고 리랭킹으로 top-5를 선별하면, 순수 벡터 검색 top-5보다 훨씬 관련성 높은 컨텍스트를 LLM에 전달할 수 있다.</p></div>
   <div class="tags"><span>#검색품질</span><span>#Cross-Encoder</span><span>#RAG</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/hybrid-search.html">하이브리드 검색</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/vector-db.html">벡터 DB</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cohere.com/docs/rerank" target="_blank" rel="nofollow noopener">Rerank — Cohere Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.cohere.com/docs/rerank-overview" target="_blank" rel="nofollow noopener">Rerank Overview — Cohere Official Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Uh9bYiVrW_s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Uh9bYiVrW_s/mqdefault.jpg" alt="Rerankers and Two-Stage Retrieval (Pinecone)" loading="lazy" width="160" height="90"><span>Rerankers and Two-Stage Retrieval (Pinecone)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=NaT5Eo97_I0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NaT5Eo97_I0/mqdefault.jpg" alt="Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM" loading="lazy" width="160" height="90"><span>Building Multimodal AI RAG with LlamaIndex, NVIDIA NIM</span></a><a class="video-item" href="https://www.youtube.com/watch?v=b8GfaOVRqH8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/b8GfaOVRqH8/mqdefault.jpg" alt="리랭킹과 프롬프트 엔지니어링 - 테디노트" loading="lazy" width="160" height="90"><span>리랭킹과 프롬프트 엔지니어링 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#reranking">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

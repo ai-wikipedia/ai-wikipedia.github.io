@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=agent">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">에이전트</div>
   <h1>에이전트 프로토콜</h1>
@@ -126,6 +154,8 @@
   <div class="body"><p>AI 에이전트들이 서로 통신하고 협력하기 위한 표준화된 규약. 서로 다른 프레임워크나 벤더의 에이전트가 공통 언어로 대화할 수 있게 해준다.</p><h4>개념 설명</h4><p>에이전트 프로토콜은 AI 에이전트 간의 메시지 교환 방식을 표준화한 규약이다. 에이전트마다 입출력 형식이 제각각이면 협력이 불가능한데, 공통 프로토콜이 있으면 어떤 프레임워크로 만들어진 에이전트든 서로 연결할 수 있다. LangChain 에이전트와 AutoGPT 에이전트가 같은 작업에 협력할 수 있는 것이 대표적인 예다.</p><h4>사용 예시</h4><p>AI 에이전트 서버를 구축할 때 에이전트 프로토콜을 따르면 표준 REST API 엔드포인트(<code>/agent/tasks</code>, <code>/agent/tasks/{id}/steps</code>)를 통해 외부에서 작업을 지시하고 결과를 수신할 수 있다. 이렇게 하면 프론트엔드나 오케스트레이터가 내부 구현에 상관없이 동일한 방식으로 에이전트를 제어할 수 있다.</p></div>
   <div class="tags"><span>#표준</span><span>#상호운용성</span><span>#프로토콜</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/ai-agent.html">AI 에이전트</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/a2a.html">A2A</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/open-memory-protocol.html">오픈 메모리 프로토콜</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://codelabs.developers.google.com/intro-a2a-purchasing-concierge?hl=ko" target="_blank" rel="nofollow noopener">Agent2Agent (A2A) 프로토콜 시작하기: Cloud Run 및 Agent Engine ...</a> <span class="ref-type">공식</span></li><li><a href="https://blog.langchain.com/agent-protocol-interoperability-for-llm-agents/" target="_blank" rel="nofollow noopener">Agent Protocol: Interoperability for LLM agents - LangChain Blog</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/@manavg/agentic-ai-protocols-mcp-a2a-and-acp-ea0200eac18b" target="_blank" rel="nofollow noopener">Agentic AI Protocols: MCP, A2A, and ACP | by Manav Gupta</a> <span class="ref-type">블로그</span></li><li><a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" target="_blank" rel="nofollow noopener">Announcing the Agent2Agent Protocol (A2A)</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=4gYm0Rp7VHc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4gYm0Rp7VHc/mqdefault.jpg" alt="A2A: The Agent2Agent Protocol (DeepLearning.AI / Google Cloud)" loading="lazy" width="160" height="90"><span>A2A: The Agent2Agent Protocol (DeepLearning.AI / Google Cloud)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kQmXtrmQ5Zg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kQmXtrmQ5Zg/mqdefault.jpg" alt="Building Agents with Model Context Protocol (Anthropic)" loading="lazy" width="160" height="90"><span>Building Agents with Model Context Protocol (Anthropic)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=b8GfaOVRqH8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/b8GfaOVRqH8/mqdefault.jpg" alt="에이전트 프로토콜 - 테디노트" loading="lazy" width="160" height="90"><span>에이전트 프로토콜 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#agent-protocol">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

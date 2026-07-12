@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>트랜스포머</h1>
@@ -127,6 +155,8 @@
 <h4>왜 알아야 하나</h4><p>GPT, Claude, Gemini, Llama — 현재 쓰는 모든 LLM이 트랜스포머 기반이다. 컨텍스트 윈도우 제한, 토큰 비용, 긴 문서에서의 "Lost in the Middle" 현상 같은 실무적 한계도 트랜스포머의 구조에서 비롯된다. 이 아키텍처를 이해하면 왜 프롬프트를 이렇게 짜야 하는지, 왜 비용이 토큰 수에 비례하는지가 명확해진다.</p></div>
   <div class="tags"><span>#아키텍처</span><span>#attention</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/embedding.html">임베딩</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a>, <a href="https://aiwiki.work/k/flux.html">FLUX</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="nofollow noopener">Attention Is All You Need (원 논문) – arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="nofollow noopener">The Illustrated Transformer – Jay Alammar</a> <span class="ref-type">블로그</span></li><li><a href="https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/" target="_blank" rel="nofollow noopener">Transformer – Google Research Blog</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wjZofJX0v4M/mqdefault.jpg" alt="Transformers – 3Blue1Brown" loading="lazy" width="160" height="90"><span>Transformers – 3Blue1Brown</span></a><a class="video-item" href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eMlx5fFNoYc/mqdefault.jpg" alt="Attention in Transformers – 3Blue1Brown" loading="lazy" width="160" height="90"><span>Attention in Transformers – 3Blue1Brown</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#transformer">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2025-12-01</div>
 </div>

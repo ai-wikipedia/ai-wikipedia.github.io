@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=application">응용</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">응용</div>
   <h1>음성 인식</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>회의 녹음을 텍스트로 변환해서 요약 AI에 넘기거나, 고객 상담 전화를 전사해서 분석하는 파이프라인을 만들 때 Whisper API나 Deepgram을 쓴다. 실시간 자막이 필요한 화상회의 앱에는 스트리밍 STT API를 쓰는데, AssemblyAI나 Google Speech-to-Text의 스트리밍 모드가 적합하다. <code>whisper-1</code> 모델은 OpenAI API에서 직접 쓸 수 있어 프로토타입에 빠르게 통합하기 좋다.</p></div>
   <div class="tags"><span>#STT</span><span>#Whisper</span><span>#전사</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/text-to-speech.html">텍스트-음성 변환</a>, <a href="https://aiwiki.work/k/voice-ai.html">보이스 AI</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/elevenlabs.html">일레븐랩스</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/docs/guides/speech-to-text" target="_blank" rel="nofollow noopener">Speech to text - OpenAI API</a> <span class="ref-type">공식</span></li><li><a href="https://openai.com/index/whisper/" target="_blank" rel="nofollow noopener">Introducing Whisper - OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://github.com/openai/whisper" target="_blank" rel="nofollow noopener">openai/whisper - GitHub</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=dg_TWk8Zfjk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dg_TWk8Zfjk/mqdefault.jpg" alt="How to Use Whisper for Transcriptions" loading="lazy" width="160" height="90"><span>How to Use Whisper for Transcriptions</span></a><a class="video-item" href="https://www.youtube.com/watch?v=HbY51mVKrcE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/HbY51mVKrcE/mqdefault.jpg" alt="Next-gen audio models in the API" loading="lazy" width="160" height="90"><span>Next-gen audio models in the API</span></a><a class="video-item" href="https://www.youtube.com/watch?v=oI0D6vbpYto" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/oI0D6vbpYto/mqdefault.jpg" alt="음성을 텍스트로 바꾸는 무료 AI Whisper" loading="lazy" width="160" height="90"><span>음성을 텍스트로 바꾸는 무료 AI Whisper</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#speech-to-text">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>

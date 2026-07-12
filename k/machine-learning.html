@@ -116,9 +116,37 @@
   .site-footer a{color:#a09888;text-decoration:none}
   .site-footer a:hover{color:#C4613A}
   .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
 </style>
 </head>
 <body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/?cat=model">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="cat">모델</div>
   <h1>머신러닝</h1>
@@ -127,6 +155,8 @@
 <h4>사용 예시</h4><p>고객 이탈 예측, 사기 탐지, 수요 예측처럼 정형 데이터로 된 예측 문제에는 XGBoost나 LightGBM이 LLM보다 빠르고 비용 효율적이다. scikit-learn으로 모델을 학습하고, MLflow로 실험을 추적하고, 클라우드(SageMaker, Vertex AI)로 배포하는 흐름이 일반적인 ML 파이프라인이다. LLM이 모든 걸 해결하는 건 아니어서, 레이블된 데이터가 충분하고 예측 문제가 명확하다면 클래식 ML이 여전히 최선인 경우가 많다.</p></div>
   <div class="tags"><span>#ML</span><span>#지도학습</span><span>#예측모델</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/deep-learning.html">딥러닝</a>, <a href="https://aiwiki.work/k/neural-network.html">신경망</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/overfitting.html">과적합</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://scikit-learn.org/stable/index.html" target="_blank" rel="nofollow noopener">scikit-learn: Machine Learning in Python</a> <span class="ref-type">공식</span></li><li><a href="https://www.ibm.com/think/topics/machine-learning" target="_blank" rel="nofollow noopener">What is Machine Learning? - IBM</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Gv9_4yMHFhI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Gv9_4yMHFhI/mqdefault.jpg" alt="A Gentle Introduction to Machine Learning - StatQuest" loading="lazy" width="160" height="90"><span>A Gentle Introduction to Machine Learning - StatQuest</span></a><a class="video-item" href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/aircAruvnKk/mqdefault.jpg" alt="But what is a Neural Network? | 3Blue1Brown" loading="lazy" width="160" height="90"><span>But what is a Neural Network? | 3Blue1Brown</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#machine-learning">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-04-04</div>
 </div>
