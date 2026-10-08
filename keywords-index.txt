@@ -340,3 +340,20 @@ docker-agent	도커 에이전트	Docker Agent	agent
 mistral-large-4	미스트랄 라지 4	Mistral Large 4 (Mistral AI)	model
 step-5-preview	스텝 5 프리뷰	Step 5 Preview (StepFun)	model
 nano-banana-2-1	나노 바나나 2.1	Nano Banana 2.1 (Google)	application
+claude-fable-5-1	클로드 페이블 5.1	Claude Fable 5.1 (Anthropic)	model
+mcpb	MCPB	MCP Bundle (MCPB)	tooling
+codex-security	코덱스 시큐리티	Codex Security (OpenAI)	safety
+grok-4-7	그록 4.7	Grok 4.7 (xAI)	model
+qwen3-8-max	큐원3.8 맥스	Qwen3.8 Max (Alibaba)	model
+gemini-3-8-flash	제미나이 3.8 플래시	Gemini 3.8 Flash (Google)	model
+jev-router	제브 라우터	Jev Router (TypeSafe)	tooling
+kimi-k3	키미 K3	Kimi K3 (Moonshot AI)	model
+glm-5-3	GLM 5.3	GLM 5.3 (Z.ai)	model
+deepseek-v4-1-flash	딥시크 V4.1 플래시	DeepSeek V4.1 Flash	model
+mimo-v2-6-pro	미모 V2.6 프로	Xiaomi MiMo V2.6 Pro	model
+muse-spark-1-3	뮤즈 스파크 1.3	Muse Spark 1.3 (Meta)	model
+durable-execution	내구성 실행	Durable Execution	infra
+ai-design	AI 디자인	AI-Powered Design	application
+ai-code-governance	AI 코드 거버넌스	AI Code Governance	safety
+nemotron-3-ultra	네모트론 3 울트라	NVIDIA Nemotron 3 Ultra	model
+claude-mythos-5	클로드 미토스 5	Claude Mythos 5 (Anthropic)	model

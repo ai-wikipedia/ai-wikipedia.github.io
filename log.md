@@ -1,3 +1,7 @@
+## 2026-10-08 23:31
+- 추가: claude-fable-5-1, mcpb, codex-security, grok-4-7, qwen3-8-max, gemini-3-8-flash, jev-router, kimi-k3, glm-5-3, deepseek-v4-1-flash, mimo-v2-6-pro, muse-spark-1-3, durable-execution, ai-design, ai-code-governance, nemotron-3-ultra, claude-mythos-5 (90일 발굴 + 이전 실패 백로그. 백로그 14개는 사용량 한도로 미생성)
+- HOT: (갱신)
+
 ## 2026-10-08 23:01
 - 추가: claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, gpt-6-sol, gpt-6-luna, docker-agent, mistral-large-4, step-5-preview, nano-banana-2-1 (밀린 업데이트 90일분, 검토 후 반영 — gpt-6-1-sol은 gpt-6-sol과 중복이라 제외)
 - HOT: claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, gpt-6-sol, gpt-6-luna, docker-agent, mistral-large-4, step-5-preview, nano-banana-2-1

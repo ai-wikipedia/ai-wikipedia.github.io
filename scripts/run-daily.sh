@@ -30,6 +30,8 @@ MAIN_PID=$$
 #   AIWIKI_PARALLEL        콘텐츠 생성 동시 실행 수 (기본 3)
 #   AIWIKI_PUSH            1이면 커밋 후 push, 0이면 커밋만 하고 검토 대기 (기본 1)
 #   AIWIKI_TIMEOUT         전체 watchdog 초 (기본 1800)
+#   AIWIKI_BACKLOG_FILE    이전에 생성 실패한 후보 JSON — 선정 단계에서 함께 재검토
+#   AIWIKI_KEYWORDS_FILE   키워드 목록 JSON([{id,keyword,keywordKo,en}]) — LLM 선정을 건너뛰고 이 목록으로 생성
 DISCOVERY_DAYS="${AIWIKI_DISCOVERY_DAYS:-7}"
 MAX_MODELS="${AIWIKI_MAX_MODELS:-40}"
 MAX_KEYWORDS="${AIWIKI_MAX_KEYWORDS:-5}"

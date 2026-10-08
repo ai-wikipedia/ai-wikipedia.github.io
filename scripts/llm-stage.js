@@ -142,7 +142,25 @@ const SELECT_SCHEMA = {
   required: ['items'],
 };
 
+// 선정 결과를 저장하고 Stage 3 입력(keywords-list.txt: id|t|en|ko)을 만든다
+function writeSelection(runDir, items) {
+  fs.writeFileSync(path.join(runDir, 'keywords-selected.json'), JSON.stringify(items, null, 2));
+  // (기존엔 keyword_ko 오타로 한국어 키워드가 전달되지 않았음)
+  fs.writeFileSync(path.join(runDir, 'keywords-list.txt'),
+    items.map((k) => [k.id, k.keyword, k.en || k.keyword, k.keywordKo || k.keyword].join('|')).join('\n') + (items.length ? '\n' : ''));
+}
+
 async function runSelect(a) {
+  // AIWIKI_KEYWORDS_FILE: 키워드 목록을 직접 지정 (예: 이전 실행에서 생성 실패한 후보 재시도). LLM 선정을 건너뛴다.
+  if (process.env.AIWIKI_KEYWORDS_FILE) {
+    const have = existingIds();
+    const items = JSON.parse(readText(process.env.AIWIKI_KEYWORDS_FILE, '[]'))
+      .filter((k) => k && k.id && !have.has(k.id)).slice(0, a.max);
+    writeSelection(a.runDir, items);
+    log(`  키워드 목록 파일 사용 (LLM 선정 생략): ${items.length}개`);
+    process.stdout.write(String(items.length));
+    return;
+  }
   let prompt = fill(readText(path.join(PROMPTS, 'keyword-select.md')), {
     TRENDS_JSON: readText(path.join(a.runDir, 'trends.json'), '{}'),
     DISCOVERY_JSON: readText(path.join(a.runDir, 'discovery.json'), '{}'),
@@ -164,10 +182,7 @@ async function runSelect(a) {
     .filter((k) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(k.id) && !have.has(k.id) && !seen.has(k.id) && seen.add(k.id))
     .slice(0, a.max);
 
-  fs.writeFileSync(path.join(a.runDir, 'keywords-selected.json'), JSON.stringify(items, null, 2));
-  // run-daily.sh Stage 3 입력: id|t|en|ko (기존엔 keyword_ko 오타로 한국어 키워드가 전달되지 않았음)
-  fs.writeFileSync(path.join(a.runDir, 'keywords-list.txt'),
-    items.map((k) => [k.id, k.keyword, k.en || k.keyword, k.keywordKo || k.keyword].join('|')).join('\n') + (items.length ? '\n' : ''));
+  writeSelection(a.runDir, items);
   if ((r.data.items || []).length > items.length) log(`  선정 ${r.data.items.length}개 → 중복/형식/상한(${a.max}) 필터 후 ${items.length}개`);
   process.stdout.write(String(items.length));
 }
