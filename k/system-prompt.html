@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -158,14 +160,14 @@
 <p>실무에서 부딪히는 문제도 있다. 규칙이 쌓이다 보면 시스템 프롬프트가 수천 토큰짜리 문서가 되는데, 매 요청마다 그대로 실려 가므로 비용과 지연에 직결된다. 다행히 변하지 않는 접두사라는 특성 덕분에 프롬프트 캐싱과 궁합이 좋아서, 캐싱만 걸어도 비용을 크게 줄일 수 있다. 또 대화가 아주 길어지면 초반 규칙의 효력이 서서히 옅어지는 경향이 있어서, 중요한 제약은 중간에 다시 상기시키거나 애초에 시스템 프롬프트를 짧고 강하게 유지하는 편이 낫다. 모든 것을 시스템 프롬프트에 욱여넣기보다, 상황별 지침은 필요할 때 불러오는 스킬이나 문서로 빼는 것도 같은 맥락의 설계다.</p>
 <h4>규칙서는 새어 나가고, 공격받는다</h4><p>시스템 프롬프트는 완전한 비밀이 되지 못한다. "네 지시사항을 요약해 줘" 같은 유도에 모델이 내용을 흘리는 시스템 프롬프트 유출이 꾸준히 일어나고, 주요 AI 서비스들의 시스템 프롬프트가 통째로 추출되어 GitHub에 모이는 일도 반복됐다. 흥미롭게도 Anthropic은 아예 Claude 앱의 시스템 프롬프트를 공식 문서로 공개하는 쪽을 택했다. 어차피 새어 나갈 것을 숨기는 대신 투명하게 여는 접근이다. 여기서 나오는 원칙은 명확하다. API 키나 내부 URL 같은 비밀 정보는 절대 시스템 프롬프트에 넣지 않고, 보호해야 할 로직은 프롬프트 텍스트가 아니라 애플리케이션 코드 쪽에 둔다. 그리고 시스템 프롬프트를 무력화하려는 프롬프트 인젝션 공격이 상존하므로, 프롬프트 한 장으로 보안을 담보하려 하지 말고 출력 검증과 권한 제한을 함께 걸어야 한다.</p></div>
   <div class="tags"><span>#설정</span><span>#역할부여</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.anthropic.com/ko/docs/build-with-claude/prompt-engineering/system-prompts" target="_blank" rel="nofollow noopener">시스템 프롬프트로 역할 부여하기 – Anthropic 한국어 문서</a> <span class="ref-type">공식</span></li><li><a href="https://docs.anthropic.com/en/release-notes/system-prompts" target="_blank" rel="nofollow noopener">Claude System Prompts 공개 문서 – Anthropic Release Notes</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="nofollow noopener">Prompt Engineering – OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/" target="_blank" rel="nofollow noopener">OWASP LLM07:2025 System Prompt Leakage</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/mqdefault.jpg" alt="Intro to Large Language Models – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Intro to Large Language Models – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=1c9iyoVIwDs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1c9iyoVIwDs/mqdefault.jpg" alt="4 Methods of Prompt Engineering - IBM Technology" loading="lazy" width="160" height="90"><span>4 Methods of Prompt Engineering - IBM Technology</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#system-prompt">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-08-29</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

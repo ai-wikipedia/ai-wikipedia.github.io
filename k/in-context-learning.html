@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>인컨텍스트 러닝이란? (In-Context Learning) — AI Wiki</title>
 <meta name="description" content="인컨텍스트 러닝이란? 모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.">
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2026-03-30">
+<meta property="article:modified_time" content="2026-10-08">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="인컨텍스트 러닝이란? (In-Context Learning) — AI Wiki">
 <meta name="twitter:description" content="인컨텍스트 러닝이란? 모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.">
@@ -74,7 +74,7 @@
   "description": "모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.",
   "url": "https://aiwiki.work/k/in-context-learning.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2026-03-30",
+  "dateModified": "2026-10-08",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -151,16 +153,16 @@
   <div class="cat">모델</div>
   <h1>인컨텍스트 러닝</h1>
   <div class="en">In-Context Learning</div>
-  <div class="body"><p>모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.</p><h4>인컨텍스트 러닝이란</h4><p>프롬프트 내에 입출력 예시를 제시하여 모델이 패턴을 파악하고 올바른 출력을 생성하게 하는 방식이다. 대화가 끝나면 모델은 원래 상태로 돌아간다. GPT-3의 2020년 논문에서 처음 보고됐다.</p><h4>실제 활용 사례</h4><p>Nature Communications 연구에 따르면 인컨텍스트 러닝만으로 병리 이미지 분류에서 전용 학습 신경망과 동등한 성능을 보였다. 파인튜닝에 수백만 원이 들 수 있지만 잘 설계된 퓨샷 프롬프트는 즉시 유사한 성능을 낼 수 있다. 번역, 감성 분석, 코드 변환 업무에서 프롬프트 라이브러리를 구축해 재사용하는 패턴이 보편화되고 있다.</p></div>
+  <div class="body"><p>모델 가중치를 수정하지 않고 프롬프트 안에 예시와 지시만 제공해 LLM이 새 작업을 즉시 수행하게 하는 능력으로, 파인튜닝 없이 다양한 용도에 적용하는 핵심 기법이다.</p><h4>가중치를 건드리지 않는 학습</h4><p>인컨텍스트 러닝(In-Context Learning, ICL)이란 LLM이 모델 자체는 전혀 바꾸지 않고, 프롬프트(컨텍스트) 안에 주어진 지시와 예시만 보고 새로운 작업을 그 자리에서 해내는 능력이다. 보통 '학습'이라고 하면 데이터를 보여주고 가중치를 고치는 훈련을 떠올리지만, ICL에서는 그런 훈련이 일어나지 않는다. 오픈북 시험에 비유할 수 있다. 시험장에 들고 간 참고 자료를 보며 문제를 풀지만, 시험이 끝나 책을 덮으면 머릿속에 새로 남는 건 없다. 대화가 끝나면 모델은 원래 상태 그대로다.</p><p>이 능력이 실용적으로 중요한 이유는 모델 하나로 수많은 작업을 처리할 수 있게 해 주기 때문이다. 예전에는 감성 분석, 번역, 요약마다 데이터를 모아 별도 모델을 학습시켜야 했지만, 이제는 같은 모델에 지시와 예시만 바꿔 넣으면 된다.</p><p>이 능력은 누가 일부러 설계한 기능이 아니었다. 2020년 GPT-3 논문은 다음 토큰 예측만으로 학습한 1,750억 파라미터 모델이 번역이나 세 자리 덧셈 같은 작업의 예시 몇 개를 프롬프트로 받으면 별도 훈련 없이 그 작업을 수행한다는 것을 보여주며, 이를 인컨텍스트 러닝이라고 불렀다. 작은 모델에서는 약하던 이 능력이 모델이 커질수록 뚜렷해졌다. 퓨샷과 제로샷 프롬프팅은 이 능력을 활용하는 방법이고, ICL은 그 바탕에 있는 모델의 성질을 가리킨다.</p><h4>모델 안에서는 무슨 일이 일어나나</h4><p>왜 이런 일이 가능한지는 아직 연구 중이지만 단서는 있다. Anthropic의 2022년 연구는 트랜스포머 안에서 <strong>인덕션 헤드</strong>라는 회로를 찾아냈다. 앞에서 'A 다음에 B'가 나온 적이 있으면, 다시 A가 등장했을 때 B를 예측하도록 만드는 어텐션 헤드 두 개의 조합이다. 학습 초기 어느 시점에 이 회로가 생겨나는 순간 인컨텍스트 러닝 능력도 급격히 좋아졌고, 연구진은 이것이 대형 모델 ICL의 상당 부분을 담당하는 메커니즘일 수 있다고 봤다. 컨텍스트 안의 패턴을 찾아 이어 가는 능력이 바깥에서 보기에는 즉석 학습처럼 보인다는 것이다. 어텐션이 컨텍스트 속 예시를 상대로 경사하강법과 비슷한 계산을 흉내 낸다는 해석도 함께 연구되고 있다.</p><p>모델이 예시에서 무엇을 배우는지에 대한 연구도 흥미롭다. 2022년 Min 등은 예시의 정답 라벨을 무작위로 바꿔도 성능이 크게 떨어지지 않는다는 것을 보였다. 성능을 좌우한 건 라벨의 종류, 입력의 생김새, 답의 형식이었다. 모델이 예시로 완전히 새로운 규칙을 배운다기보다, 사전학습에서 이미 익힌 능력 중 어떤 걸 꺼내 쓸지를 예시로 알아차리는 면이 크다는 해석이다.</p><h4>컨텍스트가 길어지며 생긴 변화</h4><p>컨텍스트 윈도우가 수천 토큰에서 수십만 토큰으로 커지면서 ICL의 규모도 달라졌다. 2024년 Google DeepMind의 매니샷 ICL 연구는 예시를 수백, 수천 개 넣으면 퓨샷보다 성능이 뚜렷이 오르고, 사전학습에서 생긴 편향을 덮어쓸 수 있으며, 일부 작업에서는 파인튜닝에 맞먹는 수준에 이른다고 보고했다. 사람이 쓴 예시가 부족할 때 모델이 직접 생성한 풀이를 예시로 써도 효과가 있었다. 다만 예시가 늘어나는 만큼 매 요청의 입력 토큰과 비용도 정비례로 늘어난다.</p><p>같은 성질은 공격에도 쓰인다. Anthropic이 공개한 매니샷 탈옥은 AI가 위험한 질문에 순순히 답하는 가짜 대화를 수백 개 이어 붙여 안전 훈련을 무력화하는 기법인데, 예시 수에 따라 공격 성공률이 오르는 모양이 일반 ICL과 같은 멱법칙을 따랐다. 컨텍스트로 행동을 바꿀 수 있다는 건 좋은 쪽으로도 나쁜 쪽으로도 작동한다.</p><h4>파인튜닝 대신 컨텍스트를 고르는 기준</h4><p>개발자가 쓰는 LLM 기능의 상당수는 넓게 보면 ICL이다. RAG로 검색한 문서를 넣는 것, 도구 실행 결과를 돌려주는 것, Claude Code가 프로젝트의 <code>CLAUDE.md</code>를 읽고 그 저장소의 코딩 규칙대로 코드를 쓰는 것 모두 가중치 대신 컨텍스트로 행동을 바꾼다. 장점은 즉시성이다. 규칙이 바뀌면 파일 하나만 고치면 되고, 요청마다 다른 사용자의 데이터를 넣을 수 있으며, GPU 학습 인프라가 필요 없다.</p><p>반면 컨텍스트는 요청마다 다시 비용을 내야 하고, 세션이 끝나면 사라지며, 예시의 순서나 표현에 결과가 흔들린다. 그래서 순서를 정해 두는 게 좋다. 먼저 지시와 예시를 컨텍스트로 다듬어 원하는 품질이 나오는지 확인하고, 같은 긴 예시 묶음을 하루 수십만 번 보내고 있다면 프롬프트 캐싱을 적용하고, 그래도 비용이나 지연이 크거나 컨텍스트에 다 담을 수 없을 만큼 사례가 많을 때 그 지식을 가중치에 굽는 파인튜닝을 검토한다.</p></div>
   <div class="tags"><span>#추론시학습</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a></div>
-  <div class="refs"><b>참고 자료</b><ul><li><a href="https://aclanthology.org/2024.emnlp-main.64/" target="_blank" rel="nofollow noopener">A Survey on In-context Learning – EMNLP 2024</a> <span class="ref-type">논문</span></li><li><a href="https://wikidocs.net/237982" target="_blank" rel="nofollow noopener">ICL – AI·ML 사전 (WikiDocs, 한국어)</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="nofollow noopener">Language Models are Few-Shot Learners (GPT-3)</a> <span class="ref-type">논문</span></li><li><a href="https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html" target="_blank" rel="nofollow noopener">In-context Learning and Induction Heads – Anthropic (Transformer Circuits)</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2202.12837" target="_blank" rel="nofollow noopener">Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2404.11018" target="_blank" rel="nofollow noopener">Many-Shot In-Context Learning</a> <span class="ref-type">논문</span></li><li><a href="https://www.anthropic.com/research/many-shot-jailbreaking" target="_blank" rel="nofollow noopener">Many-shot jailbreaking – Anthropic</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=jkrNMKz9pWU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jkrNMKz9pWU/mqdefault.jpg" alt="A Hackers Guide to Language Models - Jeremy Howard" loading="lazy" width="160" height="90"><span>A Hackers Guide to Language Models - Jeremy Howard</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#in-context-learning">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-03-30</div>
+  <div class="added-date">updated at 2026-10-08</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

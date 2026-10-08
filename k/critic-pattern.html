@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-04-12">
-<meta property="article:modified_time" content="2026-04-12">
+<meta property="article:modified_time" content="2026-10-08">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="크리틱 패턴이란? (Critic Pattern) — AI Wiki">
 <meta name="twitter:description" content="크리틱 패턴이란? LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.">
@@ -74,7 +74,7 @@
   "description": "LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.",
   "url": "https://aiwiki.work/k/critic-pattern.html",
   "datePublished": "2026-04-12",
-  "dateModified": "2026-04-12",
+  "dateModified": "2026-10-08",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -151,16 +153,16 @@
   <div class="cat">에이전트</div>
   <h1>크리틱 패턴</h1>
   <div class="en">Critic Pattern</div>
-  <div class="body"><p>LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.</p><h4>크리틱이란</h4><p>AI 에이전트 시스템에서 <strong>크리틱(Critic)</strong>은 다른 모델이 만든 출력물을 읽고, '이게 맞는 답인가? 도움이 되는가? 사실에 근거한가?'를 판단하는 역할을 맡은 LLM이다. 사람이 매번 검토하는 대신 LLM 자체를 심사위원으로 쓰는 방식이라서 <strong>LLM-as-a-Judge</strong>라고도 부른다. AI 출력량이 폭발적으로 늘어나면서, 사람이 일일이 평가하는 건 현실적으로 불가능해졌고 — 크리틱은 그 간극을 메우기 위해 등장했다.</p><h4>어떻게 동작하는가</h4><p>크리틱에게는 평가 기준을 명시적으로 제공한다. 예를 들어 '정확성', '도움 정도', '톤'처럼 측정할 차원을 정의하고, 출력물을 그 기준에 따라 점수로 환산하게 한다. 두 개의 응답을 나란히 놓고 어느 쪽이 더 나은지 고르게 하는 <strong>쌍 비교(pairwise comparison)</strong> 방식이 단일 점수 방식보다 사람의 판단과 더 잘 일치한다는 연구 결과도 있다. 강한 LLM 심사위원은 사람 평가자와 약 80% 수준의 일치율을 보인다.</p><p>더 정교한 방법으로는 여러 LLM을 심사위원단으로 구성해 토론하게 하는 <strong>위원회(committee) 방식</strong>도 있다. 단일 모델보다 편향이 줄고 일관성이 높아지지만, 비용과 지연이 늘어난다.</p><h4>개발자가 실제로 쓰는 방식</h4><p>RAG 파이프라인을 만들 때 검색된 문서가 실제로 답변에 활용됐는지 확인하고 싶다면, 크리틱 LLM에게 '이 답변이 제공된 컨텍스트에 충실한가?'를 판단하게 한다. 에이전트가 생성한 코드가 요구사항을 만족하는지 자동으로 체크하는 용도로도 쓸 수 있다. Langfuse나 Braintrust 같은 평가 툴은 이 크리틱 실행을 파이프라인에 삽입해서 매 요청마다 자동 채점이 돌도록 지원한다.</p><p>다만 평가 기준이 모호하면 크리틱도 흔들린다. '좋은 답변'이 무엇인지 팀 내에서 합의되지 않으면 사람 레이블러도 불일치하고, 그 데이터를 학습한 크리틱도 방향을 잃는다. 도메인 전문가가 직접 기준과 예시를 만들고, 크리틱이 틀렸을 때 사람이 교정해주는 <strong>human-in-the-loop 루프</strong>를 함께 운용하는 게 현실적인 접근이다.</p><h4>리플렉션 패턴과의 관계</h4><p>크리틱은 <strong>리플렉션 패턴</strong>의 핵심 구성 요소이기도 하다. 생성 에이전트가 초안을 만들면, 크리틱이 문제점을 짚고, 생성 에이전트가 다시 고치는 사이클이 반복된다. 이 구조를 멀티에이전트 시스템으로 확장하면 여러 크리틱이 병렬로 서로 다른 기준을 담당하면서 더 체계적인 품질 관리가 가능해진다.</p></div>
+  <div class="body"><p>LLM이 다른 LLM의 출력을 평가하고 피드백을 제공하는 역할. AI 시스템의 품질을 사람 없이도 자동으로 측정할 수 있게 해준다.</p><h4>답을 쓰는 AI 옆에 채점하는 AI를 둔다</h4><p><strong>크리틱 패턴(Critic Pattern)</strong>이란 한 LLM이 만든 결과물을 다른 LLM, 혹은 같은 모델의 별도 호출이 읽고 평가해 점수나 피드백을 돌려주는 구조를 말한다. 글을 쓰는 기자와 교정하는 데스크를 나눠 둔 편집부와 비슷하다. 평가 역할만 떼어 내 쓰는 경우를 흔히 <strong>LLM-as-a-Judge</strong>라고 부르고, 에이전트 안에서 생성과 평가와 수정을 반복하는 구조는 Anthropic이 <strong>평가자-최적화자(evaluator-optimizer)</strong> 워크플로우로 정리한 바 있다. AI가 하루에 내놓는 답변이 수천, 수만 건이 되면 사람이 일일이 읽는 건 불가능하다. 크리틱은 그 검토를 자동화해 사람 없이도 품질을 꾸준히 재고 고칠 수 있게 해준다.</p><h4>채점하는 세 가지 방식</h4><p>가장 단순한 건 <strong>직접 채점</strong>이다. 답변 하나를 주고 "제공된 문서에 근거한 답인가?"처럼 기준을 물어 통과·실패나 점수를 받는다. 사실 충실도나 정책 위반처럼 객관적인 기준에 잘 맞는다. 두 답변을 나란히 보여주고 어느 쪽이 나은지 고르게 하는 <strong>쌍 비교(pairwise)</strong>는 말투나 설득력처럼 주관적인 품질에서 더 안정적인 결과를 낸다. 프롬프트 A와 B 중 무엇을 배포할지 정할 때 자주 쓰는 방식이다. 모범 답안을 함께 주고 얼마나 가까운지 보는 <strong>참조 기반</strong> 평가는 정답이 있는 과제에서 판단의 흔들림을 크게 줄여준다. 어떤 방식이든 한 크리틱에게 정확성, 친절함, 형식을 한꺼번에 묻기보다 기준 하나에 크리틱 하나를 두는 편이 판정이 선명하고, 점수가 떨어졌을 때 무엇이 문제인지도 바로 보인다.</p><h4>심사위원에게도 버릇이 있다</h4><p>MT-Bench 연구에서 GPT-4 같은 강한 모델을 심사위원으로 쓰자 사람 평가와 80% 넘게 일치했는데, 이는 사람끼리의 일치율과 비슷한 수준이었다. 같은 연구는 몇 가지 버릇도 짚었다. 특정 순서에 놓인 답을 더 좋게 보는 <strong>위치 편향</strong>, 내용이 같아도 긴 답을 선호하는 <strong>장황함 편향</strong>, 자기가 쓴 답에 점수를 더 주는 <strong>자기 선호 편향</strong>이다. 그래서 실무에서는 쌍 비교를 할 때 순서를 바꿔 두 번 돌려 결과가 같을 때만 인정하고, 길이에 점수를 주지 말라고 기준에 적어 두고, 답을 생성한 모델과 다른 계열의 모델을 심사위원으로 쓰는 식으로 보정한다. 판정을 내리기 전에 근거부터 쓰게 하고, 잘된 예와 잘못된 예를 몇 개 보여주는 것만으로도 판정의 일관성이 눈에 띄게 좋아진다.</p><h4>파이프라인과 에이전트에 심는 법</h4><p>가장 흔한 쓰임은 평가 파이프라인이다. RAG 챗봇이라면 "답변의 모든 주장이 검색된 문서에 들어 있는가"를 판단하는 크리틱 프롬프트를 만들고, Langfuse나 Braintrust 같은 도구에 연결해 운영 트래픽 일부를 자동 채점한다. 프롬프트나 모델을 바꿀 때마다 같은 테스트 세트에 크리틱을 돌려 점수가 떨어지지 않았는지 보면 그대로 회귀 테스트가 된다.</p><p>에이전트 내부에서는 생성과 비판을 루프로 묶는다. 번역 에이전트가 초안을 내면 크리틱이 놓친 뉘앙스를 짚고, 고친 결과를 다시 평가하는 식이다. 코딩에서는 Claude Code에 리뷰 전용 서브에이전트를 두고, 메인 에이전트가 코드를 고칠 때마다 "요구사항을 충족하는가, 놓친 엣지 케이스는 없는가"를 검토하게 하는 구성이 대표적이다. 다만 반복 횟수 상한과 통과 기준을 분명히 정해 두지 않으면 크리틱이 사소한 지적을 끝없이 만들어 비용만 늘어난다. 속도도 고려해야 한다. 근거까지 쓰는 크리틱은 호출 한 번이 무거워서, 사용자 응답을 실시간으로 막는 가드레일보다는 배포 전 검증이나 사후 샘플링 채점에 어울린다.</p><h4>크리틱부터 검증해야 한다</h4><p>크리틱의 점수는 기준이 모호하면 그대로 흔들린다. 그래서 권장되는 순서가 있다. 도메인 전문가 한 명이 실제 출력 수십~수백 개에 통과·실패와 그 이유를 직접 적고, 그 판정을 예시로 크리틱 프롬프트를 만든 뒤, 크리틱이 전문가와 얼마나 같은 판정을 내리는지 재면서 프롬프트를 다듬는다. 1~5점 척도보다 통과·실패 이진 판정이 일관성이 높고, 일치율도 단순 정확도가 아니라 "실패를 실패로 잡아낸 비율"을 따로 봐야 한다. 실패가 드문 데이터에서는 무조건 통과라고 답하는 크리틱도 정확도가 높아 보이기 때문이다. 프롬프트에 넣은 예시와 일치율을 재는 데이터는 따로 나눠야 착시를 피할 수 있고, 모델을 새 버전으로 바꾸면 크리틱도 같은 절차로 다시 맞춰 봐야 한다. 결국 크리틱은 사람의 판단을 대체하는 장치가 아니라, 전문가 한 명의 기준을 수만 건에 똑같이 적용해 주는 확성기에 가깝다.</p></div>
   <div class="tags"><span>#평가</span><span>#LLM-as-a-Judge</span><span>#에이전트 평가</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/reflection-pattern.html">리플렉션 패턴</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/summarizer.html">서머라이저</a>, <a href="https://aiwiki.work/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/agent-eval.html">에이전트 평가</a>, <a href="https://aiwiki.work/k/human-in-the-loop.html">휴먼 인 더 루프</a>, <a href="https://aiwiki.work/k/model-council.html">모델 카운슬</a></div>
-  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.langchain.com/articles/llm-as-a-judge" target="_blank" rel="nofollow noopener">LLM-as-a-Judge: How to Calibrate with Human Corrections</a> <span class="ref-type">블로그</span></li><li><a href="https://eugeneyan.com/writing/llm-evaluators/" target="_blank" rel="nofollow noopener">Evaluating the Effectiveness of LLM-Evaluators (aka LLM-as-Judge)</a> <span class="ref-type">블로그</span></li><li><a href="https://www.evidentlyai.com/llm-guide/llm-as-a-judge" target="_blank" rel="nofollow noopener">LLM-as-a-judge: a complete guide</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://hamel.dev/blog/posts/llm-judge/" target="_blank" rel="nofollow noopener">Using LLM-as-a-Judge For Evaluation: A Complete Guide</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://arxiv.org/html/2508.02994v1" target="_blank" rel="nofollow noopener">The Rise of Agent-as-a-Judge Evaluation for LLMs</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/summarizer.html">서머라이저</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/human-in-the-loop.html">휴먼 인 더 루프</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="nofollow noopener">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (Zheng et al., 2023)</a> <span class="ref-type">논문</span></li><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="nofollow noopener">Building effective agents – Anthropic</a> <span class="ref-type">공식</span></li><li><a href="https://eugeneyan.com/writing/llm-evaluators/" target="_blank" rel="nofollow noopener">Evaluating the Effectiveness of LLM-Evaluators (aka LLM-as-Judge)</a> <span class="ref-type">블로그</span></li><li><a href="https://hamel.dev/blog/posts/llm-judge/" target="_blank" rel="nofollow noopener">Using LLM-as-a-Judge For Evaluation: A Complete Guide</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#critic-pattern">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-12</div>
+  <div class="added-date">updated at 2026-10-08</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

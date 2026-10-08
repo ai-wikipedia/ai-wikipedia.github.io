@@ -331,3 +331,12 @@ gpt-5-6-luna	GPT-5.6 Luna	GPT-5.6 Luna (OpenAI)	model
 aion-3-0	에이온 3.0	Aion-3.0 (AionLabs)	model
 aion-3-0-mini	에이온 3.0 미니	Aion-3.0-Mini (AionLabs)	model
 reverse-centaur	리버스 센타우르	Reverse Centaur	agent
+claude-haiku-5-5	클로드 하이쿠 5.5	Claude Haiku 5.5 (Anthropic)	model
+claude-opus-5-5	클로드 오퍼스 5.5	Claude Opus 5.5 (Anthropic)	model
+claude-sonnet-5-5	클로드 소네트 5.5	Claude Sonnet 5.5 (Anthropic)	model
+gpt-6-sol	GPT-6 솔	GPT-6 Sol (OpenAI)	model
+gpt-6-luna	GPT-6 루나	GPT-6 Luna (OpenAI)	model
+docker-agent	도커 에이전트	Docker Agent	agent
+mistral-large-4	미스트랄 라지 4	Mistral Large 4 (Mistral AI)	model
+step-5-preview	스텝 5 프리뷰	Step 5 Preview (StepFun)	model
+nano-banana-2-1	나노 바나나 2.1	Nano Banana 2.1 (Google)	application

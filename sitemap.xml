@@ -2,73 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aiwiki.work/</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://aiwiki.work/updates.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://aiwiki.work/about.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/privacy.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/contact.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/prompting.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/model.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/tooling.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/data.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/agent.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/infra.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/safety.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/c/application.html</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -211,14 +217,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aiwiki.work/k/structured-output.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/few-shot.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiwiki.work/k/transformer.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aiwiki.work/k/tokenization.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiwiki.work/k/rlhf.html</loc>
     <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/in-context-learning.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -230,13 +260,19 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/moe.html</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/k/reasoning-model.html</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/kv-cache.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -260,7 +296,13 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/long-context.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/pretraining.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -272,13 +314,37 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/quantization.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/small-language-model.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/temperature.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/reranking.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/k/human-in-the-loop.html</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/tool-calling.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -301,8 +367,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aiwiki.work/k/zero-shot.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiwiki.work/k/red-teaming.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/jailbreak.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -374,7 +452,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/ontology.html</loc>
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -410,7 +488,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/neurosymbolic-ai.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -428,7 +506,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/scaling-law.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -440,7 +518,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/critic-pattern.html</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -452,7 +530,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/world-model.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -470,7 +548,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/minimax.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -506,7 +584,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/sparse-attention.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -536,7 +614,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/codeburn.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -560,7 +638,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/gpt-5-5.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -572,7 +650,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/gemini-3-5-flash.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -602,7 +680,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/mistral-medium-3-5.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -614,7 +692,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/seed-2.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -728,7 +806,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/mimo-v2-5.html</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -740,13 +818,13 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/glm-5-2.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aiwiki.work/k/nano-banana-2.html</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -764,7 +842,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/continual-learning.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -776,7 +854,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/self-scaffolding.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -788,7 +866,7 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/claude-sonnet-5.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -806,7 +884,61 @@
   </url>
   <url>
     <loc>https://aiwiki.work/k/weave-router.html</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/claude-haiku-5-5.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/claude-opus-5-5.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/claude-sonnet-5-5.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/gpt-6-sol.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/gpt-6-luna.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/docker-agent.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/mistral-large-4.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/step-5-preview.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiwiki.work/k/nano-banana-2-1.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

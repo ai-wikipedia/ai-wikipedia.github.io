@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -158,14 +160,14 @@
 <h4>막을 수 있나</h4><p>완전한 방어법은 아직 없고, 그래서 방어는 층층이 쌓는다. 입력에서 위험 패턴을 거르고, 시스템 지시와 외부 데이터를 명확한 구획으로 분리해 전달하고, 출력을 가드레일로 검증해 이상 응답을 차단한다. 구조적으로 가장 효과적인 건 권한 분리다. 신뢰할 수 없는 콘텐츠를 읽는 모델과 실제 행동 권한을 가진 모델을 분리하는 듀얼 LLM 패턴이 대표적이고, 애초에 삼박자가 한 에이전트에 모이지 않게 설계하는 것이 핵심이다. 개발자가 지금 할 수 있는 최선은 에이전트에게 꼭 필요한 도구와 데이터만 주고(최소 권한), 외부 콘텐츠를 읽는 에이전트의 되돌리기 어려운 행동에는 사람의 승인을 끼워 넣는 것이다. Claude Code가 위험한 셸 명령마다 실행 허가를 묻는 것도 이 원칙의 구현이다.</p>
 <p>모델 쪽의 대응도 진행 중이다. 제공사들은 지시 우선순위를 학습으로 새기고 인젝션 시도에 저항하도록 모델을 훈련하며, 입력에서 인젝션 패턴을 탐지하는 전용 분류 모델을 앞단에 세우는 제품도 늘었다. 그래도 방어율은 100%가 되지 않는다. 그래서 AI 기능을 설계할 때는 "인젝션이 뚫린다면 최악의 피해가 뭔가"를 먼저 묻고, 그 피해가 감당 불가능하다면 애초에 그 권한을 에이전트에 주지 않는 것이 지금 시점의 가장 확실한 방어다. 에이전트가 강력해질수록 이 질문은 선택이 아니라 설계의 전제가 된다.</p></div>
   <div class="tags"><span>#보안</span><span>#공격</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/ai-supply-chain-attack.html">AI 공급망 공격</a></div>
-  <div class="refs"><b>참고 자료</b><ul><li><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="nofollow noopener">OWASP LLM01:2025 Prompt Injection</a> <span class="ref-type">공식</span></li><li><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="nofollow noopener">The Lethal Trifecta for AI Agents – Simon Willison</a> <span class="ref-type">블로그</span></li><li><a href="https://www.lakera.ai/blog/guide-to-prompt-injection" target="_blank" rel="nofollow noopener">Guide to Prompt Injection – Lakera</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/ai-supply-chain-attack.html">AI 공급망 공격</a>, <a href="https://aiwiki.work/k/claude-sonnet-5-5.html">클로드 소네트 5.5</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="nofollow noopener">OWASP LLM01:2025 Prompt Injection</a> <span class="ref-type">공식</span></li><li><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="nofollow noopener">The Lethal Trifecta for AI Agents – Simon Willison</a> <span class="ref-type">블로그</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=FgxwCaL6UTA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/FgxwCaL6UTA/mqdefault.jpg" alt="Prompt Injection Explained – Simon Willison" loading="lazy" width="160" height="90"><span>Prompt Injection Explained – Simon Willison</span></a><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#prompt-injection">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-08-29</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

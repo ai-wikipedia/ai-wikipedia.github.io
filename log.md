@@ -1,3 +1,8 @@
+## 2026-10-08 23:01
+- 추가: claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, gpt-6-sol, gpt-6-luna, docker-agent, mistral-large-4, step-5-preview, nano-banana-2-1 (밀린 업데이트 90일분, 검토 후 반영 — gpt-6-1-sol은 gpt-6-sol과 중복이라 제외)
+- HOT: claude-haiku-5-5, claude-opus-5-5, claude-sonnet-5-5, gpt-6-sol, gpt-6-luna, docker-agent, mistral-large-4, step-5-preview, nano-banana-2-1
+- 보강: 36개 문서 본문 심화 (2,000자 이상)
+
 ## 2026-07-12 08:29
 - 추가: (없음)
 - HOT: (없음)

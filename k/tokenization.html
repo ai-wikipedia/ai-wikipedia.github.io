@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>토큰화란? (Tokenization) — AI Wiki</title>
 <meta name="description" content="토큰화란? 텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.">
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2026-03-30">
+<meta property="article:modified_time" content="2026-10-08">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="토큰화란? (Tokenization) — AI Wiki">
 <meta name="twitter:description" content="토큰화란? 텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.">
@@ -74,7 +74,7 @@
   "description": "텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.",
   "url": "https://aiwiki.work/k/tokenization.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2026-03-30",
+  "dateModified": "2026-10-08",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -151,18 +153,16 @@
   <div class="cat">모델</div>
   <h1>토큰화</h1>
   <div class="en">Tokenization</div>
-  <div class="body"><p>텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.</p><h4>토큰화란</h4><p>LLM은 글자가 아니라 토큰 단위로 생각한다. "안녕하세요"가 1토큰일 수도, 3토큰일 수도 있다. BPE(Byte Pair Encoding)가 가장 널리 쓰이는 분할 알고리즘이며, 자주 나오는 글자 조합을 하나의 토큰으로 묶는다.</p>
-<h4>왜 알아야 하나</h4><p>API 비용이 토큰 수에 비례하므로, 같은 내용이라도 토큰을 적게 쓰면 비용이 줄어든다. 영어는 1,000단어가 약 750토큰이지만, 한국어는 같은 분량에서 더 많은 토큰을 소비한다. 이건 한국어가 비효율적이라는 게 아니라, 토크나이저가 영어 중심으로 설계됐기 때문이다.</p>
-<p>컨텍스트 윈도우도 토큰 단위다. "100만 토큰 지원"이 한국어로 얼마나 되는지는 토크나이저에 따라 다르다. OpenAI의 <code>tiktoken</code>이나 Anthropic의 토큰 카운터로 미리 토큰 수를 확인하는 습관이 비용 관리에 도움된다.</p></div>
+  <div class="body"><p>텍스트를 LLM이 처리할 수 있는 최소 단위(토큰)로 쪼개는 과정. 어떻게 쪼개느냐에 따라 언어별 비용과 성능이 달라진다.</p><h4>모델은 글자를 읽지 않는다</h4><p>토큰화(Tokenization)란 문장을 LLM이 다루는 최소 단위인 <strong>토큰</strong>으로 잘게 나누고, 각 조각을 정수 번호로 바꾸는 과정이다. 사람은 글을 글자나 단어 단위로 읽지만, 신경망에 들어가는 입력은 결국 숫자 배열이어야 한다. 그래서 텍스트는 먼저 토크나이저를 거쳐 '조각 번호의 나열'이 되고, 모델은 이 번호들 사이의 패턴을 학습한다. 답을 쓸 때도 다음 번호를 하나 고르고 그 번호를 다시 글자로 되돌리는 일을 반복한다. 예를 들어 영어 문장 "tiktoken is great!"는 GPT-4 계열 토크나이저에서 6개 토큰이 되는데, 띄어쓰기는 대개 뒤 단어에 붙어 " is", " great"처럼 하나의 조각이 된다. 레고에 비유하면 토크나이저는 어떤 모양의 블록을 몇 종류 갖출지 정하는 일이고, 모델은 그 블록만으로 모든 문장을 조립한다.</p><h4>자주 붙는 조각부터 합치는 BPE</h4><p>지금 대부분의 LLM이 쓰는 방식은 <strong>BPE(Byte Pair Encoding)</strong>다. 출발점은 텍스트를 UTF-8 바이트로 바꿨을 때 나올 수 있는 256개의 기본 조각이다. 학습용 말뭉치 전체에서 가장 자주 나란히 등장하는 두 조각을 찾아 새 토큰 하나로 합치고, 이 병합을 정해 둔 어휘 크기에 이를 때까지 반복한다. 그러면 "the"나 " is"처럼 흔한 덩어리는 통째로 한 토큰이 되고, 드문 단어는 여러 조각을 이어 붙여 표현된다. 바이트에서 출발하니 이모지든 처음 보는 문자든 '사전에 없는 글자'가 생기지 않는다.</p><p>어휘를 몇 개로 할지는 트레이드오프다. 어휘가 작으면 같은 문장이 더 많은 토큰으로 쪼개져 컨텍스트 윈도우를 빨리 채우고, 크면 문장은 짧아지지만 모델의 임베딩 표와 출력층이 커진다. GPT-2는 약 5만 개, GPT-4의 <code>cl100k_base</code>는 약 10만 개, GPT-4o의 <code>o200k_base</code>는 약 20만 개로 세대마다 어휘가 늘었다. 효과는 비영어권 언어에서 크게 드러난다. OpenAI 쿡북 예시에서 일본어 생일 축하 문장 하나가 GPT-3 시절 토크나이저로는 14토큰, <code>cl100k_base</code>로는 9토큰, <code>o200k_base</code>로는 8토큰이 된다.</p><h4>토큰 때문에 생기는 이상한 실수</h4><p>토큰화를 알면 LLM의 엉뚱한 실수 상당수가 설명된다. 모델은 "strawberry"를 알파벳 열 개가 아니라 토큰 두세 개로 보기 때문에, 'r이 몇 개냐'는 질문이나 문자열을 거꾸로 쓰는 일에 유독 약했다. 숫자도 비슷해서 어떤 세 자리 수는 토큰 하나인데 다른 수는 두 조각으로 쪼개지는 식이라 자릿수 계산이 고르지 않다. 2023년에 화제가 된 "SolidGoldMagikarp"는 토크나이저 어휘에는 들어갔지만 모델 학습 데이터에는 거의 나오지 않은 <strong>글리치 토큰</strong>이었는데, 이 단어를 따라 말해 달라고 하면 모델이 전혀 다른 단어를 내놓았다. 토크나이저를 만든 데이터와 모델을 학습시킨 데이터가 어긋날 때 생기는 일이다.</p><p>한국어 사용자에게 가장 현실적인 문제는 비용이다. 병합 규칙은 영어 비중이 높은 데이터에서 만들어지는 경우가 많고, 한글 한 글자는 UTF-8로 3바이트라 잘게 쪼개지기 쉽다. 그래서 같은 내용이어도 한국어 프롬프트가 영어보다 토큰을 더 쓰는 경향이 있다. 어휘가 큰 최신 토크나이저일수록 격차가 줄지만 완전히 사라지지는 않았다.</p><h4>글자 수가 아니라 토큰 수로 계산하기</h4><p>개발할 때는 토큰 단위로 생각하는 습관이 필요하다. API 요금, <code>max_tokens</code> 상한, 컨텍스트 윈도우, RAG 청크 크기가 전부 토큰 기준이기 때문이다. OpenAI 모델이라면 파이썬 라이브러리 <code>tiktoken</code>에서 <code>encoding_for_model()</code>로 해당 모델의 인코딩을 불러와 로컬에서 바로 셀 수 있다. Claude는 메시지 요청과 같은 형식을 <code>count_tokens</code> 엔드포인트에 보내면 시스템 프롬프트와 도구 정의까지 포함한 입력 토큰 수를 무료로 돌려준다. 긴 계약서나 로그 파일을 넣기 전에 한도를 넘는지 확인하거나, 요청 크기에 따라 큰 모델과 작은 모델로 나눠 보내는 라우팅을 짤 때 쓰인다.</p><p>토크나이저가 모델마다 다르다는 점도 기억해야 한다. Anthropic 문서에 따르면 Claude Opus 4.7 이후 모델은 새 토크나이저를 써서 같은 텍스트가 이전 모델보다 약 30% 많은 토큰으로 계산된다. 모델을 바꿀 때 예전에 재 둔 숫자로 비용이나 컨텍스트 여유를 추정하면 어긋날 수 있으니, 옮겨 갈 모델 이름으로 다시 세어 봐야 한다. 구조화된 데이터를 프롬프트에 넣을 때 따옴표와 중괄호가 많은 JSON보다 YAML이 토큰을 덜 쓰는 경우가 많다는 것도 토큰화를 이해하면 나오는 실전 요령이다.</p></div>
   <div class="tags"><span>#전처리</span><span>#BPE</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a></div>
-  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.promptingguide.ai/research/llm-tokenization" target="_blank" rel="nofollow noopener">LLM Tokenization – Prompt Engineering Guide</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://wikidocs.net/21698" target="_blank" rel="nofollow noopener">토큰화 – WikiDocs (한국어)</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.claude.com/docs/en/build-with-claude/token-counting" target="_blank" rel="nofollow noopener">Token counting – Claude API Docs</a> <span class="ref-type">공식</span></li><li><a href="https://developers.openai.com/cookbook/examples/how_to_count_tokens_with_tiktoken" target="_blank" rel="nofollow noopener">How to count tokens with tiktoken – OpenAI Cookbook</a> <span class="ref-type">공식</span></li><li><a href="https://www.fast.ai/posts/2025-10-16-karpathy-tokenizers" target="_blank" rel="nofollow noopener">Let's Build the GPT Tokenizer: A Complete Guide to Tokenization in LLMs – fast.ai</a> <span class="ref-type">블로그</span></li><li><a href="https://www.promptingguide.ai/research/llm-tokenization" target="_blank" rel="nofollow noopener">LLM Tokenization – Prompt Engineering Guide</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zduSFxRajkE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zduSFxRajkE/mqdefault.jpg" alt="Let's build the GPT Tokenizer – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Let's build the GPT Tokenizer – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=LPZh9BOjkQs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LPZh9BOjkQs/mqdefault.jpg" alt="Large Language Models explained briefly - 3Blue1Brown" loading="lazy" width="160" height="90"><span>Large Language Models explained briefly - 3Blue1Brown</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#tokenization">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-03-30</div>
+  <div class="added-date">updated at 2026-10-08</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

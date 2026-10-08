@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-04-12">
-<meta property="article:modified_time" content="2026-04-12">
+<meta property="article:modified_time" content="2026-10-08">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="스케일링 법칙이란? (Scaling Law) — AI Wiki">
 <meta name="twitter:description" content="스케일링 법칙이란? 모델 크기, 학습 데이터 양, 컴퓨팅 자원을 늘릴수록 AI 성능이 예측 가능하게 향상된다는 법칙. GPT-3부터 현재 대형 모델까지 AI 개발의 핵심 원리로 작동해왔다.">
@@ -74,7 +74,7 @@
   "description": "모델 크기, 학습 데이터 양, 컴퓨팅 자원을 늘릴수록 AI 성능이 예측 가능하게 향상된다는 법칙. GPT-3부터 현재 대형 모델까지 AI 개발의 핵심 원리로 작동해왔다.",
   "url": "https://aiwiki.work/k/scaling-law.html",
   "datePublished": "2026-04-12",
-  "dateModified": "2026-04-12",
+  "dateModified": "2026-10-08",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -151,16 +153,16 @@
   <div class="cat">모델</div>
   <h1>스케일링 법칙</h1>
   <div class="en">Scaling Law</div>
-  <div class="body"><p>모델 크기, 학습 데이터 양, 컴퓨팅 자원을 늘릴수록 AI 성능이 예측 가능하게 향상된다는 법칙. GPT-3부터 현재 대형 모델까지 AI 개발의 핵심 원리로 작동해왔다.</p><h4>개념 설명</h4><p>스케일링 법칙이란 간단히 말해 "더 크게 만들수록 더 잘한다"는 관찰을 수식으로 표현한 것이다. 모델의 파라미터 수, 학습에 사용한 데이터 양, 투입한 컴퓨팅 자원(FLOPs) — 이 세 가지를 늘리면 모델의 손실(loss)이 멱함수(power-law) 형태로 꾸준히 줄어든다. 성능이 조금씩 나아지는 게 아니라, 규모를 10배 늘리면 그에 비례해 예측 가능한 폭으로 좋아진다는 뜻이다.</p><p>2020년 OpenAI의 Jared Kaplan 팀이 발표한 논문 "Scaling Laws for Neural Language Models"에서 이 관계를 처음 체계적으로 정리했다. 이 논문이 나오기 전까지는 얼마나 큰 모델을 만들어야 할지, 데이터는 얼마나 모아야 할지 명확한 기준이 없었다. 스케일링 법칙은 그 기준을 수치로 제시했다.</p><h4>사용 예시</h4><p>GPT-2에서 GPT-3로 넘어갈 때 연구자들이 "그냥 더 크게 만들어보자"가 아니라 "이 크기면 이 정도 성능이 나올 것"이라고 예측하고 투자 결정을 내릴 수 있었던 게 스케일링 법칙 덕분이다. 실제로 GPT-3는 예측에 가깝게 few-shot 능력이 급격히 향상됐다.</p><p>2022년에는 DeepMind의 Chinchilla 연구가 기존 법칙을 보정했다. 당시 대부분의 대형 모델은 파라미터를 늘리는 데 집중하면서 데이터는 상대적으로 적게 사용하고 있었다. Chinchilla는 컴퓨팅 예산이 고정돼 있을 때 모델 크기와 학습 토큰 수를 동일한 비율로 함께 키워야 최적이라는 걸 보여줬다. 이후 Llama 시리즈처럼 상대적으로 작은 모델을 훨씬 많은 데이터로 훈련시키는 방향이 주류가 됐다.</p><h4>심화 내용</h4><p>최근에는 스케일링의 축이 사전학습에서 추론 시점으로 이동하고 있다. 사전학습 스케일링(모델과 데이터를 키우는 것)만으로는 성능 향상이 점차 둔화된다는 주장이 나오면서, 추론 시 더 많은 컴퓨팅을 쓰는 <strong>테스트 타임 스케일링(test-time scaling)</strong>이 주목받고 있다. OpenAI o1, o3처럼 답을 내기 전에 더 오래 생각하게 하는 추론 모델이 이 방향의 산물이다. 학습이 아니라 추론 단계에서 컴퓨팅을 더 쓸수록 성능이 오른다는 새로운 스케일링 축이 생긴 셈이다.</p><h4>주의할 점</h4><p>스케일링 법칙은 평균적인 언어 모델링 손실을 예측하지, 특정 태스크에서의 성능을 보장하지 않는다. 모델이 커지면서 예상치 못한 능력이 갑자기 생기는 <strong>창발(emergence)</strong> 현상도 나타나는데, 이는 스케일링 법칙으로는 미리 예측하기 어렵다. 또한 법칙이 성립하려면 데이터 품질, 학습 방식, 아키텍처 등이 일정 수준 이상이어야 하며, 단순히 규모만 키운다고 항상 예측대로 되는 건 아니다.</p></div>
+  <div class="body"><p>모델 크기, 학습 데이터 양, 컴퓨팅 자원을 늘릴수록 AI 성능이 예측 가능하게 향상된다는 법칙. GPT-3부터 현재 대형 모델까지 AI 개발의 핵심 원리로 작동해왔다.</p><h4>크게 만들면 얼마나 좋아지나</h4><p><strong>스케일링 법칙</strong>이란 모델의 파라미터 수, 학습 데이터 양, 투입한 계산량(FLOPs)을 늘릴 때 모델의 오차(손실)가 얼마나 줄어드는지를 수식으로 정리한 경험 법칙이다. 핵심은 "클수록 좋다"가 아니라 "얼마나 좋아질지 미리 계산할 수 있다"는 데 있다. 계산량을 10배 늘릴 때마다 손실이 일정한 비율로 꾸준히 줄어드는 <strong>멱법칙(power law)</strong>을 따르기 때문에, 양쪽 축을 로그 눈금으로 그리면 거의 직선이 된다. 2020년 OpenAI의 Jared Kaplan 팀이 논문 "Scaling Laws for Neural Language Models"에서 이 관계를 체계적으로 보였고, 이후 GPT-3를 비롯한 거대 모델의 크기와 학습 예산을 정하는 근거가 됐다.</p><h4>작은 실험으로 큰 모델을 내다본다</h4><p>이 법칙이 실제로 쓸모 있는 이유는 예측이다. 대형 모델은 한 번 학습시키는 데 몇 달이 걸려 시행착오를 할 여유가 없다. 대신 같은 방식으로 작은 모델 여러 개를 학습시켜 손실 곡선을 그리고, 그 직선을 연장해 큰 모델의 결과를 미리 내다본다. OpenAI는 GPT-4 기술 보고서에서, 계산량이 최대 1만 분의 1인 작은 모델들로 그린 곡선으로 GPT-4의 최종 손실을 학습 초반에 높은 정확도로 예측했다고 밝혔다. 직접 모델을 사전학습하거나 대규모 추가 학습을 하는 팀이라면, 본 학습에 들어가기 전에 작은 규모로 곡선부터 그려보는 것이 지금도 기본 절차다. 학습률이나 데이터 배합을 바꿀 때도 작은 모델에서 곡선이 어떻게 움직이는지 먼저 확인한다.</p><h4>친칠라가 고친 계산</h4><p>2022년 DeepMind의 <strong>Chinchilla</strong> 연구는 Kaplan의 결론 하나를 뒤집었다. 같은 계산 예산이라면 모델 크기를 키우는 쪽에 더 쓰는 게 유리하다고 봤던 기존 해석과 달리, 400개가 넘는 모델을 직접 학습해 보니 파라미터와 학습 토큰을 같은 비율로 함께 늘려야 최적이라는 것이다. 흔히 파라미터 1개당 토큰 약 20개가 균형점으로 인용된다. 실제로 700억 파라미터의 Chinchilla는 같은 계산량으로 데이터를 4배 더 학습해, 네 배 큰 Gopher(2,800억)를 대부분의 과제에서 이겼다. 당시 대형 모델 상당수가 데이터에 비해 지나치게 컸다는 뜻이다.</p><p>그런데 요즘 오픈 모델은 이 균형점조차 훌쩍 넘긴다. Meta는 Llama 3 8B를 15조 토큰으로 학습시켰는데, 친칠라 기준 최적치(약 2,000억 토큰)의 75배다. 그래도 성능은 로그 직선을 따라 계속 올랐다. 학습은 한 번이지만 추론은 수없이 반복되니, 학습비를 더 쓰더라도 작고 똑똑한 모델을 만드는 편이 서비스 전체로는 싸다는 계산이다. 노트북에서 돌아가는 고성능 소형 모델이 쏟아지는 배경이 여기에 있다.</p><h4>세 번째 축, 생각하는 시간</h4><p>2024년 말부터는 사전학습 스케일링이 한계에 다가왔다는 이야기가 공공연해졌다. 일리야 수츠케버는 NeurIPS 2024 강연에서 인터넷이라는 데이터는 화석연료처럼 하나뿐이라며, 지금 방식의 사전학습은 끝날 것이라고 말했다. 그 대안으로 떠오른 것이 <strong>테스트 타임 스케일링</strong>이다. 모델을 더 키우는 대신, 답할 때 더 오래 생각하게 하는 것이다. 구글 연구진은 추론 시점의 계산을 문제 난이도에 맞게 배분하면 작은 모델이 14배 큰 모델을 이길 수 있음을 보였고, OpenAI o1 이후의 추론 모델들이 이 축을 제품으로 만들었다.</p><p>개발자가 가장 직접 만지는 스케일링 법칙이 바로 이것이다. API에서 추론 강도(effort)나 사고 토큰 예산을 올리면 정확도가 오르는 대신 비용과 지연이 함께 늘어난다. 그래서 까다로운 버그 추적이나 설계 검토에는 높게, 단순 분류나 요약에는 낮게 잡는 식으로 작업마다 조절한다. 답을 여러 개 생성한 뒤 테스트를 통과한 것만 고르는 방식도 같은 원리로, 계산을 더 써서 정답률을 사는 것이다.</p><h4>법칙이 말해주지 않는 것</h4><p>스케일링 법칙이 예측하는 건 평균적인 다음 토큰 예측 오차지, 특정 능력이 언제 생길지가 아니다. 어느 규모에서 갑자기 산수를 하기 시작하는 것처럼 보이는 <strong>창발(emergence)</strong> 현상이 대표적인데, 이것이 채점 방식 때문에 생긴 착시라는 반론도 있다. 또 법칙은 데이터 품질과 학습 방법이 고정됐다는 전제에서만 성립한다. 같은 계산량이라도 데이터를 잘 거르거나 아키텍처를 바꾸면 곡선 자체가 아래로 내려간다. 규모는 여전히 강력한 지렛대지만, 유일한 지렛대는 아니다.</p></div>
   <div class="tags"><span>#LLM</span><span>#컴퓨팅</span><span>#Chinchilla</span><span>#사전학습</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a></div>
-  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="nofollow noopener">Scaling Laws for Neural Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="nofollow noopener">Training Compute-Optimal Large Language Models (Chinchilla)</a> <span class="ref-type">논문</span></li><li><a href="https://en.wikipedia.org/wiki/Neural_scaling_law" target="_blank" rel="nofollow noopener">Neural scaling law — Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://blogs.nvidia.com/blog/ai-scaling-laws/" target="_blank" rel="nofollow noopener">How Scaling Laws Drive Smarter AI — NVIDIA Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="nofollow noopener">Scaling Laws for Neural Language Models</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="nofollow noopener">Training Compute-Optimal Large Language Models (Chinchilla)</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2303.08774" target="_blank" rel="nofollow noopener">GPT-4 Technical Report</a> <span class="ref-type">논문</span></li><li><a href="https://ai.meta.com/blog/meta-llama-3/" target="_blank" rel="nofollow noopener">Introducing Meta Llama 3</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2408.03314" target="_blank" rel="nofollow noopener">Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters</a> <span class="ref-type">논문</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=5eqRuVp65eY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5eqRuVp65eY/mqdefault.jpg" alt="AI can't cross this line and we don't know why." loading="lazy" width="160" height="90"><span>AI can't cross this line and we don't know why.</span></a><a class="video-item" href="https://www.youtube.com/watch?v=GrloGdp5wdc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/GrloGdp5wdc/mqdefault.jpg" alt="Scaling Laws of AI explained | Dario Amodei and Lex Fridman" loading="lazy" width="160" height="90"><span>Scaling Laws of AI explained | Dario Amodei and Lex Fridman</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QkPeMzr3Qz4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QkPeMzr3Qz4/mqdefault.jpg" alt="챗지피티는 집에서 만들지 말고 사서 쓰세요 | 스케일링 법칙" loading="lazy" width="160" height="90"><span>챗지피티는 집에서 만들지 말고 사서 쓰세요 | 스케일링 법칙</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#scaling-law">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-04-12</div>
+  <div class="added-date">updated at 2026-10-08</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

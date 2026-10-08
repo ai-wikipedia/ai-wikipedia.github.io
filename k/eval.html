@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -153,14 +155,14 @@
   <div class="en">Evaluation</div>
   <div class="body"><p>AI 모델이나 시스템의 성능과 품질을 체계적으로 측정하는 프로세스. "잘 되는 것 같다"가 아니라 수치로 증명하기 위한 과정이다.</p><h4>감이 아니라 점수로</h4><p>프롬프트를 고치고 나서 '어, 좋아진 것 같은데?'라고 느끼는 것과 실제로 좋아진 것은 다른 문제다. LLM은 같은 입력에도 매번 다른 출력을 낼 수 있고, 한쪽 사례를 고치면 다른 쪽 사례가 조용히 망가지기도 한다. <strong>AI 평가(eval)</strong>는 이 '것 같은데'를 숫자로 바꾸는 작업이다. 대표적인 입력과 기대 결과를 모아 시험지를 만들어 두고, 프롬프트를 바꾸거나 모델을 교체할 때마다 같은 시험지를 다시 풀려서 점수가 어디서 오르고 어디서 떨어졌는지를 확인하는 것이 기본 형태다. 일반 소프트웨어의 테스트 코드에 해당하는 안전망인데, 출력이 확률적이고 '정답'이 하나가 아닌 경우가 많다는 점에서 훨씬 까다롭다. AI 기능을 진지하게 운영하는 팀과 데모 수준에 머무는 팀을 가르는 기준이 사실상 이 평가 체계의 유무라고 해도 지나치지 않다.</p><h4>무엇을 어떻게 재나</h4><p>정답이 명확한 것은 기계적으로 채점한다. 코드 생성이라면 실행해서 테스트 통과 여부를 보고, 분류라면 정답 라벨과 비교하고, JSON 출력이라면 스키마에 맞는지 검사한다. 문제는 '이 요약이 좋은 요약인가', '이 답변이 친절하면서 정확한가'처럼 정답이 모호한 경우다. 사람이 채점하면 정확하지만 느리고 비싸서, 프롬프트를 고칠 때마다 수백 건을 매번 사람 손으로 돌릴 수는 없다. 그래서 나온 절충이 <strong>LLM-as-a-Judge</strong>, 즉 다른 LLM에게 채점 기준(루브릭)을 주고 심판을 시키는 방식이다. '답변이 근거 문서에 뒷받침되는가', '질문에 실제로 답했는가', '금지된 표현을 쓰지 않았는가' 같은 기준을 항목별로 잘게 명시할수록 채점이 안정되고, '전반적으로 좋은가'처럼 뭉뚱그린 질문일수록 채점이 널뛴다. RAG 시스템이라면 검색이 맞는 문서를 가져왔는지(검색 품질)와 그 문서로 맞는 답을 썼는지(생성 품질)를 분리해서 재는 게 정석이다. 어디가 병목인지 알아야 고칠 곳이 보이기 때문이다.</p><h4>심판도 편향이 있다</h4><p>LLM 심판은 만능이 아니다. 두 답변을 비교시키면 먼저 제시된 쪽을 선호하는 위치 편향, 길고 장황한 답에 후한 점수를 주는 장황함 편향, 자기와 같은 모델의 출력을 좋아하는 자기 선호 편향이 실험으로 확인돼 있다. 그래서 심판 점수를 믿기 전에 사람이 매긴 라벨 수십~수백 개와 대조해 일치율을 확인하는 보정 과정이 필수다. 비교 평가라면 두 답변의 순서를 바꿔 두 번 채점해 위치 편향을 상쇄하고, 점수만 내지 말고 채점 근거를 함께 쓰게 해서 사람이 나중에 표본 검사를 할 수 있게 만드는 것이 검증된 요령들이다. '심판을 평가하는 평가'가 한 겹 더 필요한 셈이다.</p><h4>개발 흐름에 심는 법</h4><p>실무에서 평가가 힘을 발휘하는 순간은 회귀를 잡을 때다. 프롬프트 한 줄을 다듬었더니 전체 점수는 올랐는데 특정 유형의 질문만 뚝 떨어지는 일이 실제로 흔하고, 평가 없이는 이런 퇴행을 사용자 항의로 알게 된다. 그래서 요즘은 <strong>평가 주도 개발</strong>이라는 말이 쓰일 만큼 개발 초기부터 평가 세트를 만든다. 처음에는 실제 사용 사례에서 뽑은 수십 개의 케이스로 시작하면 충분하고, 운영 중 발견된 실패 사례를 계속 시험지에 추가해 키워 나간다. 한 번 사고가 난 사례는 시험지에 들어가는 순간 다시는 조용히 재발하지 못하게 된다. DeepEval, Langfuse, LangSmith 같은 프레임워크를 쓰면 이 과정을 CI/CD에 통합할 수 있다. 코드를 커밋하면 테스트가 돌 듯, 프롬프트를 변경하면 평가가 자동으로 돌아서 점수가 기준 아래로 떨어지면 배포가 막히는 구조다. 벤치마크 순위표의 점수가 아니라 내 서비스의 데이터로 만든 평가 세트가 진짜 자산이라는 것, 이게 실무 평가의 제1원칙이다. 공개 벤치마크에서 1등인 모델이 내 서비스의 한국어 고객 문의에서도 1등이라는 보장은 없고, 유명 벤치마크는 학습 데이터에 문제가 유출돼 점수가 부풀려지는 오염 문제까지 안고 있기 때문이다. 마지막 단계는 오프라인 평가를 실사용과 잇는 것이다. 시험지 점수가 올라도 실제 사용자 반응은 다를 수 있으므로, 새 버전을 일부 사용자에게만 배포해 비교하는 A/B 테스트와 응답에 대한 피드백 수집으로 평가의 최종 고리를 닫는다.</p></div>
   <div class="tags"><span>#벤치마크</span><span>#품질측정</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a>, <a href="https://aiwiki.work/k/model-council.html">모델 카운슬</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/guardrail.html">가드레일</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.openai.com/api/docs/guides/evaluation-best-practices" target="_blank" rel="nofollow noopener">Evaluation best practices — OpenAI API</a> <span class="ref-type">공식</span></li><li><a href="https://deepeval.com/blog/llm-as-a-judge" target="_blank" rel="nofollow noopener">LLM-as-a-Judge in 2026 — DeepEval</a> <span class="ref-type">블로그</span></li><li><a href="https://arize.com/blog/anthropic-tips-how-to-build-evals-you-can-trust/" target="_blank" rel="nofollow noopener">Tips from Anthropic on building agent evals you can trust — Arize</a> <span class="ref-type">블로그</span></li><li><a href="https://www.langchain.com/langsmith/evaluation" target="_blank" rel="nofollow noopener">LangSmith Evaluation</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#eval">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-08-29</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>

@@ -90,8 +90,10 @@
   }
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -159,14 +161,14 @@
 <h4>혼자보다 여럿이 나을 때</h4><p>작업이 커지면 에이전트 하나에 모든 걸 맡기는 대신 역할을 나눈다. 오케스트레이터 에이전트가 작업을 쪼개 워커 에이전트들에게 나눠 주고 결과를 종합하는 멀티에이전트 구조가 대표적이다. 각 워커가 독립된 컨텍스트 윈도우를 갖기 때문에, 코드베이스 전체를 뒤지는 조사처럼 한 컨텍스트에 담기지 않는 작업을 병렬로 처리할 수 있다. 다만 에이전트 수가 늘수록 조율 실패 지점도 늘어나므로, 단일 에이전트로 안 되는 게 확인됐을 때 도입하는 게 순서다.</p>
 <h4>자율에는 청구서가 따라온다</h4><p>에이전트는 스스로 결정하는 만큼 비용과 위험도 스스로 만든다. 루프를 도는 동안 토큰이 계속 쌓여 단순 호출보다 훨씬 비싸고, 중간에 방향을 잘못 잡으면 그 위에 잘못된 행동이 계속 쌓인다. 그래서 실무에서는 최대 반복 횟수를 정해 두고, 파일 삭제나 외부 전송처럼 되돌리기 어려운 행동에는 사람의 승인을 끼워 넣는다. 보안 관점에서는 비공개 데이터 접근, 신뢰할 수 없는 콘텐츠 읽기, 외부 통신 능력 — 이 셋이 한 에이전트에 겹치면 프롬프트 인젝션 한 방에 데이터가 새어 나갈 수 있어서, 권한을 최소한으로 쪼개는 게 기본기다. 평가도 챗봇과 다르게 접근해야 한다. 답변 문장이 아니라 "일이 실제로 끝났는가"를 봐야 하므로, 최종 상태를 검증하는 테스트를 두고 에이전트가 그걸 통과하는 비율을 재는 식이다. 자율성은 이런 검증 수단이 함께 자랄 때만 늘리는 것이 에이전트를 안전하게 키우는 순서다.</p></div>
   <div class="tags"><span>#자율</span><span>#계획</span><span>#도구활용</span></div>
-  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a>, <a href="https://aiwiki.work/k/research-driven-agent.html">리서치 기반 에이전트</a>, <a href="https://aiwiki.work/k/agentic-os.html">에이전틱 OS</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/gemini-3-5-flash.html">제미나이 3.5 플래시</a>, <a href="https://aiwiki.work/k/auth-md.html">auth.md</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/research-driven-agent.html">리서치 기반 에이전트</a>, <a href="https://aiwiki.work/k/agentic-os.html">에이전틱 OS</a>, <a href="https://aiwiki.work/k/gpt-5-5.html">GPT-5.5</a>, <a href="https://aiwiki.work/k/gemini-3-5-flash.html">제미나이 3.5 플래시</a>, <a href="https://aiwiki.work/k/auth-md.html">auth.md</a>, <a href="https://aiwiki.work/k/claude-sonnet-5.html">클로드 소네트 5</a>, <a href="https://aiwiki.work/k/step-5-preview.html">스텝 5 프리뷰</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="nofollow noopener">Building Effective AI Agents – Anthropic Engineering</a> <span class="ref-type">공식</span></li><li><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" target="_blank" rel="nofollow noopener">A Practical Guide to Building Agents – OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://www.promptingguide.ai/agents/introduction" target="_blank" rel="nofollow noopener">Introduction to AI Agents – Prompt Engineering Guide</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=D7_ipDqhtwk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/D7_ipDqhtwk/mqdefault.jpg" alt="How We Build Effective Agents – Barry Zhang, Anthropic" loading="lazy" width="160" height="90"><span>How We Build Effective Agents – Barry Zhang, Anthropic</span></a><a class="video-item" href="https://www.youtube.com/watch?v=d5EltXhbcfA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/d5EltXhbcfA/mqdefault.jpg" alt="Building and evaluating AI Agents" loading="lazy" width="160" height="90"><span>Building and evaluating AI Agents</span></a><a class="video-item" href="https://www.youtube.com/watch?v=kJLiOGle3Lw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kJLiOGle3Lw/mqdefault.jpg" alt="Stanford Webinar Agentic AI" loading="lazy" width="160" height="90"><span>Stanford Webinar Agentic AI</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#ai-agent">← AI Wiki에서 더 보기</a>
   <div class="added-date">updated at 2026-08-29</div>
 </div>
 <footer class="site-footer">
-  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a>
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>
