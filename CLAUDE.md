@@ -215,7 +215,8 @@ JS 배열 `D`의 각 항목:
 │   └── check-plan-update.sh       # Stop 시 PLAN-CURRENT.md 업데이트 알림
 ├── prompts/                       # --print 모드 프롬프트 (스케줄러용)
 │   ├── keyword-select.md          # Stage 2 키워드 선정 (TRENDS_JSON + DISCOVERY_JSON)
-│   └── content-generate.md        # Stage 4 콘텐츠 생성 (키워드별 격리)
+│   ├── content-generate.md        # Stage 4 본문 생성 (키워드별 격리, EXAMPLE_DET 모범 예시 주입)
+│   └── translate.md               # Stage 4 번역 (EN/ZH/JA, 경량 모델)
 ├── skills/                        # 스킬 (슬래시 커맨드)
 │   ├── add-keyword/SKILL.md       # /add-keyword — 키워드 1개 추가
 │   ├── scheduling-add/SKILL.md     # /scheduling-add — 일일 자동 키워드 업데이트
@@ -224,6 +225,7 @@ JS 배열 `D`의 각 항목:
 │   ├── complete-phase/SKILL.md    # /complete-phase — 플랜 항목 완료
 │   └── validate-plan/SKILL.md     # /validate-plan — 현재 플랜 검증
 scripts/run-daily.sh               # 스케줄러 6-stage 파이프라인 (launchd가 실행)
+scripts/llm-stage.js               # Stage 2·4 LLM 실행기 (구조화 출력·병렬·재시도·품질 게이트)
 fetch-trends.js                    # D3 트렌드 수집 (HN + Tavily Reddit + GeekNews)
 fetch-discovery.js                 # D1·D2·D4 발굴 (OpenRouter 모델 + GitHub 생태계 + Tavily 기능)
 fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + YouTube API)
@@ -240,17 +242,21 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 |-------|------|----------|------|
 | 1 | 트렌드 수집 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews /new 10개 + GeekNews 주간뉴스 |
 | 1b | 발굴 | `node fetch-discovery.js --days 7 --features` | OpenRouter 신규 모델 + GitHub 신규 생태계 레포(토픽+생성일) + Tavily 기능 요약 (비치명적) |
-| 2 | 키워드 선정 | `claude --print` | 트렌드 + 발굴 + 기존 키워드 대조 → 새 키워드 JSON 출력 |
+| 2 | 키워드 선정 | `node scripts/llm-stage.js select` | 트렌드 + 발굴 + 기존 키워드 대조 → 중요도순 선정, 상한 `AIWIKI_MAX_KEYWORDS` |
 | 3 | 소스 수집 | `node fetch-sources.js` | 키워드별 Tavily (웹 EN/KO) + YouTube API (EN/KO) |
-| 4 | 콘텐츠 생성 | `claude --print` | sum/det 작성 + refs/videos 채택 + 번역(EN/ZH/JA) — 올인원 |
+| 4 | 콘텐츠 생성 | `node scripts/llm-stage.js content` | 본문(opus) → 번역(sonnet), 키워드별 병렬. det 1000자 미만은 반영 안 함 |
 | 5 | data.js 반영 | `node apply-entries.js` | 중복 확인, 항목 추가 |
 | 6 | 빌드 + 커밋 | `node build.js` + git | SEO 페이지 + sitemap + log.md + git push |
 
-**build.js 품질 게이트 (AdSense 대응)**: 본문(det) 텍스트 1000자 미만 페이지는 `noindex,follow` + sitemap 제외 + AdSense 광고 코드 미삽입. 새 키워드는 det 1000자 이상으로 작성해야 색인·광고 대상이 된다.
+**build.js 품질 게이트 (AdSense 대응)**: 본문(det) 텍스트 1000자 미만 항목은 k/ 페이지를 **생성하지 않고(기존 파일 삭제 → 404)** sitemap·홈 그리드·카테고리 허브·관련 키워드 링크 어디에도 노출하지 않는다 (noindex만으로는 AdSense 심사 대상에서 빠지지 않음). index.html도 클라이언트에서 같은 기준으로 D를 필터링한다. det를 1000자 이상으로 보강하면 다음 빌드에서 자동 공개된다.
+
+**LLM 호출 방식 (llm-stage.js)**: `claude --print --tools "" --setting-sources "" --strict-mcp-config`를 레포 밖 빈 디렉토리에서 실행해 도구·훅·플러그인·CLAUDE.md를 로드하지 않고, `--json-schema` 구조화 출력으로 JSON 깨짐을 막는다. 2026-10 최적화 전에는 풀 에이전트 모드라 실행 30분·실패율 70%였고, 이후 10개 키워드 5분·성공률 100%.
+
+**실행 옵션 (환경변수)**: `AIWIKI_DISCOVERY_DAYS`(기본 7, 밀린 업데이트 시 확대) · `AIWIKI_MAX_KEYWORDS`(기본 5) · `AIWIKI_PARALLEL`(기본 3) · `AIWIKI_PUSH`(기본 1, 0이면 커밋만 하고 검토 대기) · `AIWIKI_TIMEOUT`(기본 1800초) · `AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL/_EFFORT`. 커밋은 생성물(data.js·k·c·sitemap 등)만 `git add`한다.
 
 - GeekNews /new는 10개만 수집 (하루 게시글 2~3건 수준의 소규모 커뮤니티)
 - 키워드 0개 선정 시 Stage 3~5 건너뛰고 Stage 6으로 점프
-- Stage 2, 4에서 Claude 프로세스가 출력 완료 후 hang 시 JSON 완성 감지 → 즉시 kill 후 진행
+- Stage 2, 4는 구조화 출력 실패 시 1회 재시도, 결과 JSON 출력 후 프로세스가 안 끝나면 즉시 정리
 
 #### /add-keyword 흐름
 
@@ -301,9 +307,9 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 | Stage | 실행 주체 | 동작 | timeout |
 |-------|----------|------|---------|
 | 1 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews 수집 | - |
-| 2 | Claude `--print` | 키워드 선정 (JSON 출력) | 10분 |
+| 2 | `llm-stage.js select` | 키워드 선정 (구조화 출력) | 5분 |
 | 3 | `node fetch-sources.js` | 키워드별 Tavily + YouTube API | - |
-| 4 | Claude `--print` | 콘텐츠 작성 + refs/videos 채택 (JSON 출력) | 10분 |
+| 4 | `llm-stage.js content` | 본문 + refs/videos 채택 → 번역 (병렬) | 본문 10분·번역 5분 |
 | 5 | `node apply-entries.js` | data.js에 반영 | - |
 | 6 | 쉘 | build.js + log.md + git commit/push | - |
 

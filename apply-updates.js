@@ -38,6 +38,20 @@ function replaceDet(src, entryStart, entryEnd, newDet) {
   return src.slice(0, k) + newLit + src.slice(cEnd + 1);
 }
 
+// sum:'...' 작은따옴표 문자열을 교체한다 (이스케이프 \' 인식)
+function replaceSum(src, entryStart, entryEnd, newSum) {
+  const k = src.indexOf("sum:'", entryStart);
+  if (k < 0 || k > entryEnd) return null;
+  let i = k + 5;
+  while (i < entryEnd) {
+    if (src[i] === '\\') { i += 2; continue; }
+    if (src[i] === "'") break;
+    i++;
+  }
+  if (i >= entryEnd) return null;
+  return src.slice(0, k) + "sum:'" + escSingle(newSum) + "'" + src.slice(i + 1);
+}
+
 // refs:[...] 배열 리터럴의 끝을 찾는다 (문자열·이스케이프·중첩 브래킷 인식)
 function findArrayEnd(s, openBracket) {
   let depth = 0, inStr = false;
@@ -97,6 +111,17 @@ for (const f of files) {
   const replaced = replaceDet(src, entryStart, entryEnd, u.det);
   if (!replaced) { failed.push(`${u.id} (det 치환 실패)`); continue; }
   src = replaced;
+
+  // sum 교체 (updates JSON에 sum이 있을 때만)
+  if (typeof u.sum === 'string' && u.sum.trim()) {
+    const sS = src.indexOf(idMarker, src.indexOf('const D = ['));
+    let sE = src.indexOf('\n  {id:', sS + 1);
+    const i18nS = src.indexOf('const I18N_CONTENT');
+    if (sE < 0 || sE > i18nS) sE = i18nS;
+    const withSum = replaceSum(src, sS, sE, u.sum.trim());
+    if (withSum) src = withSum;
+    else console.log(`  ! ${u.id}: sum 치환 실패 (기존 sum 유지)`);
+  }
 
   // refs 교체 (updates JSON에 refs가 있을 때만, 형식 검증 후)
   if (Array.isArray(u.refs) && u.refs.length && u.refs.every(r => r && r.title && r.url)) {

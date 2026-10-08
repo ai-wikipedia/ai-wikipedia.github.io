@@ -15,14 +15,25 @@ if [ -z "${AIWIKI_CAFFEINATED:-}" ] && [ -x /usr/bin/caffeinate ]; then
 fi
 
 # --- Config ---
-WORK_DIR="/Users/hh/dev/ai-wikipedia.github.io"
+# 스크립트 위치 기준 레포 경로 (git worktree에서도 그대로 동작)
+WORK_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 LOG="$WORK_DIR/logs/daily.log"
 ERR_LOG="$WORK_DIR/logs/daily-err.log"
-LOCK="/tmp/aiwiki-daily.lock"
+LOCK="/tmp/aiwiki-daily-$(basename "$WORK_DIR").lock"
 CLAUDE="/Users/hh/.local/bin/claude"
-TIMEOUT_SEC=1800  # 30분 (전체 watchdog)
-STAGE_TIMEOUT=600  # 10분 (Claude --print 개별 timeout)
 MAIN_PID=$$
+
+# 실행 옵션 (환경변수로 조정)
+#   AIWIKI_DISCOVERY_DAYS  발굴 기간(일). 밀린 업데이트 따라잡기 시 늘린다 (기본 7)
+#   AIWIKI_MAX_KEYWORDS    1회 최대 신규 키워드 수 — 하루 대량 발행은 scaled content 신호 (기본 5)
+#   AIWIKI_PARALLEL        콘텐츠 생성 동시 실행 수 (기본 3)
+#   AIWIKI_PUSH            1이면 커밋 후 push, 0이면 커밋만 하고 검토 대기 (기본 1)
+#   AIWIKI_TIMEOUT         전체 watchdog 초 (기본 1800)
+DISCOVERY_DAYS="${AIWIKI_DISCOVERY_DAYS:-7}"
+MAX_KEYWORDS="${AIWIKI_MAX_KEYWORDS:-5}"
+PARALLEL="${AIWIKI_PARALLEL:-3}"
+AUTO_PUSH="${AIWIKI_PUSH:-1}"
+TIMEOUT_SEC="${AIWIKI_TIMEOUT:-1800}"
 
 # --- Environment ---
 source /Users/hh/.zshrc 2>/dev/null || true
@@ -48,126 +59,21 @@ ts() { date '+%Y-%m-%d %H:%M:%S'; }
 log() { echo "[$(ts)] $1" >> "$LOG"; }
 err() { echo "[$(ts)] ERROR: $1" >> "$LOG"; echo "[$(ts)] $1" >> "$ERR_LOG"; }
 
-# 프로세스 트리 재귀 kill (자식 → 본체 순서)
-kill_tree() {
-  local target=$1
-  local sig=${2:-TERM}
-  local children
-  children=$(pgrep -P "$target" 2>/dev/null || true)
-  for child in $children; do
-    kill_tree "$child" "$sig"
-  done
-  kill -"$sig" "$target" 2>/dev/null || true
-}
-
-# Claude --print 호출 + background watchdog 타임아웃 + JSON 완료 감지
-claude_with_timeout() {
-  local prompt="$1"
-  local output_file="$2"
-  local timeout="${3:-$STAGE_TIMEOUT}"
-
-  local prompt_file
-  prompt_file=$(mktemp /tmp/aiwiki-prompt-XXXXXX)
-  printf '%s' "$prompt" > "$prompt_file"
-  $CLAUDE --dangerously-skip-permissions --print -p "$(cat "$prompt_file")" > "$output_file" 2>> "$LOG" &
-  local claude_pid=$!
-  rm -f "$prompt_file"
-  log "Claude 프로세스 시작: PID=$claude_pid, timeout=${timeout}초"
-
-  # 1) Hard timeout watchdog (background — sleep을 bg+wait로 인터럽트 가능하게)
-  (
-    trap 'kill $sleep_pid 2>/dev/null; exit 0' TERM
-    sleep "$timeout" &
-    sleep_pid=$!
-    wait "$sleep_pid" 2>/dev/null || exit 0
-    log "STAGE TIMEOUT: Claude PID=$claude_pid ${timeout}초 초과, 강제 종료"
-    kill_tree "$claude_pid" TERM
-    sleep 3
-    kill_tree "$claude_pid" KILL
-  ) &
-  local watchdog_pid=$!
-
-  # 2) JSON 완료 감지 (background — 유효 JSON 출력 시 즉시 종료)
-  local check_file="/tmp/aiwiki-check-$$.json"
-  (
-    trap 'kill $sleep_pid 2>/dev/null; exit 0' TERM
-    while kill -0 "$claude_pid" 2>/dev/null; do
-      sleep 5 &
-      sleep_pid=$!
-      wait "$sleep_pid" 2>/dev/null || exit 0
-      if [ -s "$output_file" ] && extract_json "$output_file" "$check_file" 2>/dev/null; then
-        log "Claude 출력 완료 감지 (JSON valid), 프로세스 종료 중"
-        kill_tree "$claude_pid" TERM
-        sleep 2
-        kill_tree "$claude_pid" KILL
-        exit 0
-      fi
-      # claude 자체 타임아웃 메시지 조기 감지 — 무한 재시도/hang 방지
-      if grep -qiE 'Request timed out|Execution error' "$output_file" 2>/dev/null; then
-        log "Claude 타임아웃 메시지 감지, 프로세스 종료 중"
-        kill_tree "$claude_pid" TERM
-        sleep 2
-        kill_tree "$claude_pid" KILL
-        exit 0
-      fi
-    done
-  ) &
-  local detector_pid=$!
-
-  # 3) Claude 종료 대기 (자연 종료 / watchdog kill / detector kill)
-  wait "$claude_pid" 2>/dev/null
-  local rc=$?
-
-  # 4) 정리 — 서브쉘과 그 자식(sleep) 모두 종료
-  kill "$watchdog_pid" "$detector_pid" 2>/dev/null || true
-  pkill -P "$watchdog_pid" 2>/dev/null || true
-  pkill -P "$detector_pid" 2>/dev/null || true
-  wait "$watchdog_pid" 2>/dev/null || true
-  wait "$detector_pid" 2>/dev/null || true
-  rm -f "$check_file"
-
-  if [ -s "$output_file" ]; then
-    return 0
+# 변경 파일만 골라 커밋 (git add -A는 .DS_Store·내보내기 폴더까지 커밋하므로 사용하지 않음)
+git_publish() {
+  cd "$WORK_DIR"
+  git add -- data.js index.html k c sitemap.xml keywords-index.txt log.md >> "$LOG" 2>&1 || true
+  git commit -m "$1" >> "$LOG" 2>&1 || log "WARN: 커밋할 변경사항 없음"
+  if [ "$AUTO_PUSH" = "1" ]; then
+    git push >> "$LOG" 2>&1 || log "WARN: push 실패"
+  else
+    log "AIWIKI_PUSH=0: push 생략 (검토 후 수동 push)"
   fi
-  log "Claude 출력 없음 (exit code=$rc)"
-  return 1
 }
 
-# Claude 출력에서 JSON 배열 추출 (```json 블록 우선, 없으면 전체 파싱)
-extract_json() {
-  local input_file="$1"
-  local output_file="$2"
-
-  # ```json 블록 추출 시도
-  if grep -q '```json' "$input_file" 2>/dev/null; then
-    node -e "
-const fs = require('fs');
-const text = fs.readFileSync('$input_file', 'utf8');
-const match = text.match(/\`\`\`json\\s*([\\s\\S]*?)\`\`\`/);
-if (match) {
-  try {
-    const parsed = JSON.parse(match[1].trim());
-    fs.writeFileSync('$output_file', JSON.stringify(parsed, null, 2));
-    process.exit(0);
-  } catch(e) { process.exit(1); }
-}
-process.exit(1);
-" 2>> "$LOG" && return 0
-  fi
-
-  # 전체 파싱 시도
-  node -e "
-const fs = require('fs');
-const text = fs.readFileSync('$input_file', 'utf8').trim();
-try {
-  const parsed = JSON.parse(text);
-  fs.writeFileSync('$output_file', JSON.stringify(parsed, null, 2));
-  process.exit(0);
-} catch(e) { process.exit(1); }
-" 2>> "$LOG" && return 0
-
-  return 1
-}
+# LLM 단계 실행기에 넘길 환경
+export AIWIKI_CLAUDE="$CLAUDE"
+export AIWIKI_LOG="$LOG"
 
 # --- Lock (prevent concurrent runs) ---
 if [ -f "$LOCK" ]; then
@@ -240,7 +146,7 @@ echo "- 상태: 완료 (${TRENDS_SIZE}B)" >> "$SUMMARY_FILE"
 # --- Stage 1b: 발굴 (D1 OpenRouter 모델 + D2 GitHub 생태계 + D4 Tavily 기능) ---
 # 실패해도 trends만으로 계속 진행 (비치명적)
 log "Stage 1b: 발굴 (모델·생태계·기능)"
-if ! node "$WORK_DIR/fetch-discovery.js" --days 7 --features --save-dir "$RUN_DIR" > /dev/null 2>> "$LOG"; then
+if ! node "$WORK_DIR/fetch-discovery.js" --days "$DISCOVERY_DAYS" --features --save-dir "$RUN_DIR" > /dev/null 2>> "$LOG"; then
   log "WARN: 발굴 실패 (trends만으로 계속)"
 fi
 if [ ! -f "$RUN_DIR/discovery.json" ]; then
@@ -255,38 +161,13 @@ log "Stage 2: 키워드 선정"
 echo "" >> "$SUMMARY_FILE"
 echo "## Stage 2: 키워드 선정" >> "$SUMMARY_FILE"
 
-PROMPT_SELECT="$WORK_DIR/.claude/prompts/keyword-select.md"
-if [ ! -f "$PROMPT_SELECT" ]; then
-  err "Stage 2 실패: 프롬프트 파일 없음: $PROMPT_SELECT"
+# 구조화 출력 + 중복/형식 필터 + 상한 적용 → keywords-selected.json, keywords-list.txt
+if ! KEYWORD_COUNT=$(node "$WORK_DIR/scripts/llm-stage.js" select --run-dir "$RUN_DIR" --max "$MAX_KEYWORDS" 2>> "$LOG"); then
+  err "Stage 2 실패: 키워드 선정 호출 오류"
+  echo "- 상태: 실패" >> "$SUMMARY_FILE"
   exit 1
 fi
-
-TRENDS=$(cat "$RUN_DIR/trends.json")
-DISCOVERY=$(cat "$RUN_DIR/discovery.json")
-EXISTING=""
-if [ -f "$WORK_DIR/keywords-index.txt" ]; then
-  EXISTING=$(cat "$WORK_DIR/keywords-index.txt")
-fi
-
-# 프롬프트 치환 (TRENDS_JSON, DISCOVERY_JSON, KEYWORDS_INDEX)
-PROMPT_SELECT_CONTENT=$(cat "$PROMPT_SELECT")
-PROMPT_SELECT_CONTENT="${PROMPT_SELECT_CONTENT//\{TRENDS_JSON\}/$TRENDS}"
-PROMPT_SELECT_CONTENT="${PROMPT_SELECT_CONTENT//\{DISCOVERY_JSON\}/$DISCOVERY}"
-PROMPT_SELECT_CONTENT="${PROMPT_SELECT_CONTENT//\{KEYWORDS_INDEX\}/$EXISTING}"
-
-STAGE2_RAW="$RUN_DIR/keywords-selected-raw.txt"
-claude_with_timeout "$PROMPT_SELECT_CONTENT" "$STAGE2_RAW" || \
-  log "WARN: Claude 프로세스 비정상 종료 (출력 파일 확인 후 계속)"
-
-if ! extract_json "$STAGE2_RAW" "$RUN_DIR/keywords-selected.json"; then
-  err "Stage 2 실패: JSON 파싱 오류"
-  cat "$STAGE2_RAW" >> "$LOG"
-  echo "- 상태: 실패 (JSON 파싱)" >> "$SUMMARY_FILE"
-  exit 1
-fi
-
-KEYWORD_COUNT=$(node -p "JSON.parse(require('fs').readFileSync('$RUN_DIR/keywords-selected.json','utf8')).length" 2>> "$LOG")
-log "Stage 2 완료: 선정 키워드 ${KEYWORD_COUNT}개"
+log "Stage 2 완료: 선정 키워드 ${KEYWORD_COUNT}개 (상한 ${MAX_KEYWORDS})"
 echo "- 상태: 완료 (${KEYWORD_COUNT}개 선정)" >> "$SUMMARY_FILE"
 
 # 선정된 키워드 없으면 Stage 6으로 점프
@@ -315,10 +196,7 @@ try { existing = fs.readFileSync(logPath, 'utf8'); } catch(e) {}
 fs.writeFileSync(logPath, content + existing);
 " 2>> "$LOG"
 
-  cd "$WORK_DIR"
-  git add -A >> "$LOG" 2>&1 || true
-  git commit -m "(chore) 일일 스케줄러 실행 — 신규 키워드 없음 $(date '+%Y-%m-%d')" >> "$LOG" 2>&1 || log "WARN: 커밋할 변경사항 없음"
-  git push >> "$LOG" 2>&1 || log "WARN: push 실패"
+  git_publish "(chore) 일일 스케줄러 실행 — 신규 키워드 없음 $(date '+%Y-%m-%d')"
 
   echo "- 상태: 완료" >> "$SUMMARY_FILE"
   kill $GLOBAL_WATCHDOG 2>/dev/null || true
@@ -331,14 +209,7 @@ log "Stage 3: 소스 수집"
 echo "" >> "$SUMMARY_FILE"
 echo "## Stage 3: 소스 수집" >> "$SUMMARY_FILE"
 
-node -e "
-const fs = require('fs');
-const items = JSON.parse(fs.readFileSync('$RUN_DIR/keywords-selected.json','utf8'));
-items.forEach((item, i) => {
-  const line = (item.id||'') + '|' + (item.t||item.keyword||'') + '|' + (item.en||'') + '|' + (item.keyword_ko||item.t||'');
-  console.log(line);
-});
-" 2>> "$LOG" > "$RUN_DIR/keywords-list.txt"
+# keywords-list.txt(id|t|en|ko)는 Stage 2(llm-stage.js select)가 생성한다
 
 FETCH_ERRORS=0
 while IFS='|' read -r KW_ID KW_T KW_EN KW_KO; do
@@ -361,85 +232,15 @@ fi
 log "Stage 3 완료"
 echo "- 상태: 완료 (오류 ${FETCH_ERRORS}개)" >> "$SUMMARY_FILE"
 
-# --- Stage 4: 콘텐츠 생성 (Claude --print, 키워드별 개별 호출로 격리) ---
-# 한 건 실패(AUP 차단/타임아웃/소켓종료)가 배치 전체를 죽이지 않도록 키워드마다 따로 호출한다.
-log "Stage 4: 콘텐츠 생성 (키워드별 개별 호출)"
+# --- Stage 4: 콘텐츠 생성 + 번역 (llm-stage.js — 키워드별 병렬, 구조화 출력, 품질 게이트) ---
+log "Stage 4: 콘텐츠 생성 (병렬 ${PARALLEL})"
 echo "" >> "$SUMMARY_FILE"
 echo "## Stage 4: 콘텐츠 생성" >> "$SUMMARY_FILE"
 
-PROMPT_CONTENT="$WORK_DIR/.claude/prompts/content-generate.md"
-if [ ! -f "$PROMPT_CONTENT" ]; then
-  err "Stage 4 실패: 프롬프트 파일 없음: $PROMPT_CONTENT"
-  exit 1
-fi
-
-EXISTING_FOR_CONTENT=""
-if [ -f "$WORK_DIR/keywords-index.txt" ]; then
-  EXISTING_FOR_CONTENT=$(cat "$WORK_DIR/keywords-index.txt")
-fi
-PROMPT_CONTENT_TEMPLATE=$(cat "$PROMPT_CONTENT")
-
-CONTENT_OK=0
-CONTENT_FAIL=0
-FAILED_KEYWORDS=""
-
-while IFS='|' read -r KW_ID KW_T KW_EN KW_KO; do
-  [ -z "$KW_ID" ] && continue
-  log "  콘텐츠 생성: $KW_T ($KW_ID)"
-
-  # 해당 키워드의 sources.json만 묶어 SOURCES_DATA 구성 (1개짜리 배열)
-  SOURCES_DATA=$(node -e "
-const fs = require('fs');
-const path = require('path');
-const sel = JSON.parse(fs.readFileSync('$RUN_DIR/keywords-selected.json','utf8'));
-const item = sel.find(k => (k.id||'') === '$KW_ID');
-if (!item) { console.log('[]'); process.exit(0); }
-let sources = {};
-try { sources = JSON.parse(fs.readFileSync(path.join('$RUN_DIR', '$KW_ID', 'sources.json'),'utf8')); } catch(e) {}
-console.log(JSON.stringify([{ keyword: item, sources }], null, 2));
-" 2>> "$LOG")
-
-  PROMPT_ONE="$PROMPT_CONTENT_TEMPLATE"
-  PROMPT_ONE="${PROMPT_ONE//\{KEYWORDS_INDEX\}/$EXISTING_FOR_CONTENT}"
-  PROMPT_ONE="${PROMPT_ONE//\{SOURCES_DATA\}/$SOURCES_DATA}"
-
-  KW_RAW="$RUN_DIR/$KW_ID/content-raw.txt"
-  KW_JSON="$RUN_DIR/$KW_ID/content.json"
-  claude_with_timeout "$PROMPT_ONE" "$KW_RAW" || \
-    log "  WARN: Claude 비정상 종료 ($KW_ID, 출력 확인 후 계속)"
-
-  if extract_json "$KW_RAW" "$KW_JSON"; then
-    CONTENT_OK=$((CONTENT_OK + 1))
-    log "  완료: $KW_ID"
-  else
-    CONTENT_FAIL=$((CONTENT_FAIL + 1))
-    FAILED_KEYWORDS="$FAILED_KEYWORDS $KW_ID"
-    err "  콘텐츠 생성 실패: $KW_T ($KW_ID) — 건너뜀 (AUP 차단/타임아웃 가능)"
-  fi
-done < "$RUN_DIR/keywords-list.txt"
-
-# 키워드별 결과 병합 → content.json (Stage 5 호환 포맷)
-node -e "
-const fs = require('fs');
-const path = require('path');
-const list = fs.readFileSync('$RUN_DIR/keywords-list.txt','utf8').split('\n').filter(Boolean);
-const merged = [];
-for (const line of list) {
-  const id = line.split('|')[0];
-  if (!id) continue;
-  try {
-    const parsed = JSON.parse(fs.readFileSync(path.join('$RUN_DIR', id, 'content.json'),'utf8'));
-    if (Array.isArray(parsed)) merged.push(...parsed);
-    else if (parsed && typeof parsed === 'object') merged.push(parsed);
-  } catch(e) {}
-}
-fs.writeFileSync('$RUN_DIR/content.json', JSON.stringify(merged, null, 2));
-" 2>> "$LOG"
-
+STAGE4_STAT=$(node "$WORK_DIR/scripts/llm-stage.js" content --run-dir "$RUN_DIR" --parallel "$PARALLEL" 2>> "$LOG" || echo '{}')
 CONTENT_COUNT=$(node -p "JSON.parse(require('fs').readFileSync('$RUN_DIR/content.json','utf8')).length" 2>> "$LOG" || echo 0)
-log "Stage 4 완료: 성공 ${CONTENT_OK}개 / 실패 ${CONTENT_FAIL}개 (병합 ${CONTENT_COUNT}개)"
-echo "- 상태: 완료 (성공 ${CONTENT_OK} / 실패 ${CONTENT_FAIL})" >> "$SUMMARY_FILE"
-[ -n "$FAILED_KEYWORDS" ] && echo "- 실패 키워드:$FAILED_KEYWORDS" >> "$SUMMARY_FILE"
+log "Stage 4 완료: $STAGE4_STAT (반영 대상 ${CONTENT_COUNT}개)"
+echo "- 상태: 완료 $STAGE4_STAT" >> "$SUMMARY_FILE"
 
 # 생성된 항목이 하나도 없으면 신규 키워드 없음으로 커밋하고 종료
 if [ "$CONTENT_COUNT" -eq 0 ]; then
@@ -456,10 +257,7 @@ let existing = '';
 try { existing = fs.readFileSync(logPath, 'utf8'); } catch(e) {}
 fs.writeFileSync(logPath, content + existing);
 " 2>> "$LOG"
-  cd "$WORK_DIR"
-  git add -A >> "$LOG" 2>&1 || true
-  git commit -m "(chore) 일일 스케줄러 실행 — 신규 키워드 없음 $(date '+%Y-%m-%d')" >> "$LOG" 2>&1 || log "WARN: 커밋할 변경사항 없음"
-  git push >> "$LOG" 2>&1 || log "WARN: push 실패"
+  git_publish "(chore) 일일 스케줄러 실행 — 신규 키워드 없음 $(date '+%Y-%m-%d')"
   kill $GLOBAL_WATCHDOG 2>/dev/null || true
   log "========== 스케줄러 종료 (생성 0개) =========="
   exit 0
@@ -499,7 +297,7 @@ JSON.parse(require('fs').readFileSync('$RUN_DIR/content.json','utf8')).map(i=>i.
 HOT_IDS=$(node -e "
 const fs = require('fs');
 try {
-  const html = fs.readFileSync('$WORK_DIR/index.html','utf8');
+  const html = fs.readFileSync('$WORK_DIR/data.js','utf8');
   const match = html.match(/const HOT_IDS\s*=\s*\[([^\]]*)\]/);
   if (match) {
     const ids = match[1].split(',').map(s=>s.trim().replace(/['\"\`]/g,'')).filter(Boolean);
@@ -519,11 +317,8 @@ try { existing = fs.readFileSync(logPath, 'utf8'); } catch(e) {}
 fs.writeFileSync(logPath, content + existing);
 " 2>> "$LOG"
 
-# git 커밋 + 푸시
-cd "$WORK_DIR"
-git add -A >> "$LOG" 2>&1 || true
-git commit -m "(feat) 일일 키워드 추가: $ADDED_IDS ($(date '+%Y-%m-%d'))" >> "$LOG" 2>&1 || log "WARN: 커밋할 변경사항 없음"
-git push >> "$LOG" 2>&1 || log "WARN: push 실패"
+# git 커밋 (+ AIWIKI_PUSH=1이면 push)
+git_publish "(feat) 일일 키워드 추가: $ADDED_IDS ($(date '+%Y-%m-%d'))"
 
 echo "- 상태: 완료" >> "$SUMMARY_FILE"
 echo "- 추가: $ADDED_IDS" >> "$SUMMARY_FILE"
