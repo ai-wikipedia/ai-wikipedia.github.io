@@ -53,9 +53,10 @@ function ranSuffix(word) {
 const DMap = {};
 for (const e of D) DMap[e.id] = e;
 
-// 색인 품질 게이트: 본문(det) 텍스트가 이 길이 미만이면 noindex + sitemap 제외 + 광고 미게재
+// 품질 게이트: 본문(det) 텍스트가 이 길이 미만이면 k/ 페이지를 만들지 않고(404) sitemap에서도 빼며,
+// 허브·관련 키워드·홈 목록 어디에서도 링크하지 않는다 (AdSense 심사자에게 노출되지 않게)
 const THIN_THRESHOLD = 1000;
-const indexableIds = new Set();
+const indexableIds = new Set(D.filter(e => stripTags(e.det || '').length >= THIN_THRESHOLD).map(e => e.id));
 
 // dateModified가 datePublished보다 과거인 데이터 모순 방지 (updated < added인 항목 존재)
 function modifiedDate(e) {
@@ -64,9 +65,21 @@ function modifiedDate(e) {
   return (u && u >= a) ? u : a;
 }
 
+let removedThin = 0;
 for (const e of D) {
+  // 얇은 페이지(본문 1000자 미만)는 파일 자체를 만들지 않고, 이전 빌드 파일도 지운다 (→ 404).
+  // noindex만으로는 AdSense 심사 대상에서 빠지지 않는다 ("사이트의 모든 페이지를 검토할 수 있음").
+  // 본문을 1000자 이상으로 보강하면 다음 빌드에서 자동으로 다시 생성된다.
+  if (!indexableIds.has(e.id)) {
+    const stale = path.join(OUT, `${e.id}.html`);
+    if (fs.existsSync(stale)) { fs.unlinkSync(stale); removedThin++; }
+    continue;
+  }
+
   // 1. 검색 의도 반영 타이틀: "MCP란? (Model Context Protocol) — AI Wiki"
-  const suffix = e.en && e.en !== e.t ? ` (${e.en})` : '';
+  // 영문명 끝의 개발사 표기 "(Anthropic)"는 제목에서 뺀다 → "클로드 오퍼스 5.5란? (Claude Opus 5.5)" (괄호 중첩 방지)
+  const enTitle = (e.en || '').replace(/\s*\([^)]*\)\s*$/, '');
+  const suffix = enTitle && enTitle !== e.t ? ` (${enTitle})` : '';
   const ran = ranSuffix(e.t);
   const title = `${e.t}${ran}${suffix} — AI Wiki`;
   // 2. 검색 의도 반영 디스크립션: "MCP란 무엇인가? ..."
@@ -77,7 +90,7 @@ for (const e of D) {
 
   // 관련 키워드 내부 링크
   const relLinks = (e.rel || [])
-    .filter(id => DMap[id])
+    .filter(id => DMap[id] && indexableIds.has(id))
     .map(id => `<a href="${BASE}/k/${id}.html">${escHtml(DMap[id].t)}</a>`)
     .join(', ');
 
@@ -98,13 +111,7 @@ for (const e of D) {
     .join('');
   const videosBlock = vidItems ? `<div class="videos"><b>관련 영상</b><div class="video-list">${vidItems}</div></div>` : '';
 
-  // 얇은 페이지 품질 게이트: 본문 1000자 미만은 noindex + sitemap 제외 + 광고 미게재
-  // (AdSense "Low value content" 대응 — 심사·색인 대상을 충분한 분량의 페이지로 한정)
-  const detLen = stripTags(e.det || '').length;
-  const isThin = detLen < THIN_THRESHOLD;
-  if (!isThin) indexableIds.add(e.id);
-  const robotsMeta = isThin ? '\n<meta name="robots" content="noindex,follow">' : '';
-  const adsenseTag = isThin ? '' : `\n<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>`;
+
 
   // 3. BreadcrumbList JSON-LD
   const breadcrumb = {
@@ -135,7 +142,8 @@ for (const e of D) {
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">${robotsMeta}${adsenseTag}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>${escHtml(title)}</title>
 <meta name="description" content="${escHtml(desc)}">
@@ -178,8 +186,10 @@ ${JSON.stringify(breadcrumb, null, 2)}
 <script type="application/ld+json">
 ${JSON.stringify(article, null, 2)}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
@@ -248,7 +258,7 @@ ${JSON.stringify(article, null, 2)}
   ${e.added ? `<div class="added-date">updated at ${modifiedDate(e)}</div>` : ''}
 </div>
 <footer class="site-footer">
-  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a>
+  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a> · <a href="${BASE}/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>
@@ -261,7 +271,7 @@ ${JSON.stringify(article, null, 2)}
 const hubBuilt = [];
 for (const cat of Object.keys(CATS)) {
   const catName = CATS[cat];
-  const items = D.filter(e => e.c === cat).sort((a, b) => a.t.localeCompare(b.t, 'ko'));
+  const items = D.filter(e => e.c === cat && indexableIds.has(e.id)).sort((a, b) => a.t.localeCompare(b.t, 'ko'));
   if (!items.length) continue;
   const hubUrl = `${BASE}/c/${cat}.html`;
   const intro = CAT_INTRO[cat] || '';
@@ -269,7 +279,7 @@ for (const cat of Object.keys(CATS)) {
     const en = e.en && e.en !== e.t ? ` <span class="hub-en">${escHtml(e.en)}</span>` : '';
     return `<li><a class="hub-link" href="${BASE}/k/${e.id}.html"><span class="hub-t">${escHtml(e.t)}${en}</span><span class="hub-sum">${escHtml(stripTags(e.sum))}</span></a></li>`;
   }).join('');
-  const otherCats = Object.keys(CATS).filter(c => c !== cat && D.some(e => e.c === c))
+  const otherCats = Object.keys(CATS).filter(c => c !== cat && D.some(e => e.c === c && indexableIds.has(e.id)))
     .map(c => `<a href="${BASE}/c/${c}.html">${escHtml(CATS[c])}</a>`).join(' · ');
   const itemListLd = {
     "@context": "https://schema.org", "@type": "CollectionPage",
@@ -309,8 +319,10 @@ ${JSON.stringify(breadcrumbLd, null, 2)}
 <script type="application/ld+json">
 ${JSON.stringify(itemListLd, null, 2)}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
   .topnav{max-width:760px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
@@ -353,7 +365,7 @@ ${JSON.stringify(itemListLd, null, 2)}
 </div>
 <nav class="hub-nav">다른 분야 둘러보기: ${otherCats}</nav>
 <footer class="site-footer">
-  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a>
+  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a> · <a href="${BASE}/updates.html">업데이트 기록</a>
   <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
 </footer>
 </body>
@@ -363,11 +375,92 @@ ${JSON.stringify(itemListLd, null, 2)}
 }
 console.log(`✓ ${hubBuilt.length}개 카테고리 허브 페이지 생성 → /c/`);
 
+// ── 업데이트 기록 페이지 (문서별 실제 추가·수정 날짜로 운영·유지관리 이력을 공개) ──
+const byDate = {};
+const slot = d => (byDate[d] = byDate[d] || { added: [], updated: [] });
+for (const e of D) {
+  if (!indexableIds.has(e.id)) continue;
+  const add = e.added || '';
+  const mod = modifiedDate(e) || '';
+  if (add) slot(add).added.push(e);
+  if (mod && mod !== add) slot(mod).updated.push(e);
+}
+const UPDATE_DATES = Object.keys(byDate).sort().reverse().slice(0, 24);
+const linkList = list => list.sort((a, b) => a.t.localeCompare(b.t, 'ko'))
+  .map(e => `<a href="${BASE}/k/${e.id}.html">${escHtml(e.t)}</a>`).join(' · ');
+const updatesBody = UPDATE_DATES.map(d => {
+  const { added, updated } = byDate[d];
+  return `<section class="upd"><h2>${d}</h2>`
+    + (added.length ? `<p><b>새 문서 ${added.length}개</b> ${linkList(added)}</p>` : '')
+    + (updated.length ? `<p><b>내용 보강 ${updated.length}개</b> ${linkList(updated)}</p>` : '')
+    + `</section>`;
+}).join('\n');
+const updatesHtml = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>업데이트 기록 — AI Wiki</title>
+<meta name="description" content="AI Wiki 문서가 언제 추가되고 보강됐는지 날짜별로 정리한 업데이트 기록입니다.">
+<link rel="canonical" href="${BASE}/updates.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:12px}
+  .lead{color:#5a5550;line-height:1.8;font-size:15px;margin-bottom:12px}
+  .upd{border-top:1px solid #e4dfd8;padding-top:18px;margin-top:22px}
+  .upd h2{font-size:16px;font-weight:700;color:#2d2a26;margin-bottom:8px}
+  .upd p{font-size:14px;line-height:1.9;color:#5a5550;margin-bottom:6px}
+  .upd b{color:#2d2a26;margin-right:6px}
+  .upd a{color:#C4613A;text-decoration:none}
+  .upd a:hover{text-decoration:underline}
+  .site-footer{max-width:720px;width:100%;margin-top:28px;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  @media(max-width:768px){.wrap{padding:32px 20px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="${BASE}/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="${BASE}/">홈</a>
+    <a href="${BASE}/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">AI Wiki</div>
+  <h1>업데이트 기록</h1>
+  <p class="lead">문서가 새로 추가되거나 내용이 보강된 날짜별 기록입니다. 기술 변화가 큰 항목은 공식 문서와 원 자료를 다시 확인해 수시로 고쳐 씁니다.</p>
+${updatesBody}
+</div>
+<footer class="site-footer">
+  <a href="${BASE}/">홈</a> · <a href="${BASE}/about.html">소개</a> · <a href="${BASE}/privacy.html">개인정보처리방침</a> · <a href="${BASE}/contact.html">문의</a> · <a href="${BASE}/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>`;
+fs.writeFileSync(path.join(__dirname, 'updates.html'), updatesHtml);
+console.log(`✓ updates.html 생성 (최근 ${UPDATE_DATES.length}개 날짜)`);
+
 // sitemap.xml 갱신
 const today = new Date().toISOString().slice(0,10);
 const urls = [
   `  <url>\n    <loc>${BASE}/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>`
 ];
+urls.push(`  <url>\n    <loc>${BASE}/updates.html</loc>\n    <lastmod>${UPDATE_DATES[0] || today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.5</priority>\n  </url>`);
 for (const p of ['about.html', 'privacy.html', 'contact.html']) {
   urls.push(`  <url>\n    <loc>${BASE}/${p}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>`);
 }
@@ -376,17 +469,17 @@ for (const cat of hubBuilt) {
 }
 let thinCount = 0;
 for (const e of D) {
-  if (!indexableIds.has(e.id)) { thinCount++; continue; } // noindex 페이지는 sitemap 제외
+  if (!indexableIds.has(e.id)) { thinCount++; continue; } // 얇은 페이지는 sitemap 제외
   urls.push(`  <url>\n    <loc>${BASE}/k/${e.id}.html</loc>\n    <lastmod>${modifiedDate(e) || today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
 }
-console.log(`✓ 색인 대상 ${indexableIds.size}개 / noindex(본문 ${THIN_THRESHOLD}자 미만) ${thinCount}개`);
+console.log(`✓ 공개 대상 ${indexableIds.size}개 / 비공개(본문 ${THIN_THRESHOLD}자 미만) ${thinCount}개`);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), sitemap);
 
 // index.html에 noscript 정적 링크 삽입 (구글봇 크롤링용)
 const indexHtmlPath = path.join(__dirname, 'index.html');
 let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
-const noscriptLinks = D.map(e => `<a href="/k/${e.id}.html">${escHtml(e.t)}</a>`).join(' ');
+const noscriptLinks = D.filter(e => indexableIds.has(e.id)).map(e =>`<a href="/k/${e.id}.html">${escHtml(e.t)}</a>`).join(' ');
 const noscriptBlock = `<noscript><nav aria-label="키워드 목록">${noscriptLinks}</nav></noscript>`;
 // 기존 noscript 블록 교체 또는 </body> 앞에 삽입
 if (indexHtml.includes('<noscript><nav aria-label="키워드 목록">')) {
@@ -394,12 +487,35 @@ if (indexHtml.includes('<noscript><nav aria-label="키워드 목록">')) {
 } else {
   indexHtml = indexHtml.replace('</body>', noscriptBlock + '\n</body>');
 }
+
+// 홈 첫 페이지 카드 사전 렌더링 — JS(data.js) 로드 전에도 카드가 보이고 크롤러도 읽는다.
+// index.html render()와 같은 정렬·마크업이며, 로드 후 render()가 그대로 덮어쓴다.
+const HOME_PAGE_SIZE = 20;
+const m3 = new Date(); m3.setMonth(m3.getMonth() - 3, 1);
+const newCutoff = m3.toISOString().slice(0, 7);
+const hotSet = new Set(typeof HOT_IDS !== 'undefined' ? HOT_IDS : []);
+const homeCards = D.filter(e => indexableIds.has(e.id))
+  .sort((a, b) => (b.born || '').localeCompare(a.born || ''))
+  .slice(0, HOME_PAGE_SIZE)
+  .map(e => `<div class="card" onclick="open_m('${e.id}')"><div class="card-cat">${escHtml(CATS[e.c] || e.c)}</div>${hotSet.has(e.id) ? '<div class="card-hot">▲</div>' : ''}${e.born && e.born >= newCutoff ? '<div class="card-new">NEW</div>' : ''}<div class="card-keyword">${escHtml(e.t)}</div>${e.en ? `<div class="card-sub">${escHtml(e.en)}</div>` : ''}</div>`)
+  .join('');
+const gridBlock = `<div class="grid" id="grid"><!--prerender-->${homeCards}<!--/prerender--></div>`;
+if (indexHtml.includes('<!--prerender-->')) {
+  indexHtml = indexHtml.replace(/<div class="grid" id="grid"><!--prerender-->[\s\S]*?<!--\/prerender--><\/div>/, gridBlock);
+} else {
+  indexHtml = indexHtml.replace('<div class="grid" id="grid"></div>', gridBlock);
+}
+
+// 홈 DefinedTermSet 구조화 데이터에 노출 용어 목록 채우기 (한 줄 JSON — 재빌드 시 정규식으로 교체)
+const definedTerms = D.filter(e => indexableIds.has(e.id))
+  .map(e => ({ '@type': 'DefinedTerm', name: e.t, ...(e.en && e.en !== e.t ? { alternateName: e.en } : {}), url: `${BASE}/k/${e.id}.html` }));
+indexHtml = indexHtml.replace(/"hasDefinedTerm": \[.*\]/, `"hasDefinedTerm": ${JSON.stringify(definedTerms)}`);
 fs.writeFileSync(indexHtmlPath, indexHtml);
 
 // keywords-index.txt 생성 (스케줄러용 경량 인덱스)
 const indexLines = D.map(e => `${e.id}\t${e.t}\t${e.en}\t${e.c}`);
 fs.writeFileSync(path.join(__dirname, 'keywords-index.txt'), indexLines.join('\n') + '\n');
 
-console.log(`✓ ${D.length}개 키워드 페이지 생성 → /k/`);
+console.log(`✓ ${indexableIds.size}개 키워드 페이지 생성 → /k/ (얇은 페이지 ${D.length - indexableIds.size}개는 미생성${removedThin ? `, 기존 파일 ${removedThin}개 삭제` : ''})`);
 console.log(`✓ sitemap.xml 갱신 (${urls.length} URLs)`);
 console.log(`✓ keywords-index.txt 갱신 (${indexLines.length} entries)`);
