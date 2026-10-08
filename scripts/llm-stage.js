@@ -143,11 +143,17 @@ const SELECT_SCHEMA = {
 };
 
 async function runSelect(a) {
-  const prompt = fill(readText(path.join(PROMPTS, 'keyword-select.md')), {
+  let prompt = fill(readText(path.join(PROMPTS, 'keyword-select.md')), {
     TRENDS_JSON: readText(path.join(a.runDir, 'trends.json'), '{}'),
     DISCOVERY_JSON: readText(path.join(a.runDir, 'discovery.json'), '{}'),
     KEYWORDS_INDEX: readText(path.join(WORK_DIR, 'keywords-index.txt')),
   });
+  // 이전 실행에서 선정됐지만 생성에 실패한 후보 (AIWIKI_BACKLOG_FILE) — 재검토 대상으로 함께 넘긴다
+  const backlog = process.env.AIWIKI_BACKLOG_FILE ? readText(process.env.AIWIKI_BACKLOG_FILE) : '';
+  if (backlog.trim()) {
+    prompt += `\n\n## 이전 실행에서 선정됐지만 생성에 실패한 후보 (재검토 대상)\n${backlog}\n`
+      + '위 후보도 같은 선정·품질 기준으로 다시 판단하라. 지금도 유효하고, 이후 나온 후속 버전에 묻히지 않았으며, 기존 키워드와 겹치지 않는 것만 items에 포함한다.\n';
+  }
   const r = await callWithRetry(prompt, SELECT_SCHEMA, CFG.select, '키워드 선정');
   if (!r.ok) { log('키워드 선정 실패'); process.exit(1); }
 

@@ -25,11 +25,13 @@ MAIN_PID=$$
 
 # 실행 옵션 (환경변수로 조정)
 #   AIWIKI_DISCOVERY_DAYS  발굴 기간(일). 밀린 업데이트 따라잡기 시 늘린다 (기본 7)
+#   AIWIKI_MAX_MODELS      발굴할 신규 모델 최대 수 (기본 40). 기간을 늘리면 같이 늘린다
 #   AIWIKI_MAX_KEYWORDS    1회 최대 신규 키워드 수 — 하루 대량 발행은 scaled content 신호 (기본 5)
 #   AIWIKI_PARALLEL        콘텐츠 생성 동시 실행 수 (기본 3)
 #   AIWIKI_PUSH            1이면 커밋 후 push, 0이면 커밋만 하고 검토 대기 (기본 1)
 #   AIWIKI_TIMEOUT         전체 watchdog 초 (기본 1800)
 DISCOVERY_DAYS="${AIWIKI_DISCOVERY_DAYS:-7}"
+MAX_MODELS="${AIWIKI_MAX_MODELS:-40}"
 MAX_KEYWORDS="${AIWIKI_MAX_KEYWORDS:-5}"
 PARALLEL="${AIWIKI_PARALLEL:-3}"
 AUTO_PUSH="${AIWIKI_PUSH:-1}"
@@ -146,7 +148,7 @@ echo "- 상태: 완료 (${TRENDS_SIZE}B)" >> "$SUMMARY_FILE"
 # --- Stage 1b: 발굴 (D1 OpenRouter 모델 + D2 GitHub 생태계 + D4 Tavily 기능) ---
 # 실패해도 trends만으로 계속 진행 (비치명적)
 log "Stage 1b: 발굴 (모델·생태계·기능)"
-if ! node "$WORK_DIR/fetch-discovery.js" --days "$DISCOVERY_DAYS" --features --save-dir "$RUN_DIR" > /dev/null 2>> "$LOG"; then
+if ! node "$WORK_DIR/fetch-discovery.js" --days "$DISCOVERY_DAYS" --max-models "$MAX_MODELS" --features --save-dir "$RUN_DIR" > /dev/null 2>> "$LOG"; then
   log "WARN: 발굴 실패 (trends만으로 계속)"
 fi
 if [ ! -f "$RUN_DIR/discovery.json" ]; then

@@ -30,11 +30,12 @@ function loadEnv(p) {
 
 // --- args ---
 function parseArgs(argv) {
-  const a = { days: 3, features: false, saveDir: null };
+  const a = { days: 3, features: false, saveDir: null, maxModels: 40 };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--days' && argv[i + 1]) a.days = parseInt(argv[++i], 10);
     else if (argv[i] === '--features') a.features = true;
     else if (argv[i] === '--save-dir' && argv[i + 1]) a.saveDir = argv[++i];
+    else if (argv[i] === '--max-models' && argv[i + 1]) a.maxModels = parseInt(argv[++i], 10);
   }
   return a;
 }
@@ -59,7 +60,7 @@ const META_RE = /awesome|roadmap|cheat[\s-]?sheet|curated list|list of|interview
 // ---------------------------------------------------------------------------
 // D1: OpenRouter — 신규 모델
 // ---------------------------------------------------------------------------
-async function discoverModels(cutoff, blob) {
+async function discoverModels(cutoff, blob, maxModels = 40) {
   const r = await fetchT('https://openrouter.ai/api/v1/models');
   if (!r.ok) throw new Error(`OpenRouter ${r.status}`);
   const j = await r.json();
@@ -71,7 +72,7 @@ async function discoverModels(cutoff, blob) {
   for (const m of recent) {
     const id = m.id || '';
     if (!id || seen.has(id)) continue;
-    if (id.includes(':free')) continue; // 유료판과 중복되는 free 변형 제외
+    if (id.includes(':')) continue; // :free·:batch·:thinking 등 같은 모델의 변형은 제외 (상한 칸을 중복으로 채우지 않게)
     seen.add(id);
     const modelPart = id.split('/')[1] || id;
     const fam = (modelPart.match(/^[a-z]+/i) || [modelPart])[0].toLowerCase();
@@ -82,7 +83,7 @@ async function discoverModels(cutoff, blob) {
       date: new Date(m.created * 1000).toISOString().slice(0, 10),
       knownFamily: blob.includes(fam), // 계열이 이미 위키에 있나(힌트)
     });
-    if (out.length >= 40) break;
+    if (out.length >= maxModels) break;
   }
   return out;
 }
@@ -164,7 +165,7 @@ async function main() {
   console.error(`[discovery] 최근 ${args.days}일 (since ${sinceDate})`);
 
   const [models, repos] = await Promise.all([
-    discoverModels(cutoffSec, blob).catch(e => { console.error('D1 OpenRouter 실패:', e.message); return []; }),
+    discoverModels(cutoffSec, blob, args.maxModels).catch(e => { console.error('D1 OpenRouter 실패:', e.message); return []; }),
     discoverRepos(sinceDate, env.GITHUB_TOKEN || process.env.GITHUB_TOKEN).catch(e => { console.error('D2 GitHub 실패:', e.message); return []; }),
   ]);
 
