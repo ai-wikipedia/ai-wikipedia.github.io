@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>양자화란? (Quantization) — AI Wiki</title>
-<meta name="description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
+<meta name="description" content="양자화란? 모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.">
 <meta name="keywords" content="양자화, Quantization, 경량화, INT8, GGUF, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="양자화란? (Quantization) — AI Wiki">
-<meta property="og:description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
+<meta property="og:description" content="양자화란? 모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.">
 <meta property="og:url" content="https://aiwiki.work/k/quantization.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-08">
+<meta property="article:modified_time" content="2026-10-10">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="양자화란? (Quantization) — AI Wiki">
-<meta name="twitter:description" content="양자화란? 모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.">
+<meta name="twitter:description" content="양자화란? 모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/quantization.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/quantization.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "양자화",
   "alternateName": "Quantization",
-  "description": "모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.",
+  "description": "모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.",
   "url": "https://aiwiki.work/k/quantization.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "양자화 (Quantization)",
-  "description": "모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.",
+  "description": "모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.",
   "url": "https://aiwiki.work/k/quantization.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-10-10",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>양자화</h1>
   <div class="en">Quantization</div>
-  <div class="body"><p>모델 가중치를 32비트 부동소수점에서 8비트, 4비트 정수 등 낮은 정밀도로 변환해 메모리와 연산 비용을 줄이는 기법. 큰 모델을 소비자 장치에서 실행할 수 있게 한다.</p><h4>숫자를 덜 정밀하게 적어 모델을 줄이는 기술</h4><p><strong>양자화(Quantization)</strong>란 모델 가중치를 표현하는 숫자의 정밀도를 낮춰 모델 크기와 메모리 사용량, 연산 비용을 줄이는 기법이다. 큰 언어 모델은 수십억~수천억 개의 숫자로 이루어진 거대한 표라고 생각하면 된다. 이 숫자들은 보통 16비트(2바이트)로 저장되는데, 이를 8비트나 4비트로 줄이면 모델이 절반, 4분의 1로 작아진다. 사진을 원본 대신 적당히 압축한 JPG로 저장해도 눈으로는 차이를 거의 못 느끼듯, 모델도 정밀도를 어느 정도 깎아도 답변 품질이 대부분 유지된다는 게 출발점이다.</p><h4>먼저 메모리 계산부터</h4><p>양자화가 왜 필요한지는 계산 한 번이면 보인다. 70B(700억 파라미터) 모델을 16비트로 올리면 가중치만 약 140GB라 데이터센터용 GPU 여러 장이 필요하다. 8비트면 약 70GB, 4비트면 약 35GB로 줄고, 실행 중에 쌓이는 KV 캐시와 여유분까지 더하면 40GB대 메모리에서 돌릴 수 있는 수준이 된다. 같은 계산으로 8B 모델은 4비트에서 5GB 안팎이라 평범한 노트북에서도 돌아간다. 다만 실제 4비트 파일은 묶음마다 붙는 스케일 값 같은 부가 정보 때문에 가중치당 4.5~5비트 정도가 된다는 점을 감안해야 한다.</p><h4>로컬에서 쓸 때: GGUF 이름표 읽기</h4><p>로컬 실행에서는 llama.cpp 계열이 쓰는 <strong>GGUF</strong> 형식이 사실상 표준이다. Ollama로 <code>ollama run</code>을 하면 대개 4비트 양자화본이 기본으로 내려오고, 직접 고를 때는 Hugging Face에서 <code>Q4_K_M</code>, <code>Q5_K_M</code>, <code>Q8_0</code> 같은 이름이 붙은 파일을 받는다. 앞의 숫자가 비트 수라 클수록 크고 정확하다. Llama 3.1 8B 기준으로 <code>Q8_0</code>이 약 8GB, <code>Q4_K_M</code>이 약 4.6GB인데, 생성 속도는 오히려 4비트 쪽이 더 빠르다. 토큰 하나를 만들 때마다 메모리에서 읽어 와야 할 데이터가 줄기 때문이다. 메모리에 여유가 있으면 <code>Q5_K_M</code>이나 <code>Q6_K</code>, 빠듯하면 <code>Q4_K_M</code>이 무난한 출발점이다. 직접 만들 때는 <code>llama-quantize</code>로 16비트 원본에서 변환하고, 예시 텍스트로 가중치별 중요도를 미리 계산한 imatrix 파일을 함께 주면 같은 비트에서도 손실을 더 줄일 수 있다. 다만 이미 양자화된 파일을 다시 양자화하면 품질이 크게 떨어지니 피해야 한다.</p><h4>서버에서 쓸 때: AWQ, GPTQ, 그리고 FP8·FP4</h4><p>vLLM 같은 추론 서버에서는 <strong>GPTQ</strong>나 <strong>AWQ</strong>로 양자화한 체크포인트를 많이 쓴다. GPTQ는 소량의 예시 데이터로 양자화 오차를 층마다 보정하고, AWQ는 실제 입력이 지나갈 때 크게 반응하는 1% 남짓의 중요한 가중치 채널을 찾아 보호한다. 둘 다 이미 학습된 모델을 나중에 압축하는 <strong>PTQ(사후 학습 양자화)</strong>라 다시 학습할 필요가 없다. 아낀 GPU 메모리만큼 요청을 더 많이 묶어 처리할 수 있어 처리량이 오른다. 양자화된 체크포인트를 <code>vllm serve</code>로 띄우면 설정 파일에서 방식을 자동으로 읽어 들이고, 16비트 원본을 띄우면서 <code>--quantization fp8</code>을 주면 로딩 시점에 바로 FP8로 바꿔 올리는 것도 가능하다.</p><p>최신 GPU에서는 정수 대신 저정밀 부동소수점 형식이 대세가 되고 있다. H100 세대부터 FP8 연산이 하드웨어로 지원되고, Blackwell 세대는 값 16개마다 스케일을 따로 두는 4비트 형식 <strong>NVFP4</strong>를 지원해 FP8 대비 정확도 손실을 1% 안팎으로 묶으면서 메모리를 더 줄인다. 32개 값마다 스케일을 두는 비슷한 형식인 MXFP4도 있는데, OpenAI의 오픈 웨이트 모델 gpt-oss는 아예 MXFP4로 양자화된 상태로 공개돼 120B 모델이 80GB GPU 한 장에 올라간다. 가중치뿐 아니라 대화가 길어질수록 커지는 KV 캐시도 양자화할 수 있다. vLLM에서는 <code>--kv-cache-dtype fp8</code> 옵션 하나로 캐시 메모리를 절반으로 줄여 더 긴 컨텍스트와 더 많은 동시 요청을 받는다. 파인튜닝 쪽에서는 <code>bitsandbytes</code>로 모델을 4비트로 올린 뒤 LoRA 어댑터만 학습하는 QLoRA가 같은 원리를 쓴다.</p><h4>얼마나 잃는지는 직접 재야 한다</h4><p>양자화의 손실은 고르게 나타나지 않는다. 일상 대화에서는 4비트도 차이를 느끼기 어렵지만, 긴 문맥 추론이나 수학, 코드처럼 작은 오차가 쌓이는 작업에서 먼저 티가 난다. 작은 모델일수록 같은 비트에서 더 많이 손상되고, 3비트 아래로 내려가면 대부분의 모델에서 품질이 눈에 띄게 떨어지기 시작한다. 그래서 퍼플렉시티나 원본 모델과의 출력 분포 차이(KL 발산) 같은 지표로 1차 확인을 하고, 최종 판단은 내 서비스의 실제 질문으로 만든 평가 세트에서 원본과 나란히 비교해 내리는 게 안전하다. 학습 단계부터 낮은 정밀도를 겪게 하는 <strong>QAT(양자화 인지 학습)</strong>는 이런 손실을 더 줄이지만 다시 학습해야 해서, 개발자가 직접 하기보다는 모델 제작사가 공식 양자화본을 낼 때 주로 쓰인다.</p></div>
+  <div class="body"><p>모델 가중치의 숫자를 16비트에서 8비트·4비트 같은 낮은 정밀도로 줄여 메모리와 비용을 아끼는 기법이다. 큰 모델을 노트북이나 GPU 한 장에서 돌리거나, 서버에서 더 많은 요청을 처리하고 싶을 때 쓴다.</p><h4>한눈에 보기</h4><p>양자화는 모델을 이루는 숫자를 덜 정밀하게 적어서 <strong>모델 크기를 절반이나 4분의 1로 줄이는</strong> 기술이다. 사진을 적당히 압축한 JPG로 저장해도 눈으로는 차이를 거의 못 느끼듯, 정밀도를 어느 정도 깎아도 답변 품질은 대부분 유지된다. 메모리가 모자라 모델이 안 올라갈 때 가장 먼저 꺼내는 방법이다.</p><div class="bars"><div class="bar"><span class="bar-label">16비트</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">약 140GB</span></div><div class="bar"><span class="bar-label">8비트</span><span class="bar-track"><span class="bar-fill" style="width:50%"></span></span><span class="bar-val">약 70GB</span></div><div class="bar"><span class="bar-label">4비트</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-val">약 35GB</span></div></div><p class="note">70B 모델의 가중치 크기. 실제로 돌릴 때는 KV 캐시와 여유분이 더 필요하다. 4비트 파일은 부가 정보가 붙어서 가중치 하나당 4.5~5비트쯤 된다.</p><h4>로컬에서는 GGUF 이름표만 보면 된다</h4><p>내 컴퓨터에서 돌릴 때는 GGUF 형식이 사실상 표준이다. Ollama에서 <code>ollama run</code>을 하면 보통 4비트 버전을 받아 오고, Hugging Face에서 직접 받을 때는 파일 이름의 숫자를 보면 된다. 숫자가 비트 수라서 클수록 파일이 크고 정확하다. 4비트가 오히려 더 빠른데, 토큰 하나를 만들 때마다 메모리에서 읽어 올 데이터가 적기 때문이다.</p><div class="tbl"><table><tr><th>파일 이름</th><th>8B 모델 크기</th><th>이럴 때 고른다</th></tr><tr><td><code>Q8_0</code></td><td>약 8GB</td><td>메모리가 넉넉하고 정확도가 가장 중요할 때</td></tr><tr><td><code>Q5_K_M</code>, <code>Q6_K</code></td><td>그 사이</td><td>메모리에 여유가 조금 있을 때</td></tr><tr><td><strong><code>Q4_K_M</code></strong></td><td><strong>약 4.6GB</strong></td><td>메모리가 빠듯할 때 무난한 출발점</td></tr></table></div><p>직접 만들 때는 16비트 원본에서 <code>llama-quantize</code>로 변환한다. 이때 imatrix 파일을 같이 주면 같은 비트에서도 품질 손실이 줄어든다. 이미 양자화된 파일을 또 양자화하면 품질이 크게 떨어지니 하지 않는다.</p><h4>서버에서는 vLLM 옵션 하나로 바뀐다</h4><p>vLLM 같은 추론 서버에서는 AWQ나 GPTQ로 이미 양자화한 모델을 많이 쓴다. 둘 다 학습이 끝난 모델을 나중에 압축하는 방식이라 다시 학습할 필요가 없다. 아낀 GPU 메모리만큼 요청을 더 많이 묶어서 처리할 수 있다.</p><div class="tbl"><table><tr><th>하고 싶은 것</th><th>방법</th></tr><tr><td>양자화된 모델 띄우기</td><td><code>vllm serve</code>가 설정을 알아서 읽는다</td></tr><tr><td>16비트 원본을 올리면서 바로 압축</td><td><code>--quantization fp8</code></td></tr><tr><td>긴 대화·동시 요청 늘리기</td><td><code>--kv-cache-dtype fp8</code> (캐시 메모리 절반)</td></tr><tr><td>적은 GPU로 파인튜닝</td><td><code>bitsandbytes</code> 4비트 + LoRA (QLoRA)</td></tr></table></div><p>최신 GPU는 FP8이나 4비트 NVFP4·MXFP4 같은 저정밀 형식을 하드웨어에서 바로 지원한다. 그래서 정수 대신 이런 형식이 많이 쓰이는 추세다. gpt-oss처럼 처음부터 MXFP4로 공개된 모델은 120B인데도 80GB GPU 한 장에 올라간다.</p><h4>수학·코드에서 먼저 티가 난다</h4><p>일상 대화에서는 4비트도 차이를 느끼기 어렵다. 하지만 긴 문맥 추론, 수학, 코드처럼 작은 오차가 쌓이는 작업에서는 먼저 품질이 떨어진다. <strong>작은 모델일수록, 3비트 아래로 갈수록</strong> 손상이 커진다.</p><p>그래서 퍼플렉시티나 KL 발산 같은 지표로 먼저 대략 확인한다. 최종 판단은 내 서비스의 실제 질문으로 원본 모델과 나란히 비교해서 내리는 게 안전하다. 모델 제작사가 학습 단계부터 낮은 정밀도에 맞춰 만든 공식 양자화본(QAT)이 있다면 그것을 먼저 고려한다.</p></div>
   <div class="tags"><span>#경량화</span><span>#INT8</span><span>#GGUF</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/kimi-k3.html">키미 K3</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2210.17323" target="_blank" rel="nofollow noopener">GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2306.00978" target="_blank" rel="nofollow noopener">AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md" target="_blank" rel="nofollow noopener">llama.cpp quantize README (llama-quantize)</a> <span class="ref-type">공식</span></li><li><a href="https://docs.vllm.ai/en/latest/features/quantization/quantized_kvcache.html" target="_blank" rel="nofollow noopener">Quantized KV Cache – vLLM Docs</a> <span class="ref-type">공식</span></li><li><a href="https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/" target="_blank" rel="nofollow noopener">Introducing NVFP4 for Efficient and Accurate Low-Precision Inference – NVIDIA Technical Blog</a> <span class="ref-type">공식</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#quantization">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-08</div>
+  <div class="added-date">updated at 2026-10-10</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>희소 어텐션이란? (Sparse Attention) — AI Wiki</title>
-<meta name="description" content="희소 어텐션이란? 모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.">
+<meta name="description" content="희소 어텐션이란? 모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.">
 <meta name="keywords" content="희소 어텐션, Sparse Attention, 어텐션, 긴 컨텍스트, 추론 최적화, DeepSeek, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="희소 어텐션이란? (Sparse Attention) — AI Wiki">
-<meta property="og:description" content="희소 어텐션이란? 모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.">
+<meta property="og:description" content="희소 어텐션이란? 모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.">
 <meta property="og:url" content="https://aiwiki.work/k/sparse-attention.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-06-08">
-<meta property="article:modified_time" content="2026-10-08">
+<meta property="article:modified_time" content="2026-10-10">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="희소 어텐션이란? (Sparse Attention) — AI Wiki">
-<meta name="twitter:description" content="희소 어텐션이란? 모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.">
+<meta name="twitter:description" content="희소 어텐션이란? 모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/sparse-attention.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/sparse-attention.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "희소 어텐션",
   "alternateName": "Sparse Attention",
-  "description": "모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.",
+  "description": "모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.",
   "url": "https://aiwiki.work/k/sparse-attention.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "희소 어텐션 (Sparse Attention)",
-  "description": "모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.",
+  "description": "모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.",
   "url": "https://aiwiki.work/k/sparse-attention.html",
   "datePublished": "2026-06-08",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-10-10",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>희소 어텐션</h1>
   <div class="en">Sparse Attention</div>
-  <div class="body"><p>모든 토큰끼리 다 비교하는 대신 중요한 일부 토큰만 골라 어텐션을 계산해, 긴 글을 훨씬 싸고 빠르게 처리하는 방법.</p><h4>다 보지 않고 골라서 본다</h4><p><strong>희소 어텐션(Sparse Attention)</strong>이란 트랜스포머가 모든 토큰 쌍을 비교하는 대신, 관련 있을 법한 일부 토큰만 골라 어텐션을 계산하는 방식이다. 기본 어텐션은 토큰이 1,000개면 100만 번, 10만 개면 100억 번 비교한다. 입력이 길어질수록 계산이 제곱으로 불어나니 책 한 권 분량부터는 감당하기 어렵다. 그런데 사람이 소설 300쪽째를 읽을 때 앞의 299쪽 문장을 전부 다시 떠올리지는 않는다. 바로 앞 몇 문장과, 주인공이 처음 등장한 장면 같은 핵심 몇 군데만 참조한다. 희소 어텐션은 모델에게 이런 독서법을 가르친다. 모든 칸이 채워진(dense) 비교표에서 대부분의 칸을 비워두고(sparse) 계산한다는 뜻에서 이름이 붙었다.</p><h4>규칙으로 고르기: 창문과 이정표</h4><p>가장 단순한 방법은 미리 정한 규칙이다. 각 토큰이 바로 앞 N개만 보게 하는 <strong>슬라이딩 윈도우</strong>가 대표적이다. 2020년 나온 <strong>Longformer</strong>와 <strong>BigBird</strong>는 여기에 띄엄띄엄 멀리 보는 패턴과, 모든 토큰이 공통으로 참조하는 소수의 전역 토큰을 더해 긴 문서를 처리했다. 창문만으로는 멀리 있는 정보를 못 보니, 이정표 역할을 하는 토큰을 따로 둔 것이다.</p><p>이 아이디어는 지금의 오픈 모델에도 흔하다. Google의 Gemma 3는 1,024토큰 창문만 보는 층 다섯 개마다 전체 문맥을 보는 층 하나를 끼워 넣고, OpenAI의 <code>gpt-oss</code>는 128토큰 창문 층과 전체 어텐션 층을 번갈아 쌓는다. 창문 층은 KV 캐시를 창문 크기만큼만 들고 있으면 되니, 대화가 길어져도 메모리가 훨씬 덜 늘어난다. Gemma 3 보고서에 따르면 이렇게 섞어도 언어 모델링 성능 저하는 거의 없었다.</p><h4>학습으로 고르기: 모델이 직접 찍는다</h4><p>규칙은 단순하지만, 정말 중요한 토큰이 창문 밖에 있으면 놓친다. 그래서 최근에는 무엇을 볼지 모델이 학습으로 정하게 한다. DeepSeek과 베이징대 연구진이 2025년 2월 발표한 <strong>NSA(Native Sparse Attention)</strong>는 문맥을 블록 단위로 압축해 대략적인 지도를 만들고, 그중 중요해 보이는 블록만 원본으로 다시 읽고, 가까운 토큰은 창문으로 보는 세 갈래를 합친다. 학습이 끝난 뒤 덧붙이는 게 아니라 처음부터 희소한 상태로 학습시킬 수 있다는 점을 인정받아 ACL 2025 최우수 논문상을 받았다.</p><p>같은 해 9월 DeepSeek-V3.2-Exp에 들어간 <strong>DSA(DeepSeek Sparse Attention)</strong>는 더 직접적이다. 라이트닝 인덱서라는 가벼운 채점기가 지난 토큰 전부에 빠르게 점수를 매기고, 상위 2,048개만 골라 본 어텐션에 넘긴다. 문맥이 10만 토큰이든 50만 토큰이든 꼼꼼히 들여다보는 건 2,048개뿐이라, 무거운 계산이 길이의 제곱이 아니라 길이에 비례하는 수준으로 줄어든다. DeepSeek은 성능을 이전 모델과 비슷하게 유지하면서 API 가격을 절반 이상 내렸다.</p><h4>개발자 입장에서 달라지는 것</h4><p>API 사용자에게 희소 어텐션은 주로 가격표와 속도로 체감된다. 긴 코드베이스나 문서 묶음을 매번 통째로 넣는 에이전트를 돌린다면, 희소 어텐션 모델은 같은 작업을 훨씬 싸게 처리한다. 모델을 고를 때 최대 컨텍스트 길이 숫자만 보지 말고, 긴 입력에서의 토큰 단가와 응답 속도를 함께 비교해야 하는 이유다.</p><p>직접 서빙한다면 사정이 다르다. 희소 패턴은 전용 GPU 커널이 있어야 제 속도가 난다. vLLM은 DeepSeek-V3.2를 위해 인덱서 전용 캐시와 FlashMLA의 희소 커널을 따로 붙였고, <code>vllm serve deepseek-ai/DeepSeek-V3.2-Exp --tensor-parallel-size 8</code>처럼 GPU 여러 장에 나눠 띄운다. 새로운 희소 구조의 모델이 나오면 추론 엔진 지원이 따라올 때까지 기다려야 하는 경우가 많고, 지원되더라도 특정 GPU 세대에서만 최적화돼 있기도 하다.</p><h4>버린 토큰에 답이 있었다면</h4><p>희소 어텐션의 대가는 놓침이다. 중요해 보이지 않아 건너뛴 토큰에 핵심 정보가 있었다면 답이 틀린다. 특히 긴 문서 곳곳에 흩어진 단서를 모두 모아야 하는 질문에서 약점이 드러나기 쉽다. 또 이론상 계산을 줄여도 메모리를 띄엄띄엄 읽으면 GPU가 비효율적으로 움직여 실제 속도는 기대만큼 안 나온다. NSA가 토큰 하나하나가 아니라 블록 단위로 고르는 것도 이 때문이다. 참고로 희소 어텐션은 계산 순서를 재배치하는 Flash Attention, 캐시 자체를 압축하는 MLA와 겨냥하는 지점이 달라서, 최신 모델들은 이 기법들을 한꺼번에 겹쳐 쓴다.</p></div>
+  <div class="body"><p>모든 토큰을 서로 비교하지 않고 중요한 일부만 골라 어텐션을 계산해서, 긴 글을 싸고 빠르게 처리하는 방법이다. 긴 코드베이스나 문서를 통째로 넣는 작업에서 효과가 크다.</p><h4>한눈에 보기</h4><p>희소 어텐션은 트랜스포머가 모든 토큰 쌍을 비교하지 않고 <strong>관련 있어 보이는 토큰만 골라</strong> 계산하는 방식이다. 기본 어텐션은 입력 길이의 제곱만큼 계산이 늘어나서, 책 한 권 분량부터는 감당하기 어렵다. 사람이 소설을 읽을 때 바로 앞 문장과 핵심 장면 몇 군데만 떠올리는 것처럼 읽는다고 보면 된다.</p><div class="tbl"><table><tr><th>구분</th><th>기본(dense) 어텐션</th><th>희소(sparse) 어텐션</th></tr><tr><td>비교 대상</td><td>모든 토큰 쌍</td><td>골라낸 일부 토큰</td></tr><tr><td>입력이 길어지면</td><td>계산이 제곱으로 늘어남</td><td><strong>길이에 비례하는 수준</strong></td></tr><tr><td>약점</td><td>느리고 비쌈</td><td>건너뛴 토큰의 정보를 놓칠 수 있음</td></tr></table></div><h4>규칙으로 고르거나, 학습으로 고르거나</h4><p>무엇을 볼지 정하는 방법은 크게 둘이다. 정해진 규칙은 단순하지만, 중요한 토큰이 범위 밖에 있으면 놓친다. 그래서 최근에는 모델이 학습으로 직접 고르게 하는 쪽으로 가고 있다.</p><div class="tbl"><table><tr><th>방식</th><th>어떻게 고르나</th><th>예</th></tr><tr><td>규칙</td><td>바로 앞 N개만 보는 창문(슬라이딩 윈도우)에 전체를 보는 층이나 이정표 토큰을 섞음</td><td>Gemma 3, <code>gpt-oss</code></td></tr><tr><td>학습</td><td>가벼운 채점기가 모든 토큰에 점수를 매기고 상위 일부만 자세히 봄</td><td>DeepSeek-V3.2 (DSA)</td></tr></table></div><p>창문 방식은 KV 캐시를 창문 크기만큼만 들고 있으면 돼서, 대화가 길어져도 메모리가 훨씬 덜 늘어난다.</p><h4>API 사용자는 가격표로 느낀다</h4><p>API로 쓰는 사람에게 희소 어텐션의 효과는 가격과 속도로 나타난다. DeepSeek은 이 방식을 넣고 성능은 비슷하게 유지하면서 API 가격을 절반 이상 내렸다. 긴 코드베이스나 문서 묶음을 매번 통째로 넣는 에이전트라면, 모델을 고를 때 최대 컨텍스트 길이만 보지 말고 <strong>긴 입력의 토큰 단가와 응답 속도</strong>를 함께 비교하는 게 좋다.</p><h4>직접 띄우려면 엔진 지원부터 확인</h4><p>희소 패턴은 전용 GPU 커널이 있어야 제 속도가 난다. 예를 들어 vLLM은 DeepSeek-V3.2용 전용 캐시와 희소 커널을 따로 붙였고, <code>vllm serve deepseek-ai/DeepSeek-V3.2-Exp --tensor-parallel-size 8</code>처럼 GPU 여러 장에 나눠 띄운다. 새로운 구조의 모델은 추론 엔진이 지원할 때까지 기다려야 할 때가 많고, 지원되더라도 특정 GPU 세대에서만 최적화된 경우도 있다.</p><h4>흩어진 단서를 모아야 하면 놓칠 수 있다</h4><p>중요하지 않아 보여서 건너뛴 토큰에 답이 있었다면 틀린 답이 나온다. 긴 문서 여기저기에 흩어진 단서를 모두 모아야 하는 질문에서 이 약점이 잘 드러난다. 또 계산량이 줄어도 메모리를 띄엄띄엄 읽으면 GPU가 비효율적으로 돌아서, 실제 속도가 기대보다 덜 나올 수 있다.</p></div>
   <div class="tags"><span>#어텐션</span><span>#긴 컨텍스트</span><span>#추론 최적화</span><span>#DeepSeek</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/deepseek.html">딥시크</a>, <a href="https://aiwiki.work/k/deepseek-v4.html">딥시크 V4</a>, <a href="https://aiwiki.work/k/glm-5-3.html">GLM 5.3</a>, <a href="https://aiwiki.work/k/deepseek-v4-1-flash.html">딥시크 V4.1 플래시</a>, <a href="https://aiwiki.work/k/mimo-v2-6-pro.html">미모 V2.6 프로</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://sebastianraschka.com/llm-architecture-gallery/deepseek-sparse-attention" target="_blank" rel="nofollow noopener">DeepSeek Sparse Attention | Sebastian Raschka</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2502.11089" target="_blank" rel="nofollow noopener">Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention</a> <span class="ref-type">논문</span></li><li><a href="https://vllm.ai/blog/2025-09-29-deepseek-v3-2" target="_blank" rel="nofollow noopener">DeepSeek-V3.2-Exp in vLLM: Fine-Grained Sparse Attention in Action</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2503.19786" target="_blank" rel="nofollow noopener">Gemma 3 Technical Report</a> <span class="ref-type">논문</span></li><li><a href="https://ncsoft.github.io/ncresearch/6fc502ede05ca318787928fa22332a82b112805b" target="_blank" rel="nofollow noopener">긴 글을 위한 트랜스포머 모델 - Longformer와 BigBird</a> <span class="ref-type">블로그</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Y-o545eYjXM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Y-o545eYjXM/mqdefault.jpg" alt="How Attention Got So Efficient [GQA/MLA/DSA]" loading="lazy" width="160" height="90"><span>How Attention Got So Efficient [GQA/MLA/DSA]</span></a><a class="video-item" href="https://www.youtube.com/watch?v=CLsjuRBLstY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CLsjuRBLstY/mqdefault.jpg" alt="DeepSeek Sparse Attention Explained" loading="lazy" width="160" height="90"><span>DeepSeek Sparse Attention Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=4olugH4x4-Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4olugH4x4-Y/mqdefault.jpg" alt="긴 글도 빠르게 이해하는 AI의 비밀? #희소어텐션 #AI용어집" loading="lazy" width="160" height="90"><span>긴 글도 빠르게 이해하는 AI의 비밀? #희소어텐션 #AI용어집</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#sparse-attention">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-08</div>
+  <div class="added-date">updated at 2026-10-10</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

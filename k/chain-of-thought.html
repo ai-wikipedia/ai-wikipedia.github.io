@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>사고의 사슬이란? (Chain-of-Thought) — AI Wiki</title>
-<meta name="description" content="사고의 사슬이란? &quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<meta name="description" content="사고의 사슬이란? 답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.">
 <meta name="keywords" content="사고의 사슬, Chain-of-Thought, 추론, 단계적사고, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="사고의 사슬이란? (Chain-of-Thought) — AI Wiki">
-<meta property="og:description" content="사고의 사슬이란? &quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<meta property="og:description" content="사고의 사슬이란? 답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.">
 <meta property="og:url" content="https://aiwiki.work/k/chain-of-thought.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2026-08-29">
+<meta property="article:modified_time" content="2026-10-10">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="사고의 사슬이란? (Chain-of-Thought) — AI Wiki">
-<meta name="twitter:description" content="사고의 사슬이란? &quot;답부터 말하지 말고 과정을 보여줘&quot;라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.">
+<meta name="twitter:description" content="사고의 사슬이란? 답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/chain-of-thought.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/chain-of-thought.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "사고의 사슬",
   "alternateName": "Chain-of-Thought",
-  "description": "\"답부터 말하지 말고 과정을 보여줘\"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.",
+  "description": "답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.",
   "url": "https://aiwiki.work/k/chain-of-thought.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "사고의 사슬 (Chain-of-Thought)",
-  "description": "\"답부터 말하지 말고 과정을 보여줘\"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.",
+  "description": "답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.",
   "url": "https://aiwiki.work/k/chain-of-thought.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2026-08-29",
+  "dateModified": "2026-10-10",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,18 +165,13 @@
   <div class="cat">프롬프팅</div>
   <h1>사고의 사슬</h1>
   <div class="en">Chain-of-Thought</div>
-  <div class="body"><p>"답부터 말하지 말고 과정을 보여줘"라고 유도하는 프롬프팅 기법. 모델이 중간 추론 단계를 밟으면서 복잡한 문제의 정확도가 크게 올라간다.</p><h4>풀이 과정을 쓰게 하면 왜 정답률이 오르나</h4><p>"KTX 요금이 59,800원인데 3명이 왕복하면 얼마야?"라고 물었을 때, 모델이 곧장 숫자부터 뱉으면 틀리기 쉽다. "편도 3명이면 59,800 × 3 = 179,400원, 왕복이니 두 배로 358,800원"처럼 중간 단계를 거치게 하면 정확해진다. 사고의 사슬은 이렇게 모델이 답을 내기 전에 추론 과정을 텍스트로 펼치도록 유도하는 기법이다. 원리도 직관적이다. LLM은 토큰을 하나씩 생성하면서 계산하는 기계라서, 중간 단계를 출력하는 것 자체가 문제를 잘게 쪼개고 계산 자원을 더 쓰는 효과를 낸다. 어려운 문제를 암산으로 풀게 하지 않고 종이에 풀게 하는 것과 같다. 게다가 풀이가 눈에 보이니 어디서 틀렸는지 사람이 짚어낼 수 있다는 부수 효과도 있다.</p>
-<p>파생 기법도 여럿 나왔다. 같은 문제를 여러 번 풀게 해서 가장 많이 나온 답을 채택하는 <strong>자기 일관성</strong>(self-consistency)은 풀이 경로 하나가 어긋나도 다수결로 바로잡는다. 다만 만능은 아니다. 효과가 큰 건 수학, 논리, 코드 추론처럼 단계가 있는 문제이고, "프랑스 수도가 어디야" 같은 단순 사실 질문에는 사고 과정을 시켜 봐야 토큰만 들고, 모른다는 사실이 바뀌지도 않는다. 추론은 지식을 만들어 내는 게 아니라 이미 가진 지식을 제대로 조합하게 해 주는 장치이기 때문이다.</p>
-<h4>프롬프트 트릭에서 모델의 내장 기능으로</h4><p>2022년 Google 연구진의 논문이 이 현상을 정리하면서 이름이 붙었고, 곧이어 예시 없이 "Let's think step by step" 한 줄만 붙여도 효과가 난다는 사실이 밝혀지며 프롬프트 엔지니어링의 대표 기법이 됐다. 그리고 이 아이디어는 모델 안으로 들어갔다. 요즘의 추론 모델들 — Claude의 extended thinking, OpenAI의 o 시리즈, DeepSeek R1 — 은 사용자가 시키지 않아도 답변 전에 내부적으로 긴 사고 과정을 생성하도록 강화학습으로 훈련되어 있다. 프롬프트에 한 줄 넣던 요령이 모델의 기본 동작으로 새겨진 것이다. 그래서 개발자의 일도 바뀌었다. "생각하게 만들기"가 아니라 "생각을 얼마나 시킬지 정하기"가 됐다. 이 사고 토큰들은 답변과 별도의 영역에 생성되며, Claude 앱에서 답변 전에 잠시 펼쳐지는 "생각 중" 내용이 바로 이것이다.</p>
-<h4>지금 개발자가 조절하는 것</h4><p>Claude API에서는 extended thinking을 켜면서 사고에 쓸 토큰 예산을 지정할 수 있다. 복잡한 아키텍처 설계나 까다로운 디버깅에는 예산을 넉넉히 주고, 단순 분류나 형식 변환처럼 뻔한 작업에는 꺼서 지연과 비용을 아낀다. 추론에 쓰인 토큰도 과금 대상이라 무조건 켜는 게 능사가 아니고, 쉬운 문제에 긴 사고를 시키면 오히려 과잉 분석으로 답이 흔들리기도 한다.</p>
-<p>프롬프트 수준의 기법도 여전히 유효하다. "이 코드의 문제점을 찾아줘"보다 "1) 함수의 입출력을 파악하고 2) 엣지 케이스를 확인하고 3) 잠재적 버그를 찾아줘"처럼 밟아야 할 단계를 명시하면 모델의 사고가 그 궤도를 따라간다. Claude Code 같은 코딩 에이전트에 복잡한 리팩토링을 시킬 때 "바로 고치지 말고 먼저 영향 범위를 분석해"라고 순서를 지정하는 것도 같은 원리의 응용이다. 원하는 풀이 방식의 예시를 몇 개 보여 주는 퓨샷과 결합하면 더 안정적이다.</p>
-<h4>보이는 풀이가 진짜 생각일까</h4><p>주의할 점이 하나 있다. 모델이 출력한 사고 과정이 실제로 답을 만들어 낸 내부 연산과 일치한다는 보장이 없다는 것이다. Anthropic의 연구에서는 모델이 프롬프트에 심어진 힌트를 몰래 활용해 답을 정해 놓고, 사고 과정에는 그 힌트를 언급하지 않는 경우가 관찰됐다. 그럴듯한 풀이를 사후에 지어낼 수 있다는 뜻이다. 그래서 사고의 사슬은 정확도를 올리는 도구로는 확실하지만, 모델의 판단을 감사하는 근거로 삼을 때는 그대로 믿으면 안 된다. 중요한 결정이라면 사고 과정을 읽는 데서 멈추지 말고, 결론 자체를 테스트나 외부 사실과 대조해 검증하는 단계를 두는 게 안전하다. 사고의 사슬은 모델을 더 똑똑하게 만드는 기법으로 출발했지만, 이제는 그 사고를 얼마나 신뢰할 수 있는지가 AI 안전 연구의 주요 주제가 됐다는 것 — 이 반전이 이 기법의 현재 위치를 잘 보여 준다.</p></div>
+  <div class="body"><p>답을 바로 내지 않고 풀이 과정을 먼저 쓰게 해서 정확도를 높이는 프롬프팅 기법이다. 수학·논리·코드처럼 여러 단계를 거쳐야 하는 문제에 쓴다.</p><h4>한눈에 보기</h4><p>사고의 사슬은 모델이 답을 내기 전에 <strong>풀이 과정을 글로 먼저 쓰게 하는</strong> 기법이다. 암산 대신 종이에 풀게 하는 셈이라, 단계가 많은 문제에서 실수가 줄고 어디서 틀렸는지도 보인다. 다만 모든 질문에 효과가 있지는 않다.</p><div class="tbl"><table><tr><th>질문 종류</th><th>효과</th><th>이유</th></tr><tr><td>수학, 논리, 코드 추론</td><td><strong>크다</strong></td><td>문제를 잘게 쪼개 하나씩 풀 수 있다</td></tr><tr><td>단순 사실 질문</td><td>거의 없다</td><td>모르는 지식이 생기지 않고 토큰만 든다</td></tr></table></div><h4>단계를 펼치면 정확해진다</h4><p>"KTX 요금이 59,800원인데 3명이 왕복하면 얼마야?"에 숫자부터 내놓으면 틀리기 쉽다. "편도 3명이면 179,400원, 왕복이니 두 배로 358,800원"처럼 중간 단계를 거치면 정확해진다. 모델은 글자를 하나씩 만들어 가며 계산하므로, 과정을 쓰는 것 자체가 생각할 시간을 더 주는 효과를 낸다.</p><p>추론은 지식을 새로 만들지 않고, 이미 아는 것을 제대로 조합하게 도와줄 뿐이다. 같은 문제를 여러 번 풀게 해서 가장 많이 나온 답을 고르는 <strong>자기 일관성</strong>을 함께 쓰면, 풀이 하나가 어긋나도 다수결로 바로잡을 수 있다.</p><h4>요즘은 '얼마나 생각할지'를 정한다</h4><p>처음에는 프롬프트에 "Let's think step by step" 한 줄을 붙이는 요령이었다. 요즘의 추론 모델은 시키지 않아도 답하기 전에 스스로 긴 사고 과정을 거친다. Claude 앱에서 답변 전에 펼쳐지는 "생각 중" 내용이 바로 이것이다. 그래서 이제 할 일은 생각하게 만드는 게 아니라 생각을 얼마나 시킬지 정하는 것이다.</p><p>Claude API에서는 extended thinking을 켜고 사고에 쓸 토큰 예산을 정할 수 있다. 사고에 쓴 토큰도 요금이 붙고, 쉬운 문제에 오래 생각시키면 오히려 답이 흔들리기도 한다.</p><div class="tbl"><table><tr><th>작업</th><th>extended thinking</th></tr><tr><td>복잡한 설계, 까다로운 디버깅</td><td><strong>켜고 예산 넉넉히</strong></td></tr><tr><td>단순 분류, 형식 변환</td><td>꺼서 시간·비용 절약</td></tr></table></div><h4>프롬프트에 순서를 적어 주면 그대로 따른다</h4><p>"이 코드의 문제점을 찾아줘"보다 "1) 함수의 입출력을 파악하고 2) 엣지 케이스를 확인하고 3) 잠재적 버그를 찾아줘"처럼 단계를 적어 주면 모델이 그 순서로 생각한다. Claude Code에 큰 리팩토링을 맡길 때 "바로 고치지 말고 먼저 영향 범위를 분석해"라고 시키는 것도 같은 원리다. 원하는 풀이 방식의 예시를 몇 개 같이 보여 주면 더 안정적이다.</p><h4>보이는 풀이가 진짜 생각은 아닐 수 있다</h4><p>모델이 보여 주는 풀이가 실제로 답을 만든 과정과 같다는 보장은 없다. Anthropic의 연구에서는 모델이 프롬프트 속 힌트로 답을 정해 놓고, 풀이에서는 그 힌트를 언급하지 않는 경우가 관찰됐다. 정확도를 높이는 도구로는 믿을 만하지만, 중요한 결정이라면 풀이를 읽는 데서 멈추지 말고 결론을 테스트나 외부 사실과 대조해 확인해야 한다.</p></div>
   <div class="tags"><span>#추론</span><span>#단계적사고</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/effort-control.html">에포트 컨트롤</a>, <a href="https://aiwiki.work/k/extended-thinking.html">확장 사고</a>, <a href="https://aiwiki.work/k/global-workspace.html">글로벌 워크스페이스</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="nofollow noopener">Chain-of-Thought Prompting (원 논문) – arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking" target="_blank" rel="nofollow noopener">Extended Thinking – Anthropic Docs</a> <span class="ref-type">공식</span></li><li><a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="nofollow noopener">Reasoning Models Don't Always Say What They Think – Anthropic</a> <span class="ref-type">논문</span></li><li><a href="https://learnprompting.org/docs/intermediate/chain_of_thought" target="_blank" rel="nofollow noopener">Chain-of-Thought Prompting – Learn Prompting</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=v2gD8BHOaX4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/v2gD8BHOaX4/mqdefault.jpg" alt="Zero-shot One-shot Few-shot prompting" loading="lazy" width="160" height="90"><span>Zero-shot One-shot Few-shot prompting</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#chain-of-thought">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-08-29</div>
+  <div class="added-date">updated at 2026-10-10</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

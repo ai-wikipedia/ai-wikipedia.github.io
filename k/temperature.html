@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>온도란? (Temperature) — AI Wiki</title>
-<meta name="description" content="온도란? LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.">
+<meta name="description" content="온도란? LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.">
 <meta name="keywords" content="온도, Temperature, 샘플링, 다양성, 창의성, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="온도란? (Temperature) — AI Wiki">
-<meta property="og:description" content="온도란? LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.">
+<meta property="og:description" content="온도란? LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.">
 <meta property="og:url" content="https://aiwiki.work/k/temperature.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-08">
+<meta property="article:modified_time" content="2026-10-10">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="온도란? (Temperature) — AI Wiki">
-<meta name="twitter:description" content="온도란? LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.">
+<meta name="twitter:description" content="온도란? LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/temperature.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/temperature.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "온도",
   "alternateName": "Temperature",
-  "description": "LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.",
+  "description": "LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.",
   "url": "https://aiwiki.work/k/temperature.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "온도 (Temperature)",
-  "description": "LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.",
+  "description": "LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.",
   "url": "https://aiwiki.work/k/temperature.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-08",
+  "dateModified": "2026-10-10",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>온도</h1>
   <div class="en">Temperature</div>
-  <div class="body"><p>LLM이 다음 토큰을 선택할 때 확률 분포의 날카로움을 조절하는 파라미터. 낮으면 예측 가능하고 정확하게, 높으면 다양하고 창의적으로 응답한다.</p><h4>같은 질문에 답이 매번 다른 이유</h4><p>온도(Temperature)란 LLM이 다음 토큰을 고를 때 얼마나 과감하게 고를지 정하는 샘플링 파라미터다. 모델은 매 순간 '다음에 올 수 있는 토큰 후보들과 각각의 확률'을 계산하고, 그 분포에서 하나를 뽑아 문장을 이어 간다. 온도는 뽑기 직전에 이 분포의 모양을 바꾼다. 낮추면 1등 후보에게 확률이 몰려 매번 비슷한 답이 나오고, 높이면 2등, 3등 후보에게도 기회가 돌아가 표현이 다양해진다. 같은 질문을 두 번 했는데 챗봇의 답이 조금씩 다른 건 고장이 아니라, 이 확률적 뽑기가 기본 동작이기 때문이다.</p><h4>숫자 하나가 분포를 바꾸는 원리</h4><p>계산 자체는 단순하다. 모델이 후보마다 매긴 점수(로짓)를 온도 값으로 나눈 다음 확률로 바꾼다. "아침에 마시는" 다음 후보로 '커피' 60%, '차' 30%, '주스' 10%가 나왔다고 해 보자. 온도를 0.5로 낮추면 대략 커피 78%, 차 20%, 주스 2%로 1등이 압도적이 되고, 2로 올리면 커피 47%, 차 33%, 주스 19%처럼 분포가 평평해진다. 온도가 0에 가까워지면 사실상 늘 1등만 고르는 <strong>그리디 디코딩</strong>이 되고, 1이면 모델이 계산한 확률을 그대로 쓴다.</p><p>온도와 함께 자주 보이는 설정이 <strong>top-p</strong>와 <strong>top-k</strong>다. top-k는 상위 k개 후보만 남기고, top-p(뉴클리어스 샘플링)는 확률이 큰 순서로 더해 p에 도달할 때까지의 후보만 남긴 뒤 그 안에서 뽑는다. 온도가 분포를 얼마나 평평하게 펼칠지를 정한다면, top-p와 top-k는 꼬리에 붙은 엉뚱한 후보를 아예 잘라낼지를 정하는 셈이다. 둘 다 결과를 흔드는 장치라서 온도와 top-p 중 하나만 조정하라는 것이 일반적인 권장이다.</p><p>OpenAI API에는 반복을 억제하는 <code>frequency_penalty</code>와 <code>presence_penalty</code>도 있다. 앞의 것은 이미 나온 횟수에 비례해, 뒤의 것은 한 번이라도 나왔으면 같은 크기로 그 토큰의 점수를 깎는다. 같은 문구가 자꾸 되풀이되는 긴 글 생성에서 쓸모가 있는데, 이것도 둘 중 하나만 건드려야 결과를 예측하기 쉽다.</p><h4>작업에 따라 값을 고르는 법</h4><p>API에서는 요청 본문에 <code>temperature</code> 값을 넣는다. OpenAI Chat Completions는 0~2, Anthropic API는 0~1 범위를 받고 기본값은 둘 다 1이다. 문서에서 날짜와 금액을 뽑아 JSON으로 정리하거나, 문의를 카테고리로 분류하거나, 코드를 생성하는 것처럼 정답이 정해진 일에는 <code>temperature=0.2</code> 안팎으로 낮게 두는 게 보통이다. 반대로 상품 소개 문구 후보를 열 개 뽑거나 브레인스토밍을 시킬 때는 0.8~1로 올려야 비슷한 답이 반복되지 않는다. 이때 OpenAI의 <code>n</code> 파라미터를 쓰면 한 번의 요청으로 여러 후보를 받아 비교할 수 있다. 같은 수학 문제를 여러 번 풀게 한 뒤 다수결로 답을 고르는 self-consistency 기법처럼, 일부러 온도를 높여 서로 다른 풀이를 얻는 활용도 있다.</p><p>흔한 오해는 온도를 0으로 내리면 환각이 사라진다는 것이다. 온도는 모델이 가장 그럴듯하다고 믿는 답을 더 자주 고르게 할 뿐이라, 그 믿음이 틀렸다면 틀린 답을 더 일관되게 반복한다. 사실 정확도는 RAG로 근거를 넣어 주거나 출력을 검증하는 단계로 풀어야 한다.</p><h4>0으로 둬도 완전히 같지는 않다</h4><p>온도 0이 완벽한 재현성을 보장하지도 않는다. Anthropic API 문서에도 온도를 0.0으로 설정해도 결과가 완전히 결정적이지는 않다고 적혀 있다. Thinking Machines Lab이 2025년에 발표한 분석에 따르면, 추론 서버가 여러 사용자의 요청을 묶어 처리하는 배치 크기가 매번 달라지면서 GPU 연산 순서가 미묘하게 바뀌는 것이 주된 원인이다. 이들이 오픈 모델에 같은 프롬프트를 온도 0으로 1,000번 보냈더니 서로 다른 완성문이 80가지 나왔다. LLM을 쓰는 기능을 테스트할 때 출력 문자열을 그대로 비교하지 말고 형식과 핵심 값만 검사해야 하는 이유다.</p><h4>추론 모델 시대에 달라진 점</h4><p>2025년 이후로는 온도를 바꿀 수 없는 모델이 늘었다. OpenAI의 o 시리즈와 GPT-5 계열 추론 모델은 대부분 기본값이 아닌 <code>temperature</code>를 넣으면 오류를 돌려주고, Anthropic도 Claude Opus 4.6 이후 출시된 모델부터 <code>temperature</code>, <code>top_p</code>, <code>top_k</code> 조정을 지원하지 않는다. 이런 모델에서는 온도 대신 추론 강도(effort) 설정, 분명한 지시, 구조화된 출력으로 결과를 다듬는다. 반면 vLLM이나 Ollama로 오픈 웨이트 모델을 직접 돌린다면 온도와 top-p는 여전히 출력 품질을 좌우하는 핵심 설정이다.</p></div>
+  <div class="body"><p>LLM이 답을 고를 때 얼마나 과감하게 고를지 정하는 설정값이다. 정답이 정해진 작업은 낮게, 아이디어를 여러 개 뽑을 때는 높게 둔다.</p><h4>한눈에 보기</h4><p>온도(Temperature)는 모델이 다음 단어를 고를 때 1등 후보만 고집할지, 다른 후보에도 기회를 줄지 정하는 숫자다. <strong>낮추면 매번 비슷한 답이 나오고, 높이면 표현이 다양해진다.</strong> 같은 질문에 챗봇의 답이 매번 조금씩 다른 것도 이 확률적 뽑기 때문이다.</p><div class="tbl"><table><tr><th>온도</th><th>답의 성격</th><th>이럴 때 쓴다</th></tr><tr><td>0에 가까움</td><td>거의 늘 1등 후보만 고른다</td><td>분류, 정보 추출, 코드 생성</td></tr><tr><td>1 (기본값)</td><td>모델이 계산한 확률 그대로</td><td>일반 대화</td></tr><tr><td>1보다 높음</td><td>후보가 고르게 뽑힌다</td><td>브레인스토밍, 문구 후보 여러 개</td></tr></table></div><h4>숫자 하나로 확률이 이렇게 바뀐다</h4><p>"아침에 마시는" 다음에 올 단어의 확률이 아래처럼 나왔다고 하자. 온도를 낮추면 1등이 압도적이 되고, 높이면 후보 사이 차이가 줄어든다.</p><div class="tbl"><table><tr><th>후보</th><th>온도 0.5</th><th>온도 1</th><th>온도 2</th></tr><tr><td>커피</td><td><strong>78%</strong></td><td>60%</td><td>47%</td></tr><tr><td>차</td><td>20%</td><td>30%</td><td>33%</td></tr><tr><td>주스</td><td>2%</td><td>10%</td><td>19%</td></tr></table></div><p>옆에 자주 보이는 <code>top_p</code>와 <code>top_k</code>는 확률이 낮은 엉뚱한 후보를 아예 잘라내는 설정이다. 둘 다 결과를 흔드는 장치라서 온도와 top-p 중 하나만 조정하는 것이 일반적인 권장이다.</p><h4>API에서는 작업마다 값을 바꾼다</h4><p>요청에 <code>temperature</code> 값을 넣는다. 받는 범위는 서비스마다 다르다.</p><div class="tbl"><table><tr><th>API</th><th>범위</th><th>기본값</th></tr><tr><td>OpenAI Chat Completions</td><td>0~2</td><td>1</td></tr><tr><td>Anthropic API</td><td>0~1</td><td>1</td></tr></table></div><p>문서에서 날짜·금액을 뽑아 JSON으로 만들거나 문의를 분류할 때는 <code>0.2</code> 안팎으로 낮춘다. 상품 소개 문구를 열 개 뽑을 때는 0.8~1로 올리고, OpenAI의 <code>n</code> 파라미터로 한 번에 여러 후보를 받아 비교하면 된다. 같은 문제를 여러 번 풀게 한 뒤 다수결로 답을 고를 때도 일부러 온도를 높인다.</p><h4>0으로 내려도 환각은 그대로다</h4><p>온도를 낮추면 모델이 가장 그럴듯하다고 믿는 답을 더 자주 고를 뿐이다. 그 믿음이 틀렸다면 <strong>틀린 답을 더 일관되게 반복한다.</strong> 사실 정확도는 RAG로 근거를 넣어 주거나 출력을 검증하는 단계에서 챙겨야 한다.</p><p>온도 0도 매번 같은 답을 보장하지 않는다. 서버가 여러 요청을 묶어 처리하면서 계산 순서가 조금씩 바뀌기 때문이다. LLM 기능을 테스트할 때는 출력 문장을 그대로 비교하지 말고 형식과 핵심 값만 검사한다.</p><h4>최신 추론 모델은 온도를 못 바꾼다</h4><p>OpenAI의 o 시리즈와 GPT-5 계열 추론 모델 대부분은 기본값이 아닌 <code>temperature</code>를 넣으면 오류를 낸다. Anthropic도 Claude Opus 4.6 이후 모델부터 온도·top-p·top-k 조정을 지원하지 않는다. 이런 모델은 추론 강도(effort) 설정, 분명한 지시, 구조화된 출력으로 결과를 다듬는다. vLLM이나 Ollama로 오픈 웨이트 모델을 직접 돌린다면 온도는 여전히 출력 품질을 좌우하는 핵심 설정이다.</p></div>
   <div class="tags"><span>#샘플링</span><span>#다양성</span><span>#창의성</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/effort-control.html">에포트 컨트롤</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.claude.com/docs/en/api/messages/create" target="_blank" rel="nofollow noopener">Messages API Reference (temperature, top_p, top_k) – Claude API Docs</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/api-reference/chat/create" target="_blank" rel="nofollow noopener">OpenAI API Reference — Chat Completions (temperature parameter)</a> <span class="ref-type">공식</span></li><li><a href="https://www.promptingguide.ai/introduction/settings" target="_blank" rel="nofollow noopener">Prompt Engineering Guide — LLM Settings</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/" target="_blank" rel="nofollow noopener">Defeating Nondeterminism in LLM Inference – Thinking Machines Lab</a> <span class="ref-type">블로그</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#temperature">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-08</div>
+  <div class="added-date">updated at 2026-10-10</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
