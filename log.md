@@ -1,3 +1,7 @@
+## 2026-10-10 22:13
+- 추가: kan, agentic-search, effort-control, ponytail, gemini-3-pro-image, agent-ephemeral-identity, record-and-replay, image-inpainting, extended-thinking, oak, ai-chip, krea-2, opentag, global-workspace (이전 실패 백로그 나머지 14개)
+- 번역 보충: nemotron-3-ultra
+
 ## 2026-10-08 23:31
 - 추가: claude-fable-5-1, mcpb, codex-security, grok-4-7, qwen3-8-max, gemini-3-8-flash, jev-router, kimi-k3, glm-5-3, deepseek-v4-1-flash, mimo-v2-6-pro, muse-spark-1-3, durable-execution, ai-design, ai-code-governance, nemotron-3-ultra, claude-mythos-5 (90일 발굴 + 이전 실패 백로그. 백로그 14개는 사용량 한도로 미생성)
 - HOT: (갱신)

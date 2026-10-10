@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>콜모고로프-아놀드 네트워크란? (Kolmogorov-Arnold Network) — AI Wiki</title>
+<meta name="description" content="콜모고로프-아놀드 네트워크란? KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.">
+<meta name="keywords" content="콜모고로프-아놀드 네트워크, Kolmogorov-Arnold Network (KAN), 신경망 아키텍처, MLP 대안, 스플라인, 해석가능성, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="콜모고로프-아놀드 네트워크란? (Kolmogorov-Arnold Network) — AI Wiki">
+<meta property="og:description" content="콜모고로프-아놀드 네트워크란? KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/kan.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-10">
+<meta property="article:modified_time" content="2026-10-10">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="콜모고로프-아놀드 네트워크란? (Kolmogorov-Arnold Network) — AI Wiki">
+<meta name="twitter:description" content="콜모고로프-아놀드 네트워크란? KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/kan.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/kan.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "콜모고로프-아놀드 네트워크",
+  "alternateName": "Kolmogorov-Arnold Network (KAN)",
+  "description": "KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.",
+  "url": "https://aiwiki.work/k/kan.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "콜모고로프-아놀드 네트워크",
+      "item": "https://aiwiki.work/k/kan.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "콜모고로프-아놀드 네트워크 (Kolmogorov-Arnold Network)",
+  "description": "KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.",
+  "url": "https://aiwiki.work/k/kan.html",
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/kan.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>콜모고로프-아놀드 네트워크</h1>
+  <div class="en">Kolmogorov-Arnold Network (KAN)</div>
+  <div class="body"><p>KAN은 MLP의 고정된 가중치 대신 연결선마다 학습 가능한 일변수 함수(주로 스플라인)를 두는 신경망 구조다. 작은 규모의 과학 문제에서 적은 파라미터로 함수를 근사하고, 학습된 함수를 직접 들여다보며 수식을 찾아내는 해석가능성 때문에 쓴다.</p><h4>가중치 대신 곡선을 학습한다는 발상</h4><p>KAN(콜모고로프-아놀드 네트워크)은 2024년 4월 Ziming Liu, Max Tegmark 등이 arXiv에 공개하고 ICLR 2025에 채택된 신경망 구조다. 보통의 다층 퍼셉트론(MLP)을 떠올려 보면, 노드와 노드를 잇는 선에는 숫자 하나(가중치)가 붙어 있고, 노드에서는 ReLU 같은 정해진 활성화 함수가 값을 휘게 만든다. KAN은 이 역할을 뒤집는다. 연결선 하나하나에 숫자 대신 <strong>학습 가능한 일변수 함수</strong>를 붙이고, 노드는 들어온 값을 그냥 더하기만 한다. 비유하자면 MLP가 "볼륨 다이얼"을 잔뜩 돌려 맞추는 구조라면, KAN은 선마다 "모양을 바꿀 수 있는 곡선 자"를 하나씩 쥐여 주고 그 곡선의 모양 자체를 학습시키는 구조다. Luis Serrano의 표현대로 "가중치를 학습하는 게 아니라 활성화 함수를 학습한다".</p><h4>이름의 출처, 콜모고로프-아놀드 표현 정리</h4><p>이 발상의 뿌리는 힐베르트의 13번째 문제와 연결된 콜모고로프-아놀드 표현 정리다. 정리 내용은 n개의 변수를 받는 연속 함수라면 무엇이든, 변수 하나짜리 함수들을 적용한 뒤 더하는 일을 두 단계(바깥 2n+1개 함수와 안쪽 함수들)로 반복해 정확히 표현할 수 있다는 것이다. 즉 복잡한 다변수 함수를 쉬운 일변수 함수와 덧셈으로 쪼갤 수 있다는 얘기다. MLP가 은닉층 하나만 있어도 어떤 함수든 근사할 수 있다는 보편 근사 정리에 기대는 것처럼, KAN은 이 표현 정리에서 영감을 얻었다. 다만 원래 정리는 2층짜리 고정된 구조라서, 저자들은 이를 여러 층으로 쌓을 수 있게 일반화했다. 최근 리뷰 논문이 "정리에 의해 결정된 게 아니라 영감을 받은" 구조라고 굳이 강조하는 이유다.</p><h4>안쪽에서 실제로 돌아가는 것</h4><p>각 연결선의 함수는 보통 B-스플라인으로 만든다. 구간을 격자(grid)로 나누고 그 위에 작은 곡선 조각들을 얹어, 조각마다의 계수를 학습하는 방식이다. 원 논문은 여기에 SiLU 같은 기본 함수를 하나 더해서 학습을 안정시킨다. 학습 자체는 MLP와 똑같이 순전파로 손실을 계산하고 역전파로 계수를 업데이트한다. 학습 도중 격자를 더 촘촘하게 바꿔 기존 곡선을 더 세밀한 스플라인으로 옮겨 담는 <strong>격자 확장</strong>도 가능해서, 처음엔 거칠게 배우고 나중에 정밀도를 올릴 수 있다.</p><p>해석가능성은 그다음 단계에서 나온다. 손실에 각 함수의 크기(L1)와 엔트로피 항을 더해 네트워크를 희소하게 학습시킨 뒤, 들어오고 나가는 점수가 임계값(원 논문은 0.01)보다 낮은 노드를 잘라낸다. 그러면 꼭 필요한 연결만 남은 작은 네트워크가 되고, 남은 곡선 하나하나를 그래프로 그려 보면서 "이건 사인 함수처럼 생겼다", "이건 제곱 같다" 하고 기호 함수로 바꿔 끼울 수 있다. 블랙박스 MLP와 달리 학습 결과에서 수식을 거꾸로 읽어 낼 수 있다는 점이 KAN이 내세우는 핵심이다.</p><h4>직접 돌려 보는 장면</h4><p>가장 빠른 출발점은 저자들이 공개한 파이썬 패키지 <code>pykan</code>이다. 예를 들어 <code>f(x1, x2) = sin(x1) + x2²</code> 같은 함수에서 샘플을 뽑아 작은 KAN을 학습시키고, 가지치기를 거친 뒤 각 연결선의 곡선을 시각화해 보면 한쪽 입력에는 사인 모양, 다른 쪽에는 포물선 모양이 남는 걸 확인할 수 있다. 실험 데이터에서 숨은 물리 법칙이나 관계식을 찾으려는 기호 회귀 작업, 물리 정보 신경망(PINN) 같은 과학 계산, 산업용 소프트 센서나 생체 신호처럼 비선형 관계가 복잡하지만 파라미터를 적게 쓰고 싶은 센서 데이터 분석에서 주로 시도된다. 구조를 처음부터 이해하고 싶다면 B-스플라인 계산과 역전파를 손으로 구현한 튜토리얼들이 공개되어 있어 MLP와 나란히 짜 보며 비교하기 좋다.</p><h4>기대와 반론 사이</h4><p>공개 직후 "머신러닝 2.0"이라는 말까지 나올 만큼 화제가 됐지만 반론도 빠르게 나왔다. 커뮤니티에서는 KAN을 반복과 시프트를 섞은 MLP로 다시 쓸 수 있다는 분석이 돌았고, 저자 스스로도 KAN이 결국 스플라인과 MLP의 조합에 불과하다고 밝힌다. 연결선마다 스플라인을 계산해야 해서 같은 크기의 MLP보다 학습이 느리고, 지금의 GPU가 잘하는 큰 행렬 곱셈 구조와도 잘 맞지 않는다. 그래서 국내외 리뷰들은 해석가능성이 중요한 일부 과학·소규모 문제에서는 쓸모가 있지만, 별도의 개선이나 맞춤 하드웨어 없이 대형 모델의 MLP를 대체하기는 어렵다고 본다. 이후 기저 함수를 스플라인 대신 다른 함수로 바꾸거나 효율과 수렴성을 개선한 변형들이 쏟아져 나와, 상황별로 어떤 KAN을 고를지 정리한 가이드가 따로 나올 정도로 연구 분야가 커졌다.</p></div>
+  <div class="tags"><span>#신경망 아키텍처</span><span>#MLP 대안</span><span>#스플라인</span><span>#해석가능성</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/neural-network.html">신경망</a>, <a href="https://aiwiki.work/k/deep-learning.html">딥러닝</a>, <a href="https://aiwiki.work/k/neurosymbolic-ai.html">뉴로심볼릭 AI</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2404.19756" target="_blank" rel="nofollow noopener">KAN: Kolmogorov-Arnold Networks (arXiv 2404.19756)</a> <span class="ref-type">논문</span></li><li><a href="https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Arnold_Networks" target="_blank" rel="nofollow noopener">Kolmogorov–Arnold Networks - Wikipedia</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.sciencedirect.com/science/article/pii/S1574013726000997" target="_blank" rel="nofollow noopener">A practitioner's guide to Kolmogorov–Arnold networks</a> <span class="ref-type">논문</span></li><li><a href="https://ddangchani.github.io/KAN" target="_blank" rel="nofollow noopener">KAN : Kolmogorov-Arnold Network | DDangchani's DataLog</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://alexzhang13.github.io/blog/2024/annotated-kan" target="_blank" rel="nofollow noopener">The Annotated Kolmogorov-Arnold Network (KAN)</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=xLnQtLpPH-Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xLnQtLpPH-Y/mqdefault.jpg" alt="Was &quot;Machine Learning 2.0&quot; All Hype? The Kolmogorov-Arnold Network Explained" loading="lazy" width="160" height="90"><span>Was &quot;Machine Learning 2.0&quot; All Hype? The Kolmogorov-Arnold Network Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=7zpz_AlFW2w" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7zpz_AlFW2w/mqdefault.jpg" alt="Kolmogorov Arnold Networks (KAN) Paper Explained - An exciting new paradigm for Deep Learning?" loading="lazy" width="160" height="90"><span>Kolmogorov Arnold Networks (KAN) Paper Explained - An exciting new paradigm for Deep Learning?</span></a><a class="video-item" href="https://www.youtube.com/watch?v=H9fImqBiRl0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/H9fImqBiRl0/mqdefault.jpg" alt="[Paper Review] KAN: Kolmogorov-Arnold Networks" loading="lazy" width="160" height="90"><span>[Paper Review] KAN: Kolmogorov-Arnold Networks</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#kan">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-10</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

@@ -357,3 +357,17 @@ ai-design	AI 디자인	AI-Powered Design	application
 ai-code-governance	AI 코드 거버넌스	AI Code Governance	safety
 nemotron-3-ultra	네모트론 3 울트라	NVIDIA Nemotron 3 Ultra	model
 claude-mythos-5	클로드 미토스 5	Claude Mythos 5 (Anthropic)	model
+kan	콜모고로프-아놀드 네트워크	Kolmogorov-Arnold Network (KAN)	model
+agentic-search	에이전틱 검색	Agentic Search	agent
+effort-control	에포트 컨트롤	Effort Control / Reasoning Effort	model
+ponytail	포니테일	Ponytail (AI Coding Agent Skill)	tooling
+gemini-3-pro-image	나노 바나나 프로	Nano Banana Pro (Gemini 3 Pro Image)	application
+agent-ephemeral-identity	에이전트 임시 계정	Ephemeral Agent Identity	safety
+record-and-replay	레코드 앤 리플레이	Record and Replay (AI Skill Creation)	agent
+image-inpainting	이미지 인페인팅	Image Inpainting	application
+extended-thinking	확장 사고	Extended Thinking	model
+oak	오크	Oak (Agent-Native Version Control)	tooling
+ai-chip	AI 칩	AI Custom Chip	infra
+krea-2	크레아 2	Krea 2 (Krea AI)	model
+opentag	오픈태그	OpenTag	agent
+global-workspace	글로벌 워크스페이스	Global Workspace Theory	model
