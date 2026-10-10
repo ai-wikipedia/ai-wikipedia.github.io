@@ -30,9 +30,12 @@ function findBacktickEnd(s, contentStart) {
 }
 
 function replaceDet(src, entryStart, entryEnd, newDet) {
-  const k = src.indexOf('det:`', entryStart);
-  if (k < 0 || k > entryEnd) return null;
-  const cEnd = findBacktickEnd(src, k + 5);
+  // det는 대부분 백틱(det:`…`)이지만 일부 옛 항목은 작은따옴표(det:'…')로 저장돼 있다 — 둘 다 처리하고 백틱으로 통일
+  const m = /det:([`'])/.exec(src.slice(entryStart, entryEnd));
+  if (!m) return null;
+  const k = entryStart + m.index;
+  const q = m[1];
+  const cEnd = q === '`' ? findBacktickEnd(src, k + 5) : strEnd(src, k + 5, "'");
   if (cEnd < 0 || cEnd > entryEnd) return null;
   const newLit = 'det:`' + escBacktick(newDet) + '`';
   return src.slice(0, k) + newLit + src.slice(cEnd + 1);
@@ -130,7 +133,7 @@ function replaceUpdated(src, entryStart, entryEnd) {
   return src.slice(0, abs) + `updated:'${today}'` + src.slice(abs + m[0].length);
 }
 
-const { recordTranslated } = require('./scripts/i18n-meta');
+const { recordTranslated, I18N_LANGS } = require('./scripts/i18n-meta');
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
 const translatedIds = []; // 세 언어 모두 반영된 항목 → 번역 해시 기록
 let src = fs.readFileSync(DATA, 'utf8');
@@ -202,7 +205,7 @@ for (const f of files) {
     }
   }
 
-  if (trDone.length === 3) translatedIds.push(u.id);
+  if (I18N_LANGS.every(l => trDone.includes(l))) translatedIds.push(u.id);
   applied++;
   console.log(`  ✓ ${u.id}` + (u.det ? ` (det ${detLen}자)` : '') + (trDone.length ? ` [번역 ${trDone.join('/')}]` : ''));
 }

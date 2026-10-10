@@ -246,7 +246,7 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 | 1b | 발굴 | `node fetch-discovery.js --days 7 --features` | OpenRouter 신규 모델 + GitHub 신규 생태계 레포(토픽+생성일) + Tavily 기능 요약 (비치명적) |
 | 2 | 키워드 선정 | `node scripts/llm-stage.js select` | 트렌드 + 발굴 + 기존 키워드 대조 → 중요도순 선정, 상한 `AIWIKI_MAX_KEYWORDS` |
 | 3 | 소스 수집 | `node fetch-sources.js` | 키워드별 Tavily (웹 EN/KO) + YouTube API (EN/KO) |
-| 4 | 콘텐츠 생성 | `node scripts/llm-stage.js content` | 본문(opus) → 번역(sonnet), 키워드별 병렬. det 1000자 미만은 반영 안 함 |
+| 4 | 콘텐츠 생성 | `node scripts/llm-stage.js content` | 본문(opus) → 영어 번역(sonnet), 키워드별 병렬. det 1000자 미만은 반영 안 함 |
 | 5 | data.js 반영 | `node apply-entries.js` | 중복 확인, 항목 추가 |
 | 6 | 빌드 + 커밋 | `node build.js` + git | SEO 페이지 + sitemap + log.md + git push |
 
@@ -262,6 +262,7 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 - 키워드 직접 지정 실행: `AIWIKI_KEYWORDS_FILE=list.json bash scripts/run-daily.sh` (LLM 선정 생략, 예: 이전 실패 후보 재시도)
 - 기존 항목 번역만 재생성: `node scripts/llm-stage.js translate --ids a,b --out DIR` → `node apply-updates.js DIR` (apply-updates는 det·sum·refs·translations 중 있는 것만 교체, 구문 검증 통과 시에만 저장)
 - 기존 글을 현재 작성 기준으로 변환: `node scripts/llm-stage.js restyle --ids a,b --out DIR` → `node apply-updates.js DIR` (기존 본문의 사실만 사용, 1,000자 미만·첫 섹션 불일치·글머리표면 반영 안 함). 본문 작성 기준은 `.claude/prompts/det-style.md` 한 곳에서 새 글(content-generate)과 변환(restyle)이 공유한다.
+- **번역 언어: 영어만** (2026-10-10 사용자 결정). `scripts/i18n-meta.js`의 `I18N_LANGS`가 기준이고, 홈은 한국어가 아닌 모든 브라우저에 영어를 보여준다. data.js의 zh/ja 블록은 옛 번역이 남아 있지만 더 이상 갱신·표시하지 않는다.
 - **번역 동기화 (자동)**: `i18n-meta.json`에 번역 당시 한국어 sum+det 해시를 기록한다(apply-entries·apply-updates가 기록, `scripts/i18n-meta.js`). 매 실행의 빌드 직전에 `translate --stale`이 공개 항목 중 번역이 없거나 해시가 달라진 것만 다시 번역한다. 본문을 직접 심화한 뒤에도 다음 실행에서 번역이 자동으로 따라온다. 평소엔 0건.
 
 #### /add-keyword 흐름

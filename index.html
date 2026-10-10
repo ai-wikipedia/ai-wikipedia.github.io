@@ -429,7 +429,7 @@
 (function(){const keep=D.filter(e=>(e.det||'').replace(/<[^>]+>/g,'').length>=1000);D.length=0;D.push(...keep);})();
 const _ql = new URLSearchParams(location.search).get('lang');
 const _nl = (_ql || navigator.language || 'ko').slice(0,2);
-const LANG = ['ko','zh','ja'].includes(_nl) ? _nl : 'en';
+const LANG = _nl === 'ko' ? 'ko' : 'en'; // 번역은 영어만 관리 (2026-10-10) — 그 외 언어는 영어로 표시
 document.documentElement.lang = LANG;
 
 const I18N = {

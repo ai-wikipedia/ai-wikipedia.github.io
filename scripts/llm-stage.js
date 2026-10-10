@@ -55,6 +55,7 @@ function parseArgs(argv) {
     else if (argv[i] === '--ids') a.ids = argv[++i];
     else if (argv[i] === '--out') a.out = argv[++i];
     else if (argv[i] === '--stale') a.stale = true;
+    else if (argv[i] === '--limit') a.limit = parseInt(argv[++i], 10);
   }
   return a;
 }
@@ -238,7 +239,8 @@ const CONTENT_SCHEMA = {
 };
 
 const LANG_PART = { type: 'object', properties: { sum: { type: 'string' }, det: { type: 'string' } }, required: ['sum', 'det'] };
-const TRANSLATE_SCHEMA = { type: 'object', properties: { en: LANG_PART, zh: LANG_PART, ja: LANG_PART }, required: ['en', 'zh', 'ja'] };
+const { I18N_LANGS } = require('./i18n-meta');
+const TRANSLATE_SCHEMA = { type: 'object', properties: Object.fromEntries(I18N_LANGS.map((l) => [l, LANG_PART])), required: I18N_LANGS };
 
 function loadData() {
   const src = fs.readFileSync(path.join(WORK_DIR, 'data.js'), 'utf8').replace(/^const /gm, 'var ');
@@ -327,9 +329,9 @@ async function runTranslate(a) {
     const { koHash, loadMeta } = require('./i18n-meta');
     const meta = loadMeta();
     ids = D.filter((e) => textLen(e.det) >= THIN_THRESHOLD)
-      .filter((e) => !['en', 'zh', 'ja'].every((l) => I[l] && I[l][e.id]) || meta[e.id] !== koHash(e))
+      .filter((e) => !I18N_LANGS.every((l) => I[l] && I[l][e.id]) || meta[e.id] !== koHash(e))
       .map((e) => e.id)
-      .slice(0, 60);
+      .slice(0, a.limit || 60); // 1회 상한 (매일 실행 안전장치, 대량 작업은 --limit으로)
     log(`  번역 동기화 대상: ${ids.length}개${ids.length ? ` (${ids.join(', ')})` : ''}`);
   }
   const tpl = readText(path.join(PROMPTS, 'translate.md'));
@@ -357,14 +359,27 @@ async function runRestyle(a) {
   const tpl = readText(path.join(PROMPTS, 'restyle.md'));
   const style = detStyle(exampleDet());
   fs.mkdirSync(a.out, { recursive: true });
-  const stat = { ok: 0, fail: 0 };
+  const stat = { ok: 0, fail: 0, retried: 0 };
   await pool(ids, a.parallel, async (id) => {
     const e = D.find((x) => x.id === id);
     if (!e) { log(`  ! ${id}: 항목 없음`); stat.fail++; return; }
-    const prompt = fill(tpl, { DET_STYLE: style, TITLE: `${e.t} (${e.en || e.t})`, SUM: String(e.sum || '').replace(/<[^>]+>/g, ''), DET: e.det });
-    const r = await callWithRetry(prompt, RESTYLE_SCHEMA, CFG.content, `변환 ${id}`);
+    // 원문 길이에 맞춘 분량 지시 — 이미 짧은 글까지 '압축'하면 공개 기준(1,000자) 아래로 떨어진다
+    const origLen = textLen(e.det);
+    const lengthGuide = origLen >= 1800
+      ? `기존 본문은 ${origLen}자로 길다. 독자에게 정말 필요한 내용만 남겨 1,100~1,500자로 줄인다.`
+      : `기존 본문은 ${origLen}자로 이미 짧다. 내용을 덜어내지 말고 구성(한눈에 보기·표·짧은 문단)만 바꿔서 1,100~1,400자를 유지한다. ${THIN_THRESHOLD}자 미만이 되면 사이트에 공개되지 않는다.`;
+    const prompt = fill(tpl, { DET_STYLE: style, TITLE: `${e.t} (${e.en || e.t})`, SUM: String(e.sum || '').replace(/<[^>]+>/g, ''), DET: e.det, LENGTH_GUIDE: lengthGuide });
+    let r = await callWithRetry(prompt, RESTYLE_SCHEMA, CFG.content, `변환 ${id}`);
     if (!r.ok) { stat.fail++; return; }
-    const len = textLen(r.data.det);
+    let len = textLen(r.data.det);
+    if (len < THIN_THRESHOLD) {
+      // 너무 짧으면(공개 기준 미달) 길이를 알려주고 한 번 더 — 원문의 사용법·예시를 더 살리게 한다
+      log(`  ↻ ${id}: ${len}자로 짧아 재시도`);
+      stat.retried++;
+      const retry = prompt + `\n\n## 다시 쓰기 요청\n직전 결과는 태그를 뺀 텍스트가 ${len}자로 너무 짧았다. 이 사이트는 ${THIN_THRESHOLD}자 미만이면 공개되지 않는다. 기존 본문에서 사용법·구체적 예시·선택 기준을 더 살려 1,150~1,400자로 다시 써라. 새로운 사실을 지어내지는 마라.`;
+      const r2 = await callWithRetry(retry, RESTYLE_SCHEMA, CFG.content, `변환 재시도 ${id}`);
+      if (r2.ok) { r = r2; len = textLen(r.data.det); }
+    }
     const problems = [];
     if (len < THIN_THRESHOLD) problems.push(`본문 ${len}자`);
     if (!/^\s*<h4>한눈에 보기<\/h4>/.test(r.data.det)) problems.push('첫 섹션이 한눈에 보기가 아님');
@@ -374,7 +389,7 @@ async function runRestyle(a) {
     log(`  ✓ ${id} (${textLen(e.det)}자 → ${len}자)`);
     stat.ok++;
   });
-  log(`  변환 요약: 성공 ${stat.ok} / 실패 ${stat.fail}`);
+  log(`  변환 요약: 성공 ${stat.ok} / 실패 ${stat.fail} / 길이 재시도 ${stat.retried}`);
   process.stdout.write(JSON.stringify(stat));
 }
 

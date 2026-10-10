@@ -8,6 +8,9 @@ const crypto = require('crypto');
 
 const META_PATH = path.join(__dirname, '..', 'i18n-meta.json');
 
+// 번역 대상 언어 (2026-10-10 사용자 결정: 영어만). 실행기·apply-entries·apply-updates·동기화 판정이 모두 이 값을 따른다.
+const I18N_LANGS = ['en'];
+
 function koHash(entry) {
   return crypto.createHash('sha1').update(`${entry.sum || ''}\n${entry.det || ''}`).digest('hex').slice(0, 12);
 }
@@ -29,4 +32,4 @@ function recordTranslated(entries) {
   saveMeta(meta);
 }
 
-module.exports = { koHash, loadMeta, saveMeta, recordTranslated, META_PATH };
+module.exports = { koHash, loadMeta, saveMeta, recordTranslated, META_PATH, I18N_LANGS };
