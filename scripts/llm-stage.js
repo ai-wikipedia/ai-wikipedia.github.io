@@ -14,6 +14,7 @@
 //   node scripts/llm-stage.js content --run-dir DIR [--parallel 3]
 //   node scripts/llm-stage.js translate --ids a,b,c --out DIR [--parallel 3]   (기존 항목 번역만 재생성 → apply-updates.js 입력)
 //   node scripts/llm-stage.js translate --stale --out DIR   (공개 항목 중 번역이 없거나 한국어 본문이 바뀐 것만 — i18n-meta.json 기준)
+//   node scripts/llm-stage.js restyle --ids a,b --out DIR   (기존 글을 현재 작성 기준으로 다시 쓰기 — 기존 본문의 사실만 사용 → apply-updates.js 입력)
 // 환경변수(선택): AIWIKI_CLAUDE, AIWIKI_LOG,
 //   AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL / _EFFORT
 
@@ -247,6 +248,12 @@ function loadData() {
 }
 const loadEntries = () => loadData().D;
 
+// 본문 작성 기준(det-style.md) — 새 글 생성과 기존 글 변환이 공유. 주석 제거 후 모범 예시를 채운다.
+function detStyle(example) {
+  const raw = readText(path.join(PROMPTS, 'det-style.md')).replace(/<!--[\s\S]*?-->\n?/g, '');
+  return fill(raw, { EXAMPLE_DET: example });
+}
+
 // 프롬프트에 넣을 모범 det (구성·톤 기준). 섹션 제목을 그대로 베끼지 않도록 프롬프트에서 따로 지시한다.
 function exampleDet() {
   try {
@@ -273,7 +280,7 @@ async function runContent(a) {
     const prompt = fill(contentTpl, {
       SOURCES_DATA: JSON.stringify([{ keyword: item, sources }], null, 2),
       KEYWORDS_INDEX: index,
-      EXAMPLE_DET: example,
+      DET_STYLE: detStyle(example),
     });
 
     const r = await callWithRetry(prompt, CONTENT_SCHEMA, CFG.content, `본문 ${id}`);
@@ -341,14 +348,45 @@ async function runTranslate(a) {
   process.stdout.write(JSON.stringify(stat));
 }
 
+// ── 기존 글을 현재 작성 기준으로 다시 쓰기 (기존 본문의 사실만 사용) ──
+const RESTYLE_SCHEMA = { type: 'object', properties: { sum: { type: 'string' }, det: { type: 'string' } }, required: ['sum', 'det'] };
+
+async function runRestyle(a) {
+  const D = loadEntries();
+  const ids = String(a.ids || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const tpl = readText(path.join(PROMPTS, 'restyle.md'));
+  const style = detStyle(exampleDet());
+  fs.mkdirSync(a.out, { recursive: true });
+  const stat = { ok: 0, fail: 0 };
+  await pool(ids, a.parallel, async (id) => {
+    const e = D.find((x) => x.id === id);
+    if (!e) { log(`  ! ${id}: 항목 없음`); stat.fail++; return; }
+    const prompt = fill(tpl, { DET_STYLE: style, TITLE: `${e.t} (${e.en || e.t})`, SUM: String(e.sum || '').replace(/<[^>]+>/g, ''), DET: e.det });
+    const r = await callWithRetry(prompt, RESTYLE_SCHEMA, CFG.content, `변환 ${id}`);
+    if (!r.ok) { stat.fail++; return; }
+    const len = textLen(r.data.det);
+    const problems = [];
+    if (len < THIN_THRESHOLD) problems.push(`본문 ${len}자`);
+    if (!/^\s*<h4>한눈에 보기<\/h4>/.test(r.data.det)) problems.push('첫 섹션이 한눈에 보기가 아님');
+    if (/<(ul|ol|li)[ >]/.test(r.data.det)) problems.push('글머리표 사용');
+    if (problems.length) { log(`  ✗ ${id}: ${problems.join(', ')} — 반영 안 함`); stat.fail++; return; }
+    fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, sum: r.data.sum, det: r.data.det }));
+    log(`  ✓ ${id} (${textLen(e.det)}자 → ${len}자)`);
+    stat.ok++;
+  });
+  log(`  변환 요약: 성공 ${stat.ok} / 실패 ${stat.fail}`);
+  process.stdout.write(JSON.stringify(stat));
+}
+
 (async () => {
   const a = parseArgs(process.argv.slice(2));
-  const ok = (a.mode === 'translate' && (a.ids || a.stale) && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
+  const ok = (a.mode === 'translate' && (a.ids || a.stale) && a.out) || (a.mode === 'restyle' && a.ids && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
   if (!ok) {
     console.error('usage: node scripts/llm-stage.js <select|content> --run-dir DIR [--max N] [--parallel N]\n       node scripts/llm-stage.js translate --ids a,b --out DIR [--parallel N]');
     process.exit(2);
   }
   if (a.mode === 'select') await runSelect(a);
   else if (a.mode === 'content') await runContent(a);
+  else if (a.mode === 'restyle') await runRestyle(a);
   else await runTranslate(a);
 })();
