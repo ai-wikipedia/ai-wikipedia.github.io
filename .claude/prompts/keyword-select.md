@@ -23,7 +23,8 @@
 6. 커뮤니티 언급 = 충분히 중요
 7. **모델의 최신 기능도 키워드다.** 모델 이름(claude·gpt 등)이 이미 있어도, 새 기능(예: dynamic workflows, effort control)이 독립 개념이면 그 기능을 키워드로 선정한다. `features` 데이터를 적극 활용.
 8. **유명 named 플러그인·도구는 이름 그대로 선정한다.** `repos`에서 star·커뮤니티 언급이 높은 것(예: caveman, Superpowers)은 패턴으로 뭉치지 말고 개별 키워드로.
-9. **신규 모델은 버전 단위 개별 카드로 추가한다.** `models`의 각 모델을, 기존 키워드에 같은 버전 id가 없으면 개별 키워드로 선정한다. 계열(claude·gpt 등)이 이미 있어도 **새 버전은 별도 카드**다 (예: Claude Opus 4.9 → `claude-opus-4-9`, GPT-5.6 → `gpt-5-6`). id는 kebab-case 버전 표기(claude-opus-4-9), **keyword(한글 카드명)는 한글 발음 표기**(예: "클로드 오퍼스 4.9"; 단 GPT·GLM 등 약어는 영문 유지), en은 영문 정식명("Claude Opus 4.9"). 단 너무 오래됐거나(1년 이상) 사소한 변형(:free, -preview 등)은 제외하고, 유명·주목도 있는 모델 위주로. **같은 모델의 연속 버전(예: GPT-6 Sol과 GPT-6.1 Sol)이 함께 후보에 오르면 최신 버전 하나만 선정한다** — 거의 같은 내용의 카드 두 장은 중복 콘텐츠다.
+9. **모델은 실행 1회에 최대 1개만 선정한다.** 주요 개발사(OpenAI·Anthropic·Google·Meta·DeepSeek 등)의 **새 세대나 새 플래그십**처럼 커뮤니티에서 실제로 화제인 것만 고른다. 마이너 버전(예: 4.6 → 4.7, -flash·-mini 변형), 같은 계열의 연속 버전, 덜 알려진 회사의 모델은 선정하지 않는다. 모델을 고를 때 id는 kebab-case 버전 표기(claude-opus-4-9), **keyword(한글 카드명)는 한글 발음 표기**(예: "클로드 오퍼스 4.9"; 단 GPT·GLM 등 약어는 영문 유지), en은 영문 정식명.
+10. **나머지는 개념·도구·패턴으로 채운다.** 트렌드(HN·GeekNews·Reddit)와 레포·기능 데이터에서 개발자가 실제로 쓰는 기술·도구·작업 방식을 우선한다. 모델 출시 소식보다 이쪽이 이 위키의 핵심이다.
 
 ## 품질 게이트 (이 기준을 통과하지 못하면 선정 금지)
 
@@ -42,6 +43,7 @@
 - **인기 없는 단발 skill 제외**: star 적고 한 가지 산출물만 만드는 1회성 skill(특정 PPT·일러스트·스프라이트 생성 등)은 제외. 단 star·언급이 높으면 유명 도구로 보고 채택(기준 8).
 
 ## 출력 형식
-지정된 JSON 스키마로 출력한다: `{"items":[{"id":"kebab-case-id","keyword":"English Keyword","keywordKo":"한국어 키워드","en":"Full English Name"}]}`
+지정된 JSON 스키마로 출력한다: `{"items":[{"id":"kebab-case-id","keyword":"English Keyword","keywordKo":"한국어 키워드","en":"Full English Name","kind":"concept"}]}`
+- `kind`: AI 모델 출시·버전이면 `model`, 기술 개념이면 `concept`, 제품·라이브러리·CLI면 `tool`, 작업 방식·설계 패턴이면 `pattern`.
 - items는 **중요도(커뮤니티 화제성·검색 수요) 높은 순**으로 정렬한다. 상위 몇 개만 실제로 작성되므로 순서가 중요하다.
 - 새 키워드가 없으면 `{"items":[]}`.

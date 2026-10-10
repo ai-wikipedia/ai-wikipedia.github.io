@@ -139,8 +139,11 @@ const SELECT_SCHEMA = {
       type: 'array',
       items: {
         type: 'object',
-        properties: { id: { type: 'string' }, keyword: { type: 'string' }, keywordKo: { type: 'string' }, en: { type: 'string' } },
-        required: ['id', 'keyword', 'keywordKo', 'en'],
+        properties: {
+          id: { type: 'string' }, keyword: { type: 'string' }, keywordKo: { type: 'string' }, en: { type: 'string' },
+          kind: { type: 'string', enum: ['model', 'concept', 'tool', 'pattern', 'other'] }, // model = AI 모델 출시/버전
+        },
+        required: ['id', 'keyword', 'keywordKo', 'en', 'kind'],
       },
     },
   },
@@ -182,13 +185,18 @@ async function runSelect(a) {
 
   const have = existingIds();
   const seen = new Set();
+  // 모델 출시 카드가 대부분을 차지하지 않도록 실행 1회당 모델 수를 제한 (AIWIKI_MAX_MODEL_KEYWORDS, 기본 1)
+  const maxModels = parseInt(env('AIWIKI_MAX_MODEL_KEYWORDS', '1'), 10);
+  let models = 0;
   const items = (r.data.items || [])
     .map((k) => ({ ...k, id: String(k.id || '').trim().toLowerCase() }))
     .filter((k) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(k.id) && !have.has(k.id) && !seen.has(k.id) && seen.add(k.id))
+    .filter((k) => k.kind !== 'model' || models++ < maxModels)
     .slice(0, a.max);
 
   writeSelection(a.runDir, items);
-  if ((r.data.items || []).length > items.length) log(`  선정 ${r.data.items.length}개 → 중복/형식/상한(${a.max}) 필터 후 ${items.length}개`);
+  if ((r.data.items || []).length > items.length) log(`  선정 ${r.data.items.length}개 → 중복/형식/모델 상한(${maxModels})/전체 상한(${a.max}) 필터 후 ${items.length}개`);
+  log(`  선정 결과: ${items.map((k) => `${k.id}(${k.kind})`).join(', ') || '없음'}`);
   process.stdout.write(String(items.length));
 }
 
@@ -242,7 +250,7 @@ const loadEntries = () => loadData().D;
 // 프롬프트에 넣을 모범 det (구성·톤 기준). 섹션 제목을 그대로 베끼지 않도록 프롬프트에서 따로 지시한다.
 function exampleDet() {
   try {
-    const e = loadEntries().find((x) => x.id === 'mcp');
+    const e = loadEntries().find((x) => x.id === 'gpt-6-sol'); // 2026-10 개편 기준 문서 (한눈에 보기 + 표·그래프)
     return e ? e.det : '';
   } catch (e) { return ''; }
 }

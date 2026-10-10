@@ -27,6 +27,7 @@ MAIN_PID=$$
 #   AIWIKI_DISCOVERY_DAYS  발굴 기간(일). 밀린 업데이트 따라잡기 시 늘린다 (기본 7)
 #   AIWIKI_MAX_MODELS      발굴할 신규 모델 최대 수 (기본 40). 기간을 늘리면 같이 늘린다
 #   AIWIKI_MAX_KEYWORDS    1회 최대 신규 키워드 수 — 하루 대량 발행은 scaled content 신호 (기본 5)
+#   AIWIKI_MAX_MODEL_KEYWORDS 그중 AI 모델 출시 카드 최대 수 (기본 1) — 나머지는 개념·도구·패턴
 #   AIWIKI_PARALLEL        콘텐츠 생성 동시 실행 수 (기본 3)
 #   AIWIKI_PUSH            1이면 커밋 후 push, 0이면 커밋만 하고 검토 대기 (기본 1)
 #   AIWIKI_TIMEOUT         전체 watchdog 초 (기본 1800)
