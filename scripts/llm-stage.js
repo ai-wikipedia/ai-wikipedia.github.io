@@ -13,6 +13,7 @@
 //   node scripts/llm-stage.js select  --run-dir DIR [--max 5]
 //   node scripts/llm-stage.js content --run-dir DIR [--parallel 3]
 //   node scripts/llm-stage.js translate --ids a,b,c --out DIR [--parallel 3]   (기존 항목 번역만 재생성 → apply-updates.js 입력)
+//   node scripts/llm-stage.js translate --stale --out DIR   (공개 항목 중 번역이 없거나 한국어 본문이 바뀐 것만 — i18n-meta.json 기준)
 // 환경변수(선택): AIWIKI_CLAUDE, AIWIKI_LOG,
 //   AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL / _EFFORT
 
@@ -52,6 +53,7 @@ function parseArgs(argv) {
     else if (argv[i] === '--parallel') a.parallel = parseInt(argv[++i], 10);
     else if (argv[i] === '--ids') a.ids = argv[++i];
     else if (argv[i] === '--out') a.out = argv[++i];
+    else if (argv[i] === '--stale') a.stale = true;
   }
   return a;
 }
@@ -229,12 +231,13 @@ const CONTENT_SCHEMA = {
 const LANG_PART = { type: 'object', properties: { sum: { type: 'string' }, det: { type: 'string' } }, required: ['sum', 'det'] };
 const TRANSLATE_SCHEMA = { type: 'object', properties: { en: LANG_PART, zh: LANG_PART, ja: LANG_PART }, required: ['en', 'zh', 'ja'] };
 
-function loadEntries() {
+function loadData() {
   const src = fs.readFileSync(path.join(WORK_DIR, 'data.js'), 'utf8').replace(/^const /gm, 'var ');
   const sandbox = {};
-  new Function('sandbox', `${src}; sandbox.D = D;`)(sandbox);
-  return sandbox.D;
+  new Function('sandbox', `${src}; sandbox.D = D; sandbox.I = I18N_CONTENT;`)(sandbox);
+  return sandbox;
 }
+const loadEntries = () => loadData().D;
 
 // 프롬프트에 넣을 모범 det (구성·톤 기준). 섹션 제목을 그대로 베끼지 않도록 프롬프트에서 따로 지시한다.
 function exampleDet() {
@@ -302,8 +305,18 @@ async function runContent(a) {
 
 // ── 기존 항목 번역만 재생성 (본문을 심화한 뒤 옛 번역을 갱신할 때) ──
 async function runTranslate(a) {
-  const ids = String(a.ids || '').split(',').map((x) => x.trim()).filter(Boolean);
-  const D = loadEntries();
+  const { D, I } = loadData();
+  let ids = String(a.ids || '').split(',').map((x) => x.trim()).filter(Boolean);
+  if (a.stale) {
+    // 공개 항목(본문 1000자 이상) 중 번역이 없거나, 번역 당시와 한국어 sum+det가 달라진 것
+    const { koHash, loadMeta } = require('./i18n-meta');
+    const meta = loadMeta();
+    ids = D.filter((e) => textLen(e.det) >= THIN_THRESHOLD)
+      .filter((e) => !['en', 'zh', 'ja'].every((l) => I[l] && I[l][e.id]) || meta[e.id] !== koHash(e))
+      .map((e) => e.id)
+      .slice(0, 60);
+    log(`  번역 동기화 대상: ${ids.length}개${ids.length ? ` (${ids.join(', ')})` : ''}`);
+  }
   const tpl = readText(path.join(PROMPTS, 'translate.md'));
   fs.mkdirSync(a.out, { recursive: true });
   const stat = { ok: 0, fail: 0 };
@@ -322,7 +335,7 @@ async function runTranslate(a) {
 
 (async () => {
   const a = parseArgs(process.argv.slice(2));
-  const ok = (a.mode === 'translate' && a.ids && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
+  const ok = (a.mode === 'translate' && (a.ids || a.stale) && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
   if (!ok) {
     console.error('usage: node scripts/llm-stage.js <select|content> --run-dir DIR [--max N] [--parallel N]\n       node scripts/llm-stage.js translate --ids a,b --out DIR [--parallel N]');
     process.exit(2);

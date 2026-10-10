@@ -321,6 +321,11 @@ function main() {
   // Write result
   fs.writeFileSync(dataPath, src, 'utf8');
 
+  // 번역까지 갖춘 신규 항목은 번역 해시를 기록 (번역 동기화가 낡음 여부를 판단하는 기준)
+  const fullyTranslated = entries.filter(e => addedIds.includes(e.id) && e.translations
+    && ['en', 'zh', 'ja'].every(l => e.translations[l] && e.translations[l].sum && e.translations[l].det));
+  require('./scripts/i18n-meta').recordTranslated(fullyTranslated);
+
   process.stdout.write(`Added ${addedCount} keyword(s): ${addedIds.join(', ')}\n`);
 }
 

@@ -130,7 +130,9 @@ function replaceUpdated(src, entryStart, entryEnd) {
   return src.slice(0, abs) + `updated:'${today}'` + src.slice(abs + m[0].length);
 }
 
+const { recordTranslated } = require('./scripts/i18n-meta');
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+const translatedIds = []; // 세 언어 모두 반영된 항목 → 번역 해시 기록
 let src = fs.readFileSync(DATA, 'utf8');
 let applied = 0;
 const failed = [];
@@ -200,6 +202,7 @@ for (const f of files) {
     }
   }
 
+  if (trDone.length === 3) translatedIds.push(u.id);
   applied++;
   console.log(`  ✓ ${u.id}` + (u.det ? ` (det ${detLen}자)` : '') + (trDone.length ? ` [번역 ${trDone.join('/')}]` : ''));
 }
@@ -212,8 +215,9 @@ console.log(`\n적용 ${applied}건` + (failed.length ? `, 실패 ${failed.lengt
 // 구문 검증을 통과한 경우에만 저장 (깨진 data.js로 덮어쓰지 않게)
 try {
   const chk = {};
-  new Function('chk', src.replace(/^const /gm, 'var ') + '; chk.d = D.length; chk.l = Object.keys(I18N_CONTENT).length;')(chk);
+  new Function('chk', src.replace(/^const /gm, 'var ') + '; chk.d = D.length; chk.l = Object.keys(I18N_CONTENT).length; chk.D = D;')(chk);
   fs.writeFileSync(DATA, src);
+  recordTranslated(translatedIds.map(id => chk.D.find(e => e.id === id)).filter(Boolean));
   console.log(`✓ data.js 구문 검증 통과 후 저장 (D=${chk.d}, I18N=${chk.l}개 언어)`);
 } catch (e) {
   console.error('✗ data.js 구문 오류 — 저장하지 않음:', e.message);

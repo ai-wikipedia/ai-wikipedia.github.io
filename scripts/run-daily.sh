@@ -66,12 +66,24 @@ err() { echo "[$(ts)] ERROR: $1" >> "$LOG"; echo "[$(ts)] $1" >> "$ERR_LOG"; }
 # 변경 파일만 골라 커밋 (git add -A는 .DS_Store·내보내기 폴더까지 커밋하므로 사용하지 않음)
 git_publish() {
   cd "$WORK_DIR"
-  git add -- data.js index.html k c sitemap.xml keywords-index.txt log.md >> "$LOG" 2>&1 || true
+  git add -- data.js index.html k c sitemap.xml keywords-index.txt log.md updates.html i18n-meta.json >> "$LOG" 2>&1 || true
   git commit -m "$1" >> "$LOG" 2>&1 || log "WARN: 커밋할 변경사항 없음"
   if [ "$AUTO_PUSH" = "1" ]; then
     git push >> "$LOG" 2>&1 || log "WARN: push 실패"
   else
     log "AIWIKI_PUSH=0: push 생략 (검토 후 수동 push)"
+  fi
+}
+
+# 번역 동기화: 공개 항목 중 번역이 없거나 한국어 본문이 바뀐 것만 다시 번역 (평소엔 0건)
+# (본문 심화 후 번역이 낡거나, 번역 단계만 실패한 경우를 다음 실행에서 자동 복구)
+sync_translations() {
+  local out="$RUN_DIR/i18n-sync"
+  local stat
+  stat=$(node "$WORK_DIR/scripts/llm-stage.js" translate --stale --out "$out" --parallel "$PARALLEL" 2>> "$LOG" || echo '{}')
+  log "번역 동기화: $stat"
+  if [ -d "$out" ] && [ -n "$(ls -A "$out" 2>/dev/null)" ]; then
+    node "$WORK_DIR/apply-updates.js" "$out" >> "$LOG" 2>&1 || log "WARN: 번역 반영 실패"
   fi
 }
 
@@ -184,6 +196,8 @@ if [ "$KEYWORD_COUNT" -eq 0 ]; then
   echo "" >> "$SUMMARY_FILE"
   echo "## Stage 6: 빌드 + 로깅 + 커밋" >> "$SUMMARY_FILE"
 
+  sync_translations
+
   if [ -f "$WORK_DIR/build.js" ]; then
     node "$WORK_DIR/build.js" >> "$LOG" 2>&1 || log "WARN: build.js 오류 (무시)"
   fi
@@ -250,6 +264,7 @@ echo "- 상태: 완료 $STAGE4_STAT" >> "$SUMMARY_FILE"
 if [ "$CONTENT_COUNT" -eq 0 ]; then
   log "생성된 콘텐츠 없음 (전부 실패/차단). 신규 키워드 없음으로 커밋."
   echo "- 생성 0개: 신규 키워드 없음 처리" >> "$SUMMARY_FILE"
+  sync_translations
   if [ -f "$WORK_DIR/build.js" ]; then
     node "$WORK_DIR/build.js" >> "$LOG" 2>&1 || log "WARN: build.js 오류 (무시)"
   fi
@@ -285,6 +300,8 @@ echo "- 상태: 완료" >> "$SUMMARY_FILE"
 log "Stage 6: 빌드 + 로깅 + 커밋"
 echo "" >> "$SUMMARY_FILE"
 echo "## Stage 6: 빌드 + 로깅 + 커밋" >> "$SUMMARY_FILE"
+
+sync_translations
 
 if [ -f "$WORK_DIR/build.js" ]; then
   if ! node "$WORK_DIR/build.js" >> "$LOG" 2>&1; then

@@ -259,6 +259,7 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 - Stage 2, 4는 구조화 출력 실패 시 1회 재시도, 결과 JSON 출력 후 프로세스가 안 끝나면 즉시 정리
 - 키워드 직접 지정 실행: `AIWIKI_KEYWORDS_FILE=list.json bash scripts/run-daily.sh` (LLM 선정 생략, 예: 이전 실패 후보 재시도)
 - 기존 항목 번역만 재생성: `node scripts/llm-stage.js translate --ids a,b --out DIR` → `node apply-updates.js DIR` (apply-updates는 det·sum·refs·translations 중 있는 것만 교체, 구문 검증 통과 시에만 저장)
+- **번역 동기화 (자동)**: `i18n-meta.json`에 번역 당시 한국어 sum+det 해시를 기록한다(apply-entries·apply-updates가 기록, `scripts/i18n-meta.js`). 매 실행의 빌드 직전에 `translate --stale`이 공개 항목 중 번역이 없거나 해시가 달라진 것만 다시 번역한다. 본문을 직접 심화한 뒤에도 다음 실행에서 번역이 자동으로 따라온다. 평소엔 0건.
 
 #### /add-keyword 흐름
 
