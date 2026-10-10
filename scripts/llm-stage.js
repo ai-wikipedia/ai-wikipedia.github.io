@@ -12,6 +12,7 @@
 // 사용법:
 //   node scripts/llm-stage.js select  --run-dir DIR [--max 5]
 //   node scripts/llm-stage.js content --run-dir DIR [--parallel 3]
+//   node scripts/llm-stage.js translate --ids a,b,c --out DIR [--parallel 3]   (기존 항목 번역만 재생성 → apply-updates.js 입력)
 // 환경변수(선택): AIWIKI_CLAUDE, AIWIKI_LOG,
 //   AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL / _EFFORT
 
@@ -49,6 +50,8 @@ function parseArgs(argv) {
     if (argv[i] === '--run-dir') a.runDir = argv[++i];
     else if (argv[i] === '--max') a.max = parseInt(argv[++i], 10);
     else if (argv[i] === '--parallel') a.parallel = parseInt(argv[++i], 10);
+    else if (argv[i] === '--ids') a.ids = argv[++i];
+    else if (argv[i] === '--out') a.out = argv[++i];
   }
   return a;
 }
@@ -226,13 +229,17 @@ const CONTENT_SCHEMA = {
 const LANG_PART = { type: 'object', properties: { sum: { type: 'string' }, det: { type: 'string' } }, required: ['sum', 'det'] };
 const TRANSLATE_SCHEMA = { type: 'object', properties: { en: LANG_PART, zh: LANG_PART, ja: LANG_PART }, required: ['en', 'zh', 'ja'] };
 
+function loadEntries() {
+  const src = fs.readFileSync(path.join(WORK_DIR, 'data.js'), 'utf8').replace(/^const /gm, 'var ');
+  const sandbox = {};
+  new Function('sandbox', `${src}; sandbox.D = D;`)(sandbox);
+  return sandbox.D;
+}
+
 // 프롬프트에 넣을 모범 det (구성·톤 기준). 섹션 제목을 그대로 베끼지 않도록 프롬프트에서 따로 지시한다.
 function exampleDet() {
   try {
-    const src = fs.readFileSync(path.join(WORK_DIR, 'data.js'), 'utf8').replace(/^const /gm, 'var ');
-    const sandbox = {};
-    new Function('sandbox', `${src}; sandbox.D = D;`)(sandbox);
-    const e = sandbox.D.find((x) => x.id === 'mcp');
+    const e = loadEntries().find((x) => x.id === 'mcp');
     return e ? e.det : '';
   } catch (e) { return ''; }
 }
@@ -293,12 +300,34 @@ async function runContent(a) {
   process.stdout.write(JSON.stringify(stat));
 }
 
+// ── 기존 항목 번역만 재생성 (본문을 심화한 뒤 옛 번역을 갱신할 때) ──
+async function runTranslate(a) {
+  const ids = String(a.ids || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const D = loadEntries();
+  const tpl = readText(path.join(PROMPTS, 'translate.md'));
+  fs.mkdirSync(a.out, { recursive: true });
+  const stat = { ok: 0, fail: 0 };
+  await pool(ids, a.parallel, async (id) => {
+    const e = D.find((x) => x.id === id);
+    if (!e) { log(`  ! ${id}: 항목 없음`); stat.fail++; return; }
+    const sum = String(e.sum || '').replace(/<[^>]+>/g, '');
+    const r = await callWithRetry(fill(tpl, { TITLE: `${e.t} (${e.en || e.t})`, SUM: sum, DET: e.det }), TRANSLATE_SCHEMA, CFG.translate, `번역 ${id}`);
+    if (!r.ok) { stat.fail++; return; }
+    fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, translations: r.data }));
+    stat.ok++;
+  });
+  log(`  번역 요약: 성공 ${stat.ok} / 실패 ${stat.fail}`);
+  process.stdout.write(JSON.stringify(stat));
+}
+
 (async () => {
   const a = parseArgs(process.argv.slice(2));
-  if (!a.runDir || !['select', 'content'].includes(a.mode)) {
-    console.error('usage: node scripts/llm-stage.js <select|content> --run-dir DIR [--max N] [--parallel N]');
+  const ok = (a.mode === 'translate' && a.ids && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
+  if (!ok) {
+    console.error('usage: node scripts/llm-stage.js <select|content> --run-dir DIR [--max N] [--parallel N]\n       node scripts/llm-stage.js translate --ids a,b --out DIR [--parallel N]');
     process.exit(2);
   }
   if (a.mode === 'select') await runSelect(a);
-  else await runContent(a);
+  else if (a.mode === 'content') await runContent(a);
+  else await runTranslate(a);
 })();

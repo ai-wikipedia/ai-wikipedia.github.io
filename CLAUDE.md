@@ -257,6 +257,8 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 - GeekNews /new는 10개만 수집 (하루 게시글 2~3건 수준의 소규모 커뮤니티)
 - 키워드 0개 선정 시 Stage 3~5 건너뛰고 Stage 6으로 점프
 - Stage 2, 4는 구조화 출력 실패 시 1회 재시도, 결과 JSON 출력 후 프로세스가 안 끝나면 즉시 정리
+- 키워드 직접 지정 실행: `AIWIKI_KEYWORDS_FILE=list.json bash scripts/run-daily.sh` (LLM 선정 생략, 예: 이전 실패 후보 재시도)
+- 기존 항목 번역만 재생성: `node scripts/llm-stage.js translate --ids a,b --out DIR` → `node apply-updates.js DIR` (apply-updates는 det·sum·refs·translations 중 있는 것만 교체, 구문 검증 통과 시에만 저장)
 
 #### /add-keyword 흐름
 
@@ -291,10 +293,10 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 
 ### 로컬 스케줄러 (launchd + pmset)
 
-> **⚠️ 현재 상태 (2026-08-30): AdSense 재심사 기간 동안 비활성화됨.**
-> `launchctl bootout` + `launchctl disable`로 영구 중단 (재부팅해도 안 살아남). 자동 발행은 "scaled content abuse" 신호라 심사에 불리.
+> **현재 상태 (2026-10-10): 매일 08:00 자동 발행으로 재가동.** (2026-08-30~10-09 AdSense 재심사 대응으로 중단했었음)
+> 기본값: 최대 5개, 생성 후 바로 push. 본문 1000자 미만은 build.js 게이트로 자동 비공개.
+> 중단: `launchctl bootout gui/$UID/com.aiwiki.daily && launchctl disable gui/$UID/com.aiwiki.daily` (unload만 하면 재부팅 시 되살아남)
 > 재개: `launchctl enable gui/$UID/com.aiwiki.daily && launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.aiwiki.daily.plist`
-> 재개 시 Stage 4 뒤에 발행 전 인간 검토 단계를 넣을 것 (AdSense Replicated content 정책: "수동 검토 없는 자동 생성 콘텐츠" 금지).
 
 - **스케줄**: 매일 08:00 KST (plist `Hour`/`Minute`로 조정)
 - **자동 기상**: `pmset repeat wakeorpoweron MTWRFSU 07:59:00` — 잠자기 상태에서 스케줄 1분 전 자동 wake
