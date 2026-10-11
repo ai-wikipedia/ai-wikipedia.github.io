@@ -371,3 +371,6 @@ ai-chip	AI 칩	AI Custom Chip	infra
 krea-2	크레아 2	Krea 2 (Krea AI)	model
 opentag	오픈태그	OpenTag	agent
 global-workspace	글로벌 워크스페이스	Global Workspace Theory	model
+vercel-eve	이브	Eve (Vercel Agent Framework)	agent
+spiking-neural-network	스파이킹 신경망	Spiking Neural Network (Neuromorphic Computing)	model
+big-arrow-on-the-screen	빅 애로우 온 더 스크린	big-arrow-on-the-screen (Agent Screen Annotation Skill)	tooling

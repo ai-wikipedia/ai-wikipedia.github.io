@@ -1,3 +1,7 @@
+## 2026-10-12 08:02
+- 추가: vercel-eve, spiking-neural-network, big-arrow-on-the-screen
+- HOT: vercel-eve, big-arrow-on-the-screen
+
 ## 2026-10-10 22:13
 - 추가: kan, agentic-search, effort-control, ponytail, gemini-3-pro-image, agent-ephemeral-identity, record-and-replay, image-inpainting, extended-thinking, oak, ai-chip, krea-2, opentag, global-workspace (이전 실패 백로그 나머지 14개)
 - 번역 보충: nemotron-3-ultra
