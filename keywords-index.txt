@@ -374,3 +374,7 @@ global-workspace	글로벌 워크스페이스	Global Workspace Theory	model
 vercel-eve	이브	Eve (Vercel Agent Framework)	agent
 spiking-neural-network	스파이킹 신경망	Spiking Neural Network (Neuromorphic Computing)	model
 big-arrow-on-the-screen	빅 애로우 온 더 스크린	big-arrow-on-the-screen (Agent Screen Annotation Skill)	tooling
+gemini-4-argon	제미나이 4 아르곤	Gemini 4 Argon (Google)	model
+google-antigravity	구글 안티그래비티	Google Antigravity	tooling
+multi-token-prediction	멀티 토큰 예측	Multi-Token Prediction (MTP)	model
+agent-session-replay	에이전트 세션 리플레이	Agent Session Replay	tooling

@@ -1,3 +1,7 @@
+## 2026-10-16 08:02
+- 추가: gemini-4-argon, google-antigravity, multi-token-prediction, agent-session-replay
+- HOT: gemini-4-argon, google-antigravity, multi-token-prediction, agent-session-replay
+
 ## 2026-10-15 09:53
 - 추가: (없음)
 - HOT: (없음)
