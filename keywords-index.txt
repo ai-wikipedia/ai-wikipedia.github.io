@@ -378,3 +378,5 @@ gemini-4-argon	제미나이 4 아르곤	Gemini 4 Argon (Google)	model
 google-antigravity	구글 안티그래비티	Google Antigravity	tooling
 multi-token-prediction	멀티 토큰 예측	Multi-Token Prediction (MTP)	model
 agent-session-replay	에이전트 세션 리플레이	Agent Session Replay	tooling
+muse-wonder	뮤즈 원더	Muse Wonder (Meta)	model
+graphicle	그래피클	Graphicle (Code Graph and Memory for Coding Agents)	tooling
