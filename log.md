@@ -1,3 +1,7 @@
+## 2026-10-18 08:02
+- 추가: bitter-lesson, strands-agents, agent-memory-benchmark, associative-memory, run-ai
+- HOT: bitter-lesson, agent-memory-benchmark, run-ai
+
 ## 2026-10-17 08:02
 - 추가: muse-wonder, graphicle
 - HOT: muse-wonder

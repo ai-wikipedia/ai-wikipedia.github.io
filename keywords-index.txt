@@ -380,3 +380,8 @@ multi-token-prediction	멀티 토큰 예측	Multi-Token Prediction (MTP)	model
 agent-session-replay	에이전트 세션 리플레이	Agent Session Replay	tooling
 muse-wonder	뮤즈 원더	Muse Wonder (Meta)	model
 graphicle	그래피클	Graphicle (Code Graph and Memory for Coding Agents)	tooling
+bitter-lesson	쓰라린 교훈	The Bitter Lesson (Rich Sutton)	model
+strands-agents	스트랜즈 에이전트	Strands Agents SDK (AWS)	agent
+agent-memory-benchmark	에이전트 메모리 벤치마크	Agent Memory Benchmark (LoCoMo, LongMemEval)	agent
+associative-memory	연상 메모리	Associative Memory (Hopfield Networks and Transformers)	model
+run-ai	런에이아이	NVIDIA Run:ai (Kubernetes GPU Orchestration)	infra
