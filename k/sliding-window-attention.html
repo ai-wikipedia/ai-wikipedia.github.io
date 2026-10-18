@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>슬라이딩 윈도우 어텐션이란? (Sliding Window Attention) — AI Wiki</title>
+<meta name="description" content="슬라이딩 윈도우 어텐션이란? 트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.">
+<meta name="keywords" content="슬라이딩 윈도우 어텐션, Sliding Window Attention (SWA), 어텐션, 롱 컨텍스트, 효율화, 트랜스포머, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="슬라이딩 윈도우 어텐션이란? (Sliding Window Attention) — AI Wiki">
+<meta property="og:description" content="슬라이딩 윈도우 어텐션이란? 트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/sliding-window-attention.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-18">
+<meta property="article:modified_time" content="2026-10-18">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="슬라이딩 윈도우 어텐션이란? (Sliding Window Attention) — AI Wiki">
+<meta name="twitter:description" content="슬라이딩 윈도우 어텐션이란? 트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/sliding-window-attention.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/sliding-window-attention.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "슬라이딩 윈도우 어텐션",
+  "alternateName": "Sliding Window Attention (SWA)",
+  "description": "트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.",
+  "url": "https://aiwiki.work/k/sliding-window-attention.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "슬라이딩 윈도우 어텐션",
+      "item": "https://aiwiki.work/k/sliding-window-attention.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "슬라이딩 윈도우 어텐션 (Sliding Window Attention)",
+  "description": "트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.",
+  "url": "https://aiwiki.work/k/sliding-window-attention.html",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/sliding-window-attention.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>슬라이딩 윈도우 어텐션</h1>
+  <div class="en">Sliding Window Attention (SWA)</div>
+  <div class="body"><p>트랜스포머에서 각 토큰이 모든 토큰이 아니라 자기 주변 일정 범위(윈도우) 안의 토큰만 보게 해서 계산량을 줄이는 어텐션 방식이다. 긴 문서를 처리해야 하는데 일반 어텐션으로는 메모리와 연산이 감당 안 될 때 쓴다.</p><h4>한눈에 보기</h4><p>일반 어텐션은 모든 토큰이 다른 모든 토큰을 본다. 그래서 문장이 두 배로 길어지면 계산은 네 배로 늘어난다. 슬라이딩 윈도우 어텐션(SWA)은 각 토큰이 <strong>앞뒤 정해진 거리 안의 토큰만</strong> 보게 해서, 계산량이 문장 길이에 비례해 늘어나도록 바꾼다.</p><div class="tbl"><table><tr><th>구분</th><th>전체 어텐션</th><th>슬라이딩 윈도우</th></tr><tr><td>한 토큰이 보는 범위</td><td>문장 전체</td><td>주변 윈도우만</td></tr><tr><td>길이가 2배가 되면</td><td>계산 4배</td><td><strong>계산 2배</strong></td></tr><tr><td>강점</td><td>멀리 떨어진 관계 파악</td><td>긴 입력을 싸게 처리</td></tr></table></div><p class="note">윈도우 크기는 보통 128~512 토큰 정도의 고정값이고, 입력 길이와 상관없이 그대로 유지된다.</p><h4>좁게 봐도 되는 이유: 층을 쌓으면 시야가 넓어진다</h4><p>언어는 가까운 단어끼리 구를 만들고, 구가 모여 절이 되는 식으로 의미가 주로 근처에서 정해진다. 그래서 주변만 봐도 대부분의 정보를 얻는다. 게다가 다음 층의 토큰은 이전 층에서 이미 자기 주변을 본 토큰을 다시 보기 때문에, 층이 깊어질수록 실제로 닿는 범위가 점점 넓어진다.</p><h4>약점을 보완하는 변형들</h4><p>윈도우만 쓰면 문서 맨 앞과 맨 뒤처럼 멀리 떨어진 정보를 잇기 어렵다. 그래서 몇 가지 보완책이 함께 쓰인다.</p><div class="tbl"><table><tr><th>변형</th><th>방식</th><th>이럴 때 쓴다</th></tr><tr><td>확장(dilated) 윈도우</td><td>간격을 두고 띄엄띄엄 봄</td><td>같은 비용으로 더 넓게 보고 싶을 때</td></tr><tr><td>글로벌 + 윈도우</td><td>CLS 같은 특수 토큰만 전체를 봄</td><td>문서 분류처럼 전체 요약이 필요할 때</td></tr><tr><td>싱크(sink) 토큰 추가</td><td>항상 참고하는 고정 토큰을 둠</td><td>긴 생성에서 안정성을 높일 때</td></tr></table></div><h4>직접 쓸 때 고를 것: 윈도우 크기와 전역 토큰</h4><p>긴 문서 분류나 질의응답 모델을 직접 학습한다면, 대부분의 토큰은 윈도우로 처리하고 질문이나 분류용 토큰만 전체를 보게 설정하는 방식이 기본이다. 윈도우를 넓히면 맥락은 늘지만 비용도 함께 늘어나므로 GPU 메모리에 맞춰 정한다. 생성 모델에서는 윈도우 밖의 오래된 KV 캐시를 버리는 롤링 버퍼를 쓸 수 있어, 대화가 길어져도 캐시 메모리가 일정하게 유지된다.</p><h4>선형 어텐션과 비교하면</h4><p>긴 입력을 싸게 처리하는 또 다른 방법으로 선형 어텐션이 있다. 2026년 8월 발표된 논문은 싱크 토큰을 더한 SWA가 사후 학습으로 만든 선형 어텐션 모델과 같거나 더 나은 성능을 보였다고 보고했다. 다만 멀리 떨어진 맥락이 꼭 필요한 작업에서는 정보 손실이 생길 수 있으니, 내 작업으로 직접 확인하는 것이 안전하다.</p></div>
+  <div class="tags"><span>#어텐션</span><span>#롱 컨텍스트</span><span>#효율화</span><span>#트랜스포머</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://deepchecks.com/glossary/sliding-window-attention" target="_blank" rel="nofollow noopener">What is Sliding Window Attention? | Deepchecks</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://mbrenndoerfer.com/writing/sliding-window-attention" target="_blank" rel="nofollow noopener">Sliding Window Attention - Interactive</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://velog.io/@zerotoagi/Sliding-Window-Attention" target="_blank" rel="nofollow noopener">Sliding Window Attention 알고리즘 정리</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://arxiv.org/abs/2608.28444" target="_blank" rel="nofollow noopener">Sliding-window beats linear attention</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=UiX8K-xBUpE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UiX8K-xBUpE/mqdefault.jpg" alt="Mistral / Mixtral Explained: Sliding Window Attention, Sparse Mixture of Experts, Rolling Buffer" loading="lazy" width="160" height="90"><span>Mistral / Mixtral Explained: Sliding Window Attention, Sparse Mixture of Experts, Rolling Buffer</span></a><a class="video-item" href="https://www.youtube.com/watch?v=it0iZ93aLs4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/it0iZ93aLs4/mqdefault.jpg" alt="Sliding Window Attention (Longformer) Explained" loading="lazy" width="160" height="90"><span>Sliding Window Attention (Longformer) Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=zhsD8PmEz3U" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zhsD8PmEz3U/mqdefault.jpg" alt="선형 어텐션보다 단순한 창이 더 강했다: SWA 논문 검증" loading="lazy" width="160" height="90"><span>선형 어텐션보다 단순한 창이 더 강했다: SWA 논문 검증</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#sliding-window-attention">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-18</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

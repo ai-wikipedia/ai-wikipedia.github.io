@@ -1,3 +1,7 @@
+## 2026-10-19 08:16
+- 추가: latent-reasoning, grouped-query-attention, sliding-window-attention
+- HOT: latent-reasoning, sliding-window-attention
+
 ## 2026-10-18 08:02
 - 추가: bitter-lesson, strands-agents, agent-memory-benchmark, associative-memory, run-ai
 - HOT: bitter-lesson, agent-memory-benchmark, run-ai

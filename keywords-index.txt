@@ -385,3 +385,6 @@ strands-agents	스트랜즈 에이전트	Strands Agents SDK (AWS)	agent
 agent-memory-benchmark	에이전트 메모리 벤치마크	Agent Memory Benchmark (LoCoMo, LongMemEval)	agent
 associative-memory	연상 메모리	Associative Memory (Hopfield Networks and Transformers)	model
 run-ai	런에이아이	NVIDIA Run:ai (Kubernetes GPU Orchestration)	infra
+latent-reasoning	잠재 공간 추론	Latent Space Reasoning	model
+grouped-query-attention	그룹 쿼리 어텐션	Grouped-Query Attention (GQA)	model
+sliding-window-attention	슬라이딩 윈도우 어텐션	Sliding Window Attention (SWA)	model

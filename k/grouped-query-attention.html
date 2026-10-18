@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>그룹 쿼리 어텐션이란? (Grouped-Query Attention) — AI Wiki</title>
+<meta name="description" content="그룹 쿼리 어텐션이란? 여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.">
+<meta name="keywords" content="그룹 쿼리 어텐션, Grouped-Query Attention (GQA), attention, kv-cache, inference, transformer, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="그룹 쿼리 어텐션이란? (Grouped-Query Attention) — AI Wiki">
+<meta property="og:description" content="그룹 쿼리 어텐션이란? 여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/grouped-query-attention.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-18">
+<meta property="article:modified_time" content="2026-10-18">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="그룹 쿼리 어텐션이란? (Grouped-Query Attention) — AI Wiki">
+<meta name="twitter:description" content="그룹 쿼리 어텐션이란? 여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/grouped-query-attention.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/grouped-query-attention.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "그룹 쿼리 어텐션",
+  "alternateName": "Grouped-Query Attention (GQA)",
+  "description": "여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.",
+  "url": "https://aiwiki.work/k/grouped-query-attention.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "그룹 쿼리 어텐션",
+      "item": "https://aiwiki.work/k/grouped-query-attention.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "그룹 쿼리 어텐션 (Grouped-Query Attention)",
+  "description": "여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.",
+  "url": "https://aiwiki.work/k/grouped-query-attention.html",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/grouped-query-attention.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>그룹 쿼리 어텐션</h1>
+  <div class="en">Grouped-Query Attention (GQA)</div>
+  <div class="body"><p>여러 쿼리 헤드가 키·값 헤드 하나를 나눠 쓰게 해서 KV 캐시를 줄이는 어텐션 방식이다. LLM이 긴 문맥이나 큰 배치를 처리할 때 메모리를 아끼고 생성 속도를 높이는 데 쓴다.</p><h4>한눈에 보기</h4><p>그룹 쿼리 어텐션(GQA)은 쿼리 헤드는 그대로 두고 <strong>키·값(K/V) 헤드 수만 줄여서</strong> 여러 쿼리 헤드가 K/V 하나를 같이 쓰게 하는 어텐션 방식이다. 긴 대화나 큰 배치를 돌릴 때 KV 캐시가 GPU 메모리를 많이 차지하는 문제를 줄이려고 쓴다. 품질은 멀티헤드 어텐션(MHA)에 가깝고, 속도는 멀티쿼리 어텐션(MQA)에 가깝다.</p><div class="tbl"><table><tr><th>방식</th><th>K/V 헤드 수</th><th>특징</th></tr><tr><td>MHA</td><td>쿼리 헤드 수와 같음</td><td>품질이 가장 좋지만 메모리를 가장 많이 씀</td></tr><tr><td><strong>GQA</strong></td><td>그 사이 (예: 32개 중 8개)</td><td><strong>품질은 MHA에, 속도는 MQA에 가까움</strong></td></tr><tr><td>MQA</td><td>1개</td><td>가장 빠르지만 품질이 떨어짐</td></tr></table></div><h4>KV 캐시가 그룹 수만큼 줄어든다</h4><p>모델은 토큰을 하나씩 생성할 때마다 앞 토큰들의 키와 값을 KV 캐시에 저장해 두고 매번 다시 읽는다. 이 저장하고 읽는 양이 병목인데, 캐시 크기는 K/V 헤드 수에 비례한다. 쿼리 헤드 32개를 K/V 헤드 8개로 묶으면 쿼리 헤드 4개가 K/V 하나를 같이 쓰고, 캐시는 1/4로 줄어든다.</p><div class="bars"><div class="bar"><span class="bar-label">MHA (K/V 32개)</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">100%</span></div><div class="bar"><span class="bar-label">GQA (K/V 8개)</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-val">25%</span></div><div class="bar"><span class="bar-label">MQA (K/V 1개)</span><span class="bar-track"><span class="bar-fill" style="width:3%"></span></span><span class="bar-val">약 3%</span></div></div><p class="note">쿼리 헤드 32개 기준 KV 캐시 크기. 레이어 하나, 토큰 하나당 캐시 크기 = 2 × K/V 헤드 수 × 헤드 차원 × 원소당 바이트.</p><p>이렇게 아낀 메모리로 배치를 키우거나 문맥을 늘릴 수 있어서 서빙 처리량이 올라간다.</p><h4>설정값 하나로 정해진다</h4><p>GQA는 모델을 설계할 때 정하는 구조다. 그래서 보통은 GQA가 이미 적용된 오픈 모델을 받아 쓰게 된다. 모델 설정에서 쿼리 헤드 수와 K/V 헤드 수가 다르면 GQA 모델이다. 그룹 수를 1로 두면 MQA가 되고, 쿼리 헤드 수와 같게 두면 MHA가 된다.</p><div class="tbl"><table><tr><th>상황</th><th>방법</th></tr><tr><td>직접 구현</td><td>PyTorch <code>scaled_dot_product_attention</code>에 <code>enable_gqa=True</code>를 주면 K/V를 직접 복제하지 않아도 됨</td></tr><tr><td>기존 MHA 모델 변환</td><td>K/V 헤드를 그룹별로 합친 뒤 짧게 추가 학습(업트레이닝)</td></tr><tr><td>서빙</td><td>TensorRT-LLM 같은 엔진은 MHA·MQA·GQA를 같은 어텐션 연산 하나로 처리함</td></tr></table></div><h4>문맥 길이 비용은 그대로 남는다</h4><p>GQA는 K/V 개수만 줄일 뿐, 이전 토큰을 모두 보는 전체 어텐션은 그대로 한다. 문맥을 줄이거나 어텐션을 희소하게 만들지 않으므로, 문맥이 길어질수록 비용이 커지는 성질은 바뀌지 않는다. 문맥 길이에 따른 비용 자체를 줄이려면 슬라이딩 윈도우 어텐션처럼 보는 범위를 줄이는 기법을 함께 써야 한다. 그룹을 너무 적게 잡으면 MQA처럼 품질이 떨어질 수 있으므로, 그룹 수는 메모리와 품질 사이에서 정해야 한다.</p></div>
+  <div class="tags"><span>#attention</span><span>#kv-cache</span><span>#inference</span><span>#transformer</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/attention-head.html">어텐션 헤드</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2305.13245" target="_blank" rel="nofollow noopener">GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</a> <span class="ref-type">논문</span></li><li><a href="https://sebastianraschka.com/faq/docs/grouped-query-attention.html" target="_blank" rel="nofollow noopener">What is grouped-query attention (GQA), and why do many modern LLMs use it? - Sebastian Raschka</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://machinelearningmastery.com/a-gentle-introduction-to-multi-head-attention-and-grouped-query-attention" target="_blank" rel="nofollow noopener">A Gentle Introduction to Multi-Head Attention and Grouped-Query Attention</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://friendli.ai/blog/gqa-vs-mha" target="_blank" rel="nofollow noopener">Grouped Query Attention (GQA) vs. Multi Head Attention (MHA) - FriendliAI</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://nvidia.github.io/TensorRT-LLM/advanced/gpt-attention.html" target="_blank" rel="nofollow noopener">Multi-Head, Multi-Query, and Group-Query Attention — TensorRT-LLM</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=Mn_9W1nCFLo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Mn_9W1nCFLo/mqdefault.jpg" alt="LLaMA explained: KV-Cache, Rotary Positional Embedding, RMS Norm, Grouped Query Attention, SwiGLU" loading="lazy" width="160" height="90"><span>LLaMA explained: KV-Cache, Rotary Positional Embedding, RMS Norm, Grouped Query Attention, SwiGLU</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Y-o545eYjXM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Y-o545eYjXM/mqdefault.jpg" alt="How Attention Got So Efficient [GQA/MLA/DSA]" loading="lazy" width="160" height="90"><span>How Attention Got So Efficient [GQA/MLA/DSA]</span></a><a class="video-item" href="https://www.youtube.com/watch?v=lvSDQujIN-c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/lvSDQujIN-c/mqdefault.jpg" alt="GQA : Training Generalized Multi Query Transformer Models from Multi Head Checkpoint" loading="lazy" width="160" height="90"><span>GQA : Training Generalized Multi Query Transformer Models from Multi Head Checkpoint</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#grouped-query-attention">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-18</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>
