@@ -1,3 +1,7 @@
+## 2026-10-20 08:03
+- 추가: deepseek-search-api, earshot, rea-reverse-engineering, muse-spark-open, embeddinggemma-2
+- HOT: deepseek, harness-engineering, agent-memory, agent-memory-benchmark, bitter-lesson, latent-reasoning, mercury-llm, mistral, claude-code, software-factory
+
 ## 2026-10-19 22:26
 - 추가: claude-opus-5, inkling, software-factory, pi-coding-agent, openclaw, grok-bot, stateless-mcp, ai-for-mathematics, qwen3-8-flash-next, kolibri, scion, generative-ui, looped-transformer, pelican-benchmark, beam-reflection
 - HOT: harness-engineering, deepseek-v4-1-flash, agent-memory, latent-reasoning, bitter-lesson, claude-code, run-ai, strands-agents, transformer

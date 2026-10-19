@@ -413,3 +413,8 @@ generative-ui	생성형 UI	Generative UI / Intelligent UI	application
 looped-transformer	루프형 트랜스포머	Looped Transformer (Recurrent Depth)	model
 pelican-benchmark	펠리컨 벤치마크	Pelican on a Bicycle Benchmark	infra
 beam-reflection	빔 1.0	Beam 1.0 501B (Reflection AI)	model
+deepseek-search-api	딥시크 서치 API	DeepSeek Search & Fetch API	tooling
+earshot	이어샷	Earshot (Audio Analysis for Coding Agents)	tooling
+rea-reverse-engineering	REA 리버스 엔지니어링	REA (Reverse Engineer Anything with Agents)	tooling
+muse-spark-open	뮤즈 스파크 오픈	Muse Spark Open (Meta)	model
+embeddinggemma-2	임베딩젬마 2	EmbeddingGemma 2 (Google)	model
