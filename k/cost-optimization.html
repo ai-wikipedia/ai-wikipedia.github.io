@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>비용 최적화란? (LLM Cost Optimization) — AI Wiki</title>
+<meta name="description" content="비용 최적화란? LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.">
+<meta name="keywords" content="비용 최적화, LLM Cost Optimization, 토큰비용, 캐싱, 모델라우팅, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="비용 최적화란? (LLM Cost Optimization) — AI Wiki">
+<meta property="og:description" content="비용 최적화란? LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/cost-optimization.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="비용 최적화란? (LLM Cost Optimization) — AI Wiki">
+<meta name="twitter:description" content="비용 최적화란? LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/cost-optimization.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/cost-optimization.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "비용 최적화",
+  "alternateName": "LLM Cost Optimization",
+  "description": "LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.",
+  "url": "https://aiwiki.work/k/cost-optimization.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "인프라",
+      "item": "https://aiwiki.work/c/infra.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "비용 최적화",
+      "item": "https://aiwiki.work/k/cost-optimization.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "비용 최적화 (LLM Cost Optimization)",
+  "description": "LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.",
+  "url": "https://aiwiki.work/k/cost-optimization.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/cost-optimization.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/infra.html">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <h1>비용 최적화</h1>
+  <div class="en">LLM Cost Optimization</div>
+  <div class="body"><p>LLM API 비용을 품질은 그대로 두고 줄이는 방법들이다. 프롬프트 캐싱, 모델 라우팅, 배치 처리, 토큰 줄이기를 상황에 맞게 섞어 쓴다.</p><h4>한눈에 보기</h4><p>LLM 비용 최적화는 답의 품질은 지키면서 API 청구액을 줄이는 방법들을 말한다. 비용은 <strong>입력 토큰, 출력 토큰, 호출 횟수</strong>로 정해진다. 그래서 셋 중 어디에 돈이 많이 드는지 먼저 보고, 거기에 맞는 방법을 고르면 된다.</p><div class="tbl"><table><tr><th>방법</th><th>줄이는 것</th><th>이럴 때 쓴다</th></tr><tr><td>프롬프트 캐싱</td><td>반복되는 입력 비용</td><td>긴 지시문·문서를 매번 보낼 때</td></tr><tr><td>모델 라우팅</td><td>호출 한 번의 단가</td><td>쉬운 요청과 어려운 요청이 섞여 있을 때</td></tr><tr><td>배치 API</td><td>전체 단가</td><td>결과를 바로 받지 않아도 될 때</td></tr><tr><td>응답 캐시</td><td>호출 횟수</td><td>똑같은 질문이 반복될 때</td></tr></table></div><h4>먼저 어디서 돈이 새는지 본다</h4><p>서비스에 LLM을 붙이면 비용이 생각보다 빨리 쌓인다. 보통 출력 토큰이 입력 토큰보다 비싸다. 에이전트처럼 같은 맥락을 여러 번 보내는 구조에서는 입력 토큰이 크게 불어난다. 로그에서 요청별 입력·출력 토큰을 모아 보면 어떤 방법이 가장 효과적일지 바로 드러난다.</p><p>기본은 프롬프트를 짧게 쓰는 것이다. 결과에 영향이 없는 지시와 예시는 지운다. 출력은 형식을 정해 짧게 받고, <code>max_tokens</code>로 상한을 둔다.</p><h4>반복되는 입력은 캐싱으로 최대 90% 절약</h4><p>Claude API에서는 긴 시스템 프롬프트나 문서 끝에 <code>cache_control</code>을 붙이면 그 지점까지의 앞부분이 캐시에 저장된다. 같은 앞부분으로 다시 호출하면 캐시에서 읽어 오므로 그 부분의 입력 비용이 최대 90%까지 줄어든다. 다만 캐시에 처음 저장할 때는 평소보다 비싸고 캐시는 잠시 뒤 사라진다. 그러니 자주 반복되는 앞부분에만 건다.</p><p>캐시를 쓰려면 앞부분이 글자 하나까지 같아야 한다. 고정된 지시문과 문서는 앞에, 매번 바뀌는 사용자 입력은 뒤에 둔다. 똑같은 질문이 그대로 반복되는 서비스라면 LangChain의 <code>SQLiteCache</code> 같은 응답 캐시로 API 호출 자체를 없앨 수 있다.</p><div class="bars"><div class="bar"><span class="bar-label">일반 호출</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">100%</span></div><div class="bar"><span class="bar-label">배치 API</span><span class="bar-track"><span class="bar-fill" style="width:50%"></span></span><span class="bar-val">50%</span></div><div class="bar"><span class="bar-label">캐시 읽기</span><span class="bar-track"><span class="bar-fill" style="width:10%"></span></span><span class="bar-val">10%</span></div></div><p class="note">같은 입력 토큰을 보낼 때의 상대 비용. 배치는 OpenAI 기준, 캐시 읽기는 Claude 기준이다.</p><h4>쉬운 일은 작은 모델에, 급하지 않은 일은 배치로</h4><p>분류, 추출, 짧은 답변은 소형 모델에 보내고 복잡한 추론만 상위 모델에 맡기면 평균 단가가 크게 내려간다. 작업 종류나 입력 길이 같은 규칙으로 나눠도 되고, RouteLLM 같은 라우팅 라이브러리로 자동화해도 된다. 라우팅을 적용한 뒤에는 작은 모델로 보낸 요청 중 일부를 골라 품질이 떨어지지 않았는지 꼭 확인한다.</p><p>밤사이 데이터 처리, 대량 평가, 문서 일괄 요약처럼 바로 답할 필요가 없는 일은 배치 API로 묶어 보낸다. OpenAI 배치 API는 요청을 파일로 올리면 24시간 안에 결과를 돌려주고, 가격은 절반이다. 사용자가 답을 기다리는 대화형 기능에는 맞지 않는다.</p></div>
+  <div class="tags"><span>#토큰비용</span><span>#캐싱</span><span>#모델라우팅</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-caching.html">프롬프트 캐싱</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/batch-inference.html">배치 추론</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a>, <a href="https://aiwiki.work/k/claude-sonnet-4-6.html">클로드 소네트 4.6</a>, <a href="https://aiwiki.work/k/claude-haiku-4-5.html">클로드 하이쿠 4.5</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a>, <a href="https://aiwiki.work/k/claude-haiku-5-5.html">클로드 하이쿠 5.5</a>, <a href="https://aiwiki.work/k/gpt-6-sol.html">GPT-6 솔</a>, <a href="https://aiwiki.work/k/gpt-6-luna.html">GPT-6 루나</a>, <a href="https://aiwiki.work/k/jev-router.html">제브 라우터</a>, <a href="https://aiwiki.work/k/effort-control.html">에포트 컨트롤</a>, <a href="https://aiwiki.work/k/extended-thinking.html">확장 사고</a>, <a href="https://aiwiki.work/k/ai-chip.html">AI 칩</a>, <a href="https://aiwiki.work/k/run-ai.html">런에이아이</a>, <a href="https://aiwiki.work/k/jev.html">제브</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" target="_blank" rel="nofollow noopener">Prompt Caching — Anthropic Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/batch" target="_blank" rel="nofollow noopener">Batch API (50% cost reduction) — OpenAI Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=9tvJ_GYJA-o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9tvJ_GYJA-o/mqdefault.jpg" alt="Mastering LLM Inference Optimization" loading="lazy" width="160" height="90"><span>Mastering LLM Inference Optimization</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QjyJlmgBGqs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QjyJlmgBGqs/mqdefault.jpg" alt="Databricks vLLM Optimization for Cost-Effective LLM Inference" loading="lazy" width="160" height="90"><span>Databricks vLLM Optimization for Cost-Effective LLM Inference</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mFBaEZ4VAGI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mFBaEZ4VAGI/mqdefault.jpg" alt="AI 비용 최적화 전략 - 테디노트" loading="lazy" width="160" height="90"><span>AI 비용 최적화 전략 - 테디노트</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#cost-optimization">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

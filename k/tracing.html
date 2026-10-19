@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>트레이싱이란? (LLM Tracing) — AI Wiki</title>
+<meta name="description" content="트레이싱이란? LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.">
+<meta name="keywords" content="트레이싱, LLM Tracing, 관측성, 디버깅, 로깅, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="트레이싱이란? (LLM Tracing) — AI Wiki">
+<meta property="og:description" content="트레이싱이란? LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/tracing.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="트레이싱이란? (LLM Tracing) — AI Wiki">
+<meta name="twitter:description" content="트레이싱이란? LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/tracing.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/tracing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "트레이싱",
+  "alternateName": "LLM Tracing",
+  "description": "LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.",
+  "url": "https://aiwiki.work/k/tracing.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "도구",
+      "item": "https://aiwiki.work/c/tooling.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "트레이싱",
+      "item": "https://aiwiki.work/k/tracing.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "트레이싱 (LLM Tracing)",
+  "description": "LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.",
+  "url": "https://aiwiki.work/k/tracing.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/tracing.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/tooling.html">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <h1>트레이싱</h1>
+  <div class="en">LLM Tracing</div>
+  <div class="body"><p>LLM 앱이 요청 하나를 처리하며 거친 모델 호출, 검색, 툴 실행 같은 단계를 순서대로 기록하는 것이다. 에이전트의 답이 이상하거나 느리거나 비쌀 때 원인이 된 단계를 찾는 데 쓴다.</p><h4>한눈에 보기</h4><p>트레이싱은 LLM 앱이 요청 하나를 처리하면서 거친 <strong>모든 단계를 순서대로 기록</strong>하는 것이다. 분산 시스템을 디버깅할 때 쓰던 방법을 가져왔다. 에이전트가 여러 단계를 거쳐 답을 만들 때 어느 단계에서 틀렸는지, 느려졌는지, 돈이 많이 들었는지 찾는 데 쓴다.</p><div class="tbl"><table><tr><th>방법</th><th>보여주는 것</th><th>이럴 때 쓴다</th></tr><tr><td>일반 로그</td><td>흩어진 한 줄 기록</td><td>단순한 단일 호출 앱</td></tr><tr><td><strong>트레이싱</strong></td><td>단계별 흐름과 입출력</td><td>에이전트, RAG 같은 여러 단계 앱</td></tr><tr><td>평가(Eval)</td><td>답의 품질 점수</td><td>프롬프트·모델을 바꾼 뒤 비교</td></tr></table></div><h4>요청 하나는 트레이스, 단계 하나는 스팬</h4><p>사용자 요청 하나가 <strong>트레이스</strong>이고, 그 안의 각 단계가 <strong>스팬</strong>이다. 스팬은 다른 스팬을 품을 수 있어서, 대시보드에서는 전체 흐름이 트리 모양으로 보인다.</p><div class="tbl"><table><tr><th>스팬 종류</th><th>기록되는 내용</th></tr><tr><td>LLM 호출</td><td>프롬프트, 응답, 토큰 수, 걸린 시간</td></tr><tr><td>검색(Retrieval)</td><td>검색어, 가져온 문서</td></tr><tr><td>툴 실행</td><td>넘긴 인자, 결과, 오류</td></tr></table></div><h4>SDK를 붙이거나 주소만 바꾸거나</h4><p>가장 흔한 방법은 트레이싱 도구의 SDK를 설치하고 API 키를 설정하는 것이다. 많은 도구가 주요 LLM 라이브러리를 자동으로 계측해 주고, 직접 만든 함수는 데코레이터를 달면 스팬으로 기록된다. 프록시 방식 도구는 LLM API의 base URL만 바꾸면 호출이 기록되지만, 툴 실행처럼 앱 안에서 일어나는 단계는 잘 보이지 않는다.</p><p>답이 이상하다는 신고가 오면 해당 트레이스를 열고 스팬을 위에서부터 펼쳐 본다. 검색 결과가 엉뚱하면 검색 단계를, 검색은 맞는데 답이 틀리면 프롬프트를 고치면 된다.</p><h4>도구는 OpenTelemetry 지원 여부로 고른다</h4><p>Langfuse, LangSmith, Helicone, MLflow, Arize Phoenix 같은 도구가 널리 쓰인다. 오픈소스라서 직접 서버에 올릴 수 있는 것도 있다. 표준인 <strong>OpenTelemetry</strong> 형식으로 데이터를 보내도록 만들어 두면 나중에 도구를 바꾸기 쉽다.</p><h4>프롬프트 안의 개인정보를 조심한다</h4><p>트레이스에는 프롬프트와 응답이 통째로 남기 때문에 사용자 개인정보나 비밀 키가 함께 저장될 수 있다. 운영 환경에서는 민감한 값을 가리고, 트래픽이 많으면 일부 요청만 기록하는 샘플링으로 저장 비용과 부담을 줄인다.</p></div>
+  <div class="tags"><span>#관측성</span><span>#디버깅</span><span>#로깅</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/langfuse.html">랭퓨즈</a>, <a href="https://aiwiki.work/k/langsmith.html">랭스미스</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/agent-eval.html">에이전트 평가</a>, <a href="https://aiwiki.work/k/agent-session-replay.html">에이전트 세션 리플레이</a>, <a href="https://aiwiki.work/k/strands-agents.html">스트랜즈 에이전트</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://posthog.com/blog/best-open-source-llm-observability-tools" target="_blank" rel="nofollow noopener">7 best free and open source LLM observability tools - PostHog</a> <span class="ref-type">블로그</span></li><li><a href="https://m.blog.naver.com/eol_grim/221874356064" target="_blank" rel="nofollow noopener">트레이싱으로 인물화 쉽게 그리기 가능? 트레이싱으로 캐리커쳐 ...</a> <span class="ref-type">블로그</span></li><li><a href="https://arize.com/resource/llm-tracing/" target="_blank" rel="nofollow noopener">LLM Tracing - Arize AI</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://mlflow.org/docs/latest/genai/tracing/" target="_blank" rel="nofollow noopener">LLM Tracing and Agent Observability | MLflow AI Platform | MLflow</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#tracing">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

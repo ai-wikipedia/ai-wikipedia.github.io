@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>문서 파싱이란? (Document Parsing) — AI Wiki</title>
+<meta name="description" content="문서 파싱이란? PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.">
+<meta name="keywords" content="문서 파싱, Document Parsing, PDF, OCR, 전처리, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="문서 파싱이란? (Document Parsing) — AI Wiki">
+<meta property="og:description" content="문서 파싱이란? PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.">
+<meta property="og:url" content="https://aiwiki.work/k/document-parsing.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="문서 파싱이란? (Document Parsing) — AI Wiki">
+<meta name="twitter:description" content="문서 파싱이란? PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/document-parsing.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/document-parsing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "문서 파싱",
+  "alternateName": "Document Parsing",
+  "description": "PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.",
+  "url": "https://aiwiki.work/k/document-parsing.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "데이터",
+      "item": "https://aiwiki.work/c/data.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "문서 파싱",
+      "item": "https://aiwiki.work/k/document-parsing.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "문서 파싱 (Document Parsing)",
+  "description": "PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.",
+  "url": "https://aiwiki.work/k/document-parsing.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/document-parsing.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/data.html">데이터</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">데이터</div>
+  <h1>문서 파싱</h1>
+  <div class="en">Document Parsing</div>
+  <div class="body"><p>PDF, 워드, 스캔 이미지 같은 문서에서 텍스트와 표·제목 같은 구조를 뽑아 LLM이 읽을 수 있게 바꾸는 작업이다. RAG를 만들 때 가장 먼저 거치는 단계이고, 여기서 나온 결과의 품질이 검색 정확도를 좌우한다.</p><h4>한눈에 보기</h4><p>문서 파싱은 PDF, 워드, 스캔 이미지 같은 문서에서 <strong>텍스트와 구조</strong>를 뽑아 LLM이 읽을 수 있는 형태로 바꾸는 일이다. RAG를 만들 때 가장 먼저 거치는 단계다. 여기서 표가 깨지거나 문장 순서가 뒤섞이면 뒤에서 아무리 좋은 모델을 써도 답이 틀린다.</p><div class="tbl"><table><tr><th>방식</th><th>잘 맞는 문서</th><th>특징</th></tr><tr><td>텍스트 추출 라이브러리 (PyMuPDF, pdfplumber)</td><td>글 위주의 디지털 PDF</td><td>빠르고 무료, 복잡한 표에 약함</td></tr><tr><td>OCR</td><td>스캔본, 사진</td><td>이미지 속 글자를 읽음, 잘못 읽을 수 있음</td></tr><tr><td>전문 파싱 서비스 (LlamaParse, Unstructured)</td><td>표·이미지가 많은 문서</td><td>레이아웃 분석, 비용 발생</td></tr><tr><td>멀티모달 LLM에 페이지 이미지 전달</td><td>구조가 중요한 소량 문서</td><td>구조를 잘 읽지만 느리고 비쌈</td></tr></table></div><h4>글자만이 아니라 구조를 살려야 한다</h4><p>글자만 뽑으면 표의 행과 열이 한 줄로 이어지고, 두 단으로 편집된 문서는 왼쪽과 오른쪽 문장이 섞인다. 제목 계층, 페이지 번호, 각주도 함께 남겨야 검색이 정확해지고 "몇 쪽에 나온다"는 출처 표시도 할 수 있다.</p><p>그래서 많은 도구가 결과를 마크다운처럼 제목과 표가 드러나는 형식으로 내보낸다. 이렇게 해 두면 나중에 청크로 나눌 때 제목 단위로 자르기 쉽다.</p><h4>문서 상태를 보고 도구를 고른다</h4><p>먼저 디지털 PDF인지 스캔본인지 확인한다. PDF에서 글자를 드래그해 선택할 수 있으면 텍스트가 들어 있는 파일이라 PyMuPDF나 pdfplumber로 충분할 때가 많다. 선택이 안 되면 이미지로만 된 파일이므로 OCR이 필요하다.</p><p>표와 그림이 많은 보고서, 재무제표, 논문에는 LlamaParse나 Unstructured 같은 레이아웃 분석 도구가 낫다. 몇 장 안 되는데 구조가 특히 복잡하면 페이지를 이미지로 바꿔 Claude나 GPT 같은 멀티모달 모델에 바로 넘기는 방법도 쓴다.</p><h4>샘플로 검증한 뒤 전체를 돌린다</h4><div class="tbl"><table><tr><th>단계</th><th>할 일</th></tr><tr><td>1. 샘플 파싱</td><td>대표 문서 몇 개를 여러 도구로 돌려 본다</td></tr><tr><td>2. 원본과 대조</td><td>표, 다단, 각주가 제대로 나왔는지 눈으로 확인</td></tr><tr><td>3. 정리</td><td>반복되는 머리글·바닥글과 쪽번호를 지운다</td></tr><tr><td>4. 청크·메타데이터</td><td>제목 단위로 나누고 파일명·페이지를 붙인다</td></tr></table></div><p>전체 문서를 돌리기 전에 샘플부터 검증해야 한다. 그래야 나중에 검색 품질이 떨어졌을 때 원인을 거꾸로 찾아가는 수고를 덜 수 있다.</p><h4>보안·비용·오인식을 챙긴다</h4><p>외부 파싱 서비스는 문서를 그 서비스의 서버로 보내므로, 사내 기밀 문서라면 보안 정책부터 확인한다. 페이지 수가 늘수록 비용과 시간도 늘어난다. 쉬운 문서는 무료 라이브러리로, 어려운 문서만 유료 도구로 나눠 보내면 효율적이다.</p><p>OCR이나 LLM 기반 파싱은 숫자나 고유명사를 잘못 읽을 수 있다. 금액이나 수치가 중요한 문서라면 <strong>원본과 대조하는 단계</strong>를 꼭 거친다.</p></div>
+  <div class="tags"><span>#PDF</span><span>#OCR</span><span>#전처리</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/chunking.html">청킹</a>, <a href="https://aiwiki.work/k/document-ai.html">문서 AI</a>, <a href="https://aiwiki.work/k/unstructured-data.html">비정형 데이터</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.llamaindex.ai/llamaparse" target="_blank" rel="nofollow noopener">LlamaParse - AI Document Parsing</a> <span class="ref-type">공식</span></li><li><a href="https://developers.llamaindex.ai/python/cloud/llamaparse/getting_started/" target="_blank" rel="nofollow noopener">LlamaParse Getting Started Guide</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=G2fqAlgmoPo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/G2fqAlgmoPo/mqdefault.jpg" alt="Introduction to Generative AI - Google Cloud" loading="lazy" width="160" height="90"><span>Introduction to Generative AI - Google Cloud</span></a><a class="video-item" href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eMlx5fFNoYc/mqdefault.jpg" alt="Attention in Transformers | 3Blue1Brown" loading="lazy" width="160" height="90"><span>Attention in Transformers | 3Blue1Brown</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#document-parsing">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

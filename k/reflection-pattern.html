@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>리플렉션 패턴이란? (Reflection Pattern) — AI Wiki</title>
+<meta name="description" content="리플렉션 패턴이란? AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.">
+<meta name="keywords" content="리플렉션 패턴, Reflection Pattern, 자기검토, 반복개선, 품질, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="리플렉션 패턴이란? (Reflection Pattern) — AI Wiki">
+<meta property="og:description" content="리플렉션 패턴이란? AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/reflection-pattern.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="리플렉션 패턴이란? (Reflection Pattern) — AI Wiki">
+<meta name="twitter:description" content="리플렉션 패턴이란? AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/reflection-pattern.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/reflection-pattern.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "리플렉션 패턴",
+  "alternateName": "Reflection Pattern",
+  "description": "AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.",
+  "url": "https://aiwiki.work/k/reflection-pattern.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "에이전트",
+      "item": "https://aiwiki.work/c/agent.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "리플렉션 패턴",
+      "item": "https://aiwiki.work/k/reflection-pattern.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "리플렉션 패턴 (Reflection Pattern)",
+  "description": "AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.",
+  "url": "https://aiwiki.work/k/reflection-pattern.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/reflection-pattern.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/agent.html">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <h1>리플렉션 패턴</h1>
+  <div class="en">Reflection Pattern</div>
+  <div class="body"><p>AI가 초안을 만든 뒤 스스로 검토하고 고치기를 되풀이해 결과물 품질을 높이는 에이전트 설계 방식이다. 코드나 긴 문서처럼 한 번에 완벽하게 만들기 어려운 작업에 쓴다.</p><h4>한눈에 보기</h4><p>리플렉션 패턴은 에이전트에게 <strong>작성자와 비평가 역할을 나눠 맡기는</strong> 방식이다. 한 번에 정답을 내려 하지 않는다. 초안을 만들고, 문제를 찾고, 고치고, 다시 검토하는 루프를 돈다. 복잡한 코드나 긴 문서처럼 첫 결과물에 실수가 섞이기 쉬운 작업에서 효과가 크다.</p><div class="tbl"><table><tr><th>방식</th><th>흐름</th><th>장단점</th></tr><tr><td>한 번에 생성</td><td>요청 → 답</td><td>빠르고 싸지만 실수가 그대로 남는다</td></tr><tr><td><strong>리플렉션</strong></td><td>초안 → 비평 → 수정 → 재검토</td><td>느리고 비싸지만 <strong>품질이 오른다</strong></td></tr></table></div><h4>같은 모델로도, 따로 둘 수도 있다</h4><p>가장 간단한 방법은 같은 LLM이 두 역할을 번갈아 하는 것이다. 답을 쓴 뒤 "방금 쓴 내용을 비판적으로 검토해"라고 다시 묻는다. 더 엄격하게 보려면 검토만 맡는 비평 에이전트를 따로 두고, 작성 에이전트와 다른 지시문을 준다.</p><div class="tbl"><table><tr><th>구성</th><th>이럴 때 쓴다</th></tr><tr><td>한 모델이 자기 검토</td><td>간단한 문서, 빠른 개선</td></tr><tr><td>별도 비평 에이전트</td><td>코드 리뷰, 사실 확인처럼 엄격해야 할 때</td></tr><tr><td>실행 결과로 검토</td><td>테스트·컴파일 결과가 있는 코딩 작업</td></tr></table></div><h4>검토 기준을 구체적으로 준다</h4><p>"더 좋게 고쳐"보다는 무엇을 볼지 정해 주는 편이 낫다. 코드라면 "보안 취약점, 빠진 엣지 케이스, 성능 문제가 있는지 검토하고 고쳐"처럼 체크리스트를 준다. 문서라면 "사실 오류, 빠진 내용, 어색한 문장을 찾아"처럼 묻는다.</p><p>코딩 에이전트에서는 테스트를 돌려 실패 메시지를 다시 보여 주는 방식이 특히 잘 통한다. 모델의 느낌이 아니라 실제 결과로 검토하게 되기 때문이다. Reflexion 연구처럼, 실패한 이유를 말로 정리해 두고 다음 시도에 참고하게 하는 방식도 있다.</p><h4>언제 쓰고 언제 빼나</h4><div class="tbl"><table><tr><th>상황</th><th>판단</th></tr><tr><td>복잡한 코드, 긴 보고서</td><td><strong>쓴다</strong></td></tr><tr><td>테스트처럼 확인할 기준이 있다</td><td><strong>쓴다</strong> (효과가 가장 크다)</td></tr><tr><td>짧은 답, 단순 분류·추출</td><td>뺀다 (비용만 는다)</td></tr><tr><td>빠른 응답이 중요한 채팅</td><td>뺀다</td></tr></table></div><h4>반복 횟수를 정해 두자</h4><p>검토할 때마다 호출이 늘어나 시간과 토큰 비용이 커진다. 보통 한두 번 고치면 효과의 대부분을 얻으므로, 최대 반복 횟수나 "문제 없음" 같은 종료 조건을 정해 두는 게 좋다.</p><p>모델이 자기 실수를 늘 찾아내는 것도 아니다. 처음에 모르던 사실은 검토해도 모르고, 맞는 답을 괜히 틀리게 고치기도 한다. 그래서 테스트·검색 결과 같은 외부 확인과 함께 쓸 때 가장 믿을 만하다.</p></div>
+  <div class="tags"><span>#자기검토</span><span>#반복개선</span><span>#품질</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/critic-pattern.html">크리틱 패턴</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.work/k/react-pattern.html">ReAct 패턴</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/pelican-benchmark.html">펠리컨 벤치마크</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection/" target="_blank" rel="nofollow noopener">Agentic Design Patterns Part 2: Reflection - DeepLearning.AI</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2303.11366" target="_blank" rel="nofollow noopener">Reflexion: Language Agents with Verbal Reinforcement Learning</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=UqMnkfCi-8o" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UqMnkfCi-8o/mqdefault.jpg" alt="Agentic AI: The Reflection Pattern Explained" loading="lazy" width="160" height="90"><span>Agentic AI: The Reflection Pattern Explained</span></a><a class="video-item" href="https://www.youtube.com/watch?v=5SgJKZLBrmg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5SgJKZLBrmg/mqdefault.jpg" alt="Build a Self-Reflecting AI Agent from Scratch" loading="lazy" width="160" height="90"><span>Build a Self-Reflecting AI Agent from Scratch</span></a><a class="video-item" href="https://www.youtube.com/watch?v=vdGKxibhIFo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vdGKxibhIFo/mqdefault.jpg" alt="AI 에이전트 리플렉션 패턴" loading="lazy" width="160" height="90"><span>AI 에이전트 리플렉션 패턴</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#reflection-pattern">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

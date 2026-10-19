@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>전이 학습이란? (Transfer Learning) — AI Wiki</title>
+<meta name="description" content="전이 학습이란? 이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.">
+<meta name="keywords" content="전이 학습, Transfer Learning, 사전학습, 파인튜닝, 재사용, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="전이 학습이란? (Transfer Learning) — AI Wiki">
+<meta property="og:description" content="전이 학습이란? 이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/transfer-learning.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="전이 학습이란? (Transfer Learning) — AI Wiki">
+<meta name="twitter:description" content="전이 학습이란? 이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/transfer-learning.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/transfer-learning.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "전이 학습",
+  "alternateName": "Transfer Learning",
+  "description": "이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.",
+  "url": "https://aiwiki.work/k/transfer-learning.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "전이 학습",
+      "item": "https://aiwiki.work/k/transfer-learning.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "전이 학습 (Transfer Learning)",
+  "description": "이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.",
+  "url": "https://aiwiki.work/k/transfer-learning.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/transfer-learning.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>전이 학습</h1>
+  <div class="en">Transfer Learning</div>
+  <div class="body"><p>이미 학습된 모델의 지식을 새 작업에 다시 쓰는 머신러닝 방법이다. 데이터가 적거나 처음부터 학습할 여력이 없을 때 사전학습 모델을 가져와 맞춰 쓴다.</p><h4>한눈에 보기</h4><p>전이 학습은 많은 데이터로 이미 학습한 모델의 지식을 <strong>새 작업에 가져다 쓰는</strong> 방법이다. 데이터가 적거나, 모델을 처음부터 학습할 시간과 비용이 없을 때 쓴다. LLM에서 흔히 쓰는 "사전학습 → 파인튜닝" 흐름이 전부 전이 학습이다.</p><div class="tbl"><table><tr><th>항목</th><th>처음부터 학습</th><th>전이 학습</th></tr><tr><td>필요한 데이터</td><td>아주 많음</td><td><strong>적어도 됨</strong></td></tr><tr><td>비용·시간</td><td>큼</td><td><strong>작음</strong></td></tr><tr><td>이럴 때 쓴다</td><td>비슷한 모델이 아예 없을 때</td><td>대부분의 실무 작업</td></tr></table></div><h4>기본기는 다시 배우지 않는다</h4><p>수백만 장의 이미지로 학습한 모델은 엣지, 색상, 형태를 알아보는 법을 이미 익혔다. 그래서 의료 X-ray 분류를 시킬 때 그 기본기는 그대로 두고, X-ray만의 특징만 새로 배우면 된다. 언어 모델도 같다. 대량의 텍스트로 문법과 세상 지식을 익힌 모델을 의료 문서 Q&A나 특정 프레임워크 코드 생성에 맞춰 조금만 더 학습시킨다.</p><h4>데이터 양에 따라 방식을 고른다</h4><p>먼저 내 작업과 가까운 분야의 사전학습 모델을 고른다. 그다음 가진 데이터 양과 자원에 맞춰 얼마나 많이 고칠지 정하고, 학습에 쓰지 않은 검증 데이터로 성능을 확인한다.</p><div class="tbl"><table><tr><th>방식</th><th>무엇을 학습하나</th><th>이럴 때 쓴다</th></tr><tr><td>특징 추출</td><td>모델은 고정, 맨 위 작은 층만</td><td>데이터가 아주 적을 때</td></tr><tr><td><strong>LoRA 같은 부분 학습</strong></td><td>작은 추가 가중치만</td><td>GPU가 부족하고 원래 능력을 지키고 싶을 때</td></tr><tr><td>전체 파인튜닝</td><td>모든 가중치</td><td>데이터와 자원이 넉넉할 때</td></tr></table></div><h4>LLM은 프롬프트로 먼저 해 본다</h4><p>요즘 LLM은 사전학습만으로도 많은 일을 해내기 때문에, 학습 전에 프롬프트에 지시와 예시를 넣어 보는 게 먼저다. 최신 자료가 필요하면 문서를 찾아 붙이는 RAG가 더 맞다. 이렇게 해도 말투나 출력 형식이 계속 흔들리거나, 같은 유형의 작업을 대량으로 반복할 때 파인튜닝으로 넘어간다.</p><h4>분야가 멀면 효과가 줄어든다</h4><p>전이는 원래 학습한 분야와 새 작업이 비슷할수록 잘 된다. 영어로만 사전학습한 모델은 한국어 작업에서 효과가 작고, 분야가 너무 다르면 오히려 처음부터 학습한 것보다 못할 수도 있다. 이를 부정적 전이라고 한다.</p><p>새 데이터로 너무 세게 학습시키면 원래 알던 능력을 잊어버리기도 한다. 학습률을 낮게 두거나, LoRA처럼 원래 가중치를 건드리지 않는 방식을 쓰거나, 일반 데이터를 조금 섞어 학습하면 이 문제를 줄일 수 있다.</p></div>
+  <div class="tags"><span>#사전학습</span><span>#파인튜닝</span><span>#재사용</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a>, <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/foundation-model.html">파운데이션 모델</a>, <a href="https://aiwiki.work/k/self-supervised-learning.html">자기 지도 학습</a>, <a href="https://aiwiki.work/k/continual-learning.html">지속 학습</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://ieeexplore.ieee.org/document/5288526/" target="_blank" rel="nofollow noopener">A Survey on Transfer Learning (Pan &amp; Yang, IEEE TKDE 2010)</a> <span class="ref-type">논문</span></li><li><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf" target="_blank" rel="nofollow noopener">Improving Language Understanding by Generative Pre-Training (GPT-1)</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=90mGPxR2GgY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/90mGPxR2GgY/mqdefault.jpg" alt="BERT: Training, Inference, Fine tuning (Umar Jamil)" loading="lazy" width="160" height="90"><span>BERT: Training, Inference, Fine tuning (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Bmx2S1dSAV0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Bmx2S1dSAV0/mqdefault.jpg" alt="CS231n 한글설명 Attention - 송교석" loading="lazy" width="160" height="90"><span>CS231n 한글설명 Attention - 송교석</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#transfer-learning">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

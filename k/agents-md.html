@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>AGENTS.md란? — AI Wiki</title>
+<meta name="description" content="AGENTS.md란? AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.">
+<meta name="keywords" content="AGENTS.md, 에이전트지침, 문서, 컨벤션, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AGENTS.md란? — AI Wiki">
+<meta property="og:description" content="AGENTS.md란? AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.">
+<meta property="og:url" content="https://aiwiki.work/k/agents-md.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AGENTS.md란? — AI Wiki">
+<meta name="twitter:description" content="AGENTS.md란? AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/agents-md.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/agents-md.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "AGENTS.md",
+  "alternateName": "AGENTS.md",
+  "description": "AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.",
+  "url": "https://aiwiki.work/k/agents-md.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "도구",
+      "item": "https://aiwiki.work/c/tooling.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AGENTS.md",
+      "item": "https://aiwiki.work/k/agents-md.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AGENTS.md",
+  "description": "AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.",
+  "url": "https://aiwiki.work/k/agents-md.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/agents-md.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/tooling.html">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <h1>AGENTS.md</h1>
+  <div class="en"></div>
+  <div class="body"><p>AGENTS.md는 AI 코딩 에이전트가 작업 전에 읽는 프로젝트 안내 파일이다. 빌드·테스트 명령과 코드 규칙을 적어 두면 여러 에이전트가 같은 규칙을 따른다.</p><h4>한눈에 보기</h4><p>AGENTS.md는 AI 코딩 에이전트에게 주는 <strong>프로젝트 안내서</strong>다. 사람이 읽는 README와 따로 두고, 빌드·테스트 명령, 코드 스타일, 하지 말아야 할 일을 적는다. 에이전트는 작업 전에 이 파일을 읽고 그대로 따른다. 특정 회사만 쓰는 형식이 아니고 공개 형식이라, Codex를 비롯한 여러 도구가 같은 파일을 읽는다.</p><div class="tbl"><table><tr><th>파일</th><th>누가 읽나</th><th>담는 내용</th></tr><tr><td>README.md</td><td>사람</td><td>프로젝트 소개, 설치 방법</td></tr><tr><td><strong>AGENTS.md</strong></td><td>여러 AI 에이전트</td><td>명령어, 작업 규칙, 금지 사항</td></tr><tr><td>CLAUDE.md</td><td>Claude Code</td><td>AGENTS.md와 비슷한 지침</td></tr></table></div><h4>루트에 하나, 필요하면 폴더마다</h4><p>리포지토리 루트에 <code>AGENTS.md</code>를 만들고 평범한 마크다운으로 쓰면 된다. 꼭 넣어야 하는 항목은 정해져 있지 않다. 모노레포처럼 영역마다 규칙이 다르면 하위 폴더에 따로 둔다. 에이전트는 작업 중인 파일에서 가장 가까운 AGENTS.md를 먼저 따른다.</p><p>AGENTS.md를 지원하는 도구는 따로 설정하지 않아도 알아서 읽는다. Claude Code처럼 다른 이름의 지침 파일을 쓰는 도구도 함께 쓴다면, CLAUDE.md 안에서 <code>@AGENTS.md</code>로 불러와 내용을 한 곳에서만 관리하는 게 편하다.</p><h4>명령어와 금지 사항부터 쓴다</h4><p>에이전트가 가장 자주 찾는 건 실제로 실행할 명령이다. "테스트를 잘 하라" 같은 막연한 말보다 그대로 복사해 쓸 수 있는 명령과 짧은 예시가 훨씬 잘 먹힌다.</p><div class="tbl"><table><tr><th>항목</th><th>이렇게 적는다</th></tr><tr><td>빌드·테스트</td><td>커밋 전에 <code>npm test</code> 실행</td></tr><tr><td>코드 스타일</td><td>커밋 메시지는 Conventional Commits 형식</td></tr><tr><td>작업 흐름</td><td>PR은 feature/ 브랜치에서 올린다</td></tr><tr><td><strong>금지 사항</strong></td><td>비밀 키·배포 설정 파일은 건드리지 않는다</td></tr></table></div><h4>짧게 쓰고, 강제 장치와 같이 쓴다</h4><p>길게 쓴다고 좋아지지 않는다. 파일 내용은 작업할 때마다 컨텍스트에 들어가서 자리를 차지하고, 내용이 많으면 중요한 규칙이 묻힌다. 꼭 지켜야 할 것만 짧게 적고, 긴 문서는 위치만 알려 주면 된다.</p><p>AGENTS.md는 안내일 뿐 규칙을 강제하지는 못한다. 에이전트가 가끔 어길 수 있으니 테스트·린트·권한 설정처럼 실제로 막아 주는 장치와 함께 쓴다. 코드가 바뀌면 이 파일도 같이 고쳐야 에이전트가 낡은 규칙을 따르지 않는다.</p></div>
+  <div class="tags"><span>#에이전트지침</span><span>#문서</span><span>#컨벤션</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/claude-md.html">CLAUDE.md</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/ai-coding.html">AI 코딩 어시스턴트</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/auth-md.html">auth.md</a>, <a href="https://aiwiki.work/k/ponytail.html">포니테일</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://developers.openai.com/codex/guides/agents-md" target="_blank" rel="nofollow noopener">Custom instructions with AGENTS.md – Codex | OpenAI Developers</a> <span class="ref-type">공식</span></li><li><a href="https://plgah.medium.com/one-agents-md-to-rule-them-all-70e6dc87a05f" target="_blank" rel="nofollow noopener">One AGENTS.md to Rule Them All - Pascal Heus - Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/" target="_blank" rel="nofollow noopener">How to write a great agents.md: Lessons from over 2,500 repositories</a> <span class="ref-type">블로그</span></li><li><a href="https://agents.md/" target="_blank" rel="nofollow noopener">AGENTS.md</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#agents-md">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

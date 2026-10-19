@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>옵저버빌리티란? (LLM Observability) — AI Wiki</title>
+<meta name="description" content="옵저버빌리티란? LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.">
+<meta name="keywords" content="옵저버빌리티, LLM Observability, 모니터링, 트레이싱, 로깅, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="옵저버빌리티란? (LLM Observability) — AI Wiki">
+<meta property="og:description" content="옵저버빌리티란? LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/observability.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="옵저버빌리티란? (LLM Observability) — AI Wiki">
+<meta name="twitter:description" content="옵저버빌리티란? LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/observability.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/observability.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "옵저버빌리티",
+  "alternateName": "LLM Observability",
+  "description": "LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.",
+  "url": "https://aiwiki.work/k/observability.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "인프라",
+      "item": "https://aiwiki.work/c/infra.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "옵저버빌리티",
+      "item": "https://aiwiki.work/k/observability.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "옵저버빌리티 (LLM Observability)",
+  "description": "LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.",
+  "url": "https://aiwiki.work/k/observability.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/observability.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/infra.html">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <h1>옵저버빌리티</h1>
+  <div class="en">LLM Observability</div>
+  <div class="body"><p>LLM 앱이 어떤 프롬프트로 무엇을 답했고, 시간과 비용이 얼마나 들었는지 호출 단위로 기록해 보여주는 시스템이다. 답이 이상하거나 에이전트가 중간에 꼬였을 때 원인을 찾는 데 쓴다.</p><h4>한눈에 보기</h4><p>LLM 옵저버빌리티는 LLM 호출 하나하나의 <strong>입력·출력·지연·비용·에러</strong>를 기록하고, 여러 단계로 도는 에이전트 실행을 트리 구조로 보여주는 시스템이다. "이 답이 왜 나왔나"를 역추적해야 할 때, 즉 LLM 앱을 실제 사용자에게 내놓는 순간부터 필요하다.</p><div class="tbl"><table><tr><th>구분</th><th>일반 서버 모니터링</th><th>LLM 옵저버빌리티</th></tr><tr><td>주로 보는 것</td><td>CPU, 응답 코드, 에러율</td><td><strong>프롬프트와 응답 내용</strong>, 토큰 비용</td></tr><tr><td>실패의 모습</td><td>에러가 난다</td><td>에러 없이 틀린 답을 낸다</td></tr><tr><td>추적 단위</td><td>요청 하나</td><td>에이전트의 단계별 호출 트리</td></tr></table></div><h4>에러 없이 틀리는 게 문제다</h4><p>LLM 앱은 블랙박스에 가깝다. 같은 입력에도 결과가 달라지고, 검색·도구 호출·LLM 호출이 이어지는 체인에서는 어느 단계가 잘못됐는지 겉으로는 알 수 없다. 서버 로그에는 정상 응답으로만 남기 때문에, 실제로 오간 프롬프트와 중간 결과를 남겨야 원인을 찾을 수 있다.</p><h4>트레이스 하나에 실행 전체가 담긴다</h4><p>사용자 요청 하나가 트레이스 하나가 되고, 그 안의 각 단계가 하위 기록으로 붙는다. 화면에서 트리를 펼치면 어떤 단계에서 시간이 오래 걸렸는지, 어떤 프롬프트가 들어갔는지 바로 보인다.</p><div class="tbl"><table><tr><th>기록 항목</th><th>이걸로 알 수 있는 것</th></tr><tr><td>입력 프롬프트·응답</td><td>잘못된 답의 직접 원인</td></tr><tr><td>지연 시간</td><td>느린 단계 찾기</td></tr><tr><td>토큰 수·비용</td><td>비싼 호출, 불필요한 반복</td></tr><tr><td>에러·재시도</td><td>도구 호출 실패, 타임아웃</td></tr></table></div><h4>SDK나 콜백 하나로 붙인다</h4><p>보통 도구를 고르고, 앱에 SDK를 넣거나 프레임워크 콜백을 등록하는 순서다. 예를 들어 LangChain 앱에 Langfuse 콜백을 추가하면 에이전트 실행 전체가 트레이스로 남는다. 표준 쪽으로는 OpenTelemetry를 LLM 트레이싱에 맞게 확장한 OpenInference나 OTLP 기반 도구들이 있어, 한 번 계측해 두면 받는 쪽 도구를 바꾸기 쉽다.</p><div class="tbl"><table><tr><th>도구</th><th>특징</th><th>이럴 때</th></tr><tr><td>Langfuse</td><td>오픈소스, 직접 설치 가능</td><td>데이터를 내 서버에 두고 싶을 때</td></tr><tr><td>LangSmith</td><td>LangChain 팀이 만든 서비스</td><td>LangChain·LangGraph를 주로 쓸 때</td></tr><tr><td>Arize Phoenix</td><td>오픈소스, OpenInference 기반</td><td>표준 방식으로 계측하고 싶을 때</td></tr></table></div><h4>개인정보와 비용을 먼저 정한다</h4><p>프롬프트와 응답에는 사용자 개인정보가 그대로 들어갈 수 있다. 외부 서비스로 보내기 전에 민감한 값을 가리거나, 직접 설치형을 쓰는 게 안전하다. 트래픽이 많으면 기록량도 커지므로 일부만 샘플링하는 방법도 있다.</p><p>기록만으로 답의 품질이 저절로 판단되지는 않는다. 트레이스에 사용자 피드백이나 자동 평가 점수를 붙여 두면, 품질이 떨어진 대화만 골라 보는 데 훨씬 편하다.</p></div>
+  <div class="tags"><span>#모니터링</span><span>#트레이싱</span><span>#로깅</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/llmops.html">LLMOps</a>, <a href="https://aiwiki.work/k/mlops.html">MLOps</a>, <a href="https://aiwiki.work/k/eval.html">AI 평가</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/codeburn.html">코드번</a>, <a href="https://aiwiki.work/k/agent-session-replay.html">에이전트 세션 리플레이</a>, <a href="https://aiwiki.work/k/agent-control-plane.html">에이전트 컨트롤 플레인</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://github.com/langfuse/langfuse" target="_blank" rel="nofollow noopener">Langfuse — Open Source LLM Observability Platform (GitHub)</a> <span class="ref-type">공식</span></li><li><a href="https://docs.langchain.com/langsmith/observability" target="_blank" rel="nofollow noopener">LangSmith Observability — LangChain Official Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=vRFSVGaNaG4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/vRFSVGaNaG4/mqdefault.jpg" alt="LLM Observability with Langfuse (Webinar)" loading="lazy" width="160" height="90"><span>LLM Observability with Langfuse (Webinar)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=DuCL7eRsaYI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DuCL7eRsaYI/mqdefault.jpg" alt="AI and LLM Observability with Dynatrace" loading="lazy" width="160" height="90"><span>AI and LLM Observability with Dynatrace</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k2Mf6hacjqw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k2Mf6hacjqw/mqdefault.jpg" alt="LLM 모니터링과 옵저버빌리티 - 테디노트" loading="lazy" width="160" height="90"><span>LLM 모니터링과 옵저버빌리티 - 테디노트</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#observability">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

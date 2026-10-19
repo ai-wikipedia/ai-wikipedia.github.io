@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>어텐션 메커니즘이란? (Attention Mechanism) — AI Wiki</title>
+<meta name="description" content="어텐션 메커니즘이란? 어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.">
+<meta name="keywords" content="어텐션 메커니즘, Attention Mechanism, Transformer, self-attention, 가중치, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="어텐션 메커니즘이란? (Attention Mechanism) — AI Wiki">
+<meta property="og:description" content="어텐션 메커니즘이란? 어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.">
+<meta property="og:url" content="https://aiwiki.work/k/attention-mechanism.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="어텐션 메커니즘이란? (Attention Mechanism) — AI Wiki">
+<meta name="twitter:description" content="어텐션 메커니즘이란? 어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/attention-mechanism.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/attention-mechanism.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "어텐션 메커니즘",
+  "alternateName": "Attention Mechanism",
+  "description": "어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.",
+  "url": "https://aiwiki.work/k/attention-mechanism.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "어텐션 메커니즘",
+      "item": "https://aiwiki.work/k/attention-mechanism.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "어텐션 메커니즘 (Attention Mechanism)",
+  "description": "어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.",
+  "url": "https://aiwiki.work/k/attention-mechanism.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/attention-mechanism.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>어텐션 메커니즘</h1>
+  <div class="en">Attention Mechanism</div>
+  <div class="body"><p>어텐션은 AI가 문장을 읽을 때 지금 단어와 관련이 깊은 다른 단어에 더 집중하게 하는 방법이다. Transformer의 핵심 원리이고, LLM이 긴 대화와 프롬프트의 문맥을 이해하는 바탕이 된다.</p><h4>한눈에 보기</h4><p>어텐션은 AI가 문장을 읽을 때 <strong>지금 단어와 관련이 깊은 다른 단어에 더 집중</strong>하게 하는 방법이다. "나는 사과를 먹었다. 그것은 달았다"에서 '그것'이 '사과'를 가리킨다는 걸 알아내는 것이 어텐션이 하는 일이다. 오늘날 거의 모든 LLM이 쓰는 Transformer의 핵심이라, 긴 대화를 기억하고 프롬프트를 이해하는 방식이 모두 여기서 나온다.</p><div class="tbl"><table><tr><th>방식</th><th>앞 내용을 보는 법</th><th>한계</th></tr><tr><td>RNN (이전 방식)</td><td>앞에서부터 차례로 요약해 넘긴다</td><td>멀리 떨어진 내용을 잊기 쉽다</td></tr><tr><td><strong>어텐션</strong></td><td>모든 단어를 한 번에 직접 비교한다</td><td>입력이 길수록 계산이 크게 늘어난다</td></tr></table></div><h4>단어마다 '누구를 볼지' 점수를 매긴다</h4><p>각 단어는 "내가 찾는 것(Query)", "내 꼬리표(Key)", "내가 건넬 내용(Value)" 세 가지를 만든다. Query와 Key가 잘 맞을수록 점수가 높고, 점수가 높은 단어의 내용을 더 많이 가져와 문맥을 만든다. 2017년 Transformer 논문에서 제안된 Self-Attention이 이 방식이다.</p><p>멀티헤드 어텐션은 이 계산을 여러 개 동시에 돌려 문법 관계, 의미 유사성처럼 서로 다른 관점을 함께 본다. 코드에서 함수 선언과 호출부를 이어 보는 것도 같은 원리다.</p><h4>입력이 두 배면 계산은 네 배</h4><p>모든 단어 쌍을 서로 비교하므로 계산량은 입력 길이의 제곱으로 늘어난다. 긴 문서를 통째로 넣으면 응답이 느려지고 비용이 커지는 이유다.</p><div class="bars"><div class="bar"><span class="bar-label">기본 길이</span><span class="bar-track"><span class="bar-fill" style="width:6%"></span></span><span class="bar-val">1배</span></div><div class="bar"><span class="bar-label">길이 2배</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-val">4배</span></div><div class="bar"><span class="bar-label">길이 4배</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">16배</span></div></div><p class="note">기본 어텐션의 계산량을 기본 길이 대비 상대값으로 나타냈다. 실제 서비스는 여러 최적화로 차이를 줄인다.</p><h4>프롬프트는 어텐션이 잘 보게 쓴다</h4><p>어텐션은 입력 전체를 볼 수 있지만, 긴 입력의 중간에 있는 정보를 잘 놓친다는 연구가 있다. 그래서 꼭 지켜야 할 조건은 프롬프트 맨 앞이나 끝에 두고, 관련 없는 자료는 빼는 편이 낫다.</p><p>대화가 아주 길어지면 중요한 조건을 다시 적어 주거나, 지금까지 내용을 요약해 새 대화로 옮기면 정확도가 올라간다. API의 프롬프트 캐싱은 앞부분의 계산 결과를 재사용하므로, 고정된 지시문을 맨 앞에 두면 비용도 줄일 수 있다.</p><h4>FlashAttention은 결과는 같고 더 빠르다</h4><p>FlashAttention은 계산식은 그대로 두고 GPU 메모리를 읽고 쓰는 순서만 바꿔 속도를 높이고 메모리를 아낀다. 근사치가 아니라 같은 결과를 내므로, 모델을 직접 학습하거나 서빙할 때 켜 두는 것이 보통이다.</p><div class="tbl"><table><tr><th>방식</th><th>결과</th><th>이럴 때 쓴다</th></tr><tr><td>기본 어텐션</td><td>정확</td><td>짧은 입력, 구현 검증</td></tr><tr><td><strong>FlashAttention</strong></td><td>정확</td><td>직접 학습·서빙하는 대부분의 경우</td></tr><tr><td>윈도우·희소 어텐션</td><td>근사</td><td>아주 긴 입력에서 비용을 줄일 때</td></tr></table></div></div>
+  <div class="tags"><span>#Transformer</span><span>#self-attention</span><span>#가중치</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/flash-attention.html">플래시 어텐션</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a>, <a href="https://aiwiki.work/k/global-workspace.html">글로벌 워크스페이스</a>, <a href="https://aiwiki.work/k/associative-memory.html">연상 메모리</a>, <a href="https://aiwiki.work/k/grouped-query-attention.html">그룹 쿼리 어텐션</a>, <a href="https://aiwiki.work/k/sliding-window-attention.html">슬라이딩 윈도우 어텐션</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="nofollow noopener">Attention Is All You Need</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="nofollow noopener">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=bCz4OMemCcA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bCz4OMemCcA/mqdefault.jpg" alt="Attention is all you need — Model explanation (Umar Jamil)" loading="lazy" width="160" height="90"><span>Attention is all you need — Model explanation (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PSs6nxngL6k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PSs6nxngL6k/mqdefault.jpg" alt="Neural Networks: Attention (StatQuest)" loading="lazy" width="160" height="90"><span>Neural Networks: Attention (StatQuest)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="트랜스포머 어텐션 이즈 올 유 니드 - 허민석" loading="lazy" width="160" height="90"><span>트랜스포머 어텐션 이즈 올 유 니드 - 허민석</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#attention-mechanism">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>보상 모델이란? (Reward Model) — AI Wiki</title>
+<meta name="description" content="보상 모델이란? 보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.">
+<meta name="keywords" content="보상 모델, Reward Model, RLHF, 선호도, 평가모델, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="보상 모델이란? (Reward Model) — AI Wiki">
+<meta property="og:description" content="보상 모델이란? 보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/reward-model.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="보상 모델이란? (Reward Model) — AI Wiki">
+<meta name="twitter:description" content="보상 모델이란? 보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/reward-model.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/reward-model.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "보상 모델",
+  "alternateName": "Reward Model",
+  "description": "보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.",
+  "url": "https://aiwiki.work/k/reward-model.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "보상 모델",
+      "item": "https://aiwiki.work/k/reward-model.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "보상 모델 (Reward Model)",
+  "description": "보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.",
+  "url": "https://aiwiki.work/k/reward-model.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/reward-model.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>보상 모델</h1>
+  <div class="en">Reward Model</div>
+  <div class="body"><p>보상 모델은 LLM 답변이 얼마나 좋은지 점수로 매기는 모델이다. 사람의 선호를 배워 RLHF 학습의 채점관으로 쓰고, 여러 답변 중 가장 나은 답을 고르거나 응답을 자동으로 채점할 때도 쓴다.</p><h4>한눈에 보기</h4><p>보상 모델은 LLM 답변을 읽고 <strong>얼마나 좋은지 점수 하나</strong>로 매긴다. 사람이 모든 답변을 일일이 평가할 수는 없으니, 사람의 선호를 흉내 내도록 따로 학습해서 RLHF의 채점관으로 쓴다. 학습할 때 쓰는 신호가 될 뿐 아니라 여러 답변 중 가장 나은 답을 고르는 데도 쓴다.</p><div class="tbl"><table><tr><th>채점 방식</th><th>장점</th><th>한계</th></tr><tr><td>사람 평가</td><td>가장 정확함</td><td>느리고 비쌈</td></tr><tr><td><strong>보상 모델</strong></td><td>빠르게 대량 채점</td><td>학습 데이터의 편향을 그대로 따름</td></tr><tr><td>LLM 심판</td><td>평가 기준을 글로 지시</td><td>호출 비용이 들고 판정이 흔들림</td></tr><tr><td>규칙 기반 검증</td><td>판정이 확실함</td><td>정답이 있는 작업에만 쓸 수 있음</td></tr></table></div><h4>"A가 B보다 낫다"로 배운다</h4><p>절대 점수를 매기게 하면 사람마다 기준이 다르다. 그래서 같은 질문에 대한 두 응답을 보여 주고 더 나은 쪽을 고르게 해서 비교 데이터(preference pair)를 모은다.</p><p>보상 모델은 보통 사전학습된 LLM 위에 점수 하나를 내는 출력층을 붙여 만든다. 사람이 고른 응답이 고르지 않은 응답보다 점수가 높게 나오도록 배우기 때문에, 점수 값 자체보다 <strong>응답 사이의 점수 차이</strong>가 의미 있다.</p><h4>학습은 trl로, 쓰임새는 세 가지</h4><p>Anthropic의 HH-RLHF 같은 공개 선호도 데이터셋과 Hugging Face <code>trl</code>의 <code>RewardTrainer</code>를 쓰면 직접 학습할 수 있다. 데이터는 질문, 고른 응답(<code>chosen</code>), 고르지 않은 응답(<code>rejected</code>) 세 칸이면 된다. 학습이 끝나면 목적에 맞춰 아래처럼 쓴다.</p><div class="tbl"><table><tr><th>용도</th><th>방법</th><th>이럴 때</th></tr><tr><td>RLHF 학습</td><td>PPO 같은 강화학습의 보상으로 사용</td><td>모델 성향 자체를 바꿀 때</td></tr><tr><td>Best-of-N</td><td>답을 여러 개 만든 뒤 최고점만 채택</td><td>추가 학습 없이 품질을 올릴 때</td></tr><tr><td>자동 채점</td><td>평가셋 응답에 점수를 매겨 비교</td><td>프롬프트·모델 버전을 비교할 때</td></tr></table></div><h4>점수만 쫓으면 해킹당한다</h4><p>보상 모델은 사람의 판단을 흉내 낸 것일 뿐이라 빈틈이 있다. LLM은 그 빈틈을 파고들어, 실제로 더 좋은 답을 내기보다 답을 길게 늘이거나 듣기 좋은 말만 하는 식으로 점수를 올린다. 이것을 보상 해킹(reward hacking)이라고 한다.</p><p>이를 막으려고 RLHF에서는 원래 모델에서 너무 멀어지지 않도록 KL 페널티를 함께 걸고, 보상 모델 여러 개를 앙상블해 한 모델의 약점을 덮는다. 점수는 오르는데 답변 품질이 떨어지는 것 같으면 샘플을 사람이 직접 읽어 봐야 한다.</p><h4>보상 모델 없이 가는 방법도 있다</h4><p>보상 모델을 학습한 뒤 강화학습까지 돌리는 과정은 단계가 많고 학습이 불안정하다. DPO는 같은 비교 데이터로 LLM을 바로 학습해서 보상 모델 단계를 없앤다. 수학이나 코드처럼 정답을 확인할 수 있는 작업이라면 테스트 통과 여부 같은 규칙 기반 보상이 더 믿을 만하다.</p><div class="tbl"><table><tr><th>방식</th><th>보상 모델</th><th>맞는 상황</th></tr><tr><td>RLHF (PPO)</td><td>필요</td><td>세밀한 조정, 자원 여유가 있을 때</td></tr><tr><td>DPO</td><td>불필요</td><td>간단하고 안정적인 선호 학습</td></tr><tr><td>규칙 기반 보상</td><td>불필요</td><td>정답을 검증할 수 있는 작업</td></tr></table></div></div>
+  <div class="tags"><span>#RLHF</span><span>#선호도</span><span>#평가모델</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/rlhf.html">RLHF</a>, <a href="https://aiwiki.work/k/reinforcement-learning.html">강화학습</a>, <a href="https://aiwiki.work/k/dpo.html">DPO</a>, <a href="https://aiwiki.work/k/grpo.html">GRPO</a>, <a href="https://aiwiki.work/k/hugging-face-incident.html">허깅페이스 에이전트 침입 사건</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2204.05862" target="_blank" rel="nofollow noopener">Training a Helpful and Harmless Assistant with RLHF</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="nofollow noopener">Training language models to follow instructions with human feedback (InstructGPT)</a> <span class="ref-type">논문</span></li><li><a href="https://huggingface.co/blog/rlhf" target="_blank" rel="nofollow noopener">Illustrating Reinforcement Learning from Human Feedback (RLHF) — Hugging Face Blog</a> <span class="ref-type">블로그</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#reward-model">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

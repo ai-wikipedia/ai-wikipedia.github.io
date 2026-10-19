@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>배치 추론이란? (Batch Inference) — AI Wiki</title>
+<meta name="description" content="배치 추론이란? 급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.">
+<meta name="keywords" content="배치 추론, Batch Inference, 비동기, 대용량, 비용절감, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="배치 추론이란? (Batch Inference) — AI Wiki">
+<meta property="og:description" content="배치 추론이란? 급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/batch-inference.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="배치 추론이란? (Batch Inference) — AI Wiki">
+<meta name="twitter:description" content="배치 추론이란? 급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/batch-inference.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/batch-inference.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "배치 추론",
+  "alternateName": "Batch Inference",
+  "description": "급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.",
+  "url": "https://aiwiki.work/k/batch-inference.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "인프라",
+      "item": "https://aiwiki.work/c/infra.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "배치 추론",
+      "item": "https://aiwiki.work/k/batch-inference.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "배치 추론 (Batch Inference)",
+  "description": "급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.",
+  "url": "https://aiwiki.work/k/batch-inference.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/batch-inference.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/infra.html">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <h1>배치 추론</h1>
+  <div class="en">Batch Inference</div>
+  <div class="body"><p>급하지 않은 LLM 요청을 많이 모아 한꺼번에 맡기고, 결과는 나중에 받는 방식이다. 문서 분류·대량 번역·야간 리포트처럼 바로 답이 필요 없는 대량 작업에서 비용을 줄일 때 쓴다.</p><h4>한눈에 보기</h4><p>모든 LLM 요청에 바로 답이 필요한 건 아니다. 수십만 건의 문서를 분류하거나 상품 설명을 번역하는 일은 몇 시간 안에만 끝나면 된다. 배치 추론은 이런 요청을 모아 한 번에 맡기는 방식이다. 기다리는 대신 <strong>요금이 온디맨드의 절반 정도</strong>로 내려간다.</p><div class="tbl"><table><tr><th>항목</th><th>일반 API 호출</th><th>배치 API</th></tr><tr><td>응답</td><td>바로 (초 단위)</td><td>나중에 (최대 24시간)</td></tr><tr><td>요금</td><td>기본가</td><td><strong>약 50% 할인</strong></td></tr><tr><td>맞는 작업</td><td>채팅, 실시간 기능</td><td>대량 분류·요약·번역</td></tr></table></div><h4>왜 싸게 해 주나</h4><p>응답 시간 약속이 없으니 제공사는 서버가 한가할 때 요청을 몰아서 처리해 GPU를 꽉 채워 쓸 수 있다. 그렇게 아낀 비용을 할인으로 돌려주는 구조다. 배치 요청은 보통 일반 호출과 따로 한도를 잡기 때문에, 대량 작업을 돌려도 실시간 서비스의 한도를 덜 잡아먹는다.</p><h4>쓰는 순서: 모아서 제출하고, ID로 맞춘다</h4><p>OpenAI와 Anthropic 모두 배치 API를 제공하고, 흐름은 비슷하다. 요청마다 내가 정한 <code>custom_id</code>를 붙여 한 묶음으로 제출하고, 상태를 확인하다가 끝나면 결과를 받는다.</p><div class="tbl"><table><tr><th>단계</th><th>할 일</th></tr><tr><td>1. 준비</td><td>요청마다 <code>custom_id</code>와 프롬프트 작성</td></tr><tr><td>2. 제출</td><td>OpenAI는 JSONL 파일 업로드 후 배치 생성, Anthropic은 요청 목록을 배치로 전송</td></tr><tr><td>3. 확인</td><td>배치 상태를 주기적으로 조회</td></tr><tr><td>4. 결과</td><td>JSONL 결과를 받아 <code>custom_id</code>로 원래 요청과 연결</td></tr></table></div><p>결과가 제출한 순서대로 온다는 보장이 없으니 꼭 <code>custom_id</code>로 맞춰야 한다. 앞부분 지시문이 같은 요청이 많다면 프롬프트 캐싱과 같이 써서 비용을 더 줄일 수 있다.</p><h4>쓸 때와 안 쓸 때</h4><p>밤새 돌리는 데이터 파이프라인, 대규모 로그 분석, 평가용 데이터셋 채점처럼 결과를 나중에 모아 보는 일이면 배치가 낫다. 사용자가 화면 앞에서 기다리는 채팅이나 스트리밍, 앞 단계 답을 보고 다음 요청을 정하는 에이전트 루프에는 맞지 않는다.</p><div class="tbl"><table><tr><th>작업</th><th>추천</th></tr><tr><td>상품 설명 수십만 건 번역</td><td><strong>배치</strong></td></tr><tr><td>야간 리포트 생성</td><td><strong>배치</strong></td></tr><tr><td>고객 상담 챗봇</td><td>일반 호출</td></tr><tr><td>여러 단계 도구를 쓰는 에이전트</td><td>일반 호출</td></tr></table></div><h4>주의할 점</h4><p>묶음 안에서 일부 요청만 실패할 수 있다. 결과에서 오류난 <code>custom_id</code>만 골라 다시 제출하는 처리를 미리 만들어 둔다. 결과 파일은 정해진 기간만 보관되니 받는 즉시 저장하는 게 좋다. 직접 모델을 띄워 쓴다면 vLLM 같은 서빙 엔진의 오프라인 배치 모드로 같은 효과를 낼 수 있다.</p></div>
+  <div class="tags"><span>#비동기</span><span>#대용량</span><span>#비용절감</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/continuous-batching.html">연속 배칭</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/docs/guides/batch" target="_blank" rel="nofollow noopener">Batch API — OpenAI Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.anthropic.com/en/api/creating-message-batches" target="_blank" rel="nofollow noopener">Message Batches API — Anthropic Claude Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=j3EOaQnVmOI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/j3EOaQnVmOI/mqdefault.jpg" alt="Scaling LLM Batch Inference: Ray Data and vLLM" loading="lazy" width="160" height="90"><span>Scaling LLM Batch Inference: Ray Data and vLLM</span></a><a class="video-item" href="https://www.youtube.com/watch?v=QjyJlmgBGqs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QjyJlmgBGqs/mqdefault.jpg" alt="Databricks vLLM Optimization for Cost-Effective LLM Inference" loading="lazy" width="160" height="90"><span>Databricks vLLM Optimization for Cost-Effective LLM Inference</span></a><a class="video-item" href="https://www.youtube.com/watch?v=hh2Bx6DYgpw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hh2Bx6DYgpw/mqdefault.jpg" alt="RAG 집중 탐구 - 테디노트" loading="lazy" width="160" height="90"><span>RAG 집중 탐구 - 테디노트</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#batch-inference">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>코드 에이전트 하네스란? (Code as Agent Harness) — AI Wiki</title>
+<meta name="description" content="코드 에이전트 하네스란? 전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.">
+<meta name="keywords" content="코드 에이전트 하네스, Code as Agent Harness, 오케스트레이션, 에이전트 하네스, 코드, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="코드 에이전트 하네스란? (Code as Agent Harness) — AI Wiki">
+<meta property="og:description" content="코드 에이전트 하네스란? 전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/code-as-harness.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-06-27">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="코드 에이전트 하네스란? (Code as Agent Harness) — AI Wiki">
+<meta name="twitter:description" content="코드 에이전트 하네스란? 전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/code-as-harness.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/code-as-harness.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "코드 에이전트 하네스",
+  "alternateName": "Code as Agent Harness",
+  "description": "전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/code-as-harness.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "에이전트",
+      "item": "https://aiwiki.work/c/agent.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "코드 에이전트 하네스",
+      "item": "https://aiwiki.work/k/code-as-harness.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "코드 에이전트 하네스 (Code as Agent Harness)",
+  "description": "전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/code-as-harness.html",
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/code-as-harness.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/agent.html">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <h1>코드 에이전트 하네스</h1>
+  <div class="en">Code as Agent Harness</div>
+  <div class="body"><p>전용 에이전트 프레임워크 없이 Python·JavaScript 같은 일반 코드로 AI 에이전트의 실행 순서와 분기를 직접 짜는 설계 방식이다. 흐름을 끝까지 직접 통제하고 디버깅을 쉽게 하고 싶을 때 쓴다.</p><h4>한눈에 보기</h4><p>코드 에이전트 하네스는 LangGraph·CrewAI 같은 전용 프레임워크 대신 <strong>평범한 코드로 에이전트의 실행 흐름을 직접 짜는 방식</strong>이다. 어떤 순서로 돌고, 어디서 갈라지고, 결과를 어디로 넘길지를 함수 호출과 조건문으로 적는다. 이렇게 짠 코드가 그대로 여러 에이전트를 묶어 조율하는 하네스가 된다.</p><div class="tbl"><table><tr><th>항목</th><th>코드 하네스</th><th>전용 프레임워크</th></tr><tr><td>흐름 표현</td><td>함수 호출, if, 반복문</td><td>노드·엣지·액터 같은 추상화</td></tr><tr><td>디버깅</td><td><strong>코드를 그대로 읽는다</strong></td><td>프레임워크 내부를 알아야 한다</td></tr><tr><td>재시도·병렬 같은 공통 기능</td><td>직접 만든다</td><td>기본 제공</td></tr><tr><td>새로 배울 것</td><td>거의 없다</td><td>프레임워크마다 따로</td></tr></table></div><h4>흐름은 코드가, 판단은 모델이</h4><p>먼저 작업을 단계로 쪼개고, 단계마다 모델을 부르는 함수를 하나씩 둔다. 앞 단계 결과를 변수로 받아 다음 호출에 넘기고, 갈림길은 if 문으로 처리한다.</p><p>모델은 각 단계 안에서 판단만 하고, 다음에 무엇을 할지는 코드가 정한다. 그래서 실행 경로가 예측 가능하고, 문제가 생기면 어느 줄에서 틀어졌는지 바로 찾을 수 있다.</p><h4>병렬·연결도 함수 몇 줄로</h4><p>Claude Code의 워크플로우 스크립트처럼 <code>agent()</code>, <code>parallel()</code>, <code>pipeline()</code> 같은 기본 함수를 조합하면 멀티에이전트도 짧게 쓸 수 있다. 예를 들어 리뷰 에이전트 셋을 병렬로 돌리고 결과를 모아 검증 에이전트에 넘기는 일이 몇 줄이면 된다.</p><div class="tbl"><table><tr><th>패턴</th><th>코드로는</th><th>이럴 때</th></tr><tr><td>순차 연결</td><td>앞 결과를 다음 호출에 전달</td><td>조사 → 초안 → 검토</td></tr><tr><td>병렬 실행</td><td>여러 호출을 동시에 돌리고 모으기</td><td>여러 관점의 코드 리뷰</td></tr><tr><td>분기</td><td>결과를 보고 if로 갈림</td><td>통과면 종료, 실패면 수정</td></tr><tr><td>반복</td><td>최대 횟수를 둔 루프</td><td>테스트가 통과할 때까지 수정</td></tr></table></div><h4>단순하고 통제가 중요하면 코드, 복잡하면 프레임워크</h4><p>단계가 분명한 자동화, 동작을 한 줄 단위로 확인해야 하는 업무에는 코드 하네스가 잘 맞는다. 에이전트를 일반 소프트웨어처럼 다루라는 12-factor agents 원칙과도 같은 생각이다.</p><p>반대로 상태 저장, 중간 재개, 사람 승인 같은 기능이 많이 필요하면 이를 이미 갖춘 프레임워크가 시간을 아껴 준다.</p><h4>공통 기능은 직접 챙겨야 한다</h4><p>프레임워크가 해 주던 재시도, 오류 처리, 시간 제한, 실행 기록을 스스로 만들어야 한다. 특히 반복 루프에는 최대 횟수를 꼭 둬야 비용이 끝없이 늘지 않는다. 팀에서 여러 번 쓰게 되면 이런 패턴을 작은 내부 라이브러리로 묶어 두는 편이 좋다.</p></div>
+  <div class="tags"><span>#오케스트레이션</span><span>#에이전트 하네스</span><span>#코드</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/multi-agent.html">멀티 에이전트</a>, <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/agent-framework.html">에이전트 프레임워크</a>, <a href="https://aiwiki.work/k/12-factor-agents.html">12-팩터 에이전트</a>, <a href="https://aiwiki.work/k/claude-code.html">클로드 코드</a>, <a href="https://aiwiki.work/k/self-scaffolding.html">셀프 스캐폴딩 LLM</a></div>
+  
+  
+  <a class="back" href="https://aiwiki.work/#code-as-harness">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

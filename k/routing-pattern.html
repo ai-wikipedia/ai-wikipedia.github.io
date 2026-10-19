@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>라우팅 패턴이란? (Routing Pattern) — AI Wiki</title>
+<meta name="description" content="라우팅 패턴이란? 들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.">
+<meta name="keywords" content="라우팅 패턴, Routing Pattern, 라우팅, 비용최적화, 선택, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="라우팅 패턴이란? (Routing Pattern) — AI Wiki">
+<meta property="og:description" content="라우팅 패턴이란? 들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/routing-pattern.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="라우팅 패턴이란? (Routing Pattern) — AI Wiki">
+<meta name="twitter:description" content="라우팅 패턴이란? 들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/routing-pattern.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/routing-pattern.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "라우팅 패턴",
+  "alternateName": "Routing Pattern",
+  "description": "들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/routing-pattern.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "도구",
+      "item": "https://aiwiki.work/c/tooling.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "라우팅 패턴",
+      "item": "https://aiwiki.work/k/routing-pattern.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "라우팅 패턴 (Routing Pattern)",
+  "description": "들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/routing-pattern.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/routing-pattern.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/tooling.html">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <h1>라우팅 패턴</h1>
+  <div class="en">Routing Pattern</div>
+  <div class="body"><p>들어온 요청의 난이도나 종류를 보고 가장 알맞은 LLM을 골라 보내는 구조다. 비용을 줄이면서도 어려운 요청의 품질은 지키고 싶을 때 쓴다.</p><h4>한눈에 보기</h4><p>라우팅 패턴은 들어온 요청을 보고 <strong>그 요청에 맞는 모델을 골라 보내는</strong> 구조다. 모든 요청을 가장 비싼 모델로 처리하면 비용이 크다. 반대로 모두 작은 모델로 처리하면 어려운 질문에서 품질이 떨어진다. 그래서 쉬운 요청은 작고 싼 모델로, 어려운 요청은 큰 모델로 나눠 보내 비용과 품질을 함께 맞춘다.</p><div class="tbl"><table><tr><th>방식</th><th>비용</th><th>품질</th></tr><tr><td>모두 큰 모델</td><td>높음</td><td>높음</td></tr><tr><td>모두 작은 모델</td><td>낮음</td><td>어려운 요청에서 떨어짐</td></tr><tr><td><strong>라우팅</strong></td><td>낮게 유지</td><td><strong>요청에 맞춤</strong></td></tr></table></div><h4>처음엔 규칙으로, 복잡해지면 모델에게 맡긴다</h4><p>요청을 어디로 보낼지 정하는 방법은 크게 네 가지다. 처음에는 규칙으로 시작하고, 규칙으로 잘 나뉘지 않는 요청이 늘어나면 분류 모델을 붙이는 순서가 무난하다.</p><div class="tbl"><table><tr><th>방법</th><th>판단 방식</th><th>어울리는 경우</th></tr><tr><td>규칙 기반</td><td>길이·키워드·작업 종류로 나눔</td><td>요청 유형이 뚜렷할 때</td></tr><tr><td>분류 모델</td><td>작은 모델이 난이도를 판단</td><td>요청이 다양할 때</td></tr><tr><td>LLM 판단</td><td>작은 LLM에게 난이도를 물어봄</td><td>기준을 말로 정하기 쉬울 때</td></tr><tr><td>단계적 시도</td><td>작은 모델 먼저, 부족하면 큰 모델로</td><td>답을 자동으로 검사할 수 있을 때</td></tr></table></div><h4>LiteLLM이나 RouteLLM으로 직접 구성한다</h4><p>가장 쉬운 출발점은 LiteLLM 같은 프록시다. 여러 모델을 하나의 주소 뒤에 등록하고 "짧은 질문은 경량 모델, 긴 문서나 코딩은 상위 모델"처럼 규칙을 걸어 둔다. 그러면 앱 코드는 그대로 두고 요청이 가는 곳만 바뀐다. RouteLLM처럼 강한 모델과 약한 모델 중 어디로 보낼지 판단하는 오픈소스 라우터도 있다. Martian 같은 상용 서비스나 Microsoft Foundry의 모델 라우터처럼 클라우드가 라우팅을 대신 해 주는 방식도 있다.</p><p>구성하는 순서는 이렇다. 먼저 실제 요청 기록을 모아 유형별로 나눈다. 유형마다 작은 모델로도 충분한지 직접 비교해 보고, 그 결과로 나누는 기준을 정한다. 마지막으로 작은 모델이 실패하면 큰 모델로 넘기는 경로를 만들어 둔다.</p><h4>잘못 보내면 오히려 손해다</h4><p>라우터가 어려운 요청을 작은 모델로 보내면 품질이 떨어진다. 반대로 쉬운 요청을 큰 모델로 보내면 비용을 아끼는 효과가 사라진다. 라우터가 판단하는 데에도 시간과 비용이 든다. 그래서 요청량이 적거나 요청 난이도가 대부분 비슷하다면 모델 하나만 쓰는 편이 단순하다.</p><p>모델마다 프롬프트에 반응하는 방식과 출력 형식이 달라서, 같은 프롬프트도 모델에 따라 다르게 동작할 수 있다. 어떤 요청이 어느 모델로 갔는지 기록해 두어야 문제가 생겼을 때 원인을 찾을 수 있다.</p><h4>폴백·로드밸런싱과는 목적이 다르다</h4><div class="tbl"><table><tr><th>기법</th><th>무엇을 보고 보내나</th><th>목적</th></tr><tr><td><strong>라우팅</strong></td><td>요청 내용과 난이도</td><td>비용과 품질의 균형</td></tr><tr><td>폴백</td><td>앞 모델의 오류나 실패</td><td>장애 대응</td></tr><tr><td>로드밸런싱</td><td>서버 부하와 사용 한도</td><td>처리량 분산</td></tr></table></div><p>실제 서비스에서는 세 가지를 함께 쓰는 경우가 많다. 라우팅으로 모델을 고르고, 그 모델에 문제가 생기면 폴백으로 다른 모델에 넘긴다.</p></div>
+  <div class="tags"><span>#라우팅</span><span>#비용최적화</span><span>#선택</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/planning-pattern.html">플래닝 패턴</a>, <a href="https://aiwiki.work/k/llm-gateway.html">LLM 게이트웨이</a>, <a href="https://aiwiki.work/k/litellm.html">LiteLLM</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/fugu-ultra.html">푸구 울트라</a>, <a href="https://aiwiki.work/k/weave-router.html">위브 라우터</a>, <a href="https://aiwiki.work/k/jev-router.html">제브 라우터</a>, <a href="https://aiwiki.work/k/opentag.html">오픈태그</a>, <a href="https://aiwiki.work/k/jev.html">제브</a>, <a href="https://aiwiki.work/k/decision-model.html">디시전 모델</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router" target="_blank" rel="nofollow noopener">Model router for Microsoft Foundry concepts - Microsoft Foundry | Microsoft Learn</a> <span class="ref-type">공식</span></li><li><a href="https://www.mindstudio.ai/blog/set-up-ai-model-router-llm-stack/" target="_blank" rel="nofollow noopener">How to Set Up an AI Model Router for Your LLM Stack</a> <span class="ref-type">블로그</span></li><li><a href="https://medium.com/@michael.hannecke/the-model-router-running-a-team-of-local-llms-instead-of-one-big-one-fd75eeec9d39" target="_blank" rel="nofollow noopener">Model Router: local Running Team of small LLMs over One Big</a> <span class="ref-type">블로그</span></li><li><a href="https://www.truefoundry.com/blog/what-is-llm-router" target="_blank" rel="nofollow noopener">What is LLM Router? - TrueFoundry</a> <span class="ref-type">블로그</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#routing-pattern">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

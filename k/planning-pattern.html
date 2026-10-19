@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>플래닝 패턴이란? (Planning Pattern) — AI Wiki</title>
+<meta name="description" content="플래닝 패턴이란? LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.">
+<meta name="keywords" content="플래닝 패턴, Planning Pattern, 계획수립, 목표분해, 추론, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="플래닝 패턴이란? (Planning Pattern) — AI Wiki">
+<meta property="og:description" content="플래닝 패턴이란? LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/planning-pattern.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="플래닝 패턴이란? (Planning Pattern) — AI Wiki">
+<meta name="twitter:description" content="플래닝 패턴이란? LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/planning-pattern.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/planning-pattern.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "플래닝 패턴",
+  "alternateName": "Planning Pattern",
+  "description": "LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.",
+  "url": "https://aiwiki.work/k/planning-pattern.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "에이전트",
+      "item": "https://aiwiki.work/c/agent.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "플래닝 패턴",
+      "item": "https://aiwiki.work/k/planning-pattern.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "플래닝 패턴 (Planning Pattern)",
+  "description": "LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.",
+  "url": "https://aiwiki.work/k/planning-pattern.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/planning-pattern.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/agent.html">에이전트</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">에이전트</div>
+  <h1>플래닝 패턴</h1>
+  <div class="en">Planning Pattern</div>
+  <div class="body"><p>LLM이 큰 목표를 바로 실행하지 않고, 먼저 단계별 계획을 세운 뒤 순서대로 처리하게 하는 방식이다. 여러 단계를 거쳐야 하는 긴 작업을 에이전트에게 맡길 때 쓴다.</p><h4>한눈에 보기</h4><p>플래닝 패턴은 모델이 목표를 받으면 바로 답하지 않고 <strong>할 일 목록을 먼저 만든 뒤</strong> 하나씩 실행하게 하는 방식이다. 하위 작업으로 나누고, 무엇이 먼저 끝나야 하는지 따져서 순서를 정한다. 단계가 많고 중간 결과에 따라 다음 행동이 바뀌는 작업일수록 효과가 크다.</p><div class="tbl"><table><tr><th>방식</th><th>계획하는 방법</th><th>이럴 때 쓴다</th></tr><tr><td>ReAct</td><td>생각→행동→관찰을 한 단계씩 반복</td><td>검색·도구 결과를 보며 길을 찾는 일</td></tr><tr><td><strong>Plan-and-Execute</strong></td><td>전체 계획을 먼저 세우고 차례로 실행</td><td>단계가 분명한 긴 작업</td></tr><tr><td>Tree of Thought</td><td>여러 갈래를 펼쳐 보고 나은 쪽을 고름</td><td>정답 경로가 여러 개인 어려운 문제</td></tr></table></div><h4>프롬프트 한 줄로 시작할 수 있다</h4><p>가장 쉬운 방법은 프롬프트에 "먼저 단계별 계획을 세우고, 그다음 실행하라"고 적는 것이다. 예를 들어 "마케팅 캠페인 기획서를 만들어줘"라고 하면 에이전트가 "시장 조사 → 경쟁사 분석 → 타깃 정의 → 전략 수립 → 문서 작성" 순서를 먼저 내놓고 차례로 진행한다. 계획을 먼저 보여 달라고 하면, 실행 전에 내가 순서를 고칠 수 있다.</p><p>Claude처럼 확장 사고(extended thinking)를 지원하는 모델은 이 기능을 켜면 답하기 전에 스스로 더 깊이 계획을 세운다. 계획 품질을 높이고 싶을 때 프롬프트 지시와 함께 쓰면 좋다.</p><h4>에이전트에서는 계획 담당과 실행 담당을 나눈다</h4><p>직접 에이전트를 만든다면 계획을 세우는 호출과 각 단계를 실행하는 호출을 분리하는 구성이 흔하다. 계획 단계에는 생각을 깊게 하는 강한 모델을 쓰고, 정해진 단계를 처리하는 실행에는 빠르고 싼 모델을 써서 비용을 맞출 수 있다.</p><div class="tbl"><table><tr><th>순서</th><th>할 일</th></tr><tr><td>1. 계획</td><td>목표를 하위 작업 목록으로 나눈다</td></tr><tr><td>2. 실행</td><td>목록 순서대로 도구를 쓰며 처리한다</td></tr><tr><td>3. <strong>재계획</strong></td><td>결과가 예상과 다르면 남은 계획을 고친다</td></tr></table></div><h4>처음 세운 계획을 끝까지 믿지 않는다</h4><p>처음 세운 계획은 틀릴 수 있다. 검색 결과가 비었거나 코드 테스트가 실패했는데도 원래 계획대로 밀고 가면 엉뚱한 결과가 나온다. 단계마다 결과를 확인하고 필요하면 계획을 다시 세우게 해야 한다.</p><p>계획이 너무 길어지는 것도 문제다. 단계가 늘수록 앞 단계의 작은 실수가 뒤로 쌓이므로, 목표를 적당한 크기로 나누고 중간 확인 지점을 두는 편이 안전하다.</p><h4>짧은 일에는 오히려 손해다</h4><p>번역, 요약, 간단한 질문처럼 한 번에 끝나는 일에 계획 단계를 넣으면 시간과 토큰만 더 든다. 플래닝은 여러 단계를 거쳐야 하고 중간에 판단이 필요한 작업에만 쓰고, 단순한 일은 바로 답하게 두는 것이 낫다.</p></div>
+  <div class="tags"><span>#계획수립</span><span>#목표분해</span><span>#추론</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/orchestration-pattern.html">오케스트레이션 패턴</a>, <a href="https://aiwiki.work/k/subagent.html">서브에이전트</a>, <a href="https://aiwiki.work/k/critic-pattern.html">크리틱 패턴</a>, <a href="https://aiwiki.work/k/summarizer.html">서머라이저</a>, <a href="https://aiwiki.work/k/react-pattern.html">ReAct 패턴</a>, <a href="https://aiwiki.work/k/task-decomposition.html">태스크 분해</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2402.02716" target="_blank" rel="nofollow noopener">Understanding the planning of LLM agents: A survey</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/html/2601.12560v1" target="_blank" rel="nofollow noopener">Agentic AI - Architectures and Taxonomies</a> <span class="ref-type">논문</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=ot7uXNQskhs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ot7uXNQskhs/mqdefault.jpg" alt="AI Agent Planning: How LLMs Think Step by Step" loading="lazy" width="160" height="90"><span>AI Agent Planning: How LLMs Think Step by Step</span></a><a class="video-item" href="https://www.youtube.com/watch?v=sal78ACtGTc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sal78ACtGTc/mqdefault.jpg" alt="Agentic AI Workflows: Planning and Execution" loading="lazy" width="160" height="90"><span>Agentic AI Workflows: Planning and Execution</span></a><a class="video-item" href="https://www.youtube.com/watch?v=SEFJB5mESAg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SEFJB5mESAg/mqdefault.jpg" alt="AI 에이전트 플래닝 원리" loading="lazy" width="160" height="90"><span>AI 에이전트 플래닝 원리</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#planning-pattern">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

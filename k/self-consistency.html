@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>셀프 컨시스턴시란? (Self-Consistency) — AI Wiki</title>
+<meta name="description" content="셀프 컨시스턴시란? 같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.">
+<meta name="keywords" content="셀프 컨시스턴시, Self-Consistency, 앙상블, 정확도향상, 다수결, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="셀프 컨시스턴시란? (Self-Consistency) — AI Wiki">
+<meta property="og:description" content="셀프 컨시스턴시란? 같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/self-consistency.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="셀프 컨시스턴시란? (Self-Consistency) — AI Wiki">
+<meta name="twitter:description" content="셀프 컨시스턴시란? 같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/self-consistency.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/self-consistency.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "셀프 컨시스턴시",
+  "alternateName": "Self-Consistency",
+  "description": "같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/self-consistency.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "프롬프팅",
+      "item": "https://aiwiki.work/c/prompting.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "셀프 컨시스턴시",
+      "item": "https://aiwiki.work/k/self-consistency.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "셀프 컨시스턴시 (Self-Consistency)",
+  "description": "같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.",
+  "url": "https://aiwiki.work/k/self-consistency.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/self-consistency.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/prompting.html">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <h1>셀프 컨시스턴시</h1>
+  <div class="en">Self-Consistency</div>
+  <div class="body"><p>같은 질문을 여러 번 풀게 한 뒤 가장 많이 나온 답을 고르는 프롬프트 기법이다. 수학 계산이나 분류처럼 정답이 하나로 떨어지는 문제에서 정확도를 높이고 싶을 때 쓴다.</p><h4>한눈에 보기</h4><p>사람도 어려운 문제는 여러 방법으로 풀어 보고, 같은 답이 나오면 확신을 갖는다. <strong>셀프 컨시스턴시</strong>는 같은 프롬프트를 여러 번 실행해 서로 다른 풀이 과정을 얻은 뒤, 가장 많이 나온 답을 최종 답으로 고르는 방식이다. 한 번 물어서 나온 답보다 비용은 더 들지만, 수학·논리 추론 문제에서 정확도가 크게 오른다.</p><div class="tbl"><table><tr><th>방식</th><th>어떻게</th><th>비용</th></tr><tr><td>한 번 답하기</td><td>한 번 호출하고 그 답을 그대로 쓴다</td><td>1배</td></tr><tr><td><strong>셀프 컨시스턴시</strong></td><td>N번 풀게 하고 다수결로 정한다</td><td>N배</td></tr><tr><td>유니버설 셀프 컨시스턴시</td><td>N개 답을 모델에 다시 주고 가장 일관된 답을 고르게 한다</td><td>N배 + 1번</td></tr></table></div><h4>풀이는 다양하게, 답은 하나로 모은다</h4><p>핵심은 풀이 과정마다 다른 길을 가게 하는 것이다. 그래서 단계별로 생각하게 하는 프롬프트(Chain of Thought)와 같이 쓰고, temperature를 높여 매번 조금씩 다른 답이 나오게 한다. temperature가 0이면 같은 답만 반복되므로 효과가 없다.</p><div class="tbl"><table><tr><th>순서</th><th>할 일</th></tr><tr><td>1. 프롬프트</td><td>"단계별로 풀고 마지막 줄에 답만 적어라"처럼 답 형식을 정한다</td></tr><tr><td>2. 여러 번 호출</td><td><code>temperature=0.7</code> 정도로 5번 안팎 실행한다</td></tr><tr><td>3. 답만 추출</td><td>풀이는 버리고 최종 답만 뽑아 표기를 맞춘다</td></tr><tr><td>4. 다수결</td><td>가장 많이 나온 답을 최종 답으로 쓴다</td></tr></table></div><p class="note">호출은 서로 독립이라 동시에 보내면 기다리는 시간은 거의 늘지 않는다.</p><h4>답을 비교할 수 있을 때만 통한다</h4><p>다수결을 하려면 답끼리 같은지 다른지 판단할 수 있어야 한다. 숫자, 선택지, 분류 라벨처럼 짧게 떨어지는 답에 잘 맞는다. 글쓰기나 요약처럼 매번 표현이 달라지는 답은 그냥 셀 수 없으니, 모델에게 여러 답 중 가장 일관된 것을 고르게 하는 유니버설 방식을 쓴다.</p><div class="tbl"><table><tr><th>상황</th><th>쓸까?</th></tr><tr><td>수학 계산, 논리 퀴즈</td><td><strong>쓴다</strong></td></tr><tr><td>틀리면 곤란한 분류 작업</td><td><strong>쓴다</strong></td></tr><tr><td>요약, 글쓰기</td><td>유니버설 방식으로</td></tr><tr><td>단순 질문, 대량 처리</td><td>안 쓴다 (비용만 는다)</td></tr></table></div><h4>비용은 N배, 표가 갈리면 신호다</h4><p>호출 횟수만큼 비용이 늘어나므로 모든 요청에 쓰지 말고 중요한 판단에만 쓴다. 표가 고르게 갈리면 모델도 확신이 없다는 뜻이니, 그 결과는 사람이 다시 보도록 넘기면 좋다. 모델이 같은 실수를 반복하면 다수결로도 고칠 수 없다는 점도 기억해야 한다.</p><p>추론 모델처럼 한 번 호출 안에서 이미 여러 풀이를 검토하는 모델이라면 추가 효과는 줄어든다. 이때는 호출 횟수를 늘리기 전에 추론 강도부터 높여 보는 편이 싸게 먹힌다.</p></div>
+  <div class="tags"><span>#앙상블</span><span>#정확도향상</span><span>#다수결</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/reasoning-model.html">추론 모델</a>, <a href="https://aiwiki.work/k/few-shot.html">퓨샷</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://medium.com/@dan_43009/self-consistency-and-universal-self-consistency-prompting-00b14f2d1992" target="_blank" rel="nofollow noopener">Self-Consistency and Universal Self-Consistency Prompting | by Dan Cleary | Medium</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.nadoo.ai/self-consistency/" target="_blank" rel="nofollow noopener">일관성 있는 AI, self-consistency 프롬프팅 기법 - 나두AI 블로그</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.sionic.ai/self-discover" target="_blank" rel="nofollow noopener">LLM 추론력 향상을 위한 Self-Discover 방법론</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/pdf/2203.11171" target="_blank" rel="nofollow noopener">[PDF] Self-Consistency Improves Chain of Thought Reasoning in ... - arXiv</a> <span class="ref-type">논문</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#self-consistency">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

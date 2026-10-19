@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>컨텍스트 캐싱이란? (Context Caching) — AI Wiki</title>
+<meta name="description" content="컨텍스트 캐싱이란? 요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.">
+<meta name="keywords" content="컨텍스트 캐싱, Context Caching, 캐싱, 비용절감, 성능, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="컨텍스트 캐싱이란? (Context Caching) — AI Wiki">
+<meta property="og:description" content="컨텍스트 캐싱이란? 요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/context-caching.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨텍스트 캐싱이란? (Context Caching) — AI Wiki">
+<meta name="twitter:description" content="컨텍스트 캐싱이란? 요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/context-caching.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/context-caching.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "컨텍스트 캐싱",
+  "alternateName": "Context Caching",
+  "description": "요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.",
+  "url": "https://aiwiki.work/k/context-caching.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "도구",
+      "item": "https://aiwiki.work/c/tooling.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "컨텍스트 캐싱",
+      "item": "https://aiwiki.work/k/context-caching.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "컨텍스트 캐싱 (Context Caching)",
+  "description": "요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.",
+  "url": "https://aiwiki.work/k/context-caching.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/context-caching.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/tooling.html">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <h1>컨텍스트 캐싱</h1>
+  <div class="en">Context Caching</div>
+  <div class="body"><p>요청마다 반복되는 긴 시스템 프롬프트나 문서를 모델 제공사 서버에 저장해 두고 다시 써서, 입력 비용과 응답 시간을 줄이는 기능이다. 긴 문서 하나에 질문을 여러 번 하거나 같은 지시문으로 계속 도는 에이전트에 쓴다.</p><h4>한눈에 보기</h4><p>컨텍스트 캐싱은 매 요청마다 반복되는 긴 앞부분(시스템 프롬프트, 참고 문서, 도구 정의 등)을 모델 제공사 서버에 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 내용을 다시 처리하지 않으니 <strong>입력 비용과 응답 지연이 함께 줄어든다</strong>. 긴 문서에 여러 번 질문하는 챗봇, 같은 지시문으로 계속 도는 에이전트에 잘 맞는다.</p><div class="tbl"><table><tr><th>상황</th><th>캐시 효과</th></tr><tr><td>긴 문서 하나에 질문을 여러 번</td><td><strong>큼</strong></td></tr><tr><td>같은 시스템 프롬프트로 대화가 이어짐</td><td><strong>큼</strong></td></tr><tr><td>매번 내용이 다른 짧은 요청</td><td>거의 없음</td></tr></table></div><h4>고정된 내용을 앞에 둬야 캐시가 맞는다</h4><p>캐시는 프롬프트의 <strong>앞부분이 글자 하나까지 똑같을 때</strong>만 맞는다. 그래서 '변하지 않는 지시문 → 참고 문서 → 지난 대화 → 이번 질문' 순서로 둔다. 앞쪽에 현재 시각이나 사용자 이름처럼 매번 바뀌는 값을 넣으면 그 뒤는 전부 캐시되지 않는다.</p><p>Anthropic API에서는 캐시할 블록 끝에 <code>cache_control: {"type": "ephemeral"}</code>를 붙인다. 법률 문서 분석 앱이 1만 토큰짜리 참고 문서를 매번 넣는다면 그 문서 블록에 붙이면 된다. 응답의 사용량 정보에 캐시에서 읽은 토큰 수가 나오므로, 실제로 캐시가 맞는지 여기서 확인한다.</p><h4>제공사마다 켜는 방식이 다르다</h4><div class="tbl"><table><tr><th>제공사</th><th>방식</th><th>직접 할 일</th></tr><tr><td>Anthropic</td><td>직접 지정</td><td>캐시할 지점 표시</td></tr><tr><td>OpenAI</td><td>자동</td><td>앞부분을 고정하는 것만 신경 쓴다</td></tr><tr><td>Google Gemini</td><td>자동 + 명시적 캐시</td><td>캐시를 만들고 보관 시간을 정한다</td></tr><tr><td>DeepSeek</td><td>자동</td><td>따로 설정할 것 없음</td></tr></table></div><p class="note">최소 길이, 할인율 같은 세부 조건은 제공사와 모델마다 다르므로 공식 문서에서 확인한다.</p><h4>첫 저장은 더 비싸고, 금방 사라진다</h4><p>Anthropic 기준으로 캐시에서 읽은 토큰은 일반 입력보다 약 90% 싸다. 대신 처음 캐시에 쓸 때는 일반 입력보다 조금 더 비싸서, 한 번 쓰고 끝나는 내용이면 오히려 손해다.</p><p>캐시는 오래 남지 않는다. 기본 보관 시간이 몇 분 정도라 요청 간격이 길면 매번 새로 저장하게 된다. 너무 짧은 프롬프트는 최소 길이에 못 미쳐 캐시되지 않는다. Gemini의 명시적 캐시처럼 보관하는 시간만큼 저장 비용이 붙는 방식도 있다.</p><h4>시맨틱 캐싱과는 다르다</h4><p>시맨틱 캐싱은 비슷한 질문이 들어오면 예전 답을 그대로 돌려주는 방식이고, 내 앱에서 직접 만든다. 컨텍스트 캐싱은 모델을 매번 호출하고 답도 매번 새로 만든다.</p><div class="tbl"><table><tr><th>항목</th><th>컨텍스트 캐싱</th><th>시맨틱 캐싱</th></tr><tr><td>저장하는 것</td><td>처리된 입력 앞부분</td><td>질문과 답</td></tr><tr><td>모델 호출</td><td>매번 함</td><td>캐시가 맞으면 안 함</td></tr><tr><td>답</td><td><strong>매번 새로 생성</strong></td><td>예전 답 재사용</td></tr><tr><td>위치</td><td>모델 제공사 서버</td><td>내 앱</td></tr></table></div></div>
+  <div class="tags"><span>#캐싱</span><span>#비용절감</span><span>#성능</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/api-gateway.html">AI API 게이트웨이</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview" target="_blank" rel="nofollow noopener">Context caching overview  |  Generative AI on Vertex AI  |  Google Cloud Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://api-docs.deepseek.com/guides/kv_cache" target="_blank" rel="nofollow noopener">Context Caching | DeepSeek API Docs</a> <span class="ref-type">공식</span></li><li><a href="https://docs.z.ai/guides/capabilities/cache" target="_blank" rel="nofollow noopener">Context Caching - Overview - Z.AI DEVELOPER DOCUMENT</a> <span class="ref-type">공식</span></li><li><a href="https://medium.com/@wael-saideni/understanding-the-difference-between-context-caching-and-semantic-caching-a-step-toward-optimizing-1a2b44d25c12" target="_blank" rel="nofollow noopener">Understanding the difference between context caching or prompt ...</a> <span class="ref-type">블로그</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#context-caching">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

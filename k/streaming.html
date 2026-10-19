@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>스트리밍이란? (Token Streaming) — AI Wiki</title>
+<meta name="description" content="스트리밍이란? LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.">
+<meta name="keywords" content="스트리밍, Token Streaming, SSE, 스트림, UX, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="스트리밍이란? (Token Streaming) — AI Wiki">
+<meta property="og:description" content="스트리밍이란? LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/streaming.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="스트리밍이란? (Token Streaming) — AI Wiki">
+<meta name="twitter:description" content="스트리밍이란? LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/streaming.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/streaming.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "스트리밍",
+  "alternateName": "Token Streaming",
+  "description": "LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.",
+  "url": "https://aiwiki.work/k/streaming.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "인프라",
+      "item": "https://aiwiki.work/c/infra.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "스트리밍",
+      "item": "https://aiwiki.work/k/streaming.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "스트리밍 (Token Streaming)",
+  "description": "LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.",
+  "url": "https://aiwiki.work/k/streaming.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/streaming.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/infra.html">인프라</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">인프라</div>
+  <h1>스트리밍</h1>
+  <div class="en">Token Streaming</div>
+  <div class="body"><p>LLM이 답을 다 만들기 전에, 토큰이 생성되는 대로 바로 보내 주는 방식이다. 채팅 화면처럼 사람이 직접 읽는 곳에서 기다리는 느낌을 줄이려고 쓴다.</p><h4>한눈에 보기</h4><p>스트리밍은 LLM이 답을 다 만들기 전에, 토큰이 나오는 대로 바로 보내 주는 방식이다. ChatGPT 화면에서 글자가 타이핑되듯 나오는 게 바로 이것이다. 사람이 화면으로 읽는 채팅·글쓰기 도구라면 <strong>켜 두는 게 기본</strong>이다.</p><div class="tbl"><table><tr><th>항목</th><th>일반 응답</th><th>스트리밍</th></tr><tr><td>첫 글자가 보이는 때</td><td>답이 다 끝난 뒤</td><td><strong>첫 토큰이 나오자마자</strong></td></tr><tr><td>전체 완료 시간</td><td>같음</td><td>같음</td></tr><tr><td>구현 난이도</td><td>쉬움</td><td>조금 복잡</td></tr><tr><td>어울리는 곳</td><td>백엔드 일괄 처리</td><td>채팅 UI, 긴 답변</td></tr></table></div><h4>빨라지는 건 '체감' 속도다</h4><p>스트리밍은 생성 속도 자체를 높이지 않는다. 전체가 끝나는 시간은 같지만, 첫 토큰이 보이기까지 걸리는 시간인 TTFT(Time to First Token)가 짧아진다. 수백 토큰짜리 답을 빈 화면 앞에서 기다리는 대신, 읽으면서 기다리게 된다.</p><p>답이 길수록 효과가 크다. 사용자는 앞부분을 읽다가 원하는 답이 아니면 중간에 멈출 수도 있다.</p><h4>API에서는 옵션 하나로 켠다</h4><p>OpenAI와 Claude API 모두 요청에 <code>"stream": true</code>(파이썬 SDK에서는 <code>stream=True</code>)를 넣으면 응답이 SSE(Server-Sent Events)로 조각조각 온다. 각 조각에는 새로 생긴 텍스트만 들어 있으니, 받는 쪽에서 이어 붙여 화면에 그리면 된다. Claude SDK는 <code>client.messages.stream()</code> 같은 도우미도 있어 텍스트만 골라 받기 쉽다.</p><p>웹 앱은 보통 서버가 LLM 스트림을 받아 브라우저로 다시 흘려보낸다. Next.js에서는 API 라우트가 <code>ReadableStream</code>을 응답으로 돌려주면 되고, Vercel AI SDK를 쓰면 이 연결과 채팅 화면 갱신을 표준 방식으로 처리할 수 있다.</p><h4>켤 때와 끌 때</h4><div class="tbl"><table><tr><th>상황</th><th>스트리밍</th><th>이유</th></tr><tr><td>채팅, 글쓰기 도구</td><td><strong>켠다</strong></td><td>읽으면서 기다릴 수 있다</td></tr><tr><td>아주 긴 답변</td><td><strong>켠다</strong></td><td>오래 응답이 없어 연결이 끊기는 걸 줄인다</td></tr><tr><td>JSON을 받아 바로 처리</td><td>끈다</td><td>다 와야 파싱할 수 있다</td></tr><tr><td>야간 일괄 처리</td><td>끈다</td><td>볼 사람이 없어 이득이 없다</td></tr></table></div><h4>중간에 끊길 수 있다고 보고 만든다</h4><p>스트림은 응답이 이미 시작된 뒤에 오류가 날 수 있다. 상태 코드 하나로 성공·실패가 갈리지 않으니, 끝 신호(Claude는 <code>message_stop</code>, OpenAI는 <code>[DONE]</code>)를 받았는지 확인하고 못 받았으면 재시도하거나 안내 문구를 보여 줘야 한다.</p><p>서버 앞의 프록시가 응답을 모았다가 한꺼번에 보내면 스트리밍 효과가 사라진다. Nginx라면 버퍼링을 끄는 설정이 필요하다. 토큰 사용량도 스트림 끝부분 이벤트에 담겨 오는 경우가 많으니 비용 집계 코드를 그에 맞춰야 한다.</p></div>
+  <div class="tags"><span>#SSE</span><span>#스트림</span><span>#UX</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/latency-optimization.html">레이턴시 최적화</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/generative-ui.html">생성형 UI</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://platform.openai.com/docs/api-reference/streaming" target="_blank" rel="nofollow noopener">Streaming API Responses — OpenAI Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://docs.anthropic.com/en/api/messages-streaming" target="_blank" rel="nofollow noopener">Streaming Messages — Anthropic Claude API Documentation</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=hvJsEzP34o8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/hvJsEzP34o8/mqdefault.jpg" alt="StreamingLLM: Efficient Streaming Language Models" loading="lazy" width="160" height="90"><span>StreamingLLM: Efficient Streaming Language Models</span></a><a class="video-item" href="https://www.youtube.com/watch?v=JlH_bXEaXMk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/JlH_bXEaXMk/mqdefault.jpg" alt="Streaming for LangChain Agents and FastAPI" loading="lazy" width="160" height="90"><span>Streaming for LangChain Agents and FastAPI</span></a><a class="video-item" href="https://www.youtube.com/watch?v=k2Mf6hacjqw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/k2Mf6hacjqw/mqdefault.jpg" alt="LLM 스트리밍 활용 - 테디노트" loading="lazy" width="160" height="90"><span>LLM 스트리밍 활용 - 테디노트</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#streaming">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

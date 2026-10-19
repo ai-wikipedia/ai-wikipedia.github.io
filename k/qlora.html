@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>QLoRA란? (Quantized LoRA) — AI Wiki</title>
+<meta name="description" content="QLoRA란? 베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.">
+<meta name="keywords" content="QLoRA, Quantized LoRA, 4비트양자화, 파인튜닝, 메모리절약, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QLoRA란? (Quantized LoRA) — AI Wiki">
+<meta property="og:description" content="QLoRA란? 베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/qlora.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QLoRA란? (Quantized LoRA) — AI Wiki">
+<meta name="twitter:description" content="QLoRA란? 베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/qlora.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/qlora.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "QLoRA",
+  "alternateName": "Quantized LoRA",
+  "description": "베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.",
+  "url": "https://aiwiki.work/k/qlora.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "모델",
+      "item": "https://aiwiki.work/c/model.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "QLoRA",
+      "item": "https://aiwiki.work/k/qlora.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "QLoRA (Quantized LoRA)",
+  "description": "베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.",
+  "url": "https://aiwiki.work/k/qlora.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/qlora.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/model.html">모델</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">모델</div>
+  <h1>QLoRA</h1>
+  <div class="en">Quantized LoRA</div>
+  <div class="body"><p>베이스 모델을 4비트로 줄여 고정해 두고, 그 위에 작은 LoRA 어댑터만 학습하는 파인튜닝 기법이다. GPU 메모리가 부족해 일반 LoRA로도 모델이 올라가지 않을 때 쓴다.</p><h4>한눈에 보기</h4><p>QLoRA는 LoRA에 <strong>4비트 양자화</strong>를 더한 기법이다. 원래 모델은 4비트로 압축해 얼려 두고, 작은 어댑터만 16비트로 학습한다. 덕분에 모델을 올리는 메모리가 크게 줄어, 개인 GPU 한 장으로도 큰 모델을 파인튜닝할 수 있다.</p><div class="tbl"><table><tr><th>방식</th><th>베이스 모델</th><th>학습하는 부분</th><th>메모리</th></tr><tr><td>전체 파인튜닝</td><td>16비트, 전부 수정</td><td>모든 가중치</td><td>가장 많음</td></tr><tr><td>LoRA</td><td>16비트, 고정</td><td>어댑터만</td><td>중간</td></tr><tr><td><strong>QLoRA</strong></td><td><strong>4비트, 고정</strong></td><td>어댑터만</td><td><strong>가장 적음</strong></td></tr></table></div><h4>모델 무게를 4분의 1로 줄인다</h4><p>LoRA는 학습할 파라미터를 줄여 주지만, 베이스 모델 자체는 16비트로 메모리에 올려야 한다. QLoRA는 이 부분을 4비트로 저장해 가중치 메모리를 약 4분의 1로 줄인다.</p><div class="bars"><div class="bar"><span class="bar-label">16비트 (LoRA)</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-val">약 14GB</span></div><div class="bar"><span class="bar-label">4비트 (QLoRA)</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-val">약 3.5GB</span></div></div><p class="note">7B 모델 가중치만 계산한 대략값이다. 실제 학습 때는 활성값과 옵티마이저 메모리가 더 든다.</p><p>원 논문은 65B 모델을 48GB GPU 한 장으로 파인튜닝할 수 있다는 걸 보여 주었고, 이후 오픈소스 파인튜닝이 널리 퍼지는 계기가 됐다. 정보 손실을 줄이는 4비트 형식(NF4)과 메모리 급증을 막는 장치도 함께 제안됐다.</p><h4>Hugging Face에서 설정 몇 줄로 켠다</h4><p><code>transformers</code>, <code>bitsandbytes</code>, <code>peft</code>를 함께 쓴다. 순서는 이렇다.</p><div class="tbl"><table><tr><th>단계</th><th>할 일</th></tr><tr><td>1. 4비트 로드</td><td><code>BitsAndBytesConfig</code>에 <code>load_in_4bit=True</code>, <code>bnb_4bit_quant_type="nf4"</code></td></tr><tr><td>2. 학습 준비</td><td><code>prepare_model_for_kbit_training</code> 호출</td></tr><tr><td>3. 어댑터 부착</td><td><code>LoraConfig</code>로 rank·대상 레이어 지정</td></tr><tr><td>4. 학습·저장</td><td>어댑터 파일만 저장된다</td></tr></table></div><p>계산 정밀도는 <code>bnb_4bit_compute_dtype</code>을 bfloat16으로 두는 경우가 많다. TRL, Axolotl, Unsloth 같은 학습 도구도 QLoRA 설정을 옵션으로 제공한다.</p><h4>메모리가 빠듯할 때만 고른다</h4><p>GPU에 16비트 모델이 넉넉히 올라가면 일반 LoRA가 낫다. QLoRA는 계산할 때마다 4비트 가중치를 풀어 쓰므로 학습이 더 느려지고, 압축 때문에 품질이 조금 떨어질 수 있다. 소비자용 GPU나 무료 클라우드 노트북에서 큰 모델을 다뤄야 할 때 고르면 된다.</p><p>배포할 때도 주의할 점이 있다. 어댑터를 모델에 합칠 때는 4비트 모델보다 원래 16비트 베이스 모델에 합치는 편이 안전하다. 합친 뒤 필요하면 추론용으로 다시 양자화한다.</p></div>
+  <div class="tags"><span>#4비트양자화</span><span>#파인튜닝</span><span>#메모리절약</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/lora.html">LoRA</a>, <a href="https://aiwiki.work/k/quantization.html">양자화</a>, <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/sft.html">SFT</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2305.14314" target="_blank" rel="nofollow noopener">QLoRA: Efficient Finetuning of Quantized LLMs</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/artidoro/qlora" target="_blank" rel="nofollow noopener">QLoRA — Official GitHub Repository</a> <span class="ref-type">공식</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=l5a_uKnbEr4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/l5a_uKnbEr4/mqdefault.jpg" alt="Understanding LoRA and QLoRA: Fine-Tuning LLM Models" loading="lazy" width="160" height="90"><span>Understanding LoRA and QLoRA: Fine-Tuning LLM Models</span></a><a class="video-item" href="https://www.youtube.com/watch?v=0VdNflU08yA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/0VdNflU08yA/mqdefault.jpg" alt="Quantization explained with PyTorch (Umar Jamil)" loading="lazy" width="160" height="90"><span>Quantization explained with PyTorch (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="트랜스포머 어텐션 이즈 올 유 니드 - 허민석" loading="lazy" width="160" height="90"><span>트랜스포머 어텐션 이즈 올 유 니드 - 허민석</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#qlora">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

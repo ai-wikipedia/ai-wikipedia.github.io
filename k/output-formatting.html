@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>출력 포맷팅이란? (Output Formatting) — AI Wiki</title>
+<meta name="description" content="출력 포맷팅이란? LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.">
+<meta name="keywords" content="출력 포맷팅, Output Formatting, 구조화, JSON, 파싱, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="출력 포맷팅이란? (Output Formatting) — AI Wiki">
+<meta property="og:description" content="출력 포맷팅이란? LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.">
+<meta property="og:url" content="https://aiwiki.work/k/output-formatting.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-28">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="출력 포맷팅이란? (Output Formatting) — AI Wiki">
+<meta name="twitter:description" content="출력 포맷팅이란? LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/output-formatting.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/output-formatting.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "출력 포맷팅",
+  "alternateName": "Output Formatting",
+  "description": "LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.",
+  "url": "https://aiwiki.work/k/output-formatting.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "프롬프팅",
+      "item": "https://aiwiki.work/c/prompting.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "출력 포맷팅",
+      "item": "https://aiwiki.work/k/output-formatting.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "출력 포맷팅 (Output Formatting)",
+  "description": "LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.",
+  "url": "https://aiwiki.work/k/output-formatting.html",
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/output-formatting.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/prompting.html">프롬프팅</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">프롬프팅</div>
+  <h1>출력 포맷팅</h1>
+  <div class="en">Output Formatting</div>
+  <div class="body"><p>LLM의 답이 JSON, 마크다운, 정해진 템플릿처럼 원하는 형식으로 나오게 하는 기법이다. 사람이 읽을 글은 형식을 정리할 때, 프로그램이 받아 처리할 데이터는 파싱이 깨지지 않게 할 때 쓴다.</p><h4>한눈에 보기</h4><p>출력 포맷팅은 LLM의 답이 JSON, 마크다운, 표, 정해진 템플릿처럼 <strong>원하는 형식</strong>으로 나오게 만드는 기법이다. 사람이 읽기만 할 답이라면 프롬프트에 형식을 적어 주는 것으로 충분하다. 하지만 프로그램이 받아서 처리해야 하는 답은 형식이 한 번만 어긋나도 파싱이 깨지므로 더 강한 방법을 써야 한다.</p><div class="tbl"><table><tr><th>방법</th><th>어떻게</th><th>형식 보장</th><th>이럴 때</th></tr><tr><td>프롬프트 지시</td><td>형식 설명 + 예시</td><td>약함</td><td>사람이 읽는 글</td></tr><tr><td>JSON 모드</td><td>API 옵션으로 JSON만 출력</td><td>문법만</td><td>필드가 자유로운 데이터</td></tr><tr><td><strong>구조화 출력</strong></td><td>JSON 스키마를 넘겨 강제</td><td><strong>강함</strong></td><td>추출·분류 결과를 코드로 처리</td></tr><tr><td>도구 호출</td><td>함수 인자 형식으로 받기</td><td>강함</td><td>에이전트가 기능 실행</td></tr></table></div><h4>누가 읽느냐로 방법을 고른다</h4><p>블로그 초안이나 회의록 요약처럼 사람이 읽는 결과는 프롬프트에 "제목은 ##, 핵심은 표로"처럼 형식을 적고 예시를 하나 보여 주면 된다. 형식이 조금 흔들려도 읽는 데는 문제가 없다.</p><p>상품 정보 추출이나 문의 분류처럼 코드가 결과를 받아 DB에 넣거나 다음 단계로 넘긴다면 API의 구조화 출력 기능을 쓴다. 가능하면 JSON 스키마로 필드 이름과 타입까지 고정한다.</p><h4>스키마 정하기 → 넘기기 → 검증하기</h4><p>먼저 받을 데이터의 모양을 정한다. <code>{"name": "", "price": 0, "category": ""}</code>처럼 필드와 타입을 정하고, category처럼 값이 정해진 필드는 허용 값을 목록으로 적는다.</p><p>다음으로 그 스키마를 API에 넘긴다. OpenAI API는 <code>response_format</code> 옵션으로 JSON 모드나 스키마를 지정한다. Claude는 구조화 출력이나 도구 정의에 스키마를 넣어 같은 결과를 얻는다. 파이썬에서는 Pydantic 모델을 정의하고 instructor 같은 라이브러리를 쓰면 스키마 변환과 검증, 실패했을 때 재시도까지 맡길 수 있다.</p><p>마지막으로 받은 결과를 코드에서 한 번 더 검증한다. 형식을 강제하는 기능이 없는 모델이라면, 검증에 실패했을 때 오류 내용을 붙여 다시 요청하는 흐름을 만들어 둔다.</p><h4>형식이 맞아도 내용은 틀릴 수 있다</h4><p>스키마가 보장하는 건 모양뿐이다. price 칸에 숫자가 들어왔다고 해서 그 숫자가 맞다는 뜻은 아니므로, 중요한 값은 원문과 대조해 확인해야 한다.</p><p>형식을 너무 빡빡하게 걸면 답의 질이 떨어질 수 있다. 깊게 생각해야 하는 문제라면 근거를 담는 필드를 앞에, 결론 필드를 뒤에 두는 편이 낫다. 마크다운은 채팅 화면에서는 보기 좋지만 문자 메시지처럼 렌더링되지 않는 곳에서는 기호가 그대로 보인다. 그러니 출력이 어디에 표시될지 보고 형식을 정한다.</p></div>
+  <div class="tags"><span>#구조화</span><span>#JSON</span><span>#파싱</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/structured-output.html">구조화된 출력</a>, <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/xml-prompting.html">XML 프롬프팅</a>, <a href="https://aiwiki.work/k/tool-use.html">도구 사용</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.oracle.com/javase/tutorial/java/data/numberformat.html" target="_blank" rel="nofollow noopener">Formatting Numeric Print Output (The Java™ Tutorials &gt; Learning ...</a> <span class="ref-type">공식</span></li><li><a href="https://docs.python.org/3/tutorial/inputoutput.html" target="_blank" rel="nofollow noopener">7. Input and Output — Python 3.14.4 documentation</a> <span class="ref-type">공식</span></li><li><a href="https://wikidocs.net/164969" target="_blank" rel="nofollow noopener">04) 기본 출력 print 함수, format 함수, f문자열 - 파이썬 입문 - 위키독스</a> <span class="ref-type">공식</span></li><li><a href="https://m.blog.naver.com/kaiserkhan21/220961278882" target="_blank" rel="nofollow noopener">[C-언어] printf( )의 포맷(format) 지정자 - 네이버 블로그</a> <span class="ref-type">블로그</span></li></ul></div>
+  
+  <a class="back" href="https://aiwiki.work/#output-formatting">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>
