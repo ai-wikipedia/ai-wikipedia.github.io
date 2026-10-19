@@ -1,3 +1,7 @@
+## 2026-10-19 22:11 (백필 07-13~)
+- 추가: gpt-6-1-sol, agent-control-plane, jev, gpt-6-astra, deepseek-harness, magpie, decision-model, ternary-bonsai
+- HOT: (재설정 예정)
+
 ## 2026-10-19 08:16
 - 추가: latent-reasoning, grouped-query-attention, sliding-window-attention
 - HOT: latent-reasoning, sliding-window-attention

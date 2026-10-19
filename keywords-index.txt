@@ -388,3 +388,11 @@ run-ai	런에이아이	NVIDIA Run:ai (Kubernetes GPU Orchestration)	infra
 latent-reasoning	잠재 공간 추론	Latent Space Reasoning	model
 grouped-query-attention	그룹 쿼리 어텐션	Grouped-Query Attention (GQA)	model
 sliding-window-attention	슬라이딩 윈도우 어텐션	Sliding Window Attention (SWA)	model
+gpt-6-1-sol	GPT-6.1 솔	GPT-6.1 Sol (OpenAI)	model
+agent-control-plane	에이전트 컨트롤 플레인	Coding Agent Control Plane	agent
+jev	제브	Jev (TypeSafe System One Decision Model)	model
+gpt-6-astra	GPT-6 아스트라	GPT-6 Astra (OpenAI)	model
+deepseek-harness	딥시크 하네스	DeepSeek Harness (DSH)	tooling
+magpie	맥파이	Magpie (Multi-Model Switcher for Coding Agents)	tooling
+decision-model	디시전 모델	Non-Autoregressive Decision Model	model
+ternary-bonsai	터너리 본사이	Ternary Bonsai (PrismML Low-Bit On-Device LLM)	model
