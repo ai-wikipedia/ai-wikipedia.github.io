@@ -396,7 +396,3 @@ deepseek-harness	딥시크 하네스	DeepSeek Harness (DSH)	tooling
 magpie	맥파이	Magpie (Multi-Model Switcher for Coding Agents)	tooling
 decision-model	디시전 모델	Non-Autoregressive Decision Model	model
 ternary-bonsai	터너리 본사이	Ternary Bonsai (PrismML Low-Bit On-Device LLM)	model
-deepseek-harness-desktop	딥시크 하네스 데스크톱	DeepSeek Harness Desktop	tooling
-hugging-face-incident	허깅페이스 에이전트 침입 사건	OpenAI Agents Hugging Face Intrusion Incident	safety
-claude-code-agents-md-support	AGENTS.md 폴백	Claude Code AGENTS.md Fallback Support	tooling
-qwen3-8-27b	큐원3.8 27B	Qwen3.8 27B (Alibaba)	model
