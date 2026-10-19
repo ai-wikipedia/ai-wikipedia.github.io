@@ -1,3 +1,7 @@
+## 2026-10-19 22:26
+- 추가: claude-opus-5, inkling, software-factory, pi-coding-agent, openclaw, grok-bot, stateless-mcp, ai-for-mathematics, qwen3-8-flash-next, kolibri, scion, generative-ui, looped-transformer, pelican-benchmark, beam-reflection
+- HOT: harness-engineering, deepseek-v4-1-flash, agent-memory, latent-reasoning, bitter-lesson, claude-code, run-ai, strands-agents, transformer
+
 ## 2026-10-19 22:16
 - 추가: hugging-face-incident, qwen3-8-27b
 - HOT: deepseek-v4-1-flash, deepseek-harness, gemini-4-argon, latent-reasoning, agent-memory, associative-memory, harness-engineering, bitter-lesson

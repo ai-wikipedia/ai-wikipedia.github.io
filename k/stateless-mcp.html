@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>스테이트리스 MCP란? (Stateless MCP) — AI Wiki</title>
+<meta name="description" content="스테이트리스 MCP란? 세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.">
+<meta name="keywords" content="스테이트리스 MCP, Stateless MCP, MCP, Stateless, Serverless, Scaling, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="스테이트리스 MCP란? (Stateless MCP) — AI Wiki">
+<meta property="og:description" content="스테이트리스 MCP란? 세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.">
+<meta property="og:url" content="https://aiwiki.work/k/stateless-mcp.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="스테이트리스 MCP란? (Stateless MCP) — AI Wiki">
+<meta name="twitter:description" content="스테이트리스 MCP란? 세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/stateless-mcp.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/stateless-mcp.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "스테이트리스 MCP",
+  "alternateName": "Stateless MCP",
+  "description": "세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.",
+  "url": "https://aiwiki.work/k/stateless-mcp.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "도구",
+      "item": "https://aiwiki.work/c/tooling.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "스테이트리스 MCP",
+      "item": "https://aiwiki.work/k/stateless-mcp.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "스테이트리스 MCP (Stateless MCP)",
+  "description": "세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.",
+  "url": "https://aiwiki.work/k/stateless-mcp.html",
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/stateless-mcp.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/tooling.html">도구</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">도구</div>
+  <h1>스테이트리스 MCP</h1>
+  <div class="en">Stateless MCP</div>
+  <div class="body"><p>세션 없이 요청 하나하나가 따로 처리되도록 바뀐 MCP 구조로, 2026-07-28 명세에 들어갔다. 원격 MCP 서버를 일반 로드밸런서나 서버리스에 올려 여러 대로 늘릴 때 특히 도움이 된다.</p><h4>한눈에 보기</h4><p>스테이트리스 MCP는 2026-07-28 MCP 명세에서 바뀐 핵심 구조다. 예전에는 클라이언트와 서버가 초기화 핸드셰이크로 세션을 먼저 만들고 대화를 시작했다. 이제는 프로토콜 버전, 클라이언트 정보, 지원 기능을 요청마다 담아 보내서 <strong>요청 하나만 봐도 처리할 수 있다</strong>. 원격 MCP 서버를 여러 대로 늘리거나 서버리스에 올릴 때 이 차이가 가장 크게 드러난다.</p><div class="tbl"><table><tr><th>항목</th><th>이전 (스테이트풀)</th><th>이제 (스테이트리스)</th></tr><tr><td>시작 절차</td><td>initialize 핸드셰이크</td><td><strong>없음, 바로 요청</strong></td></tr><tr><td>세션 식별</td><td><code>Mcp-Session-Id</code> 헤더</td><td>없음</td></tr><tr><td>로드밸런서</td><td>스티키 라우팅 필요</td><td>일반 라운드로빈</td></tr><tr><td>서버 재시작</td><td>열린 세션이 모두 끊김</td><td>다른 인스턴스가 받음</td></tr></table></div><h4>MCP 서버가 평범한 HTTP 서비스가 된다</h4><p>예전에는 세션이 서버 프로세스 하나에 묶여 있었다. 그래서 같은 클라이언트를 늘 같은 인스턴스로 보내거나, 공유 세션 저장소를 따로 운영해야 했다. 이제는 어느 인스턴스든 어떤 요청이든 처리할 수 있어서, 보통 웹 앱처럼 배포하고 수평으로 늘리면 된다.</p><p>도구·프롬프트·리소스만 제공하는 서버라면 Cloudflare Worker나 Cloud Run 같은 서버리스에 바로 올릴 수 있다. 붙잡고 있을 연결이 없으니 쓰지 않을 때는 인스턴스가 0까지 줄어 비용이 준다. 클라이언트도 도구 정의를 안전하게 캐시할 수 있다.</p><h4>없어진 건 프로토콜 세션, 앱 상태는 그대로</h4><p>스테이트리스라고 해서 서버가 아무것도 기억하지 못하는 건 아니다. 열린 브라우저 탭, 커밋 전 DB 트랜잭션, 장바구니처럼 도구가 다루는 상태는 계속 남아 있을 수 있다. 바뀐 건 클라이언트가 그 상태를 <strong>가리키는 방식</strong>이다. 숨은 세션에 기대지 않고 요청에 직접 적어 보내기 때문에, 어느 인스턴스가 받아도 해당 자원을 찾아갈 수 있다.</p><div class="tbl"><table><tr><th>상황</th><th>처리 방법</th></tr><tr><td>조회·검색 같은 단순 도구</td><td>상태 없이 요청만 처리</td></tr><tr><td>브라우저 조작, 트랜잭션</td><td>자원 식별자를 요청에 담아 보냄</td></tr><tr><td>여러 요청이 상태를 함께 조율</td><td>Durable Objects 같은 별도 저장소 사용</td></tr></table></div><h4>기존 서버는 한 번 손봐야 한다</h4><p>핸드셰이크와 세션 헤더가 없어졌으니 하위 호환이 깨지는 변경이다. TypeScript·Python·Go·C# 공식 SDK가 새 명세에 맞춰 바뀌었으므로, SDK를 올리고 세션에 기대던 코드를 걷어내면 된다. 옛 클라이언트가 아직 남아 있으면 두 가지 방법이 있다. 같은 경로에서 새 클라이언트와 옛 클라이언트를 함께 받거나, 두 버전을 모두 지원하는 MCP 게이트웨이를 앞에 둬서 전환 기간을 넘기면 된다.</p></div>
+  <div class="tags"><span>#MCP</span><span>#Stateless</span><span>#Serverless</span><span>#Scaling</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/mcp.html">MCP</a>, <a href="https://aiwiki.work/k/tool-calling.html">툴 콜링</a>, <a href="https://aiwiki.work/k/durable-execution.html">내구성 실행</a>, <a href="https://aiwiki.work/k/mcpb.html">MCPB</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://modelcontextprotocol.io/seps/2575-stateless-mcp" target="_blank" rel="nofollow noopener">SEP-2575: Make MCP Stateless</a> <span class="ref-type">공식</span></li><li><a href="https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates" target="_blank" rel="nofollow noopener">Scaling AI Agent Infrastructure with the MCP Stateless updates</a> <span class="ref-type">블로그</span></li><li><a href="https://blog.cloudflare.com/mcp-v2" target="_blank" rel="nofollow noopener">The next generation of MCP | Cloudflare Blog</a> <span class="ref-type">블로그</span></li><li><a href="https://dev.to/blackgirlbytes/stateless-mcp-for-beginners-23dg" target="_blank" rel="nofollow noopener">Stateless MCP for Beginners</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.arcade.dev/blog/mcp-going-stateless" target="_blank" rel="nofollow noopener">MCP Is Going Stateless. Here's What That Means</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=f4mI3d-nTrI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/f4mI3d-nTrI/mqdefault.jpg" alt="MCP Was Wrong From The Start (They Just Fixed It)" loading="lazy" width="160" height="90"><span>MCP Was Wrong From The Start (They Just Fixed It)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PYMEspZPcmc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PYMEspZPcmc/mqdefault.jpg" alt="Model Context Protocol - Stateless MCP Servers with Streamable HTTP - Why this is BIG!" loading="lazy" width="160" height="90"><span>Model Context Protocol - Stateless MCP Servers with Streamable HTTP - Why this is BIG!</span></a><a class="video-item" href="https://www.youtube.com/watch?v=3C-JE5vcrsg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/3C-JE5vcrsg/mqdefault.jpg" alt="죽어가던 MCP 심폐소생 시작됐나? - Stateless에 주목해야 할 이유." loading="lazy" width="160" height="90"><span>죽어가던 MCP 심폐소생 시작됐나? - Stateless에 주목해야 할 이유.</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#stateless-mcp">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-19</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>

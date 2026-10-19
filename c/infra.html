@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>인프라 — AI 기술 키워드 모음 | AI Wiki</title>
-<meta name="description" content="인프라 분야의 AI 용어 6개를 비전공자도 이해할 수 있게 쉽게 정리했습니다. AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 데모에서는 잘 되던 것이 실서비스에서 무너지는 이유는 대부분 이 계층에 있습니다. 모델이 한 번에 기억할 수 있는 양을 정하는 컨텍스트 윈도">
+<meta name="description" content="인프라 분야의 AI 용어 7개를 비전공자도 이해할 수 있게 쉽게 정리했습니다. AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 데모에서는 잘 되던 것이 실서비스에서 무너지는 이유는 대부분 이 계층에 있습니다. 모델이 한 번에 기억할 수 있는 양을 정하는 컨텍스트 윈도">
 <meta name="keywords" content="인프라, AI 인프라, AI 용어, 인공지능 인프라, AI 사전">
 <meta property="og:type" content="website">
 <meta property="og:title" content="인프라 — AI 기술 키워드 모음 | AI Wiki">
-<meta property="og:description" content="인프라 분야의 AI 용어 6개를 비전공자도 이해할 수 있게 쉽게 정리했습니다. AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 데모에서는 잘 되던 것이 실서비스에서 무너지는 이유는 대부분 이 계층에 있습니다. 모델이 한 번에 기억할 수 있는 양을 정하는 컨텍스트 윈도">
+<meta property="og:description" content="인프라 분야의 AI 용어 7개를 비전공자도 이해할 수 있게 쉽게 정리했습니다. AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 데모에서는 잘 되던 것이 실서비스에서 무너지는 이유는 대부분 이 계층에 있습니다. 모델이 한 번에 기억할 수 있는 양을 정하는 컨텍스트 윈도">
 <meta property="og:url" content="https://aiwiki.work/c/infra.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:site_name" content="AI Wiki">
@@ -43,7 +43,7 @@
   "url": "https://aiwiki.work/c/infra.html",
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 6,
+    "numberOfItems": 7,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -72,12 +72,18 @@
       {
         "@type": "ListItem",
         "position": 5,
+        "name": "펠리컨 벤치마크",
+        "url": "https://aiwiki.work/k/pelican-benchmark.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
         "name": "AI 칩",
         "url": "https://aiwiki.work/k/ai-chip.html"
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "name": "AI 평가",
         "url": "https://aiwiki.work/k/eval.html"
       }
@@ -127,7 +133,7 @@
   <div class="cat">AI Wiki · 분야별 키워드</div>
   <h1>인프라</h1>
   <div class="hub-intro">AI 시스템을 실제로 안정적으로 굴리려면 뒷단의 기반이 필요합니다. 데모에서는 잘 되던 것이 실서비스에서 무너지는 이유는 대부분 이 계층에 있습니다. 모델이 한 번에 기억할 수 있는 양을 정하는 컨텍스트 윈도우, 응답 품질을 수치로 검증하는 평가(Eval), 같은 질문에 대한 비용을 아끼는 프롬프트 캐싱, 여러 모델을 하나의 창구로 묶는 LLM 게이트웨이가 대표 개념입니다. GPU 클러스터·배치 추론·레이턴시 최적화처럼 서빙 성능에 관한 용어, 관측가능성·트레이싱처럼 운영 품질에 관한 용어까지, 운영과 확장에 관한 개념들을 모았습니다.</div>
-  <ul class="hub-list"><li><a class="hub-link" href="https://aiwiki.work/k/durable-execution.html"><span class="hub-t">내구성 실행 <span class="hub-en">Durable Execution</span></span><span class="hub-sum">내구성 실행(Durable Execution)은 코드가 실행되는 동안 단계마다 결과를 저장해 두는 방식이다. 프로세스가 죽어도 처음부터 다시 돌리지 않고 마지막으로 끝낸 단계부터 이어서 실행한다. 결제나 오래 걸리는 워크플로우, AI 에이전트처럼 중간에 끊기면 안 되는 작업에 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/run-ai.html"><span class="hub-t">런에이아이 <span class="hub-en">NVIDIA Run:ai (Kubernetes GPU Orchestration)</span></span><span class="hub-sum">쿠버네티스 위에서 여러 팀이 GPU를 나눠 쓰도록 할당과 스케줄링을 자동으로 처리하는 엔비디아의 플랫폼이다. 노트북 실험, 학습, 추론 작업이 같은 GPU 클러스터를 두고 경쟁할 때 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/context-window.html"><span class="hub-t">컨텍스트 윈도우 <span class="hub-en">Context Window</span></span><span class="hub-sum">컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/tokenmaxxing.html"><span class="hub-t">토큰맥싱 <span class="hub-en">Tokenmaxxing</span></span><span class="hub-sum">토큰맥싱은 AI 토큰을 얼마나 많이 썼는지를 성과로 보고 사용량을 일부러 늘리는 행동이다. 빅테크가 사내 리더보드로 AI 활용을 독려하면서 생긴 직장 문화 현상이다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/ai-chip.html"><span class="hub-t">AI 칩 <span class="hub-en">AI Custom Chip</span></span><span class="hub-sum">AI 칩은 AI 모델의 학습과 추론에 필요한 대규모 행렬 계산만 빠르고 싸게 처리하도록 만든 반도체다. 개발자는 보통 클라우드에서 GPU 대신 TPU나 Trainium 같은 인스턴스를 고르는 방식으로 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/eval.html"><span class="hub-t">AI 평가 <span class="hub-en">Evaluation</span></span><span class="hub-sum">AI 모델이나 서비스가 얼마나 잘 동작하는지 미리 만든 시험지로 점수를 매기는 과정이다. 프롬프트를 고치거나 모델을 바꿀 때마다 돌려서 정말 좋아졌는지 확인할 때 쓴다.</span></a></li></ul>
+  <ul class="hub-list"><li><a class="hub-link" href="https://aiwiki.work/k/durable-execution.html"><span class="hub-t">내구성 실행 <span class="hub-en">Durable Execution</span></span><span class="hub-sum">내구성 실행(Durable Execution)은 코드가 실행되는 동안 단계마다 결과를 저장해 두는 방식이다. 프로세스가 죽어도 처음부터 다시 돌리지 않고 마지막으로 끝낸 단계부터 이어서 실행한다. 결제나 오래 걸리는 워크플로우, AI 에이전트처럼 중간에 끊기면 안 되는 작업에 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/run-ai.html"><span class="hub-t">런에이아이 <span class="hub-en">NVIDIA Run:ai (Kubernetes GPU Orchestration)</span></span><span class="hub-sum">쿠버네티스 위에서 여러 팀이 GPU를 나눠 쓰도록 할당과 스케줄링을 자동으로 처리하는 엔비디아의 플랫폼이다. 노트북 실험, 학습, 추론 작업이 같은 GPU 클러스터를 두고 경쟁할 때 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/context-window.html"><span class="hub-t">컨텍스트 윈도우 <span class="hub-en">Context Window</span></span><span class="hub-sum">컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/tokenmaxxing.html"><span class="hub-t">토큰맥싱 <span class="hub-en">Tokenmaxxing</span></span><span class="hub-sum">토큰맥싱은 AI 토큰을 얼마나 많이 썼는지를 성과로 보고 사용량을 일부러 늘리는 행동이다. 빅테크가 사내 리더보드로 AI 활용을 독려하면서 생긴 직장 문화 현상이다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/pelican-benchmark.html"><span class="hub-t">펠리컨 벤치마크 <span class="hub-en">Pelican on a Bicycle Benchmark</span></span><span class="hub-sum">사이먼 윌리슨이 만든 비공식 LLM 테스트로, 모델에게 &quot;자전거 타는 펠리컨 SVG를 그려라&quot; 한 문장만 주고 결과 그림을 비교한다. 새 모델이 나왔을 때 코드 생성 능력과 공간 감각을 빠르게 훑어볼 때 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/ai-chip.html"><span class="hub-t">AI 칩 <span class="hub-en">AI Custom Chip</span></span><span class="hub-sum">AI 칩은 AI 모델의 학습과 추론에 필요한 대규모 행렬 계산만 빠르고 싸게 처리하도록 만든 반도체다. 개발자는 보통 클라우드에서 GPU 대신 TPU나 Trainium 같은 인스턴스를 고르는 방식으로 쓴다.</span></a></li><li><a class="hub-link" href="https://aiwiki.work/k/eval.html"><span class="hub-t">AI 평가 <span class="hub-en">Evaluation</span></span><span class="hub-sum">AI 모델이나 서비스가 얼마나 잘 동작하는지 미리 만든 시험지로 점수를 매기는 과정이다. 프롬프트를 고치거나 모델을 바꿀 때마다 돌려서 정말 좋아졌는지 확인할 때 쓴다.</span></a></li></ul>
 </div>
 <nav class="hub-nav">다른 분야 둘러보기: <a href="https://aiwiki.work/c/prompting.html">프롬프팅</a> · <a href="https://aiwiki.work/c/model.html">모델</a> · <a href="https://aiwiki.work/c/tooling.html">도구</a> · <a href="https://aiwiki.work/c/data.html">데이터</a> · <a href="https://aiwiki.work/c/agent.html">에이전트</a> · <a href="https://aiwiki.work/c/safety.html">안전</a> · <a href="https://aiwiki.work/c/application.html">응용</a></nav>
 <footer class="site-footer">

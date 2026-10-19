@@ -398,3 +398,18 @@ decision-model	디시전 모델	Non-Autoregressive Decision Model	model
 ternary-bonsai	터너리 본사이	Ternary Bonsai (PrismML Low-Bit On-Device LLM)	model
 hugging-face-incident	허깅페이스 에이전트 침입 사건	OpenAI Agents Hugging Face Intrusion Incident	safety
 qwen3-8-27b	큐원3.8 27B	Qwen3.8 27B (Alibaba)	model
+claude-opus-5	클로드 오퍼스 5	Claude Opus 5 (Anthropic)	model
+inkling	잉클링	Inkling (Thinking Machines Lab)	model
+software-factory	소프트웨어 팩토리	Software Factory Pattern	agent
+pi-coding-agent	파이 코딩 에이전트	Pi Minimal Terminal Coding Agent	tooling
+openclaw	오픈클로	OpenClaw	agent
+grok-bot	그록 봇	Grok Bot (xAI)	agent
+stateless-mcp	스테이트리스 MCP	Stateless MCP	tooling
+ai-for-mathematics	AI 수학 연구	AI for Mathematical Research	application
+qwen3-8-flash-next	큐원3.8 플래시 넥스트	Qwen3.8 Flash Next (Alibaba)	model
+kolibri	콜리브리	Aleph Alpha Kolibri (Sovereign Open-Weight Model)	model
+scion	사이언	Scion (Anthropic Version Control System)	tooling
+generative-ui	생성형 UI	Generative UI / Intelligent UI	application
+looped-transformer	루프형 트랜스포머	Looped Transformer (Recurrent Depth)	model
+pelican-benchmark	펠리컨 벤치마크	Pelican on a Bicycle Benchmark	infra
+beam-reflection	빔 1.0	Beam 1.0 501B (Reflection AI)	model
