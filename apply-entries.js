@@ -258,7 +258,6 @@ function main() {
   const existingIds = extractExistingIds(src);
   const existingIdSet = new Set(existingIds);
 
-  const hotIds = [];
   let addedCount = 0;
   const addedIds = [];
 
@@ -304,16 +303,8 @@ function main() {
     existingIdSet.add(entry.id);
     addedIds.push(entry.id);
     addedCount++;
-
-    if (entry.hot) {
-      hotIds.push(entry.id);
-    }
   }
-
-  // 4. Update HOT_IDS (only if any hot entries exist in this batch)
-  if (hotIds.length > 0) {
-    src = updateHotIds(src, hotIds);
-  }
+  // HOT_IDS는 선정 단계 결과로 따로 갱신한다 (--hot 모드)
 
   // 5. Update LAST_UPDATED
   src = updateLastUpdated(src);
@@ -329,4 +320,21 @@ function main() {
   process.stdout.write(`Added ${addedCount} keyword(s): ${addedIds.join(', ')}\n`);
 }
 
-main();
+// --hot FILE: 오늘의 화제 키워드(기존+신규 id 배열)로 HOT_IDS를 전체 재설정. 위키에 없는 id는 제외
+function applyHot(file) {
+  const dataPath = path.resolve(__dirname, 'data.js');
+  let ids = [];
+  try { ids = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { ids = []; }
+  let src = fs.readFileSync(dataPath, 'utf8');
+  const have = new Set(extractExistingIds(src));
+  // 비공개 카드(본문 1000자 미만 — 사이트에 안 보임)는 HOT으로 표시해도 보이지 않으므로 제외
+  const D = new Function(src + ';return D;')();
+  const isPublic = new Set(D.filter(e => String(e.det || '').replace(/<[^>]+>/g, '').length >= 1000).map(e => e.id));
+  const hot = [...new Set((Array.isArray(ids) ? ids : []).filter(id => have.has(id) && isPublic.has(id)))];
+  src = updateHotIds(src, hot);
+  fs.writeFileSync(dataPath, src, 'utf8');
+  process.stdout.write(`HOT ${hot.length}개: ${hot.join(', ') || '(없음)'}\n`);
+}
+
+if (process.argv[2] === '--hot') applyHot(process.argv[3]);
+else main();

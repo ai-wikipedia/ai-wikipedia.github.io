@@ -141,7 +141,9 @@ let applied = 0;
 const failed = [];
 
 for (const f of files) {
-  const u = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+  let u;
+  try { u = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); } // 파일 하나가 깨져도 나머지는 반영
+  catch (e) { failed.push(`${f} (JSON 파싱 실패)`); continue; }
   const hasTr = u.translations && typeof u.translations === 'object';
   if (!u.id || (!u.det && !hasTr)) { failed.push(`${f} (id 또는 det/translations 누락)`); continue; }
 
@@ -157,7 +159,7 @@ for (const f of files) {
 
   const detLen = (u.det || '').replace(/<[^>]+>/g, '').length;
   if (u.det) {
-  if (detLen < 700) { failed.push(`${u.id} (심화 부족: ${detLen}자)`); continue; }
+  if (detLen < 1000) { failed.push(`${u.id} (심화 부족: ${detLen}자 — 공개 기준 1000자)`); continue; }
 
   const replaced = replaceDet(src, entryStart, entryEnd, u.det);
   if (!replaced) { failed.push(`${u.id} (det 치환 실패)`); continue; }

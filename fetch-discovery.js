@@ -54,8 +54,9 @@ function loadExistingBlob() {
   catch { return ''; }
 }
 
-// 메타리스트·로드맵·치트시트 등 위키 부적합 레포 판별
-const META_RE = /awesome|roadmap|cheat[\s-]?sheet|curated list|list of|interview|tutorial-list|资料|모음集?|教程/i;
+// 메타리스트·로드맵·치트시트 등 위키 부적합 레포 판별 — 레포 이름에만 적용
+// (설명까지 보면 "AI interview copilot"처럼 정상 도구가 걸려 빠졌음)
+const META_RE = /awesome|roadmap|cheat[\s-]?sheet|curated[\s-]?list|list-of|interview-(?:prep|questions)|tutorial-list|资料|모음|教程/i;
 
 // ---------------------------------------------------------------------------
 // D1: OpenRouter — 신규 모델
@@ -91,23 +92,25 @@ async function discoverModels(cutoff, blob, maxModels = 40) {
 // ---------------------------------------------------------------------------
 // D2: GitHub — 신규 생태계 레포 (토픽 + 생성일)
 // ---------------------------------------------------------------------------
-const GH_TOPICS = ['claude-code', 'claude', 'gemini-cli', 'gemini', 'codex', 'openai-codex'];
+// Claude·Gemini·Codex 생태계 + MCP·에이전트·LLM 일반 (토큰 있으면 검색 30회/분이라 여유)
+const GH_TOPICS = ['claude-code', 'claude', 'gemini-cli', 'gemini', 'codex', 'openai-codex',
+  'mcp', 'mcp-server', 'ai-agents', 'llm', 'cursor'];
 
-async function discoverRepos(sinceDate, token) {
+async function discoverRepos(sinceDate, token, days = 7) {
   const headers = { 'Accept': 'application/vnd.github+json', 'User-Agent': 'AI-Wiki-Bot/1.0' };
   if (token) headers['Authorization'] = `Bearer ${token}`;
   const byName = new Map();
   for (const topic of GH_TOPICS) {
     try {
       const q = encodeURIComponent(`topic:${topic} created:>${sinceDate}`);
-      const url = `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=15`;
+      const url = `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=100`; // 페이지 최대치 — 호출 수는 같다
       const r = await fetchT(url, { headers });
       if (!r.ok) { console.error(`  GitHub topic:${topic} → ${r.status}`); continue; }
       const j = await r.json();
       for (const it of j.items || []) {
         const name = it.full_name || '';
         const desc = it.description || '';
-        if (META_RE.test(name) || META_RE.test(desc)) continue; // 메타리스트 제외
+        if (META_RE.test(name)) continue; // 메타리스트 제외
         if (!byName.has(name)) {
           byName.set(name, {
             full_name: name,
@@ -139,8 +142,10 @@ async function tavilyFeatures(query, key) {
 
 async function extractFeatures(models, repos, key, cap) {
   const targets = [];
-  models.forEach(m => targets.push({ kind: 'model', label: m.name, query: `${m.name} new features capabilities changelog 2026` }));
-  repos.slice(0, Math.max(0, cap - models.length)).forEach(r =>
+  // 모델·레포 반반 — 모델이 많으면 레포 요약이 하나도 안 생기던 문제 (Tavily 월 1,000회 예산 고려해 총량은 유지)
+  const half = Math.ceil(cap / 2);
+  models.slice(0, Math.max(half, cap - repos.length)).forEach(m => targets.push({ kind: 'model', label: m.name, query: `${m.name} new features capabilities changelog 2026` }));
+  repos.slice(0, Math.max(0, cap - Math.min(models.length, Math.max(half, cap - repos.length)))).forEach(r =>
     targets.push({ kind: 'repo', label: r.repo, query: `${r.repo} ${r.desc} — what is it, key features` }));
   const out = [];
   for (const t of targets.slice(0, cap)) {
@@ -166,7 +171,7 @@ async function main() {
 
   const [models, repos] = await Promise.all([
     discoverModels(cutoffSec, blob, args.maxModels).catch(e => { console.error('D1 OpenRouter 실패:', e.message); return []; }),
-    discoverRepos(sinceDate, env.GITHUB_TOKEN || process.env.GITHUB_TOKEN).catch(e => { console.error('D2 GitHub 실패:', e.message); return []; }),
+    discoverRepos(sinceDate, env.GITHUB_TOKEN || process.env.GITHUB_TOKEN, args.days).catch(e => { console.error('D2 GitHub 실패:', e.message); return []; }),
   ]);
 
   let features = [];

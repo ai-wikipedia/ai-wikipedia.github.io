@@ -10,6 +10,10 @@
 const { readFileSync, writeFileSync, mkdirSync } = require('fs');
 const { resolve } = require('path');
 
+// 모든 요청에 타임아웃 — 응답 없는 소켓 하나가 실행 전체를 멈추지 않게
+const _fetch = globalThis.fetch;
+const fetch = (url, opts = {}) => _fetch(url, { ...opts, signal: AbortSignal.timeout(20000) });
+
 // ---------------------------------------------------------------------------
 // .env parser
 // ---------------------------------------------------------------------------

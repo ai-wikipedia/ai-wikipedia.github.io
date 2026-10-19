@@ -243,8 +243,8 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 | Stage | 작업 | 실행 주체 | 비고 |
 |-------|------|----------|------|
 | 1 | 트렌드 수집 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews /new 10개 + GeekNews 주간뉴스 |
-| 1b | 발굴 | `node fetch-discovery.js --days 7 --features` | OpenRouter 신규 모델 + GitHub 신규 생태계 레포(토픽+생성일) + Tavily 기능 요약 (비치명적) |
-| 2 | 키워드 선정 | `node scripts/llm-stage.js select` | 트렌드 + 발굴 + 기존 키워드 대조 → 중요도순 선정, 상한 `AIWIKI_MAX_KEYWORDS` |
+| 1b | 발굴 | `node fetch-discovery.js --days 7 --features` (밀린 기간이 있으면 자동 확대, 모델 상한 = 기간×6) | OpenRouter 신규 모델 + GitHub 신규 생태계 레포(토픽+생성일) + Tavily 기능 요약 (비치명적) |
+| 2 | 키워드 선정 | `node scripts/llm-stage.js select` | 트렌드 + 발굴 + 기존 키워드 + 대기열 + 최근 탈락 후보 대조 → 중요도순 선정(모델 개수 상한 없음, 기준으로 거름), 상한 `AIWIKI_MAX_KEYWORDS` 초과분은 대기열. 탈락 후보·사유는 `keywords-rejected.json` |
 | 3 | 소스 수집 | `node fetch-sources.js` | 키워드별 Tavily (웹 EN/KO) + YouTube API (EN/KO) |
 | 4 | 콘텐츠 생성 | `node scripts/llm-stage.js content` | 본문(opus) → 영어 번역(sonnet), 키워드별 병렬. det 1000자 미만은 반영 안 함 |
 | 5 | data.js 반영 | `node apply-entries.js` | 중복 확인, 항목 추가 |
@@ -254,7 +254,7 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 
 **LLM 호출 방식 (llm-stage.js)**: `claude --print --tools "" --setting-sources "" --strict-mcp-config`를 레포 밖 빈 디렉토리에서 실행해 도구·훅·플러그인·CLAUDE.md를 로드하지 않고, `--json-schema` 구조화 출력으로 JSON 깨짐을 막는다. 2026-10 최적화 전에는 풀 에이전트 모드라 실행 30분·실패율 70%였고, 이후 10개 키워드 5분·성공률 100%.
 
-**실행 옵션 (환경변수)**: `AIWIKI_DISCOVERY_DAYS`(기본 7, 밀린 업데이트 시 확대) · `AIWIKI_MAX_KEYWORDS`(기본 5) · `AIWIKI_MAX_MODEL_KEYWORDS`(기본 1 — 모델 출시 카드 상한, 나머지는 개념·도구·패턴) · `AIWIKI_PARALLEL`(기본 3) · `AIWIKI_PUSH`(기본 1, 0이면 커밋만 하고 검토 대기) · `AIWIKI_TIMEOUT`(기본 1800초) · `AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL/_EFFORT`. 커밋은 생성물(data.js·k·c·sitemap 등)만 `git add`한다.
+**실행 옵션 (환경변수)**: `AIWIKI_DISCOVERY_DAYS`(기본 7, 밀린 업데이트 시 확대) · `AIWIKI_MAX_KEYWORDS`(기본 5 — 하루 발행량. 넘친 후보·생성 실패분은 `logs/keyword-queue.json` 대기열로 이월돼 다음 실행에서 우선 재검토) · `AIWIKI_TRENDS_SINCE`(YYYY-MM-DD, 실행이 밀린 기간의 HN·GeekNews 주간뉴스 백필) · `AIWIKI_PARALLEL`(기본 3) · `AIWIKI_PUSH`(기본 1, 0이면 커밋만 하고 검토 대기) · `AIWIKI_TIMEOUT`(기본 1800초) · `AIWIKI_{SELECT,CONTENT,TRANSLATE}_MODEL/_EFFORT`. 커밋은 생성물(data.js·k·c·sitemap 등)만 `git add`한다.
 
 - GeekNews /new는 10개만 수집 (하루 게시글 2~3건 수준의 소규모 커뮤니티)
 - 키워드 0개 선정 시 Stage 3~5 건너뛰고 Stage 6으로 점프
@@ -291,10 +291,10 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 
 카드 우측상단에 `▲` 표식으로 트렌딩 키워드를 표시한다.
 
-- **데이터**: `index.html`의 `const HOT_IDS = [...]` 배열에 키워드 ID 나열
-- **갱신 주체**: `/scheduling-add` 스킬
-- **갱신 규칙**: 매 실행 시 HOT_IDS를 **전체 비우고** 해당 배치 기준으로 재설정
-- **대상**: 해당 배치에서 트렌딩으로 식별된 키워드 (신규 + 기존 모두)
+- **데이터**: `data.js`의 `const HOT_IDS = [...]` 배열에 키워드 ID 나열
+- **갱신 주체**: 스케줄러 — Stage 2 선정이 `hot`(오늘 트렌드에서 화제인 기존+신규 id, backfill 제외)을 `RUN_DIR/hot-ids.json`에 쓰고, Stage 6 직전 `node apply-entries.js --hot <file>`이 반영
+- **갱신 규칙**: 매 실행(키워드 0개인 날 포함) HOT_IDS를 **전체 비우고** 재설정. 위키에 없는 id는 제외
+- **대상**: 오늘 화제인 키워드 (신규 + 기존 모두). 2026-10-19 전에는 신규 항목의 hot 플래그만 써서 기존 키워드가 HOT이 되지 못했고, hot이 0개인 날은 옛 HOT이 그대로 남았다
 
 ### 로컬 스케줄러 (launchd + pmset)
 
@@ -313,18 +313,19 @@ fetch-sources.js                   # 키워드별 웹+영상 검색 (Tavily + Yo
 
 | Stage | 실행 주체 | 동작 | timeout |
 |-------|----------|------|---------|
-| 1 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews 수집 | - |
+| 1 | `node fetch-trends.js` | HN API + Tavily (Reddit) + GeekNews 수집 (실패해도 계속). 마지막 실행 커밋이 2일 넘게 전이면 그날부터 HN·주간뉴스 백필 + 발굴 기간 확대 | - |
 | 2 | `llm-stage.js select` | 키워드 선정 (구조화 출력) | 5분 |
 | 3 | `node fetch-sources.js` | 키워드별 Tavily + YouTube API | - |
-| 4 | `llm-stage.js content` | 본문 + refs/videos 채택 → 번역 (병렬) | 본문 10분·번역 5분 |
+| 4 | `llm-stage.js content` | 본문 + refs/videos 채택 → 번역 (병렬). 이전 실행의 미반영 본문 재사용, 1000자 미만은 1회 보강 재시도, 키워드마다 content.json 갱신 | 본문 15분·번역 5분 |
 | 5 | `node apply-entries.js` | data.js에 반영 | - |
 | 6 | 쉘 | build.js + log.md + git commit/push | - |
 
-- **전체 timeout**: 30분
+- **전체 timeout**: 60분 (`AIWIKI_TIMEOUT`)
 - **로그**: `logs/daily.log`, `logs/daily-err.log`
 - **실행 기록**: `logs/runs/YYYY-MM-DD_HHMM/` (단계별 원본 데이터 + 결과)
 - **실행 기록 요약**: `log.md` (날짜+시간별 추가/HOT/보강 키워드)
 - **전제**: 맥북 잠자기 OK (pmset이 깨움), 전원 꺼짐은 불가
+- **덮개 닫힘 + 배터리**: 이 상태에선 예약 wake가 DarkWake(13~45초)라 `caffeinate -s`가 무시돼 LLM 단계가 전부 timeout난다(2026-10-13~15). 그래서 run-daily.sh가 **실행 중에만** `pmset disablesleep 1`을 켜고 모든 종료 경로에서 0으로 되돌린다(+ watchdog+10분 failsafe). 필요 조건: `/etc/sudoers.d/aiwiki-pmset`에 `hh ALL=(root) NOPASSWD: /usr/bin/pmset -a disablesleep 0, /usr/bin/pmset -a disablesleep 1` (없으면 WARN 로그 후 기존 동작)
 - **관리 명령**:
   - 등록 확인: `launchctl list com.aiwiki.daily`
   - 수동 실행: `launchctl start com.aiwiki.daily`
