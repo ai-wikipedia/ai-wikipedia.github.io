@@ -1,3 +1,7 @@
+## 2026-10-19 22:16
+- 추가: deepseek-harness-desktop, hugging-face-incident, claude-code-agents-md-support, qwen3-8-27b
+- HOT: deepseek-v4-1-flash, deepseek-harness, gemini-4-argon, latent-reasoning, agent-memory, associative-memory, harness-engineering, bitter-lesson
+
 ## 2026-10-19 22:11 (백필 07-13~)
 - 추가: gpt-6-1-sol, agent-control-plane, jev, gpt-6-astra, deepseek-harness, magpie, decision-model, ternary-bonsai
 - HOT: (재설정 예정)
