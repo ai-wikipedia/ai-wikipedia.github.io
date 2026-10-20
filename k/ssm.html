@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>상태 공간 모델이란? (State Space Model) — AI Wiki</title>
-<meta name="description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.">
+<meta name="description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으며 내용을 고정 크기의 '상태'에 압축해 들고 가는 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer">
 <meta name="keywords" content="상태 공간 모델, State Space Model, Mamba, 선형복잡도, 시퀀스, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="상태 공간 모델이란? (State Space Model) — AI Wiki">
-<meta property="og:description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.">
+<meta property="og:description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으며 내용을 고정 크기의 '상태'에 압축해 들고 가는 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer">
 <meta property="og:url" content="https://aiwiki.work/k/ssm.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="상태 공간 모델이란? (State Space Model) — AI Wiki">
-<meta name="twitter:description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.">
+<meta name="twitter:description" content="상태 공간 모델이란? 입력을 앞에서부터 읽으며 내용을 고정 크기의 '상태'에 압축해 들고 가는 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/ssm.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/ssm.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "상태 공간 모델",
   "alternateName": "State Space Model",
-  "description": "입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.",
+  "description": "입력을 앞에서부터 읽으며 내용을 고정 크기의 '상태'에 압축해 들고 가는 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer 대신 쓰거나 함께 쓴다.",
   "url": "https://aiwiki.work/k/ssm.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "상태 공간 모델 (State Space Model)",
-  "description": "입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.",
+  "description": "입력을 앞에서부터 읽으며 내용을 고정 크기의 '상태'에 압축해 들고 가는 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer 대신 쓰거나 함께 쓴",
   "url": "https://aiwiki.work/k/ssm.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>상태 공간 모델</h1>
   <div class="en">State Space Model</div>
-  <div class="body"><p>입력을 앞에서부터 읽으면서 내용을 고정 크기의 '상태'에 압축해 처리하는 모델 구조다. 입력이 길어져도 계산량이 길이에 비례해서만 늘어나므로, 아주 긴 시퀀스를 빠르고 가볍게 처리할 때 Transformer 대신 쓰거나 함께 쓴다.</p><h4>한눈에 보기</h4><p>상태 공간 모델(SSM)은 입력을 앞에서부터 읽으며 내용을 <strong>고정 크기의 '상태'에 압축해 들고 가는</strong> 모델 구조다. Transformer처럼 모든 토큰을 서로 비교하지 않으므로 입력이 길어져도 계산량이 길이에 비례해서만 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer 대신 쓰거나 함께 쓴다.</p><div class="tbl"><table><tr><th>항목</th><th>Transformer (어텐션)</th><th>SSM (Mamba 등)</th></tr><tr><td>계산량</td><td>길이의 제곱</td><td><strong>길이에 비례</strong></td></tr><tr><td>생성할 때 메모리</td><td>KV 캐시가 계속 커짐</td><td><strong>상태 크기 고정</strong></td></tr><tr><td>앞 내용을 그대로 찾기</td><td>강함</td><td>상대적으로 약함</td></tr><tr><td>도구·모델 생태계</td><td>매우 큼</td><td>작음</td></tr></table></div><h4>길이가 두 배면 계산은 네 배</h4><p>Self-Attention은 모든 토큰 쌍을 비교하므로 시퀀스가 두 배 길어지면 계산량이 네 배 늘어난다. 답을 생성할 때도 지나온 토큰을 모두 KV 캐시에 쌓아 두기 때문에 문맥이 길수록 메모리가 커진다.</p><p>SSM은 신호 처리에서 쓰던 상태 공간 개념을 신경망에 가져온 것이다. 새 토큰이 들어올 때마다 상태만 갱신하면 되므로 토큰 하나를 만드는 비용이 문맥 길이와 상관없이 일정하다.</p><h4>Mamba는 기억할 것을 스스로 고른다</h4><p>초기 S4 계열은 긴 시퀀스에 강했지만, 언어처럼 내용에 따라 중요도가 달라지는 데이터에는 약했다. 2023년 나온 <strong>Mamba</strong>는 입력에 따라 상태 전이를 바꾸는 선택적 상태 공간을 도입해, 무엇을 기억하고 무엇을 흘려보낼지 모델이 직접 고르게 했다. 이후 Mamba-2가 나왔고, 어텐션 층과 Mamba 층을 섞은 하이브리드 구조도 활발히 연구되고 있다.</p><h4>HuggingFace에서 바로 써 볼 수 있다</h4><p>가장 쉬운 방법은 HuggingFace에 공개된 Mamba 계열 체크포인트를 Transformers 라이브러리로 불러 보는 것이다. 빠른 전용 커널을 쓰려면 공식 저장소의 <code>mamba-ssm</code> 패키지를 설치하는데, NVIDIA GPU와 CUDA 환경이 필요하다. 작업별로는 이렇게 판단하면 된다.</p><div class="tbl"><table><tr><th>작업</th><th>SSM 적합도</th><th>이유</th></tr><tr><td>생체 신호·오디오 같은 긴 연속 데이터</td><td><strong>높음</strong></td><td>길어져도 비용이 일정하다</td></tr><tr><td>긴 코드·로그 훑기</td><td>실험해 볼 만함</td><td>메모리 부담이 작다</td></tr><tr><td>긴 문서에서 특정 문장 정확히 찾기</td><td>낮음</td><td>압축하면서 세부가 빠질 수 있다</td></tr><tr><td>일반 챗봇·API 서비스</td><td>낮음</td><td>Transformer 모델이 훨씬 많다</td></tr></table></div><h4>압축하면 놓치는 것도 있다</h4><p>SSM은 모든 내용을 고정 크기 상태에 눌러 담기 때문에, 긴 문맥에서 특정 문장을 그대로 찾아 옮기는 일은 어텐션보다 약하다. 하이브리드 구조가 나온 것도 이 약점을 메우기 위해서다.</p><p>미세 조정 자료, 최적화된 서빙 도구, 공개 모델 수도 아직 Transformer보다 적다. 도입하기 전에 내 데이터로 속도와 품질을 직접 비교해 보는 게 안전하다.</p></div>
+  <div class="body"><p>입력을 앞에서부터 읽으며 내용을 <strong>고정 크기의 '상태'에 압축해 들고 가는</strong> 모델 구조로, 모든 토큰을 서로 비교하는 Transformer와 달리 입력이 길어져도 <strong>계산량이 길이에 비례해서만</strong> 늘어난다. 아주 긴 시퀀스를 빠르고 가볍게 처리해야 할 때 Transformer 대신 쓰거나 함께 쓴다.</p><div class="tbl"><table><tr><th>항목</th><th>Transformer (어텐션)</th><th>SSM (Mamba 등)</th></tr><tr><td>계산량</td><td>길이의 제곱</td><td><strong>길이에 비례</strong></td></tr><tr><td>생성할 때 메모리</td><td>KV 캐시가 계속 커짐</td><td><strong>상태 크기 고정</strong></td></tr><tr><td>앞 내용을 그대로 찾기</td><td>강함</td><td>상대적으로 약함</td></tr><tr><td>도구·모델 생태계</td><td>매우 큼</td><td>작음</td></tr></table></div><h4>길이가 두 배면 계산은 네 배</h4><p>Self-Attention은 모든 토큰 쌍을 비교하므로 시퀀스가 두 배 길어지면 계산량이 네 배 늘어난다. 답을 생성할 때도 지나온 토큰을 모두 KV 캐시에 쌓아 두기 때문에 문맥이 길수록 메모리가 커진다.</p><p>SSM은 신호 처리에서 쓰던 상태 공간 개념을 신경망에 가져온 것이다. 새 토큰이 들어올 때마다 상태만 갱신하면 되므로 토큰 하나를 만드는 비용이 문맥 길이와 상관없이 일정하다.</p><h4>Mamba는 기억할 것을 스스로 고른다</h4><p>초기 S4 계열은 긴 시퀀스에 강했지만, 언어처럼 내용에 따라 중요도가 달라지는 데이터에는 약했다. 2023년 나온 <strong>Mamba</strong>는 입력에 따라 상태 전이를 바꾸는 선택적 상태 공간을 도입해, 무엇을 기억하고 무엇을 흘려보낼지 모델이 직접 고르게 했다. 이후 Mamba-2가 나왔고, 어텐션 층과 Mamba 층을 섞은 하이브리드 구조도 활발히 연구되고 있다.</p><h4>HuggingFace에서 바로 써 볼 수 있다</h4><p>가장 쉬운 방법은 HuggingFace에 공개된 Mamba 계열 체크포인트를 Transformers 라이브러리로 불러 보는 것이다. 빠른 전용 커널을 쓰려면 공식 저장소의 <code>mamba-ssm</code> 패키지를 설치하는데, NVIDIA GPU와 CUDA 환경이 필요하다. 작업별로는 이렇게 판단하면 된다.</p><div class="tbl"><table><tr><th>작업</th><th>SSM 적합도</th><th>이유</th></tr><tr><td>생체 신호·오디오 같은 긴 연속 데이터</td><td><strong>높음</strong></td><td>길어져도 비용이 일정하다</td></tr><tr><td>긴 코드·로그 훑기</td><td>실험해 볼 만함</td><td>메모리 부담이 작다</td></tr><tr><td>긴 문서에서 특정 문장 정확히 찾기</td><td>낮음</td><td>압축하면서 세부가 빠질 수 있다</td></tr><tr><td>일반 챗봇·API 서비스</td><td>낮음</td><td>Transformer 모델이 훨씬 많다</td></tr></table></div><h4>압축하면 놓치는 것도 있다</h4><p>SSM은 모든 내용을 고정 크기 상태에 눌러 담기 때문에, 긴 문맥에서 특정 문장을 그대로 찾아 옮기는 일은 어텐션보다 약하다. 하이브리드 구조가 나온 것도 이 약점을 메우기 위해서다.</p><p>미세 조정 자료, 최적화된 서빙 도구, 공개 모델 수도 아직 Transformer보다 적다. 도입하기 전에 내 데이터로 속도와 품질을 직접 비교해 보는 게 안전하다.</p><h4>긴 연속 데이터와 하이브리드 모델에서 주로 쓴다</h4><p>단독으로 쓰기보다 <strong>길이 때문에 Transformer가 버거운 곳</strong>에 넣는 경우가 많다. 오디오나 생체 신호처럼 아주 긴 데이터를 다루거나, 어텐션 층과 섞어 긴 문맥을 싸게 처리하는 언어 모델을 만들 때 쓴다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>오디오·생체 신호 분석</td><td>몇 분에서 몇 시간 길이의 연속 신호를 잘게 자르지 않고 통째로 넣어 분류·예측한다</td></tr><tr><td>하이브리드 언어 모델</td><td>층 일부를 Mamba로 바꿔 긴 문맥의 메모리 부담을 줄이고, 정확한 찾기는 어텐션 층에 맡긴다</td></tr><tr><td>긴 코드·로그 실험</td><td>공개 Mamba 체크포인트로 긴 입력을 돌려 보고 Transformer와 속도·품질을 비교한다</td></tr></table></div></div>
   <div class="tags"><span>#Mamba</span><span>#선형복잡도</span><span>#시퀀스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/granite.html">그래니트</a>, <a href="https://aiwiki.work/k/nemotron-3-ultra.html">네모트론 3 울트라</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2312.00752" target="_blank" rel="nofollow noopener">Mamba: Linear-Time Sequence Modeling with Selective State Spaces</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/state-spaces/mamba" target="_blank" rel="nofollow noopener">Mamba SSM Architecture — Official GitHub Repository</a> <span class="ref-type">공식</span></li><li><a href="https://arxiv.org/abs/2111.00396" target="_blank" rel="nofollow noopener">Efficiently Modeling Long Sequences with Structured State Spaces (S4)</a> <span class="ref-type">논문</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#ssm">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

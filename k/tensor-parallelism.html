@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>텐서 병렬화란? (Tensor Parallelism) — AI Wiki</title>
-<meta name="description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.">
+<meta name="description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 쪼개 한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.">
 <meta name="keywords" content="텐서 병렬화, Tensor Parallelism, 분산학습, Megatron, 멀티GPU, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="텐서 병렬화란? (Tensor Parallelism) — AI Wiki">
-<meta property="og:description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.">
+<meta property="og:description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 쪼개 한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.">
 <meta property="og:url" content="https://aiwiki.work/k/tensor-parallelism.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="텐서 병렬화란? (Tensor Parallelism) — AI Wiki">
-<meta name="twitter:description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.">
+<meta name="twitter:description" content="텐서 병렬화란? 모델의 큰 가중치 행렬을 쪼개 한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/tensor-parallelism.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/tensor-parallelism.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "텐서 병렬화",
   "alternateName": "Tensor Parallelism",
-  "description": "모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.",
+  "description": "모델의 큰 가중치 행렬을 쪼개 한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.",
   "url": "https://aiwiki.work/k/tensor-parallelism.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "텐서 병렬화 (Tensor Parallelism)",
-  "description": "모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.",
+  "description": "모델의 큰 가중치 행렬을 쪼개 한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.",
   "url": "https://aiwiki.work/k/tensor-parallelism.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">인프라</div>
   <h1>텐서 병렬화</h1>
   <div class="en">Tensor Parallelism</div>
-  <div class="body"><p>모델의 큰 가중치 행렬을 여러 GPU에 나눠 각 GPU가 연산 일부를 맡게 하는 분산 기법이다. GPU 한 장에 다 안 들어가는 큰 모델을 학습하거나 서빙할 때 쓴다.</p><h4>한눈에 보기</h4><p>텐서 병렬화는 모델의 <strong>행렬 하나를 여러 GPU에 쪼개 나눠 계산</strong>하는 방법이다. 예를 들어 70B 모델은 FP16 기준으로 가중치만 140GB라서 80GB GPU 한 장에 들어가지 않는다. 이럴 때 같은 서버 안의 GPU 여러 장에 모델을 나눠 올린다. 큰 모델은 보통 아래 세 가지 방식을 섞어서 다룬다.</p><div class="tbl"><table><tr><th>방식</th><th>무엇을 나누나</th><th>이럴 때 쓴다</th></tr><tr><td><strong>텐서 병렬화</strong></td><td>한 층 안의 행렬</td><td>서버 한 대 안에서 큰 모델을 올릴 때</td></tr><tr><td>파이프라인 병렬화</td><td>층을 순서대로</td><td>서버 여러 대에 걸쳐 나눌 때</td></tr><tr><td>데이터 병렬화</td><td>입력 데이터</td><td>모델은 들어가고 처리량을 늘리고 싶을 때</td></tr></table></div><h4>행렬을 쪼개고 층마다 결과를 합친다</h4><p>큰 행렬 W를 열 방향으로 4등분해 GPU 4장에 하나씩 나눠 준다. 각 GPU는 자기 몫만 계산하고, 결과를 서로 주고받아 합친 뒤 다음 층으로 넘어간다. NVIDIA의 Megatron-LM이 트랜스포머에 맞게 이 방식을 정리했고, 지금 쓰이는 학습·서빙 도구 대부분이 이 아이디어를 따른다.</p><p>GPU마다 모델의 일부만 들고 있으니 메모리 부담이 GPU 수만큼 나뉜다. 계산도 동시에 하니까 답 하나를 만드는 시간(지연)도 줄어든다.</p><h4>vLLM에서는 옵션 하나로 켠다</h4><p>직접 모델을 서빙한다면 vLLM 실행 때 <code>--tensor-parallel-size</code>에 GPU 수를 넣으면 된다. 예를 들어 <code>--tensor-parallel-size 4</code>로 주면 GPU 4장에 모델이 나뉜다. 학습에서는 Megatron-LM 같은 프레임워크에서 텐서 병렬 크기를 설정해 쓴다.</p><div class="tbl"><table><tr><th>상황</th><th>설정 방향</th></tr><tr><td>모델이 GPU 한 장에 들어감</td><td>쓰지 않는다 (1)</td></tr><tr><td>한 장엔 안 들어가고 서버 한 대엔 들어감</td><td><strong>서버 안 GPU 수만큼</strong> (2, 4, 8)</td></tr><tr><td>서버 한 대로도 부족함</td><td>서버 안은 텐서, 서버 사이는 파이프라인 병렬</td></tr></table></div><h4>통신이 많아서 서버 한 대 안에서만 쓴다</h4><p>층마다 GPU끼리 결과를 주고받아야 하므로 GPU 사이 연결이 느리면 오히려 느려진다. 그래서 NVLink처럼 빠르게 연결된 같은 서버 안의 GPU끼리 묶는 게 일반적이다. 서버를 넘어가면 통신이 적은 파이프라인 병렬화를 섞는다.</p><p>작은 모델에 GPU를 많이 붙이면 통신 비용 때문에 이득이 거의 없다. 이때는 모델 복사본을 여러 개 띄우는 데이터 병렬이 처리량 면에서 낫다. 또 GPU 수는 보통 2, 4, 8처럼 모델의 어텐션 헤드 수를 나눌 수 있는 값이어야 한다.</p></div>
+  <div class="body"><p>모델의 큰 가중치 행렬을 쪼개 <strong>한 층의 계산을 같은 서버 안 GPU 여러 장이 나눠 맡게</strong> 하는 분산 기법이다. <strong>GPU 한 장에 다 안 들어가는 큰 모델</strong>을 학습하거나 서빙할 때 쓰며, 층을 나누는 파이프라인 병렬화나 데이터를 나누는 데이터 병렬화와 섞어 쓴다.</p><div class="tbl"><table><tr><th>방식</th><th>무엇을 나누나</th><th>이럴 때 쓴다</th></tr><tr><td><strong>텐서 병렬화</strong></td><td>한 층 안의 행렬</td><td>서버 한 대 안에서 큰 모델을 올릴 때</td></tr><tr><td>파이프라인 병렬화</td><td>층을 순서대로</td><td>서버 여러 대에 걸쳐 나눌 때</td></tr><tr><td>데이터 병렬화</td><td>입력 데이터</td><td>모델은 들어가고 처리량을 늘리고 싶을 때</td></tr></table></div><p>예를 들어 70B 모델은 FP16 기준으로 가중치만 140GB라서 80GB GPU 한 장에 들어가지 않는다. 이럴 때 같은 서버 안의 GPU 여러 장에 모델을 나눠 올린다.</p><h4>행렬을 쪼개고 층마다 결과를 합친다</h4><p>큰 행렬 W를 열 방향으로 4등분해 GPU 4장에 하나씩 나눠 준다. 각 GPU는 자기 몫만 계산하고, 결과를 서로 주고받아 합친 뒤 다음 층으로 넘어간다. NVIDIA의 Megatron-LM이 트랜스포머에 맞게 이 방식을 정리했고, 지금 쓰이는 학습·서빙 도구 대부분이 이 아이디어를 따른다.</p><p>GPU마다 모델의 일부만 들고 있으니 메모리 부담이 GPU 수만큼 나뉜다. 계산도 동시에 하니까 답 하나를 만드는 시간(지연)도 줄어든다.</p><h4>vLLM에서는 옵션 하나로 켠다</h4><p>직접 모델을 서빙한다면 vLLM 실행 때 <code>--tensor-parallel-size</code>에 GPU 수를 넣으면 된다. 예를 들어 <code>--tensor-parallel-size 4</code>로 주면 GPU 4장에 모델이 나뉜다. 학습에서는 Megatron-LM 같은 프레임워크에서 텐서 병렬 크기를 설정해 쓴다.</p><div class="tbl"><table><tr><th>상황</th><th>설정 방향</th></tr><tr><td>모델이 GPU 한 장에 들어감</td><td>쓰지 않는다 (1)</td></tr><tr><td>한 장엔 안 들어가고 서버 한 대엔 들어감</td><td><strong>서버 안 GPU 수만큼</strong> (2, 4, 8)</td></tr><tr><td>서버 한 대로도 부족함</td><td>서버 안은 텐서, 서버 사이는 파이프라인 병렬</td></tr></table></div><h4>통신이 많아서 서버 한 대 안에서만 쓴다</h4><p>층마다 GPU끼리 결과를 주고받아야 하므로 GPU 사이 연결이 느리면 오히려 느려진다. 그래서 NVLink처럼 빠르게 연결된 같은 서버 안의 GPU끼리 묶는 게 일반적이다. 서버를 넘어가면 통신이 적은 파이프라인 병렬화를 섞는다.</p><p>작은 모델에 GPU를 많이 붙이면 통신 비용 때문에 이득이 거의 없다. 이때는 모델 복사본을 여러 개 띄우는 데이터 병렬이 처리량 면에서 낫다. 또 GPU 수는 보통 2, 4, 8처럼 모델의 어텐션 헤드 수를 나눌 수 있는 값이어야 한다.</p><h4>큰 오픈 모델을 직접 띄울 때 가장 많이 쓴다</h4><p>가장 흔한 건 <strong>GPU 한 장에 안 들어가는 모델을 직접 서빙</strong>하는 경우다. 서버 한 대의 GPU 여러 장에 모델 하나를 나눠 올리고, 요청이 늘면 이런 묶음을 여러 개 띄워 처리량을 늘린다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>자체 LLM 서빙</td><td>vLLM에서 <code>--tensor-parallel-size</code>를 서버 안 GPU 수로 두고 70B급 모델을 한 서버에 올린다</td></tr><tr><td>대형 모델 학습</td><td>Megatron-LM 같은 프레임워크에서 서버 안은 텐서, 서버 사이는 파이프라인·데이터 병렬로 묶는다</td></tr><tr><td>응답 지연 줄이기</td><td>모델이 한 장에 들어가더라도 답을 빨리 내야 하면 GPU 여러 장에 계산을 나눈다</td></tr></table></div></div>
   <div class="tags"><span>#분산학습</span><span>#Megatron</span><span>#멀티GPU</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/gpu-cluster.html">GPU 클러스터</a>, <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/pretraining.html">사전학습</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/1909.08053" target="_blank" rel="nofollow noopener">Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/NVIDIA/Megatron-LM" target="_blank" rel="nofollow noopener">NVIDIA Megatron-LM — Official GitHub Repository</a> <span class="ref-type">공식</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#tensor-parallelism">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

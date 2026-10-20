@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>컨텍스트 엔지니어링이란? (Context Engineering) — AI Wiki</title>
-<meta name="description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.">
+<meta name="description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 무엇을, 얼마나, 언제 넣을지 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, 여러 단계를 스스로 처리하는 에이전트를 만들 때 ">
 <meta name="keywords" content="컨텍스트 엔지니어링, Context Engineering, 프롬프팅진화, 컨텍스트설계, 하네스, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="컨텍스트 엔지니어링이란? (Context Engineering) — AI Wiki">
-<meta property="og:description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.">
+<meta property="og:description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 무엇을, 얼마나, 언제 넣을지 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, 여러 단계를 스스로 처리하는 에이전트를 만들 때 ">
 <meta property="og:url" content="https://aiwiki.work/k/context-engineering.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="컨텍스트 엔지니어링이란? (Context Engineering) — AI Wiki">
-<meta name="twitter:description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.">
+<meta name="twitter:description" content="컨텍스트 엔지니어링이란? LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 무엇을, 얼마나, 언제 넣을지 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, 여러 단계를 스스로 처리하는 에이전트를 만들 때 ">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/context-engineering.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/context-engineering.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "컨텍스트 엔지니어링",
   "alternateName": "Context Engineering",
-  "description": "LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.",
+  "description": "LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 무엇을, 얼마나, 언제 넣을지 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.",
   "url": "https://aiwiki.work/k/context-engineering.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "컨텍스트 엔지니어링 (Context Engineering)",
-  "description": "LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.",
+  "description": "LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 무엇을, 얼마나, 언제 넣을지 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.",
   "url": "https://aiwiki.work/k/context-engineering.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">프롬프팅</div>
   <h1>컨텍스트 엔지니어링</h1>
   <div class="en">Context Engineering</div>
-  <div class="body"><p>LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력 같은 정보 전체를 무엇을 얼마나 언제 넣을지 설계하는 방법이다. 여러 단계를 스스로 처리하는 에이전트를 만들 때 특히 중요하다.</p><h4>한눈에 보기</h4><p>컨텍스트 엔지니어링은 모델이 답하기 전에 보는 <strong>모든 정보를 무엇을, 얼마나, 언제 넣을지</strong> 설계하는 일이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 함께 짠다. 이 용어는 Shopify CEO 토비 뤼트케(Tobi Lütke)와 안드레이 카파시(Andrej Karpathy)가 쓰면서 널리 퍼졌다.</p><div class="tbl"><table><tr><th>구분</th><th>프롬프트 엔지니어링</th><th>컨텍스트 엔지니어링</th></tr><tr><td>관심사</td><td>어떻게 지시할까</td><td><strong>모델에게 무엇을 보여줄까</strong></td></tr><tr><td>범위</td><td>지시문 한 덩어리</td><td>컨텍스트 윈도우 전체</td></tr><tr><td>잘 맞는 일</td><td>한 번 묻고 끝나는 작업</td><td>여러 턴 동안 도구를 쓰는 에이전트</td></tr></table></div><h4>컨텍스트에 들어가는 건 모두 설계 대상</h4><p>모델은 컨텍스트에 들어온 정보만 보고 판단한다. 그래서 요소마다 무엇을 넣고 무엇을 뺄지 정해야 한다.</p><div class="tbl"><table><tr><th>구성 요소</th><th>예</th><th>설계 포인트</th></tr><tr><td>시스템 프롬프트</td><td>역할, 규칙</td><td>너무 세세하지도, 너무 막연하지도 않게</td></tr><tr><td>도구 정의</td><td>함수 이름·설명</td><td>기능이 겹치지 않게 적게 두고 설명은 분명하게</td></tr><tr><td>검색 결과(RAG)</td><td>문서 조각</td><td>질문과 관련된 것만</td></tr><tr><td>대화 이력·메모</td><td>이전 결정, 진행 상황</td><td>길어지면 요약</td></tr></table></div><h4>Claude Code에서는 파일과 설정으로 짠다</h4><p>Claude Code를 쓴다면 프롬프트를 손보기보다 아래 구조를 정리하는 쪽이 에이전트 품질에 더 큰 영향을 준다.</p><div class="tbl"><table><tr><th>하는 일</th><th>어디에</th><th>효과</th></tr><tr><td>프로젝트 규칙</td><td><code>CLAUDE.md</code></td><td>세션마다 자동으로 읽힌다</td></tr><tr><td>역할별 에이전트</td><td><code>.claude/agents/</code></td><td>별도 컨텍스트에서 일하고 결과만 돌려준다</td></tr><tr><td>외부 도구 연결</td><td>MCP 서버</td><td>필요한 도구만 붙인다</td></tr><tr><td>가드레일</td><td>훅</td><td>특정 동작 전후에 자동으로 검사한다</td></tr></table></div><h4>많이 넣는다고 좋아지지 않는다</h4><p>컨텍스트가 길어지면 모델이 중간에 있는 정보를 놓치거나 지난 내용에 끌려가기 쉽다. 토큰이 늘면 비용도 늘고 응답도 느려진다. 그래서 목표는 <strong>꼭 필요한 정보만 최소한으로</strong> 넣는 것이다.</p><div class="tbl"><table><tr><th>기법</th><th>방법</th><th>언제</th></tr><tr><td>요약(압축)</td><td>긴 대화에서 핵심만 남긴다 (Claude Code는 <code>/compact</code>)</td><td>세션이 길어질 때</td></tr><tr><td>메모 파일</td><td>진행 상황을 파일에 적어 두고 다시 읽는다</td><td>여러 세션에 걸친 작업</td></tr><tr><td>필요할 때 불러오기</td><td>파일 경로만 알려 주고 내용은 도구로 읽게 한다</td><td>코드베이스가 클 때</td></tr><tr><td>서브에이전트</td><td>탐색은 따로 맡기고 요약만 받는다</td><td>조사할 양이 많을 때</td></tr></table></div><h4>에이전트가 헤맬 때 먼저 점검한다</h4><p>한 번 묻고 끝나는 질문이라면 프롬프트만 잘 써도 충분하다. 반대로 에이전트가 엉뚱한 파일을 고치거나 같은 실수를 되풀이한다면, 프롬프트보다 컨텍스트에 무엇이 들어 있는지부터 확인한다. 흔한 원인은 <code>CLAUDE.md</code>에 남은 오래된 규칙, 너무 많아 헷갈리는 도구, 관련 없는 작업 이력이다. 작업 주제가 바뀌면 <code>/clear</code>로 새로 시작하는 것도 방법이다.</p></div>
+  <div class="body"><p>LLM이 답하기 전에 보는 지시문, 도구 정의, 검색 결과, 대화 이력, 작업 상태까지 <strong>무엇을, 얼마나, 언제 넣을지</strong> 설계하는 방법이다. 프롬프트 한 줄을 다듬는 데서 그치지 않고 컨텍스트 윈도우 전체를 다루며, <strong>여러 단계를 스스로 처리하는 에이전트</strong>를 만들 때 특히 중요하다.</p><div class="tbl"><table><tr><th>구분</th><th>프롬프트 엔지니어링</th><th>컨텍스트 엔지니어링</th></tr><tr><td>관심사</td><td>어떻게 지시할까</td><td><strong>모델에게 무엇을 보여줄까</strong></td></tr><tr><td>범위</td><td>지시문 한 덩어리</td><td>컨텍스트 윈도우 전체</td></tr><tr><td>잘 맞는 일</td><td>한 번 묻고 끝나는 작업</td><td>여러 턴 동안 도구를 쓰는 에이전트</td></tr></table></div><p>이 용어는 Shopify CEO 토비 뤼트케(Tobi Lütke)와 안드레이 카파시(Andrej Karpathy)가 쓰면서 널리 퍼졌다.</p><h4>컨텍스트에 들어가는 건 모두 설계 대상</h4><p>모델은 컨텍스트에 들어온 정보만 보고 판단한다. 그래서 요소마다 무엇을 넣고 무엇을 뺄지 정해야 한다.</p><div class="tbl"><table><tr><th>구성 요소</th><th>예</th><th>설계 포인트</th></tr><tr><td>시스템 프롬프트</td><td>역할, 규칙</td><td>너무 세세하지도, 너무 막연하지도 않게</td></tr><tr><td>도구 정의</td><td>함수 이름·설명</td><td>기능이 겹치지 않게 적게 두고 설명은 분명하게</td></tr><tr><td>검색 결과(RAG)</td><td>문서 조각</td><td>질문과 관련된 것만</td></tr><tr><td>대화 이력·메모</td><td>이전 결정, 진행 상황</td><td>길어지면 요약</td></tr></table></div><h4>Claude Code에서는 파일과 설정으로 짠다</h4><p>Claude Code를 쓴다면 프롬프트를 손보기보다 아래 구조를 정리하는 쪽이 에이전트 품질에 더 큰 영향을 준다.</p><div class="tbl"><table><tr><th>하는 일</th><th>어디에</th><th>효과</th></tr><tr><td>프로젝트 규칙</td><td><code>CLAUDE.md</code></td><td>세션마다 자동으로 읽힌다</td></tr><tr><td>역할별 에이전트</td><td><code>.claude/agents/</code></td><td>별도 컨텍스트에서 일하고 결과만 돌려준다</td></tr><tr><td>외부 도구 연결</td><td>MCP 서버</td><td>필요한 도구만 붙인다</td></tr><tr><td>가드레일</td><td>훅</td><td>특정 동작 전후에 자동으로 검사한다</td></tr></table></div><h4>많이 넣는다고 좋아지지 않는다</h4><p>컨텍스트가 길어지면 모델이 중간에 있는 정보를 놓치거나 지난 내용에 끌려가기 쉽다. 토큰이 늘면 비용도 늘고 응답도 느려진다. 그래서 목표는 <strong>꼭 필요한 정보만 최소한으로</strong> 넣는 것이다.</p><div class="tbl"><table><tr><th>기법</th><th>방법</th><th>언제</th></tr><tr><td>요약(압축)</td><td>긴 대화에서 핵심만 남긴다 (Claude Code는 <code>/compact</code>)</td><td>세션이 길어질 때</td></tr><tr><td>메모 파일</td><td>진행 상황을 파일에 적어 두고 다시 읽는다</td><td>여러 세션에 걸친 작업</td></tr><tr><td>필요할 때 불러오기</td><td>파일 경로만 알려 주고 내용은 도구로 읽게 한다</td><td>코드베이스가 클 때</td></tr><tr><td>서브에이전트</td><td>탐색은 따로 맡기고 요약만 받는다</td><td>조사할 양이 많을 때</td></tr></table></div><h4>에이전트가 헤맬 때 먼저 점검한다</h4><p>한 번 묻고 끝나는 질문이라면 프롬프트만 잘 써도 충분하다. 반대로 에이전트가 엉뚱한 파일을 고치거나 같은 실수를 되풀이한다면, 프롬프트보다 컨텍스트에 무엇이 들어 있는지부터 확인한다. 흔한 원인은 <code>CLAUDE.md</code>에 남은 오래된 규칙, 너무 많아 헷갈리는 도구, 관련 없는 작업 이력이다. 작업 주제가 바뀌면 <code>/clear</code>로 새로 시작하는 것도 방법이다.</p><h4>대화가 길고 도구가 많을수록 쓸 일이 많다</h4><p>가장 흔하게 쓰는 곳은 <strong>코딩 에이전트</strong>다. 규칙 파일과 메모로 꼭 필요한 정보만 넣어 두고, 긴 탐색은 따로 맡겨 메인 대화를 가볍게 유지한다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>코딩 에이전트</td><td>프로젝트 규칙은 <code>CLAUDE.md</code>에, 큰 코드베이스는 경로만 알려 주고 필요한 파일만 읽게 한다</td></tr><tr><td>사내 문서 검색 챗봇</td><td>질문과 관련된 문서 조각만 골라 넣어 엉뚱한 답을 줄인다</td></tr><tr><td>여러 턴 이어지는 상담·비서 봇</td><td>지난 대화는 요약해 두고 이번 요청에 필요한 이력만 남긴다</td></tr><tr><td>오래 도는 조사 작업</td><td>진행 상황을 메모 파일에 적고, 세부 탐색은 서브에이전트에 맡겨 요약만 받는다</td></tr></table></div></div>
   <div class="tags"><span>#프롬프팅진화</span><span>#컨텍스트설계</span><span>#하네스</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/prompt-engineering.html">프롬프트 엔지니어링</a>, <a href="https://aiwiki.work/k/harness-engineering.html">하네스 엔지니어링</a>, <a href="https://aiwiki.work/k/system-prompt.html">시스템 프롬프트</a>, <a href="https://aiwiki.work/k/claude-md.html">CLAUDE.md</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/graphify.html">그래파이</a>, <a href="https://aiwiki.work/k/agentic-search.html">에이전틱 검색</a>, <a href="https://aiwiki.work/k/graphicle.html">그래피클</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="nofollow noopener">Effective Context Engineering for AI Agents - Anthropic</a> <span class="ref-type">공식</span></li><li><a href="https://www.promptingguide.ai/guides/context-engineering-guide" target="_blank" rel="nofollow noopener">Context Engineering Guide - Prompt Engineering Guide</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=LPZh9BOjkQs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LPZh9BOjkQs/mqdefault.jpg" alt="Large Language Models Explained Briefly" loading="lazy" width="160" height="90"><span>Large Language Models Explained Briefly</span></a><a class="video-item" href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/wjZofJX0v4M/mqdefault.jpg" alt="Transformers, the Tech Behind LLMs | 3Blue1Brown" loading="lazy" width="160" height="90"><span>Transformers, the Tech Behind LLMs | 3Blue1Brown</span></a><a class="video-item" href="https://www.youtube.com/watch?v=BS6O0zOGX4E" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BS6O0zOGX4E/mqdefault.jpg" alt="모두를 위한 머신러닝/딥러닝 강의" loading="lazy" width="160" height="90"><span>모두를 위한 머신러닝/딥러닝 강의</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#context-engineering">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

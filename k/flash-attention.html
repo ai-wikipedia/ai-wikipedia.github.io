@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>플래시 어텐션이란? (Flash Attention) — AI Wiki</title>
-<meta name="description" content="플래시 어텐션이란? 결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.">
+<meta name="description" content="플래시 어텐션이란? 트랜스포머의 어텐션 계산을 결과는 그대로 두고 GPU 메모리를 덜 오가게 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 결과가 똑같아서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.">
 <meta name="keywords" content="플래시 어텐션, Flash Attention, 메모리효율, GPU, 속도최적화, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="플래시 어텐션이란? (Flash Attention) — AI Wiki">
-<meta property="og:description" content="플래시 어텐션이란? 결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.">
+<meta property="og:description" content="플래시 어텐션이란? 트랜스포머의 어텐션 계산을 결과는 그대로 두고 GPU 메모리를 덜 오가게 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 결과가 똑같아서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.">
 <meta property="og:url" content="https://aiwiki.work/k/flash-attention.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="플래시 어텐션이란? (Flash Attention) — AI Wiki">
-<meta name="twitter:description" content="플래시 어텐션이란? 결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.">
+<meta name="twitter:description" content="플래시 어텐션이란? 트랜스포머의 어텐션 계산을 결과는 그대로 두고 GPU 메모리를 덜 오가게 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 결과가 똑같아서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/flash-attention.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/flash-attention.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "플래시 어텐션",
   "alternateName": "Flash Attention",
-  "description": "결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.",
+  "description": "트랜스포머의 어텐션 계산을 결과는 그대로 두고 GPU 메모리를 덜 오가게 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 결과가 똑같아서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.",
   "url": "https://aiwiki.work/k/flash-attention.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "플래시 어텐션 (Flash Attention)",
-  "description": "결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.",
+  "description": "트랜스포머의 어텐션 계산을 결과는 그대로 두고 GPU 메모리를 덜 오가게 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 결과가 똑같아서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.",
   "url": "https://aiwiki.work/k/flash-attention.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>플래시 어텐션</h1>
   <div class="en">Flash Attention</div>
-  <div class="body"><p>결과는 그대로 두고 GPU 메모리를 덜 오가도록 어텐션 계산 방식을 바꾼 알고리즘이다. 긴 입력을 학습하거나 추론할 때 켜면 같은 GPU에서 메모리를 덜 쓰고 더 빠르게 처리할 수 있다.</p><h4>한눈에 보기</h4><p>플래시 어텐션은 트랜스포머의 어텐션 계산을 <strong>결과는 그대로 두고 GPU 메모리를 덜 오가게</strong> 바꾼 방법이다. 모델은 바꾸지 않고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리할 수 있다. 그래서 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.</p><div class="tbl"><table><tr><th>방식</th><th>결과</th><th>메모리</th><th>특징</th></tr><tr><td>일반 어텐션</td><td>정확</td><td>길이의 제곱</td><td>큰 중간 행렬을 통째로 저장</td></tr><tr><td><strong>플래시 어텐션</strong></td><td><strong>정확 (같음)</strong></td><td><strong>길이에 비례</strong></td><td>블록 단위로 나눠 계산</td></tr><tr><td>근사 어텐션 (희소·선형)</td><td>근사</td><td>적음</td><td>계산을 줄이는 대신 결과가 달라짐</td></tr></table></div><h4>느린 원인은 계산이 아니라 메모리 왕복</h4><p>어텐션은 모든 토큰 쌍의 점수를 담은 큰 행렬을 만든다. 일반 구현은 이 행렬을 GPU의 큰 메모리(HBM)에 썼다가 다시 읽는다. 이 왕복이 계산보다 오래 걸리고, 입력이 길어지면 메모리 사용량이 제곱으로 늘어난다.</p><p>플래시 어텐션은 입력을 작은 블록으로 쪼개 GPU 칩 안의 빠른 메모리(SRAM)에서 한 번에 처리하고, 큰 행렬은 아예 저장하지 않는다. 학습할 때 필요한 값도 저장하지 않고 다시 계산한다. 계산량은 비슷하지만 메모리 왕복이 줄어서 빨라진다.</p><h4>Transformers는 옵션 한 줄, 서버는 대개 자동</h4><p>Hugging Face Transformers에서는 <code>flash-attn</code> 패키지를 설치한 뒤, 모델을 불러올 때 <code>attn_implementation="flash_attention_2"</code>를 넘기면 된다. 이때 모델은 fp16이나 bf16으로 불러와야 한다.</p><p>vLLM 같은 추론 서버는 지원하는 GPU에서 이런 최적화 커널을 기본으로 고르는 경우가 많아서 따로 할 일이 거의 없다. PyTorch의 <code>scaled_dot_product_attention</code>도 조건이 맞으면 내부에서 플래시 어텐션 방식의 커널을 쓴다.</p><div class="tbl"><table><tr><th>상황</th><th>이렇게 한다</th></tr><tr><td>직접 파인튜닝, 긴 입력 학습</td><td><code>flash_attention_2</code> 켜기</td></tr><tr><td>추론 서버 운영</td><td>서버가 기본으로 쓰는 어텐션 백엔드 확인</td></tr><tr><td>패키지 설치가 어려운 환경</td><td>PyTorch SDPA로 대신 쓰기</td></tr></table></div><h4>켜기 전에 확인할 것</h4><p>공식 구현은 주로 비교적 최신 세대(Ampere 이후)의 NVIDIA GPU를 지원한다. 오래된 GPU나 CPU에서는 쓸 수 없어서 다른 구현으로 대신해야 한다. 설치할 때 CUDA나 PyTorch 버전이 맞지 않으면 빌드가 실패하는 일이 잦으니, 미리 빌드된 패키지를 쓰는 편이 낫다.</p><p>계산량 자체가 줄지는 않는다. 그래서 입력이 짧으면 효과가 작다. 추론할 때 쌓이는 KV 캐시 메모리도 그대로라서, 긴 컨텍스트를 다루려면 다른 최적화도 함께 써야 한다.</p><h4>버전이 올라가며 더 빨라졌다</h4><p>FlashAttention-2는 GPU에 작업을 나누는 방식을 개선해서 첫 버전보다 더 빨라졌다. 이후 더 새로운 GPU에 맞춘 버전도 나왔다. 지금 새로 쓴다면 쓰는 라이브러리가 지원하는 최신 구현을 고르면 된다.</p></div>
+  <div class="body"><p>트랜스포머의 어텐션 계산을 <strong>결과는 그대로 두고 GPU 메모리를 덜 오가게</strong> 바꾼 알고리즘으로, 모델은 그대로 두고 켜기만 하면 긴 입력을 더 적은 메모리로 더 빠르게 처리한다. 근사 어텐션과 달리 <strong>결과가 똑같아서</strong> 학습, 파인튜닝, 추론 서버에서 거의 기본처럼 쓰인다.</p><div class="tbl"><table><tr><th>방식</th><th>결과</th><th>메모리</th><th>특징</th></tr><tr><td>일반 어텐션</td><td>정확</td><td>길이의 제곱</td><td>큰 중간 행렬을 통째로 저장</td></tr><tr><td><strong>플래시 어텐션</strong></td><td><strong>정확 (같음)</strong></td><td><strong>길이에 비례</strong></td><td>블록 단위로 나눠 계산</td></tr><tr><td>근사 어텐션 (희소·선형)</td><td>근사</td><td>적음</td><td>계산을 줄이는 대신 결과가 달라짐</td></tr></table></div><h4>느린 원인은 계산이 아니라 메모리 왕복</h4><p>어텐션은 모든 토큰 쌍의 점수를 담은 큰 행렬을 만든다. 일반 구현은 이 행렬을 GPU의 큰 메모리(HBM)에 썼다가 다시 읽는다. 이 왕복이 계산보다 오래 걸리고, 입력이 길어지면 메모리 사용량이 제곱으로 늘어난다.</p><p>플래시 어텐션은 입력을 작은 블록으로 쪼개 GPU 칩 안의 빠른 메모리(SRAM)에서 한 번에 처리하고, 큰 행렬은 아예 저장하지 않는다. 학습할 때 필요한 값도 저장하지 않고 다시 계산한다. 계산량은 비슷하지만 메모리 왕복이 줄어서 빨라진다.</p><h4>Transformers는 옵션 한 줄, 서버는 대개 자동</h4><p>Hugging Face Transformers에서는 <code>flash-attn</code> 패키지를 설치한 뒤, 모델을 불러올 때 <code>attn_implementation="flash_attention_2"</code>를 넘기면 된다. 이때 모델은 fp16이나 bf16으로 불러와야 한다.</p><p>vLLM 같은 추론 서버는 지원하는 GPU에서 이런 최적화 커널을 기본으로 고르는 경우가 많아서 따로 할 일이 거의 없다. PyTorch의 <code>scaled_dot_product_attention</code>도 조건이 맞으면 내부에서 플래시 어텐션 방식의 커널을 쓴다.</p><div class="tbl"><table><tr><th>상황</th><th>이렇게 한다</th></tr><tr><td>직접 파인튜닝, 긴 입력 학습</td><td><code>flash_attention_2</code> 켜기</td></tr><tr><td>추론 서버 운영</td><td>서버가 기본으로 쓰는 어텐션 백엔드 확인</td></tr><tr><td>패키지 설치가 어려운 환경</td><td>PyTorch SDPA로 대신 쓰기</td></tr></table></div><h4>켜기 전에 확인할 것</h4><p>공식 구현은 주로 비교적 최신 세대(Ampere 이후)의 NVIDIA GPU를 지원한다. 오래된 GPU나 CPU에서는 쓸 수 없어서 다른 구현으로 대신해야 한다. 설치할 때 CUDA나 PyTorch 버전이 맞지 않으면 빌드가 실패하는 일이 잦으니, 미리 빌드된 패키지를 쓰는 편이 낫다.</p><p>계산량 자체가 줄지는 않는다. 그래서 입력이 짧으면 효과가 작다. 추론할 때 쌓이는 KV 캐시 메모리도 그대로라서, 긴 컨텍스트를 다루려면 다른 최적화도 함께 써야 한다.</p><h4>버전이 올라가며 더 빨라졌다</h4><p>FlashAttention-2는 GPU에 작업을 나누는 방식을 개선해서 첫 버전보다 더 빨라졌다. 이후 더 새로운 GPU에 맞춘 버전도 나왔다. 지금 새로 쓴다면 쓰는 라이브러리가 지원하는 최신 구현을 고르면 된다.</p><h4>긴 입력을 다루는 곳이면 일단 켜 둔다</h4><p>보통은 직접 고르기보다 <strong>라이브러리나 서버가 기본으로 켜 두는 부품</strong>으로 쓴다. 메모리가 부족해 입력 길이나 배치 크기를 줄여야 할 때 가장 먼저 확인하는 옵션이기도 하다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>오픈 모델 파인튜닝</td><td>Transformers에서 <code>flash_attention_2</code>를 켜고, 아낀 메모리로 입력 길이나 배치 크기를 늘린다</td></tr><tr><td>LLM 추론 서버</td><td>vLLM 같은 서버가 지원 GPU에서 자동으로 고르니, 기본 백엔드가 맞게 잡혔는지만 확인한다</td></tr><tr><td>PyTorch 직접 구현</td><td>어텐션을 <code>scaled_dot_product_attention</code>으로 작성해 조건이 맞으면 같은 효과를 얻는다</td></tr></table></div></div>
   <div class="tags"><span>#메모리효율</span><span>#GPU</span><span>#속도최적화</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/attention-mechanism.html">어텐션 메커니즘</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/long-context.html">롱 컨텍스트</a>, <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/sparse-attention.html">희소 어텐션</a>, <a href="https://aiwiki.work/k/grouped-query-attention.html">그룹 쿼리 어텐션</a>, <a href="https://aiwiki.work/k/sliding-window-attention.html">슬라이딩 윈도우 어텐션</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="nofollow noopener">FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2307.08691" target="_blank" rel="nofollow noopener">FlashAttention-2: Faster Attention with Better Parallelism</a> <span class="ref-type">논문</span></li><li><a href="https://github.com/Dao-AILab/flash-attention" target="_blank" rel="nofollow noopener">Dao-AILab/flash-attention — Official GitHub Repository</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zy8ChVd_oTM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zy8ChVd_oTM/mqdefault.jpg" alt="Flash Attention derived and coded from first principles with Triton (Umar Jamil)" loading="lazy" width="160" height="90"><span>Flash Attention derived and coded from first principles with Triton (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=PSs6nxngL6k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PSs6nxngL6k/mqdefault.jpg" alt="Neural Networks: Attention (StatQuest)" loading="lazy" width="160" height="90"><span>Neural Networks: Attention (StatQuest)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=Bmx2S1dSAV0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Bmx2S1dSAV0/mqdefault.jpg" alt="CS231n 한글설명 Attention - 송교석" loading="lazy" width="160" height="90"><span>CS231n 한글설명 Attention - 송교석</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#flash-attention">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

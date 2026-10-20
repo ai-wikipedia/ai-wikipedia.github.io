@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>연속 배칭이란? (Continuous Batching) — AI Wiki</title>
-<meta name="description" content="연속 배칭이란? LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.">
+<meta name="description" content="연속 배칭이란? LLM 서버가 여러 요청을 묶어 처리하다가 하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 ">
 <meta name="keywords" content="연속 배칭, Continuous Batching, 처리량, 스케줄링, vLLM, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="연속 배칭이란? (Continuous Batching) — AI Wiki">
-<meta property="og:description" content="연속 배칭이란? LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.">
+<meta property="og:description" content="연속 배칭이란? LLM 서버가 여러 요청을 묶어 처리하다가 하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 ">
 <meta property="og:url" content="https://aiwiki.work/k/continuous-batching.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="연속 배칭이란? (Continuous Batching) — AI Wiki">
-<meta name="twitter:description" content="연속 배칭이란? LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.">
+<meta name="twitter:description" content="연속 배칭이란? LLM 서버가 여러 요청을 묶어 처리하다가 하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 ">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/continuous-batching.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/continuous-batching.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "연속 배칭",
   "alternateName": "Continuous Batching",
-  "description": "LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.",
+  "description": "LLM 서버가 여러 요청을 묶어 처리하다가 하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.",
   "url": "https://aiwiki.work/k/continuous-batching.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "연속 배칭 (Continuous Batching)",
-  "description": "LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.",
+  "description": "LLM 서버가 여러 요청을 묶어 처리하다가 하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.",
   "url": "https://aiwiki.work/k/continuous-batching.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">인프라</div>
   <h1>연속 배칭</h1>
   <div class="en">Continuous Batching</div>
-  <div class="body"><p>LLM 서버가 끝난 요청 자리에 대기 중인 새 요청을 바로 넣어 GPU를 쉬지 않게 하는 스케줄링 방식이다. 길이가 제각각인 요청이 많이 몰리는 챗봇·API 서비스에서 처리량을 크게 높일 때 쓴다.</p><h4>한눈에 보기</h4><p>연속 배칭은 여러 요청을 묶어 처리하다가 <strong>하나가 끝나는 즉시 그 자리에 새 요청을 넣는</strong> 방식이다. 묶음 전체가 끝날 때까지 기다리지 않아서 GPU가 늘 꽉 찬 상태로 돈다. vLLM, TGI 같은 요즘 LLM 서빙 프레임워크는 대부분 이 방식을 기본으로 쓴다.</p><div class="tbl"><table><tr><th>항목</th><th>정적 배칭</th><th>연속 배칭</th></tr><tr><td>새 요청 투입 시점</td><td>배치 전체가 끝난 뒤</td><td><strong>토큰 생성 단계마다</strong></td></tr><tr><td>짧은 요청이 먼저 끝나면</td><td>그 자리가 비어 있음</td><td>바로 다른 요청이 채움</td></tr><tr><td>잘 맞는 상황</td><td>길이가 비슷한 오프라인 일괄 작업</td><td>길이가 섞인 실시간 서비스</td></tr></table></div><h4>긴 요청 하나가 배치 전체를 붙잡는다</h4><p>LLM은 답을 토큰 하나씩 만들고, 요청마다 답 길이가 다르다. 정적 배칭에서는 한 줄짜리 답이 일찍 끝나도 긴 답이 끝날 때까지 새 요청을 못 받는다. 그동안 GPU 일부는 놀고, 뒤에 줄 선 요청은 계속 기다린다.</p><p>연속 배칭은 토큰 한 단계를 만들 때마다 배치 구성을 다시 짠다. 그래서 <strong>iteration-level 스케줄링</strong>이라고도 부른다. 이 아이디어는 Orca 논문에서 처음 체계적으로 제안됐다.</p><h4>vLLM에서는 켜져 있고, 한도만 조절한다</h4><p>vLLM은 따로 켜지 않아도 연속 배칭으로 돈다. 사용자는 한 번에 얼마나 많이 묶을지 상한만 정하면 된다.</p><div class="tbl"><table><tr><th>설정</th><th>뜻</th><th>조절 방향</th></tr><tr><td><code>--max-num-seqs</code></td><td>동시에 처리할 요청 수 상한</td><td>올리면 처리량↑, 요청당 속도↓</td></tr><tr><td><code>--max-num-batched-tokens</code></td><td>한 단계에 넣을 토큰 수 상한</td><td>메모리가 넉넉하면 올린다</td></tr><tr><td><code>--gpu-memory-utilization</code></td><td>GPU 메모리를 얼마나 쓸지</td><td>KV 캐시 공간에 바로 영향</td></tr></table></div><p>많은 사용자를 받는 챗봇이라면 동시 요청 수를 넉넉히 두고, 응답 속도가 중요한 단일 사용자 도구라면 낮게 두는 식으로 맞춘다.</p><h4>효과는 요청이 몰리고 길이가 섞일 때 크다</h4><p>동시에 들어오는 요청이 많고 답 길이가 제각각일수록 효과가 크다. 반대로 요청이 거의 없는 개인용 서버에서는 묶을 게 없으니 차이가 작다. 길이가 비슷한 문서를 한꺼번에 처리하는 일괄 작업도 정적 배칭과 큰 차이가 나지 않는다.</p><h4>메모리와 지연 시간은 따로 챙겨야 한다</h4><p>요청을 많이 묶을수록 요청마다 KV 캐시 메모리가 필요하다. 메모리가 부족하면 일부 요청을 잠시 빼거나 다시 계산하게 된다. vLLM이 PagedAttention으로 KV 캐시를 잘게 나눠 관리하는 것도 연속 배칭을 메모리 낭비 없이 돌리기 위해서다.</p><p>처리량이 오르는 대신, 배치가 꽉 찰수록 요청 하나가 토큰을 받는 속도는 느려질 수 있다. 긴 프롬프트가 새로 들어오면 그 입력을 처리하는 동안 다른 요청의 생성이 잠깐 밀리기도 한다. 이를 줄이려고 긴 입력을 잘게 나눠 넣는 chunked prefill을 함께 쓰는 경우가 많다.</p></div>
+  <div class="body"><p>LLM 서버가 여러 요청을 묶어 처리하다가 <strong>하나가 끝나는 즉시 그 자리에 대기 중인 새 요청을 넣는</strong> 스케줄링 방식이다. 배치 전체가 끝날 때까지 기다리는 정적 배칭과 달리 GPU를 쉬지 않게 해, 길이가 제각각인 요청이 몰리는 챗봇·API 서비스에서 <strong>처리량을 크게 높일 때</strong> 쓴다.</p><div class="tbl"><table><tr><th>항목</th><th>정적 배칭</th><th>연속 배칭</th></tr><tr><td>새 요청 투입 시점</td><td>배치 전체가 끝난 뒤</td><td><strong>토큰 생성 단계마다</strong></td></tr><tr><td>짧은 요청이 먼저 끝나면</td><td>그 자리가 비어 있음</td><td>바로 다른 요청이 채움</td></tr><tr><td>잘 맞는 상황</td><td>길이가 비슷한 오프라인 일괄 작업</td><td>길이가 섞인 실시간 서비스</td></tr></table></div><p>vLLM, TGI 같은 요즘 LLM 서빙 프레임워크는 대부분 이 방식을 기본으로 쓴다.</p><h4>긴 요청 하나가 배치 전체를 붙잡는다</h4><p>LLM은 답을 토큰 하나씩 만들고, 요청마다 답 길이가 다르다. 정적 배칭에서는 한 줄짜리 답이 일찍 끝나도 긴 답이 끝날 때까지 새 요청을 못 받는다. 그동안 GPU 일부는 놀고, 뒤에 줄 선 요청은 계속 기다린다.</p><p>연속 배칭은 토큰 한 단계를 만들 때마다 배치 구성을 다시 짠다. 그래서 <strong>iteration-level 스케줄링</strong>이라고도 부른다. 이 아이디어는 Orca 논문에서 처음 체계적으로 제안됐다.</p><h4>vLLM에서는 켜져 있고, 한도만 조절한다</h4><p>vLLM은 따로 켜지 않아도 연속 배칭으로 돈다. 사용자는 한 번에 얼마나 많이 묶을지 상한만 정하면 된다.</p><div class="tbl"><table><tr><th>설정</th><th>뜻</th><th>조절 방향</th></tr><tr><td><code>--max-num-seqs</code></td><td>동시에 처리할 요청 수 상한</td><td>올리면 처리량↑, 요청당 속도↓</td></tr><tr><td><code>--max-num-batched-tokens</code></td><td>한 단계에 넣을 토큰 수 상한</td><td>메모리가 넉넉하면 올린다</td></tr><tr><td><code>--gpu-memory-utilization</code></td><td>GPU 메모리를 얼마나 쓸지</td><td>KV 캐시 공간에 바로 영향</td></tr></table></div><p>많은 사용자를 받는 챗봇이라면 동시 요청 수를 넉넉히 두고, 응답 속도가 중요한 단일 사용자 도구라면 낮게 두는 식으로 맞춘다.</p><h4>효과는 요청이 몰리고 길이가 섞일 때 크다</h4><p>동시에 들어오는 요청이 많고 답 길이가 제각각일수록 효과가 크다. 반대로 요청이 거의 없는 개인용 서버에서는 묶을 게 없으니 차이가 작다. 길이가 비슷한 문서를 한꺼번에 처리하는 일괄 작업도 정적 배칭과 큰 차이가 나지 않는다.</p><h4>메모리와 지연 시간은 따로 챙겨야 한다</h4><p>요청을 많이 묶을수록 요청마다 KV 캐시 메모리가 필요하다. 메모리가 부족하면 일부 요청을 잠시 빼거나 다시 계산하게 된다. vLLM이 PagedAttention으로 KV 캐시를 잘게 나눠 관리하는 것도 연속 배칭을 메모리 낭비 없이 돌리기 위해서다.</p><p>처리량이 오르는 대신, 배치가 꽉 찰수록 요청 하나가 토큰을 받는 속도는 느려질 수 있다. 긴 프롬프트가 새로 들어오면 그 입력을 처리하는 동안 다른 요청의 생성이 잠깐 밀리기도 한다. 이를 줄이려고 긴 입력을 잘게 나눠 넣는 chunked prefill을 함께 쓰는 경우가 많다.</p><h4>직접 모델을 띄우면 이미 쓰고 있다</h4><p>연속 배칭은 따로 구현하는 기법이라기보다 <strong>서빙 프레임워크에 기본으로 들어 있는 기능</strong>이다. 사용자는 어떤 장면에서 요청이 몰리는지 보고 동시 처리 한도만 맞추면 된다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>사내 챗봇·API 서버</td><td>vLLM·TGI로 오픈 모델을 띄우면 기본으로 켜지고, 동시 요청 수 상한을 사용자 수에 맞춰 조절</td></tr><tr><td>코딩 에이전트·병렬 에이전트</td><td>여러 에이전트가 동시에 보내는 요청을 한 서버가 받아, 먼저 끝난 자리를 바로 다음 요청으로 채움</td></tr><tr><td>대량 생성 작업</td><td>답 길이가 제각각인 프롬프트를 한꺼번에 보내 서버가 알아서 빈자리를 채우게 해 처리 시간을 줄임</td></tr></table></div></div>
   <div class="tags"><span>#처리량</span><span>#스케줄링</span><span>#vLLM</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/model-serving.html">모델 서빙</a>, <a href="https://aiwiki.work/k/vllm.html">vLLM</a>, <a href="https://aiwiki.work/k/batch-inference.html">배치 추론</a>, <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.usenix.org/conference/osdi22/presentation/yu" target="_blank" rel="nofollow noopener">Orca: A Distributed Serving System for Transformer-Based Generative Models (OSDI '22)</a> <span class="ref-type">논문</span></li><li><a href="https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/" target="_blank" rel="nofollow noopener">Mastering LLM Techniques: Inference Optimization — NVIDIA Blog</a> <span class="ref-type">블로그</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#continuous-batching">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

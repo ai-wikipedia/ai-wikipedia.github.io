@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>프롬프트 캐싱이란? (Prompt Caching) — AI Wiki</title>
-<meta name="description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.">
+<meta name="description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 다시 계산하지 않고 꺼내 쓰는 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 첫 응답 지연을 크게 줄일 때 쓴다.">
 <meta name="keywords" content="프롬프트 캐싱, Prompt Caching, 캐싱, 비용절감, KV캐시, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="프롬프트 캐싱이란? (Prompt Caching) — AI Wiki">
-<meta property="og:description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.">
+<meta property="og:description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 다시 계산하지 않고 꺼내 쓰는 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 첫 응답 지연을 크게 줄일 때 쓴다.">
 <meta property="og:url" content="https://aiwiki.work/k/prompt-caching.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-28">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="프롬프트 캐싱이란? (Prompt Caching) — AI Wiki">
-<meta name="twitter:description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.">
+<meta name="twitter:description" content="프롬프트 캐싱이란? 매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 다시 계산하지 않고 꺼내 쓰는 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 첫 응답 지연을 크게 줄일 때 쓴다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/prompt-caching.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/prompt-caching.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "프롬프트 캐싱",
   "alternateName": "Prompt Caching",
-  "description": "매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.",
+  "description": "매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 다시 계산하지 않고 꺼내 쓰는 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 첫 응답 지연을 크게 줄일 때 쓴다.",
   "url": "https://aiwiki.work/k/prompt-caching.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "프롬프트 캐싱 (Prompt Caching)",
-  "description": "매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.",
+  "description": "매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 다시 계산하지 않고 꺼내 쓰는 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 첫 응답 지연을 크게 줄일 때 쓴다.",
   "url": "https://aiwiki.work/k/prompt-caching.html",
   "datePublished": "2026-03-28",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">인프라</div>
   <h1>프롬프트 캐싱</h1>
   <div class="en">Prompt Caching</div>
-  <div class="body"><p>매번 똑같이 보내는 긴 프롬프트 앞부분을 서버가 잠시 저장해 두고 다음 요청에서 다시 쓰는 기능이다. 같은 문서나 시스템 프롬프트를 반복해서 보내는 챗봇·코딩 에이전트에서 입력 비용과 응답 지연을 크게 줄일 때 쓴다.</p><h4>한눈에 보기</h4><p>프롬프트 캐싱은 매번 똑같이 보내는 긴 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 기억해 두는 기능이다. 다음 요청에서는 그 부분을 다시 계산하지 않고 꺼내 쓴다. 같은 컨텍스트를 여러 번 보내는 챗봇·코딩 도우미·에이전트에서 <strong>입력 비용과 첫 응답 지연</strong>을 크게 줄인다.</p><div class="tbl"><table><tr><th>항목</th><th>캐시 없음</th><th>캐시 히트</th></tr><tr><td>입력 처리</td><td>매번 처음부터 계산</td><td>저장된 결과 재사용</td></tr><tr><td>입력 비용</td><td>정가</td><td><strong>크게 할인</strong> (Claude는 최대 90%)</td></tr><tr><td>첫 응답까지 시간</td><td>길다</td><td>짧다</td></tr></table></div><h4>앞부분이 똑같아야 캐시된다</h4><p>캐시는 프롬프트 맨 앞부터 완전히 같은 부분에만 적용된다. 중간에 한 글자라도 바뀌면 그 뒤는 모두 다시 계산한다.</p><p>그래서 순서가 핵심이다. 바뀌지 않는 내용을 앞에, 자주 바뀌는 내용을 뒤에 둔다.</p><div class="tbl"><table><tr><th>순서</th><th>넣을 내용</th><th>바뀌는 정도</th></tr><tr><td>1</td><td>도구 정의, 시스템 프롬프트</td><td>거의 안 바뀜</td></tr><tr><td>2</td><td>긴 문서, 코드베이스</td><td>세션 동안 고정</td></tr><tr><td>3</td><td>지난 대화 기록</td><td>조금씩 늘어남</td></tr><tr><td>4</td><td>이번 질문</td><td>매번 바뀜</td></tr></table></div><p class="note">시스템 프롬프트 앞쪽에 현재 시각처럼 매번 바뀌는 값을 넣으면 캐시가 매번 깨진다.</p><h4>Claude는 직접 표시, OpenAI는 자동</h4><p>Claude API는 캐시할 위치를 직접 정한다. 캐시하고 싶은 블록에 <code>cache_control: {"type": "ephemeral"}</code>를 붙이면 그 지점까지 저장된다. 너무 짧은 프롬프트는 캐시되지 않으며, 최소 길이는 모델에 따라 1,024토큰 이상이다.</p><p>OpenAI API는 일정 길이 이상의 프롬프트를 자동으로 캐싱하므로 코드를 고칠 필요가 없다. 다만 앞부분을 고정하는 순서 규칙은 똑같이 지켜야 효과가 난다.</p><div class="tbl"><table><tr><th>항목</th><th>Claude API</th><th>OpenAI API</th></tr><tr><td>켜는 법</td><td><code>cache_control</code> 직접 지정</td><td>자동</td></tr><tr><td>처음 저장할 때</td><td>정가보다 조금 비쌈</td><td>추가 비용 없음</td></tr><tr><td>적중 확인</td><td><code>cache_read_input_tokens</code></td><td><code>cached_tokens</code></td></tr></table></div><p class="note">적중 여부는 응답의 usage 항목에서 확인한다.</p><h4>5분 안에 다시 써야 이득</h4><p>캐시는 짧게만 유지된다. Claude의 기본 캐시는 약 5분이고, 그 안에 다시 쓰면 유지 시간이 다시 늘어난다. 요청 간격이 길면 캐시가 사라져 저장 비용만 내고 끝날 수 있다.</p><p>Claude는 처음 저장할 때 입력 비용을 조금 더 받는다. 그래서 같은 앞부분을 짧은 간격으로 여러 번 다시 보낼 때 붙이고, 한 번만 보내는 요청이나 매번 내용이 다른 일괄 처리에는 붙이지 않는다.</p><h4>이럴 때 붙인다</h4><div class="tbl"><table><tr><th>상황</th><th>캐시할 부분</th></tr><tr><td>긴 문서에 여러 번 질문</td><td>문서 전체</td></tr><tr><td>코딩 에이전트</td><td>도구 정의, 코드베이스</td></tr><tr><td>긴 대화 챗봇</td><td>시스템 프롬프트, 이전 대화</td></tr><tr><td>예시가 많은 프롬프트</td><td>고정된 예시 묶음</td></tr></table></div><p>적용한 뒤에는 usage에서 캐시 적중 토큰이 실제로 잡히는지 꼭 확인한다. 0으로 나오면 앞부분 어딘가가 요청마다 바뀌고 있다는 뜻이다.</p></div>
+  <div class="body"><p>매번 똑같이 보내는 긴 프롬프트 앞부분(시스템 프롬프트, 문서, 코드베이스)을 서버가 잠시 저장해 두고, 다음 요청에서 <strong>다시 계산하지 않고 꺼내 쓰는</strong> 기능이다. 같은 컨텍스트를 반복해서 보내는 챗봇·코딩 에이전트에서 <strong>입력 비용과 첫 응답 지연</strong>을 크게 줄일 때 쓴다.</p><div class="tbl"><table><tr><th>항목</th><th>캐시 없음</th><th>캐시 히트</th></tr><tr><td>입력 처리</td><td>매번 처음부터 계산</td><td>저장된 결과 재사용</td></tr><tr><td>입력 비용</td><td>정가</td><td><strong>크게 할인</strong> (Claude는 최대 90%)</td></tr><tr><td>첫 응답까지 시간</td><td>길다</td><td>짧다</td></tr></table></div><p>앞부분이 길고 자주 반복될수록 효과가 커진다. 한 번만 보내거나 매번 내용이 다른 요청에는 이득이 없다.</p><h4>앞부분이 똑같아야 캐시된다</h4><p>캐시는 프롬프트 맨 앞부터 완전히 같은 부분에만 적용된다. 중간에 한 글자라도 바뀌면 그 뒤는 모두 다시 계산한다.</p><p>그래서 순서가 핵심이다. 바뀌지 않는 내용을 앞에, 자주 바뀌는 내용을 뒤에 둔다.</p><div class="tbl"><table><tr><th>순서</th><th>넣을 내용</th><th>바뀌는 정도</th></tr><tr><td>1</td><td>도구 정의, 시스템 프롬프트</td><td>거의 안 바뀜</td></tr><tr><td>2</td><td>긴 문서, 코드베이스</td><td>세션 동안 고정</td></tr><tr><td>3</td><td>지난 대화 기록</td><td>조금씩 늘어남</td></tr><tr><td>4</td><td>이번 질문</td><td>매번 바뀜</td></tr></table></div><p class="note">시스템 프롬프트 앞쪽에 현재 시각처럼 매번 바뀌는 값을 넣으면 캐시가 매번 깨진다.</p><h4>Claude는 직접 표시, OpenAI는 자동</h4><p>Claude API는 캐시할 위치를 직접 정한다. 캐시하고 싶은 블록에 <code>cache_control: {"type": "ephemeral"}</code>를 붙이면 그 지점까지 저장된다. 너무 짧은 프롬프트는 캐시되지 않으며, 최소 길이는 모델에 따라 1,024토큰 이상이다.</p><p>OpenAI API는 일정 길이 이상의 프롬프트를 자동으로 캐싱하므로 코드를 고칠 필요가 없다. 다만 앞부분을 고정하는 순서 규칙은 똑같이 지켜야 효과가 난다.</p><div class="tbl"><table><tr><th>항목</th><th>Claude API</th><th>OpenAI API</th></tr><tr><td>켜는 법</td><td><code>cache_control</code> 직접 지정</td><td>자동</td></tr><tr><td>처음 저장할 때</td><td>정가보다 조금 비쌈</td><td>추가 비용 없음</td></tr><tr><td>적중 확인</td><td><code>cache_read_input_tokens</code></td><td><code>cached_tokens</code></td></tr></table></div><p class="note">적중 여부는 응답의 usage 항목에서 확인한다.</p><h4>5분 안에 다시 써야 이득</h4><p>캐시는 짧게만 유지된다. Claude의 기본 캐시는 약 5분이고, 그 안에 다시 쓰면 유지 시간이 다시 늘어난다. 요청 간격이 길면 캐시가 사라져 저장 비용만 내고 끝날 수 있다.</p><p>Claude는 처음 저장할 때 입력 비용을 조금 더 받는다. 그래서 같은 앞부분을 짧은 간격으로 여러 번 다시 보낼 때 붙이고, 한 번만 보내는 요청이나 매번 내용이 다른 일괄 처리에는 붙이지 않는다.</p><h4>이럴 때 붙인다</h4><div class="tbl"><table><tr><th>상황</th><th>캐시할 부분</th></tr><tr><td>긴 문서에 여러 번 질문</td><td>문서 전체</td></tr><tr><td>코딩 에이전트</td><td>도구 정의, 코드베이스</td></tr><tr><td>긴 대화 챗봇</td><td>시스템 프롬프트, 이전 대화</td></tr><tr><td>예시가 많은 프롬프트</td><td>고정된 예시 묶음</td></tr></table></div><p>적용한 뒤에는 usage에서 캐시 적중 토큰이 실제로 잡히는지 꼭 확인한다. 0으로 나오면 앞부분 어딘가가 요청마다 바뀌고 있다는 뜻이다.</p></div>
   <div class="tags"><span>#캐싱</span><span>#비용절감</span><span>#KV캐시</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/kv-cache.html">KV 캐시</a>, <a href="https://aiwiki.work/k/cost-optimization.html">비용 최적화</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/token-budget.html">토큰 예산</a>, <a href="https://aiwiki.work/k/caveman.html">케이브맨</a>, <a href="https://aiwiki.work/k/claude-haiku-5-5.html">클로드 하이쿠 5.5</a>, <a href="https://aiwiki.work/k/gpt-6-sol.html">GPT-6 솔</a>, <a href="https://aiwiki.work/k/gpt-6-luna.html">GPT-6 루나</a>, <a href="https://aiwiki.work/k/claude-fable-5-1.html">클로드 페이블 5.1</a>, <a href="https://aiwiki.work/k/extended-thinking.html">확장 사고</a>, <a href="https://aiwiki.work/k/gemini-4-argon.html">제미나이 4 아르곤</a>, <a href="https://aiwiki.work/k/gpt-6-1-sol.html">GPT-6.1 솔</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" target="_blank" rel="nofollow noopener">Prompt Caching — Anthropic Official Documentation</a> <span class="ref-type">공식</span></li><li><a href="https://platform.openai.com/docs/guides/prompt-caching" target="_blank" rel="nofollow noopener">Prompt Caching — OpenAI Official Documentation</a> <span class="ref-type">공식</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=LFvw_xlj0LQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LFvw_xlj0LQ/mqdefault.jpg" alt="Prompt Caching with Claude 3.5 Sonnet (Elvis Saravia)" loading="lazy" width="160" height="90"><span>Prompt Caching with Claude 3.5 Sonnet (Elvis Saravia)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=WBB2GnpOLhE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WBB2GnpOLhE/mqdefault.jpg" alt="Advanced AI Agents, Claude Prompt Caching" loading="lazy" width="160" height="90"><span>Advanced AI Agents, Claude Prompt Caching</span></a><a class="video-item" href="https://www.youtube.com/watch?v=b8GfaOVRqH8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/b8GfaOVRqH8/mqdefault.jpg" alt="프롬프트 캐싱 활용 - 테디노트" loading="lazy" width="160" height="90"><span>프롬프트 캐싱 활용 - 테디노트</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#prompt-caching">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

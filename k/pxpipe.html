@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>픽스파이프란? (PxPipe) — AI Wiki</title>
-<meta name="description" content="픽스파이프란? 이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.">
+<meta name="description" content="픽스파이프란? 이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트에 넣어야 할 때 쓴다.">
 <meta name="keywords" content="픽스파이프, PxPipe (Image-Based Token Compression), 토큰압축, 비전언어모델, 추론최적화, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="픽스파이프란? (PxPipe) — AI Wiki">
-<meta property="og:description" content="픽스파이프란? 이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.">
+<meta property="og:description" content="픽스파이프란? 이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트에 넣어야 할 때 쓴다.">
 <meta property="og:url" content="https://aiwiki.work/k/pxpipe.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-07-04">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="픽스파이프란? (PxPipe) — AI Wiki">
-<meta name="twitter:description" content="픽스파이프란? 이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.">
+<meta name="twitter:description" content="픽스파이프란? 이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트에 넣어야 할 때 쓴다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/pxpipe.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/pxpipe.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "픽스파이프",
   "alternateName": "PxPipe (Image-Based Token Compression)",
-  "description": "이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.",
+  "description": "이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트에 넣어야 할 때 쓴다.",
   "url": "https://aiwiki.work/k/pxpipe.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "픽스파이프 (PxPipe)",
-  "description": "이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.",
+  "description": "이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트에 넣어야 할 때 쓴다.",
   "url": "https://aiwiki.work/k/pxpipe.html",
   "datePublished": "2026-07-04",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">인프라</div>
   <h1>픽스파이프</h1>
   <div class="en">PxPipe (Image-Based Token Compression)</div>
-  <div class="body"><p>이미지를 모델에 넣을 때 생기는 시각 토큰 수를 줄여 비용과 응답 시간을 낮추는 압축 방식이다. 고해상도 이미지나 긴 영상, 긴 문서를 컨텍스트 안에 넣어야 할 때 쓴다.</p><h4>한눈에 보기</h4><p>PxPipe는 이미지를 픽셀 단계에서 다듬어 비전-언어 모델(VLM)에 들어가는 <strong>시각 토큰 수를 줄이는</strong> 압축 파이프라인이다. 이미지를 그대로 넣으면 토큰이 너무 많을 때, 겹치는 정보를 걸러 내고 필요한 정보만 남긴다. 방향은 크게 두 가지다.</p><div class="tbl"><table><tr><th>방식</th><th>하는 일</th><th>이럴 때 쓴다</th></tr><tr><td>그대로 넣기</td><td>모든 픽셀을 토큰으로 바꾼다</td><td>이미지가 적고 세부가 중요할 때</td></tr><tr><td><strong>시각 토큰 압축</strong></td><td>겹치는 영역·프레임을 줄인다</td><td>고해상도 이미지, 긴 영상</td></tr><tr><td>텍스트를 이미지로</td><td>문서를 그림으로 그려 넣는다</td><td>긴 문서를 적은 토큰에 담고 싶을 때</td></tr></table></div><h4>이미지 한 장이 토큰 수천 개가 된다</h4><p>VLM은 이미지 한 장을 수백에서 수천 개의 토큰으로 바꿔 읽는다. 고해상도 사진이나 프레임이 많은 영상을 넣으면 토큰이 크게 늘어 컨텍스트 창이 금방 차고, 비용과 응답 시간도 함께 늘어난다. 압축은 이 토큰 수를 줄여 같은 예산으로 더 많은 이미지나 프레임을 넣게 해 준다.</p><h4>영상은 프레임 사이 중복을 덜어 낸다</h4><p>영상은 이웃한 프레임이 거의 같아서 중복이 많다. CVPR 2025에서 발표된 PVC(Progressive Visual Token Compression)는 이미지를 '멈춘 영상'으로 보고, 프레임마다 적은 토큰만 쓰면서도 공간 세부와 시간 변화를 함께 살렸다. 이미지와 영상을 따로 처리하지 않고 하나의 파이프라인으로 다룬다는 점이 핵심이다.</p><p>반대 방향의 생각도 있다. 이미지 토큰 하나에 텍스트 토큰 여러 개 분량의 정보를 담을 수 있다는 연구가 나오면서, 긴 문서를 이미지로 그려 넣어 토큰을 아끼는 방법이 연구되고 있다. 다만 아직은 실험 단계다.</p><h4>직접 쓸 때는 해상도와 프레임부터 줄인다</h4><p>압축 모듈은 보통 모델 안에 학습돼 들어가므로, 일반 사용자가 API에서 바로 켜는 기능은 아니다. 대신 같은 효과를 입력 단계에서 낼 수 있다. 이미지를 필요한 만큼만 줄여 보내고, 영상은 모든 프레임 대신 일정 간격으로 뽑아 보낸다. OpenAI API처럼 이미지 상세도 옵션이 있으면 <code>detail: low</code>로 토큰을 크게 줄일 수 있다.</p><div class="tbl"><table><tr><th>작업</th><th>권장</th></tr><tr><td>사진 분류, 대략적인 장면 설명</td><td>해상도 낮게, 강하게 압축</td></tr><tr><td>영상 요약</td><td>프레임 간격을 넓혀 샘플링</td></tr><tr><td>표·차트·작은 글씨 읽기</td><td><strong>원본 해상도 유지</strong></td></tr></table></div><h4>세밀한 정보부터 사라진다</h4><p>압축을 세게 할수록 표, 차트, 작은 글씨 같은 세밀한 정보부터 사라진다. 정보가 촘촘한 영역은 덜 압축하는 적응형 방식이 필요하다. 또 압축 모듈을 따로 학습해야 하는 경우가 많아 기존 모델에 간단히 덧붙이기는 어렵다. 결국 내 작업에서 정확도가 얼마나 떨어지는지 직접 비교해 보고 압축 강도를 정하는 게 안전하다.</p></div>
+  <div class="body"><p>이미지를 비전-언어 모델(VLM)에 넣을 때 생기는 <strong>시각 토큰 수를 줄여</strong> 비용과 응답 시간을 낮추는 압축 파이프라인이다. 겹치는 영역과 프레임을 걸러 필요한 정보만 남기므로, <strong>고해상도 이미지나 긴 영상, 긴 문서</strong>를 컨텍스트에 넣어야 할 때 쓴다.</p><div class="tbl"><table><tr><th>방식</th><th>하는 일</th><th>이럴 때 쓴다</th></tr><tr><td>그대로 넣기</td><td>모든 픽셀을 토큰으로 바꾼다</td><td>이미지가 적고 세부가 중요할 때</td></tr><tr><td><strong>시각 토큰 압축</strong></td><td>겹치는 영역·프레임을 줄인다</td><td>고해상도 이미지, 긴 영상</td></tr><tr><td>텍스트를 이미지로</td><td>문서를 그림으로 그려 넣는다</td><td>긴 문서를 적은 토큰에 담고 싶을 때</td></tr></table></div><h4>이미지 한 장이 토큰 수천 개가 된다</h4><p>VLM은 이미지 한 장을 수백에서 수천 개의 토큰으로 바꿔 읽는다. 고해상도 사진이나 프레임이 많은 영상을 넣으면 토큰이 크게 늘어 컨텍스트 창이 금방 차고, 비용과 응답 시간도 함께 늘어난다. 압축은 이 토큰 수를 줄여 같은 예산으로 더 많은 이미지나 프레임을 넣게 해 준다.</p><h4>영상은 프레임 사이 중복을 덜어 낸다</h4><p>영상은 이웃한 프레임이 거의 같아서 중복이 많다. CVPR 2025에서 발표된 PVC(Progressive Visual Token Compression)는 이미지를 '멈춘 영상'으로 보고, 프레임마다 적은 토큰만 쓰면서도 공간 세부와 시간 변화를 함께 살렸다. 이미지와 영상을 따로 처리하지 않고 하나의 파이프라인으로 다룬다는 점이 핵심이다.</p><p>반대 방향의 생각도 있다. 이미지 토큰 하나에 텍스트 토큰 여러 개 분량의 정보를 담을 수 있다는 연구가 나오면서, 긴 문서를 이미지로 그려 넣어 토큰을 아끼는 방법이 연구되고 있다. 다만 아직은 실험 단계다.</p><h4>직접 쓸 때는 해상도와 프레임부터 줄인다</h4><p>압축 모듈은 보통 모델 안에 학습돼 들어가므로, 일반 사용자가 API에서 바로 켜는 기능은 아니다. 대신 같은 효과를 입력 단계에서 낼 수 있다. 이미지를 필요한 만큼만 줄여 보내고, 영상은 모든 프레임 대신 일정 간격으로 뽑아 보낸다. OpenAI API처럼 이미지 상세도 옵션이 있으면 <code>detail: low</code>로 토큰을 크게 줄일 수 있다.</p><div class="tbl"><table><tr><th>작업</th><th>권장</th></tr><tr><td>사진 분류, 대략적인 장면 설명</td><td>해상도 낮게, 강하게 압축</td></tr><tr><td>영상 요약</td><td>프레임 간격을 넓혀 샘플링</td></tr><tr><td>표·차트·작은 글씨 읽기</td><td><strong>원본 해상도 유지</strong></td></tr></table></div><h4>세밀한 정보부터 사라진다</h4><p>압축을 세게 할수록 표, 차트, 작은 글씨 같은 세밀한 정보부터 사라진다. 정보가 촘촘한 영역은 덜 압축하는 적응형 방식이 필요하다. 또 압축 모듈을 따로 학습해야 하는 경우가 많아 기존 모델에 간단히 덧붙이기는 어렵다. 결국 내 작업에서 정확도가 얼마나 떨어지는지 직접 비교해 보고 압축 강도를 정하는 게 안전하다.</p><h4>이미지가 많거나 영상이 길 때 주로 쓴다</h4><p>가장 흔한 건 <strong>긴 영상이나 이미지 묶음을 한 번에 넣어야 하는 작업</strong>이다. 그대로 넣으면 컨텍스트가 넘치거나 비용이 커지는 경우에 프레임과 해상도를 줄여 예산 안에 맞춘다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>영상 요약·질의응답</td><td>프레임을 일정 간격으로 뽑아 보내 긴 영상도 컨텍스트 안에 담는다</td></tr><tr><td>대량 이미지 분류·태깅</td><td>해상도를 낮추거나 <code>detail: low</code>로 장당 토큰을 줄여 비용을 아낀다</td></tr><tr><td>문서·스크린샷 읽기</td><td>글씨와 표가 있는 영역은 원본 해상도로 두고, 나머지만 줄여 보낸다</td></tr></table></div>
   <div class="tags"><span>#토큰압축</span><span>#비전언어모델</span><span>#추론최적화</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/inference-optimization.html">추론 최적화</a>, <a href="https://aiwiki.work/k/vision-language-model.html">비전-언어 모델</a>, <a href="https://aiwiki.work/k/context-window.html">컨텍스트 윈도우</a>, <a href="https://aiwiki.work/k/tokenization.html">토큰화</a>, <a href="https://aiwiki.work/k/multimodal.html">멀티모달</a>, <a href="https://aiwiki.work/k/context-compression.html">컨텍스트 압축</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/html/2412.09613v1" target="_blank" rel="nofollow noopener">PVC: Progressive Visual Token Compression for Unified Image and Video Processing</a> <span class="ref-type">논문</span></li><li><a href="https://www.seangoedecke.com/text-tokens-as-image-tokens" target="_blank" rel="nofollow noopener">Should LLMs just treat text content as an image?</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.aussieai.com/research/token-compression" target="_blank" rel="nofollow noopener">Token Compression - AussieAI Research</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   
   <a class="back" href="https://aiwiki.work/#pxpipe">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
