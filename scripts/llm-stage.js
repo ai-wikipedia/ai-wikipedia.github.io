@@ -450,10 +450,18 @@ function detStyle(example) {
 // 프롬프트에 넣을 모범 det (구성·톤 기준). 섹션 제목을 그대로 베끼지 않도록 프롬프트에서 따로 지시한다.
 function exampleDet() {
   try {
-    const e = loadEntries().find((x) => x.id === 'gpt-6-sol'); // 2026-10 개편 기준 문서 (한눈에 보기 + 표·그래프)
-    return e ? e.det : '';
+    const e = loadEntries().find((x) => x.id === 'gpt-6-sol'); // 2026-10 개편 기준 문서 (굵은 핵심 sum + 제목 없는 시작 + 사용처 섹션)
+    return e ? `sum: ${e.sum}\ndet: ${e.det}` : '';
   } catch (e) { return ''; }
 }
+
+// 형식 검사 (content·restyle·expand·reformat 공통) — 분량 검사는 각 모드가 따로 한다
+const formatProblems = (sum, det) => [
+  /^\s*<h4>한눈에 보기<\/h4>/.test(det || '') && 'det가 <h4>한눈에 보기</h4>로 시작함 — 요약은 sum이 맡고 det는 제목 없이 바로 시작',
+  !/<strong>/.test(sum || '') && 'sum에 <strong>으로 굵게 한 핵심 표현이 없음',
+  /<(?!\/?strong>)[^>]*>/.test(sum || '') && 'sum에 <strong> 외의 태그 사용',
+  /<(ul|ol|li)[ >]/.test(det || '') && '글머리표(ul/li) 사용 — 표로 바꿀 것',
+].filter(Boolean);
 
 async function runContent(a) {
   const selected = JSON.parse(readText(path.join(a.runDir, 'keywords-selected.json'), '[]'));
@@ -516,16 +524,15 @@ async function runContent(a) {
     if (entry.skip) { stat.skip++; log(`  skip ${id}: ${entry.skip_reason || '(사유 없음)'}`); dropped(item, `skip — ${entry.skip_reason || '사유 없음'}`); return; }
     let len = textLen(entry.det);
     // 분량·형식 검사 (restyle·expand와 같은 기준) — 어긋나면 이유를 알려 주고 한 번 더 쓰게 한다
-    const problemsOf = (det) => [
-      textLen(det) < THIN_THRESHOLD && `본문 ${textLen(det)}자 (공개 기준 ${THIN_THRESHOLD}자 미만 — 사용법·주의점을 구체적으로 채워 1,100~1,500자)`,
-      !/^\s*<h4>한눈에 보기<\/h4>/.test(det || '') && '첫 섹션이 <h4>한눈에 보기</h4>가 아님',
-      /<(ul|ol|li)[ >]/.test(det || '') && '글머리표(ul/li) 사용 — 표로 바꿀 것',
+    const problemsOf = (e) => [
+      textLen(e.det) < THIN_THRESHOLD && `본문 ${textLen(e.det)}자 (공개 기준 ${THIN_THRESHOLD}자 미만 — 사용법·주의점을 구체적으로 채워 1,100~1,500자)`,
+      ...formatProblems(e.sum, e.det),
     ].filter(Boolean);
-    let problems = problemsOf(entry.det);
+    let problems = problemsOf(entry);
     if (problems.length) {
       log(`  ${id}: ${problems.join(', ')} — 재시도`);
       const r2 = await callWithRetry(prompt + `\n\n## 다시 쓰기 요청\n직전 결과의 문제: ${problems.join(' / ')}. 같은 소스로 이 문제만 고쳐 다시 작성하라. 소스에 그만한 내용이 정말 없으면 skip=true.`, CONTENT_SCHEMA, CFG.content, `본문 ${id} (재작성)`, 1);
-      if (r2.ok) { stat.cost += r2.cost; if (!r2.data.skip && problemsOf(r2.data.det).length < problems.length) { entry = r2.data; len = textLen(entry.det); problems = problemsOf(entry.det); } }
+      if (r2.ok) { stat.cost += r2.cost; if (!r2.data.skip && problemsOf(r2.data).length < problems.length) { entry = r2.data; len = textLen(entry.det); problems = problemsOf(entry); } }
     }
     if (problems.length) { stat.skip++; log(`  skip ${id}: ${problems.join(', ')} — 반영 안 함`); dropped(item, problems.join(', ')); return; }
 
@@ -571,7 +578,7 @@ async function runTranslate(a) {
   await pool(ids, a.parallel, async (id) => {
     const e = D.find((x) => x.id === id);
     if (!e) { log(`  ! ${id}: 항목 없음`); stat.fail++; return; }
-    const sum = String(e.sum || '').replace(/<[^>]+>/g, '');
+    const sum = String(e.sum || ''); // <strong>도 번역본에 그대로 유지
     const r = await callWithRetry(fill(tpl, { TITLE: `${e.t} (${e.en || e.t})`, SUM: sum, DET: e.det }), TRANSLATE_SCHEMA, CFG.translate, `번역 ${id}`);
     if (!r.ok) { stat.fail++; return; }
     fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, translations: r.data }));
@@ -598,7 +605,7 @@ async function runRestyle(a) {
     const origLen = textLen(e.det);
     const lengthGuide = origLen >= 1800
       ? `기존 본문은 ${origLen}자로 길다. 독자에게 정말 필요한 내용만 남겨 1,100~1,500자로 줄인다.`
-      : `기존 본문은 ${origLen}자로 이미 짧다. 내용을 덜어내지 말고 구성(한눈에 보기·표·짧은 문단)만 바꿔서 1,100~1,400자를 유지한다. ${THIN_THRESHOLD}자 미만이 되면 사이트에 공개되지 않는다.`;
+      : `기존 본문은 ${origLen}자로 이미 짧다. 내용을 덜어내지 말고 구성(굵은 핵심 sum·표·짧은 문단)만 바꿔서 1,100~1,400자를 유지한다. ${THIN_THRESHOLD}자 미만이 되면 사이트에 공개되지 않는다.`;
     const prompt = fill(tpl, { DET_STYLE: style, TITLE: `${e.t} (${e.en || e.t})`, SUM: String(e.sum || '').replace(/<[^>]+>/g, ''), DET: e.det, LENGTH_GUIDE: lengthGuide });
     let r = await callWithRetry(prompt, RESTYLE_SCHEMA, CFG.content, `변환 ${id}`);
     if (!r.ok) { stat.fail++; return; }
@@ -613,8 +620,7 @@ async function runRestyle(a) {
     }
     const problems = [];
     if (len < THIN_THRESHOLD) problems.push(`본문 ${len}자`);
-    if (!/^\s*<h4>한눈에 보기<\/h4>/.test(r.data.det)) problems.push('첫 섹션이 한눈에 보기가 아님');
-    if (/<(ul|ol|li)[ >]/.test(r.data.det)) problems.push('글머리표 사용');
+    problems.push(...formatProblems(r.data.sum, r.data.det));
     if (problems.length) { log(`  ✗ ${id}: ${problems.join(', ')} — 반영 안 함`); stat.fail++; return; }
     fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, sum: r.data.sum, det: r.data.det }));
     log(`  ✓ ${id} (${textLen(e.det)}자 → ${len}자)`);
@@ -655,8 +661,7 @@ async function runExpand(a) {
     }
     const problems = [];
     if (len < THIN_THRESHOLD) problems.push(`본문 ${len}자`);
-    if (!/^\s*<h4>한눈에 보기<\/h4>/.test(r.data.det)) problems.push('첫 섹션이 한눈에 보기가 아님');
-    if (/<(ul|ol|li)[ >]/.test(r.data.det)) problems.push('글머리표 사용');
+    problems.push(...formatProblems(r.data.sum, r.data.det));
     if (problems.length) { log(`  ✗ ${id}: ${problems.join(', ')} — 반영 안 함`); stat.fail++; return; }
     fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, sum: r.data.sum, det: r.data.det }));
     log(`  ✓ ${id} (${textLen(e.det)}자 → ${len}자)`);
@@ -666,9 +671,48 @@ async function runExpand(a) {
   process.stdout.write(JSON.stringify(stat));
 }
 
+// ── 기존 글을 바뀐 형식으로 (2026-10-20): 한눈에 보기 제목 제거 + 굵은 핵심 sum + 마지막 사용처 섹션 ──
+// 나머지 섹션은 그대로 두고 앞뒤만 고친다. --ids 없으면 det가 한눈에 보기로 시작하는 공개 항목 전체
+const REFORMAT_SCHEMA = { type: 'object', properties: { sum: { type: 'string' }, det: { type: 'string' }, usage_added: { type: 'boolean' } }, required: ['sum', 'det', 'usage_added'] };
+async function runReformat(a) {
+  const D = loadEntries();
+  let ids = String(a.ids || '').split(',').map((x) => x.trim()).filter(Boolean);
+  if (!ids.length) ids = D.filter((e) => textLen(e.det) >= THIN_THRESHOLD && /^\s*<h4>한눈에 보기<\/h4>/.test(e.det)).map((e) => e.id).slice(0, a.limit || 1000);
+  const tpl = readText(path.join(PROMPTS, 'reformat.md'));
+  const style = detStyle(exampleDet());
+  fs.mkdirSync(a.out, { recursive: true });
+  const stat = { ok: 0, fail: 0, usage: 0, cost: 0 };
+  log(`  형식 변환 대상 ${ids.length}개`);
+  await pool(ids, a.parallel, async (id) => {
+    const e = D.find((x) => x.id === id);
+    if (!e) { log(`  ! ${id}: 항목 없음`); stat.fail++; return; }
+    if (fs.existsSync(path.join(a.out, `${id}.json`))) { stat.ok++; return; } // 중단 후 재실행 시 이어서
+    const origLen = textLen(e.det);
+    const minLen = Math.max(THIN_THRESHOLD, Math.min(1100, origLen));
+    const prompt = fill(tpl, { DET_STYLE: style, TITLE: `${e.t} (${e.en || e.t})`, SUM: e.sum, DET: e.det, ORIG_LEN: String(origLen), MIN_LEN: String(minLen) });
+    const problemsOf = (d) => [textLen(d.det) < minLen && `det ${textLen(d.det)}자 (${minLen}자 이상 필요)`, ...formatProblems(d.sum, d.det)].filter(Boolean);
+    let r = await callWithRetry(prompt, REFORMAT_SCHEMA, CFG.content, `형식 ${id}`);
+    if (!r.ok) { stat.fail++; return; }
+    stat.cost += r.cost;
+    let problems = problemsOf(r.data);
+    if (problems.length) {
+      log(`  ↻ ${id}: ${problems.join(', ')} — 재시도`);
+      const r2 = await callWithRetry(prompt + `\n\n## 다시 쓰기 요청\n직전 결과의 문제: ${problems.join(' / ')}. 이 문제만 고쳐 다시 출력하라. 사실을 지어내지 마라.`, REFORMAT_SCHEMA, CFG.content, `형식 재시도 ${id}`, 1);
+      if (r2.ok) { stat.cost += r2.cost; if (problemsOf(r2.data).length < problems.length) { r = r2; problems = problemsOf(r.data); } }
+    }
+    if (problems.length) { log(`  ✗ ${id}: ${problems.join(', ')} — 반영 안 함`); stat.fail++; return; }
+    if (r.data.usage_added) stat.usage++;
+    fs.writeFileSync(path.join(a.out, `${id}.json`), JSON.stringify({ id, sum: r.data.sum, det: r.data.det }));
+    log(`  ✓ ${id} (${origLen}자 → ${textLen(r.data.det)}자${r.data.usage_added ? ', 사용처 추가' : ''})`);
+    stat.ok++;
+  });
+  log(`  형식 변환 요약: 성공 ${stat.ok} / 실패 ${stat.fail} / 사용처 추가 ${stat.usage}`);
+  process.stdout.write(JSON.stringify(stat));
+}
+
 (async () => {
   const a = parseArgs(process.argv.slice(2));
-  const ok = (a.mode === 'translate' && (a.ids || a.stale) && a.out) || (a.mode === 'restyle' && a.ids && a.out) || (a.mode === 'expand' && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
+  const ok = (a.mode === 'translate' && (a.ids || a.stale) && a.out) || (a.mode === 'restyle' && a.ids && a.out) || (a.mode === 'expand' && a.out) || (a.mode === 'reformat' && a.out) || (a.runDir && ['select', 'content'].includes(a.mode));
   if (!ok) {
     console.error('usage: node scripts/llm-stage.js <select|content> --run-dir DIR [--max N] [--parallel N]\n       node scripts/llm-stage.js translate --ids a,b --out DIR [--parallel N]');
     process.exit(2);
@@ -677,5 +721,6 @@ async function runExpand(a) {
   else if (a.mode === 'content') await runContent(a);
   else if (a.mode === 'restyle') await runRestyle(a);
   else if (a.mode === 'expand') await runExpand(a);
+  else if (a.mode === 'reformat') await runReformat(a);
   else await runTranslate(a);
 })();

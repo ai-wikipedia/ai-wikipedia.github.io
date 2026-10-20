@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>컨텍스트 윈도우란? (Context Window) — AI Wiki</title>
-<meta name="description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.">
+<meta name="description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 작업 기억의 크기로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 실제로 품질이 유지되는 길">
 <meta name="keywords" content="컨텍스트 윈도우, Context Window, 토큰, 제한, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="컨텍스트 윈도우란? (Context Window) — AI Wiki">
-<meta property="og:description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.">
+<meta property="og:description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 작업 기억의 크기로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 실제로 품질이 유지되는 길">
 <meta property="og:url" content="https://aiwiki.work/k/context-window.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2026-10-10">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="컨텍스트 윈도우란? (Context Window) — AI Wiki">
-<meta name="twitter:description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.">
+<meta name="twitter:description" content="컨텍스트 윈도우란? 컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 작업 기억의 크기로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 실제로 품질이 유지되는 길">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/context-window.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/context-window.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "컨텍스트 윈도우",
   "alternateName": "Context Window",
-  "description": "컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.",
+  "description": "컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 작업 기억의 크기로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 실제로 품질이 유지되는 길이를 따져 봐야 한다.",
   "url": "https://aiwiki.work/k/context-window.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "컨텍스트 윈도우 (Context Window)",
-  "description": "컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.",
+  "description": "컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 작업 기억의 크기로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 실제로 품질이 유지되는 길이를 따져 봐야 한다",
   "url": "https://aiwiki.work/k/context-window.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2026-10-10",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">인프라</div>
   <h1>컨텍스트 윈도우</h1>
   <div class="en">Context Window</div>
-  <div class="body"><p>컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 토큰 수의 상한선이다. 긴 문서나 코드베이스를 한꺼번에 맡기거나 긴 대화를 이어갈 때 이 한도와 실제로 품질이 유지되는 길이를 따져 봐야 한다.</p><h4>한눈에 보기</h4><p>컨텍스트 윈도우는 모델이 지금 이 순간 볼 수 있는 <strong>작업 기억의 크기</strong>다. 대화의 입력과 출력을 모두 토큰으로 세며, 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 책상 위에 펼쳐 둘 수 있는 서류 양이 정해져 있어서 새 서류를 올리려면 오래된 서류를 치워야 하는 상황과 비슷하다.</p><div class="tbl"><table><tr><th>시기</th><th>보통 크기</th><th>체감 분량</th></tr><tr><td>2023년</td><td>4천~3만 토큰</td><td>긴 문서 몇 개</td></tr><tr><td><strong>2026년 플래그십</strong></td><td><strong>100만 토큰 안팎</strong></td><td>소설 열 권</td></tr></table></div><h4>광고된 크기를 다 잘 쓰지는 못한다</h4><p>100만 토큰을 받을 수 있다고 해서 100만 토큰을 모두 잘 활용하는 것은 아니다. 품질이 유지되는 실제 길이는 광고된 크기의 절반 정도에 그치는 경우가 많다. 모델은 중간에 있는 정보를 앞뒤보다 덜 쓰고(<strong>Lost in the Middle</strong>), 관련 없는 내용이 길게 쌓일수록 판단도 점점 흐려진다.</p><p>그래서 중요한 정보는 앞이나 뒤에 두고, 다 쓴 대화나 관련 없는 자료는 과감히 치우는 게 좋다. 새 모델을 고를 때도 윈도우 크기보다 내 작업 길이에서 품질이 유지되는지 직접 재 보는 게 확실하다.</p><h4>긴 작업은 끊고, 규칙은 파일로 남긴다</h4><p>Claude Code처럼 오래 쓰는 도구에서는 한계에 가까워지면 이전 대화가 자동으로 요약·압축되고, 이때 초반에 정한 세부 사항이 옅어질 수 있다. 긴 작업은 단계마다 세션을 끊고, 규칙과 진행 상태를 <code>CLAUDE.md</code> 같은 파일로 남겨 두면 안전하다.</p><div class="tbl"><table><tr><th>상황</th><th>이렇게 한다</th></tr><tr><td>대화가 길어짐</td><td>세션을 끊고 상태를 파일로 남긴다</td></tr><tr><td>같은 문서·프롬프트를 반복해서 보냄</td><td>프롬프트 캐싱으로 비용을 줄인다</td></tr><tr><td>문서가 너무 많음</td><td>RAG로 관련 조각만 골라 넣는다</td></tr><tr><td>큰 탐색 작업</td><td>서브에이전트에 나눠 맡기고 결론만 모은다</td></tr></table></div><h4>넣을수록 비용이 커진다</h4><p>API는 입력 토큰 수만큼 돈을 받으므로, 요청마다 큰 문서를 통째로 보내면 청구서도 그만큼 커진다. 윈도우가 무한정 커지지 않는 것도 같은 이유다. 길이가 늘수록 계산량과 GPU 메모리가 크게 늘고, 그 비용은 결국 요금에 반영된다.</p><h4>큰 윈도우가 빛나는 순간</h4><p>중간 규모 코드베이스 전체나 계약서 수십 건을 한 번에 올려놓고 전체 구조나 조항끼리 모순되는 곳을 묻는 작업에는 큰 윈도우가 확실히 유리하다. 조각으로 나눠 검색하는 방식으로는 잡기 어려운 전체 그림을 한 번에 볼 수 있다. 결국 <strong>무엇을 넣을지</strong> 고르는 것이 크기만큼 중요하고, 이렇게 넣을 정보를 설계하는 일을 컨텍스트 엔지니어링이라고 부른다.</p></div>
+  <div class="body"><p>컨텍스트 윈도우는 LLM이 한 번에 볼 수 있는 <strong>작업 기억의 크기</strong>로, 입력과 출력을 합친 토큰 수의 상한선이며 이 범위를 벗어난 내용은 모델에게 없는 것과 같다. 긴 문서나 코드베이스를 통째로 맡기거나 긴 대화를 이어갈 때는 이 한도와 함께 <strong>실제로 품질이 유지되는 길이</strong>를 따져 봐야 한다.</p><div class="tbl"><table><tr><th>시기</th><th>보통 크기</th><th>체감 분량</th></tr><tr><td>2023년</td><td>4천~3만 토큰</td><td>긴 문서 몇 개</td></tr><tr><td><strong>2026년 플래그십</strong></td><td><strong>100만 토큰 안팎</strong></td><td>소설 열 권</td></tr></table></div><p>책상 위에 펼쳐 둘 수 있는 서류 양이 정해져 있어서 새 서류를 올리려면 오래된 서류를 치워야 하는 상황과 비슷하다.</p><h4>광고된 크기를 다 잘 쓰지는 못한다</h4><p>100만 토큰을 받을 수 있다고 해서 100만 토큰을 모두 잘 활용하는 것은 아니다. 품질이 유지되는 실제 길이는 광고된 크기의 절반 정도에 그치는 경우가 많다. 모델은 중간에 있는 정보를 앞뒤보다 덜 쓰고(<strong>Lost in the Middle</strong>), 관련 없는 내용이 길게 쌓일수록 판단도 점점 흐려진다.</p><p>그래서 중요한 정보는 앞이나 뒤에 두고, 다 쓴 대화나 관련 없는 자료는 과감히 치우는 게 좋다. 새 모델을 고를 때도 윈도우 크기보다 내 작업 길이에서 품질이 유지되는지 직접 재 보는 게 확실하다.</p><h4>긴 작업은 끊고, 규칙은 파일로 남긴다</h4><p>Claude Code처럼 오래 쓰는 도구에서는 한계에 가까워지면 이전 대화가 자동으로 요약·압축되고, 이때 초반에 정한 세부 사항이 옅어질 수 있다. 긴 작업은 단계마다 세션을 끊고, 규칙과 진행 상태를 <code>CLAUDE.md</code> 같은 파일로 남겨 두면 안전하다.</p><div class="tbl"><table><tr><th>상황</th><th>이렇게 한다</th></tr><tr><td>대화가 길어짐</td><td>세션을 끊고 상태를 파일로 남긴다</td></tr><tr><td>같은 문서·프롬프트를 반복해서 보냄</td><td>프롬프트 캐싱으로 비용을 줄인다</td></tr><tr><td>문서가 너무 많음</td><td>RAG로 관련 조각만 골라 넣는다</td></tr><tr><td>큰 탐색 작업</td><td>서브에이전트에 나눠 맡기고 결론만 모은다</td></tr></table></div><h4>넣을수록 비용이 커진다</h4><p>API는 입력 토큰 수만큼 돈을 받으므로, 요청마다 큰 문서를 통째로 보내면 청구서도 그만큼 커진다. 윈도우가 무한정 커지지 않는 것도 같은 이유다. 길이가 늘수록 계산량과 GPU 메모리가 크게 늘고, 그 비용은 결국 요금에 반영된다.</p><h4>큰 윈도우가 빛나는 순간</h4><p>중간 규모 코드베이스 전체나 계약서 수십 건을 한 번에 올려놓고 전체 구조나 조항끼리 모순되는 곳을 묻는 작업에는 큰 윈도우가 확실히 유리하다. 조각으로 나눠 검색하는 방식으로는 잡기 어려운 전체 그림을 한 번에 볼 수 있다. 결국 <strong>무엇을 넣을지</strong> 고르는 것이 크기만큼 중요하고, 이렇게 넣을 정보를 설계하는 일을 컨텍스트 엔지니어링이라고 부른다.</p><h4>긴 자료를 통째로 넣고 묻는 데 주로 쓴다</h4><p>가장 흔한 건 <strong>여러 파일이나 긴 문서를 한 번에 넣고</strong> 질문하는 방식이다. 윈도우가 넉넉해도 길어지면 품질과 비용이 함께 나빠지므로, 필요한 만큼만 넣고 넘치면 요약하거나 나눠 맡긴다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>코딩 에이전트</td><td>관련 파일을 한꺼번에 읽혀 구조를 파악하고 수정, 대화가 길어지면 압축하거나 세션을 새로 연다</td></tr><tr><td>긴 문서 분석</td><td>계약서·보고서·논문을 통째로 올려 요약하거나 서로 어긋나는 부분을 찾는다</td></tr><tr><td>긴 대화</td><td>앞서 나눈 내용을 기억한 채 이어 묻고, 너무 길어지면 요약을 새 대화로 넘긴다</td></tr><tr><td>사내 문서 검색</td><td>검색으로 고른 관련 조각만 윈도우에 넣어 답하게 한다</td></tr></table></div></div>
   <div class="tags"><span>#토큰</span><span>#제한</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/tokenization.html">토큰화</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/rag.html">RAG</a>, <a href="https://aiwiki.work/k/engram.html">엔그램</a>, <a href="https://aiwiki.work/k/step-5-preview.html">스텝 5 프리뷰</a>, <a href="https://aiwiki.work/k/agent-memory-benchmark.html">에이전트 메모리 벤치마크</a>, <a href="https://aiwiki.work/k/sliding-window-attention.html">슬라이딩 윈도우 어텐션</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://docs.anthropic.com/en/docs/build-with-claude/context-windows" target="_blank" rel="nofollow noopener">Context windows – Anthropic Docs</a> <span class="ref-type">공식</span></li><li><a href="https://www.ibm.com/think/topics/context-window" target="_blank" rel="nofollow noopener">What is a context window? – IBM</a> <span class="ref-type">블로그</span></li><li><a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="nofollow noopener">Lost in the Middle: How Language Models Use Long Contexts – arXiv</a> <span class="ref-type">논문</span></li><li><a href="https://research.trychroma.com/context-rot" target="_blank" rel="nofollow noopener">Context Rot – Chroma Research</a> <span class="ref-type">블로그</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/mqdefault.jpg" alt="Intro to Large Language Models – Andrej Karpathy" loading="lazy" width="160" height="90"><span>Intro to Large Language Models – Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zjkBMFhNj_g/mqdefault.jpg" alt="Intro to LLMs - Andrej Karpathy" loading="lazy" width="160" height="90"><span>Intro to LLMs - Andrej Karpathy</span></a><a class="video-item" href="https://www.youtube.com/watch?v=CjvY57yXGS0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CjvY57yXGS0/mqdefault.jpg" alt="Understanding How ChatGPT Remembers" loading="lazy" width="160" height="90"><span>Understanding How ChatGPT Remembers</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#context-window">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-10</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

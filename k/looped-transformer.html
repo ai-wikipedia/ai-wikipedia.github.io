@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>루프형 트랜스포머란? (Looped Transformer) — AI Wiki</title>
-<meta name="description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.">
+<meta name="description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.">
 <meta name="keywords" content="루프형 트랜스포머, Looped Transformer (Recurrent Depth), recurrent depth, weight sharing, latent reasoning, architecture, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="루프형 트랜스포머란? (Looped Transformer) — AI Wiki">
-<meta property="og:description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.">
+<meta property="og:description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.">
 <meta property="og:url" content="https://aiwiki.work/k/looped-transformer.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-10-19">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="루프형 트랜스포머란? (Looped Transformer) — AI Wiki">
-<meta name="twitter:description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.">
+<meta name="twitter:description" content="루프형 트랜스포머란? 같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/looped-transformer.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/looped-transformer.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "루프형 트랜스포머",
   "alternateName": "Looped Transformer (Recurrent Depth)",
-  "description": "같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.",
+  "description": "같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.",
   "url": "https://aiwiki.work/k/looped-transformer.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "루프형 트랜스포머 (Looped Transformer)",
-  "description": "같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.",
+  "description": "같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.",
   "url": "https://aiwiki.work/k/looped-transformer.html",
   "datePublished": "2026-10-19",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>루프형 트랜스포머</h1>
   <div class="en">Looped Transformer (Recurrent Depth)</div>
-  <div class="body"><p>같은 트랜스포머 층을 여러 번 반복해 통과시켜, 가중치는 작은 모델만큼만 저장하면서 더 깊은 모델처럼 계산하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓴다.</p><h4>한눈에 보기</h4><p>루프형 트랜스포머는 같은 트랜스포머 블록을 <strong>여러 번 반복해서 통과</strong>시키는 구조다. 한 번 지나간 결과를 같은 층에 다시 넣어, 문단을 여러 번 다시 읽듯 표현을 다듬는다. 작은 모델의 가중치만 저장하면서 더 깊은 모델처럼 계산하고 싶을 때 쓴다. recurrent depth, 깊이 방향 가중치 공유라고도 부른다.</p><div class="tbl"><table><tr><th>항목</th><th>일반 트랜스포머</th><th>루프형</th></tr><tr><td>층 사용</td><td>각 층 한 번</td><td>같은 층 여러 번</td></tr><tr><td>저장하는 가중치</td><td>층 수만큼</td><td><strong>적게 (재사용)</strong></td></tr><tr><td>실제 계산 깊이</td><td>층 수</td><td>층 수 × 반복 횟수</td></tr></table></div><p class="note">서로 다른 블록 L개를 T번 돌리면 블록 적용 횟수는 L×T가 된다. 일반 트랜스포머는 T=1인 경우다.</p><h4>메모리는 아끼지만 계산은 그대로 든다</h4><p>반복하는 만큼 계산량도 늘어난다. 저장 공간은 작은 모델 크기로 유지되지만, 응답 속도와 연산 비용은 늘어난 깊이만큼 든다. 그래서 파라미터 수가 같은 모델을 이기는 건 쉬워도, <strong>계산량이 같은 일반 모델</strong>을 이기는 게 진짜 과제다.</p><p>최근 Loopie 연구는 저장하는 층 수를 절반으로 줄이고, 아낀 몫을 MoE 구조에 다시 투자하는 방식으로 계산량이 같은 일반 트랜스포머를 앞섰다고 보고했다.</p><h4>어디를 반복하느냐로 갈린다</h4><div class="tbl"><table><tr><th>방식</th><th>반복 단위</th><th>특징</th></tr><tr><td>유니버설 트랜스포머</td><td>블록 전체</td><td>토큰마다 멈출 시점을 따로 정한다</td></tr><tr><td>스택 루프</td><td>여러 층 묶음</td><td>디코더 전용 언어 모델에 맞춘 방식</td></tr><tr><td>층 루프 (Loopie)</td><td>층 하나씩</td><td>한 층을 반복한 뒤 다음 층으로 넘긴다</td></tr><tr><td>순환 루프 (RLT)</td><td>토큰 사이</td><td>이전 토큰의 상태를 다음 토큰에 넘긴다</td></tr></table></div><p>RLT는 입력이 길어질수록 계산 경로도 길어지게 만들어, 입력마다 상태를 갱신해야 하는 상태 추적 문제를 노린다.</p><h4>이럴 때 고려한다</h4><p>메모리가 빠듯한 환경에서 작은 모델의 품질을 끌어올리고 싶을 때 후보가 된다. 3B급 모델이 층을 재사용해 파라미터를 늘리지 않고 용량을 키운 사례가 있다. 반대로 지연 시간이 가장 중요하다면 반복 횟수만큼 느려진다는 점부터 따져야 한다.</p><p>반복형 학습 알고리즘을 흉내 내야 하는 문제나, 학습 때보다 긴 입력을 풀어야 하는 문제에서도 쓰인다. 반복 구조가 알고리즘의 단계 반복과 잘 맞아, 더 적은 파라미터로 일반 트랜스포머와 비슷한 성능을 낸다는 연구가 있다.</p><h4>'숨은 추론' 소문은 걸러 듣자</h4><p>GPT-6 Astra가 루프형이라는 보도와 함께 추론 과정을 감춘다는 말도 퍼졌다. 그러나 라슈카는 루프 자체는 층을 재사용하는 작은 구조 변경일 뿐이고, 사고의 사슬을 감춘다는 설명도 반드시 맞지는 않다고 짚는다. 이론적으로도 루프가 사고의 사슬보다 새로운 능력을 주지는 않는다는 지적이 있다.</p></div>
+  <div class="body"><p>같은 트랜스포머 층을 <strong>여러 번 반복해 통과</strong>시켜, 가중치는 작은 모델만큼만 저장하면서 <strong>더 깊은 모델처럼 계산</strong>하는 구조다. 메모리는 빠듯한데 작은 모델의 품질을 끌어올리고 싶을 때 쓰며, 일반 트랜스포머와 달리 저장 공간은 줄지만 계산량은 반복한 만큼 늘어난다.</p><div class="tbl"><table><tr><th>항목</th><th>일반 트랜스포머</th><th>루프형</th></tr><tr><td>층 사용</td><td>각 층 한 번</td><td>같은 층 여러 번</td></tr><tr><td>저장하는 가중치</td><td>층 수만큼</td><td><strong>적게 (재사용)</strong></td></tr><tr><td>실제 계산 깊이</td><td>층 수</td><td>층 수 × 반복 횟수</td></tr></table></div><p class="note">서로 다른 블록 L개를 T번 돌리면 블록 적용 횟수는 L×T가 된다. 일반 트랜스포머는 T=1인 경우다.</p><p>한 번 지나간 결과를 같은 층에 다시 넣어, 문단을 여러 번 다시 읽듯 표현을 다듬는다. recurrent depth, 깊이 방향 가중치 공유라고도 부른다.</p><h4>메모리는 아끼지만 계산은 그대로 든다</h4><p>반복하는 만큼 계산량도 늘어난다. 저장 공간은 작은 모델 크기로 유지되지만, 응답 속도와 연산 비용은 늘어난 깊이만큼 든다. 그래서 파라미터 수가 같은 모델을 이기는 건 쉬워도, <strong>계산량이 같은 일반 모델</strong>을 이기는 게 진짜 과제다.</p><p>최근 Loopie 연구는 저장하는 층 수를 절반으로 줄이고, 아낀 몫을 MoE 구조에 다시 투자하는 방식으로 계산량이 같은 일반 트랜스포머를 앞섰다고 보고했다.</p><h4>어디를 반복하느냐로 갈린다</h4><div class="tbl"><table><tr><th>방식</th><th>반복 단위</th><th>특징</th></tr><tr><td>유니버설 트랜스포머</td><td>블록 전체</td><td>토큰마다 멈출 시점을 따로 정한다</td></tr><tr><td>스택 루프</td><td>여러 층 묶음</td><td>디코더 전용 언어 모델에 맞춘 방식</td></tr><tr><td>층 루프 (Loopie)</td><td>층 하나씩</td><td>한 층을 반복한 뒤 다음 층으로 넘긴다</td></tr><tr><td>순환 루프 (RLT)</td><td>토큰 사이</td><td>이전 토큰의 상태를 다음 토큰에 넘긴다</td></tr></table></div><p>RLT는 입력이 길어질수록 계산 경로도 길어지게 만들어, 입력마다 상태를 갱신해야 하는 상태 추적 문제를 노린다.</p><h4>이럴 때 고려한다</h4><p>메모리가 빠듯한 환경에서 작은 모델의 품질을 끌어올리고 싶을 때 후보가 된다. 3B급 모델이 층을 재사용해 파라미터를 늘리지 않고 용량을 키운 사례가 있다. 반대로 지연 시간이 가장 중요하다면 반복 횟수만큼 느려진다는 점부터 따져야 한다.</p><p>반복형 학습 알고리즘을 흉내 내야 하는 문제나, 학습 때보다 긴 입력을 풀어야 하는 문제에서도 쓰인다. 반복 구조가 알고리즘의 단계 반복과 잘 맞아, 더 적은 파라미터로 일반 트랜스포머와 비슷한 성능을 낸다는 연구가 있다.</p><h4>'숨은 추론' 소문은 걸러 듣자</h4><p>GPT-6 Astra가 루프형이라는 보도와 함께 추론 과정을 감춘다는 말도 퍼졌다. 그러나 라슈카는 루프 자체는 층을 재사용하는 작은 구조 변경일 뿐이고, 사고의 사슬을 감춘다는 설명도 반드시 맞지는 않다고 짚는다. 이론적으로도 루프가 사고의 사슬보다 새로운 능력을 주지는 않는다는 지적이 있다.</p><h4>작은 모델과 구조 실험에서 주로 쓴다</h4><p>아직은 완성된 제품보다 <strong>작은 모델을 직접 학습하거나 구조를 실험</strong>할 때 주로 쓰는 기법이다. 반복 횟수를 추론 때 바꿀 수 있는 모델이라면, 쉬운 입력은 적게 돌리고 어려운 입력은 많이 돌려 속도와 품질을 맞춘다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>메모리가 작은 기기의 모델</td><td>올려 둘 가중치는 작게 유지하고, 같은 층을 반복해 품질을 보탠다</td></tr><tr><td>모델 구조 연구</td><td>반복 단위와 횟수를 바꿔 가며 계산량이 같은 일반 모델과 비교한다</td></tr><tr><td>알고리즘·상태 추적 문제</td><td>단계를 여러 번 밟아야 하거나 입력이 긴 문제에서 반복 횟수를 늘려 푼다</td></tr><tr><td>추론 때 계산 조절</td><td>어려운 질문에만 반복을 더 돌려 더 오래 생각하게 한다</td></tr></table></div></div>
   <div class="tags"><span>#recurrent depth</span><span>#weight sharing</span><span>#latent reasoning</span><span>#architecture</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/transformer.html">트랜스포머</a>, <a href="https://aiwiki.work/k/gpt-6-astra.html">GPT-6 아스트라</a>, <a href="https://aiwiki.work/k/latent-reasoning.html">잠재 공간 추론</a>, <a href="https://aiwiki.work/k/test-time-compute.html">추론 시 연산</a>, <a href="https://aiwiki.work/k/moe.html">MoE</a>, <a href="https://aiwiki.work/k/chain-of-thought.html">사고의 사슬</a>, <a href="https://aiwiki.work/k/small-language-model.html">소형 언어 모델</a>, <a href="https://aiwiki.work/k/parameter.html">파라미터</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://sebastianraschka.com/llm-architecture-gallery/looped-depth-sharing" target="_blank" rel="nofollow noopener">Looped Transformer | Sebastian Raschka, PhD</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://sebastianraschka.com/blog/2026/openai-astra-looped-transformers.html" target="_blank" rel="nofollow noopener">OpenAI Astra and Looped Transformers | Sebastian Raschka, PhD</a> <span class="ref-type">블로그</span></li><li><a href="https://x.com/neural_avb/article/2081741935883223196" target="_blank" rel="nofollow noopener">What are Looped Transformers? Explained clearly | AVB</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://yifanzhang-pro.github.io/recurrent-looped-tranformer" target="_blank" rel="nofollow noopener">Recurrent Looped Transformer</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/abs/2311.12424" target="_blank" rel="nofollow noopener">Looped Transformers are Better at Learning Learning Algorithms</a> <span class="ref-type">논문</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=pDsTcrRVNc0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/pDsTcrRVNc0/mqdefault.jpg" alt="LLMs Don't Need More Parameters. They Need Loops." loading="lazy" width="160" height="90"><span>LLMs Don't Need More Parameters. They Need Loops.</span></a><a class="video-item" href="https://www.youtube.com/watch?v=KT4n-z_4QJU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/KT4n-z_4QJU/mqdefault.jpg" alt="OpenAI Astra and Recurrent Depth / Looped Transformers" loading="lazy" width="160" height="90"><span>OpenAI Astra and Recurrent Depth / Looped Transformers</span></a><a class="video-item" href="https://www.youtube.com/watch?v=ebZde4EVTSo" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/ebZde4EVTSo/mqdefault.jpg" alt="GPT-6 Astra의 비밀?｜Recurrent Depth와 Looped Transformer" loading="lazy" width="160" height="90"><span>GPT-6 Astra의 비밀?｜Recurrent Depth와 Looped Transformer</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#looped-transformer">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>

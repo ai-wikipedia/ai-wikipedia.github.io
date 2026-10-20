@@ -337,6 +337,10 @@
   .read-next-card:hover { background:#f5f2ed; border-color:#d5d0c8; }
   .read-next-card.visited .rnc-title { color:#9a958e; }
   .read-next-card.visited:hover .rnc-title { color:#2d2a26; }
+  .read-next-card.rn-more { display:none; }
+  .read-next.all .read-next-card.rn-more { display:block; }
+  .rn-toggle { display:block; margin:12px auto 0; background:none; border:1px solid #e4dfd8; border-radius:999px; padding:7px 16px; font-size:12px; font-family:inherit; color:#6a6560; cursor:pointer; }
+  .rn-toggle:hover { background:#f5f2ed; color:#2d2a26; }
   .rnc-title { font-size:13px; font-weight:700; color:#2d2a26; margin-bottom:4px; }
   .rnc-sum { font-size:11px; color:#8a8478; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
   .random-btn { background:none; border:none; color:#a09888; cursor:pointer; padding:6px; flex-shrink:0; display:flex; align-items:center; }
@@ -359,11 +363,11 @@
   .graph-legend { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
   .graph-legend span { font-size:11px; color:#6a6560; display:flex; align-items:center; gap:4px; cursor:pointer; }
   .graph-legend span:hover { color:#2d2a26; }
+  .graph-legend .gl-more { margin-left:auto; color:#a09888; cursor:default; }
   .gl-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; display:inline-block; }
   .graph-canvas-wrap { position:relative; background:#fff; border:1px solid #e4dfd8; border-radius:16px; overflow:hidden; }
-  #graph-canvas { width:100%; display:block; cursor:grab; }
-  #graph-canvas:active { cursor:grabbing; }
-  .graph-tooltip { position:absolute; padding:6px 10px; background:rgba(45,42,38,0.9); color:#fff; font-size:11px; border-radius:6px; pointer-events:none; display:none; z-index:5; white-space:nowrap; }
+  #graph-canvas { width:100%; display:block; }
+    .graph-tooltip { position:absolute; padding:6px 10px; background:rgba(45,42,38,0.9); color:#fff; font-size:11px; border-radius:6px; pointer-events:none; display:none; z-index:5; white-space:nowrap; }
   .detail-tools { display:flex; gap:12px; margin-top:16px; }
   .detail-tools button { background:none; border:1px solid #d5d0c8; border-radius:8px; padding:6px 14px; font-size:12px; font-family:inherit; color:#a09888; cursor:pointer; }
   .detail-tools button:hover { border-color:#b0a898; color:#6a6560; }
@@ -668,7 +672,7 @@ function open_m(id, pushState) {
   markVisited(id);
   if (pushState !== false) { if (!document.getElementById('detail').classList.contains('open')) _scrollY = window.scrollY; history.pushState({modal:id}, '', '#'+id); }
   const _tr = LANG!=='ko'&&I18N_CONTENT[LANG]&&I18N_CONTENT[LANG][e.id]||null;
-  const rels = (e.rel||[]).map(r=>D.find(x=>x.id===r)).filter(Boolean);
+  const rels = relRank(e).map(r=>D.find(x=>x.id===r));
   const bm = isBookmarked(id);
   const bodyHtml = autoLinkKw(`<p>${_tr?_tr.sum:e.sum}</p>${_tr?_tr.det:e.det}`, id);
   const {prev,next} = getPrevNext(id);
@@ -692,7 +696,7 @@ function open_m(id, pushState) {
     ${(e.refs&&e.refs.length)||(e.videos&&e.videos.length)?`<div class="modal-refs">
       ${e.refs&&e.refs.length?`<h4>${L.refs}</h4>${e.refs.map(r=>`<a href="${r.url}" target="_blank" rel="noopener">${r.title}<span class="ref-type">${r.type}</span></a>`).join('')}`:''}
       ${e.videos&&e.videos.length?`<div class="modal-videos"><h4>${L.videos}</h4>${e.videos.map(v=>`<a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><span class="yt-icon">▶</span>${v.title}<span class="vid-lang">${v.lang}</span></a>`).join('')}</div>`:''}</div>`:''}
-    ${rels.length?`<div class="read-next"><h4>${L.readNext}</h4><div class="read-next-cards">${(()=>{const _v=getVisited();return rels.map(r=>{const rN=LANG==='ko'?r.t:(r.en||r.t);const rS=(LANG!=='ko'&&I18N_CONTENT[LANG]&&I18N_CONTENT[LANG][r.id])?I18N_CONTENT[LANG][r.id].sum:(r.sum||'');const rv=_v.includes(r.id);return`<div class="read-next-card${rv?' visited':''}" onclick="open_m('${r.id}')"><div class="rnc-title">${rN}</div><div class="rnc-sum">${rS}</div></div>`}).join('')})()}</div></div>`:''}
+    ${rels.length?`<div class="read-next"><h4>${L.readNext}</h4><div class="read-next-cards">${(()=>{const _v=getVisited();return rels.map((r,i)=>{const rN=LANG==='ko'?r.t:(r.en||r.t);const rS=(LANG!=='ko'&&I18N_CONTENT[LANG]&&I18N_CONTENT[LANG][r.id])?I18N_CONTENT[LANG][r.id].sum:(r.sum||'');const rS2=rS.replace(/<[^>]+>/g,'');const rv=_v.includes(r.id);return`<div class="read-next-card${rv?' visited':''}${i>=6?' rn-more':''}" onclick="open_m('${r.id}')"><div class="rnc-title">${rN}</div><div class="rnc-sum">${rS2}</div></div>`}).join('')})()}</div>${rels.length>6?`<button class="rn-toggle" onclick="this.parentElement.classList.add('all');this.remove()">${LANG==='ko'?`관련 키워드 ${rels.length-6}개 더 보기`:`Show ${rels.length-6} more`}</button>`:''}</div>`:''}
     <div class="detail-nav">
       <button ${prev?`onclick="open_m('${prev.id}')"`:' disabled'}>${prev?'← '+pN:''}</button>
       <button ${next?`onclick="open_m('${next.id}')"`:' disabled'}>${next?nN+' →':''}</button>
@@ -719,35 +723,68 @@ function toggleBM(id){const active=toggleBookmark(id);const btn=document.querySe
 // Random keyword
 function openRandom(){const r=D[Math.floor(Math.random()*D.length)];if(r)open_m(r.id)}
 
-// Inline graph
+// Related ranking — author order first, then mutual link, then shared neighbors
+function relRank(center){
+  const byId=Object.fromEntries(D.map(x=>[x.id,x]));
+  const all=[...new Set(center.rel||[])].filter(r=>byId[r]&&r!==center.id);const set=new Set(all);
+  const sc={};all.forEach((id,i)=>{const n=byId[id];const shared=(n.rel||[]).filter(r=>set.has(r)).length;sc[id]=3*(1-i/all.length)+((n.rel||[]).includes(center.id)?2:0)+Math.min(shared,3)*0.4});
+  return all.sort((a,b)=>sc[b]-sc[a]);
+}
+
+// Inline graph — 1-hop radial map: center + most connected neighbors grouped by category
 function renderInlineGraph(centerId){
-  document.getElementById('graph-legend').innerHTML=Object.entries(CATS).map(([k,v])=>`<span><span class="gl-dot" style="background:${CAT_COLORS[k]}"></span>${v}</span>`).join('');
   const center=D.find(x=>x.id===centerId);if(!center)return;
-  const nodeIds=new Set([centerId]);const edges=[];
-  (center.rel||[]).forEach(r=>{if(D.find(x=>x.id===r)){nodeIds.add(r);edges.push([centerId,r])}});
-  const hop1=[...nodeIds];for(const nid of hop1){const n=D.find(x=>x.id===nid);if(!n)continue;(n.rel||[]).forEach(r=>{if(D.find(x=>x.id===r)){nodeIds.add(r);edges.push([nid,r])}})}
-  const nodes=[...nodeIds].map(id=>D.find(x=>x.id===id)).filter(Boolean);
-  const edgeSet=new Set();const dedupE=edges.filter(([a,b])=>{const k=[a,b].sort().join('|');if(edgeSet.has(k))return false;edgeSet.add(k);return true});
+  const byId=Object.fromEntries(D.map(x=>[x.id,x]));const MAX=12;
+  const all=relRank(center);const rank=Object.fromEntries(all.map((id,i)=>[id,i]));
+  const catOrder=Object.keys(CATS);
+  const picked=all.slice(0,MAX).sort((a,b)=>catOrder.indexOf(byId[a].c)-catOrder.indexOf(byId[b].c)||rank[a]-rank[b]);
+  const nodes=picked.map(id=>byId[id]);const pset=new Set(picked);
+  const links=[];picked.forEach((a,i)=>picked.slice(i+1).forEach(b=>{if((byId[a].rel||[]).includes(b)||(byId[b].rel||[]).includes(a))links.push([a,b])}));
+  const cats=[...new Set([center.c,...nodes.map(n=>n.c)])];
+  document.getElementById('graph-legend').innerHTML=cats.map(k=>`<span><span class="gl-dot" style="background:${CAT_COLORS[k]}"></span>${CATS[k]}</span>`).join('')
+    +(all.length>MAX?`<span class="gl-more">${LANG==='ko'?`관련 ${all.length}개 중 연결이 깊은 ${MAX}개`:`Top ${MAX} of ${all.length} related`}</span>`:'');
   const canvas=document.getElementById('graph-canvas');const ctx=canvas.getContext('2d');
-  const dpr=window.devicePixelRatio||1;const W=canvas.parentElement.getBoundingClientRect().width;const H=Math.min(500,window.innerHeight-150);
-  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.height=H+'px';ctx.scale(dpr,dpr);
-  const pos={};const gx=W/2,gy=H/2;
-  nodes.forEach((n,i)=>{if(n.id===centerId){pos[n.id]={x:gx,y:gy,vx:0,vy:0}}else{const a=(2*Math.PI*i)/nodes.length;const r=80+Math.random()*60;pos[n.id]={x:gx+r*Math.cos(a),y:gy+r*Math.sin(a),vx:0,vy:0}}});
-  for(let iter=0;iter<300;iter++){
-    for(let i=0;i<nodes.length;i++){for(let j=i+1;j<nodes.length;j++){const a=pos[nodes[i].id],b=pos[nodes[j].id];const dx=b.x-a.x,dy=b.y-a.y,d=Math.max(Math.sqrt(dx*dx+dy*dy),1);const f=4000/(d*d);a.vx-=(dx/d)*f;a.vy-=(dy/d)*f;b.vx+=(dx/d)*f;b.vy+=(dy/d)*f}}
-    for(const[ea,eb]of dedupE){const pa=pos[ea],pb=pos[eb];if(!pa||!pb)continue;const dx=pb.x-pa.x,dy=pb.y-pa.y,d=Math.max(Math.sqrt(dx*dx+dy*dy),1);const f=d*0.008;pa.vx+=(dx/d)*f;pa.vy+=(dy/d)*f;pb.vx-=(dx/d)*f;pb.vy-=(dy/d)*f}
-    const pad=40;for(const n of nodes){const p=pos[n.id];p.vx+=(gx-p.x)*0.005;p.vy+=(gy-p.y)*0.005;p.vx*=0.85;p.vy*=0.85;p.x+=p.vx;p.y+=p.vy;p.x=Math.max(pad,Math.min(W-pad,p.x));p.y=Math.max(pad,Math.min(H-pad,p.y))}
-    pos[centerId].x=gx;pos[centerId].y=gy;pos[centerId].vx=0;pos[centerId].vy=0;
-  }
+  const dpr=window.devicePixelRatio||1;const W=canvas.parentElement.getBoundingClientRect().width;
+  const H=Math.round(Math.max(300,Math.min(440,W*0.7)));
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
+  const name=n=>LANG==='ko'?n.t:(n.en||n.t);
+  const maxCh=W<500?9:16;const label=n=>{const s=name(n);return s.length>maxCh?s.slice(0,maxCh-1)+'…':s};
+  ctx.font='11px Noto Sans KR';
+  const lw=Math.max(40,...nodes.map(n=>ctx.measureText(label(n)).width));
+  const cx=W/2,cy=H/2;const R=Math.max(70,Math.min(H/2-34,W/2-lw-22));
+  const pos={[centerId]:{x:cx,y:cy}};
+  nodes.forEach((n,i)=>{const a=-Math.PI/2+(2*Math.PI*i)/nodes.length;pos[n.id]={x:cx+R*Math.cos(a),y:cy+R*Math.sin(a),a}});
+  const boxes=[];
   function draw(hId){
-    ctx.clearRect(0,0,W,H);ctx.strokeStyle='#e4dfd8';ctx.lineWidth=1;
-    for(const[ea,eb]of dedupE){const pa=pos[ea],pb=pos[eb];if(!pa||!pb)continue;ctx.beginPath();ctx.moveTo(pa.x,pa.y);ctx.lineTo(pb.x,pb.y);ctx.stroke()}
-    for(const n of nodes){const p=pos[n.id];const r=n.id===centerId?10:6;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=CAT_COLORS[n.c]||'#a09888';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle=n.id===hId?'#C4613A':'#2d2a26';ctx.font=n.id===centerId?'700 11px Noto Sans KR':'10px Noto Sans KR';ctx.textAlign='center';ctx.fillText(LANG==='ko'?n.t:(n.en||n.t),p.x,p.y+r+13)}
+    ctx.clearRect(0,0,W,H);
+    const on=(a,b)=>hId&&(a===hId||b===hId);
+    for(const[a,b]of links){const pa=pos[a],pb=pos[b];const mx=(pa.x+pb.x)/2,my=(pa.y+pb.y)/2;
+      ctx.beginPath();ctx.moveTo(pa.x,pa.y);ctx.quadraticCurveTo(cx+(mx-cx)*0.35,cy+(my-cy)*0.35,pb.x,pb.y);
+      ctx.strokeStyle=on(a,b)?'rgba(196,97,58,.55)':'#efeae3';ctx.lineWidth=on(a,b)?1.5:1;ctx.stroke()}
+    for(const n of nodes){const p=pos[n.id];ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(p.x,p.y);
+      ctx.strokeStyle=n.id===hId?'#C4613A':'#ddd6cc';ctx.lineWidth=n.id===hId?1.8:1.2;ctx.stroke()}
+    boxes.length=0;
+    for(const n of nodes){const p=pos[n.id];const r=n.id===hId?8:6.5;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=CAT_COLORS[n.c]||'#a09888';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+      const c=Math.cos(p.a),s=Math.sin(p.a);const t=label(n);
+      ctx.font=(n.id===hId?'700 ':'')+'11px Noto Sans KR';const w=ctx.measureText(t).width;
+      let tx,ty;
+      if(Math.abs(c)<0.35){tx=p.x-w/2;ty=s<0?p.y-r-8:p.y+r+15}else{tx=c>0?p.x+r+6:p.x-r-6-w;ty=p.y+4}
+      ctx.fillStyle=n.id===hId?'#C4613A':'#4a4540';ctx.textAlign='left';ctx.fillText(t,tx,ty);
+      boxes.push({id:n.id,x:Math.min(tx,p.x-r),y:Math.min(ty-12,p.y-r),x2:Math.max(tx+w,p.x+r),y2:Math.max(ty+4,p.y+r)})}
+    ctx.beginPath();ctx.arc(cx,cy,11,0,Math.PI*2);ctx.fillStyle=CAT_COLORS[center.c]||'#a09888';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.5;ctx.stroke();
+    ctx.font='700 12px Noto Sans KR';const ct=name(center);const cw=ctx.measureText(ct).width;
+    ctx.fillStyle='rgba(255,255,255,.92)';ctx.beginPath();ctx.roundRect(cx-cw/2-6,cy+16,cw+12,20,6);ctx.fill();
+    ctx.fillStyle='#2d2a26';ctx.textAlign='center';ctx.fillText(ct,cx,cy+30);
   }
   draw();
-  canvas.onclick=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left,my=ev.clientY-rect.top;for(const n of nodes){const p=pos[n.id];if((mx-p.x)**2+(my-p.y)**2<144){open_m(n.id);return}}};
-  canvas.onmousemove=function(ev){const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left,my=ev.clientY-rect.top;const tt=document.getElementById('graph-tooltip');let found=false;for(const n of nodes){const p=pos[n.id];if((mx-p.x)**2+(my-p.y)**2<144){tt.style.display='block';tt.style.left=(p.x+12)+'px';tt.style.top=(p.y-8)+'px';tt.textContent=(LANG==='ko'?n.t:(n.en||n.t))+' ('+CATS[n.c]+')';canvas.style.cursor='pointer';found=true;draw(n.id);break}}if(!found){tt.style.display='none';canvas.style.cursor='grab';draw()}};
-  canvas.onmouseleave=function(){document.getElementById('graph-tooltip').style.display='none';draw()};
+  const hit=ev=>{const rect=canvas.getBoundingClientRect();const mx=ev.clientX-rect.left,my=ev.clientY-rect.top;
+    const b=boxes.find(b=>mx>=b.x-4&&mx<=b.x2+4&&my>=b.y-4&&my<=b.y2+4);return b?b.id:null};
+  canvas.onclick=ev=>{const id=hit(ev);if(id)open_m(id)};
+  canvas.onmousemove=ev=>{const id=hit(ev);const tt=document.getElementById('graph-tooltip');
+    if(id){const n=byId[id],p=pos[id];tt.style.display='block';tt.style.left=Math.min(p.x+12,W-160)+'px';tt.style.top=(p.y-30)+'px';tt.textContent=name(n)+' · '+CATS[n.c];canvas.style.cursor='pointer'}
+    else{tt.style.display='none';canvas.style.cursor='default'}draw(id)};
+  canvas.onmouseleave=()=>{document.getElementById('graph-tooltip').style.display='none';draw()};
 }
 
 document.addEventListener('keydown', e => {
@@ -774,7 +811,7 @@ function shareKakao(id,btn){
   if(window.Kakao&&Kakao.isInitialized()){
     Kakao.Share.sendDefault({
       objectType:'feed',
-      content:{title:name+' - AI Wiki',description:e.sum||'',imageUrl:'https://aiwiki.work/og-thumbnail.png?v=2',imageWidth:1200,imageHeight:600,link:{mobileWebUrl:url,webUrl:url}}
+      content:{title:name+' - AI Wiki',description:(e.sum||'').replace(/<[^>]+>/g,''),imageUrl:'https://aiwiki.work/og-thumbnail.png?v=2',imageWidth:1200,imageHeight:600,link:{mobileWebUrl:url,webUrl:url}}
     });
   } else {
     navigator.clipboard.writeText(name+' - AI Wiki\n'+url).then(()=>_shareFb(btn));
@@ -808,7 +845,7 @@ if (location.hash) { const id = location.hash.slice(1); if (D.find(x=>x.id===id)
     obj.hasDefinedTerm = D.slice(0,50).map(e=>({
       "@type":"DefinedTerm",
       "name":e.t,
-      "description":e.sum,
+      "description":(e.sum||'').replace(/<[^>]+>/g,''),
       "url":"https://aiwiki.work/#"+e.id
     }));
     ld[1].textContent = JSON.stringify(obj);

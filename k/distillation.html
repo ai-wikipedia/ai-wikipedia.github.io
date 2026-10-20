@@ -6,11 +6,11 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-7817461938422229">
 <title>모델 증류란? (Model Distillation) — AI Wiki</title>
-<meta name="description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.">
+<meta name="description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 ">
 <meta name="keywords" content="모델 증류, Model Distillation, 경량화, Teacher-Student, 비용절감, AI 용어">
 <meta property="og:type" content="article">
 <meta property="og:title" content="모델 증류란? (Model Distillation) — AI Wiki">
-<meta property="og:description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.">
+<meta property="og:description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 ">
 <meta property="og:url" content="https://aiwiki.work/k/distillation.html">
 <meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -18,10 +18,10 @@
 <meta property="og:site_name" content="AI Wiki">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2026-03-30">
-<meta property="article:modified_time" content="2026-10-19">
+<meta property="article:modified_time" content="2026-10-20">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="모델 증류란? (Model Distillation) — AI Wiki">
-<meta name="twitter:description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.">
+<meta name="twitter:description" content="모델 증류란? 큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 ">
 <meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
 <link rel="canonical" href="https://aiwiki.work/k/distillation.html">
 <link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/distillation.html">
@@ -31,7 +31,7 @@
   "@type": "DefinedTerm",
   "name": "모델 증류",
   "alternateName": "Model Distillation",
-  "description": "큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.",
+  "description": "큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 맞추는 파인튜닝이나 숫자 정밀도만 낮추는 양자화와 달리 더 작은 새 모델이 결과로 나온다.",
   "url": "https://aiwiki.work/k/distillation.html",
   "inDefinedTermSet": {
     "@type": "DefinedTermSet",
@@ -71,10 +71,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "모델 증류 (Model Distillation)",
-  "description": "큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.",
+  "description": "큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 맞추는 파인튜닝",
   "url": "https://aiwiki.work/k/distillation.html",
   "datePublished": "2026-03-30",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "author": {
     "@type": "Organization",
     "name": "AI Wiki"
@@ -165,13 +165,13 @@
   <div class="cat">모델</div>
   <h1>모델 증류</h1>
   <div class="en">Model Distillation</div>
-  <div class="body"><p>큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, 더 싸고 빠르면서 특정 작업은 비슷하게 해내는 모델을 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.</p><h4>한눈에 보기</h4><p>모델 증류는 크고 똑똑한 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르치는 기법이다. 이렇게 하면 <strong>싸고 빠르면서 특정 작업은 비슷하게 잘하는 모델</strong>을 얻는다. 같은 종류의 요청을 대량으로 처리해야 하는데 큰 모델의 비용이나 속도가 부담될 때 쓴다.</p><div class="tbl"><table><tr><th>기법</th><th>무엇을 하나</th><th>결과</th></tr><tr><td><strong>증류</strong></td><td>큰 모델의 행동을 작은 모델로 옮긴다</td><td><strong>작고 싼 새 모델</strong></td></tr><tr><td>파인튜닝</td><td>기존 모델을 내 데이터로 더 학습시킨다</td><td>크기는 그대로, 내 분야에 맞춰짐</td></tr><tr><td>양자화</td><td>같은 모델의 숫자 정밀도를 낮춘다</td><td>같은 모델, 메모리 절약</td></tr></table></div><h4>정답이 아니라 '선생의 답'을 배운다</h4><p>Hinton 등이 2015년 논문에서 정리한 원래 방식은 Student가 Teacher의 확률 분포를 따라 하게 하는 것이다. '정답은 A'만 배우지 않고 'A일 가능성이 높고 B도 조금 그럴듯하다'는 감각까지 배우기 때문에, 작은 모델도 더 잘 일반화한다.</p><p>LLM에서는 더 단순하게 쓴다. 큰 모델로 질문-답변 데이터를 만들고, 그 데이터로 작은 모델을 파인튜닝한다. 그래서 실무에서는 증류와 파인튜닝이 한 흐름으로 묶인다. DeepSeek은 이 방식으로 R1의 추론 과정을 여러 크기의 작은 모델에 옮겼고, 단계별 추론 능력도 증류로 전달할 수 있다는 것을 보여 줬다.</p><h4>작업을 좁히고, 생성하고, 비교한다</h4><div class="tbl"><table><tr><th>순서</th><th>할 일</th><th>포인트</th></tr><tr><td>1. 작업 좁히기</td><td>분류·요약 등 한 가지로 정한다</td><td>범위가 좁을수록 잘 옮겨진다</td></tr><tr><td>2. Teacher로 생성</td><td>실제 입력으로 답을 모은다</td><td>좋은 답만 골라 남긴다</td></tr><tr><td>3. Student 학습</td><td>모은 데이터로 작은 모델을 파인튜닝한다</td><td>입력 형식을 실제 서비스와 같게 맞춘다</td></tr><tr><td>4. 비교 평가</td><td>같은 테스트셋으로 Teacher와 비교한다</td><td>기준에 못 미치면 데이터를 보강한다</td></tr></table></div><p>이 과정을 처음부터 직접 만들 필요는 없다. OpenAI API는 큰 모델의 응답을 저장해 두었다가 작은 모델의 파인튜닝 데이터로 바로 쓰는 기능을 제공하고, Amazon Bedrock에도 큰 모델에서 작은 모델로 증류하는 기능이 있다. 오픈 모델을 쓴다면 Hugging Face 생태계의 도구로 같은 흐름을 직접 돌리면 된다.</p><h4>좁은 반복 작업용이지, 만능 축소판은 아니다</h4><div class="tbl"><table><tr><th>상황</th><th>판단</th></tr><tr><td>문의 분류처럼 같은 유형을 대량 처리</td><td><strong>증류가 맞다</strong></td></tr><tr><td>기기 안이나 응답이 빨라야 하는 환경</td><td><strong>증류가 맞다</strong></td></tr><tr><td>요청 종류가 매번 다르고 범위가 넓음</td><td>큰 모델을 그대로 쓴다</td></tr><tr><td>요청량이 적음</td><td>프롬프트 개선이 먼저다</td></tr></table></div><p>Student가 Teacher에 가까운 것은 배운 범위 안에서뿐이다. 범위 밖 질문을 받으면 작은 모델 본래 실력으로 돌아가므로, 넓은 용도로 쓸 생각이라면 맞지 않는다.</p><h4>약관과 데이터 품질부터 확인한다</h4><p>대부분의 AI 회사는 이용약관에서 자사 모델의 출력으로 경쟁 모델을 학습시키는 것을 금지한다. 다른 회사 API로 데이터를 만들어 증류하려면 약관부터 확인해야 한다. 2025년 DeepSeek이 OpenAI 모델의 출력을 증류에 썼다는 논란이 나온 뒤로, 이런 무단 증류는 <strong>증류 공격</strong>이라 불리며 보안 이슈로 다뤄진다. 다만 기술적으로 완전히 막기는 어렵다.</p><p>Teacher의 실수와 편향도 그대로 옮겨진다. 생성한 데이터를 검수하지 않으면 틀린 답을 자신 있게 말하는 작은 모델이 나온다.</p></div>
+  <div class="body"><p>큰 모델(Teacher)의 답과 풀이 방식을 작은 모델(Student)에게 가르쳐, <strong>싸고 빠르면서 특정 작업은 비슷하게 잘하는 작은 모델</strong>을 새로 만드는 기법이다. 같은 유형의 요청을 대량으로 처리하는데 큰 모델의 비용이나 속도가 부담될 때 쓰며, 기존 모델을 내 데이터에 맞추는 파인튜닝이나 숫자 정밀도만 낮추는 양자화와 달리 <strong>더 작은 새 모델</strong>이 결과로 나온다.</p><div class="tbl"><table><tr><th>기법</th><th>무엇을 하나</th><th>결과</th></tr><tr><td><strong>증류</strong></td><td>큰 모델의 행동을 작은 모델로 옮긴다</td><td><strong>작고 싼 새 모델</strong></td></tr><tr><td>파인튜닝</td><td>기존 모델을 내 데이터로 더 학습시킨다</td><td>크기는 그대로, 내 분야에 맞춰짐</td></tr><tr><td>양자화</td><td>같은 모델의 숫자 정밀도를 낮춘다</td><td>같은 모델, 메모리 절약</td></tr></table></div><h4>정답이 아니라 '선생의 답'을 배운다</h4><p>Hinton 등이 2015년 논문에서 정리한 원래 방식은 Student가 Teacher의 확률 분포를 따라 하게 하는 것이다. '정답은 A'만 배우지 않고 'A일 가능성이 높고 B도 조금 그럴듯하다'는 감각까지 배우기 때문에, 작은 모델도 더 잘 일반화한다.</p><p>LLM에서는 더 단순하게 쓴다. 큰 모델로 질문-답변 데이터를 만들고, 그 데이터로 작은 모델을 파인튜닝한다. 그래서 실무에서는 증류와 파인튜닝이 한 흐름으로 묶인다. DeepSeek은 이 방식으로 R1의 추론 과정을 여러 크기의 작은 모델에 옮겼고, 단계별 추론 능력도 증류로 전달할 수 있다는 것을 보여 줬다.</p><h4>작업을 좁히고, 생성하고, 비교한다</h4><div class="tbl"><table><tr><th>순서</th><th>할 일</th><th>포인트</th></tr><tr><td>1. 작업 좁히기</td><td>분류·요약 등 한 가지로 정한다</td><td>범위가 좁을수록 잘 옮겨진다</td></tr><tr><td>2. Teacher로 생성</td><td>실제 입력으로 답을 모은다</td><td>좋은 답만 골라 남긴다</td></tr><tr><td>3. Student 학습</td><td>모은 데이터로 작은 모델을 파인튜닝한다</td><td>입력 형식을 실제 서비스와 같게 맞춘다</td></tr><tr><td>4. 비교 평가</td><td>같은 테스트셋으로 Teacher와 비교한다</td><td>기준에 못 미치면 데이터를 보강한다</td></tr></table></div><p>이 과정을 처음부터 직접 만들 필요는 없다. OpenAI API는 큰 모델의 응답을 저장해 두었다가 작은 모델의 파인튜닝 데이터로 바로 쓰는 기능을 제공하고, Amazon Bedrock에도 큰 모델에서 작은 모델로 증류하는 기능이 있다. 오픈 모델을 쓴다면 Hugging Face 생태계의 도구로 같은 흐름을 직접 돌리면 된다.</p><h4>좁은 반복 작업용이지, 만능 축소판은 아니다</h4><div class="tbl"><table><tr><th>상황</th><th>판단</th></tr><tr><td>문의 분류처럼 같은 유형을 대량 처리</td><td><strong>증류가 맞다</strong></td></tr><tr><td>기기 안이나 응답이 빨라야 하는 환경</td><td><strong>증류가 맞다</strong></td></tr><tr><td>요청 종류가 매번 다르고 범위가 넓음</td><td>큰 모델을 그대로 쓴다</td></tr><tr><td>요청량이 적음</td><td>프롬프트 개선이 먼저다</td></tr></table></div><p>Student가 Teacher에 가까운 것은 배운 범위 안에서뿐이다. 범위 밖 질문을 받으면 작은 모델 본래 실력으로 돌아가므로, 넓은 용도로 쓸 생각이라면 맞지 않는다.</p><h4>약관과 데이터 품질부터 확인한다</h4><p>대부분의 AI 회사는 이용약관에서 자사 모델의 출력으로 경쟁 모델을 학습시키는 것을 금지한다. 다른 회사 API로 데이터를 만들어 증류하려면 약관부터 확인해야 한다. 2025년 DeepSeek이 OpenAI 모델의 출력을 증류에 썼다는 논란이 나온 뒤로, 이런 무단 증류는 <strong>증류 공격</strong>이라 불리며 보안 이슈로 다뤄진다. 다만 기술적으로 완전히 막기는 어렵다.</p><p>Teacher의 실수와 편향도 그대로 옮겨진다. 생성한 데이터를 검수하지 않으면 틀린 답을 자신 있게 말하는 작은 모델이 나온다.</p><h4>대량 반복 작업을 작은 모델로 넘길 때 쓴다</h4><p>가장 흔한 건 <strong>큰 모델로 먼저 돌려 보고, 잘 되는 작업만 작은 모델로 옮기는 방식</strong>이다. 큰 모델의 좋은 답을 모아 학습 데이터로 쓰고, 이후 같은 유형의 요청은 증류한 작은 모델이 싸고 빠르게 처리한다.</p><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>고객 문의 처리</td><td>큰 모델이 분류·태깅한 기록으로 작은 모델을 학습시켜, 매일 들어오는 대량 문의를 싸게 분류</td></tr><tr><td>기기 안(온디바이스) 기능</td><td>서버의 큰 모델 대신 휴대폰·노트북에서 도는 작은 모델이 요약·자동완성을 바로 처리</td></tr><tr><td>작은 추론 모델</td><td>큰 추론 모델의 단계별 풀이를 배운 작은 오픈 모델을 내려받아 로컬이나 자체 서버에서 실행</td></tr><tr><td>서비스·에이전트의 반복 단계</td><td>추출·형식 변환처럼 정해진 단계는 증류 모델에, 판단이 어려운 단계만 큰 모델에 맡김</td></tr></table></div></div>
   <div class="tags"><span>#경량화</span><span>#Teacher-Student</span><span>#비용절감</span></div>
   <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/fine-tuning.html">파인튜닝</a>, <a href="https://aiwiki.work/k/llm.html">대규모 언어 모델</a>, <a href="https://aiwiki.work/k/synthetic-data.html">합성 데이터</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/claude-mythos-5.html">클로드 미토스 5</a>, <a href="https://aiwiki.work/k/krea-2.html">크레아 2</a></div>
   <div class="refs"><b>참고 자료</b><ul><li><a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="nofollow noopener">Distilling the Knowledge in a Neural Network - Hinton et al.</a> <span class="ref-type">논문</span></li><li><a href="https://openai.com/index/api-model-distillation/" target="_blank" rel="nofollow noopener">Model Distillation in the API - OpenAI</a> <span class="ref-type">공식</span></li><li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html" target="_blank" rel="nofollow noopener">Amazon Bedrock Model Distillation - AWS</a> <span class="ref-type">공식</span></li><li><a href="https://huggingface.co/blog/Kseniase/kd" target="_blank" rel="nofollow noopener">Knowledge Distillation - Hugging Face</a> <span class="ref-type">튜토리얼</span></li></ul></div>
   <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=7xTGNNLPyMI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="Deep Dive into LLMs like ChatGPT (Andrej Karpathy)" loading="lazy" width="160" height="90"><span>Deep Dive into LLMs like ChatGPT (Andrej Karpathy)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=90mGPxR2GgY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/90mGPxR2GgY/mqdefault.jpg" alt="BERT: Training, Inference, Fine tuning (Umar Jamil)" loading="lazy" width="160" height="90"><span>BERT: Training, Inference, Fine tuning (Umar Jamil)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=mxGCEWOxfe8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mxGCEWOxfe8/mqdefault.jpg" alt="지식 증류(Knowledge Distillation) 개념" loading="lazy" width="160" height="90"><span>지식 증류(Knowledge Distillation) 개념</span></a></div></div>
   <a class="back" href="https://aiwiki.work/#distillation">← AI Wiki에서 더 보기</a>
-  <div class="added-date">updated at 2026-10-19</div>
+  <div class="added-date">updated at 2026-10-20</div>
 </div>
 <footer class="site-footer">
   <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
