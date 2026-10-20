@@ -1,3 +1,7 @@
+## 2026-10-21 08:19
+- 추가: deepinfer
+- HOT: deepseek, claude-code, agent-memory, gemini-4-argon, muse-spark-open, scion, software-factory, ai-for-mathematics, deepinfer
+
 ## 2026-10-20 08:03
 - 추가: deepseek-search-api, earshot, rea-reverse-engineering, muse-spark-open, embeddinggemma-2
 - HOT: deepseek, harness-engineering, agent-memory, agent-memory-benchmark, bitter-lesson, latent-reasoning, mercury-llm, mistral, claude-code, software-factory

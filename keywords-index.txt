@@ -418,3 +418,4 @@ earshot	이어샷	Earshot (Audio Analysis for Coding Agents)	tooling
 rea-reverse-engineering	REA 리버스 엔지니어링	REA (Reverse Engineer Anything with Agents)	tooling
 muse-spark-open	뮤즈 스파크 오픈	Muse Spark Open (Meta)	model
 embeddinggemma-2	임베딩젬마 2	EmbeddingGemma 2 (Google)	model
+deepinfer	딥인퍼	DeepInfer (DeepSeek Inference Framework)	infra

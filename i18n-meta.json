@@ -110,6 +110,7 @@
  "decision-model": "daf3ce054e1b",
  "deep-learning": "7d2a5172482c",
  "deepfake-detection": "905ce5c32f62",
+ "deepinfer": "ff2f24b96469",
  "deepseek": "4658986d3105",
  "deepseek-harness": "495d39132ea7",
  "deepseek-search-api": "d7241611d43d",
