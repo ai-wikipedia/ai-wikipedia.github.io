@@ -1,3 +1,7 @@
+## 2026-10-22 08:19
+- 추가: cleanyourtv, git-ai, huashu-motion, moondream-3-1
+- HOT: claude-code, ai-agent, agent-memory, ai-vulnerability-discovery, deepinfer, multi-agent, scion, git-ai
+
 ## 2026-10-21 08:19
 - 추가: deepinfer
 - HOT: deepseek, claude-code, agent-memory, gemini-4-argon, muse-spark-open, scion, software-factory, ai-for-mathematics, deepinfer
