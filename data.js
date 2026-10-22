@@ -1,4 +1,4 @@
-const HOT_IDS = ['claude-code','ai-agent','agent-memory','ai-vulnerability-discovery','deepinfer','multi-agent','scion','git-ai'];
+const HOT_IDS = ['ai-agent','claude-code','ai-coding','harness-engineering','agent-memory','deepinfer','codex','sandboxing','agent-control-plane','context-engineering'];
 const LAST_UPDATED = '2026-10-21T23:19:03Z';
 
 const D = [
