@@ -1,3 +1,7 @@
+## 2026-10-24 08:20
+- 추가: ai-formal-verification, mcdonalds-mcp
+- HOT: kimi, harness-engineering, ai-agent, claude-code, scion, ai-for-mathematics, software-factory, gemini-4-argon, muse-spark-open, embeddinggemma-2, ai-formal-verification
+
 ## 2026-10-23 08:17
 - 추가: (없음)
 - HOT: (없음)

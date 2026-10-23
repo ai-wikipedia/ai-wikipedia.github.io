@@ -423,3 +423,5 @@ cleanyourtv	클린유어티비	CleanYourTV (Agent-Driven Android TV Debloater)	a
 git-ai	깃 AI	Git AI (AI Code Attribution for Git)	tooling
 huashu-motion	화수 모션	Huashu Motion (Coding-Agent Product Film Director)	tooling
 moondream-3-1	문드림 3.1	Moondream 3.1 (Vision-Language MoE)	model
+ai-formal-verification	AI 형식 검증	LLM-Assisted Formal Software Verification	safety
+mcdonalds-mcp	맥도날드 MCP	McDonald's China MCP Server	tooling
