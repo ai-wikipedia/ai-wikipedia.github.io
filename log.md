@@ -1,3 +1,7 @@
+## 2026-10-25 08:02
+- 추가: kimi-k3-1-pro, sam-3
+- HOT: kimi-k3-1-pro, kimi, claude-code, ai-agent, software-factory, scion, ai-for-mathematics, muse-wonder, gemini-4-argon
+
 ## 2026-10-24 08:20
 - 추가: ai-formal-verification, mcdonalds-mcp
 - HOT: kimi, harness-engineering, ai-agent, claude-code, scion, ai-for-mathematics, software-factory, gemini-4-argon, muse-spark-open, embeddinggemma-2, ai-formal-verification

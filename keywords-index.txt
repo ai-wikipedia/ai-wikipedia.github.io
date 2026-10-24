@@ -425,3 +425,5 @@ huashu-motion	화수 모션	Huashu Motion (Coding-Agent Product Film Director)	t
 moondream-3-1	문드림 3.1	Moondream 3.1 (Vision-Language MoE)	model
 ai-formal-verification	AI 형식 검증	LLM-Assisted Formal Software Verification	safety
 mcdonalds-mcp	맥도날드 MCP	McDonald's China MCP Server	tooling
+kimi-k3-1-pro	키미 K3.1 프로	Kimi K3.1 Pro (Moonshot AI)	model
+sam-3	SAM 3	Segment Anything Model 3 (Meta)	model
