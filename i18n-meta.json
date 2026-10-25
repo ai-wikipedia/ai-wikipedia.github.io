@@ -1,6 +1,7 @@
 {
  "12-factor-agents": "a0d4831cd97c",
  "a2a": "f0d3f7307d0b",
+ "abliteration": "a066c669e754",
  "activation-function": "55f3dfc7c43c",
  "adversarial-attack": "1a32d4b91d89",
  "agent-control-plane": "3c3d217f8a99",
@@ -243,6 +244,7 @@
  "mastra": "fe88ce8cd60f",
  "mcdonalds-mcp": "aae997a03026",
  "mcp": "83be6d83124f",
+ "mcp-code-mode": "8096105910d4",
  "mcpb": "528cc7afe2de",
  "mechanistic-interpretability": "2a5fd9694661",
  "mercury-llm": "ad217fa94ea8",

@@ -1,3 +1,7 @@
+## 2026-10-26 08:09
+- 추가: abliteration, mcp-code-mode
+- HOT: kimi-k3-1-pro, ai-for-mathematics, claude-code, deepseek-harness, gemini-4-argon, scion, software-factory
+
 ## 2026-10-25 08:02
 - 추가: kimi-k3-1-pro, sam-3
 - HOT: kimi-k3-1-pro, kimi, claude-code, ai-agent, software-factory, scion, ai-for-mathematics, muse-wonder, gemini-4-argon

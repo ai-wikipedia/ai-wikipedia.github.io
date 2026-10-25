@@ -427,3 +427,5 @@ ai-formal-verification	AI 형식 검증	LLM-Assisted Formal Software Verificatio
 mcdonalds-mcp	맥도날드 MCP	McDonald's China MCP Server	tooling
 kimi-k3-1-pro	키미 K3.1 프로	Kimi K3.1 Pro (Moonshot AI)	model
 sam-3	SAM 3	Segment Anything Model 3 (Meta)	model
+abliteration	어블리터레이션	Abliteration (Refusal Direction Removal)	safety
+mcp-code-mode	MCP 코드 모드	MCP Code Mode (Code Execution with MCP)	agent

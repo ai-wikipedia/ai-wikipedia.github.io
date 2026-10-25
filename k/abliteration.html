@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817461938422229" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-7817461938422229">
+<title>어블리터레이션이란? (Abliteration) — AI Wiki</title>
+<meta name="description" content="어블리터레이션이란? 오픈 웨이트 LLM 안에서 거절을 담당하는 '거절 방향' 하나를 찾아 가중치에서 빼내는 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, 안전장치를 함께 없앤다는 점에 주의해야 한다.">
+<meta name="keywords" content="어블리터레이션, Abliteration (Refusal Direction Removal), refusal-direction, open-weights, interpretability, safety-research, AI 용어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="어블리터레이션이란? (Abliteration) — AI Wiki">
+<meta property="og:description" content="어블리터레이션이란? 오픈 웨이트 LLM 안에서 거절을 담당하는 '거절 방향' 하나를 찾아 가중치에서 빼내는 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, 안전장치를 함께 없앤다는 점에 주의해야 한다.">
+<meta property="og:url" content="https://aiwiki.work/k/abliteration.html">
+<meta property="og:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:site_name" content="AI Wiki">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-25">
+<meta property="article:modified_time" content="2026-10-25">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="어블리터레이션이란? (Abliteration) — AI Wiki">
+<meta name="twitter:description" content="어블리터레이션이란? 오픈 웨이트 LLM 안에서 거절을 담당하는 '거절 방향' 하나를 찾아 가중치에서 빼내는 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, 안전장치를 함께 없앤다는 점에 주의해야 한다.">
+<meta name="twitter:image" content="https://aiwiki.work/og-thumbnail.png?v=2">
+<link rel="canonical" href="https://aiwiki.work/k/abliteration.html">
+<link rel="alternate" hreflang="ko" href="https://aiwiki.work/k/abliteration.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "어블리터레이션",
+  "alternateName": "Abliteration (Refusal Direction Removal)",
+  "description": "오픈 웨이트 LLM 안에서 거절을 담당하는 '거절 방향' 하나를 찾아 가중치에서 빼내는 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, 안전장치를 함께 없앤다는 점에 주의해야 한다.",
+  "url": "https://aiwiki.work/k/abliteration.html",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Wiki",
+      "item": "https://aiwiki.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "안전",
+      "item": "https://aiwiki.work/c/safety.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "어블리터레이션",
+      "item": "https://aiwiki.work/k/abliteration.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "어블리터레이션 (Abliteration)",
+  "description": "오픈 웨이트 LLM 안에서 거절을 담당하는 '거절 방향' 하나를 찾아 가중치에서 빼내는 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, 안전장치를 함께 없앤다는 점에 주의해야 한다.",
+  "url": "https://aiwiki.work/k/abliteration.html",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "author": {
+    "@type": "Organization",
+    "name": "AI Wiki"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Wiki",
+    "url": "https://aiwiki.work/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aiwiki.work/k/abliteration.html"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans KR',sans-serif;background:#F3F0EB;color:#4a4540;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px}
+  .wrap{max-width:720px;width:100%;background:#fff;border-radius:16px;padding:48px 40px;border:1px solid #e4dfd8}
+  .cat{font-size:11px;color:#a09888;margin-bottom:8px}
+  h1{font-size:30px;font-weight:900;color:#2d2a26;margin-bottom:4px}
+  .en{font-size:13px;color:#a09888;margin-bottom:24px}
+  .body{color:#5a5550;line-height:1.8;font-size:15px}
+  .body h4{font-size:16px;font-weight:700;color:#2d2a26;margin:24px 0 8px}
+  .body p{margin-bottom:14px}
+  .body code{background:#F3F0EB;padding:2px 6px;border-radius:4px;font-size:13px;color:#C4613A}
+  .body strong{font-weight:700;color:#2d2a26}
+  .body .tbl{overflow-x:auto;margin:12px 0 18px}
+  .body table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+  .body th,.body td{border-bottom:1px solid #e4dfd8;padding:9px 10px;text-align:left;vertical-align:top}
+  .body th{background:#F3F0EB;color:#2d2a26;font-weight:700;font-size:13px;white-space:nowrap}
+  .body td strong{color:#C4613A}
+  .body .bars{margin:12px 0 6px}
+  .body .bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .body .bar-label{width:96px;flex-shrink:0;color:#5a5550}
+  .body .bar-track{flex:1;background:#F3F0EB;border-radius:6px;height:14px;overflow:hidden}
+  .body .bar-fill{display:block;height:100%;background:#C4613A;border-radius:6px}
+  .body .bar-val{width:48px;flex-shrink:0;text-align:right;color:#2d2a26;font-weight:700}
+  .body .note{font-size:12px;color:#a09888;margin-bottom:18px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{background:#F3F0EB;color:#a09888;padding:4px 12px;border-radius:20px;font-size:12px}
+  .related{margin-top:36px;padding-top:28px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550;line-height:1.8}
+  .related b{color:#2d2a26;font-weight:700}
+  .related a{color:#C4613A;text-decoration:none;font-weight:500}
+  .related a:hover{text-decoration:underline}
+  .back{display:inline-block;margin-top:32px;color:#C4613A;text-decoration:none;font-size:14px;font-weight:700}
+  .back:hover{text-decoration:underline}
+  .added-date{margin-top:20px;text-align:right;font-size:11px;color:#a09888}
+  .site-footer{max-width:720px;width:100%;margin:28px auto 0;text-align:center;font-size:13px;color:#a09888;line-height:1.9}
+  .site-footer a{color:#a09888;text-decoration:none}
+  .site-footer a:hover{color:#C4613A}
+  .site-footer .copy{margin-top:6px;font-size:11px;color:#b8b0a4}
+  .topnav{max-width:720px;width:100%;display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .topnav-logo{font-size:20px;font-weight:900;color:#C4613A;text-decoration:none}
+  .topnav-links{margin-left:auto;display:flex;gap:14px}
+  .topnav-links a{font-size:13px;color:#a09888;text-decoration:none}
+  .topnav-links a:hover{color:#C4613A}
+  .refs{margin-top:32px;padding-top:24px;border-top:1px solid #e4dfd8;font-size:14px;color:#5a5550}
+  .refs b{color:#2d2a26;font-weight:700;display:block;margin-bottom:10px}
+  .refs ul{margin:0;padding:0;list-style:none}
+  .refs li{margin-bottom:8px;line-height:1.6}
+  .refs a{color:#C4613A;text-decoration:none}
+  .refs a:hover{text-decoration:underline}
+  .ref-type{font-size:11px;color:#a09888;margin-left:6px}
+  .videos{margin-top:28px}
+  .videos b{color:#2d2a26;font-weight:700;display:block;margin-bottom:12px;font-size:14px}
+  .video-list{display:flex;flex-direction:column;gap:12px}
+  .video-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#5a5550}
+  .video-item img{border-radius:8px;flex-shrink:0;width:160px;height:90px;object-fit:cover}
+  .video-item span{font-size:14px;line-height:1.5}
+  .video-item:hover span{color:#C4613A}
+  @media(max-width:768px){.video-item img{width:120px;height:68px}}
+</style>
+</head>
+<body>
+<header class="topnav">
+  <a class="topnav-logo" href="https://aiwiki.work/">AI Wiki</a>
+  <nav class="topnav-links">
+    <a href="https://aiwiki.work/">홈</a>
+    <a href="https://aiwiki.work/c/safety.html">안전</a>
+    <a href="https://aiwiki.work/about.html">소개</a>
+  </nav>
+</header>
+<div class="wrap">
+  <div class="cat">안전</div>
+  <h1>어블리터레이션</h1>
+  <div class="en">Abliteration (Refusal Direction Removal)</div>
+  <div class="body"><p>오픈 웨이트 LLM 안에서 거절을 담당하는 <strong>'거절 방향' 하나를 찾아 가중치에서 빼내는</strong> 기법이다. 추가 학습 없이 거절 반응을 없애기 때문에 안전 연구와 해석 가능성 연구에 쓰이지만, <strong>안전장치를 함께 없앤다</strong>는 점에 주의해야 한다.</p><div class="tbl"><table><tr><th>방식</th><th>무엇을 바꾸나</th><th>학습 필요</th><th>결과물</th></tr><tr><td>탈옥 프롬프트</td><td>입력 문장</td><td>없음</td><td>모델은 그대로</td></tr><tr><td>파인튜닝</td><td>가중치 전체 또는 일부</td><td>필요</td><td>새 체크포인트</td></tr><tr><td><strong>어블리터레이션</strong></td><td>거절 방향 성분만</td><td><strong>없음</strong></td><td>새 체크포인트</td></tr></table></div><h4>거절은 방향 하나에 몰려 있다</h4><p>2024년 연구에서 채팅 모델의 거절이 내부 표현(잔차 스트림)의 <strong>한 방향</strong>으로 조절된다는 사실이 밝혀졌다. 해로운 질문과 무해한 질문을 각각 넣고 내부 활성값의 평균 차이를 구하면 그 방향이 나온다. 이후 '어블리터레이션'이라는 이름으로 이 방법이 널리 퍼졌다.</p><p>방향을 찾은 뒤에는 잔차 스트림에 값을 쓰는 가중치 행렬에서 그 성분을 빼낸다. 모든 레이어가 이 방향으로 값을 쓸 수 있으므로 한 레이어가 아니라 전체에서 빼야 한다. 학습이 필요 없어서 GPU 한 장으로 재현되고, 결과는 평범한 체크포인트로 남는다.</p><h4>거절은 사후 학습이 심은 것이다</h4><p>사전학습만 거친 베이스 모델은 원래 거절하지 않는다. 거절은 정렬 학습이 나중에 넣은 행동이고, 그 결과가 한 방향에 몰려 있어서 쉽게 떼어진다. 그래서 안전 정렬이 생각보다 얕다는 근거로 자주 인용된다. 방어하는 쪽에서는 거절을 더 넓게 퍼뜨리는 파인튜닝이나 적대적 학습으로 이런 제거에 버티는 모델을 만들려고 연구한다.</p><h4>수술처럼 깔끔하지는 않다</h4><p>'거절만 지우고 나머지는 그대로'가 목표지만 실제로는 부작용이 있다. 2026년 연구에 따르면 어블리터레이션을 거친 모델은 위험을 대하는 태도와 확신 정도가 미리 예측할 수 없는 방향으로 바뀌었다. 이런 모델을 에이전트로 돌린다면 그 변화를 직접 측정해 봐야 한다. 무엇보다 해로운 요청을 막는 장치가 사라지므로, 결과물을 공개하거나 배포할 때 책임이 따른다.</p><h4>주로 이런 곳에 쓰인다</h4><div class="tbl"><table><tr><th>어디서</th><th>어떻게 쓰나</th></tr><tr><td>레드팀·안전 연구</td><td>거절을 꺼 본 모델과 원래 모델을 비교해 안전 학습이 실제로 무엇을 하는지 측정</td></tr><tr><td>해석 가능성 연구</td><td>특정 행동이 한 방향에 몰려 있는 대표 사례로 정렬 학습의 구조를 분석</td></tr><tr><td>보안 연구</td><td>정당한 보안 질문까지 막는 과잉 거절을 줄여 분석 업무에 활용</td></tr><tr><td>방어 기법 개발</td><td>거절 방향 제거 공격에도 버티는지 시험하는 기준으로 사용</td></tr></table></div></div>
+  <div class="tags"><span>#refusal-direction</span><span>#open-weights</span><span>#interpretability</span><span>#safety-research</span></div>
+  <div class="related"><b>관련 키워드</b> <a href="https://aiwiki.work/k/jailbreak.html">탈옥</a>, <a href="https://aiwiki.work/k/alignment.html">AI 정렬</a>, <a href="https://aiwiki.work/k/mechanistic-interpretability.html">메커니스틱 해석 가능성</a>, <a href="https://aiwiki.work/k/red-teaming.html">레드팀</a>, <a href="https://aiwiki.work/k/open-weights.html">오픈 웨이트</a>, <a href="https://aiwiki.work/k/open-source-llm.html">오픈소스 LLM</a>, <a href="https://aiwiki.work/k/post-training.html">포스트 트레이닝</a>, <a href="https://aiwiki.work/k/rlhf.html">RLHF</a></div>
+  <div class="refs"><b>참고 자료</b><ul><li><a href="https://www.lesswrong.com/posts/jGuXSZgv6qfdhMCuJ/refusal-in-llms-is-mediated-by-a-single-direction" target="_blank" rel="nofollow noopener">Refusal in LLMs is mediated by a single direction — LessWrong</a> <span class="ref-type">논문</span></li><li><a href="https://arxiv.org/html/2607.17427v1" target="_blank" rel="nofollow noopener">Abliteration Is Not a Scalpel: Off-Target Effects of Refusal Removal on Decision Disposition Across Model Families</a> <span class="ref-type">논문</span></li><li><a href="https://appliedllms.web.illinois.edu/72_Students_Choice/20_abliteration" target="_blank" rel="nofollow noopener">Abliteration: Removing refusal behavior from an LLM - CS/NPRE 398, Applied LLMs</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.orcarouter.ai/blog/how-abliteration-works" target="_blank" rel="nofollow noopener">How Abliteration Works: Refusal Removal Without Training</a> <span class="ref-type">튜토리얼</span></li><li><a href="https://www.emergentmind.com/topics/refusal-abliteration" target="_blank" rel="nofollow noopener">LLM Refusal Abliteration Mechanisms</a> <span class="ref-type">튜토리얼</span></li></ul></div>
+  <div class="videos"><b>관련 영상</b><div class="video-list"><a class="video-item" href="https://www.youtube.com/watch?v=prcXZuXblxQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/prcXZuXblxQ/mqdefault.jpg" alt="I Removed an AI's Ability to Say No (Refusal Ablation Explained)" loading="lazy" width="160" height="90"><span>I Removed an AI's Ability to Say No (Refusal Ablation Explained)</span></a><a class="video-item" href="https://www.youtube.com/watch?v=nmxLqjyUdE8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/nmxLqjyUdE8/mqdefault.jpg" alt="How Abliteration Removes AI Refusals" loading="lazy" width="160" height="90"><span>How Abliteration Removes AI Refusals</span></a><a class="video-item" href="https://www.youtube.com/watch?v=1Rbbag8aH34" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1Rbbag8aH34/mqdefault.jpg" alt="Abliteration Is Not a Scalpel: Off-Target Effects of Refusal Removal on Decision Disposition Across" loading="lazy" width="160" height="90"><span>Abliteration Is Not a Scalpel: Off-Target Effects of Refusal Removal on Decision Disposition Across</span></a></div></div>
+  <a class="back" href="https://aiwiki.work/#abliteration">← AI Wiki에서 더 보기</a>
+  <div class="added-date">updated at 2026-10-25</div>
+</div>
+<footer class="site-footer">
+  <a href="https://aiwiki.work/">홈</a> · <a href="https://aiwiki.work/about.html">소개</a> · <a href="https://aiwiki.work/privacy.html">개인정보처리방침</a> · <a href="https://aiwiki.work/contact.html">문의</a> · <a href="https://aiwiki.work/updates.html">업데이트 기록</a>
+  <div class="copy">© 2026 AI Wiki · aiwiki.work</div>
+</footer>
+</body>
+</html>
