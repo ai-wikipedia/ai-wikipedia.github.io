@@ -1,3 +1,7 @@
+## 2026-10-27 08:17
+- 추가: gpt-6-1-terra
+- HOT: gpt-6-1-terra, harness-engineering, kv-cache, vllm, open-weights, agent-memory, claude-code, scion, mcp, kimi-k3-1-pro
+
 ## 2026-10-26 08:09
 - 추가: abliteration, mcp-code-mode
 - HOT: kimi-k3-1-pro, ai-for-mathematics, claude-code, deepseek-harness, gemini-4-argon, scion, software-factory
