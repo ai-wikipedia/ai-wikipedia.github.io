@@ -1,3 +1,7 @@
+## 2026-10-28 08:10
+- 추가: claude-cowork, comprehension-debt
+- HOT: gpt-6-1-terra, claude-code, harness-engineering, vllm, kv-cache, reasoning-model, ai-slop, scion, gemini-4-argon, claude-cowork, comprehension-debt
+
 ## 2026-10-27 08:17
 - 추가: gpt-6-1-terra
 - HOT: gpt-6-1-terra, harness-engineering, kv-cache, vllm, open-weights, agent-memory, claude-code, scion, mcp, kimi-k3-1-pro

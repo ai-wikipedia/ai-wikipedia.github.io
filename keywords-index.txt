@@ -430,3 +430,5 @@ sam-3	SAM 3	Segment Anything Model 3 (Meta)	model
 abliteration	어블리터레이션	Abliteration (Refusal Direction Removal)	safety
 mcp-code-mode	MCP 코드 모드	MCP Code Mode (Code Execution with MCP)	agent
 gpt-6-1-terra	GPT-6.1 테라	GPT-6.1 Terra (OpenAI)	model
+claude-cowork	클로드 코워크	Claude Cowork (Anthropic)	agent
+comprehension-debt	이해 부채	Comprehension Debt (Understanding AI-Written Code)	application
