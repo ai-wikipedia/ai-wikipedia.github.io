@@ -1,4 +1,4 @@
-const HOT_IDS = ['gpt-6-1-terra','claude-code','harness-engineering','vllm','kv-cache','reasoning-model','ai-slop','scion','gemini-4-argon','claude-cowork','comprehension-debt'];
+const HOT_IDS = ['continual-learning','comprehension-debt','agent-memory','harness-engineering','ai-slop','context-engineering','scion','gemini-4-argon','nemotron','claude-code'];
 const LAST_UPDATED = '2026-10-27T23:10:50Z';
 
 const D = [
