@@ -1,3 +1,7 @@
+## 2026-10-30 08:05
+- 추가: particle-1, gemini-4-carbon
+- HOT: harness-engineering, claude-code, ai-agent, mistral-large-4, gemini-4-carbon, comprehension-debt, agent-memory, muse-spark-open, deepinfer, scion
+
 ## 2026-10-29 08:14
 - 추가: (없음)
 - HOT: (없음)
