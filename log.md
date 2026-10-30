@@ -1,3 +1,7 @@
+## 2026-10-31 08:12
+- 추가: mobile-agent
+- HOT: claude-code, harness-engineering, continual-learning, mistral-large-4, swarm, comprehension-debt, deepseek-harness, gpt-6-1-terra, particle-1
+
 ## 2026-10-30 08:05
 - 추가: particle-1, gemini-4-carbon
 - HOT: harness-engineering, claude-code, ai-agent, mistral-large-4, gemini-4-carbon, comprehension-debt, agent-memory, muse-spark-open, deepinfer, scion

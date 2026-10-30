@@ -434,3 +434,4 @@ claude-cowork	클로드 코워크	Claude Cowork (Anthropic)	agent
 comprehension-debt	이해 부채	Comprehension Debt (Understanding AI-Written Code)	application
 particle-1	파티클 1	Particle-1 (Particle AI)	model
 gemini-4-carbon	제미나이 4 카본	Gemini 4 Carbon (Google)	model
+mobile-agent	모바일 에이전트	Mobile GUI Agent (On-Device Phone Agent)	agent
