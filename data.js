@@ -1,4 +1,4 @@
-const HOT_IDS = ['claude-code','harness-engineering','continual-learning','mistral-large-4','swarm','comprehension-debt','deepseek-harness','gpt-6-1-terra','particle-1'];
+const HOT_IDS = ['mistral-large-4','continual-learning','ai-supply-chain-attack','claude-code','harness-engineering','swarm','tokenmaxxing','comprehension-debt','scion','gemini-4-argon'];
 const LAST_UPDATED = '2026-10-30T23:12:07Z';
 
 const D = [
