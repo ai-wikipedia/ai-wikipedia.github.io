@@ -147,6 +147,7 @@
  "few-shot": "c339ca1a6d04",
  "fine-tuning": "f9c789ddf0b3",
  "flash-attention": "89b560d7c903",
+ "floorplan": "7eb18c1f513c",
  "flux": "b6703b8d5e0c",
  "foundation-model": "f168b373dc25",
  "frontier-model": "57de8d5a9306",

@@ -435,3 +435,4 @@ comprehension-debt	이해 부채	Comprehension Debt (Understanding AI-Written Co
 particle-1	파티클 1	Particle-1 (Particle AI)	model
 gemini-4-carbon	제미나이 4 카본	Gemini 4 Carbon (Google)	model
 mobile-agent	모바일 에이전트	Mobile GUI Agent (On-Device Phone Agent)	agent
+floorplan	플로어플랜	Floorplan (Interactive Codebase Map for Coding Agents)	tooling
